@@ -1,0 +1,23 @@
+name: Validar
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    name: Validar especificación
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: El volcado de los esquemas está al día
+        run: python3 tools/xsd_arbol.py --check
+      - name: Formato, fuentes y referencias
+        run: python3 tools/validar.py
