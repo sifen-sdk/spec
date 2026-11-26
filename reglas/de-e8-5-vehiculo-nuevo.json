@@ -1,0 +1,372 @@
+{
+  "grupo": "E8.5",
+  "reglas": [
+    {
+      "id": "R-E770-O1",
+      "campo": "E770",
+      "tipo": "opcional",
+      "texto": "El grupo de detalle de vehículos nuevos es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E770",
+          "cita": "G 0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E771-F1",
+      "campo": "E771",
+      "tipo": "formato",
+      "texto": "Valores admitidos: 1 = Venta a representante, 2 = Venta al consumidor final, 3 = Venta a gobierno, 4 = Venta a flota de vehículos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E771"
+        }
+      ]
+    },
+    {
+      "id": "R-E771-O1",
+      "campo": "E771",
+      "tipo": "opcional",
+      "texto": "El campo «Tipo de operación de venta de vehículos» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E771",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E772-C1",
+      "campo": "E772",
+      "tipo": "condicional",
+      "no_declarativa": true,
+      "texto": "La descripción del tipo de operación de venta de vehículos es obligatoria si existe el campo E762 (literal del Manual; E762 no existe en el grupo E8.5, previsiblemente se refiere a E771)",
+      "contradiccion": "C-308",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E772",
+          "cita": "Obligatorio si existe el campo E762"
+        }
+      ]
+    },
+    {
+      "id": "R-E772-D1",
+      "campo": "E772",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de operación de venta de vehículos corresponde al código informado en E771: 1= “Venta a representante”, 2= “Venta al consumidor final”, 3= “Venta a gobierno”, 4= “Venta a flota de vehículos”",
+      "contradiccion": "C-309",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E772"
+        }
+      ]
+    },
+    {
+      "id": "R-E773-F1",
+      "campo": "E773",
+      "tipo": "formato",
+      "texto": "El chasis del vehículo tiene longitud exacta de 17 caracteres",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E773",
+          "cita": "A 17"
+        }
+      ]
+    },
+    {
+      "id": "R-E773-O1",
+      "campo": "E773",
+      "tipo": "opcional",
+      "texto": "El campo «Chasis del vehículo» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E773",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E774-O1",
+      "campo": "E774",
+      "tipo": "opcional",
+      "texto": "El campo «Color del vehículo» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E774",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E775-O1",
+      "campo": "E775",
+      "tipo": "opcional",
+      "texto": "El campo «Potencia del motor (CV)» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E775",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E776-F1",
+      "campo": "E776",
+      "tipo": "formato",
+      "texto": "La capacidad del motor se expresa en centímetros cúbicos (cc)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E776"
+        }
+      ]
+    },
+    {
+      "id": "R-E776-O1",
+      "campo": "E776",
+      "tipo": "opcional",
+      "texto": "El campo «Capacidad del motor» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E776",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E777-F1",
+      "campo": "E777",
+      "tipo": "formato",
+      "texto": "El peso neto se expresa en toneladas",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E777",
+          "cita": "Toneladas"
+        }
+      ]
+    },
+    {
+      "id": "R-E777-O1",
+      "campo": "E777",
+      "tipo": "opcional",
+      "texto": "El campo «Peso Neto» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E777",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E778-F1",
+      "campo": "E778",
+      "tipo": "formato",
+      "texto": "El peso bruto se expresa en toneladas",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E778",
+          "cita": "Toneladas"
+        }
+      ]
+    },
+    {
+      "id": "R-E778-O1",
+      "campo": "E778",
+      "tipo": "opcional",
+      "texto": "El campo «Peso Bruto» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E778",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E779-F1",
+      "campo": "E779",
+      "tipo": "formato",
+      "texto": "Valores admitidos: 1 = Gasolina, 2 = Diésel, 3 = Etanol, 4 = GNV, 5 = Flex, 9 = Otro",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E779"
+        }
+      ]
+    },
+    {
+      "id": "R-E779-O1",
+      "campo": "E779",
+      "tipo": "opcional",
+      "texto": "El campo «Tipo de combustible» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E779",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E780-C1",
+      "campo": "E780",
+      "tipo": "condicional",
+      "no_declarativa": true,
+      "texto": "La descripción del tipo de combustible es obligatoria si existe el campo E770 (literal del Manual; E770 es el propio grupo gVehNuevo, previsiblemente se refiere a E779)",
+      "contradiccion": "C-308",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E780",
+          "cita": "Obligatorio si existe el campo E770"
+        }
+      ]
+    },
+    {
+      "id": "R-E780-D1",
+      "campo": "E780",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de combustible corresponde al código de E779: 1= “Gasolina”, 2= “Diésel”, 3= “Etanol”, 4= “GNV”, 5= “Flex”",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E780"
+        }
+      ]
+    },
+    {
+      "id": "R-E780-D2",
+      "campo": "E780",
+      "tipo": "dependencia",
+      "no_declarativa": true,
+      "texto": "Si el tipo de combustible es 9 (Otro), describir el tipo de combustible (el Manual escribe «Si E769= 9»; E769 no existe, previsiblemente se refiere a E779)",
+      "contradiccion": "C-308",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E780",
+          "cita": "Si E769= 9 describir el tipo de combustible"
+        }
+      ]
+    },
+    {
+      "id": "R-E781-O1",
+      "campo": "E781",
+      "tipo": "opcional",
+      "texto": "El campo «Número del motor» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E781",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E782-F1",
+      "campo": "E782",
+      "tipo": "formato",
+      "texto": "La capacidad máxima de tracción se expresa en toneladas",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E782",
+          "cita": "Toneladas"
+        }
+      ]
+    },
+    {
+      "id": "R-E782-O1",
+      "campo": "E782",
+      "tipo": "opcional",
+      "texto": "El campo «Capacidad máxima de tracción» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E782",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E783-O1",
+      "campo": "E783",
+      "tipo": "opcional",
+      "texto": "El campo «Año de fabricación» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E783",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E784-O1",
+      "campo": "E784",
+      "tipo": "opcional",
+      "texto": "El campo «Tipo de vehículo» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E784",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E785-O1",
+      "campo": "E785",
+      "tipo": "opcional",
+      "texto": "El campo «Capacidad máxima de pasajeros» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E785",
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E786-F1",
+      "campo": "E786",
+      "tipo": "formato",
+      "texto": "Las cilindradas del motor tienen longitud exacta de 4 caracteres",
+      "contradiccion": "C-310",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E786",
+          "cita": "A 4"
+        }
+      ]
+    },
+    {
+      "id": "R-E786-O1",
+      "campo": "E786",
+      "tipo": "opcional",
+      "texto": "El campo «Cilindradas del motor» es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E786",
+          "cita": "0-1"
+        }
+      ]
+    }
+  ]
+}

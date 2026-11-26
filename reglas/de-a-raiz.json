@@ -1,0 +1,270 @@
+{
+  "grupo": "AA-A",
+  "reglas": [
+    {
+      "id": "R-AA001-O1",
+      "campo": "AA001",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AA001"
+        }
+      ]
+    },
+    {
+      "id": "R-AA002-O1",
+      "campo": "AA002",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AA002"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd rDE/dVerFor"
+        }
+      ]
+    },
+    {
+      "id": "R-AA002-F1",
+      "campo": "AA002",
+      "tipo": "formato",
+      "texto": "Debe contener la versión 150",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AA002",
+          "cita": "Este campo debe contener la versión 150"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd rDE/dVerFor pattern [1][5][0]"
+        }
+      ]
+    },
+    {
+      "id": "R-A001-O1",
+      "campo": "A001",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A001"
+        }
+      ]
+    },
+    {
+      "id": "R-A002-O1",
+      "campo": "A002",
+      "tipo": "obligatorio",
+      "texto": "El CDC (atributo Id de <DE>) se informa siempre",
+      "contradiccion": "C-101",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tDE atributo Id use=required"
+        },
+        {
+          "doc": "MT150",
+          "ref": "A002"
+        }
+      ]
+    },
+    {
+      "id": "R-A002-D1",
+      "campo": "A002",
+      "tipo": "dependencia",
+      "texto": "El CDC (44 posiciones) es la concatenación, en este orden, de: tipo de documento C002 (2, ceros a la izquierda), RUC del emisor D101 (8, ceros a la izquierda), DV del emisor D102 (1), establecimiento C005 (3), punto de expedición C006 (3), número de documento C007 (7, ceros a la izquierda), tipo de contribuyente D103 (1), fecha de emisión D002 (8, solo AAAAMMDD), tipo de emisión B002 (1), código de seguridad B004 (9) y dígito verificador A003 (1); debe ser compatible con esos campos del XML",
+      "no_declarativa": true,
+      "codigo_sifen": "1000",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "10.1 Estructura del código de control (CDC) de los DE"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1000",
+          "cita": "El CDC no es compatible con las informaciones de los campos del XML"
+        }
+      ]
+    },
+    {
+      "id": "R-A002-F1",
+      "campo": "A002",
+      "tipo": "formato",
+      "texto": "Cuando un RUC contenga letras, para el cálculo del dígito verificador y la generación del CDC se convierte la letra por su valor en código ASCII",
+      "no_declarativa": true,
+      "contradiccion": "C-102",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A002",
+          "cita": "se realizará la conversión de dicha letra por su valor en código ASCII"
+        }
+      ]
+    },
+    {
+      "id": "R-A002-F2",
+      "campo": "A002",
+      "tipo": "formato",
+      "texto": "No debe existir otro documento ya autorizado con coincidencia simultánea del contenido de los campos del CDC (CDC duplicado; verificación de SIFEN)",
+      "no_declarativa": true,
+      "codigo_sifen": "1001",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1001"
+        }
+      ]
+    },
+    {
+      "id": "R-A002-F3",
+      "campo": "A002",
+      "tipo": "formato",
+      "texto": "No debe existir otro documento ya autorizado con coincidencia simultánea de: tipo de documento (C002), número de timbrado (C004), número de documento (C007), tipo de emisión (B002), establecimiento (C005), punto de expedición (C006) y serie (C010) si se informa (verificación de SIFEN)",
+      "no_declarativa": true,
+      "codigo_sifen": "1002",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1002"
+        }
+      ]
+    },
+    {
+      "id": "R-A003-O1",
+      "campo": "A003",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A003"
+        }
+      ]
+    },
+    {
+      "id": "R-A003-F1",
+      "campo": "A003",
+      "tipo": "formato",
+      "texto": "Dígito verificador del CDC calculado con el algoritmo módulo 11 sobre la conformación del CDC; el Manual remite el detalle del algoritmo a un documento externo de la SET (digito-verificador.pdf)",
+      "no_declarativa": true,
+      "codigo_sifen": "1003",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A003",
+          "cita": "Según algoritmo módulo 11"
+        },
+        {
+          "doc": "MT150",
+          "ref": "10.2 Dígito verificador del CDC"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1003"
+        }
+      ]
+    },
+    {
+      "id": "R-A004-O1",
+      "campo": "A004",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A004"
+        }
+      ]
+    },
+    {
+      "id": "R-A004-F1",
+      "campo": "A004",
+      "tipo": "formato",
+      "texto": "Fecha y hora en el formato AAAA-MM-DDThh:mm:ss",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A004",
+          "cita": "Fecha y hora en el formato AAAA-MM-DDThh:mm:ss"
+        }
+      ]
+    },
+    {
+      "id": "R-A004-F2",
+      "campo": "A004",
+      "tipo": "formato",
+      "texto": "La fecha y hora de la firma digital debe ser anterior a la fecha y hora de transmisión al SIFEN (no posterior a la fecha y hora de SIFEN)",
+      "no_declarativa": true,
+      "codigo_sifen": "1004",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A004",
+          "cita": "debe ser anterior a la fecha y hora de transmisión al SIFEN"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1004"
+        }
+      ]
+    },
+    {
+      "id": "R-A004-F3",
+      "campo": "A004",
+      "tipo": "formato",
+      "texto": "El certificado digital debe estar vigente al momento de la firma digital del DE",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A004",
+          "cita": "El certificado digital debe estar vigente al momento de la firma digital del DE"
+        }
+      ]
+    },
+    {
+      "id": "R-A004-F4",
+      "campo": "A004",
+      "tipo": "formato",
+      "texto": "El plazo límite de transmisión al SIFEN para la aprobación normal es de 72 h desde la fecha y hora de la firma digital; si la transmisión excede el tiempo parametrizado para el contribuyente, el DE se aprueba con observación (extemporaneidad)",
+      "no_declarativa": true,
+      "codigo_sifen": "1005",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A004",
+          "cita": "El plazo límite de transmisión del DE al SIFEN para la aprobación normal es de 72 h"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1005"
+        }
+      ]
+    },
+    {
+      "id": "R-A005-O1",
+      "campo": "A005",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre (ocurrencia 1-1 en el Manual; obligatorio en el XSD) pese a que la NT 10 lo elimina",
+      "contradiccion": "C-103",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A005"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tDE/dSisFact (minOccurs 1)"
+        }
+      ]
+    }
+  ]
+}

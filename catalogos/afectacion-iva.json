@@ -1,0 +1,131 @@
+{
+  "id": "afectacion-iva",
+  "titulo": "Forma de afectación tributaria del IVA (Tabla 6)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E731"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E732"
+    },
+    {
+      "doc": "MT150",
+      "ref": "15. Codificaciones – TABLA 6 – CODIGOS DE AFECTACION",
+      "pagina": 213
+    },
+    {
+      "doc": "NT010",
+      "ref": "5.1 (Tabla 6 – Códigos de Afectación)"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiAfecIVA, tdDesAfecIVA"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E731",
+    "E732"
+  ],
+  "descripciones": {
+    "E731": "E732"
+  },
+  "xml": [
+    "iAfecIVA",
+    "dDesAfecIVA"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Gravado IVA"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Exonerado (Art. 100 - Ley 6380/2019)",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "5.1 (Tabla 6)"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdDesAfecIVA"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "contradiccion": "C-904",
+      "otras_descripciones": [
+        {
+          "descripcion": "Exonerado (Art. 83- Ley 125/91)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "E732"
+            }
+          ]
+        },
+        {
+          "descripcion": "Exonerado (Art.83 - 125)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "Tabla 6",
+              "pagina": 213
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Exento"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Gravado parcial (Grav- Exento)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E732"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdDesAfecIVA"
+        }
+      ],
+      "contradiccion": "C-904",
+      "otras_descripciones": [
+        {
+          "descripcion": "Gravado parcial",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "Tabla 6",
+              "pagina": 213
+            },
+            {
+              "doc": "NT010",
+              "ref": "5.1 (Tabla 6)"
+            }
+          ]
+        },
+        {
+          "descripcion": "Gravado parcial (Grav-Exento)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "E731"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "motivo-evento-transporte",
+  "titulo": "Motivo del evento de actualización de datos del transporte",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "GET003"
+    },
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tdMotEv (1-4)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "GET003"
+  ],
+  "xml": [
+    "dMotEv"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Cambio del local de la entrega"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Cambio del chofer"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Cambio del transportista"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Cambio de vehículo"
+    }
+  ]
+}

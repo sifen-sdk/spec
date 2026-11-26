@@ -1,0 +1,36 @@
+{
+  "id": "tipo-identificacion-vehiculo",
+  "titulo": "Tipo de identificación del vehículo",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E967"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET028"
+    },
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tdTipIdenVeh (1, 2)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E967",
+    "GET028"
+  ],
+  "xml": [
+    "dTipIdenVeh"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Número de identificación del vehículo"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Número de matrícula del vehículo"
+    }
+  ]
+}

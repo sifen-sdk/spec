@@ -1,0 +1,2099 @@
+{
+  "grupo": "F",
+  "reglas": [
+    {
+      "id": "R-F001-C1",
+      "campo": "F001",
+      "tipo": "condicional",
+      "texto": "El grupo de subtotales y totales es obligatorio si el tipo de documento no es Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "distinto",
+        "valor": "7"
+      },
+      "codigo_sifen": "2350",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Obligatorio si C002 ≠ 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2350"
+        }
+      ]
+    },
+    {
+      "id": "R-F001-P1",
+      "campo": "F001",
+      "tipo": "prohibido",
+      "texto": "El grupo de subtotales y totales no se informa en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2351",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "No informar si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2351"
+        }
+      ]
+    },
+    {
+      "id": "R-F002-C1",
+      "campo": "F002",
+      "tipo": "condicional",
+      "texto": "Si se informan operaciones exentas (algún ítem con E731 = 3), es obligatorio reportar el subtotal exento",
+      "condicion": {
+        "campo": "E731",
+        "op": "igual",
+        "valor": "3"
+      },
+      "codigo_sifen": "2352",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2352",
+          "cita": "Si el campo E731=3 debe existir F002"
+        }
+      ]
+    },
+    {
+      "id": "R-F002-P4",
+      "campo": "F002",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F002-A1",
+      "campo": "F002",
+      "tipo": "aritmetica",
+      "texto": "El subtotal exento es la suma del valor total por ítem de los ítems exentos",
+      "formula": "Suma de todas las ocurrencias de EA008 cuando E731=3",
+      "operandos": [
+        "EA008",
+        "E731"
+      ],
+      "codigo_sifen": "2353",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F002",
+          "cita": "Si E731 = 3: Suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea exenta"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2353"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F002-A2",
+      "campo": "F002",
+      "tipo": "aritmetica",
+      "texto": "El subtotal exento suma el valor total de los ítems exentos más la base exenta de los ítems gravados parcialmente",
+      "formula": "Suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea exenta (Si E731 = 3), más Todas las ocurrencias de la Base Exenta (E737) cuando la operación sea Gravado Parcial (Si E731 = 4)",
+      "operandos": [
+        "EA008",
+        "E737",
+        "E731"
+      ],
+      "codigo_sifen": "2353",
+      "fuentes": [
+        {
+          "doc": "NT013",
+          "ref": "F002"
+        },
+        {
+          "doc": "NT013",
+          "ref": "2353"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F003-C1",
+      "campo": "F003",
+      "tipo": "condicional",
+      "texto": "Si se informan operaciones exoneradas (algún ítem con E731 = 2), es obligatorio reportar el subtotal exonerado",
+      "condicion": {
+        "campo": "E731",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2354",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2354",
+          "cita": "Si el campo E731=2 debe existir F003"
+        }
+      ]
+    },
+    {
+      "id": "R-F003-P4",
+      "campo": "F003",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F003-A1",
+      "campo": "F003",
+      "tipo": "aritmetica",
+      "texto": "El subtotal exonerado es la suma del valor total por ítem de los ítems exonerados",
+      "formula": "Suma de todas las ocurrencias de EA008 cuando E731=2",
+      "operandos": [
+        "EA008",
+        "E731"
+      ],
+      "codigo_sifen": "2355",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F003",
+          "cita": "Si E731 = 2: Suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea exonerada"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2355"
+        }
+      ]
+    },
+    {
+      "id": "R-F004-C1",
+      "campo": "F004",
+      "tipo": "condicional",
+      "texto": "Si se informan operaciones gravadas al 5% (algún ítem con E731 = 1 o 4 y E734 = 5), es obligatorio reportar el subtotal",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E731",
+            "op": "en",
+            "valores": [
+              "1",
+              "4"
+            ]
+          },
+          {
+            "campo": "E734",
+            "op": "igual",
+            "valor": "5"
+          }
+        ]
+      },
+      "codigo_sifen": "2356",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2356",
+          "cita": "Si el campo E731=1 o 4 y E734=5 debe existir F004"
+        }
+      ]
+    },
+    {
+      "id": "R-F004-P4",
+      "campo": "F004",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F004-P2",
+      "campo": "F004",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (D013 ≠ 1)",
+      "condicion": {
+        "campo": "D013",
+        "op": "distinto",
+        "valor": "1"
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F004",
+          "cita": "No debe existir el campo si D013 ≠ 1"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F004-P3",
+      "campo": "F004",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "NT013",
+          "ref": "F004",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013 ≠ 5"
+        },
+        {
+          "doc": "NT013",
+          "ref": "2357"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F004-A1",
+      "campo": "F004",
+      "tipo": "aritmetica",
+      "texto": "El subtotal gravado al 5% es la suma del valor total por ítem de los ítems a esa tasa",
+      "formula": "Suma de todas las ocurrencias de EA008 cuando E734=5",
+      "operandos": [
+        "EA008",
+        "E734",
+        "E731"
+      ],
+      "codigo_sifen": "2357",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F004",
+          "cita": "Si E731 = 1 o 4: Suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea a la tasa del 5% (E734=5)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2357"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F004-A2",
+      "campo": "F004",
+      "tipo": "aritmetica",
+      "texto": "El subtotal gravado al 5% suma el valor total de los ítems gravados al 5% más base gravada e IVA de los gravados parcialmente a esa tasa",
+      "formula": "Suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea a la tasa del 5% (E734=5) y (Si E731 = 1), más todas las ocurrencias de (E735 + E736) cuando la operación sea a la tasa del 5% (E734=5) y (Si E731 = 4)",
+      "operandos": [
+        "EA008",
+        "E735",
+        "E736",
+        "E734",
+        "E731"
+      ],
+      "codigo_sifen": "2357",
+      "fuentes": [
+        {
+          "doc": "NT013",
+          "ref": "F004"
+        },
+        {
+          "doc": "NT013",
+          "ref": "2357"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F005-C1",
+      "campo": "F005",
+      "tipo": "condicional",
+      "texto": "Si se informan operaciones gravadas al 10% (algún ítem con E731 = 1 o 4 y E734 = 10), es obligatorio reportar el subtotal",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E731",
+            "op": "en",
+            "valores": [
+              "1",
+              "4"
+            ]
+          },
+          {
+            "campo": "E734",
+            "op": "igual",
+            "valor": "10"
+          }
+        ]
+      },
+      "codigo_sifen": "2358",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2358",
+          "cita": "Si el campo E731=1 o 4 y E734=10 debe existir F005"
+        }
+      ]
+    },
+    {
+      "id": "R-F005-P4",
+      "campo": "F005",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F005-P2",
+      "campo": "F005",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (D013 ≠ 1)",
+      "condicion": {
+        "campo": "D013",
+        "op": "distinto",
+        "valor": "1"
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F005",
+          "cita": "No debe existir el campo si D013 ≠ 1"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F005-P3",
+      "campo": "F005",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "NT013",
+          "ref": "F005",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013 ≠ 5"
+        },
+        {
+          "doc": "NT013",
+          "ref": "2359"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F005-A1",
+      "campo": "F005",
+      "tipo": "aritmetica",
+      "texto": "El subtotal gravado al 10% es la suma del valor total por ítem de los ítems a esa tasa",
+      "formula": "Suma de todas las ocurrencias de EA008 cuando E734=10",
+      "operandos": [
+        "EA008",
+        "E734",
+        "E731"
+      ],
+      "codigo_sifen": "2359",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F005",
+          "cita": "Si E731 = 1 o 4: Suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea a la tasa del 10% (E734=10)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2359"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F005-A2",
+      "campo": "F005",
+      "tipo": "aritmetica",
+      "texto": "El subtotal gravado al 10% suma el valor total de los ítems gravados al 10% más base gravada e IVA de los gravados parcialmente a esa tasa",
+      "formula": "Suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea a la tasa del 10% (E734=10) y (Si E731 = 1), más todas las ocurrencias de (E735 + E736) cuando la operación sea a la tasa del 10% (E734=10) y (Si E731 = 4)",
+      "operandos": [
+        "EA008",
+        "E735",
+        "E736",
+        "E734",
+        "E731"
+      ],
+      "codigo_sifen": "2359",
+      "fuentes": [
+        {
+          "doc": "NT013",
+          "ref": "F005"
+        },
+        {
+          "doc": "NT013",
+          "ref": "2359"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "id": "R-F008-O",
+      "campo": "F008",
+      "tipo": "obligatorio",
+      "texto": "El total bruto de la operación es obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F008"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgTotSub/dTotOpe"
+        }
+      ]
+    },
+    {
+      "id": "R-F008-A1",
+      "campo": "F008",
+      "tipo": "aritmetica",
+      "texto": "Con impuesto IVA, Renta, Ninguno o IVA - Renta, el total bruto es la suma de los subtotales",
+      "condicion": {
+        "campo": "D013",
+        "op": "en",
+        "valores": [
+          "1",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "formula": "F002+F003+F004+F005",
+      "operandos": [
+        "F002",
+        "F003",
+        "F004",
+        "F005"
+      ],
+      "codigo_sifen": "2362",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F008",
+          "cita": "Cuando D013 = 1, 3, 4 o 5 corresponde a la suma de los subtotales de la operación (F002, F003, F004 y F005)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2362"
+        }
+      ]
+    },
+    {
+      "id": "R-F008-A2",
+      "campo": "F008",
+      "tipo": "aritmetica",
+      "texto": "Con impuesto ISC (D013 = 2), el total bruto corresponde a F006, campo que no figura en el Manual ni en el XSD",
+      "condicion": {
+        "campo": "D013",
+        "op": "igual",
+        "valor": "2"
+      },
+      "formula": "F006",
+      "operandos": [],
+      "contradiccion": "C-501",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F008",
+          "cita": "Cuando D013 = 2 corresponde a F006"
+        }
+      ]
+    },
+    {
+      "id": "R-F008-A3",
+      "campo": "F008",
+      "tipo": "aritmetica",
+      "texto": "En la Autofactura, el total bruto es la suma del valor total por ítem",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "formula": "Suma de todas las ocurrencias de EA008",
+      "operandos": [
+        "EA008"
+      ],
+      "codigo_sifen": "2362",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F008",
+          "cita": "Cuando C002=4 corresponde a la suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2362"
+        }
+      ]
+    },
+    {
+      "id": "R-F009-O",
+      "campo": "F009",
+      "tipo": "obligatorio",
+      "texto": "El total de descuentos particulares por ítem es obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F009"
+        }
+      ]
+    },
+    {
+      "id": "R-F009-A1",
+      "campo": "F009",
+      "tipo": "aritmetica",
+      "texto": "El total de descuentos particulares es la suma de los descuentos particulares por ítem",
+      "formula": "Suma de todos los descuentos particulares por ítem (EA002)",
+      "operandos": [
+        "EA002"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F009",
+          "cita": "Suma de todos los descuentos particulares por ítem (EA002)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F009-A2",
+      "campo": "F009",
+      "tipo": "aritmetica",
+      "texto": "El total de descuentos particulares es la suma de cada descuento particular por ítem multiplicado por la cantidad del ítem",
+      "formula": "sumatoria de EA002*E711",
+      "operandos": [
+        "EA002",
+        "E711"
+      ],
+      "codigo_sifen": "2363",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2363",
+          "cita": "Calculo debe ser igual la suma de todas las ocurrencias de EA002 multiplicado por la cantidad EA002*E711"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F009",
+          "cita": "Suma de la multiplicación de cada descuento particular por ítem por la cantidad de ese ítem (sumatoria de EA002*E711)"
+        }
+      ]
+    },
+    {
+      "id": "R-F033-O",
+      "campo": "F033",
+      "tipo": "obligatorio",
+      "texto": "Total descuento global por ítem: obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F033"
+        }
+      ]
+    },
+    {
+      "id": "R-F033-A1",
+      "campo": "F033",
+      "tipo": "aritmetica",
+      "texto": "Total descuento global por ítem: suma de las ocurrencias de EA004 (fórmula original del Manual)",
+      "formula": "Sumatoria de todas las ocurrencias de descuentos globales por ítem (EA004)",
+      "operandos": [
+        "EA004"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F033",
+          "cita": "Sumatoria de todas las ocurrencias de descuentos globales por ítem (EA004)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F033-A2",
+      "campo": "F033",
+      "tipo": "aritmetica",
+      "texto": "Total descuento global por ítem: suma de cada EA004 multiplicado por la cantidad del ítem (E711)",
+      "formula": "sumatoria de EA004*E711",
+      "operandos": [
+        "EA004",
+        "E711"
+      ],
+      "codigo_sifen": "2383",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "F033"
+        },
+        {
+          "doc": "NT001",
+          "ref": "2383",
+          "cita": "Cálculo debe ser igual la suma de todas las ocurrencias de EA004 multiplicado por la cantidad EA004*E711"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F034-O",
+      "campo": "F034",
+      "tipo": "obligatorio",
+      "texto": "Total Anticipo por ítem: obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F034"
+        }
+      ]
+    },
+    {
+      "id": "R-F034-A1",
+      "campo": "F034",
+      "tipo": "aritmetica",
+      "texto": "Total Anticipo por ítem: suma de las ocurrencias de EA006 (fórmula original del Manual)",
+      "formula": "Sumatoria de todas las ocurrencias de anticipos por ítem (EA006)",
+      "operandos": [
+        "EA006"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F034",
+          "cita": "Sumatoria de todas las ocurrencias de anticipos por ítem (EA006)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F034-A2",
+      "campo": "F034",
+      "tipo": "aritmetica",
+      "texto": "Total Anticipo por ítem: suma de cada EA006 multiplicado por la cantidad del ítem (E711)",
+      "formula": "sumatoria de EA006*E711",
+      "operandos": [
+        "EA006",
+        "E711"
+      ],
+      "codigo_sifen": "2384",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "F034"
+        },
+        {
+          "doc": "NT001",
+          "ref": "2384",
+          "cita": "Cálculo debe ser igual la suma de todas las ocurrencias de EA006 multiplicado por la cantidad EA006*E711"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F035-O",
+      "campo": "F035",
+      "tipo": "obligatorio",
+      "texto": "Total Anticipo global por ítem: obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F035"
+        }
+      ]
+    },
+    {
+      "id": "R-F035-A1",
+      "campo": "F035",
+      "tipo": "aritmetica",
+      "texto": "Total Anticipo global por ítem: suma de las ocurrencias de EA007 (fórmula original del Manual)",
+      "formula": "Sumatoria de todas las ocurrencias de anticipos global por ítem (EA007)",
+      "operandos": [
+        "EA007"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F035",
+          "cita": "Sumatoria de todas las ocurrencias de anticipos global por ítem (EA007)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F035-A2",
+      "campo": "F035",
+      "tipo": "aritmetica",
+      "texto": "Total Anticipo global por ítem: suma de cada EA007 multiplicado por la cantidad del ítem (E711)",
+      "formula": "sumatoria de EA007*E711",
+      "operandos": [
+        "EA007",
+        "E711"
+      ],
+      "codigo_sifen": "2387",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "F035"
+        },
+        {
+          "doc": "NT001",
+          "ref": "2387",
+          "cita": "Cálculo debe ser igual la suma de todas las ocurrencias de EA007 multiplicado por la cantidad EA007*E711"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F010-O",
+      "campo": "F010",
+      "tipo": "obligatorio",
+      "texto": "El porcentaje de descuento global es obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F010"
+        }
+      ]
+    },
+    {
+      "id": "R-F010-F1",
+      "campo": "F010",
+      "tipo": "formato",
+      "texto": "Si no existe porcentaje de descuento global, se completa con cero",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F010",
+          "cita": "Informativo, si no existe %, completar con cero"
+        }
+      ]
+    },
+    {
+      "id": "R-F011-O",
+      "campo": "F011",
+      "tipo": "obligatorio",
+      "texto": "El total de descuentos de la operación es obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F011"
+        }
+      ]
+    },
+    {
+      "id": "R-F011-A1",
+      "campo": "F011",
+      "tipo": "aritmetica",
+      "texto": "El total de descuentos es la suma de los descuentos particulares y globales de cada ítem (fórmula original)",
+      "formula": "Es la sumatoria de EA002 y EA004 de cada ítem",
+      "operandos": [
+        "EA002",
+        "EA004"
+      ],
+      "codigo_sifen": "2364",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F011",
+          "cita": "Sumatoria de todos los descuentos (Global por Ítem y particular por ítem) de cada ítem"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2364",
+          "cita": "Es la sumatoria de EA002 y EA004 de cada ítem"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F011-A2",
+      "campo": "F011",
+      "tipo": "aritmetica",
+      "texto": "El total de descuentos es la suma del total de descuentos particulares y del total de descuentos globales por ítem",
+      "formula": "F009+F033",
+      "operandos": [
+        "F009",
+        "F033"
+      ],
+      "codigo_sifen": "2364",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "F011",
+          "cita": "Sumatoria de todos los descuentos (Global por Ítem y particular por ítem) de cada ítem (F009+F033)"
+        },
+        {
+          "doc": "NT001",
+          "ref": "2364",
+          "cita": "Es la sumatoria de F009 y F033"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F012-O",
+      "campo": "F012",
+      "tipo": "obligatorio",
+      "texto": "El total de anticipos de la operación es obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F012"
+        }
+      ]
+    },
+    {
+      "id": "R-F012-A1",
+      "campo": "F012",
+      "tipo": "aritmetica",
+      "texto": "El total de anticipos es la suma de los anticipos particulares y globales por ítem (fórmula original, sin operandos explícitos)",
+      "formula": "Sumatoria de todos los Anticipos (Global por Ítem y particular por ítem)",
+      "operandos": [
+        "EA006",
+        "EA007"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F012",
+          "cita": "Sumatoria de todos los Anticipos (Global por Ítem y particular por ítem)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F012-A2",
+      "campo": "F012",
+      "tipo": "aritmetica",
+      "texto": "El total de anticipos es la suma del total de anticipos por ítem y del total de anticipos globales por ítem",
+      "formula": "F034 + F035",
+      "operandos": [
+        "F034",
+        "F035"
+      ],
+      "codigo_sifen": "2388",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "F012",
+          "cita": "F034 + F035"
+        },
+        {
+          "doc": "NT001",
+          "ref": "2388",
+          "cita": "Es la sumatoria de F034 y F035"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F013-O",
+      "campo": "F013",
+      "tipo": "obligatorio",
+      "texto": "El redondeo de la operación es obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F013"
+        }
+      ]
+    },
+    {
+      "id": "R-F013-F1",
+      "campo": "F013",
+      "tipo": "formato",
+      "texto": "Si no cuenta con redondeo, se completa con cero",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F013",
+          "cita": "Si no cuenta con redondeo completar con cero"
+        }
+      ]
+    },
+    {
+      "id": "R-F013-A1",
+      "campo": "F013",
+      "tipo": "aritmetica",
+      "texto": "El redondeo se realiza sobre el total bruto (F008) a múltiplos de 50 guaraníes (Resolución 347/2014 SEDECO); ejemplos de la fuente: 107.437 → redondeo 37 → 107.400; 47.789 → redondeo 39 → 47.750",
+      "formula": "Redondeo de F008 a múltiplos de 50 guaraníes (Guaraníes 107.437, Redondeo 37, Monto Redondeado 107.400)",
+      "operandos": [
+        "F008"
+      ],
+      "holgura": "Para monedas extranjeras o cualquier otro cálculo que contenga decimales, las reglas de validación aceptarán redondeos de 50 céntimos (por encima o por debajo)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F013",
+          "cita": "Se realiza sobre el campo F008 y conforme a la explicación inicial en el grupo F"
+        },
+        {
+          "doc": "MT150",
+          "ref": "Capítulo 10, grupo F, explicación inicial",
+          "cita": "Las reglas de redondeo aplican a múltiplos de 50 guaraníes"
+        }
+      ]
+    },
+    {
+      "id": "R-F025-OP",
+      "campo": "F025",
+      "tipo": "opcional",
+      "texto": "La comisión de la operación es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F025"
+        }
+      ]
+    },
+    {
+      "id": "R-F025-P4",
+      "campo": "F025",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F014-O",
+      "campo": "F014",
+      "tipo": "obligatorio",
+      "texto": "El total neto de la operación es obligatorio en el grupo de totales",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F014"
+        }
+      ]
+    },
+    {
+      "id": "R-F014-A1",
+      "campo": "F014",
+      "tipo": "aritmetica",
+      "texto": "El total neto es el total bruto menos el redondeo más la comisión",
+      "formula": "F008 - F013 + F025",
+      "operandos": [
+        "F008",
+        "F013",
+        "F025"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F014",
+          "cita": "Corresponde al cálculo aritmético F008 - F013 + F025"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F014",
+          "cita": "F008-F013+F025"
+        }
+      ]
+    },
+    {
+      "id": "R-F014-A2",
+      "campo": "F014",
+      "tipo": "aritmetica",
+      "texto": "Validación original: en FE, NCE y NDE el total general es el total bruto menos descuentos, anticipos y redondeo",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "1",
+          "5",
+          "6"
+        ]
+      },
+      "formula": "F008–F011–F012- F013",
+      "operandos": [
+        "F008",
+        "F011",
+        "F012",
+        "F013"
+      ],
+      "codigo_sifen": "2365",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2365",
+          "cita": "Cuando C002=1, 5 o 6 el cálculo debe ser igual a F008–F011–F012- F013"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F014-A3",
+      "campo": "F014",
+      "tipo": "aritmetica",
+      "texto": "En FE, NCE y NDE el total general es el total bruto menos el redondeo más la comisión",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "1",
+          "5",
+          "6"
+        ]
+      },
+      "formula": "F008-F013+F025",
+      "operandos": [
+        "F008",
+        "F013",
+        "F025"
+      ],
+      "codigo_sifen": "2365",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "2365",
+          "cita": "Cuando C002=1, 5 o 6 el cálculo debe ser igual a F008-F013+F025"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F015-C1",
+      "campo": "F015",
+      "tipo": "condicional",
+      "texto": "Si se informa la liquidación del IVA por ítem (E736) con tasa 5%, es obligatorio informar la liquidación del IVA a esa tasa",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E736",
+            "op": "presente"
+          },
+          {
+            "campo": "E734",
+            "op": "igual",
+            "valor": "5"
+          }
+        ]
+      },
+      "codigo_sifen": "2366",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2366",
+          "cita": "Si se informa la liquidación del IVA por ítem (E736) y E734=5, el campo F015 debe existir"
+        }
+      ]
+    },
+    {
+      "id": "R-F015-P1",
+      "campo": "F015",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F015",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F015-P4",
+      "campo": "F015",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F015-A1",
+      "campo": "F015",
+      "tipo": "aritmetica",
+      "texto": "La liquidación del IVA al 5% es la suma de la liquidación del IVA por ítem de los ítems a esa tasa",
+      "formula": "Suma de todas las ocurrencias de E736 cuando E734=5",
+      "operandos": [
+        "E736",
+        "E734"
+      ],
+      "codigo_sifen": "2367",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F015",
+          "cita": "Suma de todas las ocurrencias de E736 (Liquidación del IVA por ítem) cuando la operación sea a la tasa del 5% (E734=5)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2367"
+        }
+      ]
+    },
+    {
+      "id": "R-F016-C1",
+      "campo": "F016",
+      "tipo": "condicional",
+      "texto": "Si se informa la liquidación del IVA por ítem (E736) con tasa 10%, es obligatorio informar la liquidación del IVA a esa tasa",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E736",
+            "op": "presente"
+          },
+          {
+            "campo": "E734",
+            "op": "igual",
+            "valor": "10"
+          }
+        ]
+      },
+      "codigo_sifen": "2368",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2368",
+          "cita": "Si se informa la liquidación del IVA por ítem (E736) y E734=10, el campo F016 debe existir"
+        }
+      ]
+    },
+    {
+      "id": "R-F016-P1",
+      "campo": "F016",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F016",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F016-P4",
+      "campo": "F016",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F016-A1",
+      "campo": "F016",
+      "tipo": "aritmetica",
+      "texto": "La liquidación del IVA al 10% es la suma de la liquidación del IVA por ítem de los ítems a esa tasa",
+      "formula": "Suma de todas las ocurrencias de E736 cuando E734=10",
+      "operandos": [
+        "E736",
+        "E734"
+      ],
+      "codigo_sifen": "2369",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F016",
+          "cita": "Suma de todas las ocurrencias de E736 (Liquidación del IVA por ítem) cuando la operación sea a la tasa del 10% (E734=10)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2369"
+        }
+      ]
+    },
+    {
+      "id": "R-F036-P1",
+      "campo": "F036",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F036",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F036-A1",
+      "campo": "F036",
+      "tipo": "aritmetica",
+      "texto": "IVA a la tasa del 5% sobre el valor del redondeo, cuando la operación sea a esa tasa",
+      "formula": "Valor del redondeo/1,05",
+      "operandos": [
+        "F013",
+        "E734"
+      ],
+      "contradiccion": "C-504",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F036",
+          "cita": "Corresponde al cálculo del impuesto al IVA a la tasa del 5% sobre el valor del redondeo (Valor del redondeo/1,05), cuando la operación sea a la tasa del 5% (E734=5)"
+        }
+      ]
+    },
+    {
+      "id": "R-F037-P1",
+      "campo": "F037",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F037",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F037-A1",
+      "campo": "F037",
+      "tipo": "aritmetica",
+      "texto": "IVA a la tasa del 10% sobre el valor del redondeo, cuando la operación sea a esa tasa",
+      "formula": "Valor del redondeo/1,1",
+      "operandos": [
+        "F013",
+        "E734"
+      ],
+      "contradiccion": "C-504",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F037",
+          "cita": "Corresponde al cálculo del impuesto al IVA a la tasa del 10% sobre el valor del redondeo (Valor del redondeo/1,1), cuando la operación sea a la tasa del 10% (E734=10)"
+        }
+      ]
+    },
+    {
+      "id": "R-F026-P4",
+      "campo": "F026",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F026-A1",
+      "campo": "F026",
+      "tipo": "aritmetica",
+      "texto": "A la comisión se le aplica la tasa del 10% de IVA",
+      "formula": "Se aplica la tasa del 10% para comisiones",
+      "operandos": [
+        "F025"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F026",
+          "cita": "Se aplica la tasa del 10% para comisiones"
+        }
+      ]
+    },
+    {
+      "id": "R-F017-C1",
+      "campo": "F017",
+      "tipo": "condicional",
+      "texto": "Si existe la liquidación del IVA al 5% y/o al 10%, es obligatorio informar la liquidación total del IVA",
+      "condicion": {
+        "alguna": [
+          {
+            "campo": "F015",
+            "op": "presente"
+          },
+          {
+            "campo": "F016",
+            "op": "presente"
+          }
+        ]
+      },
+      "codigo_sifen": "2370",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2370",
+          "cita": "Si existe campo F015 y/o F016 es obligatorio informar F017"
+        }
+      ]
+    },
+    {
+      "id": "R-F017-P1",
+      "campo": "F017",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F017",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F017-P4",
+      "campo": "F017",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F017-A1",
+      "campo": "F017",
+      "tipo": "aritmetica",
+      "texto": "Según la tabla de campos, la liquidación total del IVA es la suma de las liquidaciones por tasa, menos el IVA del redondeo, más el IVA de la comisión",
+      "formula": "F015 + F016 – F036 – F037 + F026",
+      "operandos": [
+        "F015",
+        "F016",
+        "F036",
+        "F037",
+        "F026"
+      ],
+      "contradiccion": "C-502",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F017",
+          "cita": "Corresponde al cálculo aritmético F015 (Liquidación del IVA al 10%) + F016(Liquidación del IVA al 5%) – F036 (redondeo al 5%) – F037 (redondeo al 10%) + F026 (Liquidación total del IVA de la comisión)"
+        }
+      ]
+    },
+    {
+      "id": "R-F017-A2",
+      "campo": "F017",
+      "tipo": "aritmetica",
+      "texto": "Según la validación 2371, la liquidación total del IVA es la suma de las liquidaciones al 5% y al 10%",
+      "formula": "F015+F016",
+      "operandos": [
+        "F015",
+        "F016"
+      ],
+      "codigo_sifen": "2371",
+      "contradiccion": "C-502",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2371",
+          "cita": "Calculo debe ser igual a la suma F015+F016"
+        }
+      ]
+    },
+    {
+      "id": "R-F018-C1",
+      "campo": "F018",
+      "tipo": "condicional",
+      "texto": "Si se informa la base gravada del IVA por ítem (E735) con tasa 5%, es obligatorio informar el total de base gravada a esa tasa",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E735",
+            "op": "presente"
+          },
+          {
+            "campo": "E734",
+            "op": "igual",
+            "valor": "5"
+          }
+        ]
+      },
+      "codigo_sifen": "2372",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2372",
+          "cita": "Si se informa la base gravada del IVA por ítem (E735) y E734=5, el campo F018 debe existir"
+        }
+      ]
+    },
+    {
+      "id": "R-F018-P1",
+      "campo": "F018",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F018",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F018-P4",
+      "campo": "F018",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F018-A1",
+      "campo": "F018",
+      "tipo": "aritmetica",
+      "texto": "El total de base gravada al 5% es la suma de la base gravada por ítem de los ítems a esa tasa",
+      "formula": "Suma de todas las ocurrencias de E735 cuando E734=5",
+      "operandos": [
+        "E735",
+        "E734"
+      ],
+      "codigo_sifen": "2373",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F018",
+          "cita": "Suma de todas las ocurrencias de E735 (base gravada del IVA por ítem) cuando la operación sea a la tasa del 5% (E734=5)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2373"
+        }
+      ]
+    },
+    {
+      "id": "R-F019-C1",
+      "campo": "F019",
+      "tipo": "condicional",
+      "texto": "Si se informa la base gravada del IVA por ítem (E735) con tasa 10%, es obligatorio informar el total de base gravada a esa tasa",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E735",
+            "op": "presente"
+          },
+          {
+            "campo": "E734",
+            "op": "igual",
+            "valor": "10"
+          }
+        ]
+      },
+      "codigo_sifen": "2374",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2374",
+          "cita": "Si se informa la base gravada del IVA por ítem (E735) y E734=10, el campo F019 debe existir"
+        }
+      ]
+    },
+    {
+      "id": "R-F019-P1",
+      "campo": "F019",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F019",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F019-P4",
+      "campo": "F019",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F019-A1",
+      "campo": "F019",
+      "tipo": "aritmetica",
+      "texto": "El total de base gravada al 10% es la suma de la base gravada por ítem de los ítems a esa tasa",
+      "formula": "Suma de todas las ocurrencias de E735 cuando E734=10",
+      "operandos": [
+        "E735",
+        "E734"
+      ],
+      "codigo_sifen": "2375",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F019",
+          "cita": "Suma de todas las ocurrencias de E735 (base gravada del IVA por ítem) cuando la operación sea a la tasa del 10% (E734=10)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2375"
+        }
+      ]
+    },
+    {
+      "id": "R-F020-C1",
+      "campo": "F020",
+      "tipo": "condicional",
+      "texto": "Si existe el total de base gravada al 5% y/o al 10%, es obligatorio informar el total de la base gravada",
+      "condicion": {
+        "alguna": [
+          {
+            "campo": "F018",
+            "op": "presente"
+          },
+          {
+            "campo": "F019",
+            "op": "presente"
+          }
+        ]
+      },
+      "codigo_sifen": "2376",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2376",
+          "cita": "Si existe campo F018 y/o F019 es obligatorio informar F020"
+        }
+      ]
+    },
+    {
+      "id": "R-F020-P1",
+      "campo": "F020",
+      "tipo": "prohibido",
+      "texto": "No debe existir el campo si el tipo de impuesto afectado no es IVA (1) ni IVA - Renta (5). La fuente escribe literalmente \"No debe existir el campo si D013 ≠ 1 o D013≠5\", que tomada al pie de la letra se cumple siempre; se expresa como D013 fuera de {1, 5}",
+      "condicion": {
+        "campo": "D013",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5"
+        ]
+      },
+      "contradiccion": "C-503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F020",
+          "cita": "No debe existir el campo si D013 ≠ 1 o D013≠5"
+        }
+      ]
+    },
+    {
+      "id": "R-F020-P4",
+      "campo": "F020",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F020-A1",
+      "campo": "F020",
+      "tipo": "aritmetica",
+      "texto": "El total de la base gravada es la suma de las bases gravadas al 5% y al 10%",
+      "formula": "F018+F019",
+      "operandos": [
+        "F018",
+        "F019"
+      ],
+      "codigo_sifen": "2377",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F020",
+          "cita": "Corresponde al cálculo aritmético F018+F019"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2377",
+          "cita": "Calculo debe ser igual a la suma F018+F019"
+        }
+      ]
+    },
+    {
+      "id": "R-F023-C1",
+      "campo": "F023",
+      "tipo": "condicional",
+      "texto": "Si la moneda de la operación no es guaraníes, es obligatorio informar el total general en guaraníes",
+      "condicion": {
+        "campo": "D015",
+        "op": "distinto",
+        "valor": "PYG"
+      },
+      "codigo_sifen": "2382",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2382",
+          "cita": "Si moneda de la operación es diferente de guaraníes (D015≠PYG) es obligatorio informar total general de la operación en guaraníes (F023)"
+        }
+      ]
+    },
+    {
+      "id": "R-F023-P1",
+      "campo": "F023",
+      "tipo": "prohibido",
+      "texto": "No se informa si la moneda de la operación es guaraníes",
+      "condicion": {
+        "campo": "D015",
+        "op": "igual",
+        "valor": "PYG"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F023",
+          "cita": "Este campo no debe existir si D015=PYG No informar si D015 = PYG"
+        },
+        {
+          "doc": "NT008",
+          "ref": "F023"
+        }
+      ]
+    },
+    {
+      "id": "R-F023-P4",
+      "campo": "F023",
+      "tipo": "prohibido",
+      "texto": "No se informa en la Autofactura Electrónica (C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001",
+          "cita": "Cuando C002= 4, no informar F002, F003, F004, F005, F015, F016, F017, F018, F019, F020, F023, F025 y F026"
+        }
+      ]
+    },
+    {
+      "id": "R-F023-A1",
+      "campo": "F023",
+      "tipo": "aritmetica",
+      "texto": "Con moneda extranjera y tipo de cambio global, el total en guaraníes es el total neto por el tipo de cambio",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "D015",
+            "op": "distinto",
+            "valor": "PYG"
+          },
+          {
+            "campo": "D017",
+            "op": "igual",
+            "valor": "1"
+          }
+        ]
+      },
+      "formula": "F014 * D018",
+      "operandos": [
+        "F014",
+        "D018"
+      ],
+      "codigo_sifen": "2385",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F023",
+          "cita": "Si D015 ≠ PYG y D017 = 1, corresponde al cálculo aritmético: F014 * D018"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2385"
+        },
+        {
+          "doc": "NT008",
+          "ref": "F023"
+        }
+      ]
+    },
+    {
+      "id": "R-F023-A2",
+      "campo": "F023",
+      "tipo": "aritmetica",
+      "texto": "Con moneda extranjera y tipo de cambio por ítem, el total en guaraníes es la suma de los totales en guaraníes por ítem",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "D015",
+            "op": "distinto",
+            "valor": "PYG"
+          },
+          {
+            "campo": "D017",
+            "op": "igual",
+            "valor": "2"
+          }
+        ]
+      },
+      "formula": "suma de todas las ocurrencias de EA009",
+      "operandos": [
+        "EA009"
+      ],
+      "codigo_sifen": "2386",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F023",
+          "cita": "Si D015 ≠ PYG y D017 = 2, corresponde a la suma de todas las ocurrencias de EA009"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2386"
+        },
+        {
+          "doc": "NT008",
+          "ref": "F023"
+        }
+      ]
+    },
+    {
+      "id": "R-F023-A3",
+      "campo": "F023",
+      "tipo": "aritmetica",
+      "texto": "En la Autofactura el total en guaraníes correspondía al total neto; la NT 8 elimina esta fórmula (y el grupo F001 ya prohibía F023 con C002 = 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "formula": "F014",
+      "operandos": [
+        "F014"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F023",
+          "cita": "Cuando C002=4 corresponde a F014"
+        },
+        {
+          "doc": "NT008",
+          "ref": "F023",
+          "cita": "se elimina la diferencia que cuenta con relación a la Autofactura campo F023"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-F024-OP",
+      "campo": "F024",
+      "tipo": "opcional",
+      "texto": "El total más comisión figura en el Manual como opcional, sin observaciones; no existe en el XSD vigente",
+      "contradiccion": "C-505",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F024"
+        }
+      ]
+    }
+  ]
+}

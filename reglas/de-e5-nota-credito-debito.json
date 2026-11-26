@@ -1,0 +1,104 @@
+{
+  "grupo": "E5",
+  "reglas": [
+    {
+      "id": "R-E400-C1",
+      "campo": "E400",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento electrónico seleccionado es Nota de Crédito/Débito Electrónica (C002=5 o 6), es obligatorio informar el grupo de campos que componen la Nota de Crédito/Débito Electrónica (E400)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "5",
+          "6"
+        ]
+      },
+      "codigo_sifen": "1450",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E400",
+          "pagina": 78
+        },
+        {
+          "doc": "MT150",
+          "ref": "1450",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E400-P1",
+      "campo": "E400",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de documento electrónico seleccionado es distinto a Nota de Crédito/Débito Electrónica (C002≠5 o 6), el grupo E400 no debe ser informado",
+      "condicion": {
+        "campo": "C002",
+        "op": "no_en",
+        "valores": [
+          "5",
+          "6"
+        ]
+      },
+      "codigo_sifen": "1451",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E400",
+          "pagina": 78
+        },
+        {
+          "doc": "MT150",
+          "ref": "1451",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E401-OB",
+      "campo": "E401",
+      "tipo": "obligatorio",
+      "texto": "Motivo de emisión: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E401",
+          "pagina": 78
+        }
+      ]
+    },
+    {
+      "id": "R-E402-OB",
+      "campo": "E402",
+      "tipo": "obligatorio",
+      "texto": "Descripción del motivo de emisión: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E402",
+          "pagina": 78
+        }
+      ]
+    },
+    {
+      "id": "R-E402-D1",
+      "campo": "E402",
+      "tipo": "dependencia",
+      "texto": "La descripción del motivo de emisión de la Nota de Crédito/Débito Electrónica debe coincidir con lo informado en el campo E401",
+      "codigo_sifen": "1452",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E402",
+          "pagina": 78
+        },
+        {
+          "doc": "MT150",
+          "ref": "1452",
+          "pagina": 171
+        }
+      ]
+    }
+  ]
+}

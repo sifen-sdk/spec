@@ -1,0 +1,271 @@
+{
+  "grupo": "WS-siRecepEvento",
+  "titulo": "WS recepción evento – siRecepEvento: sobre del servicio (Schemas XML 13 y 14)",
+  "esquemas": [
+    "WS_SiRecepEvento_v150.xsd",
+    "protProcesEventos_v141.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GSch01",
+      "xml": "rEnviEventoDe",
+      "nombre": "eventSubmission",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la petición del WS siRecepEvento (Schema XML 13: siRecepEvento_v150.xsd). El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GSch01",
+          "pagina": 53
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepEvento_v150.xsd rEnviEventoDe"
+        }
+      ]
+    },
+    {
+      "id": "GSch02",
+      "xml": "dId",
+      "nombre": "controlId",
+      "padre": "GSch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de control de envío",
+      "observaciones": "Número secuencial autoincremental, para identificación del mensaje enviado. La responsabilidad de generar y controlar este número es exclusiva del contribuyente.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GSch02",
+          "pagina": 53
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepEvento_v150.xsd rEnviEventoDe/dId"
+        }
+      ]
+    },
+    {
+      "id": "GSch03",
+      "xml": "dEvReg",
+      "nombre": "events",
+      "padre": "GSch01",
+      "tipo": "xml",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Evento a ser registrado",
+      "observaciones": "De acuerdo con el schema y grupos correspondientes descripto en el capítulo 11. En el XSD contiene el grupo gGroupGesEve (GDE000), que se carga con los eventos.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GSch03",
+          "pagina": 53
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepEvento_v150.xsd rEnviEventoDe/dEvReg"
+        }
+      ]
+    },
+    {
+      "id": "GRSch01",
+      "xml": "rRetEnviEventoDe",
+      "nombre": "eventSubmissionResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la respuesta (Schema XML 14: resRecepEvento_v150.xsd). Los tipos del protocolo de respuesta solo están publicados en protProcesEventos_v141.xsd. El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch01",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepEvento_v150.xsd rRetEnviEventoDe"
+        }
+      ]
+    },
+    {
+      "id": "GRSch02",
+      "xml": "dFecProc",
+      "nombre": "processingDateTime",
+      "padre": "GRSch01",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y hora del procesamiento del último evento enviado",
+      "observaciones": "Formato: “AAAA-MM-DD-hh:mm:ss-ss:ss”.",
+      "contradiccion": "C-703",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch02",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepEvento_v150.xsd rRetEnviEventoDe/dFecProc (fecUTC)"
+        }
+      ]
+    },
+    {
+      "id": "GRSch03",
+      "xml": "gResProcEVe",
+      "nombre": "eventResults",
+      "padre": "GRSch01",
+      "tipo": "grupo",
+      "ocurrencia": "1-15",
+      "descripcion": "Grupo Resultado de Procesamiento del Evento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch03",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepEvento_v150.xsd rRetEnviEventoDe/gResProcEVe (tgResProcEVe, 1-15)"
+        }
+      ]
+    },
+    {
+      "id": "GRSch030",
+      "xml": "dEstRes",
+      "nombre": "resultStatus",
+      "padre": "GRSch03",
+      "tipo": "alfanumerico",
+      "longitud": "8-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Estado del resultado",
+      "observaciones": "Aprobado / Aprobado con observación / Rechazado. El Manual indica como nodo padre 'CRSch03' (errata evidente por GRSch03).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch030",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesEventos_v141.xsd tgResProcEVe/dEstRes"
+        }
+      ],
+      "catalogo": "estado-resultado"
+    },
+    {
+      "id": "GRSch031",
+      "xml": "dProtAut",
+      "nombre": "transactionNumber",
+      "padre": "GRSch03",
+      "tipo": "numerico",
+      "longitud": "10",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de transacción",
+      "observaciones": "Generado para cada registro de evento conforme dCodRes=0600.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch031",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesEventos_v141.xsd tgResProcEVe/dProtAut (xs:long)"
+        }
+      ]
+    },
+    {
+      "id": "GRSch032",
+      "xml": "id",
+      "nombre": "eventId",
+      "padre": "GRSch03",
+      "tipo": "numerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador del evento",
+      "observaciones": "Corresponde al id autogenerado por el emisor, para identificar cada evento.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch032",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesEventos_v141.xsd tgResProcEVe/id (tid)"
+        }
+      ]
+    },
+    {
+      "id": "GRSch033",
+      "xml": "gResProc",
+      "nombre": "processingResults",
+      "padre": "GRSch03",
+      "tipo": "grupo",
+      "ocurrencia": "1-100",
+      "descripcion": "Grupo Resultado de Procesamiento",
+      "observaciones": "Para producción se limitará a 5 mensajes máximos sin modificación de esta especificación.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch033",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesEventos_v141.xsd tgResProcEVe/gResProc (1-100)"
+        }
+      ]
+    },
+    {
+      "id": "GRSch034",
+      "xml": "dCodRes",
+      "nombre": "resultCode",
+      "padre": "GRSch033",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 11.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch034",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesEventos_v141.xsd tgResProc/dCodRes (tdCodRes)"
+        }
+      ]
+    },
+    {
+      "id": "GRSch035",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "GRSch033",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje del resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 11.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GRSch035",
+          "pagina": 54
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesEventos_v141.xsd tgResProc/dMsgRes (tdMsgRes)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "forma-pago-rde",
+  "titulo": "Forma de pago (grupo gCamRDE)",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiForPag, tdDesForPag"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "iForPag",
+    "dDesForPag"
+  ],
+  "nota": "Solo en el XSD (no figura en el Manual ni en las Notas Técnicas). La correspondencia código-descripción se infiere del orden de las enumeraciones de ambos tipos.",
+  "contradiccion": "C-918",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Efectivo"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Transferencia bancaria"
+    }
+  ]
+}

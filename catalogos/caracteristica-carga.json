@@ -1,0 +1,46 @@
+{
+  "id": "caracteristica-carga",
+  "titulo": "Características de la carga",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "G057"
+    },
+    {
+      "doc": "MT150",
+      "ref": "G058"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_v150.xsd iCarCarga (1, 2, 3)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "G057",
+    "G058"
+  ],
+  "descripciones": {
+    "G057": "G058"
+  },
+  "xml": [
+    "iCarCarga",
+    "dDesCarCarga"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Mercaderías con cadena de frío"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Carga peligrosa"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Otro de características similares (especificar)",
+      "observacion": "Si G057 = 3, informar la característica de la carga",
+      "descripcion_libre": true
+    }
+  ]
+}

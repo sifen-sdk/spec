@@ -1,0 +1,281 @@
+{
+  "grupo": "E8",
+  "reglas": [
+    {
+      "id": "R-E700-O1", "campo": "E700", "tipo": "obligatorio",
+      "texto": "El DE debe informar al menos un ítem (gCamItem) y como máximo 999",
+      "fuentes": [{ "doc": "MT150", "ref": "E700", "cita": "G 1-999" }]
+    },
+
+    {
+      "id": "R-E701-O1", "campo": "E701", "tipo": "obligatorio",
+      "texto": "El código interno del ítem es obligatorio",
+      "fuentes": [{ "doc": "MT150", "ref": "E701" }]
+    },
+    {
+      "id": "R-E701-F1", "campo": "E701", "tipo": "formato",
+      "texto": "El código interno tiene longitud de 1 a 20 caracteres",
+      "fuentes": [{ "doc": "MT150", "ref": "E701", "cita": "A 1-20" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E701-F2", "campo": "E701", "tipo": "formato",
+      "texto": "El código interno tiene longitud de 1 a 50 caracteres",
+      "fuentes": [{ "doc": "NT009", "ref": "1.1 E701", "cita": "A 1-50" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E701-D1", "campo": "E701", "tipo": "dependencia", "no_declarativa": true,
+      "texto": "No se pueden tener ítems distintos de mercadería o servicio con el mismo código interno en el catastro de productos o servicios del emisor; el código se puede repetir en el DE siempre que el producto o servicio sea el mismo",
+      "fuentes": [{ "doc": "MT150", "ref": "E701" }, { "doc": "NT009", "ref": "1.1 E701" }]
+    },
+
+    {
+      "id": "R-E702-O1", "campo": "E702", "tipo": "opcional",
+      "texto": "La partida arancelaria es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E702", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E703-O1", "campo": "E703", "tipo": "opcional",
+      "texto": "La Nomenclatura común del Mercosur (NCM) es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E703", "cita": "0-1" }]
+    },
+
+    {
+      "id": "R-E704-C1", "campo": "E704", "tipo": "condicional",
+      "texto": "Si el tipo de operación es B2G (D202=3), es obligatorio informar el Código DNCP – Nivel General",
+      "condicion": { "campo": "D202", "op": "igual", "valor": "3" },
+      "codigo_sifen": "1800",
+      "fuentes": [{ "doc": "MT150", "ref": "E704", "cita": "Obligatorio si D202 = 3" }, { "doc": "MT150", "ref": "1800" }, { "doc": "NT026", "ref": "2.2 E704 1800", "cita": "Se excluyen las siguientes reglas de validación" }],
+      "vigencia": { "hasta": { "test": "2025-06-09", "produccion": "2025-06-16" } }
+    },
+    {
+      "id": "R-E704-O1", "campo": "E704", "tipo": "opcional",
+      "texto": "El Código DNCP – Nivel General es opcional, incluso si D202 = 3 (B2G); se informa si existe el código de la DNCP",
+      "fuentes": [{ "doc": "NT026", "ref": "1.1 E704", "cita": "Opcional si D202 = 3" }],
+      "vigencia": { "desde": { "test": "2025-06-09", "produccion": "2025-06-16" } }
+    },
+    {
+      "id": "R-E704-F1", "campo": "E704", "tipo": "formato",
+      "texto": "Colocar 0 (cero) a la izquierda para completar los espacios vacíos del Código DNCP – Nivel General",
+      "fuentes": [{ "doc": "MT150", "ref": "E704" }, { "doc": "NT026", "ref": "1.1 E704" }]
+    },
+
+    {
+      "id": "R-E705-C1", "campo": "E705", "tipo": "condicional",
+      "texto": "Si se informa el Código DNCP – Nivel General (E704) es obligatorio informar el Código DNCP – Nivel Específico",
+      "condicion": { "campo": "E704", "op": "presente" },
+      "codigo_sifen": "1801",
+      "fuentes": [{ "doc": "MT150", "ref": "E705", "cita": "Obligatorio si existe el campo E704" }, { "doc": "MT150", "ref": "1801" }, { "doc": "NT026", "ref": "2.2 E705 1801", "cita": "Se excluyen las siguientes reglas de validación" }],
+      "vigencia": { "hasta": { "test": "2025-06-09", "produccion": "2025-06-16" } }
+    },
+    {
+      "id": "R-E705-O1", "campo": "E705", "tipo": "opcional",
+      "texto": "El Código DNCP – Nivel Específico es opcional, incluso si D202 = 3 (B2G); se informa si existe el código de la DNCP",
+      "fuentes": [{ "doc": "NT026", "ref": "1.1 E705", "cita": "Opcional si D202 = 3" }],
+      "vigencia": { "desde": { "test": "2025-06-09", "produccion": "2025-06-16" } }
+    },
+    {
+      "id": "R-E705-F1", "campo": "E705", "tipo": "formato",
+      "texto": "Colocar 0 (cero) a la izquierda para completar los espacios vacíos del Código DNCP – Nivel Específico",
+      "fuentes": [{ "doc": "NT026", "ref": "1.1 E705" }],
+      "vigencia": { "desde": { "test": "2025-06-09", "produccion": "2025-06-16" } }
+    },
+
+    {
+      "id": "R-E706-C1", "campo": "E706", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Informar el código GTIN por producto si la mercadería tiene GTIN",
+      "fuentes": [{ "doc": "MT150", "ref": "E706", "cita": "Informar si la mercadería tiene GTIN" }]
+    },
+    {
+      "id": "R-E706-F1", "campo": "E706", "tipo": "formato",
+      "texto": "El código GTIN por producto tiene 8, 12, 13 o 14 dígitos",
+      "contradiccion": "C-312",
+      "fuentes": [{ "doc": "MT150", "ref": "E706", "cita": "N 8,12,13,14" }]
+    },
+    {
+      "id": "R-E707-C1", "campo": "E707", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Informar el código GTIN por paquete si el paquete tiene GTIN",
+      "fuentes": [{ "doc": "MT150", "ref": "E707", "cita": "Informar si el paquete tiene GTIN" }]
+    },
+    {
+      "id": "R-E707-F1", "campo": "E707", "tipo": "formato",
+      "texto": "El código GTIN por paquete tiene 8, 12, 13 o 14 dígitos",
+      "contradiccion": "C-312",
+      "fuentes": [{ "doc": "MT150", "ref": "E707", "cita": "N 8,12,13,14" }]
+    },
+
+    {
+      "id": "R-E708-O1", "campo": "E708", "tipo": "obligatorio",
+      "texto": "La descripción del producto y/o servicio es obligatoria",
+      "fuentes": [{ "doc": "MT150", "ref": "E708" }]
+    },
+    {
+      "id": "R-E708-F1", "campo": "E708", "tipo": "formato",
+      "texto": "La descripción del producto y/o servicio tiene longitud de 1 a 120 caracteres",
+      "fuentes": [{ "doc": "MT150", "ref": "E708", "cita": "A 1-120" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E708-F2", "campo": "E708", "tipo": "formato",
+      "texto": "La descripción del producto y/o servicio tiene longitud de 1 a 2000 caracteres",
+      "fuentes": [{ "doc": "NT009", "ref": "1.1 E708", "cita": "A 1-2000" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+
+    {
+      "id": "R-E709-O1", "campo": "E709", "tipo": "obligatorio",
+      "texto": "La unidad de medida es obligatoria",
+      "fuentes": [{ "doc": "MT150", "ref": "E709" }]
+    },
+    {
+      "id": "R-E709-F1", "campo": "E709", "tipo": "formato",
+      "texto": "La unidad de medida se informa según la Tabla 5 – Unidad de Medida, utilizando el atributo “ID”",
+      "fuentes": [{ "doc": "MT150", "ref": "E709" }]
+    },
+    {
+      "id": "R-E709-F2", "campo": "E709", "tipo": "formato",
+      "texto": "Se amplía la Tabla 5 – Codificación de unidades de medida con los códigos 111 a 140; su inclusión es opcional de acuerdo a las necesidades de los facturadores electrónicos",
+      "fuentes": [{ "doc": "NT023", "ref": "3.1 Tabla 5", "cita": "Inclusión opcional de acuerdo a las necesidades de los facturadores electrónicos" }],
+      "vigencia": { "desde": { "test": "2024-08-30", "produccion": "2024-09-27" } }
+    },
+    {
+      "id": "R-E709-D1", "campo": "E709", "tipo": "dependencia",
+      "texto": "Si el tipo de operación es B2G (D202 = 3), la unidad de medida utiliza los datos del WS del link de la DNCP",
+      "condicion": { "campo": "D202", "op": "igual", "valor": "3" },
+      "fuentes": [{ "doc": "MT150", "ref": "E709", "cita": "Si D202 = 3 utilizar los datos del WS del link de la DNCP" }]
+    },
+
+    {
+      "id": "R-E710-O1", "campo": "E710", "tipo": "obligatorio",
+      "texto": "La descripción de la unidad de medida es obligatoria",
+      "fuentes": [{ "doc": "MT150", "ref": "E710" }]
+    },
+    {
+      "id": "R-E710-D1", "campo": "E710", "tipo": "dependencia",
+      "texto": "La descripción de la unidad de medida debe coincidir con lo informado en el campo E709 (atributo “Código” de la Tabla 5)",
+      "codigo_sifen": "1802",
+      "fuentes": [{ "doc": "MT150", "ref": "E710" }, { "doc": "MT150", "ref": "1802" }]
+    },
+
+    {
+      "id": "R-E711-O1", "campo": "E711", "tipo": "obligatorio",
+      "texto": "La cantidad del producto y/o servicio es obligatoria",
+      "fuentes": [{ "doc": "MT150", "ref": "E711" }]
+    },
+    {
+      "id": "R-E711-F1", "campo": "E711", "tipo": "formato",
+      "texto": "La cantidad admite hasta 10 enteros y de 0 a 4 decimales",
+      "fuentes": [{ "doc": "MT150", "ref": "E711", "cita": "N 1-10p(0-4)" }],
+      "vigencia": { "hasta": { "test": "2024-08-30", "produccion": "2024-09-27" } }
+    },
+    {
+      "id": "R-E711-F2", "campo": "E711", "tipo": "formato",
+      "texto": "La cantidad admite hasta 10 enteros y de 0 a 8 decimales",
+      "fuentes": [{ "doc": "NT023", "ref": "1.2 E711", "cita": "N 1-10p(0-8)" }],
+      "vigencia": { "desde": { "test": "2024-08-30", "produccion": "2024-09-27" } }
+    },
+
+    {
+      "id": "R-E712-O1", "campo": "E712", "tipo": "opcional",
+      "texto": "El código del país de origen del producto es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E712", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E712-F1", "campo": "E712", "tipo": "formato",
+      "texto": "El código del país de origen se informa según el XSD de Codificación de Países",
+      "fuentes": [{ "doc": "MT150", "ref": "E712" }]
+    },
+    {
+      "id": "R-E713-C1", "campo": "E713", "tipo": "condicional",
+      "texto": "La descripción del país de origen es obligatoria si se informa el código del país de origen (E712)",
+      "condicion": { "campo": "E712", "op": "presente" },
+      "fuentes": [{ "doc": "MT150", "ref": "E713", "cita": "Obligatorio si existe el campo E712" }]
+    },
+    {
+      "id": "R-E713-D1", "campo": "E713", "tipo": "dependencia",
+      "texto": "La descripción del país de origen del producto debe coincidir con lo informado en el campo E712",
+      "codigo_sifen": "1804",
+      "fuentes": [{ "doc": "MT150", "ref": "1804" }]
+    },
+
+    {
+      "id": "R-E714-O1", "campo": "E714", "tipo": "opcional",
+      "texto": "La información de interés del emisor con respecto al ítem es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E714", "cita": "0-1" }]
+    },
+
+    {
+      "id": "R-E715-O1", "campo": "E715", "tipo": "opcional",
+      "texto": "El código de datos de relevancia de las mercaderías es opcional si C002 = 7 (según las observaciones del campo)",
+      "condicion": { "campo": "C002", "op": "igual", "valor": "7" },
+      "contradiccion": "C-301",
+      "fuentes": [{ "doc": "MT150", "ref": "E715", "cita": "Opcional si C002 = 7" }]
+    },
+    {
+      "id": "R-E715-C1", "campo": "E715", "tipo": "condicional",
+      "texto": "Si el tipo de documento es Nota de remisión electrónica (C002=7), es obligatorio informar el código de datos de relevancia de las mercaderías",
+      "condicion": { "campo": "C002", "op": "igual", "valor": "7" },
+      "codigo_sifen": "1805",
+      "contradiccion": "C-301",
+      "fuentes": [{ "doc": "MT150", "ref": "1805" }]
+    },
+    {
+      "id": "R-E715-P1", "campo": "E715", "tipo": "prohibido",
+      "texto": "No se debe informar el código de datos de relevancia de las mercaderías cuando el tipo de documento electrónico es distinto a Nota de remisión (C002≠7)",
+      "condicion": { "campo": "C002", "op": "distinto", "valor": "7" },
+      "codigo_sifen": "1807",
+      "fuentes": [{ "doc": "MT150", "ref": "1807" }]
+    },
+    {
+      "id": "R-E715-F1", "campo": "E715", "tipo": "formato",
+      "texto": "Valores admitidos: 1 = Tolerancia de quiebra, 2 = Tolerancia de merma (según RG 41/14)",
+      "fuentes": [{ "doc": "MT150", "ref": "E715" }]
+    },
+
+    {
+      "id": "R-E716-O1", "campo": "E716", "tipo": "opcional",
+      "texto": "La descripción del código de datos de relevancia de las mercaderías tiene ocurrencia 0-1; el Manual no anota condición de obligatoriedad",
+      "fuentes": [{ "doc": "MT150", "ref": "E716", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E716-D1", "campo": "E716", "tipo": "dependencia",
+      "texto": "La descripción del código de datos de relevancia de las mercaderías debe coincidir con lo informado en el campo E715 (1=“Tolerancia de quiebra”, 2=“Tolerancia de merma”)",
+      "codigo_sifen": "1806",
+      "fuentes": [{ "doc": "MT150", "ref": "E716" }, { "doc": "MT150", "ref": "1806" }]
+    },
+
+    {
+      "id": "R-E717-C1", "campo": "E717", "tipo": "condicional",
+      "texto": "La cantidad de quiebra o merma es obligatoria si se informa E715 (según las observaciones del campo)",
+      "condicion": { "campo": "E715", "op": "presente" },
+      "contradiccion": "C-302",
+      "fuentes": [{ "doc": "MT150", "ref": "E717", "cita": "Obligatorio si se informa E715" }]
+    },
+    {
+      "id": "R-E717-C2", "campo": "E717", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Cuando se informa el código de datos de relevancia de mercaderías (E715) es obligatorio informar uno de los siguientes datos: la cantidad de quiebra o merma (E717) o el porcentaje de quiebra o merma (E718)",
+      "codigo_sifen": "1808",
+      "contradiccion": "C-302",
+      "fuentes": [{ "doc": "MT150", "ref": "1808" }]
+    },
+    {
+      "id": "R-E717-D1", "campo": "E717", "tipo": "dependencia",
+      "texto": "La cantidad de quiebra o merma se expresa en la unidad de medida elegida en E709",
+      "fuentes": [{ "doc": "MT150", "ref": "E717" }]
+    },
+    {
+      "id": "R-E718-C1", "campo": "E718", "tipo": "condicional",
+      "texto": "El porcentaje de quiebra o merma es obligatorio si se informa E715 (según las observaciones del campo)",
+      "condicion": { "campo": "E715", "op": "presente" },
+      "contradiccion": "C-302",
+      "fuentes": [{ "doc": "MT150", "ref": "E718", "cita": "Obligatorio si se informa E715" }]
+    },
+
+    {
+      "id": "R-E719-C1", "campo": "E719", "tipo": "condicional", "no_declarativa": true,
+      "texto": "El CDC del anticipo es obligatorio cuando se utilice una factura asociada con el tipo de transacción igual a Anticipo (D011 de la factura asociada igual a 9)",
+      "fuentes": [{ "doc": "MT150", "ref": "E719" }]
+    }
+  ]
+}

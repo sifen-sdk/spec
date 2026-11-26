@@ -1,0 +1,67 @@
+{
+  "grupo": "J",
+  "titulo": "Campos fuera de la Firma Digital",
+  "esquemas": [
+    "DE_v150.xsd",
+    "siRecepDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "J001",
+      "xml": "gCamFuFD",
+      "nombre": "unsignedFields",
+      "padre": "AA001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Campos fuera de la firma digital",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "J001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd rDE/gCamFuFD"
+        }
+      ]
+    },
+    {
+      "id": "J002",
+      "xml": "dCarQR",
+      "nombre": "qrCode",
+      "padre": "J001",
+      "tipo": "alfanumerico",
+      "longitud": "100-600",
+      "ocurrencia": "1-1",
+      "descripcion": "Caracteres correspondientes al código QR",
+      "observaciones": "Contiene la URL de consulta del QR (capítulo 13.8 del Manual)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "J002"
+        },
+        {
+          "doc": "MT150",
+          "ref": "13.8"
+        }
+      ]
+    },
+    {
+      "id": "J003",
+      "xml": "dInfAdic",
+      "nombre": "additionalInfo",
+      "padre": "J001",
+      "tipo": "alfanumerico",
+      "longitud": "1-5000",
+      "ocurrencia": "0-1",
+      "descripcion": "Información adicional de interés para el emisor",
+      "observaciones": "Campo de información de interés exclusivo del emisor para aclaraciones a sus clientes. Puede formar parte del DE o KuDE enviado al receptor, pero NO formará parte del DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "J003"
+        }
+      ]
+    }
+  ]
+}

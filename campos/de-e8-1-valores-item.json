@@ -1,0 +1,83 @@
+{
+  "grupo": "E8.1",
+  "titulo": "Precio, tipo de cambio y valor total de la operación por ítem; descuentos, anticipos y valor total por ítem (E8.1.1)",
+  "esquemas": ["DE_v150.xsd"],
+  "campos": [
+    {
+      "id": "E720", "xml": "gValorItem", "nombre": "valuation", "padre": "E700", "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que describen los precios, descuentos y valor total por ítem",
+      "fuentes": [{ "doc": "MT150", "ref": "E720" }]
+    },
+    {
+      "id": "E721", "xml": "dPUniProSer", "nombre": "unitPrice", "padre": "E720", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "1-1",
+      "descripcion": "Precio unitario del producto y/o servicio (incluidos impuestos)",
+      "fuentes": [{ "doc": "MT150", "ref": "E721" }]
+    },
+    {
+      "id": "E725", "xml": "dTiCamIt", "nombre": "exchangeRate", "padre": "E720", "tipo": "numerico",
+      "longitud": "1-5p(0-4)", "ocurrencia": "0-1",
+      "descripcion": "Tipo de cambio por ítem",
+      "contradiccion": "C-303",
+      "fuentes": [{ "doc": "MT150", "ref": "E725" }]
+    },
+    {
+      "id": "E727", "xml": "dTotBruOpeItem", "nombre": "grossTotal", "padre": "E720", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "1-1",
+      "descripcion": "Total bruto de la operación por ítem",
+      "fuentes": [{ "doc": "MT150", "ref": "E727" }]
+    },
+    {
+      "id": "EA001", "xml": "gValorRestaItem", "nombre": "discountsAndAdvances", "padre": "E720", "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Campos que describen los descuentos, anticipos valor total por ítem",
+      "fuentes": [{ "doc": "MT150", "ref": "EA001" }]
+    },
+    {
+      "id": "EA002", "xml": "dDescItem", "nombre": "discountAmount", "padre": "EA001", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "0-1",
+      "descripcion": "Descuento particular sobre el precio unitario por ítem (incluidos impuestos)",
+      "fuentes": [{ "doc": "MT150", "ref": "EA002" }]
+    },
+    {
+      "id": "EA003", "xml": "dPorcDesIt", "nombre": "discountRate", "padre": "EA001", "tipo": "numerico",
+      "longitud": "1-3p(0-8)", "ocurrencia": "0-1",
+      "descripcion": "Porcentaje de descuento particular por ítem",
+      "fuentes": [{ "doc": "MT150", "ref": "EA003" }]
+    },
+    {
+      "id": "EA004", "xml": "dDescGloItem", "nombre": "globalDiscountAmount", "padre": "EA001", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "0-1",
+      "descripcion": "Descuento global sobre el precio unitario por ítem (incluidos impuestos)",
+      "observaciones": "Si se cuenta con un descuento global, debe ser aplicado (no es prorrateo) a cada uno de los ítems, independientemente que un ítem cuente con un descuento particular.",
+      "fuentes": [{ "doc": "MT150", "ref": "EA004" }, { "doc": "NT001", "ref": "A-1 EA004" }]
+    },
+    {
+      "id": "EA006", "xml": "dAntPreUniIt", "nombre": "advanceAmount", "padre": "EA001", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "0-1",
+      "descripcion": "Anticipo particular sobre el precio unitario por ítem (incluidos impuestos)",
+      "fuentes": [{ "doc": "MT150", "ref": "EA006" }]
+    },
+    {
+      "id": "EA007", "xml": "dAntGloPreUniIt", "nombre": "globalAdvanceAmount", "padre": "EA001", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "0-1",
+      "descripcion": "Anticipo global sobre el precio unitario por ítem (incluidos impuestos)",
+      "observaciones": "Si se cuenta con un anticipo global, debe ser aplicado a cada uno de los ítems, independientemente de que un ítem cuente con un anticipo particular.",
+      "fuentes": [{ "doc": "MT150", "ref": "EA007" }]
+    },
+    {
+      "id": "EA008", "xml": "dTotOpeItem", "nombre": "total", "padre": "EA001", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "1-1",
+      "descripcion": "Valor total de la operación por ítem",
+      "contradiccion": "C-305",
+      "fuentes": [{ "doc": "MT150", "ref": "EA008" }]
+    },
+    {
+      "id": "EA009", "xml": "dTotOpeGs", "nombre": "guaraniTotal", "padre": "EA001", "tipo": "numerico",
+      "longitud": "1-15p(0-8)", "ocurrencia": "0-1",
+      "descripcion": "Valor total de la operación por ítem en guaraníes",
+      "fuentes": [{ "doc": "MT150", "ref": "EA009" }]
+    }
+  ]
+}

@@ -1,0 +1,811 @@
+{
+  "titulo": "Web services de SIFEN",
+  "tomado": "2026-11-26",
+  "namespace": {
+    "valor": "http://ekuatia.set.gov.py/sifen/xsd",
+    "fuentes": [
+      {
+        "doc": "MT150",
+        "ref": "7.2.2",
+        "pagina": 31
+      },
+      {
+        "doc": "XSD",
+        "ref": "WS_SiRecepDE_v150.xsd targetNamespace"
+      }
+    ]
+  },
+  "transporte": {
+    "protocolo": "TLS 1.2 con autenticación mutua mediante certificado digital",
+    "estilo_soap": "Document/Literal; el mensaje XML va en soap:Body",
+    "observaciones": "Las validaciones del certificado de transmisión las realiza el protocolo TLS durante la conexión: ante un error se retorna un HTML con el mensaje de Acceso Denegado (NT 16, sección 12.2.1, vigente en test desde 2023-08-25 y en producción desde 2023-09-22). El acceso a los servicios puede limitarse por contribuyente, por dirección IP u otros criterios según la política de seguridad de la SET (MT 7.11).",
+    "fuentes": [
+      {
+        "doc": "MT150",
+        "ref": "7.4",
+        "pagina": 36,
+        "cita": "TLS versión 1.2, con autenticación mutua"
+      },
+      {
+        "doc": "MT150",
+        "ref": "7.11",
+        "pagina": 42
+      },
+      {
+        "doc": "NT016",
+        "ref": "1.4 Sección 12.2.1",
+        "pagina": 4,
+        "cita": "Retorna un html con el mensaje de error de Acceso Denegado"
+      },
+      {
+        "doc": "GUIA-MP",
+        "ref": "Introducción",
+        "pagina": 3
+      }
+    ]
+  },
+  "servicios": [
+    {
+      "id": "recepcion",
+      "nombre": "siRecepDE",
+      "funcion": "Recibir un DE",
+      "operacion": "SiRecepDE",
+      "proceso": "sincrono",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "SOAP, versión 1.2"
+          },
+          {
+            "doc": "MT150",
+            "ref": "7.9",
+            "pagina": 41,
+            "cita": "Estándar de intercambio de datos SOAP versión 1.2"
+          }
+        ]
+      },
+      "endpoint": {
+        "test": {
+          "ruta": "/de/ws/sync/recibe.wsd?wsdl",
+          "url": "https://sifen-test.set.gov.py/de/ws/sync/recibe.wsd?wsdl"
+        },
+        "produccion": {
+          "ruta": "/de/ws/sync/recibe.wsdl?wsdl",
+          "url": "https://sifen.set.gov.py/de/ws/sync/recibe.wsdl?wsdl"
+        },
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.10",
+            "pagina": 42
+          }
+        ],
+        "observaciones": "La ruta de test se transcribe tal como figura en el Manual ('recibe.wsd?wsdl', sin la 'l' final); ver C-723."
+      },
+      "peticion": {
+        "raiz": "rEnviDe",
+        "esquema": "WS_SiRecepDE_v150.xsd",
+        "campos": "campos/ws-recepcion.json"
+      },
+      "respuesta": {
+        "raiz": "rRetEnviDe",
+        "esquema": "WS_SiRecepDE_v150.xsd (incluye protProcesDE_v150.xsd)"
+      },
+      "tamano_maximo_kb": 1000,
+      "codigo_tamano_excedido": "0200",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.1",
+          "pagina": 46
+        },
+        {
+          "doc": "MT150",
+          "ref": "BA01",
+          "pagina": 155
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepDE_v150.xsd"
+        }
+      ],
+      "observaciones": "El Manual nombra el esquema siRecepDE_v150.xsd / resRecepDE_v150.xsd; el sobre publicado es WS_SiRecepDE_v150.xsd. Tiempo de respuesta de validación establecido por la SET: máximo 1 minuto (MT 6.2).",
+      "contradicciones": [
+        "C-701",
+        "C-723"
+      ]
+    },
+    {
+      "id": "recepcion-lote",
+      "nombre": "siRecepLoteDE",
+      "funcion": "Recibir un lote conteniendo varios DE",
+      "operacion": "SiRecepLoteDE",
+      "proceso": "asincrono",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "SOAP, versión 1.2"
+          },
+          {
+            "doc": "MT150",
+            "ref": "7.9",
+            "pagina": 41,
+            "cita": "Estándar de intercambio de datos SOAP versión 1.2"
+          }
+        ]
+      },
+      "endpoint": {
+        "test": {
+          "ruta": "/de/ws/async/recibe-lote.wsdl?wsdl",
+          "url": "https://sifen-test.set.gov.py/de/ws/async/recibe-lote.wsdl?wsdl"
+        },
+        "produccion": {
+          "ruta": "/de/ws/async/recibe-lote.wsdl?wsdl",
+          "url": "https://sifen.set.gov.py/de/ws/async/recibe-lote.wsdl?wsdl"
+        },
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.10",
+            "pagina": 42
+          }
+        ],
+        "forma_alternativa": {
+          "plantilla": "https://{ambiente}/de/ws/async/recibe-lote.wsdl",
+          "ambientes": {
+            "test": "sifen-test.set.gov.py",
+            "produccion": "sifen.set.gov.py"
+          },
+          "observaciones": "La Guía indica que el WSDL se obtiene agregando ?wsdl al final de la URL.",
+          "fuentes": [
+            {
+              "doc": "GUIA-MP",
+              "ref": "Servicios Web Asíncronos",
+              "pagina": 5
+            }
+          ]
+        }
+      },
+      "peticion": {
+        "raiz": "rEnvioLote",
+        "esquema": "WS_SiRecepLoteDE_v141.xsd",
+        "campos": "campos/ws-lote.json",
+        "contenido": "xDE = Base64 del archivo .zip que contiene el XML rLoteDE (hasta 50 rDE)"
+      },
+      "respuesta": {
+        "raiz": "rResEnviLoteDe",
+        "esquema": "WS_SiRecepLoteDE_v141.xsd"
+      },
+      "tamano_maximo_kb": {
+        "MT150": 10000,
+        "GUIA-MP": 1000
+      },
+      "codigo_tamano_excedido": {
+        "MT150": "0270",
+        "GUIA-MP": "0301"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.2",
+          "pagina": 48
+        },
+        {
+          "doc": "MT150",
+          "ref": "BD01",
+          "pagina": 156
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "recibe-lote",
+          "pagina": 8
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd"
+        }
+      ],
+      "observaciones": "Solo está publicada la versión v141 del esquema (el Manual cita SiRecepLoteDE_v150.xsd).",
+      "contradicciones": [
+        "C-706",
+        "C-707"
+      ]
+    },
+    {
+      "id": "consulta-lote",
+      "nombre": "siResultLoteDE",
+      "funcion": "Devuelve el resultado del proceso de cada uno de los DE del lote",
+      "operacion": "SiResultLoteDE",
+      "proceso": "asincrono",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "SOAP, versión 1.2"
+          },
+          {
+            "doc": "MT150",
+            "ref": "7.9",
+            "pagina": 41,
+            "cita": "Estándar de intercambio de datos SOAP versión 1.2"
+          }
+        ]
+      },
+      "endpoint": {
+        "test": {
+          "ruta": "/de/ws/consultas/consulta-lote.wsdl?wsdl",
+          "url": "https://sifen-test.set.gov.py/de/ws/consultas/consulta-lote.wsdl?wsdl"
+        },
+        "produccion": {
+          "ruta": "/de/ws/consultas/consulta-lote.wsdl?wsdl",
+          "url": "https://sifen.set.gov.py/de/ws/consultas/consulta-lote.wsdl?wsdl"
+        },
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.10",
+            "pagina": 42
+          }
+        ],
+        "forma_alternativa": {
+          "plantilla": "https://{ambiente}/de/ws/consultas/consulta-lote.wsdl",
+          "ambientes": {
+            "test": "sifen-test.set.gov.py",
+            "produccion": "sifen.set.gov.py"
+          },
+          "observaciones": "La Guía indica que el WSDL se obtiene agregando ?wsdl al final de la URL.",
+          "fuentes": [
+            {
+              "doc": "GUIA-MP",
+              "ref": "Servicios Web Asíncronos",
+              "pagina": 5
+            }
+          ]
+        }
+      },
+      "peticion": {
+        "raiz": "rEnviConsLoteDe",
+        "esquema": "WS_SiConsLote_v141.xsd",
+        "campos": "campos/ws-consulta-lote.json"
+      },
+      "respuesta": {
+        "raiz": "rResEnviConsLoteDe",
+        "esquema": "WS_SiConsLote_v141.xsd"
+      },
+      "tamano_maximo_kb": 1000,
+      "codigo_tamano_excedido": "0320",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.3",
+          "pagina": 49
+        },
+        {
+          "doc": "MT150",
+          "ref": "BG01",
+          "pagina": 157
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta-lote",
+          "pagina": 10
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd"
+        }
+      ],
+      "observaciones": "El Manual clasifica el servicio como «Proceso: Asíncrono» (9.3), aunque cada llamada responde en la misma conexión. Solo está publicada la versión v141 del esquema.",
+      "contradicciones": [
+        "C-712",
+        "C-713",
+        "C-714",
+        "C-715"
+      ]
+    },
+    {
+      "id": "consulta-de",
+      "nombre": "siConsDE",
+      "funcion": "Devuelve el resultado de la consulta de un DE por su CDC",
+      "operacion": "SiConsDE",
+      "proceso": "sincrono",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "SOAP, versión 1.2"
+          },
+          {
+            "doc": "MT150",
+            "ref": "7.9",
+            "pagina": 41,
+            "cita": "Estándar de intercambio de datos SOAP versión 1.2"
+          }
+        ]
+      },
+      "endpoint": {
+        "test": {
+          "ruta": "/de/ws/consultas/consulta.wsdl?wsdl",
+          "url": "https://sifen-test.set.gov.py/de/ws/consultas/consulta.wsdl?wsdl"
+        },
+        "produccion": {
+          "ruta": "/de/ws/consultas/consulta.wsdl?wsdl",
+          "url": "https://sifen.set.gov.py/de/ws/consultas/consulta.wsdl?wsdl"
+        },
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.10",
+            "pagina": 42
+          }
+        ],
+        "forma_alternativa": {
+          "plantilla": "https://{ambiente}/de/ws/consultas/consulta.wsdl",
+          "ambientes": {
+            "test": "sifen-test.set.gov.py",
+            "produccion": "sifen.set.gov.py"
+          },
+          "observaciones": "La Guía indica que el WSDL se obtiene agregando ?wsdl al final de la URL.",
+          "fuentes": [
+            {
+              "doc": "GUIA-MP",
+              "ref": "Servicios Web Asíncronos",
+              "pagina": 5
+            }
+          ]
+        }
+      },
+      "peticion": {
+        "raiz": "rEnviConsDeRequest",
+        "esquema": "WS_SiConsDE_v141.xsd",
+        "campos": "campos/ws-consulta-de.json"
+      },
+      "respuesta": {
+        "raiz": "rEnviConsDeResponse",
+        "esquema": "WS_SiConsDE_v141.xsd"
+      },
+      "tamano_maximo_kb": 1000,
+      "codigo_tamano_excedido": "0380",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.4",
+          "pagina": 51
+        },
+        {
+          "doc": "MT150",
+          "ref": "BJ01",
+          "pagina": 157
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.9",
+          "pagina": 3
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta",
+          "pagina": 12
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd"
+        }
+      ],
+      "observaciones": "El Manual nombra las raíces rEnviConsDe (corregida por la NT 10) y rResEnviConsDe. Solo está publicada la versión v141 del esquema.",
+      "contradicciones": [
+        "C-716",
+        "C-717",
+        "C-718"
+      ]
+    },
+    {
+      "id": "recepcion-evento",
+      "nombre": "siRecepEvento",
+      "funcion": "Registra un evento en un DE",
+      "operacion": "siRecepEvento",
+      "proceso": "sincrono",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "SOAP, versión 1.2"
+          },
+          {
+            "doc": "MT150",
+            "ref": "7.9",
+            "pagina": 41,
+            "cita": "Estándar de intercambio de datos SOAP versión 1.2"
+          }
+        ]
+      },
+      "endpoint": {
+        "test": {
+          "ruta": "/de/ws/eventos/evento.wsdl?wsdl",
+          "url": "https://sifen-test.set.gov.py/de/ws/eventos/evento.wsdl?wsdl"
+        },
+        "produccion": {
+          "ruta": "/de/ws/eventos/evento.wsdl?wsdl",
+          "url": "https://sifen.set.gov.py/de/ws/eventos/evento.wsdl?wsdl"
+        },
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.10",
+            "pagina": 42
+          }
+        ]
+      },
+      "peticion": {
+        "raiz": "rEnviEventoDe",
+        "esquema": "WS_SiRecepEvento_v150.xsd",
+        "campos": "campos/ws-evento.json"
+      },
+      "respuesta": {
+        "raiz": "rRetEnviEventoDe",
+        "esquema": "WS_SiRecepEvento_v150.xsd (incluye protProcesEventos_v141.xsd)"
+      },
+      "tamano_maximo_kb": 1000,
+      "codigo_tamano_excedido": "0560",
+      "maximo_eventos_por_mensaje": 15,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.5",
+          "pagina": 53
+        },
+        {
+          "doc": "MT150",
+          "ref": "BS01",
+          "pagina": 159
+        },
+        {
+          "doc": "MT150",
+          "ref": "11",
+          "pagina": 120
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepEvento_v150.xsd"
+        }
+      ]
+    },
+    {
+      "id": "consulta-ruc",
+      "nombre": "siConsRUC",
+      "funcion": "Devuelve el resultado de la consulta de los datos y estado del RUC de un contribuyente receptor",
+      "operacion": "SiConsRUC",
+      "proceso": "sincrono",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "SOAP, versión 1.2"
+          },
+          {
+            "doc": "MT150",
+            "ref": "7.9",
+            "pagina": 41,
+            "cita": "Estándar de intercambio de datos SOAP versión 1.2"
+          }
+        ]
+      },
+      "endpoint": {
+        "test": {
+          "ruta": "/de/ws/consultas/consulta-ruc.wsdl?wsdl",
+          "url": "https://sifen-test.set.gov.py/de/ws/consultas/consulta-ruc.wsdl?wsdl"
+        },
+        "produccion": {
+          "ruta": "/de/ws/consultas/consulta-ruc.wsdl?wsdl",
+          "url": "https://sifen.set.gov.py/de/ws/consultas/consulta-ruc.wsdl?wsdl"
+        },
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.10",
+            "pagina": 42
+          }
+        ]
+      },
+      "peticion": {
+        "raiz": "rEnviConsRUC",
+        "esquema": "WS_SiConsRUC_v141.xsd",
+        "campos": "campos/ws-consulta-ruc.json"
+      },
+      "respuesta": {
+        "raiz": "rResEnviConsRUC",
+        "esquema": "WS_SiConsRUC_v141.xsd"
+      },
+      "tamano_maximo_kb": 1000,
+      "codigo_tamano_excedido": "0460",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.6",
+          "pagina": 54
+        },
+        {
+          "doc": "MT150",
+          "ref": "BM01",
+          "pagina": 159
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd"
+        }
+      ],
+      "observaciones": "Solo está publicada la versión v141 del esquema.",
+      "contradicciones": [
+        "C-719",
+        "C-720"
+      ]
+    },
+    {
+      "id": "consulta-masiva-ruc",
+      "nombre": "rEnviConsArchivoRUCRequest",
+      "funcion": "Devuelve el resultado de la consulta de los datos de razón social, si es facturador electrónico y estado del RUC de todos los contribuyentes existentes (excepto cancelados)",
+      "operacion": "rEnviConsArchivoRUCRequest",
+      "proceso": "sincrono",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "La llamada o Request a cualquiera de los Servicios Web del SIFEN"
+          }
+        ],
+        "observaciones": "La NT 11 no indica la versión de SOAP; se aplica la regla general del Manual para cualquiera de los servicios."
+      },
+      "endpoint": {
+        "test": {
+          "ruta": null,
+          "url": null
+        },
+        "produccion": {
+          "ruta": null,
+          "url": null
+        },
+        "fuentes": [
+          {
+            "doc": "NT011",
+            "ref": "9.8",
+            "pagina": 1
+          }
+        ],
+        "observaciones": "Ninguna fuente oficial (Manual, NT 11 ni guías) publica la dirección de este servicio."
+      },
+      "peticion": {
+        "raiz": "rEnviConsArchivoRUCRequest",
+        "esquema": "WS_ConsultaArchivoRuc.xsd",
+        "campos": "campos/ws-consulta-masiva-ruc.json"
+      },
+      "respuesta": {
+        "raiz": "rEnviConsArchivoRUCResponse",
+        "esquema": "WS_ConsultaArchivoRuc.xsd"
+      },
+      "tamano_maximo_kb": null,
+      "descargas_por_dia": 1,
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8",
+          "pagina": 1
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7",
+          "pagina": 3
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "observaciones": "La NT 11 (20/10/2022) no publica fechas de vigencia ni tamaño máximo del mensaje.",
+      "contradicciones": [
+        "C-721"
+      ]
+    },
+    {
+      "id": "consulta-dte",
+      "nombre": null,
+      "funcion": null,
+      "operacion": null,
+      "proceso": null,
+      "soap": {
+        "version": null,
+        "observaciones": "Servicio no documentado fuera del XSD."
+      },
+      "endpoint": {
+        "test": {
+          "ruta": null,
+          "url": null
+        },
+        "produccion": {
+          "ruta": null,
+          "url": null
+        },
+        "fuentes": [
+          {
+            "doc": "XSD",
+            "ref": "WS_SiConsDTE.xsd"
+          }
+        ],
+        "observaciones": "Ninguna fuente oficial documenta el servicio ni su dirección."
+      },
+      "peticion": {
+        "raiz": "rConsDteRequest",
+        "esquema": "WS_SiConsDTE.xsd",
+        "campos": "campos/ws-consulta-dte.json"
+      },
+      "respuesta": {
+        "raiz": "rConsDteResponse",
+        "esquema": "WS_SiConsDTE.xsd"
+      },
+      "tamano_maximo_kb": null,
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd"
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd"
+        }
+      ],
+      "contradicciones": [
+        "C-722"
+      ]
+    },
+    {
+      "id": "consulta-dte-async",
+      "nombre": null,
+      "funcion": null,
+      "operacion": null,
+      "proceso": null,
+      "soap": {
+        "version": null,
+        "observaciones": "Servicio no documentado fuera del XSD."
+      },
+      "endpoint": {
+        "test": {
+          "ruta": null,
+          "url": null
+        },
+        "produccion": {
+          "ruta": null,
+          "url": null
+        },
+        "fuentes": [
+          {
+            "doc": "XSD",
+            "ref": "WS_SiConsDTEAsync.xsd"
+          }
+        ],
+        "observaciones": "Ninguna fuente oficial documenta el servicio ni su dirección. El nombre del esquema sugiere un proceso asíncrono, pero no está documentado."
+      },
+      "peticion": {
+        "raiz": "rEnviConsDteAsyncRequest",
+        "esquema": "WS_SiConsDTEAsync.xsd",
+        "campos": "campos/ws-consulta-dte.json"
+      },
+      "respuesta": {
+        "raiz": "rEnviConsDteAsyncResponse",
+        "esquema": "WS_SiConsDTEAsync.xsd"
+      },
+      "tamano_maximo_kb": null,
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd"
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd"
+        }
+      ],
+      "contradicciones": [
+        "C-722"
+      ]
+    },
+    {
+      "id": "consulta-de-destinatarios-externos",
+      "nombre": "siConsDEST",
+      "funcion": "Web service que tiene por objetivo entregar los DE y sus eventos para las entidades que tiene derecho legal de recibir determinadas facturas",
+      "operacion": "siConsDEST",
+      "proceso": "sincrono",
+      "estado": "futuro",
+      "soap": {
+        "version": "1.2",
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "7.4",
+            "pagina": 36,
+            "cita": "SOAP, versión 1.2"
+          },
+          {
+            "doc": "MT150",
+            "ref": "7.9",
+            "pagina": 41,
+            "cita": "Estándar de intercambio de datos SOAP versión 1.2"
+          }
+        ]
+      },
+      "endpoint": {
+        "test": {
+          "ruta": null,
+          "url": null
+        },
+        "produccion": {
+          "ruta": null,
+          "url": null
+        },
+        "fuentes": [
+          {
+            "doc": "MT150",
+            "ref": "9.7",
+            "pagina": 56
+          }
+        ],
+        "observaciones": "Servicio «a futuro»: sin esquema ni dirección."
+      },
+      "peticion": null,
+      "respuesta": null,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.7",
+          "pagina": 56,
+          "cita": "Observación: A futuro"
+        },
+        {
+          "doc": "MT150",
+          "ref": "8",
+          "pagina": 43
+        }
+      ]
+    }
+  ],
+  "ntp": {
+    "servidores": [
+      "aravo1.set.gov.py",
+      "aravo2.set.gov.py"
+    ],
+    "fuentes": [
+      {
+        "doc": "MT150",
+        "ref": "7.11",
+        "pagina": 42
+      }
+    ]
+  }
+}

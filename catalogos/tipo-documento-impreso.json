@@ -1,0 +1,58 @@
+{
+  "id": "tipo-documento-impreso",
+  "titulo": "Tipo de documento impreso asociado",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "H009"
+    },
+    {
+      "doc": "MT150",
+      "ref": "H010"
+    },
+    {
+      "doc": "NT010",
+      "ref": "1.6 (H009, H010)"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTIpoDoc (1-4), tdDesTIpoDoc"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "H009",
+    "H010"
+  ],
+  "descripciones": {
+    "H009": "H010"
+  },
+  "xml": [
+    "iTipoDocAso",
+    "dDTipoDocAso"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Factura"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Nota de crédito"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Nota de débito"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Nota de remisión"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Comprobante de retención",
+      "contradiccion": "C-907",
+      "observacion": "No figura en tiTIpoDoc ni en tdDesTIpoDoc del XSD."
+    }
+  ]
+}

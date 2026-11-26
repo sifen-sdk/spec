@@ -1,0 +1,1099 @@
+{
+  "grupo": "GENFE",
+  "reglas": [
+    {
+      "id": "R-GENFE001-D1",
+      "campo": "GENFE001",
+      "tipo": "dependencia",
+      "texto": "El RUC del Emisor de la Factura Electrónica debe ser el mismo que el RUC del Emisor del evento",
+      "no_declarativa": true,
+      "codigo_sifen": "4468",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE002d"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE002-O1",
+      "campo": "GENFE002",
+      "tipo": "obligatorio",
+      "texto": "El CDC del DTE es obligatorio",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE002"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE002-F1",
+      "campo": "GENFE002",
+      "tipo": "formato",
+      "texto": "El CDC (GENFE002) debe contar con los 44 caracteres según las reglas de estructuración del CDC (longitud, y/o dígito verificador)",
+      "codigo_sifen": "4451",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4451"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE002-D1",
+      "campo": "GENFE002",
+      "tipo": "dependencia",
+      "texto": "El CDC debe encontrarse en la base de datos del SIFEN y no estar cancelado",
+      "no_declarativa": true,
+      "codigo_sifen": "4452",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4452"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE002-D2",
+      "campo": "GENFE002",
+      "tipo": "dependencia",
+      "texto": "El DTE no debe contar con un evento previo de nominación de factura electrónica",
+      "no_declarativa": true,
+      "codigo_sifen": "4453",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4453"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE002-D3",
+      "campo": "GENFE002",
+      "tipo": "dependencia",
+      "texto": "El CDC informado debe corresponder a una Factura Electrónica",
+      "no_declarativa": true,
+      "codigo_sifen": "4454",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4454"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE002-D4",
+      "campo": "GENFE002",
+      "tipo": "dependencia",
+      "texto": "El tipo de documento de identidad del receptor informado en la factura electrónica debe ser igual a innominado (D208=5)",
+      "no_declarativa": true,
+      "codigo_sifen": "4469",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4469"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE003-O1",
+      "campo": "GENFE003",
+      "tipo": "obligatorio",
+      "texto": "El motivo del evento es obligatorio",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE003"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE004-O1",
+      "campo": "GENFE004",
+      "tipo": "obligatorio",
+      "texto": "La naturaleza del receptor es obligatoria",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE004"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE004-D1",
+      "campo": "GENFE004",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de operación es B2B (GENFE027=1), la naturaleza del receptor debe ser contribuyente (GENFE004=1)",
+      "condicion": {
+        "campo": "GENFE027",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4475",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4475"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE004-D2",
+      "campo": "GENFE004",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de operación es B2C o B2F (GENFE027=2 o 4), la naturaleza del receptor debe ser no contribuyente (GENFE004=2)",
+      "condicion": {
+        "campo": "GENFE027",
+        "op": "en",
+        "valores": [
+          "2",
+          "4"
+        ]
+      },
+      "codigo_sifen": "4475",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4475"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE027-O1",
+      "campo": "GENFE027",
+      "tipo": "obligatorio",
+      "texto": "El tipo de operación es obligatorio",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE027"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE005-O1",
+      "campo": "GENFE005",
+      "tipo": "obligatorio",
+      "texto": "El código de país del receptor es obligatorio",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE005"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE005-D1",
+      "campo": "GENFE005",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de operación es B2F (GENFE027=4), el país informado debe ser diferente a PRY (GENFE005≠PRY)",
+      "condicion": {
+        "campo": "GENFE027",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4476",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4476"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE005-D2",
+      "campo": "GENFE005",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de operación es diferente de B2F (GENFE027≠4) el país informado debe ser igual a PRY (GENFE005=PRY)",
+      "condicion": {
+        "campo": "GENFE027",
+        "op": "distinto",
+        "valor": "4"
+      },
+      "codigo_sifen": "4476",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4476"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE006-O1",
+      "campo": "GENFE006",
+      "tipo": "obligatorio",
+      "texto": "La descripción del país receptor es obligatoria",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE006"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE006-D1",
+      "campo": "GENFE006",
+      "tipo": "dependencia",
+      "texto": "La descripción del país del receptor debe coincidir con lo informado en el campo GENFE005",
+      "no_declarativa": true,
+      "codigo_sifen": "4456",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4456"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE007-C1",
+      "campo": "GENFE007",
+      "tipo": "condicional",
+      "texto": "Si la naturaleza del receptor es contribuyente (GENFE004=1) el tipo de contribuyente receptor debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4457",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4457"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE007-P1",
+      "campo": "GENFE007",
+      "tipo": "prohibido",
+      "texto": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el tipo de contribuyente receptor (GENFE007) no debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4458",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4458"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE008-C1",
+      "campo": "GENFE008",
+      "tipo": "condicional",
+      "texto": "Si la naturaleza del receptor es contribuyente (GENFE004=1), el RUC del receptor debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4459",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4459"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE008-P1",
+      "campo": "GENFE008",
+      "tipo": "prohibido",
+      "texto": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el RUC del receptor (GENFE008) no debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4460",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4460"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE008-D1",
+      "campo": "GENFE008",
+      "tipo": "dependencia",
+      "texto": "El RUC informado debe existir en la base de datos de Marangatu",
+      "no_declarativa": true,
+      "codigo_sifen": "4461",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4461"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE008-D2",
+      "campo": "GENFE008",
+      "tipo": "dependencia",
+      "texto": "Si la naturaleza del receptor es contribuyente (GENFE004=1), el RUC del receptor en Marangatu debe contar con un estado distinto a CANCELADO o CANCELADO DEFINITIVO",
+      "no_declarativa": true,
+      "codigo_sifen": "4462",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4462"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE009-C1",
+      "campo": "GENFE009",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo GENFE008",
+      "condicion": {
+        "campo": "GENFE008",
+        "op": "presente"
+      },
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE009"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE009-F1",
+      "campo": "GENFE009",
+      "tipo": "formato",
+      "texto": "El Dígito Verificador debe corresponder al módulo 11 del RUC",
+      "codigo_sifen": "4463",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4463"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE010-C1",
+      "campo": "GENFE010",
+      "tipo": "condicional",
+      "texto": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el tipo de documento de identidad debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4464",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4464"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE010-P1",
+      "campo": "GENFE010",
+      "tipo": "prohibido",
+      "texto": "Si la naturaleza del receptor es contribuyente (GENFE004=1), el tipo de documento de identidad del receptor (GENFE010) no debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4465",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4465"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE010-F1",
+      "campo": "GENFE010",
+      "tipo": "formato",
+      "texto": "Valores admitidos: 1=Cédula paraguaya, 2=Pasaporte, 3=Cédula extranjera, 4=Carnet de residencia, 5=Tarjeta Diplomática de exoneración fiscal, 9=Otro",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        },
+        "hasta": {
+          "test": "2026-03-09",
+          "produccion": "2026-03-09"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE010"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE010-F2",
+      "campo": "GENFE010",
+      "tipo": "formato",
+      "texto": "Valores admitidos: 1=Cédula paraguaya, 2=Pasaporte, 3=Cédula extranjera, 4=Carnet de residencia, 6=Tarjeta Diplomática de exoneración fiscal, 9=Otro",
+      "vigencia": {
+        "desde": {
+          "test": "2026-03-09",
+          "produccion": "2026-03-09"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT027",
+          "ref": "1.1 GENFE010"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE011-C1",
+      "campo": "GENFE011",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo GENFE010",
+      "condicion": {
+        "campo": "GENFE010",
+        "op": "presente"
+      },
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE011"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE011-D1",
+      "campo": "GENFE011",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de documento de identidad del receptor debe coincidir con lo informado en el campo GENFE010 (NT 14: 5= “Tarjeta Diplomática de exoneración fiscal”)",
+      "no_declarativa": true,
+      "codigo_sifen": "4466",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        },
+        "hasta": {
+          "test": "2026-03-09",
+          "produccion": "2026-03-09"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4466"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE011-D2",
+      "campo": "GENFE011",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de documento de identidad del receptor debe coincidir con lo informado en el campo GENFE010 (NT 27: 6= “Tarjeta Diplomática de exoneración fiscal”)",
+      "no_declarativa": true,
+      "codigo_sifen": "4466",
+      "vigencia": {
+        "desde": {
+          "test": "2026-03-09",
+          "produccion": "2026-03-09"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT027",
+          "ref": "1.1 GENFE011"
+        },
+        {
+          "doc": "NT014",
+          "ref": "4466"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE011-D3",
+      "campo": "GENFE011",
+      "tipo": "dependencia",
+      "texto": "Si GENFE010=9 se deberá informar el tipo de documento de identidad del receptor",
+      "condicion": {
+        "campo": "GENFE010",
+        "op": "igual",
+        "valor": "9"
+      },
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE011"
+        },
+        {
+          "doc": "NT027",
+          "ref": "1.1 GENFE011"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE012-C1",
+      "campo": "GENFE012",
+      "tipo": "condicional",
+      "texto": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el número de documento de identidad debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4467",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4467"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE012-P1",
+      "campo": "GENFE012",
+      "tipo": "prohibido",
+      "texto": "Si la naturaleza del receptor es contribuyente, el número de documento de identidad no debe ser informado",
+      "condicion": {
+        "campo": "GENFE004",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4477",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4477"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE013-O1",
+      "campo": "GENFE013",
+      "tipo": "obligatorio",
+      "texto": "El nombre o razón social del receptor del DTE es obligatorio",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE013"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE014-OP1",
+      "campo": "GENFE014",
+      "tipo": "opcional",
+      "texto": "El nombre de fantasía es opcional (campo abierto)",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE014"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE015-C1",
+      "campo": "GENFE015",
+      "tipo": "condicional",
+      "texto": "Si el tipo de operación es B2F, es obligatorio informar la dirección del receptor (GENFE015)",
+      "condicion": {
+        "campo": "GENFE027",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4478",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4478"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE016-C1",
+      "campo": "GENFE016",
+      "tipo": "condicional",
+      "texto": "Si se informa la dirección del receptor (GENFE015) es obligatorio informar el número de casa (GENFE016)",
+      "condicion": {
+        "campo": "GENFE015",
+        "op": "presente"
+      },
+      "codigo_sifen": "4470",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE016"
+        },
+        {
+          "doc": "NT014",
+          "ref": "4470"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE018-D1",
+      "campo": "GENFE018",
+      "tipo": "dependencia",
+      "texto": "La descripción del departamento del receptor debe coincidir con lo informado en el campo GENFE017",
+      "no_declarativa": true,
+      "codigo_sifen": "4471",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4471"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE020-C1",
+      "campo": "GENFE020",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo GENFE019",
+      "condicion": {
+        "campo": "GENFE019",
+        "op": "presente"
+      },
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE020"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE020-D1",
+      "campo": "GENFE020",
+      "tipo": "dependencia",
+      "texto": "La descripción del distrito del receptor debe coincidir con lo informado en el campo GENFE019",
+      "no_declarativa": true,
+      "codigo_sifen": "4472",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4472"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE021-D1",
+      "campo": "GENFE021",
+      "tipo": "dependencia",
+      "texto": "Debe haber relación entre el departamento (GENFE017), el distrito (GENFE019) y la ciudad (GENFE021) según Tabla 2.1 – Departamentos, Distritos y Ciudades",
+      "no_declarativa": true,
+      "codigo_sifen": "4474",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4474"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE022-D1",
+      "campo": "GENFE022",
+      "tipo": "dependencia",
+      "texto": "La descripción de la ciudad del receptor debe coincidir con lo informado en el campo GENFE021",
+      "no_declarativa": true,
+      "codigo_sifen": "4473",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4473"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE023-F1",
+      "campo": "GENFE023",
+      "tipo": "formato",
+      "texto": "Debe incluir el prefijo de la ciudad si GENFE005= PRY",
+      "condicion": {
+        "campo": "GENFE005",
+        "op": "igual",
+        "valor": "PRY"
+      },
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE023"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE017-OP1",
+      "campo": "GENFE017",
+      "tipo": "opcional",
+      "texto": "El código del departamento del receptor es opcional",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE017"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE019-OP1",
+      "campo": "GENFE019",
+      "tipo": "opcional",
+      "texto": "El código del distrito del receptor es opcional",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE019"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE021-OP1",
+      "campo": "GENFE021",
+      "tipo": "opcional",
+      "texto": "El código de la ciudad del receptor es opcional",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE021"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE023-OP1",
+      "campo": "GENFE023",
+      "tipo": "opcional",
+      "texto": "El número de teléfono del receptor es opcional",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE023"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE024-OP1",
+      "campo": "GENFE024",
+      "tipo": "opcional",
+      "texto": "El número de celular del receptor es opcional",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE024"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE025-OP1",
+      "campo": "GENFE025",
+      "tipo": "opcional",
+      "texto": "El correo electrónico del receptor es opcional",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE025"
+        }
+      ]
+    },
+    {
+      "id": "R-GENFE026-OP1",
+      "campo": "GENFE026",
+      "tipo": "opcional",
+      "texto": "El código del cliente es opcional",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE026"
+        }
+      ]
+    }
+  ]
+}

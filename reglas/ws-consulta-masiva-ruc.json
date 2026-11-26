@@ -1,0 +1,377 @@
+{
+  "grupo": "WS-ConsultaArchivoRUC",
+  "reglas": [
+    {
+      "id": "R-ESch02-OBL",
+      "campo": "ESch02",
+      "tipo": "obligatorio",
+      "texto": "Contenedor de parámetros requeridos para la consulta (rConsultaArchivo) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch02",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch03-OBL",
+      "campo": "ESch03",
+      "tipo": "obligatorio",
+      "texto": "Raíz (ConsultaDTE) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch03",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch04-OBL",
+      "campo": "ESch04",
+      "tipo": "obligatorio",
+      "texto": "Identificador de control de envío (Id) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-721",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch04",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch05-OBL",
+      "campo": "ESch05",
+      "tipo": "obligatorio",
+      "texto": "RUC del facturador electrónico (dRucFactElec) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-721",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch05",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch06-OBL",
+      "campo": "ESch06",
+      "tipo": "obligatorio",
+      "texto": "Grupo de campos de firma (Signature) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch06",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-FSch02-OBL",
+      "campo": "FSch02",
+      "tipo": "obligatorio",
+      "texto": "Fecha y hora del procesamiento de la petición (dFecProc) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-703",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch02",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 2
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-FSch03-OPC",
+      "campo": "FSch03",
+      "tipo": "opcional",
+      "texto": "Fecha del archivo (dFecArchivo) puede omitirse",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch03",
+          "cita": "Ocurrencia 0-1",
+          "pagina": 2
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-FSch04-OBL",
+      "campo": "FSch04",
+      "tipo": "obligatorio",
+      "texto": "Código de resultado de la consulta (dCodRes) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch04",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 2
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-FSch05-OBL",
+      "campo": "FSch05",
+      "tipo": "obligatorio",
+      "texto": "Mensaje de resultado de la consulta (dMsgRes) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch05",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 2
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-FSch06-OPC",
+      "campo": "FSch06",
+      "tipo": "opcional",
+      "texto": "Archivo de RUC comprimido (rConsDte) puede omitirse",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch06",
+          "cita": "Ocurrencia 0-1",
+          "pagina": 2
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch04-SEC",
+      "campo": "ESch04",
+      "tipo": "formato",
+      "texto": "El identificador de control de envío es un número secuencial autoincremental que identifica el mensaje enviado; generarlo y controlarlo es responsabilidad exclusiva del contribuyente",
+      "no_declarativa": true,
+      "contradiccion": "C-721",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch04",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch05-SINDV",
+      "campo": "ESch05",
+      "tipo": "formato",
+      "texto": "El RUC del facturador electrónico se informa sin el dígito verificador (DV)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch05",
+          "pagina": 1,
+          "cita": "RUC no incluye el dígito verificador (DV)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch05-CERT",
+      "campo": "ESch05",
+      "tipo": "dependencia",
+      "texto": "El RUC del certificado utilizado para firmar debe coincidir con el RUC de consulta; si no coincide SIFEN responde 0523",
+      "no_declarativa": true,
+      "codigo_sifen": "0523",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.2 Tabla L",
+          "pagina": 2,
+          "cita": "0523=RUC del certificado utilizado para firmar no coincide con el RUC de consulta"
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7.1 BO07",
+          "pagina": 3
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch01-DIARIA",
+      "campo": "ESch01",
+      "tipo": "formato",
+      "texto": "Se permite como máximo una descarga diaria del archivo; superado el límite de descargas del día SIFEN responde 0522",
+      "no_declarativa": true,
+      "codigo_sifen": "0522",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.2 Tabla L",
+          "pagina": 2,
+          "cita": "máximo una descarga diaria"
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7.1 BO06",
+          "pagina": 3
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch01-ARCHDIA",
+      "campo": "ESch01",
+      "tipo": "dependencia",
+      "texto": "El servicio devuelve el archivo generado en el día; si no se encontró el archivo generado en el día SIFEN responde 0521",
+      "no_declarativa": true,
+      "codigo_sifen": "0521",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.2 Tabla L",
+          "pagina": 2,
+          "cita": "No se encontró el archivo generado en el día"
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7.1 BO05",
+          "pagina": 3
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-ESch01-ALCANCE",
+      "campo": "ESch01",
+      "tipo": "formato",
+      "texto": "El archivo devuelto contiene los datos de razón social, si es facturador electrónico y estado del RUC de todos los contribuyentes existentes, excepto los cancelados",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8 Función",
+          "pagina": 1,
+          "cita": "de todos los contribuyentes existentes (excepto cancelados)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-FSch06-ZIP",
+      "campo": "FSch06",
+      "tipo": "formato",
+      "texto": "El archivo de RUC se devuelve comprimido y codificado en Base64; el XSD declara el tipo de contenido application/zip",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch06",
+          "pagina": 2,
+          "cita": "Campo comprimido en formato Base64"
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rConsDte xmime:expectedContentTypes=\"application/zip\""
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "grupo": "WS-siRecepDE",
+  "titulo": "WS recepción documento electrónico – siRecepDE (Schemas XML 2, 3 y 4)",
+  "esquemas": [
+    "WS_SiRecepDE_v150.xsd",
+    "protProcesDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "ASch01",
+      "xml": "rEnviDe",
+      "nombre": "documentSubmission",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la petición del WS siRecepDE. El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ASch01",
+          "pagina": 46
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepDE_v150.xsd rEnviDe"
+        }
+      ]
+    },
+    {
+      "id": "ASch02",
+      "xml": "dId",
+      "nombre": "controlId",
+      "padre": "ASch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de control de envío",
+      "observaciones": "Número secuencial autoincremental, para identificación del archivo enviado. La responsabilidad de generar y controlar este número es exclusiva del contribuyente.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ASch02",
+          "pagina": 46
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepDE_v150.xsd rEnviDe/dId"
+        }
+      ]
+    },
+    {
+      "id": "ASch03",
+      "xml": "xDE",
+      "nombre": "document",
+      "padre": "ASch01",
+      "tipo": "xml",
+      "ocurrencia": "1-1",
+      "descripcion": "XML del DE transmitido",
+      "observaciones": "Siguiendo las definiciones del formato del DE. El Manual escribía el nombre como xDe; la NT 10 lo corrige a xDE, que es el nombre del XSD. La NT 10 no publica fechas de vigencia. Contiene un DE firmado (rDE).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ASch03",
+          "pagina": 46
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.8 ASch03",
+          "pagina": 2,
+          "cita": "xDE"
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepDE_v150.xsd rEnviDe/xDE"
+        }
+      ]
+    },
+    {
+      "id": "ARSch01",
+      "xml": "rRetEnviDe",
+      "nombre": "documentSubmissionResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la respuesta del WS siRecepDE (Schema XML 3: resRecepDE_v150.xsd). El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ARSch01",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepDE_v150.xsd rRetEnviDe"
+        }
+      ]
+    },
+    {
+      "id": "ARSch02",
+      "xml": "xProtDe",
+      "nombre": "processingProtocolContainer",
+      "padre": "ARSch01",
+      "tipo": "xml",
+      "ocurrencia": "1-1",
+      "descripcion": "Protocolo de procesamiento del DE",
+      "observaciones": "El Manual lo define como un XML según el Schema XML 4. En el XSD no existe xProtDe: rRetEnviDe contiene directamente el elemento rProtDe (PP01).",
+      "contradiccion": "C-701",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ARSch02",
+          "pagina": 47,
+          "cita": "Schema XML 4"
+        }
+      ]
+    },
+    {
+      "id": "PP01",
+      "xml": "rProtDe",
+      "nombre": "processingProtocol",
+      "padre": "ARSch01",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Raíz del protocolo de procesamiento del DE (Schema XML 4: ProtProcesDE_v150.xsd). Se ubica bajo rRetEnviDe como en el XSD; el Manual lo presenta dentro de xProtDe (ARSch02).",
+      "contradiccion": "C-701",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP01",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepDE_v150.xsd rRetEnviDe/rProtDe"
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd rProtDe"
+        }
+      ]
+    },
+    {
+      "id": "PP02",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "PP01",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE Procesado",
+      "observaciones": "El Manual escribe el campo como 'id'; el XSD lo define como 'Id' (0-1).",
+      "contradiccion": "C-702",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP02",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd rProtDe/Id"
+        }
+      ]
+    },
+    {
+      "id": "PP03",
+      "xml": "dFecProc",
+      "nombre": "processingDateTime",
+      "padre": "PP01",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y hora del procesamiento",
+      "observaciones": "Formato: “AAAA-MM-DD-hh:mm:ss”.",
+      "contradiccion": "C-703",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP03",
+          "pagina": 47,
+          "cita": "Formato: “AAAA- MM-DD- hh:mm:ss”"
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd rProtDe/dFecProc (fecUTC)"
+        }
+      ]
+    },
+    {
+      "id": "PP04",
+      "xml": "dDigVal",
+      "nombre": "digestValue",
+      "padre": "PP01",
+      "tipo": "binario",
+      "longitud": "28",
+      "ocurrencia": "1-1",
+      "descripcion": "DigestValue del DE procesado",
+      "observaciones": "Permite verificar la correspondencia con el DE transmitido por el contribuyente. El Manual no indica el tipo de dato; se toma binario (Base64) del XSD.",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP04",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd rProtDe/dDigVal (xs:base64Binary)"
+        }
+      ]
+    },
+    {
+      "id": "PP050",
+      "xml": "dEstRes",
+      "nombre": "resultStatus",
+      "padre": "PP01",
+      "tipo": "alfanumerico",
+      "longitud": "8-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Estado del resultado",
+      "observaciones": "Aprobado / Aprobado con observación / Rechazado. El Manual lo ubica en el grupo gResProc (PP05); el XSD lo define como hijo directo de rProtDe (0-1).",
+      "contradiccion": "C-704",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP050",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd rProtDe/dEstRes"
+        }
+      ],
+      "catalogo": "estado-resultado"
+    },
+    {
+      "id": "PP051",
+      "xml": "dProtAut",
+      "nombre": "transactionNumber",
+      "padre": "PP01",
+      "tipo": "numerico",
+      "longitud": "10",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de Transacción",
+      "observaciones": "El Manual lo ubica en el grupo gResProc (PP05); el XSD lo define como hijo directo de rProtDe.",
+      "contradiccion": "C-704",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP051",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd rProtDe/dProtAut (tdProtAut: xs:long)"
+        }
+      ]
+    },
+    {
+      "id": "PP05",
+      "xml": "gResProc",
+      "nombre": "processingResults",
+      "padre": "PP01",
+      "tipo": "grupo",
+      "ocurrencia": "1-100",
+      "descripcion": "Grupo Resultado de Procesamiento",
+      "observaciones": "Para producción se limitará a 5 mensajes máximos sin modificación de esta especificación.",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP05",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd rProtDe/gResProc (tgResProc, 0-100)"
+        }
+      ]
+    },
+    {
+      "id": "PP052",
+      "xml": "dCodRes",
+      "nombre": "resultCode",
+      "padre": "PP05",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12.",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP052",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd tgResProc/dCodRes"
+        }
+      ]
+    },
+    {
+      "id": "PP053",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "PP05",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje del resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12.",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP053",
+          "pagina": 47
+        },
+        {
+          "doc": "XSD",
+          "ref": "protProcesDE_v150.xsd tgResProc/dMsgRes"
+        }
+      ]
+    }
+  ]
+}

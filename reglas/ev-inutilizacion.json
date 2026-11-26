@@ -1,0 +1,449 @@
+{
+  "grupo": "GEI",
+  "reglas": [
+    {
+      "id": "R-GEI001-C1",
+      "campo": "GEI001",
+      "tipo": "condicional",
+      "texto": "El grupo de inutilización es obligatorio si dTiGDE=2 (Inutilización)",
+      "condicion": {
+        "campo": "GDE006",
+        "op": "igual",
+        "valor": "2"
+      },
+      "contradiccion": "C-601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI001",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI001-D1",
+      "campo": "GEI001",
+      "tipo": "dependencia",
+      "texto": "El evento de inutilización lo solicita el emisor: el RUC del certificado utilizado para firmar los eventos debe corresponder al emisor electrónico",
+      "no_declarativa": true,
+      "codigo_sifen": "4069",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4069",
+          "pagina": 135
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.1",
+          "pagina": 112
+        }
+      ]
+    },
+    {
+      "id": "R-GEI001-D2",
+      "campo": "GEI001",
+      "tipo": "dependencia",
+      "texto": "La inutilización de la numeración de un DE podrá realizarse siempre y cuando éste no haya sido aprobado por el SIFEN; debe ser solicitada por rango secuencial o correlativo",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.1.1",
+          "pagina": 113
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.5",
+          "pagina": 119,
+          "cita": "La Inutilización de un número de DE debe ser solicitada por rango secuencial o correlativo"
+        }
+      ]
+    },
+    {
+      "id": "R-GEI001-P1",
+      "campo": "GEI001",
+      "tipo": "dependencia",
+      "texto": "Plazo de la inutilización: dentro de los 15 (quince) primeros días del mes siguiente al acaecimiento del hecho, deberá comunicar la inutilización de la numeración del DE. Y hasta fecha límite de validez del timbrado (plazo del sistema)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GEI002-O1",
+      "campo": "GEI002",
+      "tipo": "obligatorio",
+      "texto": "El número del timbrado es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI002",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI002-D1",
+      "campo": "GEI002",
+      "tipo": "dependencia",
+      "texto": "En ambiente de prueba es obligatorio el uso del timbrado de pruebas",
+      "no_declarativa": true,
+      "codigo_sifen": "4051",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4051",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI002-D2",
+      "campo": "GEI002",
+      "tipo": "dependencia",
+      "texto": "El número de timbrado debe corresponder al RUC del contribuyente facturador electrónico",
+      "no_declarativa": true,
+      "codigo_sifen": "4052",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4052",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI002-D3",
+      "campo": "GEI002",
+      "tipo": "dependencia",
+      "texto": "El número del timbrado debe corresponder al medio de generación para factura electrónica",
+      "no_declarativa": true,
+      "codigo_sifen": "4053",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4053",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI003-O1",
+      "campo": "GEI003",
+      "tipo": "obligatorio",
+      "texto": "El establecimiento es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI003",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI003-F1",
+      "campo": "GEI003",
+      "tipo": "formato",
+      "texto": "Completar con ceros a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI003",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI003-D1",
+      "campo": "GEI003",
+      "tipo": "dependencia",
+      "texto": "El código del establecimiento debe corresponder a un timbrado del medio de generación para facturación electrónica",
+      "no_declarativa": true,
+      "codigo_sifen": "4054",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4054",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI004-O1",
+      "campo": "GEI004",
+      "tipo": "obligatorio",
+      "texto": "El punto de expedición es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI004",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI004-F1",
+      "campo": "GEI004",
+      "tipo": "formato",
+      "texto": "Completar con ceros a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI004",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI004-D1",
+      "campo": "GEI004",
+      "tipo": "dependencia",
+      "texto": "El código del punto de expedición debe corresponder a un timbrado autorizado para el contribuyente",
+      "no_declarativa": true,
+      "codigo_sifen": "4055",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4055",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI005-O1",
+      "campo": "GEI005",
+      "tipo": "obligatorio",
+      "texto": "El número de inicio del rango es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI005",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI005-F1",
+      "campo": "GEI005",
+      "tipo": "formato",
+      "texto": "Completar con ceros a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI005",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI005-D1",
+      "campo": "GEI005",
+      "tipo": "dependencia",
+      "texto": "Para el rango solicitado no debe existir DTE en SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4065",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4065",
+          "pagina": 135
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GEI005-D2",
+      "campo": "GEI005",
+      "tipo": "dependencia",
+      "texto": "Dentro del rango solicitado para inutilización no deben existir números de DE ya inutilizados en SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4066",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4066",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI006-O1",
+      "campo": "GEI006",
+      "tipo": "obligatorio",
+      "texto": "El número final del rango es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI006",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI006-F1",
+      "campo": "GEI006",
+      "tipo": "formato",
+      "texto": "Completar con ceros a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI006",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI006-A1",
+      "campo": "GEI006",
+      "tipo": "aritmetica",
+      "texto": "La cantidad máxima de números en el rango debe ser menor o igual a 1000",
+      "formula": "GEI006 – GEI005 menor o igual a 1000",
+      "operandos": [
+        "GEI006",
+        "GEI005"
+      ],
+      "codigo_sifen": "4067",
+      "contradiccion": "C-612",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4067",
+          "pagina": 135
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEI005",
+          "pagina": 122
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GEI006-A2",
+      "campo": "GEI006",
+      "tipo": "aritmetica",
+      "texto": "El número del final de rango (GEI006) debe ser mayor que el número de inicio del rango (GEI005)",
+      "formula": "GEI006 mayor que GEI005",
+      "operandos": [
+        "GEI006",
+        "GEI005"
+      ],
+      "codigo_sifen": "4068",
+      "contradiccion": "C-612",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4068",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI007-O1",
+      "campo": "GEI007",
+      "tipo": "obligatorio",
+      "texto": "El tipo de documento electrónico es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI007",
+          "pagina": 122
+        }
+      ]
+    },
+    {
+      "id": "R-GEI007-D1",
+      "campo": "GEI007",
+      "tipo": "dependencia",
+      "texto": "El tipo de Documento debe corresponder a un número de timbrado autorizado",
+      "no_declarativa": true,
+      "codigo_sifen": "4060",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4060",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GEI008-O1",
+      "campo": "GEI008",
+      "tipo": "obligatorio",
+      "texto": "Se requiere informar la justificativa de la Inutilización (campo texto libre)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI008",
+          "pagina": 122
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GEI009-OP1",
+      "campo": "GEI009",
+      "tipo": "opcional",
+      "texto": "La serie del número del documento es opcional (0-1)",
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1.7 GEI009"
+        }
+      ]
+    },
+    {
+      "id": "R-GDE008-INU-D1",
+      "campo": "GDE008",
+      "tipo": "dependencia",
+      "texto": "En la inutilización, el certificado que se utilizó para firmar el evento no debe estar revocado en la fecha de firma digital (GDE004)",
+      "no_declarativa": true,
+      "codigo_sifen": "4070",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4070",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "id": "R-GDE004-INU-D1",
+      "campo": "GDE004",
+      "tipo": "dependencia",
+      "texto": "En la inutilización, la fecha de firma digital del evento no puede ser posterior a la Fecha de SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4071",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4071",
+          "pagina": 135
+        }
+      ]
+    }
+  ]
+}

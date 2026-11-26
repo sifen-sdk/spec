@@ -1,0 +1,299 @@
+{
+  "grupo": "WS-siConsRUC",
+  "titulo": "WS consulta RUC – siConsRUC (Schemas XML 15, 16 y 17)",
+  "esquemas": [
+    "WS_SiConsRUC_v141.xsd",
+    "SIFEN_Types_v141.xsd",
+    "FE_Types_v141.xsd"
+  ],
+  "campos": [
+    {
+      "id": "RSch01",
+      "xml": "rEnviConsRUC",
+      "nombre": "rucQuery",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la petición del WS siConsRUC (Schema XML 15: siConsRUC_v150.xsd). Solo está publicado WS_SiConsRUC_v141.xsd. El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "RSch01",
+          "pagina": 55
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd rEnviConsRUC"
+        }
+      ]
+    },
+    {
+      "id": "RSch02",
+      "xml": "dId",
+      "nombre": "controlId",
+      "padre": "RSch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de control de envío",
+      "observaciones": "Número secuencial autoincremental, para identificación del mensaje enviado. La responsabilidad de generar y controlar este número es exclusiva del contribuyente.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "RSch02",
+          "pagina": 55
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd rEnviConsRUC/dId (dIdType)"
+        }
+      ]
+    },
+    {
+      "id": "RSch03",
+      "xml": "dRUCCons",
+      "nombre": "ruc",
+      "padre": "RSch01",
+      "tipo": "alfanumerico",
+      "longitud": "5-8",
+      "ocurrencia": "1-1",
+      "descripcion": "RUC consultado",
+      "observaciones": "RUC No incluye el Digito de verificación.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "RSch03",
+          "pagina": 55
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd rEnviConsRUC/dRUCCons (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "RRSch01",
+      "xml": "rResEnviConsRUC",
+      "nombre": "rucQueryResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la respuesta (Schema XML 16: resConsRUC_v150.xsd). El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "RRSch01",
+          "pagina": 55
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd rResEnviConsRUC"
+        }
+      ]
+    },
+    {
+      "id": "RRSch02",
+      "xml": "dCodRes",
+      "nombre": "resultCode",
+      "padre": "RRSch01",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del resultado de la consulta RUC",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "RRSch02",
+          "pagina": 55
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd rResEnviConsRUC/dCodRes (length 4)"
+        }
+      ]
+    },
+    {
+      "id": "RRSch03",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "RRSch01",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje del resultado de la consulta RUC",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "RRSch03",
+          "pagina": 55
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd rResEnviConsRUC/dMsgRes"
+        }
+      ]
+    },
+    {
+      "id": "RRSch04",
+      "xml": "xContRUC",
+      "nombre": "rucContainer",
+      "padre": "RRSch01",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Contenedor del RUC",
+      "observaciones": "Existe solamente si dCodRes = 0502. Definido en el Schema XML 17. El Manual lo tipifica como XML; en el XSD es un grupo (tContenedorRuc) cuyos hijos son directamente los campos ContRUC02 a ContRUC06.",
+      "contradiccion": "C-719",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "RRSch04",
+          "pagina": 56
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd rResEnviConsRUC/xContRUC (tContenedorRuc)"
+        }
+      ]
+    },
+    {
+      "id": "ContRUC01",
+      "xml": "rContRUC",
+      "nombre": "container",
+      "padre": "RRSch04",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz del contenedor de RUC (Schema XML 17: ContenedorRUC_v150.xsd). La columna Nodo Padre del Manual indica RRSch01. El XSD no tiene este nivel: los campos del contenedor son hijos directos de xContRUC. El Manual no indica ocurrencia.",
+      "contradiccion": "C-719",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContRUC01",
+          "pagina": 56
+        }
+      ]
+    },
+    {
+      "id": "ContRUC02",
+      "xml": "dRUCCons",
+      "nombre": "ruc",
+      "padre": "RRSch04",
+      "tipo": "alfanumerico",
+      "longitud": "5-8",
+      "ocurrencia": "1-1",
+      "descripcion": "RUC Consultado",
+      "observaciones": "El Manual indica como nodo padre ContRUC01; se ubica bajo xContRUC como en el XSD.",
+      "contradiccion": "C-719",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContRUC02",
+          "pagina": 56
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd tContenedorRuc/dRUCCons (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "ContRUC03",
+      "xml": "dRazCons",
+      "nombre": "businessName",
+      "padre": "RRSch04",
+      "tipo": "alfanumerico",
+      "longitud": "1-250",
+      "ocurrencia": "1-1",
+      "descripcion": "Razón social del RUC Consultado",
+      "observaciones": "El Manual indica como nodo padre ContRUC01; se ubica bajo xContRUC como en el XSD.",
+      "contradiccion": "C-719",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContRUC03",
+          "pagina": 56
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd tContenedorRuc/dRazCons"
+        }
+      ]
+    },
+    {
+      "id": "ContRUC04",
+      "xml": "dCodEstCons",
+      "nombre": "statusCode",
+      "padre": "RRSch04",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del Estado del RUC Consultado",
+      "observaciones": "ACT=Activo, SUS=Suspensión Temporal, SAD=Suspensión Administrativa, BLQ=Bloqueado, CAN=Cancelado, CDE=Cancelado Definitivo. El Manual indica como nodo padre ContRUC01; se ubica bajo xContRUC como en el XSD.",
+      "contradiccion": "C-719",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContRUC04",
+          "pagina": 56
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd tContenedorRuc/dCodEstCons (length 3)"
+        }
+      ],
+      "catalogo": "estado-ruc"
+    },
+    {
+      "id": "ContRUC05",
+      "xml": "dDesEstCons",
+      "nombre": "statusDescription",
+      "padre": "RRSch04",
+      "tipo": "alfanumerico",
+      "longitud": "6-25",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción Código del Estado del RUC Consultado",
+      "observaciones": "ACT=Activo, SUS=Suspensión Temporal, SAD=Suspensión Administrativa, BLQ=Bloqueado, CAN=Cancelado, CDE=Cancelado Definitivo. El Manual indica como nodo padre ContRUC01; se ubica bajo xContRUC como en el XSD.",
+      "contradiccion": "C-719",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContRUC05",
+          "pagina": 56
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd tContenedorRuc/dDesEstCons (maxLength 25)"
+        }
+      ],
+      "catalogo": "estado-ruc"
+    },
+    {
+      "id": "ContRUC06",
+      "xml": "dRUCFactElec",
+      "nombre": "isElectronicInvoicer",
+      "padre": "RRSch04",
+      "tipo": "alfanumerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "RUC consultado es facturador electrónico",
+      "observaciones": "S = Es facturador electrónico, N = No es facturador electrónico. El Manual indica como nodo padre ContRUC01; se ubica bajo xContRUC como en el XSD.",
+      "contradiccion": "C-719",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContRUC06",
+          "pagina": 56
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsRUC_v141.xsd tContenedorRuc/dRUCFactElec (length 1)"
+        }
+      ],
+      "catalogo": "facturador-electronico"
+    }
+  ]
+}

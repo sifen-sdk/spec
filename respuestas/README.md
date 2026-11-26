@@ -3,7 +3,8 @@
 **Propósito.** Los códigos de respuesta de SIFEN, clasificados, para que todos los SDK los interpreten igual y
 el sistema emisor sepa qué hacer con cada uno.
 
-**Estado.** Sin datos. Se carga en la fase 1.
+**Estado.** Cargados los códigos de los capítulos 11 y 12 del Manual Técnico y los que agregan o modifican las
+Notas Técnicas.
 
 ## Formato previsto
 

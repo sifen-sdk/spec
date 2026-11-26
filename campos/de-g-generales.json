@@ -1,0 +1,237 @@
+{
+  "grupo": "G",
+  "titulo": "Campos complementarios comerciales de uso general",
+  "esquemas": [
+    "DE_v150.xsd",
+    "siRecepDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "G001",
+      "xml": "gCamGen",
+      "nombre": "generalData",
+      "padre": "A001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos de uso general",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tDE/gCamGen"
+        }
+      ]
+    },
+    {
+      "id": "G002",
+      "xml": "dOrdCompra",
+      "nombre": "purchaseOrderNumber",
+      "padre": "G001",
+      "tipo": "alfanumerico",
+      "longitud": "1-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de orden de compra",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G002"
+        }
+      ]
+    },
+    {
+      "id": "G003",
+      "xml": "dOrdVta",
+      "nombre": "salesOrderNumber",
+      "padre": "G001",
+      "tipo": "alfanumerico",
+      "longitud": "1-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de orden de venta",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G003"
+        }
+      ]
+    },
+    {
+      "id": "G004",
+      "xml": "dAsiento",
+      "nombre": "accountingEntryNumber",
+      "padre": "G001",
+      "tipo": "alfanumerico",
+      "longitud": "1-10",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de asiento contable",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G004"
+        }
+      ]
+    },
+    {
+      "id": "G050",
+      "xml": "gCamCarg",
+      "nombre": "cargo",
+      "padre": "G001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos generales de la carga",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G050"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamGen/gCamCarg"
+        }
+      ]
+    },
+    {
+      "id": "G051",
+      "xml": "cUniMedTotVol",
+      "nombre": "volumeUnitCode",
+      "padre": "G050",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "0-1",
+      "descripcion": "Unidad de medida del total de volumen de la mercadería",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G051"
+        }
+      ],
+      "catalogo": "unidad-medida"
+    },
+    {
+      "id": "G054",
+      "xml": "cUniMedTotPes",
+      "nombre": "weightUnitCode",
+      "padre": "G050",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "0-1",
+      "descripcion": "Unidad de medida del peso total de la mercadería",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G054"
+        }
+      ],
+      "catalogo": "unidad-medida"
+    },
+    {
+      "id": "G052",
+      "xml": "dDesUniMedTotVol",
+      "nombre": "volumeUnitDescription",
+      "padre": "G050",
+      "tipo": "alfanumerico",
+      "longitud": "1-10",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de la unidad de medida del total de volumen de la mercadería",
+      "observaciones": "Ejemplo: UNI",
+      "contradiccion": "C-515",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G052"
+        }
+      ],
+      "catalogo": "unidad-medida"
+    },
+    {
+      "id": "G055",
+      "xml": "dDesUniMedTotPes",
+      "nombre": "weightUnitDescription",
+      "padre": "G050",
+      "tipo": "alfanumerico",
+      "longitud": "1-10",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de la unidad de medida del peso total de la mercadería",
+      "observaciones": "Ejemplo: UNI",
+      "contradiccion": "C-515",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G055"
+        }
+      ],
+      "catalogo": "unidad-medida"
+    },
+    {
+      "id": "G053",
+      "xml": "dTotVolMerc",
+      "nombre": "totalVolume",
+      "padre": "G050",
+      "tipo": "numerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Total volumen de la mercadería",
+      "observaciones": "Corresponde al volumen total de ítems que se han informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G053"
+        }
+      ]
+    },
+    {
+      "id": "G056",
+      "xml": "dTotPesMerc",
+      "nombre": "totalWeight",
+      "padre": "G050",
+      "tipo": "numerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Total peso de la mercadería",
+      "observaciones": "Corresponde al peso total de ítems que se han informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G056"
+        }
+      ]
+    },
+    {
+      "id": "G057",
+      "xml": "iCarCarga",
+      "nombre": "characteristicCode",
+      "padre": "G050",
+      "tipo": "numerico",
+      "longitud": "1-1",
+      "ocurrencia": "0-1",
+      "descripcion": "Características de la Carga",
+      "observaciones": "1 – Mercaderías con cadena de frío; 2 – Carga peligrosa; 3 – Otro de características similares (especificar)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G057"
+        }
+      ],
+      "catalogo": "caracteristica-carga"
+    },
+    {
+      "id": "G058",
+      "xml": "dDesCarCarga",
+      "nombre": "characteristicDescription",
+      "padre": "G050",
+      "tipo": "alfanumerico",
+      "longitud": "1-50",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de las características de la carga",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G058"
+        }
+      ],
+      "catalogo": "caracteristica-carga"
+    }
+  ]
+}

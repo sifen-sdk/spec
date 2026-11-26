@@ -1,0 +1,1187 @@
+{
+  "grupo": "E10",
+  "titulo": "Campos que describen el transporte de las mercaderías",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "E900",
+      "xml": "gTransp",
+      "nombre": "transport",
+      "padre": "E001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que describen el transporte de mercaderías",
+      "observaciones": "Opcional si C002 = 1",
+      "contradiccion": "C-405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E900",
+          "pagina": 96
+        }
+      ]
+    },
+    {
+      "id": "E901",
+      "xml": "iTipTrans",
+      "nombre": "typeCode",
+      "padre": "E900",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de transporte",
+      "observaciones": "1= Propio; 2= Tercero",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E901",
+          "pagina": 96
+        }
+      ],
+      "catalogo": "tipo-transporte"
+    },
+    {
+      "id": "E902",
+      "xml": "dDesTipTrans",
+      "nombre": "typeDescription",
+      "padre": "E900",
+      "tipo": "alfanumerico",
+      "longitud": "6-7",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de transporte",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E902",
+          "pagina": 96
+        }
+      ],
+      "catalogo": "tipo-transporte"
+    },
+    {
+      "id": "E903",
+      "xml": "iModTrans",
+      "nombre": "modeCode",
+      "padre": "E900",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Modalidad del transporte",
+      "observaciones": "1=Terrestre; 2= Fluvial; 3= Aéreo; 4= Multimodal",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E903",
+          "pagina": 96
+        }
+      ],
+      "catalogo": "modalidad-transporte"
+    },
+    {
+      "id": "E904",
+      "xml": "dDesModTrans",
+      "nombre": "modeDescription",
+      "padre": "E900",
+      "tipo": "alfanumerico",
+      "longitud": "5-10",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la modalidad del transporte",
+      "observaciones": "Referente al campo E903",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E904",
+          "pagina": 96
+        }
+      ],
+      "catalogo": "modalidad-transporte"
+    },
+    {
+      "id": "E905",
+      "xml": "iRespFlete",
+      "nombre": "freightPayerCode",
+      "padre": "E900",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Responsable del costo del flete",
+      "observaciones": "1= Emisor de la Factura Electrónica; 2= Receptor de la Factura Electrónica; 3= Tercero; 4= Agente intermediario del transporte (cuando intervenga); 5= Transporte propio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E905",
+          "pagina": 96
+        }
+      ],
+      "catalogo": "responsable-flete"
+    },
+    {
+      "id": "E906",
+      "xml": "cCondNeg",
+      "nombre": "negotiationConditionCode",
+      "padre": "E900",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "0-1",
+      "descripcion": "Condición de la negociación",
+      "observaciones": "Según Tabla 10 - Incoterms",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E906",
+          "pagina": 96
+        }
+      ],
+      "catalogo": "condicion-negociacion"
+    },
+    {
+      "id": "E907",
+      "xml": "dNuManif",
+      "nombre": "manifestNumber",
+      "padre": "E900",
+      "tipo": "alfanumerico",
+      "longitud": "1-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de manifiesto o conocimiento de carga/ declaración de tránsito aduanero/ Carta de porte internacional",
+      "observaciones": "Campo abierto para informar la numeración de cualquiera de las opciones descriptas",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E907",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E908",
+      "xml": "dNuDespImp",
+      "nombre": "importDispatchNumber",
+      "padre": "E900",
+      "tipo": "alfanumerico",
+      "longitud": "16",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de despacho de importación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E908",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E909",
+      "xml": "dIniTras",
+      "nombre": "estimatedStartDate",
+      "padre": "E900",
+      "tipo": "fecha",
+      "longitud": "10",
+      "ocurrencia": "0-1",
+      "descripcion": "Fecha estimada de inicio de traslado",
+      "observaciones": "Opcional si C002 = 1. Fecha en el formato: AAAA-MM-DD",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E909",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E910",
+      "xml": "dFinTras",
+      "nombre": "estimatedEndDate",
+      "padre": "E900",
+      "tipo": "fecha",
+      "longitud": "10",
+      "ocurrencia": "0-1",
+      "descripcion": "Fecha estimada de fin de traslado",
+      "observaciones": "Fecha en el formato: AAAA-MM-DD",
+      "contradiccion": "C-402",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E910",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E911",
+      "xml": "cPaisDest",
+      "nombre": "destinationCountryCode",
+      "padre": "E900",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del país de destino",
+      "observaciones": "Según XSD de Codificación de Países",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E911",
+          "pagina": 97
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "E912",
+      "xml": "dDesPaisDest",
+      "nombre": "destinationCountryDescription",
+      "padre": "E900",
+      "tipo": "alfanumerico",
+      "longitud": "4-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del país de destino",
+      "contradiccion": "C-408",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E912",
+          "pagina": 97
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "E920",
+      "xml": "gCamSal",
+      "nombre": "departureLocation",
+      "padre": "E900",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que identifican el local de salida de las mercaderías",
+      "observaciones": "Opcional si C002 = 1",
+      "contradiccion": "C-404",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E920",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E940",
+      "xml": "gCamEnt",
+      "nombre": "deliveryLocation",
+      "padre": "E900",
+      "tipo": "grupo",
+      "ocurrencia": "0-99",
+      "descripcion": "Campos que identifican el local de la entrega de las mercaderías",
+      "contradiccion": "C-405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E940",
+          "pagina": 98
+        }
+      ]
+    },
+    {
+      "id": "E921",
+      "xml": "dDirLocSal",
+      "nombre": "address",
+      "padre": "E920",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Dirección del local de salida",
+      "observaciones": "Nombre de la calle principal",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E921",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E922",
+      "xml": "dNumCasSal",
+      "nombre": "houseNumber",
+      "padre": "E920",
+      "tipo": "numerico",
+      "longitud": "1-6",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de casa de salida",
+      "observaciones": "Si no tiene numeración, colocar 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E922",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E923",
+      "xml": "dComp1Sal",
+      "nombre": "addressComplement1",
+      "padre": "E920",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Complemento de dirección 1 salida",
+      "observaciones": "Nombre de la calle secundaria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E923",
+          "pagina": 97
+        }
+      ]
+    },
+    {
+      "id": "E924",
+      "xml": "dComp2Sal",
+      "nombre": "addressComplement2",
+      "padre": "E920",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Complemento de dirección 2 salida",
+      "observaciones": "Número de departamento/ piso/ local/ edificio/ deposito del local de salida de la mercadería",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E924",
+          "pagina": 98
+        }
+      ]
+    },
+    {
+      "id": "E925",
+      "xml": "cDepSal",
+      "nombre": "departmentCode",
+      "padre": "E920",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del departamento del local de salida",
+      "observaciones": "Según XSD de Departamentos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E925",
+          "pagina": 98
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E926",
+      "xml": "dDesDepSal",
+      "nombre": "departmentDescription",
+      "padre": "E920",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del departamento del local de salida",
+      "observaciones": "Referente al campo E925",
+      "contradiccion": "C-409",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E926",
+          "pagina": 98
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E927",
+      "xml": "cDisSal",
+      "nombre": "districtCode",
+      "padre": "E920",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito del local de salida",
+      "observaciones": "Según Tabla 2.1 - Distritos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E927",
+          "pagina": 98
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E928",
+      "xml": "dDesDisSal",
+      "nombre": "districtDescription",
+      "padre": "E920",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de distrito del local de salida",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E928",
+          "pagina": 98
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E929",
+      "xml": "cCiuSal",
+      "nombre": "cityCode",
+      "padre": "E920",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de la ciudad del local de salida",
+      "observaciones": "Según Tabla 2.2 – Ciudades",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E929",
+          "pagina": 98
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "E930",
+      "xml": "dDesCiuSal",
+      "nombre": "cityDescription",
+      "padre": "E920",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de ciudad del local de salida",
+      "observaciones": "Referente al campo E929",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E930",
+          "pagina": 98
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "E931",
+      "xml": "dTelSal",
+      "nombre": "phone",
+      "padre": "E920",
+      "tipo": "alfanumerico",
+      "longitud": "6-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Teléfono de contacto del local de salida",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E931",
+          "pagina": 98
+        }
+      ]
+    },
+    {
+      "id": "E941",
+      "xml": "dDirLocEnt",
+      "nombre": "address",
+      "padre": "E940",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Dirección del local de la entrega",
+      "observaciones": "Nombre de la calle principal",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E941",
+          "pagina": 98
+        }
+      ]
+    },
+    {
+      "id": "E942",
+      "xml": "dNumCasEnt",
+      "nombre": "houseNumber",
+      "padre": "E940",
+      "tipo": "numerico",
+      "longitud": "1-6",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de casa de la entrega",
+      "observaciones": "Si no tiene numeración, colocar 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E942",
+          "pagina": 98
+        }
+      ]
+    },
+    {
+      "id": "E943",
+      "xml": "dComp1Ent",
+      "nombre": "addressComplement1",
+      "padre": "E940",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Complemento de dirección 1 entrega",
+      "observaciones": "Nombre de la calle secundaria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E943",
+          "pagina": 99
+        }
+      ]
+    },
+    {
+      "id": "E944",
+      "xml": "dComp2Ent",
+      "nombre": "addressComplement2",
+      "padre": "E940",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Complemento de dirección 2 entrega",
+      "observaciones": "Número de departamento/ piso/ local/ edificio/ deposito del local de entrega de la mercadería",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E944",
+          "pagina": 99
+        }
+      ]
+    },
+    {
+      "id": "E945",
+      "xml": "cDepEnt",
+      "nombre": "departmentCode",
+      "padre": "E940",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del departamento del local de la entrega",
+      "observaciones": "Según XSD de Departamentos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E945",
+          "pagina": 99
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E946",
+      "xml": "dDesDepEnt",
+      "nombre": "departmentDescription",
+      "padre": "E940",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del departamento del local de la entrega",
+      "observaciones": "Referente al campo E945",
+      "contradiccion": "C-409",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E946",
+          "pagina": 99
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E947",
+      "xml": "cDisEnt",
+      "nombre": "districtCode",
+      "padre": "E940",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito del local de la entrega",
+      "observaciones": "Según Tabla 2.1 - Distritos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E947",
+          "pagina": 99
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E948",
+      "xml": "dDesDisEnt",
+      "nombre": "districtDescription",
+      "padre": "E940",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de distrito del local de la entrega",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E948",
+          "pagina": 99
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E949",
+      "xml": "cCiuEnt",
+      "nombre": "cityCode",
+      "padre": "E940",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de la ciudad del local de la entrega",
+      "observaciones": "Según Tabla 2.2 – Ciudades",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E949",
+          "pagina": 99
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "E950",
+      "xml": "dDesCiuEnt",
+      "nombre": "cityDescription",
+      "padre": "E940",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de ciudad del local de la entrega",
+      "observaciones": "Referente al campo E949",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E950",
+          "pagina": 99
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "E951",
+      "xml": "dTelEnt",
+      "nombre": "phone",
+      "padre": "E940",
+      "tipo": "alfanumerico",
+      "longitud": "6-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Teléfono de contacto del local de la entrega",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E951",
+          "pagina": 99
+        }
+      ]
+    },
+    {
+      "id": "E960",
+      "xml": "gVehTras",
+      "nombre": "vehicles",
+      "padre": "E900",
+      "tipo": "grupo",
+      "ocurrencia": "0-4",
+      "descripcion": "Campos que identifican al vehículo del traslado de mercaderías",
+      "contradiccion": "C-405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E960",
+          "pagina": 99
+        }
+      ]
+    },
+    {
+      "id": "E961",
+      "xml": "dTiVehTras",
+      "nombre": "type",
+      "padre": "E960",
+      "tipo": "alfanumerico",
+      "longitud": "4-10",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E961",
+          "pagina": 100
+        }
+      ]
+    },
+    {
+      "id": "E962",
+      "xml": "dMarVeh",
+      "nombre": "brand",
+      "padre": "E960",
+      "tipo": "alfanumerico",
+      "longitud": "1-10",
+      "ocurrencia": "1-1",
+      "descripcion": "Marca",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E962",
+          "pagina": 100
+        }
+      ]
+    },
+    {
+      "id": "E967",
+      "xml": "dTipIdenVeh",
+      "nombre": "identificationTypeCode",
+      "padre": "E960",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de identificación del vehículo",
+      "observaciones": "1=Número de identificación del vehículo; 2=Número de matrícula del vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E967",
+          "pagina": 100
+        }
+      ],
+      "catalogo": "tipo-identificacion-vehiculo"
+    },
+    {
+      "id": "E963",
+      "xml": "dNroIDVeh",
+      "nombre": "identificationNumber",
+      "padre": "E960",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de identificación del vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E963",
+          "pagina": 100
+        }
+      ]
+    },
+    {
+      "id": "E964",
+      "xml": "dAdicVeh",
+      "nombre": "additionalData",
+      "padre": "E960",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Datos adicionales del vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E964",
+          "pagina": 100
+        }
+      ]
+    },
+    {
+      "id": "E965",
+      "xml": "dNroMatVeh",
+      "nombre": "plateNumber",
+      "padre": "E960",
+      "tipo": "alfanumerico",
+      "longitud": "6-7",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de matrícula del vehículo",
+      "observaciones": "El MT150 fija la longitud en 6; la NT 5 la cambia a 6-7.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E965",
+          "pagina": 100,
+          "cita": "A 6"
+        },
+        {
+          "doc": "NT005",
+          "ref": "1.1 E965",
+          "cita": "A 6-7"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgVehTras/dNroMatVeh maxLength=7"
+        }
+      ]
+    },
+    {
+      "id": "E966",
+      "xml": "dNroVuelo",
+      "nombre": "flightNumber",
+      "padre": "E960",
+      "tipo": "alfanumerico",
+      "longitud": "6",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de vuelo",
+      "contradiccion": "C-403",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E966",
+          "pagina": 100
+        }
+      ]
+    },
+    {
+      "id": "E980",
+      "xml": "gCamTrans",
+      "nombre": "carrier",
+      "padre": "E900",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que identifican al transportista",
+      "contradiccion": "C-407",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E980",
+          "pagina": 100
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.5 E980"
+        }
+      ]
+    },
+    {
+      "id": "E981",
+      "xml": "iNatTrans",
+      "nombre": "natureCode",
+      "padre": "E980",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Naturaleza del transportista",
+      "observaciones": "1= Contribuyente; 2= No contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E981",
+          "pagina": 100
+        }
+      ],
+      "catalogo": "naturaleza-transportista"
+    },
+    {
+      "id": "E982",
+      "xml": "dNomTrans",
+      "nombre": "name",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre o razón social del transportista",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E982",
+          "pagina": 100
+        }
+      ]
+    },
+    {
+      "id": "E983",
+      "xml": "dRucTrans",
+      "nombre": "ruc",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "RUC del transportista",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E983",
+          "pagina": 100
+        }
+      ]
+    },
+    {
+      "id": "E984",
+      "xml": "dDVTrans",
+      "nombre": "checkDigit",
+      "padre": "E980",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Dígito verificador del RUC del transportista",
+      "observaciones": "Según algoritmo módulo 11",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E984",
+          "pagina": 101
+        }
+      ]
+    },
+    {
+      "id": "E985",
+      "xml": "iTipIDTrans",
+      "nombre": "idDocumentTypeCode",
+      "padre": "E980",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento de identidad del transportista",
+      "observaciones": "1= Cédula paraguaya; 2= Pasaporte; 3= Cédula extranjera; 4= Carnet de residencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E985",
+          "pagina": 101
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "E986",
+      "xml": "dDTipIDTrans",
+      "nombre": "idDocumentTypeDescription",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "9-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de documento de identidad del transportista",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E986",
+          "pagina": 101
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "E987",
+      "xml": "dNumIDTrans",
+      "nombre": "idDocumentNumber",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de documento de identidad del transportista",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E987",
+          "pagina": 101
+        }
+      ]
+    },
+    {
+      "id": "E988",
+      "xml": "cNacTrans",
+      "nombre": "nationalityCode",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "0-1",
+      "descripcion": "Nacionalidad del transportista",
+      "observaciones": "Según XSD de Codificación de Países",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E988",
+          "pagina": 101
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "E989",
+      "xml": "dDesNacTrans",
+      "nombre": "nationalityDescription",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "4-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de la nacionalidad del transportista",
+      "contradiccion": "C-408",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E989",
+          "pagina": 101
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "E990",
+      "xml": "dNumIDChof",
+      "nombre": "driverIdDocumentNumber",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de documento de identidad del chofer",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E990",
+          "pagina": 101
+        }
+      ]
+    },
+    {
+      "id": "E991",
+      "xml": "dNomChof",
+      "nombre": "driverName",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre y apellido del chofer",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E991",
+          "pagina": 101
+        }
+      ]
+    },
+    {
+      "id": "E992",
+      "xml": "dDomFisc",
+      "nombre": "taxAddress",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "1-150",
+      "ocurrencia": "1-1",
+      "descripcion": "Domicilio fiscal del transportista",
+      "observaciones": "Obligatorio por RG N° 41/2014. El MT150 fija la ocurrencia en 0-1; la NT 10 la cambia a 1-1.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E992",
+          "pagina": 101,
+          "cita": "0-1"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.5 E992",
+          "cita": "1-1"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamTrans/dDomFisc minOccurs=1"
+        }
+      ]
+    },
+    {
+      "id": "E993",
+      "xml": "dDirChof",
+      "nombre": "driverAddress",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Dirección del chofer",
+      "observaciones": "Obligatorio por por RG N° 41/2014. El MT150 fija la ocurrencia en 0-1; la NT 10 la cambia a 1-1.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E993",
+          "pagina": 101,
+          "cita": "0-1"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.5 E993",
+          "cita": "1-1"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamTrans/dDirChof minOccurs=1"
+        }
+      ]
+    },
+    {
+      "id": "E994",
+      "xml": "dNombAg",
+      "nombre": "agentName",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "0-1",
+      "descripcion": "Nombre o razón social del agente",
+      "observaciones": "Casos particulares según RG N° 41/14",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E994",
+          "pagina": 101
+        }
+      ]
+    },
+    {
+      "id": "E995",
+      "xml": "dRucAg",
+      "nombre": "agentRuc",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "RUC del agente",
+      "observaciones": "Casos particulares según RG N° 41/14",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E995",
+          "pagina": 101
+        }
+      ]
+    },
+    {
+      "id": "E996",
+      "xml": "dDVAg",
+      "nombre": "agentCheckDigit",
+      "padre": "E980",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Dígito verificador del RUC del agente",
+      "observaciones": "Casos particulares según RG N° 41/14. Según algoritmo módulo 11",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E996",
+          "pagina": 102
+        }
+      ]
+    },
+    {
+      "id": "E997",
+      "xml": "dDirAge",
+      "nombre": "agentAddress",
+      "padre": "E980",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Dirección del agente",
+      "observaciones": "Casos particulares según RG N° 41/14",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E997",
+          "pagina": 102
+        }
+      ]
+    }
+  ]
+}

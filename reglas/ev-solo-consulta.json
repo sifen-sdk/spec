@@ -1,0 +1,163 @@
+{
+  "grupo": "GEA",
+  "reglas": [
+    {
+      "id": "R-GER001-D1",
+      "campo": "GER001",
+      "tipo": "dependencia",
+      "texto": "Evento automático (por SIFEN o por interoperabilidad con Tesaka y Marangatu): no es generado por los facturadores electrónicos, se devuelve como parte de la consulta de un DTE y se encuentra en el contenedor del evento",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.3",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-GERA001-D1",
+      "campo": "GERA001",
+      "tipo": "dependencia",
+      "texto": "Evento automático (por SIFEN o por interoperabilidad con Tesaka y Marangatu): no es generado por los facturadores electrónicos, se devuelve como parte de la consulta de un DTE y se encuentra en el contenedor del evento",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.3",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-GECF001-D1",
+      "campo": "GECF001",
+      "tipo": "dependencia",
+      "texto": "Evento automático (por SIFEN o por interoperabilidad con Tesaka y Marangatu): no es generado por los facturadores electrónicos, se devuelve como parte de la consulta de un DTE y se encuentra en el contenedor del evento",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.3",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-GEDF001-D1",
+      "campo": "GEDF001",
+      "tipo": "dependencia",
+      "texto": "Evento automático (por SIFEN o por interoperabilidad con Tesaka y Marangatu): no es generado por los facturadores electrónicos, se devuelve como parte de la consulta de un DTE y se encuentra en el contenedor del evento",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.3",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-GEDD001-D1",
+      "campo": "GEDD001",
+      "tipo": "dependencia",
+      "texto": "Evento automático (por SIFEN o por interoperabilidad con Tesaka y Marangatu): no es generado por los facturadores electrónicos, se devuelve como parte de la consulta de un DTE y se encuentra en el contenedor del evento",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.3",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-GEA001-D1",
+      "campo": "GEA001",
+      "tipo": "dependencia",
+      "texto": "Evento automático (por SIFEN o por interoperabilidad con Tesaka y Marangatu): no es generado por los facturadores electrónicos, se devuelve como parte de la consulta de un DTE y se encuentra en el contenedor del evento",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.3",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-GERE001-D1",
+      "campo": "GERE001",
+      "tipo": "dependencia",
+      "texto": "Evento automático (por SIFEN o por interoperabilidad con Tesaka y Marangatu): no es generado por los facturadores electrónicos, se devuelve como parte de la consulta de un DTE y se encuentra en el contenedor del evento",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.3",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-X-OA-rGeVeOA-D1",
+      "campo": "X-OA-rGeVeOA",
+      "tipo": "dependencia",
+      "texto": "Evento registrado por la Administración Tributaria (evento futuro en el Manual): no lo envía el facturador electrónico",
+      "no_declarativa": true,
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    },
+    {
+      "id": "R-X-PC-rGeVePC-D1",
+      "campo": "X-PC-rGeVePC",
+      "tipo": "dependencia",
+      "texto": "Evento registrado por la Administración Tributaria (evento futuro en el Manual): no lo envía el facturador electrónico",
+      "no_declarativa": true,
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    },
+    {
+      "id": "R-X-IMP-rGeVeImp-D1",
+      "campo": "X-IMP-rGeVeImp",
+      "tipo": "dependencia",
+      "texto": "Evento registrado por la Administración Tributaria (evento futuro en el Manual): no lo envía el facturador electrónico",
+      "no_declarativa": true,
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    },
+    {
+      "id": "R-X-DET-rGeVeDet-D1",
+      "campo": "X-DET-rGeVeDet",
+      "tipo": "dependencia",
+      "texto": "Evento registrado por la Administración Tributaria (evento futuro en el Manual): no lo envía el facturador electrónico",
+      "no_declarativa": true,
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    }
+  ]
+}

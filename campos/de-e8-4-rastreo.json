@@ -1,0 +1,94 @@
+{
+  "grupo": "E8.4",
+  "titulo": "Grupo de rastreo de la mercadería",
+  "esquemas": ["DE_v150.xsd"],
+  "campos": [
+    {
+      "id": "E750", "xml": "gRasMerc", "nombre": "goodsTracking", "padre": "E700", "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Grupo de rastreo de la mercadería",
+      "fuentes": [{ "doc": "MT150", "ref": "E750" }]
+    },
+    {
+      "id": "E751", "xml": "dNumLote", "nombre": "lotNumber", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-80", "ocurrencia": "0-1",
+      "descripcion": "Número de lote",
+      "observaciones": "Obligados por Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E751" }, { "doc": "NT010", "ref": "1.4 E751" }]
+    },
+    {
+      "id": "E752", "xml": "dVencMerc", "nombre": "expirationDate", "padre": "E750", "tipo": "fecha",
+      "longitud": "10", "ocurrencia": "0-1",
+      "descripcion": "Fecha de vencimiento de la mercadería",
+      "observaciones": "Formato AAAA-MM-DD",
+      "fuentes": [{ "doc": "MT150", "ref": "E752" }]
+    },
+    {
+      "id": "E753", "xml": "dNSerie", "nombre": "serialNumber", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-10", "ocurrencia": "0-1",
+      "descripcion": "Número de serie",
+      "fuentes": [{ "doc": "MT150", "ref": "E753" }]
+    },
+    {
+      "id": "E754", "xml": "dNumPedi", "nombre": "orderNumber", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-20", "ocurrencia": "0-1",
+      "descripcion": "Número de pedido",
+      "fuentes": [{ "doc": "MT150", "ref": "E754" }]
+    },
+    {
+      "id": "E755", "xml": "dNumSegui", "nombre": "shipmentTrackingNumber", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-20", "ocurrencia": "0-1",
+      "descripcion": "Número de seguimiento del envío",
+      "fuentes": [{ "doc": "MT150", "ref": "E755" }]
+    },
+    {
+      "id": "E756", "xml": "dNomImp", "nombre": "importerName", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "4-60", "ocurrencia": "0-1",
+      "descripcion": "Nombre del Importador",
+      "observaciones": "Obligados por la RG N° 16/2019 – Agroquímicos",
+      "estado": "eliminado",
+      "fuentes": [{ "doc": "MT150", "ref": "E756" }, { "doc": "NT010", "ref": "1.4 E756", "cita": "se elimina los siguientes campos (fila marcada en rojo)" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "E757", "xml": "dDirImp", "nombre": "importerAddress", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-255", "ocurrencia": "0-1",
+      "descripcion": "Dirección de Importador",
+      "observaciones": "Obligados por la RG N° 16/2019 – Agroquímicos",
+      "estado": "eliminado",
+      "fuentes": [{ "doc": "MT150", "ref": "E757" }, { "doc": "NT010", "ref": "1.4 E757", "cita": "se elimina los siguientes campos (fila marcada en rojo)" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "E758", "xml": "dNumFir", "nombre": "importerFirmRegistrationNumber", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "20", "ocurrencia": "0-1",
+      "descripcion": "Número de registro de la firma del importador",
+      "observaciones": "Obligados por la RG N° 16/2019 – Agroquímicos",
+      "estado": "eliminado",
+      "fuentes": [{ "doc": "MT150", "ref": "E758" }, { "doc": "NT010", "ref": "1.4 E758", "cita": "se elimina los siguientes campos (fila marcada en rojo)" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "E759", "xml": "dNumReg", "nombre": "productRegistrationNumber", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-20", "ocurrencia": "0-1",
+      "descripcion": "Número de registro del producto otorgado por el SENAVE",
+      "observaciones": "Obligados por el Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E759", "cita": "A 20 0-1" }, { "doc": "NT010", "ref": "1.4 E759", "cita": "A 1-20 0-1" }]
+    },
+    {
+      "id": "E760", "xml": "dNumRegEntCom", "nombre": "commercialEntityRegistrationNumber", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-20", "ocurrencia": "0-1",
+      "descripcion": "Número de registro de entidad comercial otorgado por el SENAVE",
+      "observaciones": "Obligados por el Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E760", "cita": "A 20 0-1" }, { "doc": "NT010", "ref": "1.4 E760", "cita": "A 1-20 0-1" }]
+    },
+    {
+      "id": "E761", "xml": "dNomPro", "nombre": "productName", "padre": "E750", "tipo": "alfanumerico",
+      "longitud": "1-30", "ocurrencia": "0-1",
+      "descripcion": "Nombre del Producto",
+      "observaciones": "Obligados por el Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E761" }, { "doc": "XSD", "ref": "DE_v150.xsd tgRasMerc/dNomPro" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    }
+  ]
+}

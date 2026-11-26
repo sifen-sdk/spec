@@ -1,0 +1,1100 @@
+{
+  "grupo": "E7",
+  "reglas": [
+    {
+      "id": "R-E600-C1",
+      "campo": "E600",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento electrónico seleccionado es Factura Electrónica o Autofactura Electrónica (C002=1 o C002=4), es obligatorio informar la condición de la operación (E600)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "1",
+          "4"
+        ]
+      },
+      "codigo_sifen": "1500",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E600",
+          "pagina": 81
+        },
+        {
+          "doc": "MT150",
+          "ref": "1500",
+          "pagina": 172
+        }
+      ]
+    },
+    {
+      "id": "R-E600-P1",
+      "campo": "E600",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de documento electrónico seleccionado es distinto a Factura Electrónica y Autofactura Electrónica (C002≠1 y C002≠4), la condición de la operación no debe ser informada (E600)",
+      "condicion": {
+        "campo": "C002",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "4"
+        ]
+      },
+      "codigo_sifen": "1501",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E600",
+          "pagina": 81
+        },
+        {
+          "doc": "MT150",
+          "ref": "1501",
+          "pagina": 172
+        }
+      ]
+    },
+    {
+      "id": "R-E601-OB",
+      "campo": "E601",
+      "tipo": "obligatorio",
+      "texto": "Condición de la operación: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E601",
+          "pagina": 81
+        }
+      ]
+    },
+    {
+      "id": "R-E602-OB",
+      "campo": "E602",
+      "tipo": "obligatorio",
+      "texto": "Descripción de la condición de operación: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E602",
+          "pagina": 81
+        }
+      ]
+    },
+    {
+      "id": "R-E601-D1",
+      "campo": "E601",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de documento es Autofactura Electrónica (C002=4) es obligatorio que la condición de la operación sea al contado (E601=1)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "1503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1503",
+          "pagina": 172
+        }
+      ]
+    },
+    {
+      "id": "R-E602-D1",
+      "campo": "E602",
+      "tipo": "dependencia",
+      "texto": "La descripción de la condición de la operación debe coincidir con lo informado en el campo E601",
+      "codigo_sifen": "1502",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E602",
+          "pagina": 81
+        },
+        {
+          "doc": "MT150",
+          "ref": "1502",
+          "pagina": 172
+        }
+      ]
+    },
+    {
+      "id": "R-E605-C1",
+      "campo": "E605",
+      "tipo": "condicional",
+      "texto": "Si la condición de la operación seleccionada es contado (E601=1), es obligatorio informar el grupo de los campos que describen la forma de pago de la operación al contado o del monto de la entrega inicial (E605)",
+      "condicion": {
+        "campo": "E601",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1550",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E605",
+          "pagina": 81
+        },
+        {
+          "doc": "MT150",
+          "ref": "1550",
+          "pagina": 172
+        }
+      ]
+    },
+    {
+      "id": "R-E605-C2",
+      "campo": "E605",
+      "tipo": "condicional",
+      "texto": "Si la condición de la operación seleccionada es crédito (E601=2), y existe monto de entrega inicial (E645), es obligatorio informar el grupo E605",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E601",
+            "op": "igual",
+            "valor": "2"
+          },
+          {
+            "campo": "E645",
+            "op": "presente"
+          }
+        ]
+      },
+      "codigo_sifen": "1551",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E605",
+          "pagina": 81
+        },
+        {
+          "doc": "MT150",
+          "ref": "1551",
+          "pagina": 172
+        }
+      ]
+    },
+    {
+      "id": "R-E605-P1",
+      "campo": "E605",
+      "tipo": "prohibido",
+      "texto": "Si la condición de la operación seleccionada es crédito (E601=2), y NO existe monto de entrega inicial (E645), el grupo E605 no debe ser informado",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E601",
+            "op": "igual",
+            "valor": "2"
+          },
+          {
+            "campo": "E645",
+            "op": "ausente"
+          }
+        ]
+      },
+      "codigo_sifen": "1552",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1552",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E606-OB",
+      "campo": "E606",
+      "tipo": "obligatorio",
+      "texto": "Tipo de pago: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E606",
+          "pagina": 82
+        }
+      ]
+    },
+    {
+      "id": "R-E607-OB",
+      "campo": "E607",
+      "tipo": "obligatorio",
+      "texto": "Descripción del tipo de pago: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E607",
+          "pagina": 83
+        }
+      ]
+    },
+    {
+      "id": "R-E608-OB",
+      "campo": "E608",
+      "tipo": "obligatorio",
+      "texto": "Monto por tipo de pago: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E608",
+          "pagina": 83
+        }
+      ]
+    },
+    {
+      "id": "R-E609-OB",
+      "campo": "E609",
+      "tipo": "obligatorio",
+      "texto": "Moneda por tipo de pago: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E609",
+          "pagina": 83
+        }
+      ]
+    },
+    {
+      "id": "R-E610-OB",
+      "campo": "E610",
+      "tipo": "obligatorio",
+      "texto": "Descripción de la moneda por tipo de pago: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E610",
+          "pagina": 83
+        }
+      ]
+    },
+    {
+      "id": "R-E606-D1",
+      "campo": "E606",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de pago informado es Pago bancario (E606=16), el indicador de presencia debe ser Operación bancaria (E011=5). Esta validación se aplica solo al DE Factura electrónica",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E606",
+            "op": "igual",
+            "valor": "16"
+          },
+          {
+            "campo": "C002",
+            "op": "igual",
+            "valor": "1"
+          }
+        ]
+      },
+      "codigo_sifen": "1553",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E606",
+          "pagina": 82,
+          "cita": "16= Pago bancario (Informar solo si E011=5)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1553",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E607-D1",
+      "campo": "E607",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de pago debe coincidir con lo informado en el campo E606",
+      "contradiccion": "C-207",
+      "codigo_sifen": "1554",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E607",
+          "pagina": 83
+        },
+        {
+          "doc": "MT150",
+          "ref": "1554",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E607-D2",
+      "campo": "E607",
+      "tipo": "dependencia",
+      "texto": "Si E606 = 99 se informa en E607 el tipo de pago",
+      "condicion": {
+        "campo": "E606",
+        "op": "igual",
+        "valor": "99"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E607",
+          "pagina": 83
+        }
+      ]
+    },
+    {
+      "id": "R-E609-D1",
+      "campo": "E609",
+      "tipo": "dependencia",
+      "texto": "Se requiere la misma moneda para todos los ítems del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E609",
+          "pagina": 83,
+          "cita": "Se requiere la misma moneda para todos los ítems del DE"
+        }
+      ]
+    },
+    {
+      "id": "R-E610-D1",
+      "campo": "E610",
+      "tipo": "dependencia",
+      "texto": "La descripción de la moneda por tipo de pago debe coincidir con lo informado en el campo E609",
+      "codigo_sifen": "1555",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E610",
+          "pagina": 83
+        },
+        {
+          "doc": "MT150",
+          "ref": "1555",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E611-C1",
+      "campo": "E611",
+      "tipo": "condicional",
+      "texto": "Si la moneda por tipo de pago es distinta a guaraníes (E609≠PYG), es obligatorio informar el tipo de cambio por tipo de pago (E611)",
+      "condicion": {
+        "campo": "E609",
+        "op": "distinto",
+        "valor": "PYG"
+      },
+      "codigo_sifen": "1556",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E611",
+          "pagina": 83
+        },
+        {
+          "doc": "MT150",
+          "ref": "1556",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E611-P1",
+      "campo": "E611",
+      "tipo": "prohibido",
+      "texto": "Si la moneda por tipo de pago es igual a guaraníes (E609=PYG), el tipo de cambio por tipo de pago (E611) no debe existir",
+      "condicion": {
+        "campo": "E609",
+        "op": "igual",
+        "valor": "PYG"
+      },
+      "codigo_sifen": "1557",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E611",
+          "pagina": 83
+        },
+        {
+          "doc": "MT150",
+          "ref": "1557",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E620-C1",
+      "campo": "E620",
+      "tipo": "condicional",
+      "texto": "Si el tipo de pago seleccionado es igual a Tarjeta de Crédito/Débito (E606=3 o 4), es obligatorio informar el grupo de los campos que describen el pago o entrega inicial de la operación con tarjeta de crédito/debito (E620)",
+      "condicion": {
+        "campo": "E606",
+        "op": "en",
+        "valores": [
+          "3",
+          "4"
+        ]
+      },
+      "codigo_sifen": "1600",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E620",
+          "pagina": 84
+        },
+        {
+          "doc": "MT150",
+          "ref": "1600",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E620-P1",
+      "campo": "E620",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de pago seleccionado es distinto a Tarjeta de Crédito/Débito (E606≠3 o 4), el grupo E620 no debe ser informado",
+      "condicion": {
+        "campo": "E606",
+        "op": "no_en",
+        "valores": [
+          "3",
+          "4"
+        ]
+      },
+      "codigo_sifen": "1601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E620",
+          "pagina": 84
+        },
+        {
+          "doc": "MT150",
+          "ref": "1601",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E621-OB",
+      "campo": "E621",
+      "tipo": "obligatorio",
+      "texto": "Denominación de la tarjeta: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E621",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E622-OB",
+      "campo": "E622",
+      "tipo": "obligatorio",
+      "texto": "Descripción de denominación de la tarjeta: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E622",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E626-OB",
+      "campo": "E626",
+      "tipo": "obligatorio",
+      "texto": "Forma de procesamiento de pago: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E626",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E622-D1",
+      "campo": "E622",
+      "tipo": "dependencia",
+      "texto": "La descripción de la denominación de la tarjeta (E622) debe coincidir con lo informado en el campo (E621)",
+      "codigo_sifen": "1602",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E622",
+          "pagina": 84
+        },
+        {
+          "doc": "MT150",
+          "ref": "1602",
+          "pagina": 173
+        }
+      ]
+    },
+    {
+      "id": "R-E622-D2",
+      "campo": "E622",
+      "tipo": "dependencia",
+      "texto": "Si E621 = 99 se informa la descripción de la denominación de la tarjeta",
+      "condicion": {
+        "campo": "E621",
+        "op": "igual",
+        "valor": "99"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E622",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E623-OP",
+      "campo": "E623",
+      "tipo": "opcional",
+      "texto": "Razón social de la procesadora de tarjeta: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E623",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E624-OP",
+      "campo": "E624",
+      "tipo": "opcional",
+      "texto": "RUC de la procesadora de tarjeta: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E624",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E625-OP",
+      "campo": "E625",
+      "tipo": "opcional",
+      "texto": "Dígito verificador del RUC de la procesadora de tarjeta: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E625",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E627-OP",
+      "campo": "E627",
+      "tipo": "opcional",
+      "texto": "Código de autorización de la operación: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E627",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E628-OP",
+      "campo": "E628",
+      "tipo": "opcional",
+      "texto": "Nombre del titular de la tarjeta: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E628",
+          "pagina": 84
+        }
+      ]
+    },
+    {
+      "id": "R-E629-OP",
+      "campo": "E629",
+      "tipo": "opcional",
+      "texto": "Número de la tarjeta: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E629",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E624-D1",
+      "campo": "E624",
+      "tipo": "dependencia",
+      "texto": "El RUC de la procesadora de tarjeta debe existir en la base de datos de Marangatu",
+      "contradiccion": "C-202",
+      "codigo_sifen": "1603",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1603",
+          "pagina": 173,
+          "cita": "RUC de la procesadora de tarjeta (E623) inexistente en la base de datos de Marangatu"
+        }
+      ]
+    },
+    {
+      "id": "R-E625-F1",
+      "campo": "E625",
+      "tipo": "formato",
+      "texto": "El dígito verificador debe corresponder al módulo 11 del RUC de la procesadora de tarjeta",
+      "contradiccion": "C-202",
+      "codigo_sifen": "1604",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E625",
+          "pagina": 84,
+          "cita": "Según algoritmo módulo 11"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1604",
+          "pagina": 174,
+          "cita": "El Dígito verificador ingresado (E624) no corresponde al módulo 11 del RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-E629-F1",
+      "campo": "E629",
+      "tipo": "formato",
+      "texto": "Se informan los cuatro últimos dígitos de la tarjeta",
+      "contradiccion": "C-208",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E629",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E630-C1",
+      "campo": "E630",
+      "tipo": "condicional",
+      "texto": "Si el tipo de pago seleccionado es igual a Cheque (E606=2), es obligatorio informar el grupo de los campos que describen el pago o entrega inicial de la operación con cheque (E630)",
+      "condicion": {
+        "campo": "E606",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1650",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E630",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1650",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E630-P1",
+      "campo": "E630",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de pago seleccionado es distinto a Cheque (E606≠2), el grupo E630 no debe ser informado",
+      "condicion": {
+        "campo": "E606",
+        "op": "distinto",
+        "valor": "2"
+      },
+      "codigo_sifen": "1651",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E630",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1651",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E631-OB",
+      "campo": "E631",
+      "tipo": "obligatorio",
+      "texto": "Número de cheque: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E631",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E632-OB",
+      "campo": "E632",
+      "tipo": "obligatorio",
+      "texto": "Banco emisor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E632",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E631-F1",
+      "campo": "E631",
+      "tipo": "formato",
+      "texto": "Completar con 0 (cero) a la izquierda hasta alcanzar 8 (ocho) cifras",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E631",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E640-C1",
+      "campo": "E640",
+      "tipo": "condicional",
+      "texto": "Si la condición de la operación seleccionada es igual a Crédito (E601=2), es obligatorio informar el grupo de los campos que describen la operación a crédito (E640)",
+      "condicion": {
+        "campo": "E601",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1700",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E640",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1700",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E640-P1",
+      "campo": "E640",
+      "tipo": "prohibido",
+      "texto": "Si la condición de la operación seleccionada es distinta a Crédito (E601≠2), el grupo E640 no debe ser informado",
+      "condicion": {
+        "campo": "E601",
+        "op": "distinto",
+        "valor": "2"
+      },
+      "codigo_sifen": "1701",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E640",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1701",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E641-OB",
+      "campo": "E641",
+      "tipo": "obligatorio",
+      "texto": "Condición de la operación a crédito: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E641",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E642-OB",
+      "campo": "E642",
+      "tipo": "obligatorio",
+      "texto": "Descripción de la condición de la operación a crédito: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E642",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E642-D1",
+      "campo": "E642",
+      "tipo": "dependencia",
+      "texto": "La descripción de la condición de la operación a crédito debe coincidir con lo informado en el campo E641",
+      "codigo_sifen": "1702",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E642",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1702",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E643-C1",
+      "campo": "E643",
+      "tipo": "condicional",
+      "texto": "Si la condición de la operación a crédito seleccionada es igual a Plazo (E641=1), es obligatorio informar el plazo del crédito (E643)",
+      "condicion": {
+        "campo": "E641",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1703",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E643",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1703",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E643-P1",
+      "campo": "E643",
+      "tipo": "prohibido",
+      "texto": "Si la condición de la operación a crédito seleccionada es distinta a Plazo (E641≠1), el plazo del crédito (E643) no debe ser informado",
+      "condicion": {
+        "campo": "E641",
+        "op": "distinto",
+        "valor": "1"
+      },
+      "codigo_sifen": "1704",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E643",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1704",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E644-C1",
+      "campo": "E644",
+      "tipo": "condicional",
+      "texto": "Si la condición de la operación a crédito seleccionada es igual a Cuota (E641=2), es obligatorio informar la cantidad de cuotas (E644)",
+      "condicion": {
+        "campo": "E641",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E644",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1705",
+          "pagina": 174
+        }
+      ]
+    },
+    {
+      "id": "R-E644-P1",
+      "campo": "E644",
+      "tipo": "prohibido",
+      "texto": "Si la condición de la operación a crédito seleccionada es distinta a Cuota (E641≠2), la cantidad de cuotas (E644) no debe ser informada",
+      "condicion": {
+        "campo": "E641",
+        "op": "distinto",
+        "valor": "2"
+      },
+      "codigo_sifen": "1706",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E644",
+          "pagina": 85
+        },
+        {
+          "doc": "MT150",
+          "ref": "1706",
+          "pagina": 175
+        }
+      ]
+    },
+    {
+      "id": "R-E645-OP",
+      "campo": "E645",
+      "tipo": "opcional",
+      "texto": "Monto de la entrega inicial: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E645",
+          "pagina": 85
+        }
+      ]
+    },
+    {
+      "id": "R-E650-C1",
+      "campo": "E650",
+      "tipo": "condicional",
+      "texto": "Si la condición de la operación a crédito seleccionada es igual a Cuota (E641=2), es obligatorio informar el grupo de los campos que describen las cuotas (E650)",
+      "condicion": {
+        "campo": "E641",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1750",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E650",
+          "pagina": 86
+        },
+        {
+          "doc": "MT150",
+          "ref": "1750",
+          "pagina": 175
+        }
+      ]
+    },
+    {
+      "id": "R-E650-P1",
+      "campo": "E650",
+      "tipo": "prohibido",
+      "texto": "Si la condición de la operación a crédito seleccionada es distinta a Cuota (E641≠2), el grupo E650 no debe ser informado",
+      "condicion": {
+        "campo": "E641",
+        "op": "distinto",
+        "valor": "2"
+      },
+      "codigo_sifen": "1751",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E650",
+          "pagina": 86
+        },
+        {
+          "doc": "MT150",
+          "ref": "1751",
+          "pagina": 175
+        }
+      ]
+    },
+    {
+      "id": "R-E653-OB",
+      "campo": "E653",
+      "tipo": "obligatorio",
+      "texto": "Moneda de las cuotas: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E653",
+          "pagina": 86
+        }
+      ]
+    },
+    {
+      "id": "R-E654-OB",
+      "campo": "E654",
+      "tipo": "obligatorio",
+      "texto": "Descripción de la moneda de las cuotas: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E654",
+          "pagina": 86
+        }
+      ]
+    },
+    {
+      "id": "R-E651-OB",
+      "campo": "E651",
+      "tipo": "obligatorio",
+      "texto": "Monto de cada cuota: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E651",
+          "pagina": 86
+        }
+      ]
+    },
+    {
+      "id": "R-E653-D1",
+      "campo": "E653",
+      "tipo": "dependencia",
+      "texto": "Se requiere la misma moneda para todos los ítems del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E653",
+          "pagina": 86,
+          "cita": "Se requiere la misma moneda para todos los ítems del DE"
+        }
+      ]
+    },
+    {
+      "id": "R-E654-D1",
+      "campo": "E654",
+      "tipo": "dependencia",
+      "texto": "La descripción de la moneda de las cuotas corresponde al campo E653",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E654",
+          "pagina": 86
+        }
+      ]
+    },
+    {
+      "id": "R-E652-OP",
+      "campo": "E652",
+      "tipo": "opcional",
+      "texto": "Fecha de vencimiento de cada cuota: opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E652",
+          "pagina": 86
+        }
+      ]
+    }
+  ]
+}

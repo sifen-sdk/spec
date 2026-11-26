@@ -1,0 +1,62 @@
+{
+  "id": "denominacion-tarjeta",
+  "titulo": "Denominación de la tarjeta",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E621"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E622"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiDenTarj, tdDesDenTarj"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E621",
+    "E622"
+  ],
+  "descripciones": {
+    "E621": "E622"
+  },
+  "xml": [
+    "iDenTarj",
+    "dDesDenTarj"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Visa"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Mastercard"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "American Express"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Maestro"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Panal"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Cabal"
+    },
+    {
+      "codigo": "99",
+      "descripcion": "Otro",
+      "observacion": "Si E621 = 99 informar la descripción de la denominación de la tarjeta",
+      "descripcion_libre": true
+    }
+  ]
+}

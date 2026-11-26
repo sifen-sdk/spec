@@ -1,0 +1,259 @@
+{
+  "grupo": "G",
+  "reglas": [
+    {
+      "id": "R-G001-OP",
+      "campo": "G001",
+      "tipo": "opcional",
+      "texto": "El grupo de campos de uso general es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G001"
+        }
+      ]
+    },
+    {
+      "id": "R-G002-OP",
+      "campo": "G002",
+      "tipo": "opcional",
+      "texto": "Número de orden de compra: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G002"
+        }
+      ]
+    },
+    {
+      "id": "R-G003-OP",
+      "campo": "G003",
+      "tipo": "opcional",
+      "texto": "Número de orden de venta: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G003"
+        }
+      ]
+    },
+    {
+      "id": "R-G004-OP",
+      "campo": "G004",
+      "tipo": "opcional",
+      "texto": "Número de asiento contable: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G004"
+        }
+      ]
+    },
+    {
+      "id": "R-G050-OP",
+      "campo": "G050",
+      "tipo": "opcional",
+      "texto": "El grupo de la carga es opcional en la Factura Electrónica y en la Nota de Remisión Electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G050",
+          "cita": "Opcional cuando C002=1 o C002=7"
+        }
+      ]
+    },
+    {
+      "id": "R-G050-P1",
+      "campo": "G050",
+      "tipo": "prohibido",
+      "texto": "El grupo de la carga no se informa en tipos de documento distintos a Factura Electrónica y Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "7"
+        ]
+      },
+      "codigo_sifen": "2390",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G050",
+          "cita": "No informar para C002 ≠ 1 y C002≠7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2390"
+        }
+      ]
+    },
+    {
+      "id": "R-G051-OP",
+      "campo": "G051",
+      "tipo": "opcional",
+      "texto": "Unidad de medida del total de volumen de la mercadería: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G051"
+        }
+      ]
+    },
+    {
+      "id": "R-G051-F1",
+      "campo": "G051",
+      "tipo": "formato",
+      "texto": "Código según la Tabla 5 – Unidad de Medida (atributo “ID”); en operaciones B2G (D202 = 3) se usan los datos del WS de la DNCP",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G051",
+          "cita": "Según Tabla 5 – Unidad de Medida. Si D202 = 3 utilizar los datos del WS del link de la DNCP. Utilizar el atributo “ID”"
+        }
+      ]
+    },
+    {
+      "id": "R-G054-OP",
+      "campo": "G054",
+      "tipo": "opcional",
+      "texto": "Unidad de medida del peso total de la mercadería: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G054"
+        }
+      ]
+    },
+    {
+      "id": "R-G054-F1",
+      "campo": "G054",
+      "tipo": "formato",
+      "texto": "Código según la Tabla 5 – Unidad de Medida (atributo “ID”); en operaciones B2G (D202 = 3) se usan los datos del WS de la DNCP",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G054",
+          "cita": "Según Tabla 5 – Unidad de Medida. Si D202 = 3 utilizar los datos del WS del link de la DNCP. Utilizar el atributo “ID”"
+        }
+      ]
+    },
+    {
+      "id": "R-G052-OP",
+      "campo": "G052",
+      "tipo": "opcional",
+      "texto": "Descripción de la unidad de medida del total de volumen de la mercadería: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G052"
+        }
+      ]
+    },
+    {
+      "id": "R-G052-D1",
+      "campo": "G052",
+      "tipo": "dependencia",
+      "texto": "Descripción que corresponde a la unidad de medida (atributo “Código” de la Tabla 5). El Manual la refiere al campo F027, que no existe en el grupo; se entiende G051",
+      "contradiccion": "C-515",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G052",
+          "cita": "Referente al campo F027 Utilizar el atributo “Código” Ejemplo: UNI"
+        }
+      ]
+    },
+    {
+      "id": "R-G055-OP",
+      "campo": "G055",
+      "tipo": "opcional",
+      "texto": "Descripción de la unidad de medida del peso total de la mercadería: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G055"
+        }
+      ]
+    },
+    {
+      "id": "R-G055-D1",
+      "campo": "G055",
+      "tipo": "dependencia",
+      "texto": "Descripción que corresponde a la unidad de medida (atributo “Código” de la Tabla 5). El Manual la refiere al campo F030, que no existe en el grupo; se entiende G054",
+      "contradiccion": "C-515",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G055",
+          "cita": "Referente al campo F030 Utilizar el atributo “Código” Ejemplo: UNI"
+        }
+      ]
+    },
+    {
+      "id": "R-G053-OP",
+      "campo": "G053",
+      "tipo": "opcional",
+      "texto": "Total volumen de la mercadería: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G053"
+        }
+      ]
+    },
+    {
+      "id": "R-G056-OP",
+      "campo": "G056",
+      "tipo": "opcional",
+      "texto": "Total peso de la mercadería: opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G056"
+        }
+      ]
+    },
+    {
+      "id": "R-G057-C1",
+      "campo": "G057",
+      "tipo": "condicional",
+      "texto": "Obligatorio cuando lo exige la RG 41/14 (condición externa al documento, no expresable)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G057",
+          "cita": "Obligatorio cuando lo exige la RG 41/14"
+        }
+      ]
+    },
+    {
+      "id": "R-G058-C1",
+      "campo": "G058",
+      "tipo": "condicional",
+      "texto": "Obligatorio cuando lo exige la RG 41/14 (condición externa al documento, no expresable); obligatorio para el KuDE",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G058",
+          "cita": "Obligatorio cuando lo exige la RG 41/14 – Obligatorio para KUDE"
+        }
+      ]
+    },
+    {
+      "id": "R-G058-D1",
+      "campo": "G058",
+      "tipo": "dependencia",
+      "texto": "Descripción que corresponde a G057: 1 = “Mercaderías con cadena de frío”, 2 = “Carga peligrosa”; si G057 = 3, se informa la característica de la carga",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "G058",
+          "cita": "Si G057 = 3, informar la característica de la carga"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "grupo": "WS-ConsultaDTE",
+  "reglas": [
+    {
+      "id": "R-X-DTE-rConsultaDTE-OBL",
+      "campo": "X-DTE-rConsultaDTE",
+      "tipo": "obligatorio",
+      "texto": "El elemento (rConsultaDTE) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteRequest/rConsultaDTE",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-ConsultaDTE-OBL",
+      "campo": "X-DTE-ConsultaDTE",
+      "tipo": "obligatorio",
+      "texto": "El elemento (ConsultaDTE) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd rConsultaDTE/ConsultaDTE",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-Id-OBL",
+      "campo": "X-DTE-Id",
+      "tipo": "obligatorio",
+      "texto": "El elemento (Id) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd ConsultaDTE/@Id (xs:string, required)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-dRuc-OBL",
+      "campo": "X-DTE-dRuc",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dRuc) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd ConsultaDTE/dRuc (tRuc de DE_Types_v150.xsd)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-dProtConsDTEA-OBL",
+      "campo": "X-DTE-dProtConsDTEA",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dProtConsDTEA) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd ConsultaDTE/dProtConsDTEA (xs:string)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-Signature-OBL",
+      "campo": "X-DTE-Signature",
+      "tipo": "obligatorio",
+      "texto": "Firma Digital de la ConsultaDTE (Signature) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd rConsultaDTE/ds:Signature",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-dFecProc-OBL",
+      "campo": "X-DTE-dFecProc",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dFecProc) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteResponse/dFecProc (fecHhmmss)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-dMsgRes-OBL",
+      "campo": "X-DTE-dMsgRes",
+      "tipo": "obligatorio",
+      "texto": "Mensaje del resultado de la consulta (dMsgRes) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteResponse/dMsgRes",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTE-rConsDte-OPC",
+      "campo": "X-DTE-rConsDte",
+      "tipo": "opcional",
+      "texto": "Archivo zip generado en la consulta de mis DTEs (rConsDte) puede omitirse según el XSD (minOccurs=0)",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteResponse/rConsDte (xs:base64Binary, application/zip)",
+          "cita": "Ocurrencia 0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-rConsultaDTE-OBL",
+      "campo": "X-DTEA-rConsultaDTE",
+      "tipo": "obligatorio",
+      "texto": "El elemento (rConsultaDTE) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncRequest/rConsultaDTE",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-ConsultaDTE-OBL",
+      "campo": "X-DTEA-ConsultaDTE",
+      "tipo": "obligatorio",
+      "texto": "El elemento (ConsultaDTE) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd rConsultaDTE/ConsultaDTE",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-Id-OBL",
+      "campo": "X-DTEA-Id",
+      "tipo": "obligatorio",
+      "texto": "El elemento (Id) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/@Id (xs:string, required)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-dRuc-OBL",
+      "campo": "X-DTEA-dRuc",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dRuc) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dRuc (tRuc de DE_Types_v150.xsd)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-dTiDE-OBL",
+      "campo": "X-DTEA-dTiDE",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dTiDE) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dTiDE (tiTiDE de DE_Types_v150.xsd: 1|[4-7]|9|10)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-dFecIni-OBL",
+      "campo": "X-DTEA-dFecIni",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dFecIni) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dFecIni (tFecDDMMAAAAguion)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-dFecFin-OBL",
+      "campo": "X-DTEA-dFecFin",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dFecFin) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dFecFin (tFecDDMMAAAAguion)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-Signature-OBL",
+      "campo": "X-DTEA-Signature",
+      "tipo": "obligatorio",
+      "texto": "Firma Digital de la ConsultaDTE (Signature) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd rConsultaDTE/ds:Signature",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-dFecProc-OBL",
+      "campo": "X-DTEA-dFecProc",
+      "tipo": "obligatorio",
+      "texto": "El elemento (dFecProc) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncResponse/dFecProc (fecHhmmss)",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-dProtConsDTEAsync-OBL",
+      "campo": "X-DTEA-dProtConsDTEAsync",
+      "tipo": "obligatorio",
+      "texto": "Número de consulta (dProtConsDTEAsync) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncResponse/dProtConsDTEAsync",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-X-DTEA-dMsgRes-OBL",
+      "campo": "X-DTEA-dMsgRes",
+      "tipo": "obligatorio",
+      "texto": "Mensaje del resultado de la consulta (dMsgRes) es obligatorio según el XSD cuando existe su grupo padre",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncResponse/dMsgRes",
+          "cita": "Ocurrencia 1-1"
+        }
+      ]
+    }
+  ]
+}

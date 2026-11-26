@@ -1,0 +1,43 @@
+{
+  "id": "responsable-flete",
+  "titulo": "Responsable del costo del flete",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E905"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiRespFlete"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E905"
+  ],
+  "xml": [
+    "iRespFlete"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Emisor de la Factura Electrónica"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Receptor de la Factura Electrónica"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Tercero"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Agente intermediario del transporte (cuando intervenga)"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Transporte propio"
+    }
+  ]
+}

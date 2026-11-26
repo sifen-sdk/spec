@@ -1,0 +1,31 @@
+{
+  "id": "condicion-tipo-cambio",
+  "titulo": "Condición del tipo de cambio",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D017"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tdCondTiCam"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D017"
+  ],
+  "xml": [
+    "dCondTiCam"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Global (un solo tipo de cambio para todo el DE)"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Por ítem (tipo de cambio distinto por ítem)"
+    }
+  ]
+}

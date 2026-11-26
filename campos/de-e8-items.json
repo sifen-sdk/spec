@@ -1,0 +1,405 @@
+{
+  "grupo": "E8",
+  "titulo": "Campos que describen los ítems de la operación",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "E700",
+      "xml": "gCamItem",
+      "nombre": "items",
+      "padre": "E001",
+      "tipo": "grupo",
+      "ocurrencia": "1-999",
+      "descripcion": "Campos que describen los ítems de la operación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E700"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgDtipDE/gCamItem"
+        }
+      ]
+    },
+    {
+      "id": "E701",
+      "xml": "dCodInt",
+      "nombre": "internalCode",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "1-50",
+      "ocurrencia": "1-1",
+      "descripcion": "Código interno",
+      "observaciones": "Código interno de identificación de la mercadería o servicio de responsabilidad del emisor. No se pueden tener ítems distintos de mercadería o servicio con el mismo código interno en su catastro de productos o servicios. Este código se puede repetir en el DE siempre que el producto o servicio sea el mismo.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E701",
+          "cita": "A 1-20 1-1"
+        },
+        {
+          "doc": "NT009",
+          "ref": "1.1 E701",
+          "cita": "A 1-50 1-1"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdCodInt"
+        }
+      ]
+    },
+    {
+      "id": "E702",
+      "xml": "dParAranc",
+      "nombre": "tariffHeading",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "0-1",
+      "descripcion": "Partida arancelaria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E702"
+        }
+      ]
+    },
+    {
+      "id": "E703",
+      "xml": "dNCM",
+      "nombre": "mercosurCommonNomenclature",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "6-8",
+      "ocurrencia": "0-1",
+      "descripcion": "Nomenclatura común del Mercosur (NCM)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E703"
+        }
+      ]
+    },
+    {
+      "id": "E704",
+      "xml": "dDncpG",
+      "nombre": "dncpGeneralCode",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "8",
+      "ocurrencia": "0-1",
+      "descripcion": "Código DNCP – Nivel General",
+      "observaciones": "Informar se existe el código de la DNCP. Colocar 0 (cero) a la izquierda para completar los espacios vacíos.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E704"
+        },
+        {
+          "doc": "NT026",
+          "ref": "1.1 E704"
+        }
+      ]
+    },
+    {
+      "id": "E705",
+      "xml": "dDncpE",
+      "nombre": "dncpSpecificCode",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "3-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código DNCP – Nivel Especifico",
+      "observaciones": "Informar se existe el código de la DNCP. Colocar 0 (cero) a la izquierda para completar los espacios vacíos.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E705"
+        },
+        {
+          "doc": "NT026",
+          "ref": "1.1 E705"
+        }
+      ]
+    },
+    {
+      "id": "E706",
+      "xml": "dGtin",
+      "nombre": "productGtin",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "8,12,13,14",
+      "ocurrencia": "0-1",
+      "descripcion": "Código GTIN por producto",
+      "contradiccion": "C-312",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E706"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdGtin"
+        }
+      ]
+    },
+    {
+      "id": "E707",
+      "xml": "dGtinPq",
+      "nombre": "packageGtin",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "8,12,13,14",
+      "ocurrencia": "0-1",
+      "descripcion": "Código GTIN por paquete",
+      "contradiccion": "C-312",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E707"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdGtin"
+        }
+      ]
+    },
+    {
+      "id": "E708",
+      "xml": "dDesProSer",
+      "nombre": "description",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "1-2000",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del producto y/o servicio",
+      "observaciones": "Equivalente a nombre del producto establecido en la RG 24/2019",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E708",
+          "cita": "A 1-120 1-1"
+        },
+        {
+          "doc": "NT009",
+          "ref": "1.1 E708",
+          "cita": "A 1-2000 1-1"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamItem/dDesProSer maxLength 2000"
+        }
+      ]
+    },
+    {
+      "id": "E709",
+      "xml": "cUniMed",
+      "nombre": "unitOfMeasureCode",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "1-1",
+      "descripcion": "Unidad de medida",
+      "observaciones": "Según Tabla 5 – Unidad de Medida. Utilizar el atributo “ID”.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E709"
+        }
+      ],
+      "catalogo": "unidad-medida"
+    },
+    {
+      "id": "E710",
+      "xml": "dDesUniMed",
+      "nombre": "unitOfMeasureDescription",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "1-10",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la unidad de medida",
+      "observaciones": "Referente al campo E709. Utilizar el atributo “Código”. Ejemplo: UNI",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E710"
+        }
+      ],
+      "catalogo": "unidad-medida"
+    },
+    {
+      "id": "E711",
+      "xml": "dCantProSer",
+      "nombre": "quantity",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "1-10p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Cantidad del producto y/o servicio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E711",
+          "cita": "N 1-10p(0-4) 1-1"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.2 E711",
+          "cita": "N 1-10p(0-8) 1-1"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdCantProSer fractionDigits 8"
+        }
+      ]
+    },
+    {
+      "id": "E712",
+      "xml": "cPaisOrig",
+      "nombre": "originCountryCode",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del país de origen del producto",
+      "observaciones": "Según XSD de Codificación de Países",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E712"
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "E713",
+      "xml": "dDesPaisOrig",
+      "nombre": "originCountryDescription",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "4-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del país de origen del producto",
+      "contradiccion": "C-306",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E713"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tDesPais maxLength 50"
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "E714",
+      "xml": "dInfItem",
+      "nombre": "additionalInformation",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "1-500",
+      "ocurrencia": "0-1",
+      "descripcion": "Información de interés del emisor con respecto al ítem",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E714"
+        }
+      ]
+    },
+    {
+      "id": "E715",
+      "xml": "cRelMerc",
+      "nombre": "goodsRelevanceCode",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Código de datos de relevancia de las mercaderías",
+      "observaciones": "1=Tolerancia de quiebra, 2= Tolerancia de merma. Según RG 41/14",
+      "contradiccion": "C-301",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E715"
+        }
+      ],
+      "catalogo": "relevancia-mercaderia"
+    },
+    {
+      "id": "E716",
+      "xml": "dDesRelMerc",
+      "nombre": "goodsRelevanceDescription",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "19-21",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del código de datos de relevancia de las mercaderías",
+      "observaciones": "1=“Tolerancia de quiebra” 2=“Tolerancia de merma”",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E716"
+        }
+      ],
+      "catalogo": "relevancia-mercaderia"
+    },
+    {
+      "id": "E717",
+      "xml": "dCanQuiMer",
+      "nombre": "breakageOrShrinkageQuantity",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "1-10(0-4)",
+      "ocurrencia": "0-1",
+      "descripcion": "Cantidad de quiebra o merma",
+      "observaciones": "Lo informado en este campo se encuentra en la unidad de medida elegida en E709. Según RG 41/14",
+      "contradiccion": "C-302",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E717"
+        }
+      ]
+    },
+    {
+      "id": "E718",
+      "xml": "dPorQuiMer",
+      "nombre": "breakageOrShrinkageRate",
+      "padre": "E700",
+      "tipo": "numerico",
+      "longitud": "1-3(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Porcentaje de quiebra o merma",
+      "observaciones": "Según RG 41/14",
+      "contradiccion": "C-302",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E718"
+        }
+      ]
+    },
+    {
+      "id": "E719",
+      "xml": "dCDCAnticipo",
+      "nombre": "advanceCdc",
+      "padre": "E700",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "0-1",
+      "descripcion": "CDC del anticipo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E719"
+        }
+      ]
+    }
+  ]
+}

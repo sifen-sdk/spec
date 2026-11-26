@@ -1,0 +1,1442 @@
+{
+  "grupo": "D3",
+  "reglas": [
+    {
+      "id": "R-D200-O1",
+      "campo": "D200",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D200"
+        }
+      ]
+    },
+    {
+      "id": "R-D201-O1",
+      "campo": "D201",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D201"
+        }
+      ]
+    },
+    {
+      "id": "R-D201-F1",
+      "campo": "D201",
+      "tipo": "formato",
+      "texto": "Si el tipo de documento es Autofactura (C002=4), la naturaleza del receptor debe ser Contribuyente (D201=1)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "1315",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1315"
+        }
+      ]
+    },
+    {
+      "id": "R-D202-O1",
+      "campo": "D202",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D202"
+        }
+      ]
+    },
+    {
+      "id": "R-D202-F1",
+      "campo": "D202",
+      "tipo": "formato",
+      "texto": "Si el tipo de documento no es autofactura (C002 ≠ 4) y la naturaleza del receptor es No contribuyente (D201=2), el tipo de operación debe ser B2C (D202=2)",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "C002",
+            "op": "distinto",
+            "valor": "4"
+          },
+          {
+            "campo": "D201",
+            "op": "igual",
+            "valor": "2"
+          }
+        ]
+      },
+      "codigo_sifen": "1300",
+      "contradiccion": "C-109",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1300"
+        },
+        {
+          "doc": "NT010",
+          "ref": "2.1 D202 1300"
+        }
+      ]
+    },
+    {
+      "id": "R-D202-F2",
+      "campo": "D202",
+      "tipo": "formato",
+      "texto": "Si el tipo de operación es B2F (D202=4), la naturaleza del receptor debe ser No contribuyente (D201=2)",
+      "condicion": {
+        "campo": "D202",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "1300",
+      "contradiccion": "C-109",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1300",
+          "cita": "Si el tipo de operación es B2F (D202=4), la naturaleza del receptor debe ser No contribuyente (D201=2)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-D202-F3",
+      "campo": "D202",
+      "tipo": "formato",
+      "texto": "Si la naturaleza del receptor es No contribuyente (D201=2), el tipo de operación debe ser B2C (D202=2) o B2F (D202=4)",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1300",
+      "contradiccion": "C-109",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "2.1 D202 1300",
+          "cita": "Si la naturaleza del receptor es No contribuyente (D201=2), el tipo de operación debe ser B2C (D202=2) o B2F (D202=4)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-D202-F4",
+      "campo": "D202",
+      "tipo": "formato",
+      "texto": "Si la transacción se documenta con Autofactura (C002=4), el tipo de operación debe ser B2C (D202=2)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "1316",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1316"
+        }
+      ]
+    },
+    {
+      "id": "R-D202-F5",
+      "campo": "D202",
+      "tipo": "formato",
+      "texto": "Si el RUC del receptor (D206) corresponde a un Organismo o Entidad del Estado (OEE), el tipo de operación debe ser B2G (D202=3)",
+      "no_declarativa": true,
+      "codigo_sifen": "1332",
+      "fuentes": [
+        {
+          "doc": "NT020",
+          "ref": "2.1 D202b 1332"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "id": "R-D202-F6",
+      "campo": "D202",
+      "tipo": "formato",
+      "texto": "El tipo de operación B2F (D202=4) debe utilizarse solo en caso de servicios para empresas o personas físicas del exterior",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D202",
+          "cita": "Esta última opción debe utilizarse solo en caso de servicios para empresas o personas físicas del exterior"
+        }
+      ]
+    },
+    {
+      "id": "R-D203-O1",
+      "campo": "D203",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D203"
+        }
+      ]
+    },
+    {
+      "id": "R-D203-F1",
+      "campo": "D203",
+      "tipo": "formato",
+      "texto": "Si el tipo de operación es B2F (D202=4), el país informado debe ser diferente a PRY (D203 ≠ PRY)",
+      "condicion": {
+        "campo": "D202",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "1320",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1320"
+        }
+      ]
+    },
+    {
+      "id": "R-D203-F2",
+      "campo": "D203",
+      "tipo": "formato",
+      "texto": "Si el tipo de operación es diferente de B2F (D202 ≠ 4), el país informado debe ser igual a PRY (D203 = PRY)",
+      "condicion": {
+        "campo": "D202",
+        "op": "distinto",
+        "valor": "4"
+      },
+      "codigo_sifen": "1320",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1320"
+        }
+      ]
+    },
+    {
+      "id": "R-D204-O1",
+      "campo": "D204",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D204"
+        }
+      ]
+    },
+    {
+      "id": "R-D204-D1",
+      "campo": "D204",
+      "tipo": "dependencia",
+      "texto": "La descripción del país debe coincidir con lo informado en el campo D203",
+      "codigo_sifen": "1301",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D204"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1301"
+        }
+      ]
+    },
+    {
+      "id": "R-D205-C1",
+      "campo": "D205",
+      "tipo": "condicional",
+      "texto": "Obligatorio si la naturaleza del receptor es contribuyente (D201 = 1)",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1302",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D205",
+          "cita": "Obligatorio si D201 = 1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1302"
+        }
+      ]
+    },
+    {
+      "id": "R-D205-P1",
+      "campo": "D205",
+      "tipo": "prohibido",
+      "texto": "No informar si la naturaleza del receptor es no contribuyente (D201 = 2)",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1303",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D205",
+          "cita": "No informar si D201 = 2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1303"
+        }
+      ]
+    },
+    {
+      "id": "R-D206-C1",
+      "campo": "D206",
+      "tipo": "condicional",
+      "texto": "Obligatorio si la naturaleza del receptor es contribuyente (D201 = 1)",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1304",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D206",
+          "cita": "Obligatorio si D201 = 1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1304"
+        }
+      ]
+    },
+    {
+      "id": "R-D206-P1",
+      "campo": "D206",
+      "tipo": "prohibido",
+      "texto": "No informar si la naturaleza del receptor es no contribuyente (D201 = 2)",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1305",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D206",
+          "cita": "No informar si D201 = 2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1305"
+        }
+      ]
+    },
+    {
+      "id": "R-D206-F1",
+      "campo": "D206",
+      "tipo": "formato",
+      "texto": "El RUC informado debe existir en la base de datos de Marangatu",
+      "no_declarativa": true,
+      "codigo_sifen": "1306",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1306"
+        }
+      ]
+    },
+    {
+      "id": "R-D206-F2",
+      "campo": "D206",
+      "tipo": "formato",
+      "texto": "Si el tipo de contribuyente receptor es persona jurídica (D205=2), el RUC del receptor en Marangatu debe tener un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL",
+      "no_declarativa": true,
+      "codigo_sifen": "1307",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1307"
+        }
+      ]
+    },
+    {
+      "id": "R-D206-F3",
+      "campo": "D206",
+      "tipo": "formato",
+      "texto": "Si el tipo de operación es B2B o B2G (D202 = 1 o 3), el RUC del receptor en Marangatu debe tener un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL",
+      "no_declarativa": true,
+      "codigo_sifen": "1308",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1308"
+        }
+      ]
+    },
+    {
+      "id": "R-D206-D1",
+      "campo": "D206",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de documento es Autofactura (C002=4), el RUC del receptor debe ser el mismo que el RUC del emisor (D206 = D101)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "1317",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1317"
+        }
+      ]
+    },
+    {
+      "id": "R-D207-C1",
+      "campo": "D207",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo D206",
+      "condicion": {
+        "campo": "D206",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D207",
+          "cita": "Obligatorio si existe el campo D206"
+        }
+      ]
+    },
+    {
+      "id": "R-D207-F1",
+      "campo": "D207",
+      "tipo": "formato",
+      "texto": "El dígito verificador debe corresponder al módulo 11 del RUC (D206)",
+      "no_declarativa": true,
+      "codigo_sifen": "1309",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D207",
+          "cita": "Según algoritmo módulo 11"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1309"
+        }
+      ]
+    },
+    {
+      "id": "R-D208-C1",
+      "campo": "D208",
+      "tipo": "condicional",
+      "texto": "Obligatorio si la naturaleza del receptor es no contribuyente (D201 = 2) y el tipo de operación es distinto de B2F (D202 ≠ 4)",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "D201",
+            "op": "igual",
+            "valor": "2"
+          },
+          {
+            "campo": "D202",
+            "op": "distinto",
+            "valor": "4"
+          }
+        ]
+      },
+      "codigo_sifen": "1310",
+      "contradiccion": "C-110",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D208",
+          "cita": "Obligatorio si D201 = 2 y D202 ≠ 4"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1310"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 D208"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D208"
+        }
+      ]
+    },
+    {
+      "id": "R-D208-C2",
+      "campo": "D208",
+      "tipo": "condicional",
+      "texto": "Si la naturaleza del receptor es no contribuyente (D201 = 2), el tipo de documento de identidad del receptor debe ser informado",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "1335",
+      "contradiccion": "C-110",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2.1 D208g 1335"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-D208-P1",
+      "campo": "D208",
+      "tipo": "prohibido",
+      "texto": "No informar si la naturaleza del receptor es contribuyente (D201 = 1)",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1311",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D208",
+          "cita": "No informar si D201 = 1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1311"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D208",
+          "cita": "No informar si D201 = 1"
+        }
+      ]
+    },
+    {
+      "id": "R-D208-P2",
+      "campo": "D208",
+      "tipo": "prohibido",
+      "texto": "No informar si el tipo de operación es B2F (D202 = 4). La validación asociada (1322) fue eliminada por la NT 2, que mantuvo la observación; la NT 23 quita la condición de la observación",
+      "condicion": {
+        "campo": "D202",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D208",
+          "cita": "No informar si D201 = 1 o D202=4"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 D208 y 2.1 (elimina 1322)"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D208"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-D208-F1",
+      "campo": "D208",
+      "tipo": "formato",
+      "texto": "El tipo de documento de identidad del receptor no puede ser innominado (D208=5) cuando el tipo de operación es distinto a B2C (D202 ≠ 2)",
+      "condicion": {
+        "campo": "D202",
+        "op": "distinto",
+        "valor": "2"
+      },
+      "codigo_sifen": "1319",
+      "contradiccion": "C-111",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1319"
+        },
+        {
+          "doc": "NT010",
+          "ref": "2.1 D208b 1319"
+        }
+      ]
+    },
+    {
+      "id": "R-D208-F2",
+      "campo": "D208",
+      "tipo": "formato",
+      "texto": "El tipo de documento de identidad del receptor no puede ser innominado (D208=5) cuando el tipo de operación es distinto a B2C (D202 ≠ 2)",
+      "condicion": {
+        "campo": "D202",
+        "op": "distinto",
+        "valor": "2"
+      },
+      "codigo_sifen": "1333",
+      "contradiccion": "C-111",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2.1 D208f 1333"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-D208-F3",
+      "campo": "D208",
+      "tipo": "formato",
+      "texto": "Si el tipo de transacción es distinto a Muestras médicas (D011 ≠ 13), el tipo de documento de identidad del receptor no puede ser Innominado (D208 ≠ 5) cuando el total general de la operación en guaraníes (F023, moneda extranjera) o el total general de la operación (F014, moneda PYG) es mayor o igual a 60.000.000",
+      "condicion": {
+        "todas": [
+          {
+            "no": {
+              "campo": "D011",
+              "op": "igual",
+              "valor": "13"
+            }
+          },
+          {
+            "alguna": [
+              {
+                "todas": [
+                  {
+                    "campo": "D015",
+                    "op": "distinto",
+                    "valor": "PYG"
+                  },
+                  {
+                    "campo": "F023",
+                    "op": "mayor_igual",
+                    "valor": "60000000"
+                  }
+                ]
+              },
+              {
+                "todas": [
+                  {
+                    "campo": "D015",
+                    "op": "igual",
+                    "valor": "PYG"
+                  },
+                  {
+                    "campo": "F014",
+                    "op": "mayor_igual",
+                    "valor": "60000000"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codigo_sifen": "1321",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1321",
+          "cita": "F023 >= 60000000 o F014 >= 60000000"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2024-01-01",
+          "produccion": "2024-01-01"
+        }
+      }
+    },
+    {
+      "id": "R-D208-F4",
+      "campo": "D208",
+      "tipo": "formato",
+      "texto": "Si el tipo de transacción es distinto a Muestras médicas (D011 ≠ 13), el tipo de documento de identidad del receptor no puede ser Innominado (D208 ≠ 5) cuando el total general de la operación en guaraníes (F023, moneda extranjera) o el total general de la operación (F014, moneda PYG) es mayor o igual a 35.000.000",
+      "condicion": {
+        "todas": [
+          {
+            "no": {
+              "campo": "D011",
+              "op": "igual",
+              "valor": "13"
+            }
+          },
+          {
+            "alguna": [
+              {
+                "todas": [
+                  {
+                    "campo": "D015",
+                    "op": "distinto",
+                    "valor": "PYG"
+                  },
+                  {
+                    "campo": "F023",
+                    "op": "mayor_igual",
+                    "valor": "35000000"
+                  }
+                ]
+              },
+              {
+                "todas": [
+                  {
+                    "campo": "D015",
+                    "op": "igual",
+                    "valor": "PYG"
+                  },
+                  {
+                    "campo": "F014",
+                    "op": "mayor_igual",
+                    "valor": "35000000"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codigo_sifen": "1321",
+      "fuentes": [
+        {
+          "doc": "NT021",
+          "ref": "1.1 D208c 1321",
+          "cita": "F023 >= 35000000 o F014 >= 35000000"
+        },
+        {
+          "doc": "DEC872",
+          "ref": "Art. 6"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-01-01",
+          "produccion": "2024-01-01"
+        },
+        "hasta": {
+          "test": "2025-01-01",
+          "produccion": "2025-01-01"
+        }
+      }
+    },
+    {
+      "id": "R-D208-F5",
+      "campo": "D208",
+      "tipo": "formato",
+      "texto": "Si el tipo de transacción es distinto a Muestras médicas (D011 ≠ 13), el tipo de documento de identidad del receptor no puede ser Innominado (D208 ≠ 5) cuando el total general de la operación en guaraníes (F023, moneda extranjera) o el total general de la operación (F014, moneda PYG) es mayor o igual a 7.000.000",
+      "condicion": {
+        "todas": [
+          {
+            "no": {
+              "campo": "D011",
+              "op": "igual",
+              "valor": "13"
+            }
+          },
+          {
+            "alguna": [
+              {
+                "todas": [
+                  {
+                    "campo": "D015",
+                    "op": "distinto",
+                    "valor": "PYG"
+                  },
+                  {
+                    "campo": "F023",
+                    "op": "mayor_igual",
+                    "valor": "7000000"
+                  }
+                ]
+              },
+              {
+                "todas": [
+                  {
+                    "campo": "D015",
+                    "op": "igual",
+                    "valor": "PYG"
+                  },
+                  {
+                    "campo": "F014",
+                    "op": "mayor_igual",
+                    "valor": "7000000"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codigo_sifen": "1321",
+      "fuentes": [
+        {
+          "doc": "NT024",
+          "ref": "1.1 D208c 1321",
+          "cita": "F023 >= 7.000.000 o F014 >= 7.000.000"
+        },
+        {
+          "doc": "DEC872",
+          "ref": "Art. 6 numeral 2 inciso ii"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2025-01-01",
+          "produccion": "2025-01-01"
+        }
+      }
+    },
+    {
+      "id": "R-D208-F6",
+      "campo": "D208",
+      "tipo": "formato",
+      "texto": "Si el tipo de documento es Nota de Crédito (C002 = 5) o Nota de Débito (C002 = 6), el tipo de documento de identidad del receptor no puede ser INNOMINADO (D208 ≠ 5)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "5",
+          "6"
+        ]
+      },
+      "codigo_sifen": "1331",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "2.1 D208e 1331"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        },
+        "hasta": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-D208-F7",
+      "campo": "D208",
+      "tipo": "formato",
+      "texto": "Si el tipo de documento es Nota de Crédito, Nota de Débito o Nota de Remisión Electrónica (C002 = 5, 6, 7), el tipo de documento de identidad del receptor no puede ser INNOMINADO (D208 ≠ 5)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      "codigo_sifen": "1331",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2.1 D208e 1331"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-D209-C1",
+      "campo": "D209",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo D208",
+      "condicion": {
+        "campo": "D208",
+        "op": "presente"
+      },
+      "codigo_sifen": "1312",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D209",
+          "cita": "Obligatorio si existe el campo D208"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1312"
+        }
+      ]
+    },
+    {
+      "id": "R-D209-D1",
+      "campo": "D209",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con lo informado en el campo D208 (1= \"Cédula paraguaya\", 2= \"Pasaporte\", 3= \"Cédula extranjera\", 4= \"Carnet de residencia\", 5= \"Innominado\", 6= \"Tarjeta Diplomática de exoneración fiscal\"); si D208 = 9 se informa el tipo de documento de identidad del receptor",
+      "codigo_sifen": "1313",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D209"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1313"
+        }
+      ]
+    },
+    {
+      "id": "R-D210-C1",
+      "campo": "D210",
+      "tipo": "condicional",
+      "texto": "Obligatorio si la naturaleza del receptor es no contribuyente (D201 = 2) y el tipo de operación es distinto de B2F (D202 ≠ 4)",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "D201",
+            "op": "igual",
+            "valor": "2"
+          },
+          {
+            "campo": "D202",
+            "op": "distinto",
+            "valor": "4"
+          }
+        ]
+      },
+      "codigo_sifen": "1314",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D210",
+          "cita": "Obligatorio si D201 = 2 y D202 ≠ 4"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1314"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 D210"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D210 y 2.1 D210 1314"
+        }
+      ]
+    },
+    {
+      "id": "R-D210-P1",
+      "campo": "D210",
+      "tipo": "prohibido",
+      "texto": "No informar si la naturaleza del receptor es contribuyente (D201 = 1). La validación del Manual (1323) fue eliminada por la NT 2; la NT 23 agrega la validación 1334",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1334",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D210",
+          "cita": "No informar si D201 = 1 o D202=4"
+        },
+        {
+          "doc": "NT002",
+          "ref": "2.1 (elimina 1323)"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D210 y 2.1 D210b 1334"
+        }
+      ]
+    },
+    {
+      "id": "R-D210-P2",
+      "campo": "D210",
+      "tipo": "prohibido",
+      "texto": "No informar si el tipo de operación es B2F (D202 = 4). La validación asociada (1323) fue eliminada por la NT 2, que mantuvo la observación; la NT 23 quita la condición de la observación",
+      "condicion": {
+        "campo": "D202",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D210",
+          "cita": "No informar si D201 = 1 o D202=4"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 D210 y 2.1 (elimina 1323)"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D210"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-D210-D1",
+      "campo": "D210",
+      "tipo": "dependencia",
+      "texto": "En caso de DE innominado (D208 = 5), completar con 0 (cero)",
+      "condicion": {
+        "campo": "D208",
+        "op": "igual",
+        "valor": "5"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D210",
+          "cita": "En caso de DE innominado, completar con 0 (cero)"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D210"
+        }
+      ]
+    },
+    {
+      "id": "R-D211-O1",
+      "campo": "D211",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D211"
+        }
+      ]
+    },
+    {
+      "id": "R-D211-D1",
+      "campo": "D211",
+      "tipo": "dependencia",
+      "texto": "En caso de DE innominado (D208 = 5), completar con \"Sin Nombre\"",
+      "condicion": {
+        "campo": "D208",
+        "op": "igual",
+        "valor": "5"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D211",
+          "cita": "En caso de DE innominado, completar con “Sin Nombre”"
+        }
+      ]
+    },
+    {
+      "id": "R-D212-OP",
+      "campo": "D212",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D212"
+        }
+      ]
+    },
+    {
+      "id": "R-D213-C1",
+      "campo": "D213",
+      "tipo": "condicional",
+      "texto": "Obligatorio cuando el tipo de documento es Nota de remisión electrónica (C002 = 7) o el tipo de operación es B2F (D202 = 4)",
+      "condicion": {
+        "alguna": [
+          {
+            "campo": "C002",
+            "op": "igual",
+            "valor": "7"
+          },
+          {
+            "campo": "D202",
+            "op": "igual",
+            "valor": "4"
+          }
+        ]
+      },
+      "codigo_sifen": "1318",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D213",
+          "cita": "Campo obligatorio cuando C002=7 o cuando D202=4"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1318"
+        }
+      ]
+    },
+    {
+      "id": "R-D218-C1",
+      "campo": "D218",
+      "tipo": "condicional",
+      "texto": "Obligatorio si se informa el campo D213",
+      "condicion": {
+        "campo": "D213",
+        "op": "presente"
+      },
+      "codigo_sifen": "1330",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D218",
+          "cita": "Campo obligatorio si se informa el campo D213"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1330"
+        }
+      ]
+    },
+    {
+      "id": "R-D218-F1",
+      "campo": "D218",
+      "tipo": "formato",
+      "texto": "Cuando D201 = 1, debe corresponder a lo declarado en el RUC",
+      "condicion": {
+        "campo": "D201",
+        "op": "igual",
+        "valor": "1"
+      },
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D218",
+          "cita": "Cuando D201 = 1, debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D219-C1",
+      "campo": "D219",
+      "tipo": "condicional",
+      "texto": "Obligatorio si se informa el campo D213 y D202 ≠ 4. La validación del Manual (1324) fue eliminada por la NT 3, que mantiene la observación",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "D213",
+            "op": "presente"
+          },
+          {
+            "campo": "D202",
+            "op": "distinto",
+            "valor": "4"
+          }
+        ]
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D219",
+          "cita": "Campo obligatorio si se informa el campo D213 y D202≠4"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1.1 D219 y 2.1 (elimina 1324)"
+        }
+      ]
+    },
+    {
+      "id": "R-D219-P1",
+      "campo": "D219",
+      "tipo": "prohibido",
+      "texto": "No se debe informar cuando D202 = 4",
+      "condicion": {
+        "campo": "D202",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D219",
+          "cita": "no se debe informar cuando D202 = 4"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1.1 D219"
+        }
+      ]
+    },
+    {
+      "id": "R-D220-D1",
+      "campo": "D220",
+      "tipo": "dependencia",
+      "texto": "La descripción del departamento del receptor debe coincidir con lo informado en el campo D219",
+      "codigo_sifen": "1325",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D220"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1325"
+        },
+        {
+          "doc": "NT010",
+          "ref": "2.1 D220 1325 (corrige el mensaje)"
+        }
+      ]
+    },
+    {
+      "id": "R-D221-OP",
+      "campo": "D221",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D221"
+        }
+      ]
+    },
+    {
+      "id": "R-D222-C1",
+      "campo": "D222",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo D221",
+      "condicion": {
+        "campo": "D221",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D222",
+          "cita": "Obligatorio si existe el campo D221"
+        }
+      ]
+    },
+    {
+      "id": "R-D222-D1",
+      "campo": "D222",
+      "tipo": "dependencia",
+      "texto": "La descripción del distrito del receptor debe coincidir con lo informado en el campo D221",
+      "codigo_sifen": "1326",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1326"
+        },
+        {
+          "doc": "NT017",
+          "ref": "2.1 D222 1326 (corrige el mensaje)"
+        }
+      ]
+    },
+    {
+      "id": "R-D223-C1",
+      "campo": "D223",
+      "tipo": "condicional",
+      "texto": "Obligatorio si se informa el campo D213 y D202 ≠ 4. La validación del Manual (1327) fue eliminada por la NT 3, que mantiene la observación",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "D213",
+            "op": "presente"
+          },
+          {
+            "campo": "D202",
+            "op": "distinto",
+            "valor": "4"
+          }
+        ]
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D223",
+          "cita": "Campo obligatorio si se informa el campo D213 y D202≠4"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1.1 D223 y 2.1 (elimina 1327)"
+        }
+      ]
+    },
+    {
+      "id": "R-D223-P1",
+      "campo": "D223",
+      "tipo": "prohibido",
+      "texto": "No se debe informar cuando D202 = 4",
+      "condicion": {
+        "campo": "D202",
+        "op": "igual",
+        "valor": "4"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D223",
+          "cita": "no se debe informar cuando D202 = 4"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1.1 D223"
+        }
+      ]
+    },
+    {
+      "id": "R-D223-F1",
+      "campo": "D223",
+      "tipo": "formato",
+      "texto": "Debe haber relación entre el departamento (D219), el distrito (D221) y la ciudad (D223) del receptor",
+      "no_declarativa": true,
+      "codigo_sifen": "1328",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1328"
+        }
+      ]
+    },
+    {
+      "id": "R-D224-D1",
+      "campo": "D224",
+      "tipo": "dependencia",
+      "texto": "La descripción de la ciudad del receptor debe coincidir con lo informado en el campo D223",
+      "codigo_sifen": "1329",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D224"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1329"
+        },
+        {
+          "doc": "NT017",
+          "ref": "2.1 D224 1329 (corrige el mensaje)"
+        }
+      ]
+    },
+    {
+      "id": "R-D214-OP",
+      "campo": "D214",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D214"
+        }
+      ]
+    },
+    {
+      "id": "R-D214-F1",
+      "campo": "D214",
+      "tipo": "formato",
+      "texto": "Debe incluir el prefijo de la ciudad si D203 = PRY",
+      "condicion": {
+        "campo": "D203",
+        "op": "igual",
+        "valor": "PRY"
+      },
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D214",
+          "cita": "Debe incluir el prefijo de la ciudad si D203 = PRY"
+        }
+      ]
+    },
+    {
+      "id": "R-D215-OP",
+      "campo": "D215",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D215"
+        }
+      ]
+    },
+    {
+      "id": "R-D216-OP",
+      "campo": "D216",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D216"
+        }
+      ]
+    },
+    {
+      "id": "R-D217-OP",
+      "campo": "D217",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D217"
+        }
+      ]
+    }
+  ]
+}

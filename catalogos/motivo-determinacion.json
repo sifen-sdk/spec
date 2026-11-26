@@ -1,0 +1,44 @@
+{
+  "id": "motivo-determinacion",
+  "titulo": "Motivo del evento Determinación del DTE",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tcMotDet, tdMotDesDet"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "cMotDet",
+    "dMotDesDet"
+  ],
+  "nota": "Solo en el XSD (no figura en el Manual ni en las Notas Técnicas). La correspondencia código-descripción se infiere del orden de las enumeraciones de ambos tipos.",
+  "contradiccion": "C-918",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Aplicación de multa al Emisor"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Aplicación de multa al Receptor"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Corrección Crédito fiscal"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Corrección Débito fiscal"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Anulación de Impugnación por fallo judicial"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Otro"
+    }
+  ]
+}

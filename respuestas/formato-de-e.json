@@ -1,0 +1,3502 @@
+{
+  "respuestas": [
+    {
+      "codigo": "1350",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de campos que componen la FE es obligatorio para tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E010",
+      "id_validacion": "E010",
+      "validacion": "Si el tipo de documento electrónico informado es FE (C002=1), el grupo de campos que componen la FE (E010) es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1350",
+          "pagina": 169
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1351",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de campos que componen la FE no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E010",
+      "id_validacion": "E010a",
+      "validacion": "Si el tipo de documento electrónico informado es distinto a FE (C002≠1), el grupo de campos que componen la FE (E010) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1351",
+          "pagina": 169
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1352",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del indicador de presencia no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E012",
+      "id_validacion": "E012",
+      "validacion": "La descripción del indicador de presencia no coincidente con lo informado en el campo E011",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1352",
+          "pagina": 169
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1400",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de informaciones de Compras Públicas es obligatorio",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "E020",
+      "id_validacion": "E020",
+      "validacion": "El grupo de informaciones de Compras Públicas es obligatorio para tipo de operación B2G (D202=3)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1400",
+          "pagina": 169
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT026",
+          "ref": "1400"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2025-06-09",
+          "produccion": "2025-06-16"
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1401",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de informaciones de Compras Públicas no requerido para el tipo de operación",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "E020",
+      "id_validacion": "E020a",
+      "validacion": "El grupo de informaciones de Compras Públicas solo es permitido para tipo de operación B2G (D202=3)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1401",
+          "pagina": 169
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT026",
+          "ref": "1401"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2025-06-09",
+          "produccion": "2025-06-16"
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1402",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de emisión del código de contratación inválida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E025",
+      "id_validacion": "E025",
+      "validacion": "La fecha de emisión del código de contratación (E025) no puede ser superior a la fecha de emisión (D202) de la Factura Electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1402",
+          "pagina": 169
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1450",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado es obligatorio informar el grupo de campos que componen la Nota Crédito/Débito Electrónica NCE – NDE",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E400",
+      "id_validacion": "E400",
+      "validacion": "Si el tipo de documento electrónico seleccionado es Nota de Crédito/Débito Electrónica (C002=5 o 6), es obligatorio informar el grupo de campos que componen la Nota de Crédito/Débito Electrónica (E400)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1450",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1451",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado no se requiere informar el grupo de campos que componen la Nota Crédito/Débito Electrónica NCE – NDE",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E400",
+      "id_validacion": "E400a",
+      "validacion": "Si el tipo de documento electrónico seleccionado es distinto a Nota de Crédito/Débito Electrónica (C002≠5 o 6), el grupo de campos que componen la Nota de Crédito/Débito Electrónica (E400) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1451",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1452",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del motivo de emisión no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E402",
+      "id_validacion": "E402",
+      "validacion": "Descripción del motivo de emisión de la Nota de Crédito/Débito Electrónica no coincidente con lo informado en el campo E401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1452",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1500",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado es obligatorio informar la condición de la operación",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E600",
+      "id_validacion": "E600",
+      "validacion": "Si el tipo de documento electrónico seleccionado es Factura Electrónica o Autofactura Electrónica (C002=1 o C002=4), es obligatorio informar la condición de la operación (E600)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1500",
+          "pagina": 172
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1501",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado no se requiere informar la condición de la operación",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E600",
+      "id_validacion": "E600a",
+      "validacion": "Si el tipo de documento electrónico seleccionado es distinto a Factura Electrónica y Autofactura Electrónica (C002≠1 y C002≠4), la condición de la operación no debe ser informada (E600)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1501",
+          "pagina": 172
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1502",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la condición de la operación no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E602",
+      "id_validacion": "E602",
+      "validacion": "Descripción de la condición de la operación no coincidente con lo informado en el campo E601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1502",
+          "pagina": 172
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1503",
+      "servicio": "formato-de",
+      "mensaje": "Condición de la operación inválida para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E601",
+      "id_validacion": "E601",
+      "validacion": "Si el tipo de documento es Autofactura Electrónica (C002=4) es obligatorio que la condición de la operación sea al contado (E601=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1503",
+          "pagina": 172
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1550",
+      "servicio": "formato-de",
+      "mensaje": "El grupo de campos que describen la forma de pago de la operación al contado o del monto de la entrega inicial es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E605",
+      "id_validacion": "E605",
+      "validacion": "Si la condición de la operación seleccionada es contada (E601=1), es obligatorio informar el grupo de los campos que describen la forma de pago de la operación al contado o del monto de la entrega inicial (E605)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1550",
+          "pagina": 172
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1551",
+      "servicio": "formato-de",
+      "mensaje": "El grupo de campos que describen la forma de pago de la operación al contado o del monto de la entrega inicial (crédito con cuota inicial) es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E605",
+      "id_validacion": "E605a",
+      "validacion": "Si la condición de la operación seleccionada es crédito (E601=2), y existe monto de entrega inicial (E645), es obligatorio informar el grupo de los campos que describen la forma de pago de la operación al contado o del monto de la entrega inicial (E605)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1551",
+          "pagina": 172
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1552",
+      "servicio": "formato-de",
+      "mensaje": "El grupo de campos que describen la forma de pago de la operación al contado o del monto de la entrega inicial no requerida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E605",
+      "id_validacion": "E605b",
+      "validacion": "Si la condición de la operación seleccionada es crédito (E601=2), y NO existe monto de entrega inicial (E645), el grupo de los campos que describen la forma de pago de la operación al contado o del monto de la entrega inicial (E605) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1552",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1553",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de pago inválido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E606",
+      "id_validacion": "E606",
+      "validacion": "Si el tipo de pago informado es Pago bancario (E606=16), indicador de presencia seleccionado debe ser Operación bancaria (E011=5) Esta validación se aplica solo al DE Factura electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1553",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1554",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de pago no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E607",
+      "id_validacion": "E607",
+      "validacion": "Descripción del tipo de pago no coincidente con lo informado en el campo E606",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1554",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1555",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la moneda no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E610",
+      "id_validacion": "E610",
+      "validacion": "Descripción de la moneda por tipo de pago no coincidente con lo informado en el campo E609",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1555",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1556",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de cambio no informado para la moneda por tipo de pago seleccionada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E611",
+      "id_validacion": "E611",
+      "validacion": "Si la moneda por tipo de pago es distinta a guaraníes (E609≠PYG), es obligatorio informar el tipo de cambio por tipo de pago (E611)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1556",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1557",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de cambio informado es inválido para la moneda por tipo de pago seleccionada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E611",
+      "id_validacion": "E611a",
+      "validacion": "Si la moneda por tipo de pago es igual a guaraníes (E609=PYG), el tipo de cambio por tipo de pago (E611) no debe existir",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1557",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1600",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de campos que describen el pago o entrega inicial de la operación con tarjeta de crédito/debito es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E620",
+      "id_validacion": "E620",
+      "validacion": "Si el tipo de pago seleccionado es igual a Tarjeta de Crédito/Débito (E606=3 o 4), es obligatorio informar el grupo de los campos que describen el pago o entrega inicial de la operación con tarjeta de crédito/debito (E620)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1600",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1601",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el pago de la operación con tarjeta de crédito/débito no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E620",
+      "id_validacion": "E620a",
+      "validacion": "Si el tipo de pago seleccionado es distinto a Tarjeta de Crédito/Débito (E606≠3 o 4), el grupo de los campos que describen el pago o entrega inicial de la operación con tarjeta de crédito/debito (E620) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1601",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1602",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la denominación de la tarjeta no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E622",
+      "id_validacion": "E622",
+      "validacion": "Descripción de la denominación de la tarjeta (E622) no coincidente con lo informado en el campo (E621)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1602",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1603",
+      "servicio": "formato-de",
+      "mensaje": "RUC de la procesadora de tarjeta inexistente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E623",
+      "id_validacion": "E623",
+      "validacion": "RUC de la procesadora de tarjeta (E623) inexistente en la base de datos de Marangatu",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1603",
+          "pagina": 173
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1604",
+      "servicio": "formato-de",
+      "mensaje": "Digito verificador del RUC de la procesadora de tarjeta es inexistente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E624",
+      "id_validacion": "E624",
+      "validacion": "El Dígito verificador ingresado (E624) no corresponde al módulo 11 del RUC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1604",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1650",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el pago o entrega inicial de la operación en cheque es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E630",
+      "id_validacion": "E630",
+      "validacion": "Si el tipo de pago seleccionado es igual a Cheque (E606=2), es obligatorio informar el grupo de los campos que describen el pago o entrega inicial de la operación con cheque (E630)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1650",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1651",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el pago o entrega inicial de la operación en cheque no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E630",
+      "id_validacion": "E630a",
+      "validacion": "Si el tipo de pago seleccionado es distinto a Cheque (E606≠2), el grupo de los campos que describen el pago o entrega inicial de la operación con cheque (E630) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1651",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1700",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen la forma de pago a crédito es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E640",
+      "id_validacion": "E640",
+      "validacion": "Si la condición de la operación seleccionada es igual a Crédito (E601=2), es obligatorio informar el grupo de los campos que describen la operación a crédito (E640)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1700",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1701",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen la forma de pago a crédito no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E640",
+      "id_validacion": "E640a",
+      "validacion": "Si la condición de la operación seleccionada es distinta a Crédito (E601≠2), el grupo de los campos que describen la operación a crédito (E640) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1701",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1702",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la condición de la operación a crédito no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E642",
+      "id_validacion": "E642",
+      "validacion": "Descripción de la condición de la operación a crédito no coincidente con lo informado en el campo E641",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1702",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1703",
+      "servicio": "formato-de",
+      "mensaje": "Plazo del crédito es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E643",
+      "id_validacion": "E643",
+      "validacion": "Si la condición de la operación a crédito seleccionada es igual a Plazo (E641=1), es obligatorio informar el plazo del crédito (E643)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1703",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1704",
+      "servicio": "formato-de",
+      "mensaje": "Plazo del crédito no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E643",
+      "id_validacion": "E643a",
+      "validacion": "Si la condición de la operación a crédito seleccionada es distinta a Plazo (E641≠1), el plazo del crédito (E643) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1704",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1705",
+      "servicio": "formato-de",
+      "mensaje": "Cantidad de cuotas es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E644",
+      "id_validacion": "E644",
+      "validacion": "Si la condición de la operación a crédito seleccionada es igual a Cuota (E641=2), es obligatorio informar la cantidad de cuotas (E644)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1705",
+          "pagina": 174
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1706",
+      "servicio": "formato-de",
+      "mensaje": "Cantidad de cuotas no requerida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E644",
+      "id_validacion": "E644a",
+      "validacion": "Si la condición de la operación a crédito seleccionada es distinta a Cuota (E641≠2), la cantidad de cuotas (E644) no debe ser informada",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1706",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1750",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen las cuotas es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E650",
+      "id_validacion": "E650",
+      "validacion": "Si la condición de la operación a crédito seleccionada es igual a Cuota (E641=2), es obligatorio informar el grupo de los campos que describen las cuotas (E650)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1750",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1751",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen las cuotas no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E650",
+      "id_validacion": "E650a",
+      "validacion": "Si la condición de la operación a crédito seleccionada es distinta a Cuota (E641≠2), el grupo de los campos que describen las cuotas (E650) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1751",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1800",
+      "servicio": "formato-de",
+      "mensaje": "Código de DNCP - Nivel General es obligatorio para el tipo de operación B2G",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "E704",
+      "id_validacion": "E704",
+      "validacion": "Si el tipo de operación seleccionado es igual a B2G (D202=3), es obligatorio informar el Código DNCP – Nivel General (E704)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1800",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT026",
+          "ref": "1800"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2025-06-09",
+          "produccion": "2025-06-16"
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1801",
+      "servicio": "formato-de",
+      "mensaje": "Código de DNCP – Nivel Específico es obligatorio",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "E705",
+      "id_validacion": "E705",
+      "validacion": "Si se informa el Código de DNCP – Nivel General (E704) es obligatorio informar el código de DNCP – Nivel Específico (E705)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1801",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT026",
+          "ref": "1801"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2025-06-09",
+          "produccion": "2025-06-16"
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1802",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la unidad de medida no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E710",
+      "id_validacion": "E710",
+      "validacion": "Descripción de la unidad de medida no coincidente con lo informado en el campo E709",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1802",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1804",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del país de origen del producto no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E713",
+      "id_validacion": "E713",
+      "validacion": "Descripción del país de origen del producto no coincidente con lo informado en el campo E712",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1804",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1805",
+      "servicio": "formato-de",
+      "mensaje": "Código de datos de relevancia de las mercaderías no informado para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E715",
+      "id_validacion": "E715",
+      "validacion": "Si el tipo de documento es Nota de remisión electrónica (C002=7), es obligatorio informar E715",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1805",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1806",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del código de datos de relevancia de las mercaderías no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E716",
+      "id_validacion": "E716",
+      "validacion": "La descripción del código de datos de relevancia de las mercaderías no coincidente con lo informado en el campo E715",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1806",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1807",
+      "servicio": "formato-de",
+      "mensaje": "Código de datos de relevancia de las mercaderías no requerido para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E715",
+      "id_validacion": "E715",
+      "validacion": "No se debe informar el código de datos de relevancia de las mercaderías cuando el tipo de documento electrónico es distinto a Nota de remisión (C002≠7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1807",
+          "pagina": 175
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1808",
+      "servicio": "formato-de",
+      "mensaje": "Se debe informar la cantidad o el porcentaje de quiebra o merma",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E717",
+      "id_validacion": "E717",
+      "validacion": "Cuando se informa el Código de datos de relevancia de mercaderías (E715) es obligatorio informar uno de los siguientes datos: la cantidad de quiebra o merma (E717) o el porcentaje de quiebra o merma (E718)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1808",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1850",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen los precios, descuentos y valor total por ítem es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E720",
+      "id_validacion": "E720",
+      "validacion": "El grupo de los campos que describen los precios, descuentos y valor total por ítem (E720) es obligatorio para todos los tipos de documentos electrónicos excepto para Nota Remisión Electrónica (C002=7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1850",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1851",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen los precios, descuentos y valor total por ítem no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E720",
+      "id_validacion": "E720a",
+      "validacion": "Si el tipo de documento electrónico seleccionado es igual a Nota de Remisión Electrónica (C002=7), el grupo de los campos que describen los precios, descuentos y valor total por ítem (E720) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1851",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1852",
+      "servicio": "formato-de",
+      "mensaje": "Porcentaje de descuento particular por ítem no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "EA003",
+      "id_validacion": "EA003",
+      "validacion": "Si se informa el campo de descuento por ítem (EA002) con un monto superior a 0 (cero), es obligatorio indicar el porcentaje respectivo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1852",
+          "pagina": 177
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1853",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo del valor total de la operación por ítem",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "EA008",
+      "id_validacion": "EA008",
+      "validacion": "Cálculo del valor total de la operación por ítem incorrecto EA008 debe corresponder al cálculo aritmético: IVA: (E721- EA002 – EA004 – EA006 – EA007) * E711",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1853",
+          "pagina": 177
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1854",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de cambio por ítem no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E725",
+      "id_validacion": "E725",
+      "validacion": "Si la condición del tipo de cambio es Por ítem (D017=2) es obligatorio informar el tipo de cambio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1854",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1855",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de cambio por ítem no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E725",
+      "id_validacion": "E725a",
+      "validacion": "Si la condición del tipo de cambio es Global (D017=1), el tipo de cambio por ítem no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1855",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1856",
+      "servicio": "formato-de",
+      "mensaje": "La moneda de la operación seleccionada no requiere tipo de cambio por ítem",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E725",
+      "id_validacion": "E725b",
+      "validacion": "Si la moneda de la operación (D015) es igual a PYG, el tipo de cambio por ítem (E725) no debe existir",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1856",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1857",
+      "servicio": "formato-de",
+      "mensaje": "Valor total de la operación por ítem en guaraníes no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "EA009",
+      "id_validacion": "EA009",
+      "validacion": "Si se informa el tipo de cambio por ítem (E725), el valor total de la operación por ítem en guaraníes es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1857",
+          "pagina": 177
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1858",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo del valor total de la operación por ítem en guaraníes",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "EA009",
+      "id_validacion": "EA009a",
+      "validacion": "Cálculo del valor total de la operación por ítem en guaraníes incorrecto EA009 debe corresponder al cálculo aritmético EA008 * E725",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1858",
+          "pagina": 177
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1859",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo del valor total bruto de la operación por ítem",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E727",
+      "id_validacion": "E727",
+      "validacion": "Cálculo del valor total bruto de la operación por ítem incorrecto E727 debe corresponder al cálculo aritmético E721 * E711",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1859",
+          "pagina": 176
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1860",
+      "servicio": "formato-de",
+      "mensaje": "Descuento global sobre el precio unitario por ítem no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "EA004",
+      "id_validacion": "EA004a",
+      "validacion": "Si el campo de porcentaje de descuento global sobre total de la operación (F010) tiene un valor mayor a 0 (cero), es obligatorio indicar el descuento global sobre el precio unitario por ítem",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "1860"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1861",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo del porcentaje de descuento particular por ítem",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "EA003",
+      "id_validacion": "EA003a",
+      "validacion": "EA003 representa el porcentaje de descuento de EA002 con respecto al precio unitario del producto y/o servicios (E721) Según la siguiente fórmula: [EA002 * 100 / E721] Puede haber una variación de 0.8",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1861",
+          "pagina": 177
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1862",
+      "servicio": "formato-de",
+      "mensaje": "El descuento global sobre el precio unitario por ítem no coincidente con lo informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "EA004",
+      "id_validacion": "EA004",
+      "validacion": "El descuento global sobre el precio unitario por ítem no coincide con lo informado en el porcentaje de descuento global sobre total de la operación (F010) Según la siguiente fórmula: [F010 * E721 / 100] Puede haber una variación de 0.8",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1862",
+          "pagina": 177
+        },
+        {
+          "doc": "NT001",
+          "ref": "1862"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "El descuento global sobre el precio unitario por ítem no coincidente con lo informado",
+          "validacion": "El descuento global sobre el precio unitario por ítem no coincide con lo informado en el porcentaje de descuento global sobre total de la operación (F010) Según la siguiente fórmula: [EA004 * 100 / E721] Puede haber una variación de 0.8",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1862",
+              "pagina": 177
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": null,
+              "produccion": null
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1900",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el IVA de la operación es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E730",
+      "id_validacion": "E730",
+      "validacion": "Si el tipo de impuesto al consumo afectado es IVA o Renta o Ninguno o IVA - Renta (D013=1 o 3 o 4 o 5), el grupo de los campos que describen el IVA de la operación (E730) es obligatorio para todos los tipos de documentos electrónicos excepto Factura Electrónica de Importación, Autofactura Electrónica o Nota de Remisión Electrónica (C002=3, 4 o 7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1900",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1901",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el IVA de la operación no requerido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E730",
+      "id_validacion": "E730a",
+      "validacion": "Si el tipo de documento electrónico seleccionado es igual a Factura Electrónica de Importación, Autofactura Electrónica o Nota de Remisión Electrónica (C002=3, 4 o 7), el grupo de los campos que describen el IVA de la operación (E730) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1901",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1902",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el IVA de la operación no requerido para el tipo de impuesto al consumo afectado seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E730",
+      "id_validacion": "E730b",
+      "validacion": "Si el tipo de impuesto al consumo afectado es igual a ISC (D013=2), el grupo de los campos que describen el IVA de la operación (E730) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1902",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1903",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la forma de afectación tributaria del IVA no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E732",
+      "id_validacion": "E732",
+      "validacion": "Descripción de la forma de afectación tributaria del IVA coincidente con lo informado en el campo E731",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1903",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1904",
+      "servicio": "formato-de",
+      "mensaje": "Proporción gravada del IVA incorrecta para forma de afectación Gravado IVA",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E733",
+      "id_validacion": "E733",
+      "validacion": "Si la forma de afectación tributaria del IVA informada es Gravado IVA (E731=1), la proporción gravada del IVA debe ser igual a 100 (cien)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1904",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1905",
+      "servicio": "formato-de",
+      "mensaje": "Proporción gravada del IVA incorrecta para forma de afectación Exonerado o Exento",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E733",
+      "id_validacion": "E733a",
+      "validacion": "Si la forma de afectación tributaria del IVA informada es Exonerado o Exento (E731=2 o 3), la proporción gravada del IVA debe ser igual a 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1905",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1906",
+      "servicio": "formato-de",
+      "mensaje": "Proporción gravada del IVA incorrecta para forma de afectación Gravado Parcial",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E733",
+      "id_validacion": "E733b",
+      "validacion": "Si la forma de afectación tributaria del IVA informada es Gravado parcial (E731=4), la proporción gravada del IVA debe ser inferior a 100 (cien) y superior a 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1906",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1907",
+      "servicio": "formato-de",
+      "mensaje": "Tasa del IVA es incorrecta para forma de afectación Exonerado o Exento",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E734",
+      "id_validacion": "E734",
+      "validacion": "Para la forma de afectación tributaria Exonerado o Exento (E731=2 o 3), la tasa del IVA informada (E734) debe ser igual a 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1907",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1908",
+      "servicio": "formato-de",
+      "mensaje": "Tasa del IVA es incorrecta para la forma de afectación Gravado IVA o Gravado parcial",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E734",
+      "id_validacion": "E734a",
+      "validacion": "Para la forma de afectación tributaria Gravado IVA o Gravado parcial (E731=1 o 4), la tasa del IVA informada (E734) debe ser igual a 5 (cinco) o 10 (diez)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1908",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1909",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo de la base gravada del IVA por ítem para forma de afectación Exonerado o Exento",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E735",
+      "id_validacion": "E735",
+      "validacion": "Si la forma de afectación tributaria del IVA informada es Exonerado o Exento (E731=2 o 3), la base gravada del IVA por ítem (E735) debe ser igual a 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1909",
+          "pagina": 178
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1910",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo de la base gravada del IVA por ítem para tasa del 5%",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E735",
+      "id_validacion": "E735a",
+      "validacion": "Cálculo de la base gravada del IVA por ítem incorrecto. Si E734 = 5 este campo es igual al resultado del cálculo: [100 * EA008 * E733] / [10000 + (E734 * E733)]",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1910",
+          "pagina": 179
+        },
+        {
+          "doc": "NT013",
+          "ref": "1910"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Error en el cálculo de la base gravada del IVA por ítem para tasa del 5%",
+          "validacion": "Cálculo de la base gravada del IVA por ítem incorrecto Si E734 = 5 este campo es igual al resultado del cálculo [EA008* (E733/100)] / 1,05",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1910",
+              "pagina": 179
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-04-21",
+              "produccion": "2023-06-17"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "codigo": "1911",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo de la base gravada del IVA por ítem para tasa del 10%",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E735",
+      "id_validacion": "E735b",
+      "validacion": "Cálculo de la base gravada del IVA por ítem incorrecto. Si E734 = 10 este campo es igual al resultado del cálculo: [100 * EA008 * E733] / [10000 + (E734 * E733)]",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1911",
+          "pagina": 179
+        },
+        {
+          "doc": "NT013",
+          "ref": "1911"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Error en el cálculo de la base gravada del IVA por ítem para tasa del 10%",
+          "validacion": "Cálculo de la base gravada del IVA por ítem incorrecto Si E734 = 10 este campo es igual al resultado del cálculo [EA008 * (E733/100)] / 1,1",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1911",
+              "pagina": 179
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-04-21",
+              "produccion": "2023-06-17"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "codigo": "1912",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo de la liquidación del IVA por ítem para forma de afectación Exonerado o Exento",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E736",
+      "id_validacion": "E736",
+      "validacion": "Si la forma de afectación tributaria del IVA informada es Exonerado o Exento (E731=2 o 3), la liquidación del IVA por ítem (E736) debe ser igual a 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1912",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1913",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo de la liquidación del IVA por ítem para forma de afectación Gravado IVA o Gravado Parcial",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E736",
+      "id_validacion": "E736a",
+      "validacion": "Cálculo de la liquidación del IVA por ítem incorrecto Corresponde al cálculo aritmético: E735 * (E734/100) para la forma de afectación tributaria Gravado IVA o Gravado parcial (E731=1 o 4)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1913",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1921",
+      "servicio": "formato-de",
+      "mensaje": "Error en el cálculo de la base exenta por ítem",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E737",
+      "id_validacion": "E737",
+      "validacion": "Cálculo de la base exenta por ítem incorrecto. Si E731 = 4 este campo es igual al resultado del cálculo: [100 * EA008 * (100 – E733)] / [10000 + (E734 * E733)] Si E731 = 1 , 2 o 3 este campo es igual 0",
+      "fuentes": [
+        {
+          "doc": "NT013",
+          "ref": "1921"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "codigo": "2050",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de inicio de ciclo es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E822",
+      "id_validacion": "E822",
+      "validacion": "La fecha de inicio del ciclo (E812) es obligatoria si se informa el campo E811",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2050",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2051",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de inicio de ciclo no requerida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E822",
+      "id_validacion": "E822a",
+      "validacion": "Si NO se informa el campo E811, la fecha de inicio de ciclo no debe ser informada",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2051",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2052",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de fin de ciclo es obligatoria",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E823",
+      "id_validacion": "E823",
+      "validacion": "La fecha de fin de ciclo (E813) es obligatoria si se informa la fecha de inicio de ciclo (E812)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2052",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2053",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de fin de ciclo no requerida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E823",
+      "id_validacion": "E823a",
+      "validacion": "Si NO se informa el campo E812, la fecha de fin de ciclo no debe ser informada",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2053",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2054",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de fin de ciclo inválida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E823",
+      "id_validacion": "E823b",
+      "validacion": "La fecha de fin de ciclo (E813) debe ser mayor o igual a la fecha de inicio de ciclo (E812)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2054",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2055",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de vencimiento del pago es retrasada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E824",
+      "id_validacion": "E824",
+      "validacion": "La fecha de vencimiento para el pago no debe ser anterior a la fecha de emisión del DE (D002)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2055",
+          "pagina": 179
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2100",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el transporte de las mercaderías es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E900",
+      "id_validacion": "E900",
+      "validacion": "Si el tipo de documento electrónico seleccionado es igual Nota de Remisión Electrónica (C002=7), es obligatorio informar el grupo de campos que describen el transporte de las mercaderías",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2100",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2101",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen el transporte de las mercaderías no es permitido para el tipo de DE seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E900",
+      "id_validacion": "E900a",
+      "validacion": "El grupo de los campos que describen el transporte de las mercaderías no es permitido para Autofactura Electrónica, Nota de Crédito Electrónica, Nota de Débito Electrónica o Comprobante de Retención Electrónico (C002=4, 5, 6 o 8)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2101",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2102",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de transporte no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E901",
+      "id_validacion": "E901",
+      "validacion": "Es obligatorio informar el tipo de transporte (E901) para operaciones con Nota de Remisión Electrónica (C002 = 7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2102",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2103",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de transporte no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E902",
+      "id_validacion": "E902",
+      "validacion": "Descripción del tipo de transporte (E902) no coincidente con lo informado en el campo E901",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2103",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2104",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la modalidad de transporte no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E904",
+      "id_validacion": "E904",
+      "validacion": "Descripción de la modalidad de transporte (E904) no corresponde a lo informado en el campo E903",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2104",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2107",
+      "servicio": "formato-de",
+      "mensaje": "Fecha estimada de inicio de traslado no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E909",
+      "id_validacion": "E909",
+      "validacion": "Es obligatorio informar la fecha estimada de inicio de traslado (E909) para el tipo de documento electrónico seleccionado (C002=7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2107",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2108",
+      "servicio": "formato-de",
+      "mensaje": "Fecha estimada de inicio de traslado es antigua",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E909",
+      "id_validacion": "E909a",
+      "validacion": "Si se informa la fecha estimada de inicio de traslado (E909), ésta debe ser posterior a fecha en producción de SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2108",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2109",
+      "servicio": "formato-de",
+      "mensaje": "Fecha estimada de fin de traslado no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E910",
+      "id_validacion": "E910",
+      "validacion": "Es obligatorio informar la fecha estimada de fin de traslado (E910) para el tipo de documento electrónico seleccionado (C002= 7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2109",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2110",
+      "servicio": "formato-de",
+      "mensaje": "Fecha estimada de fin de traslado es inválida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E910",
+      "id_validacion": "E910a",
+      "validacion": "Si se informa la fecha estimada de fin de traslado (E910), ésta debe ser igual o mayor a la fecha estimada de inicio de traslado (E908)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2110",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2112",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del país de destino no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E912",
+      "id_validacion": "E912",
+      "validacion": "Si se informa el código de país de destino (E911), es obligatorio indicar la descripción del país de destino (E912)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2112",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2113",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del país de destino no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E912",
+      "id_validacion": "E912a",
+      "validacion": "Descripción del país de destino (E912) no coincidente con lo informado en el campo E911",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2113",
+          "pagina": 180
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2150",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican el local de salida de las mercaderías es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E920",
+      "id_validacion": "E920",
+      "validacion": "Si el tipo de documento electrónico seleccionado es igual a Factura Electrónica de Exportación o Nota de Remisión Electrónica (C002=2 o 7), es obligatorio informar el grupo de los campos que identifican el local de salida de las mercaderías",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2150",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2151",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican el local de salida de las mercaderías no es permitido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E920",
+      "id_validacion": "E920a",
+      "validacion": "El grupo de los campos que identifican el local de salida de las mercaderías no es permitido para Autofactura Electrónica, Nota de Crédito Electrónica, Nota de Débito Electrónica o Comprobante de Retención Electrónica (C002=3, 4, 5, 6 o 8)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2151",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2152",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del departamento del local de salida no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E926",
+      "id_validacion": "E926",
+      "validacion": "Descripción del departamento del local de salida no coincidente con lo informado en el campo E925",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2152",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2153",
+      "servicio": "formato-de",
+      "mensaje": "El Departamento, el Distrito y Ciudad del local de Salida no están relacionados",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E925",
+      "id_validacion": "E925",
+      "validacion": "Debe haber relación entre el departamento (E925), el distrito (E927) y la ciudad (E929)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2153",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2154",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del código de distrito del local de salida no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E928",
+      "id_validacion": "E928",
+      "validacion": "Si se informa el código del distrito del local de salida (E927), la descripción del mismo es obligatoria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2154",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2155",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del distrito del local de salida no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E928",
+      "id_validacion": "E928a",
+      "validacion": "Descripción del distrito del local de salida no coincidente con lo informado en el campo E927",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2155",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2156",
+      "servicio": "formato-de",
+      "mensaje": "La ciudad del local de salida no corresponde al departamento seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E929",
+      "id_validacion": "E929",
+      "validacion": "El código de la ciudad del local de salida (E929) debe corresponder al departamento seleccionado (E925)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2156",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2157",
+      "servicio": "formato-de",
+      "mensaje": "La ciudad del local de salida no corresponde al distrito seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E929",
+      "id_validacion": "E929a",
+      "validacion": "El código de la ciudad del local de salida (E929) debe corresponder al distrito seleccionado (E927) No se aplica esta regla si no ha sido informado el distrito",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2157",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2158",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la ciudad del local de salida no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E930",
+      "id_validacion": "E930",
+      "validacion": "Descripción de la ciudad del local de salida no coincidente con lo informado en el campo E929",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2158",
+          "pagina": 181
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2200",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican el local de entrega de las mercaderías es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E940",
+      "id_validacion": "E940",
+      "validacion": "Si el tipo de documento electrónico seleccionado es Nota de Remisión Electrónica (C002=7), es obligatorio informar el grupo de los campos que identifican el local de entrega de las mercaderías",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2200",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2201",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican el local de entrega de las mercaderías no es permitido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E940",
+      "id_validacion": "E940a",
+      "validacion": "El grupo de campos que identifican el local de entrega de las mercaderías no es permitido para el tipo de documento Autofactura Electrónica, Nota de Débito Electrónica, Nota de Crédito Electrónica o Comprobante de Retención Electrónico (C002=4, 5, 6 o 8)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2201",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2202",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del departamento del local de entrega no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E946",
+      "id_validacion": "E946",
+      "validacion": "Descripción del departamento del local de entrega no coincidente con lo informado en el campo E945",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2202",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2203",
+      "servicio": "formato-de",
+      "mensaje": "El Departamento, el Distrito y la Ciudad del local de entrega no están relacionados",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E945",
+      "id_validacion": "E945",
+      "validacion": "Debe haber relación entre el departamento (E945), el distrito (E947) y la ciudad (E949)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2203",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2204",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del código del distrito del local de la entrega no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E948",
+      "id_validacion": "E948",
+      "validacion": "Si se informa el código del distrito del local de entrega (E947), la descripción del mismo es obligatoria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2204",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2205",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del distrito del local de entrega no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E948",
+      "id_validacion": "E948a",
+      "validacion": "Descripción del distrito del local de entrega no coincidente con lo informado en el campo E947",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2205",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2206",
+      "servicio": "formato-de",
+      "mensaje": "La ciudad del local de entrega no corresponde al departamento seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E949",
+      "id_validacion": "E949",
+      "validacion": "El código de la ciudad del local de entrega (E949) debe corresponder al departamento seleccionado (E945)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2206",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2207",
+      "servicio": "formato-de",
+      "mensaje": "La ciudad del local de entrega no corresponde al distrito seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E949",
+      "id_validacion": "E949a",
+      "validacion": "El código de la ciudad del local de entrega (E949) debe corresponder al distrito seleccionado (E947) No se aplica esta regla si no ha sido informado el distrito",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2207",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2208",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la ciudad del local de entrega no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E950",
+      "id_validacion": "E950",
+      "validacion": "Descripción de la ciudad del local de entrega no coincidente con lo informado en el campo E949",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2208",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2250",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican el vehículo de traslado de las mercaderías es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E960",
+      "id_validacion": "E960",
+      "validacion": "Si el tipo de documento electrónico seleccionado es Nota de Remisión Electrónica (C002=7), es obligatorio informar el grupo de los campos que identifican el vehículo de traslado de las mercaderías",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2250",
+          "pagina": 182
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2251",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican el vehículo de traslado de las mercaderías no es permitido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E960",
+      "id_validacion": "E960a",
+      "validacion": "El grupo de campos que identifican el vehículo de traslado de las mercaderías no es permitido para el tipo de documento Autofactura Electrónica, Nota de Débito Electrónica, Nota de Crédito Electrónica o Comprobante de Retención Electrónico (C002=4, 5, 6 o 8)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2251",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2252",
+      "servicio": "formato-de",
+      "mensaje": "Número de vuelo no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E966",
+      "id_validacion": "E966",
+      "validacion": "Se requiere número de vuelo para la modalidad de transporte seleccionada (E903 = 3)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2252",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2253",
+      "servicio": "formato-de",
+      "mensaje": "Número de vuelo no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E966",
+      "id_validacion": "E966a",
+      "validacion": "Si la modalidad de transporte seleccionada es distinta a Aéreo (E903 ≠ 3) el número de vuelo (E965) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2253",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2254",
+      "servicio": "formato-de",
+      "mensaje": "Número de matrícula del vehículo no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E965",
+      "id_validacion": "E965",
+      "validacion": "Se requiere número de matrícula del vehículo cuando el tipo de identificación del vehículo es 2 (E967=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2254",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2255",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de identificación del vehículo no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E963",
+      "id_validacion": "E963",
+      "validacion": "Se requiere el número de identificación del vehículo cuando el tipo de identificación del vehículo es 1 (E967=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2255",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2300",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican al transportista (persona física o jurídica) es obligatorio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E980",
+      "id_validacion": "E980",
+      "validacion": "Si el tipo de documento electrónico seleccionado es Nota de Remisión Electrónica (C002=7), es obligatorio informar el grupo de los campos que identifican al transportista (persona física o jurídica)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2300",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2301",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que identifican al transportista (persona física o jurídica) no es permitido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E980",
+      "id_validacion": "E980a",
+      "validacion": "El grupo de campos que identifican al transportista (persona física o jurídica) no es permitido para el tipo de documento Autofactura Electrónica, Nota de Débito Electrónica, Nota de Crédito Electrónica o Comprobante de Retención Electrónico (C002=4, 5, 6 o 8)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2301",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2302",
+      "servicio": "formato-de",
+      "mensaje": "RUC del transportista no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E983",
+      "id_validacion": "E983",
+      "validacion": "Se requiere informar el número de RUC si la naturaleza del transportista es igual a contribuyente (E981 = 1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2302",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2303",
+      "servicio": "formato-de",
+      "mensaje": "RUC del transportista inexistente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E983",
+      "id_validacion": "E983a",
+      "validacion": "El RUC del transportista informado no existe en la base de datos de Marangatu",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2303",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2304",
+      "servicio": "formato-de",
+      "mensaje": "El RUC del transportista se encuentra inactivo",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E983",
+      "id_validacion": "E983b",
+      "validacion": "El RUC del transportista debe contar con un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL en Marangatu al momento de la emisión del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2304",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2305",
+      "servicio": "formato-de",
+      "mensaje": "RUC del transportista no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E983",
+      "id_validacion": "E983c",
+      "validacion": "Si la naturaleza del transportista es distinta a contribuyente (E981≠1) el RUC del transportista (E983) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2305",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2306",
+      "servicio": "formato-de",
+      "mensaje": "Dígito Verificador del RUC del transportista incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E984",
+      "id_validacion": "E984",
+      "validacion": "El Dígito Verificador ingresado (E984) no corresponde al módulo 11 del RUC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2306",
+          "pagina": 183
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2307",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento de identidad del transportista no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E985",
+      "id_validacion": "E985",
+      "validacion": "Se requiere informar el tipo de documento de identidad si la naturaleza del transportista es igual a NO contribuyente (E981=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2307",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2308",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento de identidad del transportista no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E985",
+      "id_validacion": "E985a",
+      "validacion": "Si la naturaleza del transportista es igual a contribuyente (E981=1) el tipo de documento de identidad del transportista (E985) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2308",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2309",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento de identidad del transportista no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E986",
+      "id_validacion": "E986",
+      "validacion": "Si se informa el código de tipo de documento de identidad del transportista (E985), es obligatorio indicar la descripción del mismo (E986)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2309",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2310",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento de identidad del transportista no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E986",
+      "id_validacion": "E986a",
+      "validacion": "Descripción del tipo de documento de identidad del transportista (E986) no coincidente con lo informado en el campo E985",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2310",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2311",
+      "servicio": "formato-de",
+      "mensaje": "Número de documento de identidad del transportista no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E987",
+      "id_validacion": "E987",
+      "validacion": "Si se informa el código de tipo de documento de identidad del transportista (E985), el número de dicho documento es requerido",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2311",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2312",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la nacionalidad del transportista no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E989",
+      "id_validacion": "E989",
+      "validacion": "Si se informa el código de nacionalidad del transportista (E988), es obligatorio indicar la descripción (E989) del mismo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2312",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2313",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la nacionalidad del transportista no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E989",
+      "id_validacion": "E989a",
+      "validacion": "Descripción de la nacionalidad del transportista (E989) no coincidente con lo informado en el campo E988",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2313",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2550",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado, es obligatorio informar el grupo de campos que componen la AFE",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E300",
+      "id_validacion": "E300",
+      "validacion": "Si el tipo de documento electrónico informado es AFE (C002 = 4), el grupo de campos que componen la AFE (E300) es obligatorio.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2550",
+          "pagina": 169
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2551",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado, no se debe informar el grupo de campos que componen la AFE",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E300",
+      "id_validacion": "E300a",
+      "validacion": "Para el tipo de documento electrónico informado (C002 ≠ 4), el grupo de campos que componen la AFE (E300) no debe informarse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2551",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2552",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del departamento del vendedor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E311",
+      "id_validacion": "E311",
+      "validacion": "Descripción del departamento no coincidente con lo informado en el campo E310",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2552",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2553",
+      "servicio": "formato-de",
+      "mensaje": "El Departamento, el Distrito y la Ciudad del vendedor no están relacionados",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E310",
+      "id_validacion": "E310",
+      "validacion": "Debe haber relación entre el departamento (E310), el distrito (E312) y la ciudad (E314)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2553",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2555",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la ciudad del vendedor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E315",
+      "id_validacion": "E315",
+      "validacion": "Descripción de la ciudad no coincidente con lo informado en el campo E314",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2555",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2556",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del departamento no corresponde al código donde se realiza la transacción",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E318",
+      "id_validacion": "E318",
+      "validacion": "Descripción del departamento no coincidente con lo informado en el campo E317",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2556",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2557",
+      "servicio": "formato-de",
+      "mensaje": "El Departamento, el Distrito y la Ciudad donde se realiza la transacción no están relacionados",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E317",
+      "id_validacion": "E317",
+      "validacion": "Debe haber relación entre el departamento (E317), el distrito (E319) y la ciudad (E321)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2557",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2558",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del distrito donde se realiza la transacción no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E320",
+      "id_validacion": "E320",
+      "validacion": "Descripción del distrito donde se realiza la transacción no coincidente con lo informado en el campo E319",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2558",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2559",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la ciudad no corresponde al código donde se realiza la transacción",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E322",
+      "id_validacion": "E322",
+      "validacion": "Descripción de la ciudad donde se realiza la transacción no coincidente con lo informado en el campo E321",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2559",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2561",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del código del distrito del vendedor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E313",
+      "id_validacion": "E313b",
+      "validacion": "Descripción del código del distrito no coincidente con lo informado en el campo E312",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2561",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2562",
+      "servicio": "formato-de",
+      "mensaje": "El vendedor no debe ser contribuyente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E304",
+      "id_validacion": "E304",
+      "validacion": "Cuando el Tipo de documento de identidad del vendedor es Cédula de identidad o Pasaporte (E304=1 o E304=2), el vendedor no debe ser contribuyente (E306 no debe tener RUC o el estado del RUC debe ser CANCELADO o CANCELADO DEFINITIVO)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2562",
+          "pagina": 170
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2600",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado, es obligatorio informar el grupo de campos que componen la NRE",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E500",
+      "id_validacion": "E500",
+      "validacion": "Si el tipo de documento es Nota de remisión (C002=7), es obligatorio informar el grupo de campos que componen la Nota de Remisión (E500)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2600",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2601",
+      "servicio": "formato-de",
+      "mensaje": "Para el tipo de documento electrónico seleccionado, no se debe informar el grupo de campos que componen la NRE",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E500",
+      "id_validacion": "E500a",
+      "validacion": "Para el tipo de documento electrónico informado (C002 ≠ 7), el grupo de campos que componen la NRE (E500) no debe informarse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2601",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2602",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del motivo de emisión no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E502",
+      "id_validacion": "E502",
+      "validacion": "La descripción del motivo de emisión no coincidente con lo informado en el campo E501",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2602",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2603",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del responsable de la emisión de la NRE, no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E504",
+      "id_validacion": "E504",
+      "validacion": "La descripción del responsable por la emisión de la NRE, no coincide con lo informado en el campo E503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2603",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2604",
+      "servicio": "formato-de",
+      "mensaje": "Fecha futura de emisión de la factura excede el límite permitido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E506",
+      "id_validacion": "E506",
+      "validacion": "El mes de la fecha estimada de emisión de la factura, no puede ser posterior al mes de la fecha de emisión de la Nota de Remisión",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2604",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2605",
+      "servicio": "formato-de",
+      "mensaje": "Fecha futura de emisión de la factura no informada para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E506",
+      "id_validacion": "E506a",
+      "validacion": "Si el motivo de emisión es Traslado por venta (E501=1) y no se informan documentos asociados (H001), es obligatorio el campo E506.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2605",
+          "pagina": 172
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2606",
+      "servicio": "formato-de",
+      "mensaje": "RUC del receptor no coincidente con el RUC del emisor",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "E501",
+      "id_validacion": "E501",
+      "validacion": "Cuando el motivo de emisión es Traslado entre los locales de la empresa (E501=7), el RUC del emisor debe coincidir con el RUC del receptor (D101=D206)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2606",
+          "pagina": 171
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    }
+  ]
+}

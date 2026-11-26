@@ -1,0 +1,42 @@
+{
+  "id": "condicion-anticipo",
+  "titulo": "Condición del anticipo",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D019"
+    },
+    {
+      "doc": "MT150",
+      "ref": "D020"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiCondAnt, tdDesCondAnt"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D019",
+    "D020"
+  ],
+  "descripciones": {
+    "D019": "D020"
+  },
+  "xml": [
+    "iCondAnt",
+    "dDesCondAnt"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Anticipo Global",
+      "detalle": "Anticipo Global (un solo tipo de anticipo para todo el DE)"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Anticipo por Ítem",
+      "detalle": "Anticipo por ítem (corresponde a la distribución de Anticipos facturados por ítem)"
+    }
+  ]
+}

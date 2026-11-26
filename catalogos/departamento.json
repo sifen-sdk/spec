@@ -1,0 +1,162 @@
+{
+  "id": "departamento",
+  "titulo": "Departamentos",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "Departamentos_v141.xsd tDepartamentos, tDesDepartamento"
+    },
+    {
+      "doc": "MT150",
+      "ref": "Tabla 2.1 – DEPARTAMENTOS, DISTRITOS Y CIUDADES: CÓDIGO DE REFERENCIA GEOGRAFICA_NOVIEMBRE_2025__.xlsx (Fecha de Actualización: 03/Noviembre/2025)",
+      "pagina": 211
+    },
+    {
+      "doc": "MT150",
+      "ref": "D111",
+      "cita": "Según XSD de Departamentos"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D111",
+    "D112",
+    "D219",
+    "D220",
+    "E310",
+    "E311",
+    "E317",
+    "E318",
+    "E925",
+    "E926",
+    "E945",
+    "E946",
+    "GET004",
+    "GET005",
+    "GENFE017",
+    "GENFE018"
+  ],
+  "descripciones": {
+    "D111": "D112",
+    "D219": "D220",
+    "E310": "E311",
+    "E317": "E318",
+    "E925": "E926",
+    "E945": "E946",
+    "GET004": "GET005",
+    "GENFE017": "GENFE018"
+  },
+  "xml": [
+    "cDepEmi",
+    "dDesDepEmi",
+    "cDepRec",
+    "dDesDepRec",
+    "cDepVen",
+    "dDesDepVen",
+    "cDepProv",
+    "dDesDepProv",
+    "cDepSal",
+    "dDesDepSal",
+    "cDepEnt",
+    "dDesDepEnt"
+  ],
+  "contradiccion": "C-911",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "CAPITAL"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "CONCEPCION"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "SAN PEDRO"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "CORDILLERA"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "GUAIRA"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "CAAGUAZU"
+    },
+    {
+      "codigo": "7",
+      "descripcion": "CAAZAPA"
+    },
+    {
+      "codigo": "8",
+      "descripcion": "ITAPUA"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "MISIONES"
+    },
+    {
+      "codigo": "10",
+      "descripcion": "PARAGUARI"
+    },
+    {
+      "codigo": "11",
+      "descripcion": "ALTO PARANA"
+    },
+    {
+      "codigo": "12",
+      "descripcion": "CENTRAL"
+    },
+    {
+      "codigo": "13",
+      "descripcion": "NEEMBUCU"
+    },
+    {
+      "codigo": "14",
+      "descripcion": "AMAMBAY"
+    },
+    {
+      "codigo": "15",
+      "descripcion": "PTE. HAYES"
+    },
+    {
+      "codigo": "16",
+      "descripcion": "BOQUERON"
+    },
+    {
+      "codigo": "17",
+      "descripcion": "ALTO PARAGUAY"
+    },
+    {
+      "codigo": "18",
+      "descripcion": "CANINDEYU"
+    },
+    {
+      "codigo": "19",
+      "descripcion": "CHACO",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Departamentos_v141.xsd tDepartamentos, tDesDepartamento"
+        }
+      ],
+      "observacion": "No figura en la planilla oficial de referencia geográfica (Tabla 2.1), que solo tiene los departamentos 1 a 18.",
+      "contradiccion": "C-911"
+    },
+    {
+      "codigo": "20",
+      "descripcion": "NUEVA ASUNCION",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Departamentos_v141.xsd tDepartamentos, tDesDepartamento"
+        }
+      ],
+      "observacion": "No figura en la planilla oficial de referencia geográfica (Tabla 2.1), que solo tiene los departamentos 1 a 18.",
+      "contradiccion": "C-911"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "tipo-emision",
+  "titulo": "Tipo de emisión",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "B002"
+    },
+    {
+      "doc": "MT150",
+      "ref": "B003"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipEmi, tdDesTipEmi"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "B002",
+    "B003"
+  ],
+  "descripciones": {
+    "B002": "B003"
+  },
+  "xml": [
+    "iTipEmi",
+    "dDesTipEmi"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Normal"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Contingencia"
+    }
+  ]
+}

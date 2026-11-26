@@ -1,0 +1,1422 @@
+{
+  "id": "distrito",
+  "titulo": "Distritos",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "Tabla 2.1 – DEPARTAMENTOS, DISTRITOS Y CIUDADES: CÓDIGO DE REFERENCIA GEOGRAFICA_NOVIEMBRE_2025__.xlsx (Fecha de Actualización: 03/Noviembre/2025)",
+      "pagina": 211
+    },
+    {
+      "doc": "MT150",
+      "ref": "D113",
+      "cita": "Según Tabla 2.1 – Distritos"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D113",
+    "D114",
+    "D221",
+    "D222",
+    "E312",
+    "E313",
+    "E319",
+    "E320",
+    "E927",
+    "E928",
+    "E947",
+    "E948",
+    "GET006",
+    "GET007",
+    "GENFE019",
+    "GENFE020"
+  ],
+  "descripciones": {
+    "D113": "D114",
+    "D221": "D222",
+    "E312": "E313",
+    "E319": "E320",
+    "E927": "E928",
+    "E947": "E948",
+    "GET006": "GET007",
+    "GENFE019": "GENFE020"
+  },
+  "xml": [
+    "cDisEmi",
+    "dDesDisEmi",
+    "cDisRec",
+    "dDesDisRec",
+    "cDisVen",
+    "dDesDisVen",
+    "cDisProv",
+    "dDesDisProv",
+    "cDisSal",
+    "dDesDisSal",
+    "cDisEnt",
+    "dDesDisEnt"
+  ],
+  "nota": "\"padre\" es el código de departamento. Planilla oficial descargada de https://www.dnit.gov.py/web/e-kuatia/tablas-y-codificaciones (MD5 0d817dee1a6a0c307a8fd25140c4f9be). La planilla trae además barrios, que ningún campo de SIFEN usa y no se cargan.",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "ASUNCION (DISTRITO)",
+      "padre": "1"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "CONCEPCION (MUNICIPIO)",
+      "padre": "2"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "SAN LAZARO",
+      "padre": "2"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "SAN CARLOS",
+      "padre": "2"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "BELEN",
+      "padre": "2"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "LORETO",
+      "padre": "2"
+    },
+    {
+      "codigo": "7",
+      "descripcion": "HORQUETA",
+      "padre": "2"
+    },
+    {
+      "codigo": "8",
+      "descripcion": "SAN SALVADOR",
+      "padre": "2"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "YBY YA'U",
+      "padre": "2"
+    },
+    {
+      "codigo": "10",
+      "descripcion": "SAN PEDRO DE YCUAMANDYYU",
+      "padre": "3"
+    },
+    {
+      "codigo": "11",
+      "descripcion": "ANTEQUERA",
+      "padre": "3"
+    },
+    {
+      "codigo": "12",
+      "descripcion": "GRAL. E.AQUINO",
+      "padre": "3"
+    },
+    {
+      "codigo": "13",
+      "descripcion": "ITACURUBI DEL ROSARIO",
+      "padre": "3"
+    },
+    {
+      "codigo": "14",
+      "descripcion": "SAN ESTANISLAO (SANTANI)",
+      "padre": "3"
+    },
+    {
+      "codigo": "15",
+      "descripcion": "LIMA",
+      "padre": "3"
+    },
+    {
+      "codigo": "16",
+      "descripcion": "NUEVA GERMANIA",
+      "padre": "3"
+    },
+    {
+      "codigo": "17",
+      "descripcion": "TACUATI",
+      "padre": "3"
+    },
+    {
+      "codigo": "18",
+      "descripcion": "UNION",
+      "padre": "3"
+    },
+    {
+      "codigo": "19",
+      "descripcion": "25 DE DICIEMBRE",
+      "padre": "3"
+    },
+    {
+      "codigo": "20",
+      "descripcion": "VILLA DEL ROSARIO",
+      "padre": "3"
+    },
+    {
+      "codigo": "21",
+      "descripcion": "YATAITY DEL NORTE",
+      "padre": "3"
+    },
+    {
+      "codigo": "22",
+      "descripcion": "ISIDORO RESQUIN",
+      "padre": "3"
+    },
+    {
+      "codigo": "23",
+      "descripcion": "CHORE",
+      "padre": "3"
+    },
+    {
+      "codigo": "24",
+      "descripcion": "SAN PABLO",
+      "padre": "3"
+    },
+    {
+      "codigo": "25",
+      "descripcion": "SAN JOSE DEL ROSARIO",
+      "padre": "3"
+    },
+    {
+      "codigo": "26",
+      "descripcion": "CAACUPE",
+      "padre": "4"
+    },
+    {
+      "codigo": "27",
+      "descripcion": "ALTOS",
+      "padre": "4"
+    },
+    {
+      "codigo": "28",
+      "descripcion": "ARROYOS Y ESTEROS",
+      "padre": "4"
+    },
+    {
+      "codigo": "29",
+      "descripcion": "ATYRA",
+      "padre": "4"
+    },
+    {
+      "codigo": "30",
+      "descripcion": "CARAGUATAY",
+      "padre": "4"
+    },
+    {
+      "codigo": "31",
+      "descripcion": "EMBOSCADA",
+      "padre": "4"
+    },
+    {
+      "codigo": "32",
+      "descripcion": "EUSEBIO AYALA",
+      "padre": "4"
+    },
+    {
+      "codigo": "33",
+      "descripcion": "ISLA PUCU",
+      "padre": "4"
+    },
+    {
+      "codigo": "34",
+      "descripcion": "ITACURUBI DE LA CORDILLERA",
+      "padre": "4"
+    },
+    {
+      "codigo": "35",
+      "descripcion": "JUAN DE MENA",
+      "padre": "4"
+    },
+    {
+      "codigo": "36",
+      "descripcion": "NUEVA COLOMBIA",
+      "padre": "4"
+    },
+    {
+      "codigo": "37",
+      "descripcion": "PIRIBEBUY",
+      "padre": "4"
+    },
+    {
+      "codigo": "38",
+      "descripcion": "1RO.DE MARZO",
+      "padre": "4"
+    },
+    {
+      "codigo": "39",
+      "descripcion": "SAN BERNARDINO",
+      "padre": "4"
+    },
+    {
+      "codigo": "40",
+      "descripcion": "SANTA ELENA",
+      "padre": "4"
+    },
+    {
+      "codigo": "41",
+      "descripcion": "TOBATI",
+      "padre": "4"
+    },
+    {
+      "codigo": "42",
+      "descripcion": "VALENZUELA",
+      "padre": "4"
+    },
+    {
+      "codigo": "43",
+      "descripcion": "LOMA GRANDE",
+      "padre": "4"
+    },
+    {
+      "codigo": "44",
+      "descripcion": "SAN JOSE OBRERO",
+      "padre": "4"
+    },
+    {
+      "codigo": "45",
+      "descripcion": "VILLARRICA",
+      "padre": "5"
+    },
+    {
+      "codigo": "46",
+      "descripcion": "SAN SALVADOR",
+      "padre": "5"
+    },
+    {
+      "codigo": "47",
+      "descripcion": "BORJA",
+      "padre": "5"
+    },
+    {
+      "codigo": "48",
+      "descripcion": "INDEPENDENCIA (R.D.MELGAREJO)",
+      "padre": "5"
+    },
+    {
+      "codigo": "49",
+      "descripcion": "GRAL.EUGENIO A. GARAY",
+      "padre": "5"
+    },
+    {
+      "codigo": "50",
+      "descripcion": "CNEL. MARTINEZ",
+      "padre": "5"
+    },
+    {
+      "codigo": "51",
+      "descripcion": "JOSE FASSARDI",
+      "padre": "5"
+    },
+    {
+      "codigo": "52",
+      "descripcion": "FELIX PEREZ CARDOZO",
+      "padre": "5"
+    },
+    {
+      "codigo": "53",
+      "descripcion": "MAURICIO JOSE TROCHE",
+      "padre": "5"
+    },
+    {
+      "codigo": "54",
+      "descripcion": "ITAPE",
+      "padre": "5"
+    },
+    {
+      "codigo": "55",
+      "descripcion": "ITURBE",
+      "padre": "5"
+    },
+    {
+      "codigo": "56",
+      "descripcion": "MBOCAYATY",
+      "padre": "5"
+    },
+    {
+      "codigo": "57",
+      "descripcion": "NATALICIO TALAVERA",
+      "padre": "5"
+    },
+    {
+      "codigo": "58",
+      "descripcion": "ÑUMI",
+      "padre": "5"
+    },
+    {
+      "codigo": "59",
+      "descripcion": "YATAITY",
+      "padre": "5"
+    },
+    {
+      "codigo": "60",
+      "descripcion": "DR. BOTREL",
+      "padre": "5"
+    },
+    {
+      "codigo": "61",
+      "descripcion": "CNEL. OVIEDO",
+      "padre": "6"
+    },
+    {
+      "codigo": "62",
+      "descripcion": "CAAGUAZU",
+      "padre": "6"
+    },
+    {
+      "codigo": "63",
+      "descripcion": "CARAYAO",
+      "padre": "6"
+    },
+    {
+      "codigo": "64",
+      "descripcion": "CECILIO BAEZ",
+      "padre": "6"
+    },
+    {
+      "codigo": "65",
+      "descripcion": "NUEVA LONDRES",
+      "padre": "6"
+    },
+    {
+      "codigo": "66",
+      "descripcion": "SAN JOAQUIN",
+      "padre": "6"
+    },
+    {
+      "codigo": "67",
+      "descripcion": "SAN JOSE DE LOS ARROYOS",
+      "padre": "6"
+    },
+    {
+      "codigo": "68",
+      "descripcion": "YHU",
+      "padre": "6"
+    },
+    {
+      "codigo": "69",
+      "descripcion": "JUAN MANUEL FRUTOS",
+      "padre": "6"
+    },
+    {
+      "codigo": "70",
+      "descripcion": "REPATRIACION",
+      "padre": "6"
+    },
+    {
+      "codigo": "71",
+      "descripcion": "SANTA ROSA DEL MBUTUY",
+      "padre": "6"
+    },
+    {
+      "codigo": "72",
+      "descripcion": "J. EULOGIO ESTIGARRIBIA",
+      "padre": "6"
+    },
+    {
+      "codigo": "73",
+      "descripcion": "JOSE D. OCAMPOS",
+      "padre": "6"
+    },
+    {
+      "codigo": "74",
+      "descripcion": "R.I.3 CORRALES",
+      "padre": "6"
+    },
+    {
+      "codigo": "75",
+      "descripcion": "RAUL A. OVIEDO",
+      "padre": "6"
+    },
+    {
+      "codigo": "76",
+      "descripcion": "MCAL.F.SOLANO LOPEZ",
+      "padre": "6"
+    },
+    {
+      "codigo": "77",
+      "descripcion": "CAAZAPA",
+      "padre": "7"
+    },
+    {
+      "codigo": "78",
+      "descripcion": "BUENA VISTA",
+      "padre": "7"
+    },
+    {
+      "codigo": "79",
+      "descripcion": "GRAL. H. MORINIGO",
+      "padre": "7"
+    },
+    {
+      "codigo": "80",
+      "descripcion": "MACIEL",
+      "padre": "7"
+    },
+    {
+      "codigo": "81",
+      "descripcion": "MOISES BERTONI",
+      "padre": "7"
+    },
+    {
+      "codigo": "82",
+      "descripcion": "SAN JUAN NEPOMUCENO",
+      "padre": "7"
+    },
+    {
+      "codigo": "83",
+      "descripcion": "ABAI",
+      "padre": "7"
+    },
+    {
+      "codigo": "84",
+      "descripcion": "TAVAI",
+      "padre": "7"
+    },
+    {
+      "codigo": "85",
+      "descripcion": "YEGROS",
+      "padre": "7"
+    },
+    {
+      "codigo": "86",
+      "descripcion": "YUTY",
+      "padre": "7"
+    },
+    {
+      "codigo": "87",
+      "descripcion": "ENCARNACION",
+      "padre": "8"
+    },
+    {
+      "codigo": "88",
+      "descripcion": "BELLA VISTA",
+      "padre": "8"
+    },
+    {
+      "codigo": "89",
+      "descripcion": "CAMBYRETA",
+      "padre": "8"
+    },
+    {
+      "codigo": "90",
+      "descripcion": "CAPITAN MEZA",
+      "padre": "8"
+    },
+    {
+      "codigo": "91",
+      "descripcion": "CARMEN DEL PARANA",
+      "padre": "8"
+    },
+    {
+      "codigo": "92",
+      "descripcion": "CAPITAN MIRANDA",
+      "padre": "8"
+    },
+    {
+      "codigo": "93",
+      "descripcion": "CORONEL BOGADO",
+      "padre": "8"
+    },
+    {
+      "codigo": "94",
+      "descripcion": "FRAM",
+      "padre": "8"
+    },
+    {
+      "codigo": "95",
+      "descripcion": "GRAL. ARTIGAS",
+      "padre": "8"
+    },
+    {
+      "codigo": "96",
+      "descripcion": "GRAL. DELGADO",
+      "padre": "8"
+    },
+    {
+      "codigo": "97",
+      "descripcion": "HOHENAU",
+      "padre": "8"
+    },
+    {
+      "codigo": "98",
+      "descripcion": "JESUS",
+      "padre": "8"
+    },
+    {
+      "codigo": "99",
+      "descripcion": "OBLIGADO",
+      "padre": "8"
+    },
+    {
+      "codigo": "100",
+      "descripcion": "SAN COSME Y DAMIAN",
+      "padre": "8"
+    },
+    {
+      "codigo": "101",
+      "descripcion": "SAN PEDRO DEL PARANA",
+      "padre": "8"
+    },
+    {
+      "codigo": "102",
+      "descripcion": "NUEVA ALBORADA",
+      "padre": "8"
+    },
+    {
+      "codigo": "103",
+      "descripcion": "TRINIDAD",
+      "padre": "8"
+    },
+    {
+      "codigo": "104",
+      "descripcion": "NATALIO",
+      "padre": "8"
+    },
+    {
+      "codigo": "105",
+      "descripcion": "JOSE LEANDRO OVIEDO",
+      "padre": "8"
+    },
+    {
+      "codigo": "106",
+      "descripcion": "SAN RAFAEL DEL PARANA",
+      "padre": "8"
+    },
+    {
+      "codigo": "107",
+      "descripcion": "CARLOS A. LOPEZ",
+      "padre": "8"
+    },
+    {
+      "codigo": "108",
+      "descripcion": "JULIO D. OTAÑO",
+      "padre": "8"
+    },
+    {
+      "codigo": "109",
+      "descripcion": "EDELIRA",
+      "padre": "8"
+    },
+    {
+      "codigo": "110",
+      "descripcion": "SAN JUAN DEL PARANA",
+      "padre": "8"
+    },
+    {
+      "codigo": "111",
+      "descripcion": "LA PAZ",
+      "padre": "8"
+    },
+    {
+      "codigo": "112",
+      "descripcion": "TOMAS R. PEREIRA",
+      "padre": "8"
+    },
+    {
+      "codigo": "113",
+      "descripcion": "YATYTAY",
+      "padre": "8"
+    },
+    {
+      "codigo": "114",
+      "descripcion": "HERIBERTA S.DE IGLESIAS",
+      "padre": "8"
+    },
+    {
+      "codigo": "115",
+      "descripcion": "SAN JUAN BAUTISTA",
+      "padre": "9"
+    },
+    {
+      "codigo": "116",
+      "descripcion": "AYOLAS",
+      "padre": "9"
+    },
+    {
+      "codigo": "117",
+      "descripcion": "SAN IGNACIO",
+      "padre": "9"
+    },
+    {
+      "codigo": "118",
+      "descripcion": "SAN MIGUEL",
+      "padre": "9"
+    },
+    {
+      "codigo": "119",
+      "descripcion": "SAN PATRICIO",
+      "padre": "9"
+    },
+    {
+      "codigo": "120",
+      "descripcion": "SANTIAGO",
+      "padre": "9"
+    },
+    {
+      "codigo": "121",
+      "descripcion": "SANTA MARIA",
+      "padre": "9"
+    },
+    {
+      "codigo": "122",
+      "descripcion": "SANTA ROSA",
+      "padre": "9"
+    },
+    {
+      "codigo": "123",
+      "descripcion": "VILLA FLORIDA",
+      "padre": "9"
+    },
+    {
+      "codigo": "124",
+      "descripcion": "YABEBYRY",
+      "padre": "9"
+    },
+    {
+      "codigo": "125",
+      "descripcion": "PARAGUARI",
+      "padre": "10"
+    },
+    {
+      "codigo": "126",
+      "descripcion": "ACAHAY",
+      "padre": "10"
+    },
+    {
+      "codigo": "127",
+      "descripcion": "CAAPUCU",
+      "padre": "10"
+    },
+    {
+      "codigo": "128",
+      "descripcion": "CABALLERO",
+      "padre": "10"
+    },
+    {
+      "codigo": "129",
+      "descripcion": "CARAPEGUA",
+      "padre": "10"
+    },
+    {
+      "codigo": "130",
+      "descripcion": "LA COLMENA",
+      "padre": "10"
+    },
+    {
+      "codigo": "131",
+      "descripcion": "ESCOBAR",
+      "padre": "10"
+    },
+    {
+      "codigo": "132",
+      "descripcion": "MBUYAPEY",
+      "padre": "10"
+    },
+    {
+      "codigo": "133",
+      "descripcion": "PIRAYU",
+      "padre": "10"
+    },
+    {
+      "codigo": "134",
+      "descripcion": "QUIINDY",
+      "padre": "10"
+    },
+    {
+      "codigo": "135",
+      "descripcion": "ROQUE GONZALEZ",
+      "padre": "10"
+    },
+    {
+      "codigo": "136",
+      "descripcion": "SAPUCAI",
+      "padre": "10"
+    },
+    {
+      "codigo": "137",
+      "descripcion": "YBYCUI",
+      "padre": "10"
+    },
+    {
+      "codigo": "138",
+      "descripcion": "QUYQUYHO",
+      "padre": "10"
+    },
+    {
+      "codigo": "139",
+      "descripcion": "YBYTYMI",
+      "padre": "10"
+    },
+    {
+      "codigo": "140",
+      "descripcion": "TEBICUARY MI",
+      "padre": "10"
+    },
+    {
+      "codigo": "141",
+      "descripcion": "YAGUARON",
+      "padre": "10"
+    },
+    {
+      "codigo": "142",
+      "descripcion": "HERNANDARIAS",
+      "padre": "11"
+    },
+    {
+      "codigo": "143",
+      "descripcion": "DOMINGO MARTINEZ DE IRALA",
+      "padre": "11"
+    },
+    {
+      "codigo": "144",
+      "descripcion": "ÑACUNDAY",
+      "padre": "11"
+    },
+    {
+      "codigo": "145",
+      "descripcion": "CIUDAD DEL ESTE",
+      "padre": "11"
+    },
+    {
+      "codigo": "146",
+      "descripcion": "JUAN LEON MALLORQUIN",
+      "padre": "11"
+    },
+    {
+      "codigo": "147",
+      "descripcion": "ITAKYRY",
+      "padre": "11"
+    },
+    {
+      "codigo": "148",
+      "descripcion": "JUAN E.O'LEARY",
+      "padre": "11"
+    },
+    {
+      "codigo": "149",
+      "descripcion": "PRESIDENTE FRANCO",
+      "padre": "11"
+    },
+    {
+      "codigo": "150",
+      "descripcion": "YGUAZU",
+      "padre": "11"
+    },
+    {
+      "codigo": "151",
+      "descripcion": "SAN CRISTOBAL",
+      "padre": "11"
+    },
+    {
+      "codigo": "152",
+      "descripcion": "AREGUA",
+      "padre": "12"
+    },
+    {
+      "codigo": "153",
+      "descripcion": "CAPIATA",
+      "padre": "12"
+    },
+    {
+      "codigo": "154",
+      "descripcion": "FERNANDO DE LA MORA",
+      "padre": "12"
+    },
+    {
+      "codigo": "155",
+      "descripcion": "GUARAMBARE",
+      "padre": "12"
+    },
+    {
+      "codigo": "156",
+      "descripcion": "ITA",
+      "padre": "12"
+    },
+    {
+      "codigo": "157",
+      "descripcion": "ITAUGUA",
+      "padre": "12"
+    },
+    {
+      "codigo": "158",
+      "descripcion": "LIMPIO",
+      "padre": "12"
+    },
+    {
+      "codigo": "159",
+      "descripcion": "LUQUE",
+      "padre": "12"
+    },
+    {
+      "codigo": "160",
+      "descripcion": "MARIANO ROQUE ALONSO",
+      "padre": "12"
+    },
+    {
+      "codigo": "161",
+      "descripcion": "ÑEMBY",
+      "padre": "12"
+    },
+    {
+      "codigo": "162",
+      "descripcion": "NUEVA ITALIA",
+      "padre": "12"
+    },
+    {
+      "codigo": "163",
+      "descripcion": "SAN ANTONIO",
+      "padre": "12"
+    },
+    {
+      "codigo": "164",
+      "descripcion": "SAN LORENZO",
+      "padre": "12"
+    },
+    {
+      "codigo": "165",
+      "descripcion": "VILLA ELISA",
+      "padre": "12"
+    },
+    {
+      "codigo": "166",
+      "descripcion": "VILLETA",
+      "padre": "12"
+    },
+    {
+      "codigo": "167",
+      "descripcion": "YPACARAI",
+      "padre": "12"
+    },
+    {
+      "codigo": "168",
+      "descripcion": "YPANE",
+      "padre": "12"
+    },
+    {
+      "codigo": "169",
+      "descripcion": "LAMBARE",
+      "padre": "12"
+    },
+    {
+      "codigo": "170",
+      "descripcion": "J.AUGUSTO SALDIVAR",
+      "padre": "12"
+    },
+    {
+      "codigo": "171",
+      "descripcion": "PILAR",
+      "padre": "13"
+    },
+    {
+      "codigo": "172",
+      "descripcion": "ALBERDI",
+      "padre": "13"
+    },
+    {
+      "codigo": "173",
+      "descripcion": "CERRITO",
+      "padre": "13"
+    },
+    {
+      "codigo": "174",
+      "descripcion": "DESMOCHADOS",
+      "padre": "13"
+    },
+    {
+      "codigo": "175",
+      "descripcion": "GUAZU CUA",
+      "padre": "13"
+    },
+    {
+      "codigo": "176",
+      "descripcion": "HUMAITA",
+      "padre": "13"
+    },
+    {
+      "codigo": "177",
+      "descripcion": "ISLA UMBU",
+      "padre": "13"
+    },
+    {
+      "codigo": "178",
+      "descripcion": "LAURELES",
+      "padre": "13"
+    },
+    {
+      "codigo": "179",
+      "descripcion": "PASO DE PATRIA",
+      "padre": "13"
+    },
+    {
+      "codigo": "180",
+      "descripcion": "MAYOR J.D.MARTINEZ",
+      "padre": "13"
+    },
+    {
+      "codigo": "181",
+      "descripcion": "SAN JUAN DE ÑEEMBUCU",
+      "padre": "13"
+    },
+    {
+      "codigo": "182",
+      "descripcion": "TACUARAS",
+      "padre": "13"
+    },
+    {
+      "codigo": "183",
+      "descripcion": "VILLA OLIVA",
+      "padre": "13"
+    },
+    {
+      "codigo": "184",
+      "descripcion": "VILLALBIN",
+      "padre": "13"
+    },
+    {
+      "codigo": "185",
+      "descripcion": "PEDRO JUAN CABALLERO",
+      "padre": "14"
+    },
+    {
+      "codigo": "186",
+      "descripcion": "BELLA VISTA",
+      "padre": "14"
+    },
+    {
+      "codigo": "187",
+      "descripcion": "CAPITAN BADO",
+      "padre": "14"
+    },
+    {
+      "codigo": "188",
+      "descripcion": "VILLA HAYES",
+      "padre": "15"
+    },
+    {
+      "codigo": "189",
+      "descripcion": "BENJAMIN ACEVAL(MONTE SOCIEDAD",
+      "padre": "15"
+    },
+    {
+      "codigo": "190",
+      "descripcion": "PTO.PINAZCO",
+      "padre": "15"
+    },
+    {
+      "codigo": "191",
+      "descripcion": "NANAWA",
+      "padre": "15"
+    },
+    {
+      "codigo": "192",
+      "descripcion": "MCAL.ESTIGARRIBIA",
+      "padre": "16"
+    },
+    {
+      "codigo": "193",
+      "descripcion": "BOQUERON",
+      "padre": "16"
+    },
+    {
+      "codigo": "194",
+      "descripcion": "PEDRO P.PEÑA",
+      "padre": "16"
+    },
+    {
+      "codigo": "195",
+      "descripcion": "FUERTE OLIMPO",
+      "padre": "17"
+    },
+    {
+      "codigo": "196",
+      "descripcion": "BAHIA NEGRA",
+      "padre": "17"
+    },
+    {
+      "codigo": "197",
+      "descripcion": "SAN ISIDRO DEL CURUGUATY",
+      "padre": "18"
+    },
+    {
+      "codigo": "198",
+      "descripcion": "VILLA YGATIMI",
+      "padre": "18"
+    },
+    {
+      "codigo": "199",
+      "descripcion": "YPEJHU",
+      "padre": "18"
+    },
+    {
+      "codigo": "200",
+      "descripcion": "CORPUS CHRISTI",
+      "padre": "18"
+    },
+    {
+      "codigo": "201",
+      "descripcion": "ITANARA",
+      "padre": "18"
+    },
+    {
+      "codigo": "202",
+      "descripcion": "FRANCISCO CABALLERO ALVAREZ",
+      "padre": "18"
+    },
+    {
+      "codigo": "203",
+      "descripcion": "GRAL.JOSE EDUVIGIS DIAZ",
+      "padre": "13"
+    },
+    {
+      "codigo": "205",
+      "descripcion": "VILLA FRANCA",
+      "padre": "13"
+    },
+    {
+      "codigo": "206",
+      "descripcion": "POZO COLORADO",
+      "padre": "15"
+    },
+    {
+      "codigo": "207",
+      "descripcion": "SALTO DEL GUAIRA",
+      "padre": "18"
+    },
+    {
+      "codigo": "209",
+      "descripcion": "SANTA RITA",
+      "padre": "11"
+    },
+    {
+      "codigo": "210",
+      "descripcion": "MINGA GUAZU",
+      "padre": "11"
+    },
+    {
+      "codigo": "211",
+      "descripcion": "LOS CEDRALES",
+      "padre": "11"
+    },
+    {
+      "codigo": "212",
+      "descripcion": "SAN ALBERTO",
+      "padre": "11"
+    },
+    {
+      "codigo": "213",
+      "descripcion": "MINGA PORA",
+      "padre": "11"
+    },
+    {
+      "codigo": "214",
+      "descripcion": "MBOCAYATY DEL YHAGUY",
+      "padre": "4"
+    },
+    {
+      "codigo": "215",
+      "descripcion": "NARANJAL",
+      "padre": "11"
+    },
+    {
+      "codigo": "216",
+      "descripcion": "SANTA ROSA DEL MONDAY",
+      "padre": "11"
+    },
+    {
+      "codigo": "217",
+      "descripcion": "IRUÑA",
+      "padre": "11"
+    },
+    {
+      "codigo": "218",
+      "descripcion": "PUERTO CASADO",
+      "padre": "17"
+    },
+    {
+      "codigo": "219",
+      "descripcion": "MBARACAYU",
+      "padre": "11"
+    },
+    {
+      "codigo": "220",
+      "descripcion": "GUAYAIBI",
+      "padre": "3"
+    },
+    {
+      "codigo": "221",
+      "descripcion": "PIRAPO",
+      "padre": "8"
+    },
+    {
+      "codigo": "223",
+      "descripcion": "PUERTO GUARANI",
+      "padre": "17"
+    },
+    {
+      "codigo": "225",
+      "descripcion": "PASO YOBAY",
+      "padre": "5"
+    },
+    {
+      "codigo": "226",
+      "descripcion": "CAPIIBARY",
+      "padre": "3"
+    },
+    {
+      "codigo": "227",
+      "descripcion": "3 DE FEBRERO",
+      "padre": "6"
+    },
+    {
+      "codigo": "228",
+      "descripcion": "SIMON BOLIVAR",
+      "padre": "6"
+    },
+    {
+      "codigo": "229",
+      "descripcion": "LA PASTORA",
+      "padre": "6"
+    },
+    {
+      "codigo": "230",
+      "descripcion": "VILLA FRANCA",
+      "padre": "13"
+    },
+    {
+      "codigo": "231",
+      "descripcion": "VILLALBIN",
+      "padre": "13"
+    },
+    {
+      "codigo": "232",
+      "descripcion": "ITAPUA POTY",
+      "padre": "8"
+    },
+    {
+      "codigo": "233",
+      "descripcion": "MAYOR PABLO LAGERENZA",
+      "padre": "17"
+    },
+    {
+      "codigo": "234",
+      "descripcion": "GRAL. EUGENIO A. GARAY",
+      "padre": "16"
+    },
+    {
+      "codigo": "235",
+      "descripcion": "LA PALOMA",
+      "padre": "18"
+    },
+    {
+      "codigo": "236",
+      "descripcion": "KATUETE",
+      "padre": "18"
+    },
+    {
+      "codigo": "237",
+      "descripcion": "VAQUERIA",
+      "padre": "6"
+    },
+    {
+      "codigo": "238",
+      "descripcion": "NUEVA ESPERANZA",
+      "padre": "18"
+    },
+    {
+      "codigo": "239",
+      "descripcion": "SANTA FE DEL PARANA",
+      "padre": "11"
+    },
+    {
+      "codigo": "240",
+      "descripcion": "NUEVA ESPERANZA",
+      "padre": "11"
+    },
+    {
+      "codigo": "241",
+      "descripcion": "YASY KAÑY",
+      "padre": "18"
+    },
+    {
+      "codigo": "242",
+      "descripcion": "JOSE FALCON",
+      "padre": "15"
+    },
+    {
+      "codigo": "243",
+      "descripcion": "FEDERICO CHAVEZ",
+      "padre": "8"
+    },
+    {
+      "codigo": "244",
+      "descripcion": "ESCULIES",
+      "padre": "6"
+    },
+    {
+      "codigo": "245",
+      "descripcion": "YRYBUCUA",
+      "padre": "3"
+    },
+    {
+      "codigo": "246",
+      "descripcion": "SIN EQUIVALENCIA",
+      "padre": "5"
+    },
+    {
+      "codigo": "259",
+      "descripcion": "FILADELFIA",
+      "padre": "16"
+    },
+    {
+      "codigo": "260",
+      "descripcion": "LOMA PLATA",
+      "padre": "16"
+    },
+    {
+      "codigo": "261",
+      "descripcion": "TTE. 1RO. IRALA FERNANDEZ",
+      "padre": "15"
+    },
+    {
+      "codigo": "262",
+      "descripcion": "ALTO VERA",
+      "padre": "8"
+    },
+    {
+      "codigo": "263",
+      "descripcion": "SANTA ROSA DEL AGUARAY",
+      "padre": "3"
+    },
+    {
+      "codigo": "264",
+      "descripcion": "TENIENTE ESTEBAN MARTINEZ",
+      "padre": "15"
+    },
+    {
+      "codigo": "265",
+      "descripcion": "TEBICUARY",
+      "padre": "5"
+    },
+    {
+      "codigo": "266",
+      "descripcion": "CARMELO PERALTA",
+      "padre": "17"
+    },
+    {
+      "codigo": "267",
+      "descripcion": "SAN CARLOS DEL APA",
+      "padre": "2"
+    },
+    {
+      "codigo": "268",
+      "descripcion": "LIBERACIÓN",
+      "padre": "3"
+    },
+    {
+      "codigo": "269",
+      "descripcion": "TAVAPY",
+      "padre": "11"
+    },
+    {
+      "codigo": "270",
+      "descripcion": "SARGENTO JOSE FELIX LOPEZ",
+      "padre": "2"
+    },
+    {
+      "codigo": "271",
+      "descripcion": "YBYRAROBANA",
+      "padre": "18"
+    },
+    {
+      "codigo": "272",
+      "descripcion": "3 DE MAYO",
+      "padre": "7"
+    },
+    {
+      "codigo": "273",
+      "descripcion": "DR. RAUL PEÑA",
+      "padre": "11"
+    },
+    {
+      "codigo": "274",
+      "descripcion": "YBY PYTA",
+      "padre": "18"
+    },
+    {
+      "codigo": "275",
+      "descripcion": "TEMBIAPORA",
+      "padre": "6"
+    },
+    {
+      "codigo": "276",
+      "descripcion": "NUEVA TOLEDO",
+      "padre": "6"
+    },
+    {
+      "codigo": "278",
+      "descripcion": "KARAPAI",
+      "padre": "14"
+    },
+    {
+      "codigo": "279",
+      "descripcion": "ZANJA PYTA",
+      "padre": "14"
+    },
+    {
+      "codigo": "280",
+      "descripcion": "PASO BARRETO (MUNICIPIO)",
+      "padre": "2"
+    },
+    {
+      "codigo": "281",
+      "descripcion": "SAN ALFREDO (MUNICIPIO)",
+      "padre": "2"
+    },
+    {
+      "codigo": "282",
+      "descripcion": "AZOTEY (MUNICIPIO)",
+      "padre": "2"
+    },
+    {
+      "codigo": "283",
+      "descripcion": "MARACANA",
+      "padre": "18"
+    },
+    {
+      "codigo": "284",
+      "descripcion": "PUERTO ADELA",
+      "padre": "18"
+    },
+    {
+      "codigo": "285",
+      "descripcion": "SAN VICENTE PANCHOLO",
+      "padre": "3"
+    },
+    {
+      "codigo": "286",
+      "descripcion": "ARROYITO",
+      "padre": "2"
+    },
+    {
+      "codigo": "287",
+      "descripcion": "NUEVA ASUNCIÓN",
+      "padre": "15"
+    },
+    {
+      "codigo": "288",
+      "descripcion": "PASO HORQUETA",
+      "padre": "2"
+    },
+    {
+      "codigo": "289",
+      "descripcion": "LAUREL",
+      "padre": "18"
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "grupo": "D1",
+  "reglas": [
+    {
+      "id": "R-D010-C1",
+      "campo": "D010",
+      "tipo": "condicional",
+      "texto": "Obligatorio para todos los tipos de documento excepto Nota de Remisión Electrónica (C002 ≠ 7)",
+      "condicion": {
+        "campo": "C002",
+        "op": "distinto",
+        "valor": "7"
+      },
+      "codigo_sifen": "1200",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D010",
+          "cita": "Obligatorio si C002 ≠ 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1200"
+        }
+      ]
+    },
+    {
+      "id": "R-D010-P1",
+      "campo": "D010",
+      "tipo": "prohibido",
+      "texto": "No informar en la Nota de Remisión Electrónica (C002 = 7)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "1201",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D010",
+          "cita": "No informar si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1201"
+        }
+      ]
+    },
+    {
+      "id": "R-D011-C1",
+      "campo": "D011",
+      "tipo": "condicional",
+      "texto": "Obligatorio si C002 = 1 o 4 (la validación 1202 enumera además 2 y 3, tipos futuros)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "1",
+          "4"
+        ]
+      },
+      "codigo_sifen": "1202",
+      "contradiccion": "C-106",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D011",
+          "cita": "Obligatorio si C002 = 1 o 4"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1202",
+          "cita": "Obligatorio si C002 = 1, 2, 3 o 4"
+        }
+      ]
+    },
+    {
+      "id": "R-D011-P1",
+      "campo": "D011",
+      "tipo": "prohibido",
+      "texto": "No informar el tipo de transacción cuando C002 ≠ 1 o 4",
+      "condicion": {
+        "campo": "C002",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "4"
+        ]
+      },
+      "codigo_sifen": "1216",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D011",
+          "cita": "No informar si C002 ≠ 1 o 4"
+        },
+        {
+          "doc": "NT006",
+          "ref": "1.1 D011a 1216"
+        }
+      ]
+    },
+    {
+      "id": "R-D012-C1",
+      "campo": "D012",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo D011",
+      "condicion": {
+        "campo": "D011",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D012"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.2 D012"
+        }
+      ]
+    },
+    {
+      "id": "R-D012-D1",
+      "campo": "D012",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con el código informado en D011",
+      "codigo_sifen": "1203",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D012"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1203"
+        }
+      ]
+    },
+    {
+      "id": "R-D013-O1",
+      "campo": "D013",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo D010 (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D013"
+        }
+      ]
+    },
+    {
+      "id": "R-D013-C1",
+      "campo": "D013",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar el tipo de impuesto afectado para Factura Electrónica y Autofactura Electrónica (C002 = 1 o 4)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "1",
+          "4"
+        ]
+      },
+      "codigo_sifen": "1204",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1204"
+        }
+      ]
+    },
+    {
+      "id": "R-D014-O1",
+      "campo": "D014",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D014"
+        }
+      ]
+    },
+    {
+      "id": "R-D014-D1",
+      "campo": "D014",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con el código informado en D013",
+      "codigo_sifen": "1205",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D014"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1205"
+        }
+      ]
+    },
+    {
+      "id": "R-D015-O1",
+      "campo": "D015",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D015"
+        }
+      ]
+    },
+    {
+      "id": "R-D015-F1",
+      "campo": "D015",
+      "tipo": "formato",
+      "texto": "Se requiere la misma moneda para todos los ítems del DE",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D015",
+          "cita": "Se requiere la misma moneda para todos los ítems del DE"
+        }
+      ]
+    },
+    {
+      "id": "R-D015-F2",
+      "campo": "D015",
+      "tipo": "formato",
+      "texto": "Si el tipo de documento es Autofactura Electrónica (C002=4), la moneda de la operación debe ser PYG (D015=PYG)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "1213",
+      "fuentes": [
+        {
+          "doc": "NT012",
+          "ref": "1.1 D022 1213"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-D016-O1",
+      "campo": "D016",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D016"
+        }
+      ]
+    },
+    {
+      "id": "R-D016-D1",
+      "campo": "D016",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con el código informado en D015",
+      "codigo_sifen": "1206",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D016"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1206"
+        }
+      ]
+    },
+    {
+      "id": "R-D017-C1",
+      "campo": "D017",
+      "tipo": "condicional",
+      "texto": "Obligatorio si la moneda de la operación es distinta a PYG (D015 ≠ PYG)",
+      "condicion": {
+        "campo": "D015",
+        "op": "distinto",
+        "valor": "PYG"
+      },
+      "codigo_sifen": "1207",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D017",
+          "cita": "Obligatorio si D015 ≠ PYG"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1207"
+        }
+      ]
+    },
+    {
+      "id": "R-D017-P1",
+      "campo": "D017",
+      "tipo": "prohibido",
+      "texto": "No informar si la moneda de la operación es PYG (D015 = PYG)",
+      "condicion": {
+        "campo": "D015",
+        "op": "igual",
+        "valor": "PYG"
+      },
+      "codigo_sifen": "1208",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D017",
+          "cita": "No informar si D015 = PYG"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1208"
+        }
+      ]
+    },
+    {
+      "id": "R-D018-C1",
+      "campo": "D018",
+      "tipo": "condicional",
+      "texto": "Obligatorio si la condición del tipo de cambio es global (D017 = 1)",
+      "condicion": {
+        "campo": "D017",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1209",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D018",
+          "cita": "Obligatorio si D017 = 1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1209"
+        }
+      ]
+    },
+    {
+      "id": "R-D018-P1",
+      "campo": "D018",
+      "tipo": "prohibido",
+      "texto": "No informar si la condición del tipo de cambio es por ítem (D017 = 2) o la moneda es PYG (D015 = PYG)",
+      "condicion": {
+        "alguna": [
+          {
+            "campo": "D017",
+            "op": "igual",
+            "valor": "2"
+          },
+          {
+            "campo": "D015",
+            "op": "igual",
+            "valor": "PYG"
+          }
+        ]
+      },
+      "codigo_sifen": "1210",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D018",
+          "cita": "No informar si D017 = 2 No informar si D015=PYG"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1210"
+        }
+      ]
+    },
+    {
+      "id": "R-D019-OP",
+      "campo": "D019",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D019"
+        }
+      ]
+    },
+    {
+      "id": "R-D020-OP",
+      "campo": "D020",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D020"
+        }
+      ]
+    },
+    {
+      "id": "R-D020-D1",
+      "campo": "D020",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con el código informado en D019 (1= \"Anticipo Global\", 2= \"Anticipo por Ítem\")",
+      "codigo_sifen": "1211",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D020"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1211"
+        }
+      ]
+    },
+    {
+      "id": "R-D030-OP",
+      "campo": "D030",
+      "tipo": "opcional",
+      "texto": "Grupo opcional (ocurrencia 0-11, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1.1 D030 gOblAfe"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "id": "R-D031-O1",
+      "campo": "D031",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1.1 D031 cOblAfe"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "id": "R-D031-F1",
+      "campo": "D031",
+      "tipo": "formato",
+      "texto": "Debe ser un código según la Tabla 12 - Tipo de obligaciones",
+      "codigo_sifen": "1220",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "2.1 D031 1220"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "id": "R-D031-F2",
+      "campo": "D031",
+      "tipo": "formato",
+      "texto": "Cuando se informa el campo D031 no se permite repetir los códigos en el mismo documento",
+      "no_declarativa": true,
+      "codigo_sifen": "1222",
+      "fuentes": [
+        {
+          "doc": "NT022",
+          "ref": "1.1 D031a 1222"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-02-09",
+          "produccion": "2024-02-09"
+        }
+      }
+    },
+    {
+      "id": "R-D032-O1",
+      "campo": "D032",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1.1 D032 dDesOblAfe"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "id": "R-D032-D1",
+      "campo": "D032",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con lo informado en el campo D031",
+      "codigo_sifen": "1221",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "2.1 D032 1221"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    }
+  ]
+}

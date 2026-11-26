@@ -1,0 +1,182 @@
+{
+  "grupo": "B",
+  "reglas": [
+    {
+      "id": "R-B001-O1",
+      "campo": "B001",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B001"
+        }
+      ]
+    },
+    {
+      "id": "R-B002-O1",
+      "campo": "B002",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B002"
+        }
+      ]
+    },
+    {
+      "id": "R-B002-F1",
+      "campo": "B002",
+      "tipo": "formato",
+      "texto": "El tipo de emisión en contingencia (B002=2) no está permitido en esta etapa",
+      "codigo_sifen": "1050",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1050",
+          "cita": "El tipo de emisión en contingencia (B002=2) no permitida en esta etapa"
+        }
+      ]
+    },
+    {
+      "id": "R-B003-O1",
+      "campo": "B003",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B003"
+        }
+      ]
+    },
+    {
+      "id": "R-B003-D1",
+      "campo": "B003",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con el código informado en B002 (1= \"Normal\", 2= \"Contingencia\")",
+      "codigo_sifen": "1051",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B003"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1051"
+        }
+      ]
+    },
+    {
+      "id": "R-B004-O1",
+      "campo": "B004",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B004"
+        }
+      ]
+    },
+    {
+      "id": "R-B004-F1",
+      "campo": "B004",
+      "tipo": "formato",
+      "texto": "Número positivo de 9 dígitos, en el rango 000000001 a 999999999; si tiene menos de 9 dígitos se completa con 0 a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "10.3 Generación del código de seguridad"
+        }
+      ]
+    },
+    {
+      "id": "R-B004-F2",
+      "campo": "B004",
+      "tipo": "formato",
+      "texto": "Debe ser aleatorio, distinto para cada DE, generado por un algoritmo de complejidad suficiente para evitar la reproducción del valor, en rango no secuencial, y sin relación con ninguna información específica o directa del DE o del emisor",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "10.3 Generación del código de seguridad"
+        },
+        {
+          "doc": "MT150",
+          "ref": "B004",
+          "cita": "Código generado por el emisor de manera aleatoria"
+        }
+      ]
+    },
+    {
+      "id": "R-B004-D1",
+      "campo": "B004",
+      "tipo": "dependencia",
+      "texto": "No debe ser igual al número de documento (C007 dNumDoc)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "10.3 Generación del código de seguridad",
+          "cita": "No debe ser igual al número de documento campo dNumDoc"
+        }
+      ]
+    },
+    {
+      "id": "R-B005-OP",
+      "campo": "B005",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B005"
+        }
+      ]
+    },
+    {
+      "id": "R-B006-C1",
+      "campo": "B006",
+      "tipo": "condicional",
+      "texto": "Obligatorio cuando el tipo de documento es Nota de remisión (C002=7): se debe informar el mensaje según el Art. 3 Inc. 7 de la Resolución General Nro. 41/2014",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B006",
+          "cita": "Cuando el tipo de documento es Nota de remisión (C002=7) es obligatorio informar el mensaje"
+        },
+        {
+          "doc": "NT007",
+          "ref": "B006 dInfoFisc"
+        }
+      ]
+    },
+    {
+      "id": "R-B006-C2",
+      "campo": "B006",
+      "tipo": "condicional",
+      "texto": "En caso de realizar Factura Exportación, en este campo de la FE se deben completar, en este orden y de conformidad al Art. 20 numeral 15 del Decreto N° 10797/2013: a) Tipo de Operación; b) Condición de Negociación (CIF, FOB, otros); c) País de Destino; d) Empresa Fletera o Exportador Nacional; e) Agente de Transporte; f) Instrucciones de Pago para el cliente (Beneficiario, Banco, N° de cuenta, Código SWIFT, Cartas de Crédito, otro); g) Número/s de Conocimiento/s de Embarque; h) Número/s de Manifiesto/s Internacional/es de Carga; i) Número de barcaza o remolcador, descripción y cantidad del bien transportado (en los casos de Flete Internacional); j) Las demás informaciones que sean fijadas por la Administración Tributaria. La NT lo establece hasta tanto se defina el documento de Factura Electrónica de Exportación",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "NT007",
+          "ref": "B006 dInfoFisc",
+          "cita": "En caso de realizar Factura Exportación, en este campo en la FE se debe completar con los siguientes datos y en este orden"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    }
+  ]
+}

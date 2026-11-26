@@ -1,0 +1,278 @@
+{
+  "grupo": "D1",
+  "titulo": "Campos inherentes a la operación comercial (D010-D099), incluido D1.1 Obligaciones afectadas (D030-D040)",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "D010",
+      "xml": "gOpeCom",
+      "nombre": "commercialOperation",
+      "padre": "D001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos inherentes a la operación comercial",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D010"
+        }
+      ]
+    },
+    {
+      "id": "D011",
+      "xml": "iTipTra",
+      "nombre": "transactionTypeCode",
+      "padre": "D010",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de transacción",
+      "observaciones": "Tipo de transacción para el emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D011"
+        }
+      ],
+      "catalogo": "tipo-transaccion"
+    },
+    {
+      "id": "D012",
+      "xml": "dDesTipTra",
+      "nombre": "transactionTypeDescription",
+      "padre": "D010",
+      "tipo": "alfanumerico",
+      "longitud": "5-39",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de transacción",
+      "observaciones": "Longitud 5-36 en el Manual; la NT 10 la modifica a 5-39.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D012"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.2 D012 dDesTipTra"
+        }
+      ],
+      "catalogo": "tipo-transaccion"
+    },
+    {
+      "id": "D013",
+      "xml": "iTImp",
+      "nombre": "taxTypeCode",
+      "padre": "D010",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de impuesto afectado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D013"
+        }
+      ],
+      "catalogo": "tipo-impuesto"
+    },
+    {
+      "id": "D014",
+      "xml": "dDesTImp",
+      "nombre": "taxTypeDescription",
+      "padre": "D010",
+      "tipo": "alfanumerico",
+      "longitud": "3-11",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del tipo de impuesto afectado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D014"
+        }
+      ],
+      "catalogo": "tipo-impuesto"
+    },
+    {
+      "id": "D015",
+      "xml": "cMoneOpe",
+      "nombre": "currencyCode",
+      "padre": "D010",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Moneda de la operación",
+      "observaciones": "Según tabla de códigos para monedas de acuerdo con la norma ISO 4217",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D015"
+        }
+      ],
+      "catalogo": "moneda"
+    },
+    {
+      "id": "D016",
+      "xml": "dDesMoneOpe",
+      "nombre": "currencyDescription",
+      "padre": "D010",
+      "tipo": "alfanumerico",
+      "longitud": "3-20",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la moneda de la operación",
+      "observaciones": "Referente al campo D015",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D016"
+        }
+      ],
+      "catalogo": "moneda"
+    },
+    {
+      "id": "D017",
+      "xml": "dCondTiCam",
+      "nombre": "exchangeRateConditionCode",
+      "padre": "D010",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Condición del tipo de cambio",
+      "observaciones": "1= Global (un solo tipo de cambio para todo el DE) 2= Por ítem (tipo de cambio distinto por ítem)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D017"
+        }
+      ],
+      "catalogo": "condicion-tipo-cambio"
+    },
+    {
+      "id": "D018",
+      "xml": "dTiCam",
+      "nombre": "exchangeRate",
+      "padre": "D010",
+      "tipo": "numerico",
+      "longitud": "1-5p(0-4)",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de cambio de la operación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D018"
+        }
+      ]
+    },
+    {
+      "id": "D019",
+      "xml": "iCondAnt",
+      "nombre": "advanceConditionCode",
+      "padre": "D010",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Condición del Anticipo",
+      "observaciones": "1= Anticipo Global (un solo tipo de anticipo para todo el DE) 2= Anticipo por ítem (corresponde a la distribución de Anticipos facturados por ítem)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D019"
+        }
+      ],
+      "catalogo": "condicion-anticipo"
+    },
+    {
+      "id": "D020",
+      "xml": "dDesCondAnt",
+      "nombre": "advanceConditionDescription",
+      "padre": "D010",
+      "tipo": "alfanumerico",
+      "longitud": "15-17",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de la condición del Anticipo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D020"
+        }
+      ],
+      "catalogo": "condicion-anticipo"
+    },
+    {
+      "id": "D030",
+      "xml": "gOblAfe",
+      "nombre": "affectedObligations",
+      "padre": "D010",
+      "tipo": "grupo",
+      "ocurrencia": "0-11",
+      "descripcion": "Grupo de campos que identifican las obligaciones afectadas",
+      "observaciones": "Detalle del tipo de obligaciones afectadas. Agregado por la NT 18 para la imputación automática de las ventas al módulo RG90.",
+      "contradiccion": "C-107",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1.1 D030 gOblAfe"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgOpeCom/gOblAfe (maxOccurs 12)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "id": "D031",
+      "xml": "cOblAfe",
+      "nombre": "code",
+      "padre": "D030",
+      "tipo": "numerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de la obligación afectada",
+      "observaciones": "Según Tabla 12 – Tipo de obligaciones.",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1.1 D031 cOblAfe"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "catalogo": "obligacion-afectada"
+    },
+    {
+      "id": "D032",
+      "xml": "dDesOblAfe",
+      "nombre": "description",
+      "padre": "D030",
+      "tipo": "alfanumerico",
+      "longitud": "21-65",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la obligación afectada",
+      "observaciones": "Referente al campo D031.",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1.1 D032 dDesOblAfe"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "catalogo": "obligacion-afectada"
+    }
+  ]
+}

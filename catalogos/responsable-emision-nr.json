@@ -1,0 +1,52 @@
+{
+  "id": "responsable-emision-nr",
+  "titulo": "Responsable de la emisión de la nota de remisión",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E503"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E504"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiRespEmiNR, tdDesRespEmiNR"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E503",
+    "E504"
+  ],
+  "descripciones": {
+    "E503": "E504"
+  },
+  "xml": [
+    "iRespEmiNR",
+    "dDesRespEmiNR"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Emisor de la factura"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Poseedor de la factura y bienes"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Empresa transportista"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Despachante de Aduanas"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Agente de transporte o intermediario"
+    }
+  ]
+}

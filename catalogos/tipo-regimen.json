@@ -1,0 +1,61 @@
+{
+  "id": "tipo-regimen",
+  "titulo": "Tipo de régimen (Tabla 1)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "15. Codificaciones – TABLA 1 – TIPO DE REGIMEN",
+      "pagina": 211
+    },
+    {
+      "doc": "MT150",
+      "ref": "D104"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tcTipReg (pattern [1-8])"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D104"
+  ],
+  "xml": [
+    "cTipReg"
+  ],
+  "nota": "El DE no lleva campo de descripción del régimen.",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Régimen de Turismo"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Importador"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Exportador"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Maquila"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Ley N° 60/90"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Régimen del Pequeño Productor"
+    },
+    {
+      "codigo": "7",
+      "descripcion": "Régimen del Mediano Productor"
+    },
+    {
+      "codigo": "8",
+      "descripcion": "Régimen Contable"
+    }
+  ]
+}

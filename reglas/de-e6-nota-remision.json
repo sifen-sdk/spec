@@ -1,0 +1,288 @@
+{
+  "grupo": "E6",
+  "reglas": [
+    {
+      "id": "R-E500-C1",
+      "campo": "E500",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento es Nota de remisión (C002=7), es obligatorio informar el grupo de campos que componen la Nota de Remisión (E500)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2600",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E500",
+          "pagina": 78
+        },
+        {
+          "doc": "MT150",
+          "ref": "2600",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E500-P1",
+      "campo": "E500",
+      "tipo": "prohibido",
+      "texto": "Para el tipo de documento electrónico informado (C002 ≠ 7), el grupo de campos que componen la NRE (E500) no debe informarse",
+      "condicion": {
+        "campo": "C002",
+        "op": "distinto",
+        "valor": "7"
+      },
+      "codigo_sifen": "2601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E500",
+          "pagina": 78
+        },
+        {
+          "doc": "MT150",
+          "ref": "2601",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E501-OB",
+      "campo": "E501",
+      "tipo": "obligatorio",
+      "texto": "Motivo de emisión: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E501",
+          "pagina": 79
+        }
+      ]
+    },
+    {
+      "id": "R-E502-OB",
+      "campo": "E502",
+      "tipo": "obligatorio",
+      "texto": "Descripción del motivo de emisión: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E502",
+          "pagina": 80
+        }
+      ]
+    },
+    {
+      "id": "R-E503-OB",
+      "campo": "E503",
+      "tipo": "obligatorio",
+      "texto": "Responsable de la emisión de la Nota Remisión Electrónica: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E503",
+          "pagina": 80
+        }
+      ]
+    },
+    {
+      "id": "R-E504-OB",
+      "campo": "E504",
+      "tipo": "obligatorio",
+      "texto": "Descripción del responsable de la emisión de la Nota de Remisión Electrónica: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E504",
+          "pagina": 80
+        }
+      ]
+    },
+    {
+      "id": "R-E501-D1",
+      "campo": "E501",
+      "tipo": "dependencia",
+      "texto": "Cuando el motivo de emisión es Traslado entre los locales de la empresa (E501=7), el RUC del emisor debe coincidir con el RUC del receptor (D101=D206)",
+      "condicion": {
+        "campo": "E501",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2606",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E501",
+          "pagina": 79
+        },
+        {
+          "doc": "MT150",
+          "ref": "2606",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E502-D1",
+      "campo": "E502",
+      "tipo": "dependencia",
+      "texto": "La descripción del motivo de emisión debe coincidir con lo informado en el campo E501",
+      "contradiccion": "C-206",
+      "codigo_sifen": "2602",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E502",
+          "pagina": 80
+        },
+        {
+          "doc": "MT150",
+          "ref": "2602",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E502-D2",
+      "campo": "E502",
+      "tipo": "dependencia",
+      "texto": "Si E501=99 se describe en E502 el motivo de la emisión",
+      "condicion": {
+        "campo": "E501",
+        "op": "igual",
+        "valor": "99"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E502",
+          "pagina": 80
+        }
+      ]
+    },
+    {
+      "id": "R-E504-D1",
+      "campo": "E504",
+      "tipo": "dependencia",
+      "texto": "La descripción del responsable por la emisión de la NRE debe coincidir con lo informado en el campo E503",
+      "codigo_sifen": "2603",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E504",
+          "pagina": 80
+        },
+        {
+          "doc": "MT150",
+          "ref": "2603",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E505-OP",
+      "campo": "E505",
+      "tipo": "opcional",
+      "texto": "Los kilómetros estimados de recorrido son opcionales (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E505",
+          "pagina": 80
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E505-OB",
+      "campo": "E505",
+      "tipo": "obligatorio",
+      "texto": "Los kilómetros estimados de recorrido se informan siempre que exista el grupo E500 (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1.3 E505",
+          "pagina": 1
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamNRE/dKmR minOccurs=1"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E506-C1",
+      "campo": "E506",
+      "tipo": "condicional",
+      "texto": "Si el motivo de emisión es Traslado por venta (E501=1) y no se informan documentos asociados (H001), es obligatorio el campo E506",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "E501",
+            "op": "igual",
+            "valor": "1"
+          },
+          {
+            "campo": "H001",
+            "op": "ausente"
+          }
+        ]
+      },
+      "codigo_sifen": "2605",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2605",
+          "pagina": 172
+        }
+      ]
+    },
+    {
+      "id": "R-E506-D1",
+      "campo": "E506",
+      "tipo": "dependencia",
+      "texto": "El mes de la fecha estimada de emisión de la factura no puede ser posterior al mes de la fecha de emisión de la Nota de Remisión",
+      "codigo_sifen": "2604",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2604",
+          "pagina": 171
+        }
+      ]
+    },
+    {
+      "id": "R-E507-OP",
+      "campo": "E507",
+      "tipo": "opcional",
+      "texto": "El costo del flete es opcional (ocurrencia 0-1)",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1.10 E507",
+          "pagina": 3
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    }
+  ]
+}

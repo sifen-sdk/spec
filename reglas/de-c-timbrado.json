@@ -1,0 +1,390 @@
+{
+  "grupo": "C",
+  "reglas": [
+    {
+      "id": "R-C001-O1",
+      "campo": "C001",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C001"
+        }
+      ]
+    },
+    {
+      "id": "R-C002-O1",
+      "campo": "C002",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C002"
+        }
+      ]
+    },
+    {
+      "id": "R-C003-O1",
+      "campo": "C003",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C003"
+        }
+      ]
+    },
+    {
+      "id": "R-C003-D1",
+      "campo": "C003",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con el código informado en C002",
+      "codigo_sifen": "1100",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C003"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1100"
+        }
+      ]
+    },
+    {
+      "id": "R-C004-O1",
+      "campo": "C004",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C004"
+        }
+      ]
+    },
+    {
+      "id": "R-C004-F1",
+      "campo": "C004",
+      "tipo": "formato",
+      "texto": "Debe coincidir con la estructura de timbrado y corresponder al RUC y al tipo de documento electrónico del emisor (verificación de SIFEN)",
+      "no_declarativa": true,
+      "codigo_sifen": "1101",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C004",
+          "cita": "Debe coincidir con la estructura de timbrado"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1101"
+        }
+      ]
+    },
+    {
+      "id": "R-C004-F2",
+      "campo": "C004",
+      "tipo": "formato",
+      "texto": "El timbrado debe corresponder al medio de generación para facturación electrónica en el sistema de Timbrado de Marangatu",
+      "no_declarativa": true,
+      "codigo_sifen": "1102",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1102"
+        }
+      ]
+    },
+    {
+      "id": "R-C004-F3",
+      "campo": "C004",
+      "tipo": "formato",
+      "texto": "El timbrado debe estar vigente a la fecha de emisión: D002 dentro del rango de las fechas de inicio y fin de vigencia del timbrado (C008 - C009)",
+      "no_declarativa": true,
+      "codigo_sifen": "1103",
+      "contradiccion": "C-105",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1103"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-C004-F4",
+      "campo": "C004",
+      "tipo": "formato",
+      "texto": "El timbrado debe estar vigente a la fecha de emisión: la fecha de emisión (D002) debe ser posterior a la fecha de inicio de vigencia del timbrado (C008)",
+      "no_declarativa": true,
+      "codigo_sifen": "1103",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "B-1 C004b 1103",
+          "cita": "D002 no es posterior a la fecha de inicio de vigencia del timbrado (C008)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-C004-F5",
+      "campo": "C004",
+      "tipo": "formato",
+      "texto": "El timbrado debe estar en estado ACTIVO en la base de datos de timbrado en la fecha de emisión del DE (D002)",
+      "no_declarativa": true,
+      "codigo_sifen": "1104",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1104"
+        }
+      ]
+    },
+    {
+      "id": "R-C005-O1",
+      "campo": "C005",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C005"
+        }
+      ]
+    },
+    {
+      "id": "R-C005-F1",
+      "campo": "C005",
+      "tipo": "formato",
+      "texto": "Completar con 0 (cero) a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C005",
+          "cita": "Completar con 0 (cero) a la izquierda"
+        }
+      ]
+    },
+    {
+      "id": "R-C005-F2",
+      "campo": "C005",
+      "tipo": "formato",
+      "texto": "Debe coincidir con la estructura de timbrado: el establecimiento debe corresponder al timbrado autorizado para el contribuyente",
+      "no_declarativa": true,
+      "codigo_sifen": "1105",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C005",
+          "cita": "Debe coincidir con la estructura de timbrado"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1105"
+        }
+      ]
+    },
+    {
+      "id": "R-C006-O1",
+      "campo": "C006",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C006"
+        }
+      ]
+    },
+    {
+      "id": "R-C006-F1",
+      "campo": "C006",
+      "tipo": "formato",
+      "texto": "Completar con 0 (cero) a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C006",
+          "cita": "Completar con 0 (cero) a la izquierda"
+        }
+      ]
+    },
+    {
+      "id": "R-C006-F2",
+      "campo": "C006",
+      "tipo": "formato",
+      "texto": "Debe coincidir con la estructura de timbrado: el punto de expedición debe corresponder al timbrado autorizado para el contribuyente",
+      "no_declarativa": true,
+      "codigo_sifen": "1106",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C006",
+          "cita": "Debe coincidir con la estructura de timbrado"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1106"
+        }
+      ]
+    },
+    {
+      "id": "R-C007-O1",
+      "campo": "C007",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C007"
+        }
+      ]
+    },
+    {
+      "id": "R-C007-F1",
+      "campo": "C007",
+      "tipo": "formato",
+      "texto": "Completar con 0 (cero) a la izquierda hasta alcanzar 7 (siete) cifras",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C007",
+          "cita": "Completar con 0 (cero) a la izquierda hasta alcanzar 7 (siete) cifras"
+        }
+      ]
+    },
+    {
+      "id": "R-C007-F2",
+      "campo": "C007",
+      "tipo": "formato",
+      "texto": "Debe empezar con 1 (uno) para un nuevo timbrado y coincidir con la estructura de timbrado",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C007",
+          "cita": "Debe empezar con 1 (uno) para un nuevo timbrado"
+        }
+      ]
+    },
+    {
+      "id": "R-C007-F3",
+      "campo": "C007",
+      "tipo": "formato",
+      "texto": "El número de documento (para el timbrado, establecimiento y punto de expedición) no debe estar inutilizado",
+      "no_declarativa": true,
+      "codigo_sifen": "1109",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1109"
+        }
+      ]
+    },
+    {
+      "id": "R-C010-C1",
+      "campo": "C010",
+      "tipo": "condicional",
+      "texto": "Obligatorio cuando ya se ha consumido la totalidad de la numeración permitida por el sistema (9999999)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C010",
+          "cita": "Campo obligatorio cuando ya se ha consumido la totalidad de la numeración permitida por el sistema (9999999)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "10.5 Manejo del timbrado y Numeración"
+        }
+      ]
+    },
+    {
+      "id": "R-C010-F1",
+      "campo": "C010",
+      "tipo": "formato",
+      "texto": "Se debe respetar la secuencialidad de la serie (AA, AB, ... AZ, ... ZA, ... ZZ); la primera serie es AA. No se permiten: primera serie distinta a AA; serie no vecina a la mayor serie informada al SIFEN; serie inmediatamente anterior con fecha y hora de firma posterior al inicio de vigencia de la serie actual; serie inmediatamente posterior con fecha y hora de firma anterior al inicio de vigencia de la serie actual. La fecha y hora de firma del primer DE con una serie es la fecha de inicio de esa serie",
+      "no_declarativa": true,
+      "codigo_sifen": "1110",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1110"
+        },
+        {
+          "doc": "MT150",
+          "ref": "10.5 Manejo del timbrado y Numeración"
+        }
+      ]
+    },
+    {
+      "id": "R-C008-O1",
+      "campo": "C008",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C008"
+        }
+      ]
+    },
+    {
+      "id": "R-C008-F1",
+      "campo": "C008",
+      "tipo": "formato",
+      "texto": "Debe corresponder a la fecha de inicio de vigencia del timbrado autorizado para el contribuyente",
+      "no_declarativa": true,
+      "codigo_sifen": "1107",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1107"
+        }
+      ]
+    },
+    {
+      "id": "R-C009-O1",
+      "campo": "C009",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre según el Manual (ocurrencia 1-1); el elemento no existe en el XSD vigente",
+      "contradiccion": "C-105",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C009"
+        }
+      ]
+    },
+    {
+      "id": "R-C009-F1",
+      "campo": "C009",
+      "tipo": "formato",
+      "texto": "Debe corresponder a la fecha fin de vigencia del timbrado autorizado para el contribuyente",
+      "no_declarativa": true,
+      "codigo_sifen": "1108",
+      "contradiccion": "C-105",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1108"
+        }
+      ]
+    }
+  ]
+}

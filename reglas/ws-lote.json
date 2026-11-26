@@ -1,0 +1,495 @@
+{
+  "grupo": "WS-siRecepLoteDE",
+  "reglas": [
+    {
+      "id": "R-BSch02-OBL",
+      "campo": "BSch02",
+      "tipo": "obligatorio",
+      "texto": "Identificador de control de envío (dId) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BSch02",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 48
+        }
+      ]
+    },
+    {
+      "id": "R-BSch03-OBL",
+      "campo": "BSch03",
+      "tipo": "obligatorio",
+      "texto": "Archivo de Lote comprimido (xDE) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BSch03",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 48
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-OBL",
+      "campo": "LSch02",
+      "tipo": "obligatorio",
+      "texto": "Protocolo de procesamiento del DE (rDE) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-706",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "LSch02",
+          "cita": "Ocurrencia 1-50",
+          "pagina": 48
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch02-OBL",
+      "campo": "BRSch02",
+      "tipo": "obligatorio",
+      "texto": "Fecha y hora de recepción (dFecProc) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-703",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch02",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 49
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch03-OBL",
+      "campo": "BRSch03",
+      "tipo": "obligatorio",
+      "texto": "Código del resultado de recepción (dCodRes) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-709",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch03",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 49
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch04-OBL",
+      "campo": "BRSch04",
+      "tipo": "obligatorio",
+      "texto": "Mensaje del resultado de recepción (dMsgRes) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-709",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch04",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 49
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch06-OBL",
+      "campo": "BRSch06",
+      "tipo": "obligatorio",
+      "texto": "Tiempo medio de procesamiento en segundos (dTpoProces) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-709",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch06",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 49
+        }
+      ]
+    },
+    {
+      "id": "R-BSch01-TAM",
+      "campo": "BSch01",
+      "tipo": "formato",
+      "texto": "El mensaje de datos de entrada del WS siRecepLoteDE no debe superar los 10.000 KB; si lo supera, SIFEN devuelve el código 0270 o la conexión puede ser interrumpida por la configuración de red (firewall) sin generar el mensaje de error",
+      "no_declarativa": true,
+      "codigo_sifen": "0270",
+      "contradiccion": "C-707",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BD01",
+          "pagina": 156,
+          "cita": "superior a 10.000 KB"
+        },
+        {
+          "doc": "MT150",
+          "ref": "12.3.2.1",
+          "pagina": 156
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Lote no encolado para procesamiento, motivo e",
+          "pagina": 6,
+          "cita": "no debe superar 1000 KB"
+        }
+      ]
+    },
+    {
+      "id": "R-BSch01-TAMGMP",
+      "campo": "BSch01",
+      "tipo": "formato",
+      "texto": "Según la Guía de mejores prácticas, el lote se rechaza (no encolado, código 0301) si el tamaño del archivo comprimido supera el permitido: el mensaje de datos de entrada del WS no debe superar 1000 KB",
+      "no_declarativa": true,
+      "codigo_sifen": "0301",
+      "contradiccion": "C-707",
+      "fuentes": [
+        {
+          "doc": "GUIA-MP",
+          "ref": "Lote no encolado para procesamiento, motivo e",
+          "pagina": 6,
+          "cita": "El mensaje de datos de entrada del WS no debe superar 1000 KB"
+        }
+      ]
+    },
+    {
+      "id": "R-BSch02-SEC",
+      "campo": "BSch02",
+      "tipo": "formato",
+      "texto": "El identificador de control de envío es un número secuencial autoincremental que identifica el mensaje enviado; generarlo y controlarlo es responsabilidad exclusiva del contribuyente",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BSch02",
+          "pagina": 48
+        }
+      ]
+    },
+    {
+      "id": "R-BSch03-ZIP",
+      "campo": "BSch03",
+      "tipo": "formato",
+      "texto": "El archivo de lote se construye como XML rLoteDE con los DE firmados, se comprime en formato .zip y el contenido comprimido se convierte a Base64 para informarlo en xDE",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.2",
+          "pagina": 48,
+          "cita": "Archivo comprimido “.zip”"
+        },
+        {
+          "doc": "MT150",
+          "ref": "BSch03",
+          "pagina": 48,
+          "cita": "Campo comprimido en formato Base64"
+        },
+        {
+          "doc": "MT150",
+          "ref": "9.2.1",
+          "pagina": 48
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "recibe-lote, pasos 1 a 5",
+          "pagina": 8
+        }
+      ]
+    },
+    {
+      "id": "R-LSch01-DECL",
+      "campo": "LSch01",
+      "tipo": "formato",
+      "texto": "El archivo XML del lote debe contener una sola declaración XML para toda la estructura, codificado en UTF-8",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "7.2.1",
+          "pagina": 31,
+          "cita": "la estructura completa del archivo debe contener solo una declaración"
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-NS",
+      "campo": "LSch02",
+      "tipo": "formato",
+      "texto": "En el envío de lote cada DE debe contener la declaración de su namespace individual",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "7.2.2.2",
+          "pagina": 32,
+          "cita": "cada DE debe contener la declaración de su namespace individual"
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-MAX",
+      "campo": "LSch02",
+      "tipo": "formato",
+      "texto": "Un lote puede contener hasta 50 DE; un lote con más de 50 DE no se encola para procesamiento",
+      "no_declarativa": true,
+      "codigo_sifen": "0301",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.2.1",
+          "pagina": 48,
+          "cita": "hasta 50 DE del mismo tipo"
+        },
+        {
+          "doc": "MT150",
+          "ref": "9.2.2",
+          "pagina": 48
+        },
+        {
+          "doc": "MT150",
+          "ref": "LSch02",
+          "pagina": 48
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Lote no encolado para procesamiento, motivo c",
+          "pagina": 6,
+          "cita": "más de 50 DE en un mismo lote"
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-TIPO",
+      "campo": "LSch02",
+      "tipo": "formato",
+      "texto": "Todos los DE de un lote deben ser del mismo tipo de documento electrónico (C002): solo Facturas Electrónicas, solo Notas de Crédito, etc.",
+      "no_declarativa": true,
+      "contradiccion": "C-711",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.2.2",
+          "pagina": 48,
+          "cita": "Un lote debe contener solo un mismo tipo de DE"
+        },
+        {
+          "doc": "MT150",
+          "ref": "BI04",
+          "pagina": 157
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Lote no encolado para procesamiento, motivo b",
+          "pagina": 6
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-RUC",
+      "campo": "LSch02",
+      "tipo": "formato",
+      "texto": "Todos los DE de un lote deben ser de un solo RUC emisor; un lote con DE de distintos RUC emisores se rechaza (lote no encolado)",
+      "no_declarativa": true,
+      "codigo_sifen": "0301",
+      "contradiccion": "C-711",
+      "fuentes": [
+        {
+          "doc": "GUIA-MP",
+          "ref": "Lote no encolado para procesamiento, motivo a",
+          "pagina": 6,
+          "cita": "Se debe enviar documentos de un solo RUC emisor por lote"
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-FIRMA",
+      "campo": "LSch02",
+      "tipo": "formato",
+      "texto": "Cada DE del lote debe estar firmado digitalmente",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.2.1",
+          "pagina": 48,
+          "cita": "cada uno de ellos debe estar firmado"
+        },
+        {
+          "doc": "MT150",
+          "ref": "9.2.2",
+          "pagina": 48
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-DUPLOTE",
+      "campo": "LSch02",
+      "tipo": "formato",
+      "texto": "No se debe enviar el mismo CDC varias veces en un mismo lote: genera bloqueo temporal de recepción del RUC emisor de 10 a 60 minutos según la reincidencia",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "GUIA-MP",
+          "ref": "Motivos de bloqueo, g",
+          "pagina": 7,
+          "cita": "Enviar el mismo CDC varias veces en un mismo lote"
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-REENVIO",
+      "campo": "LSch02",
+      "tipo": "dependencia",
+      "texto": "No se debe enviar un mismo CDC sin haber tenido la respuesta definitiva de SIFEN (Aprobado, Aprobado con Observación o Rechazado) mediante la consulta de lote. Enviar el mismo CDC en lotes distintos que aún se encuentren en procesamiento genera bloqueo temporal de 10 a 60 minutos del RUC emisor",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "GUIA-MP",
+          "ref": "Recomendaciones, 5",
+          "pagina": 6,
+          "cita": "Nunca se debe enviar un mismo CDC sin haber tenido la respuesta definitiva"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Motivos de bloqueo, h",
+          "pagina": 7
+        }
+      ]
+    },
+    {
+      "id": "R-BSch01-BLOQUEO",
+      "campo": "BSch01",
+      "tipo": "formato",
+      "texto": "Generan bloqueo de recepción de documentos por RUC emisor de 10 a 60 minutos, según la cantidad de reincidencia: enviar lotes vacíos o con contenido no válido; enviar el mismo CDC varias veces en un mismo lote; enviar el mismo CDC varias veces en lotes distintos que aún se encuentren en procesamiento; enviar varias veces un mismo lote. Un RUC bloqueado por envío duplicado recibe lote no encolado",
+      "no_declarativa": true,
+      "codigo_sifen": "0301",
+      "fuentes": [
+        {
+          "doc": "GUIA-MP",
+          "ref": "Motivos de bloqueo, f a i",
+          "pagina": 6,
+          "cita": "de 10 a 60 minutos, según la cantidad de reincidencia"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Lote no encolado para procesamiento, motivo d",
+          "pagina": 6
+        }
+      ]
+    },
+    {
+      "id": "R-BSch01-RECOM",
+      "campo": "BSch01",
+      "tipo": "formato",
+      "texto": "Se recomienda enviar la máxima cantidad posible de documentos en un lote (hasta 50)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "GUIA-MP",
+          "ref": "Recomendaciones, 1",
+          "pagina": 5
+        }
+      ]
+    },
+    {
+      "id": "R-LSch02-EMINOR",
+      "campo": "LSch02",
+      "tipo": "dependencia",
+      "texto": "Para que la transmisión se considere normal, además de no superar las 72 horas desde la firma, la diferencia entre la fecha y hora de emisión (anterior o posterior) y la fecha y hora de transmisión al SIFEN no debe ser superior a 120 horas (5 días); en caso contrario es transmisión extemporánea",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "6.2.1",
+          "pagina": 25,
+          "cita": "no sea superior a 120 horas (5 días)"
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch05-COND",
+      "campo": "BRSch05",
+      "tipo": "condicional",
+      "texto": "El número de lote se genera solamente si el código de resultado de recepción es 0300 (lote recibido con éxito)",
+      "condicion": {
+        "campo": "BRSch03",
+        "op": "igual",
+        "valor": "0300"
+      },
+      "codigo_sifen": "0300",
+      "contradiccion": "C-708",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch05",
+          "pagina": 49,
+          "cita": "Generado solamente si dCodRes=0300"
+        },
+        {
+          "doc": "MT150",
+          "ref": "BF01",
+          "pagina": 156
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch05-PROH",
+      "campo": "BRSch05",
+      "tipo": "prohibido",
+      "texto": "El número de lote no se genera cuando el código de resultado de recepción es distinto de 0300",
+      "condicion": {
+        "campo": "BRSch03",
+        "op": "distinto",
+        "valor": "0300"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch05",
+          "pagina": 49,
+          "cita": "Generado solamente si dCodRes=0300"
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch06-UNI",
+      "campo": "BRSch06",
+      "tipo": "formato",
+      "texto": "El tiempo medio de procesamiento corresponde al promedio de procesamiento de un DE en los últimos 5 minutos. Si el tiempo calculado es inferior a un segundo se informa un segundo; si es superior, el entero se redondea hacia abajo cuando los decimales son inferiores a 500 ms y hacia arriba cuando son superiores a 500 ms. El Manual expresa la unidad como segundos en BRSch06 y como milisegundos en 8.2.2",
+      "no_declarativa": true,
+      "contradiccion": "C-710",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "8.2.2",
+          "pagina": 44,
+          "cita": "Siempre que el tiempo calculado sea inferior a un segundo"
+        },
+        {
+          "doc": "MT150",
+          "ref": "BRSch06",
+          "pagina": 49
+        },
+        {
+          "doc": "MT150",
+          "ref": "8.2.1",
+          "pagina": 44,
+          "cita": "expresado en segundos"
+        }
+      ]
+    },
+    {
+      "id": "R-BRSch06-USO",
+      "campo": "BRSch06",
+      "tipo": "dependencia",
+      "texto": "El contribuyente debe considerar el tiempo promedio de procesamiento antes de consumir el servicio de consulta de procesamiento del lote y para decidir el inicio del uso de la contingencia",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "8.2.2",
+          "pagina": 44,
+          "cita": "deberán considerar este promedio de tiempo"
+        }
+      ]
+    }
+  ]
+}

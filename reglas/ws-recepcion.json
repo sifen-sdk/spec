@@ -1,0 +1,310 @@
+{
+  "grupo": "WS-siRecepDE",
+  "reglas": [
+    {
+      "id": "R-ASch02-OBL",
+      "campo": "ASch02",
+      "tipo": "obligatorio",
+      "texto": "Identificador de control de envío (dId) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ASch02",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 46
+        }
+      ]
+    },
+    {
+      "id": "R-ASch03-OBL",
+      "campo": "ASch03",
+      "tipo": "obligatorio",
+      "texto": "XML del DE transmitido (xDE) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ASch03",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 46
+        }
+      ]
+    },
+    {
+      "id": "R-ARSch02-OBL",
+      "campo": "ARSch02",
+      "tipo": "obligatorio",
+      "texto": "Protocolo de procesamiento del DE (xProtDe) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-701",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ARSch02",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP01-OBL",
+      "campo": "PP01",
+      "tipo": "obligatorio",
+      "texto": "Raíz (rProtDe) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-701",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP01",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP02-OBL",
+      "campo": "PP02",
+      "tipo": "obligatorio",
+      "texto": "CDC del DE Procesado (Id) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-702",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP02",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP03-OBL",
+      "campo": "PP03",
+      "tipo": "obligatorio",
+      "texto": "Fecha y hora del procesamiento (dFecProc) es obligatorio cuando existe su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP03",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP04-OBL",
+      "campo": "PP04",
+      "tipo": "obligatorio",
+      "texto": "DigestValue del DE procesado (dDigVal) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP04",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP050-OBL",
+      "campo": "PP050",
+      "tipo": "obligatorio",
+      "texto": "Estado del resultado (dEstRes) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-704",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP050",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP051-OPC",
+      "campo": "PP051",
+      "tipo": "opcional",
+      "texto": "Número de Transacción (dProtAut) puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP051",
+          "cita": "Ocurrencia 0-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP05-OBL",
+      "campo": "PP05",
+      "tipo": "obligatorio",
+      "texto": "Grupo Resultado de Procesamiento (gResProc) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP05",
+          "cita": "Ocurrencia 1-100",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP052-OBL",
+      "campo": "PP052",
+      "tipo": "obligatorio",
+      "texto": "Código del resultado de procesamiento (dCodRes) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP052",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP053-OBL",
+      "campo": "PP053",
+      "tipo": "obligatorio",
+      "texto": "Mensaje del resultado de procesamiento (dMsgRes) es obligatorio cuando existe su grupo padre",
+      "contradiccion": "C-705",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP053",
+          "cita": "Ocurrencia 1-1",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-ASch01-TAM",
+      "campo": "ASch01",
+      "tipo": "formato",
+      "texto": "El mensaje de datos de entrada del WS siRecepDE no debe superar los 1000 KB; si lo supera, SIFEN devuelve el código 0200 o la conexión puede ser interrumpida por la configuración de red (firewall) sin generar el mensaje de error",
+      "no_declarativa": true,
+      "codigo_sifen": "0200",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BA01",
+          "pagina": 155,
+          "cita": "superior a 1000 KB"
+        },
+        {
+          "doc": "MT150",
+          "ref": "12.3.1.1",
+          "pagina": 155
+        }
+      ]
+    },
+    {
+      "id": "R-ASch02-SEC",
+      "campo": "ASch02",
+      "tipo": "formato",
+      "texto": "El identificador de control de envío es un número secuencial autoincremental que identifica el mensaje enviado; generarlo y controlarlo es responsabilidad exclusiva del contribuyente",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ASch02",
+          "pagina": 46
+        }
+      ]
+    },
+    {
+      "id": "R-ASch03-DEFIRM",
+      "campo": "ASch03",
+      "tipo": "formato",
+      "texto": "El protocolo de entrada es la estructura XML que contiene un DE firmado digitalmente, construido según el esquema del formato del DE",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "9.1.1",
+          "pagina": 46,
+          "cita": "contiene un DE firmado"
+        },
+        {
+          "doc": "MT150",
+          "ref": "9.1.2",
+          "pagina": 46
+        }
+      ]
+    },
+    {
+      "id": "R-ASch03-EMINOR",
+      "campo": "ASch03",
+      "tipo": "dependencia",
+      "texto": "Para que la transmisión se considere normal, además de no superar las 72 horas desde la firma, la diferencia entre la fecha y hora de emisión (anterior o posterior) y la fecha y hora de transmisión al SIFEN no debe ser superior a 120 horas (5 días); en caso contrario es transmisión extemporánea",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "6.2.1",
+          "pagina": 25,
+          "cita": "no sea superior a 120 horas (5 días)"
+        }
+      ]
+    },
+    {
+      "id": "R-PP05-PROD",
+      "campo": "PP05",
+      "tipo": "formato",
+      "texto": "En producción el grupo de resultados de procesamiento se limita a 5 mensajes como máximo",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP05",
+          "pagina": 47,
+          "cita": "Para producción se limitará a 5 mensajes máximos"
+        }
+      ]
+    },
+    {
+      "id": "R-PP050-VAL",
+      "campo": "PP050",
+      "tipo": "formato",
+      "texto": "El estado del resultado toma uno de los valores: Aprobado, Aprobado con observación, Rechazado",
+      "no_declarativa": true,
+      "contradiccion": "C-704",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP050",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP04-DEP",
+      "campo": "PP04",
+      "tipo": "dependencia",
+      "texto": "El DigestValue informado en la respuesta permite verificar la correspondencia con el DE transmitido por el contribuyente (DigestValue de su firma)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP04",
+          "pagina": 47
+        }
+      ]
+    },
+    {
+      "id": "R-PP02-DEP",
+      "campo": "PP02",
+      "tipo": "dependencia",
+      "texto": "El CDC informado en el protocolo corresponde al DE procesado",
+      "no_declarativa": true,
+      "contradiccion": "C-702",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "PP02",
+          "pagina": 47
+        }
+      ]
+    }
+  ]
+}

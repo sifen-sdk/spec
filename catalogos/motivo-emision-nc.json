@@ -1,0 +1,64 @@
+{
+  "id": "motivo-emision-nc",
+  "titulo": "Motivo de emisión de la nota de crédito/débito",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E401"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E402"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiMotEmi (pattern [1-8]), tdDesMotEmi"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E401",
+    "E402"
+  ],
+  "descripciones": {
+    "E401": "E402"
+  },
+  "xml": [
+    "iMotEmi",
+    "dDesMotEmi"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Devolución y Ajuste de precios"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Devolución"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Descuento"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Bonificación"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Crédito incobrable"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Recupero de costo"
+    },
+    {
+      "codigo": "7",
+      "descripcion": "Recupero de gasto"
+    },
+    {
+      "codigo": "8",
+      "descripcion": "Ajuste de precio"
+    }
+  ]
+}

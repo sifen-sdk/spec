@@ -1,0 +1,498 @@
+{
+  "grupo": "F",
+  "titulo": "Campos que describen los subtotales y totales de la transacción documentada",
+  "esquemas": [
+    "DE_v150.xsd",
+    "siRecepDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "F001",
+      "xml": "gTotSub",
+      "nombre": "totals",
+      "padre": "A001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos de subtotales y totales",
+      "observaciones": "En consideración a la Resolución 347 del 2014 (SEDECO), las reglas de redondeo aplican a múltiplos de 50 guaraníes. Para monedas extranjeras o cualquier otro cálculo que contenga decimales, las reglas de validación aceptarán redondeos de 50 céntimos (por encima o por debajo).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tDE/gTotSub"
+        }
+      ]
+    },
+    {
+      "id": "F002",
+      "xml": "dSubExe",
+      "nombre": "exemptSubtotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Subtotal de la operación exenta",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F002"
+        },
+        {
+          "doc": "NT013",
+          "ref": "F002"
+        }
+      ]
+    },
+    {
+      "id": "F003",
+      "xml": "dSubExo",
+      "nombre": "exoneratedSubtotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Subtotal de la operación exonerada",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F003"
+        }
+      ]
+    },
+    {
+      "id": "F004",
+      "xml": "dSub5",
+      "nombre": "vat5Subtotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Subtotal de la operación con IVA incluido a la tasa 5%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F004"
+        },
+        {
+          "doc": "NT013",
+          "ref": "F004"
+        }
+      ]
+    },
+    {
+      "id": "F005",
+      "xml": "dSub10",
+      "nombre": "vat10Subtotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Subtotal de la operación con IVA incluido a la tasa 10%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F005"
+        },
+        {
+          "doc": "NT013",
+          "ref": "F005"
+        }
+      ]
+    },
+    {
+      "id": "F008",
+      "xml": "dTotOpe",
+      "nombre": "grossTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total Bruto de la operación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F008"
+        }
+      ]
+    },
+    {
+      "id": "F009",
+      "xml": "dTotDesc",
+      "nombre": "itemDiscountTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total descuento particular por ítem",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F009"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F009"
+        }
+      ]
+    },
+    {
+      "id": "F033",
+      "xml": "dTotDescGlotem",
+      "nombre": "itemGlobalDiscountTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total descuento global por ítem",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F033"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F033"
+        }
+      ]
+    },
+    {
+      "id": "F034",
+      "xml": "dTotAntItem",
+      "nombre": "itemAdvanceTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total Anticipo por ítem",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F034"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F034"
+        }
+      ]
+    },
+    {
+      "id": "F035",
+      "xml": "dTotAnt",
+      "nombre": "itemGlobalAdvanceTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total Anticipo global por ítem",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F035"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F035"
+        }
+      ]
+    },
+    {
+      "id": "F010",
+      "xml": "dPorcDescTotal",
+      "nombre": "globalDiscountRate",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-3p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Porcentaje de descuento global sobre total de la operación",
+      "observaciones": "Informativo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F010"
+        }
+      ]
+    },
+    {
+      "id": "F011",
+      "xml": "dDescTotal",
+      "nombre": "discountTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total Descuentos de la operación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F011"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F011"
+        }
+      ]
+    },
+    {
+      "id": "F012",
+      "xml": "dAnticipo",
+      "nombre": "advanceTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total Anticipos de la operación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F012"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F012"
+        }
+      ]
+    },
+    {
+      "id": "F013",
+      "xml": "dRedon",
+      "nombre": "roundingAmount",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-3p(0-4)",
+      "ocurrencia": "1-1",
+      "descripcion": "Redondeo de la operación",
+      "contradiccion": "C-506",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F013"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdCRed"
+        }
+      ]
+    },
+    {
+      "id": "F025",
+      "xml": "dComi",
+      "nombre": "commissionAmount",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Comisión de la operación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F025"
+        }
+      ]
+    },
+    {
+      "id": "F014",
+      "xml": "dTotGralOpe",
+      "nombre": "netTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total Neto de la operación",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F014"
+        },
+        {
+          "doc": "NT001",
+          "ref": "F014"
+        }
+      ]
+    },
+    {
+      "id": "F015",
+      "xml": "dIVA5",
+      "nombre": "vat5Amount",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Liquidación del IVA a la tasa del 5%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F015"
+        }
+      ]
+    },
+    {
+      "id": "F016",
+      "xml": "dIVA10",
+      "nombre": "vat10Amount",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Liquidación del IVA a la tasa del 10%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F016"
+        }
+      ]
+    },
+    {
+      "id": "F036",
+      "xml": "dLiqTotIVA5",
+      "nombre": "vat5RoundingAmount",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Liquidación total del IVA por redondeo a la tasa del 5%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F036"
+        }
+      ]
+    },
+    {
+      "id": "F037",
+      "xml": "dLiqTotIVA10",
+      "nombre": "vat10RoundingAmount",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Liquidación total del IVA por redondeo a la tasa del 10%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F037"
+        }
+      ]
+    },
+    {
+      "id": "F026",
+      "xml": "dIVAComi",
+      "nombre": "commissionVatAmount",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Liquidación total del IVA de la comisión",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F026"
+        }
+      ]
+    },
+    {
+      "id": "F017",
+      "xml": "dTotIVA",
+      "nombre": "vatTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Liquidación total del IVA",
+      "contradiccion": "C-502",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F017"
+        }
+      ]
+    },
+    {
+      "id": "F018",
+      "xml": "dBaseGrav5",
+      "nombre": "vat5TaxableBaseTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Total base gravada al 5%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F018"
+        }
+      ]
+    },
+    {
+      "id": "F019",
+      "xml": "dBaseGrav10",
+      "nombre": "vat10TaxableBaseTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Total base gravada al 10%",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F019"
+        }
+      ]
+    },
+    {
+      "id": "F020",
+      "xml": "dTBasGraIVA",
+      "nombre": "vatTaxableBaseTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Total de la base gravada de IVA",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F020"
+        }
+      ]
+    },
+    {
+      "id": "F023",
+      "xml": "dTotalGs",
+      "nombre": "guaraniTotal",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Total general de la operación en Guaraníes",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F023"
+        },
+        {
+          "doc": "NT008",
+          "ref": "F023"
+        }
+      ]
+    },
+    {
+      "id": "F024",
+      "xml": "dTotCom",
+      "nombre": "totalWithCommission",
+      "padre": "F001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "0-1",
+      "descripcion": "Total + comisión",
+      "contradiccion": "C-505",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "F024"
+        }
+      ]
+    }
+  ]
+}

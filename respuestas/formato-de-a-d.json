@@ -1,0 +1,2452 @@
+{
+  "respuestas": [
+    {
+      "codigo": "1000",
+      "servicio": "formato-de",
+      "mensaje": "CDC no correspondiente con las informaciones del XML",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "A002",
+      "id_validacion": "A002",
+      "validacion": "El CDC no es compatible con las informaciones de los campos del XML (C002, D101, D102, C005, C006, C007, D103, D002, B002, B004, A003)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1000",
+          "pagina": null
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1001",
+      "servicio": "formato-de",
+      "mensaje": "CDC duplicado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "A002",
+      "id_validacion": "A002a",
+      "validacion": "Ya fue autorizado otro documento con coincidencia simultánea de contenido de los campos del CDC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1001",
+          "pagina": null
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1002",
+      "servicio": "formato-de",
+      "mensaje": "Documento electrónico duplicado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "A002",
+      "id_validacion": "A002b",
+      "validacion": "Ya fue autorizado otro documento con coincidencia simultánea de contenido de los campos del Timbrado: 1) Tipo de documento (C002) 2) Número de Timbrado (C004) 3) Número de documento (C007) 4) Tipo de emisión (B002) 5) Establecimiento (C005) 6) Punto de Expedición (C006) 7) Serie (C010) Si se informa",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1002",
+          "pagina": null
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1003",
+      "servicio": "formato-de",
+      "mensaje": "DV del CDC inválido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "A003",
+      "id_validacion": "A003",
+      "validacion": "Valor incorrecto del dígito verificador informado según algoritmo módulo 11",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1003",
+          "pagina": null
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1004",
+      "servicio": "formato-de",
+      "mensaje": "La fecha y hora de la firma digital es adelantada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "A004",
+      "id_validacion": "A004a",
+      "validacion": "La fecha y hora de la firma digital no debe ser posterior a la fecha y hora de SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1004",
+          "pagina": null
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1005",
+      "servicio": "formato-de",
+      "mensaje": "Transmisión extemporánea del DE",
+      "clase": "aprobacion_con_observacion",
+      "accion": "ninguna",
+      "efecto": "AO",
+      "campo": "A004",
+      "id_validacion": "A004b",
+      "validacion": "La transmisión del DE no debe exceder el tiempo de validación posterior parametrizado para el contribuyente, tomando como referencia la fecha y hora de la Firma Digital (A004) La SET podrá aplicar la sanción conforme a lo dispuesto en la reglamentación. Aprobado con observaciones (Extemporaneidad)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1005",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "codigo": "1050",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de emisión inválido en esta etapa",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "B002",
+      "id_validacion": "B002",
+      "validacion": "El tipo de emisión en contingencia (B002=2) no permitida en esta etapa",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1050",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1051",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de emisión no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "B003",
+      "id_validacion": "B003",
+      "validacion": "Descripción del tipo de emisión no coincidente a lo informado en el campo B002",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1051",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1100",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento electrónico no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C003",
+      "id_validacion": "C003",
+      "validacion": "Descripción del tipo de documento electrónico no coincidente a lo informado en el campo C002",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1100",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1101",
+      "servicio": "formato-de",
+      "mensaje": "Número de timbrado inválido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C004",
+      "id_validacion": "C004",
+      "validacion": "Número de timbrado no corresponde al RUC ni al Tipo de Documento electrónico del contribuyente emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1101",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1102",
+      "servicio": "formato-de",
+      "mensaje": "Número de timbrado no corresponde al medio de generación para facturación electrónica",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C004",
+      "id_validacion": "C004a",
+      "validacion": "Medio de generación incorrecto en el sistema de Timbrado de Marangatu",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1102",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1103",
+      "servicio": "formato-de",
+      "mensaje": "El número de timbrado no se encuentra vigente a la fecha de emisión del comprobante",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C004",
+      "id_validacion": "C004b",
+      "validacion": "Número de timbrado no vigente (D002 no es posterior a la fecha de inicio de vigencia del timbrado (C008)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1103",
+          "pagina": 161
+        },
+        {
+          "doc": "NT001",
+          "ref": "1103"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "El número de timbrado no se encuentra vigente a la fecha de emisión del comprobante",
+          "validacion": "Número de timbrado no vigente (D002 no se encuentre dentro del rango de las fechas de inicio y fin de vigencia del timbrado (C008 - C009)",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1103",
+              "pagina": 161
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": null,
+              "produccion": null
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1104",
+      "servicio": "formato-de",
+      "mensaje": "El número de timbrado informado no se encuentra en estado ACTIVO",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C004",
+      "id_validacion": "C004c",
+      "validacion": "El número de timbrado informado no se encuentra activo en la base de datos de timbrado en la fecha de emisión del DE (D002)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1104",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1105",
+      "servicio": "formato-de",
+      "mensaje": "Código de establecimiento incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C005",
+      "id_validacion": "C005",
+      "validacion": "El código de establecimiento no corresponde al timbrado autorizado para el contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1105",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1106",
+      "servicio": "formato-de",
+      "mensaje": "Código de punto de expedición incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C006",
+      "id_validacion": "C006",
+      "validacion": "El código de punto de expedición no corresponde al timbrado autorizado para el contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1106",
+          "pagina": 161
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1107",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de inicio de vigencia del timbrado incorrecta",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C008",
+      "id_validacion": "C008",
+      "validacion": "Fecha de inicio de vigencia del timbrado no corresponde a la fecha de inicio de vigencia del timbrado autorizado para el contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1107",
+          "pagina": 162
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1108",
+      "servicio": "formato-de",
+      "mensaje": "Fecha fin de vigencia del timbrado incorrecta",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C009",
+      "id_validacion": "C009",
+      "validacion": "Fecha fin de vigencia del timbrado no corresponde al timbrado autorizado para el contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1108",
+          "pagina": 162
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1109",
+      "servicio": "formato-de",
+      "mensaje": "Número de documento ha sido inutilizado anteriormente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C007",
+      "id_validacion": "C007",
+      "validacion": "El número de documento que pertenece al número de Timbrado, establecimiento y punto de expedición, se encuentra inutilizado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1109",
+          "pagina": 162
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1110",
+      "servicio": "formato-de",
+      "mensaje": "Serie informada incorrecta",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "C010",
+      "id_validacion": "C010",
+      "validacion": "Se debe respetar la secuencialidad en el uso de la serie. Ej: AA, AB, AC… AZ…. ZA, …., ZZ), la primera serie a utilizar es la serie AA. Los siguientes casos no son permitidos: (*) Primera serie distinta a AA (*) Serie no es vecina: la serie informada no es vecina a la mayor serie informada al SIFEN (serie actual) (*) Serie inmediatamente anterior: DE con serie anterior a la mayor serie enviada al SIFEN, cuya fecha y hora de firma digital es posterior a la fecha de inicio de vigencia de la serie actual en el sistema. (*) Serie inmediatamente posterior: DE con serie posterior a la mayor serie enviada al SIFEN, cuya fecha y hora de firma digital es anterior a la fecha de inicio de vigencia de la serie actual en el sistema. Referirse a la sección Manejo del timbrado y Numeración para mayor información",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1110",
+          "pagina": 162
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1150",
+      "servicio": "formato-de",
+      "mensaje": "La fecha y hora de emisión del DE informada es inválida por retraso",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D002",
+      "id_validacion": "D002",
+      "validacion": "Cuando la fecha y hora de emisión es anterior a la fecha y hora de transmisión al SIFEN, la diferencia no debe ser mayor a 720 horas (30 días)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1150",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1151",
+      "servicio": "formato-de",
+      "mensaje": "La fecha y hora de emisión del DE informada es inválida por envío adelantado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D002",
+      "id_validacion": "D002f",
+      "validacion": "Cuando la fecha y hora de emisión del DE es posterior a la fecha y hora de transmisión al SIFEN, la diferencia no debe ser mayor a 120 horas (5 días)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1151",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1156",
+      "servicio": "formato-de",
+      "mensaje": "Fecha y hora de emisión del DE es anterior a la fecha de lanzamiento del sistema",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D002",
+      "id_validacion": "D002a",
+      "validacion": "La fecha y hora de emisión del DE debe ser posterior al 22 de noviembre del 2018",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1156",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1200",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de informaciones inherentes a la operación comercial es obligatorio informar para el tipo de documento",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D010",
+      "id_validacion": "D010",
+      "validacion": "El grupo de informaciones inherentes a la operación comercial (D010) es obligatorio informar para todos los tipos de documentos electrónicos excepto Nota de Remisión Electrónica (C002=7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1200",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1201",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de informaciones inherentes a la operación comercial no es permitido para el tipo de documento",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D010",
+      "id_validacion": "D010a",
+      "validacion": "El grupo de informaciones inherentes a la operación comercial (D010) no es permitido para Nota de Remisión Electrónica (C002=7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1201",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1202",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de transacción no informado para el documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D011",
+      "id_validacion": "D011",
+      "validacion": "Es obligatorio informar el tipo de transacción para Factura Electrónica, Factura electrónica de Exportación, Factura Electrónica de Importación y Autofactura Electrónica. Obligatorio si C002 = 1, 2, 3 o 4",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1202",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1203",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de transacción no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D012",
+      "id_validacion": "D012",
+      "validacion": "Descripción del tipo de transacción no coincidente con lo informado en el campo D011",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1203",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1204",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de impuesto afectado no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D013",
+      "id_validacion": "D013",
+      "validacion": "Es obligatorio informar el tipo de impuesto afectado para Factura Electrónica y Autofactura Electrónica. Obligatorio si C002=1 o 4",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1204",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1205",
+      "servicio": "formato-de",
+      "mensaje": "La descripción del tipo de impuesto afectado no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D014",
+      "id_validacion": "D014",
+      "validacion": "Descripción del tipo de impuesto afectado no coincidente con lo informado en el campo D013",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1205",
+          "pagina": 163
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1206",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la moneda de la operación no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D016",
+      "id_validacion": "D016",
+      "validacion": "Descripción de la moneda de la operación no coincidente con lo informado en el campo D015",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1206",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1207",
+      "servicio": "formato-de",
+      "mensaje": "Condición del tipo de cambio no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D017",
+      "id_validacion": "D017",
+      "validacion": "Si la moneda de la operación es distinta a PYG (D015≠PYG), es obligatorio informar la condición del tipo de cambio (D017)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1207",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1208",
+      "servicio": "formato-de",
+      "mensaje": "Condición del tipo de cambio no requerida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D017",
+      "id_validacion": "D017a",
+      "validacion": "Si la moneda de la operación es igual a PYG (D015=PYG), la condición del tipo de cambio (D017) no debe ser informada",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1208",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1209",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de cambio de la operación no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D018",
+      "id_validacion": "D018",
+      "validacion": "Si la condición del tipo de cambio es global (D017=1), es obligatorio informar el tipo de cambio de la operación (D018)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1209",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1210",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de cambio de la operación no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D018",
+      "id_validacion": "D018a",
+      "validacion": "Si la condición del tipo de cambio es por ítem (D017=2) o la moneda de la operación es PYG (D015=PYG), el tipo de cambio de la operación (D018) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1210",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1211",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la condición del anticipo no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D020",
+      "id_validacion": "D020",
+      "validacion": "Descripción del tipo de la condición del anticipo no coincidente con lo informado en el campo D019",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1211",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1213",
+      "servicio": "formato-de",
+      "mensaje": "Moneda de la operación no corresponde al tipo de documento informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D022",
+      "id_validacion": "D022",
+      "validacion": "Si el tipo de documento informado es Autofactura Electrónica (C002=4) la moneda de la operación debe ser igual a PYG (D015=PYG)",
+      "fuentes": [
+        {
+          "doc": "NT012",
+          "ref": "1213"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1216",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de transacción no requerido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D011",
+      "id_validacion": "D011a",
+      "validacion": "No informar el tipo de transacción cuando C002≠1 o 4",
+      "fuentes": [
+        {
+          "doc": "NT006",
+          "ref": "1216"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1220",
+      "servicio": "formato-de",
+      "mensaje": "Código de la obligación afectada inexistente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D031",
+      "id_validacion": "D031",
+      "validacion": "Debe ser un código según la tabla 12 - Tipo de obligaciones.",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1220"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "1221",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la obligación afectada no corresponde al código informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D032",
+      "id_validacion": "D032",
+      "validacion": "Descripción de la obligación afectada no coincidente con lo informado en el campo D031.",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "1221"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "1222",
+      "servicio": "formato-de",
+      "mensaje": "Código de la obligación afectada duplicado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D031",
+      "id_validacion": "D031a",
+      "validacion": "Cuando se informa el campo D031 no se permite repetir los códigos en el mismo documento.",
+      "fuentes": [
+        {
+          "doc": "NT022",
+          "ref": "1222"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-02-09",
+          "produccion": "2024-02-09"
+        }
+      }
+    },
+    {
+      "codigo": "1250",
+      "servicio": "formato-de",
+      "mensaje": "RUC del emisor inexistente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D101",
+      "id_validacion": "D101",
+      "validacion": "El RUC informado no existe en la base de datos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1250",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1251",
+      "servicio": "formato-de",
+      "mensaje": "RUC del Emisor inhabilitado para facturación electrónica",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "D101",
+      "id_validacion": "D101a",
+      "validacion": "RUC no se encuentra habilitado para facturación electrónica en Marangatu",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1251",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT004",
+          "ref": "1251"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1252",
+      "servicio": "formato-de",
+      "mensaje": "El RUC del emisor se encuentra inactivo",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D101",
+      "id_validacion": "D101b",
+      "validacion": "El RUC del contribuyente debe contar con un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL en Marangatu al momento de la emisión del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1252",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1253",
+      "servicio": "formato-de",
+      "mensaje": "Dígito Verificador del RUC del emisor incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D102",
+      "id_validacion": "D102",
+      "validacion": "El Dígito Verificador ingresado no corresponde al módulo 11 del RUC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1253",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1254",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del departamento de emisión no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D112",
+      "id_validacion": "D112",
+      "validacion": "Descripción del departamento de emisión no coincidente con lo informado en el campo D111",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1254",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1255",
+      "servicio": "formato-de",
+      "mensaje": "El Departamento, el Distrito y la Ciudad de emisión no están relacionados",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D111",
+      "id_validacion": "D111",
+      "validacion": "Debe haber relación entre el departamento (D111), el distrito (D113) y la ciudad (D115)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1255",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1256",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio indicar la descripción del código de distrito de emisión",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D114",
+      "id_validacion": "D114",
+      "validacion": "Si se informa el código del distrito de emisión (D113), es obligatorio informar la descripción del mismo (D114)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1256",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1257",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del distrito de emisión no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D114",
+      "id_validacion": "D114a",
+      "validacion": "Descripción del distrito de emisión no coincidente con lo informado en el campo D113",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1257",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1258",
+      "servicio": "formato-de",
+      "mensaje": "La ciudad de emisión no corresponde al departamento seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D115",
+      "id_validacion": "D115",
+      "validacion": "El código de la ciudad de emisión (D115) debe corresponder al departamento seleccionado (D111)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1258",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1259",
+      "servicio": "formato-de",
+      "mensaje": "La ciudad de emisión no corresponde al distrito seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D115",
+      "id_validacion": "D115a",
+      "validacion": "El código de la ciudad de emisión (D115) debe corresponder al distrito seleccionado (D113) No se aplica esta regla si no ha sido informado el distrito",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1259",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1260",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la ciudad de emisión no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D116",
+      "id_validacion": "D116",
+      "validacion": "Descripción de la ciudad de emisión no coincidente con lo informado en el campo D115",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1260",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1261",
+      "servicio": "formato-de",
+      "mensaje": "Código de actividad económica incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D131",
+      "id_validacion": "D131",
+      "validacion": "La actividad económica seleccionada no corresponde a lo declarado en el RUC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1261",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1262",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la actividad económica no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D132",
+      "id_validacion": "D132",
+      "validacion": "Descripción de la actividad económica no coincidente con lo informado en el campo D120",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1262",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1263",
+      "servicio": "formato-de",
+      "mensaje": "Nombre o razón social del emisor del DE inválido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D105",
+      "id_validacion": "D105",
+      "validacion": "Se debe utilizar el siguiente texto para el ambiente de pruebas: \"DE generado en ambiente de prueba - sin valor comercial ni fiscal\". No se debe utilizar el texto \"DE generado en ambiente de prueba - sin valor comercial ni fiscal\" para el ambiente de producción.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1263",
+          "pagina": 165
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1264",
+      "servicio": "formato-de",
+      "mensaje": "RUC del emisor no está habilitado para utilizar este tipo de servicio",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D101",
+      "id_validacion": "D101c",
+      "validacion": "RUC del emisor no está habilitado para utilizar el servicio síncrono",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1264",
+          "pagina": 164
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1265",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento de identidad del responsable de la generación del DE no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D142",
+      "id_validacion": "D142",
+      "validacion": "Descripción del tipo de documento de identidad del responsable de la generación del DE no coincidente a lo informado en el campo D141",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1265"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1300",
+      "servicio": "formato-de",
+      "mensaje": "El tipo de operación no compatible con la naturaleza del receptor",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D202",
+      "id_validacion": "D202",
+      "validacion": "Si el tipo de documento no es autofactura (C002 ≠ 4) y si la naturaleza del receptor es No contribuyente (D201=2), el tipo de operación debe ser B2C (D202=2). Si la naturaleza del receptor es No contribuyente (D201=2), el tipo de operación debe ser B2C (D202=2) o B2F (D202=4).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1300",
+          "pagina": 166
+        },
+        {
+          "doc": "NT010",
+          "ref": "1300"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "El tipo de operación no compatible con la naturaleza del receptor",
+          "validacion": "Si el tipo de documento no es autofactura (C002 ≠ 4) y si la naturaleza del receptor es No contribuyente (D201=2), el tipo de operación debe ser B2C (D202=2). Si el tipo de operación es B2F (D202=4), la naturaleza del receptor debe ser No contribuyente (D201=2)",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1300",
+              "pagina": 166
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": null,
+              "produccion": null
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1301",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del país receptor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D204",
+      "id_validacion": "D204",
+      "validacion": "La descripción del país del receptor no coincidente con lo informado en el campo D203",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1301",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1302",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar el tipo de contribuyente receptor",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D205",
+      "id_validacion": "D205",
+      "validacion": "Si la naturaleza del receptor es contribuyente (D201=1) el tipo de contribuyente receptor debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1302",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1303",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de contribuyente receptor inválido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D205",
+      "id_validacion": "D205a",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (D201=2), el tipo de contribuyente receptor (D205) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1303",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1304",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar el RUC del receptor contribuyente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D206",
+      "id_validacion": "D206",
+      "validacion": "Si la naturaleza del receptor es contribuyente (D201=1), el RUC del receptor debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1304",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1305",
+      "servicio": "formato-de",
+      "mensaje": "RUC del receptor no requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D206",
+      "id_validacion": "D206a",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (D201=2), el RUC del receptor (D206) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1305",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1306",
+      "servicio": "formato-de",
+      "mensaje": "RUC del receptor inexistente en la base de datos de Marangatu",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D206",
+      "id_validacion": "D206b",
+      "validacion": "El RUC informado no existe en la base de datos de Marangatu",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1306",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1307",
+      "servicio": "formato-de",
+      "mensaje": "El RUC se encuentra inactivo para el tipo de contribuyente receptor",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D206",
+      "id_validacion": "D206c",
+      "validacion": "Si el tipo de contribuyente receptor es persona jurídica (D205=2), el RUC del receptor en Marangatu debe contar con un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1307",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1308",
+      "servicio": "formato-de",
+      "mensaje": "El RUC del receptor se encuentra inactivo para el tipo de operación",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D206",
+      "id_validacion": "D206d",
+      "validacion": "Si el tipo de operación es B2B o B2G (D202 =1 o 3), el RUC del receptor en Marangatu debe contar con un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1308",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1309",
+      "servicio": "formato-de",
+      "mensaje": "Dígito Verificador del RUC del receptor incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D207",
+      "id_validacion": "D207",
+      "validacion": "El Dígito Verificador ingresado no corresponde al módulo 11 del RUC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1309",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1310",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar el tipo de documento de identidad del receptor",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (D201=2) y el tipo de operación es diferente a B2F (D202≠4), el tipo de documento de identidad debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1310",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1311",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento de identidad del receptor inválido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208a",
+      "validacion": "Si la naturaleza del receptor es contribuyente (D201=1), el tipo de documento de identidad del receptor (D208) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1311",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1312",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento de identidad del receptor no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D209",
+      "id_validacion": "D209",
+      "validacion": "Si se informa el código de tipo de documento de identidad (D208), es obligatorio indicar la descripción correspondiente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1312",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1313",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento de identidad del receptor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D209",
+      "id_validacion": "D209a",
+      "validacion": "La descripción del tipo de documento de identidad del receptor no coincidente con lo informado en el campo D208",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1313",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1314",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar el número de documento de identidad del receptor",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D210",
+      "id_validacion": "D210",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (D201=2) y el tipo de operación es diferente a B2F (D202≠4), el número de documento de identidad debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1314",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1314",
+          "cita": "reproducida sin cambios de texto"
+        }
+      ]
+    },
+    {
+      "codigo": "1315",
+      "servicio": "formato-de",
+      "mensaje": "Naturaleza del Receptor inválida para el tipo documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D201",
+      "id_validacion": "D201",
+      "validacion": "Si el tipo de documento es Autofactura (C002=4), la naturaleza del Receptor debe ser Contribuyente (D201=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1315",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1316",
+      "servicio": "formato-de",
+      "mensaje": "El tipo de operación no compatible con el tipo documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D202",
+      "id_validacion": "D202a",
+      "validacion": "Si la transacción se documenta con Autofactura (C002=4), el tipo de operación debe ser B2C (D202=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1316",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1317",
+      "servicio": "formato-de",
+      "mensaje": "RUC del Receptor inválido para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D206",
+      "id_validacion": "D206e",
+      "validacion": "Si el tipo de documento es Autofactura (C002=4), el RUC del Receptor deber ser el mismo que el RUC del Emisor (D206= D101)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1317",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1318",
+      "servicio": "formato-de",
+      "mensaje": "Dirección del receptor no informado para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D213",
+      "id_validacion": "D213",
+      "validacion": "Si el tipo de documento electrónico informado es Nota de remisión electrónica (C002=7) o cuando el tipo de operación es B2F (D202=4), es obligatorio informar la dirección del receptor (D213)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1318",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1319",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento de identidad del receptor incorrecto para el tipo de operación",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208b",
+      "validacion": "El Tipo de documento de identidad del receptor no puede ser innominado (D208=5), cuando el tipo de operación es distinto a B2C (D202 ≠ 2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1319",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1319"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "estado": "eliminado",
+      "contradiccion": "C-812"
+    },
+    {
+      "codigo": "1320",
+      "servicio": "formato-de",
+      "mensaje": "Código de país del receptor inválido para el tipo de operación informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D203",
+      "id_validacion": "D203",
+      "validacion": "Si el tipo de operación es B2F (D202=4), el país informado debe ser diferente a PRY (D203≠PRY). Si el tipo de operación es diferente de B2F (D202≠4) el país informado debe ser igual a PRY (D203=PRY)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1320",
+          "pagina": 166
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1321",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento de identidad del receptor incorrecto para el total general de la operación en guaraníes",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208c",
+      "validacion": "Si el Tipo de transacción es distinto a Muestras médicas (D011≠13), El Tipo de documento de identidad del receptor no puede ser Innominado (D208≠5) cuando el total general de la operación en guaraníes (cuando la moneda es extranjera) o el total general de la operación (cuando la moneda es PYG) es mayor o igual a 7.000.000 (F023 >= 7.000.000 o F014 >= 7.000.000)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1321",
+          "pagina": 167
+        },
+        {
+          "doc": "NT021",
+          "ref": "1321"
+        },
+        {
+          "doc": "NT024",
+          "ref": "1321"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Tipo de documento de identidad del receptor incorrecto para el total general de la operación en guaraníes",
+          "validacion": "Si el Tipo de transacción es distinto a Muestras médicas (D011≠13), el Tipo de documento de identidad del receptor no puede ser Innominado (D208≠5) cuando el total general de la operación en guaraníes (cuando la moneda es extranjera) o el total general de la operación (cuando la moneda es PYG) es mayor o igual a 60.000.000 (F023 >= 60000000 o F014 >= 60000000)",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1321",
+              "pagina": 167
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2024-01-01",
+              "produccion": "2024-01-01"
+            }
+          }
+        },
+        {
+          "mensaje": "Tipo de documento de identidad del receptor incorrecto para el total general de la operación en guaraníes",
+          "validacion": "Si el Tipo de transacción es distinto a Muestras médicas (D011≠13), El Tipo de documento de identidad del receptor no puede ser Innominado (D208≠5) cuando el total general de la operación en guaraníes (cuando la moneda es extranjera) o el total general de la operación (cuando la moneda es PYG) es mayor o igual a 35.000.000 (F023 >= 35000000 o F014 >= 35000000)",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1321",
+              "pagina": 167
+            },
+            {
+              "doc": "NT021",
+              "ref": "1321"
+            }
+          ],
+          "vigencia": {
+            "desde": {
+              "test": "2024-01-01",
+              "produccion": "2024-01-01"
+            },
+            "hasta": {
+              "test": "2025-01-01",
+              "produccion": "2025-01-01"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2025-01-01",
+          "produccion": "2025-01-01"
+        }
+      }
+    },
+    {
+      "codigo": "1322",
+      "servicio": "formato-de",
+      "mensaje": "El tipo de documento de identidad del receptor no es requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208d",
+      "validacion": "Si la naturaleza del receptor es Contribuyente (D201=1) o el tipo de operación es igual a B2F (D202=4), el tipo de documento de identidad no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1322",
+          "pagina": 167
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1322"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1323",
+      "servicio": "formato-de",
+      "mensaje": "El número de documento de identidad del receptor no es requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "D210",
+      "id_validacion": "D210a",
+      "validacion": "Si la naturaleza del receptor es contribuyente (D201=1) o el tipo de operación es igual a B2F (D202=4), el número de documento de identidad no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1323",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1323"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1324",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar el departamento del receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "D219",
+      "id_validacion": "D219",
+      "validacion": "Cuando se informa la dirección del receptor (D213) y el tipo de operación es distinto a B2F (D202≠4), es obligatorio informar el departamento (D219)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1324",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1324"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1325",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del departamento del receptor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D220",
+      "id_validacion": "D220",
+      "validacion": "Descripción del departamento del receptor no coincidente con lo informado en el campo D219",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1325",
+          "pagina": 168
+        },
+        {
+          "doc": "NT010",
+          "ref": "1325"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Descripción del departamento de emisión no corresponde al código",
+          "validacion": "Descripción del departamento de emisión no coincidente con lo informado en el campo D219",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1325",
+              "pagina": 168
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": null,
+              "produccion": null
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "1326",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del distrito del receptor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D222",
+      "id_validacion": "D222",
+      "validacion": "Descripción del distrito del receptor no coincidente con lo informado en el campo D221",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1326",
+          "pagina": 168
+        },
+        {
+          "doc": "NT017",
+          "ref": "1326"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Descripción del distrito de emisión no corresponde al código",
+          "validacion": "Descripción del distrito de emisión no coincidente con lo informado en el campo D221",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1326",
+              "pagina": 168
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-08-24",
+              "produccion": "2023-08-25"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-24",
+          "produccion": "2023-08-25"
+        }
+      }
+    },
+    {
+      "codigo": "1327",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar la ciudad del receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "D223",
+      "id_validacion": "D223",
+      "validacion": "Cuando se informa la dirección del receptor (D213) y el tipo de operación es distinto a B2F (D202≠4), es obligatorio informar la ciudad (D223)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1327",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1327"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "estado": "eliminado"
+    },
+    {
+      "codigo": "1328",
+      "servicio": "formato-de",
+      "mensaje": "El Departamento, el Distrito y la Ciudad del receptor no están relacionados",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D223",
+      "id_validacion": "D223a",
+      "validacion": "Debe haber relación entre el departamento (D219), el distrito (D221) y la ciudad (D223)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1328",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1329",
+      "servicio": "formato-de",
+      "mensaje": "Descripción de la ciudad del receptor no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D224",
+      "id_validacion": "D224",
+      "validacion": "Descripción de la ciudad del receptor no coincidente con lo informado en el campo D223",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1329",
+          "pagina": 168
+        },
+        {
+          "doc": "NT017",
+          "ref": "1329"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Descripción de la ciudad de emisión no corresponde al código",
+          "validacion": "Descripción de la ciudad de emisión no coincidente con lo informado en el campo D223",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "1329",
+              "pagina": 168
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-08-24",
+              "produccion": "2023-08-25"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-24",
+          "produccion": "2023-08-25"
+        }
+      }
+    },
+    {
+      "codigo": "1330",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar el número de casa del receptor",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D218",
+      "id_validacion": "D218",
+      "validacion": "Si se informa la dirección del receptor (D213) es obligatorio informar el número de casa (D218)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1330",
+          "pagina": 168
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "1331",
+      "servicio": "formato-de",
+      "mensaje": "El adquiriente del comprobante de venta informado no se encuentra identificado. Favor verifique el dato ingresado.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208e",
+      "validacion": "Si el tipo de documento electrónico seleccionado es igual a Nota de Crédito, Nota de Débito o Nota de Remisión Electrónica (C002 = 5, 6, 7), el tipo de documento de identidad del receptor no puede ser INNOMINADO (D208 ≠ 5)",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1331"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1331"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      },
+      "historial": [
+        {
+          "mensaje": "El adquiriente del comprobante de venta informado no se encuentra identificado. Favor verifique el dato ingresado.",
+          "validacion": "Si el tipo de documento electrónico es Nota de Crédito (C002 = 5) o Nota de Débito (C002 = 6), el tipo de documento de identidad del receptor no puede ser INNOMINADO (D208 ≠ 5)",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "NT010",
+              "ref": "1331"
+            }
+          ],
+          "vigencia": {
+            "desde": {
+              "test": null,
+              "produccion": null
+            },
+            "hasta": {
+              "test": "2024-08-30",
+              "produccion": "2024-09-27"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "codigo": "1332",
+      "servicio": "formato-de",
+      "mensaje": "El tipo de operación no compatible para un Organismo o Entidad del Estado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D202",
+      "id_validacion": "D202b",
+      "validacion": "Si el RUC del receptor (D206) corresponde a un Organismo o Entidad del Estado (OEE), el tipo de operación debe ser B2G (D202=3)",
+      "fuentes": [
+        {
+          "doc": "NT020",
+          "ref": "1332"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "contradiccion": "C-813"
+    },
+    {
+      "codigo": "1333",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento de identidad del receptor incorrecto para el tipo de operación",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208f",
+      "validacion": "El Tipo de documento de identidad del receptor no puede ser innominado (D208=5), cuando el tipo de operación es distinto a B2C (D202 ≠ 2)",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "1333"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      },
+      "contradiccion": "C-812"
+    },
+    {
+      "codigo": "1334",
+      "servicio": "formato-de",
+      "mensaje": "El número de documento de identidad del receptor no es requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D210",
+      "id_validacion": "D210b",
+      "validacion": "Si la naturaleza del receptor es contribuyente (D201=1) el número de documento de identidad no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "1334"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "1335",
+      "servicio": "formato-de",
+      "mensaje": "El tipo de documento de identidad del receptor es requerido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "D208",
+      "id_validacion": "D208g",
+      "validacion": "Si la naturaleza del receptor es NO Contribuyente (D201=2), el tipo de documento de identidad del receptor debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "1335"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    }
+  ]
+}

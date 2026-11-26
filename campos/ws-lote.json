@@ -1,0 +1,264 @@
+{
+  "grupo": "WS-siRecepLoteDE",
+  "titulo": "WS recepción lote DE – siRecepLoteDE (Schemas XML 5, 5A y 6)",
+  "esquemas": [
+    "WS_SiRecepLoteDE_v141.xsd",
+    "SIFEN_Types_v141.xsd",
+    "siRecepDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "BSch01",
+      "xml": "rEnvioLote",
+      "nombre": "batchSubmission",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la petición del WS siRecepLoteDE. El Manual nombra el esquema SiRecepLoteDE_v150.xsd, que no está publicado: solo existe WS_SiRecepLoteDE_v141.xsd. El Manual no indica ocurrencia para la raíz.",
+      "contradiccion": "C-706",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BSch01",
+          "pagina": 48
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rEnvioLote"
+        }
+      ]
+    },
+    {
+      "id": "BSch02",
+      "xml": "dId",
+      "nombre": "controlId",
+      "padre": "BSch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de control de envío",
+      "observaciones": "Número secuencial autoincremental, para identificación del mensaje enviado. La responsabilidad de generar y controlar este número es exclusiva del contribuyente.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BSch02",
+          "pagina": 48
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rEnvioLote/dId"
+        }
+      ]
+    },
+    {
+      "id": "BSch03",
+      "xml": "xDE",
+      "nombre": "compressedBatch",
+      "padre": "BSch01",
+      "tipo": "binario",
+      "ocurrencia": "1-1",
+      "descripcion": "Archivo de Lote comprimido",
+      "observaciones": "Campo comprimido en formato Base64 según el esquema del Protocolo de procesamiento del Lote (Schema XML 5A: rLoteDE).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BSch03",
+          "pagina": 48
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rEnvioLote/xDE (xs:base64Binary)"
+        }
+      ]
+    },
+    {
+      "id": "LSch01",
+      "xml": "rLoteDE",
+      "nombre": "batch",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz del archivo de lote (Schema XML 5A: ProtProcesLoteDE_v150.xsd). Viaja comprimido y en Base64 dentro de BSch03 (xDE). Ningún XSD publicado define rLoteDE. El Manual no indica ocurrencia para la raíz.",
+      "contradiccion": "C-706",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "LSch01",
+          "pagina": 48
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "recibe-lote, paso 1",
+          "pagina": 8,
+          "cita": "Crear la estructura del lote"
+        }
+      ]
+    },
+    {
+      "id": "LSch02",
+      "xml": "rDE",
+      "nombre": "documents",
+      "padre": "LSch01",
+      "tipo": "xml",
+      "ocurrencia": "1-50",
+      "descripcion": "Protocolo de procesamiento del DE",
+      "observaciones": "Sigue las definiciones del Capítulo Formato de los DE: cada elemento es un DE firmado (rDE). No se requiere que el número del DE sea secuencial en el lote.",
+      "contradiccion": "C-706",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "LSch02",
+          "pagina": 48
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "recibe-lote, paso 2",
+          "pagina": 8
+        }
+      ]
+    },
+    {
+      "id": "BRSch01",
+      "xml": "rResEnviLoteDe",
+      "nombre": "batchSubmissionResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la respuesta del WS siRecepLoteDE (Schema XML 6: resRecepLoteDE_v150.xsd). El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch01",
+          "pagina": 49
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rResEnviLoteDe"
+        }
+      ]
+    },
+    {
+      "id": "BRSch02",
+      "xml": "dFecProc",
+      "nombre": "receptionDateTime",
+      "padre": "BRSch01",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y hora de recepción",
+      "observaciones": "Formato: “AAAA-MM-DD-hh:mm:ss”.",
+      "contradiccion": "C-703",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch02",
+          "pagina": 49
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rResEnviLoteDe/dFecProc (fecUTC, 0-1)"
+        }
+      ]
+    },
+    {
+      "id": "BRSch03",
+      "xml": "dCodRes",
+      "nombre": "resultCode",
+      "padre": "BRSch01",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del resultado de recepción",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12.",
+      "contradiccion": "C-709",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch03",
+          "pagina": 49
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rResEnviLoteDe/dCodRes (0-1)"
+        }
+      ]
+    },
+    {
+      "id": "BRSch04",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "BRSch01",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje del resultado de recepción",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12.",
+      "contradiccion": "C-709",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch04",
+          "pagina": 49
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rResEnviLoteDe/dMsgRes (0-1)"
+        }
+      ]
+    },
+    {
+      "id": "BRSch05",
+      "xml": "dProtConsLote",
+      "nombre": "batchNumber",
+      "padre": "BRSch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de Lote",
+      "observaciones": "Generado solamente si dCodRes=0300. Definido en el tópico correspondiente del capítulo 12.",
+      "contradiccion": "C-708",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch05",
+          "pagina": 49
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rResEnviLoteDe/dProtConsLote (xs:decimal, totalDigits 28)"
+        }
+      ]
+    },
+    {
+      "id": "BRSch06",
+      "xml": "dTpoProces",
+      "nombre": "averageProcessingTime",
+      "padre": "BRSch01",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "1-1",
+      "descripcion": "Tiempo medio de procesamiento en segundos",
+      "observaciones": "Conforme a la sección correspondiente en el presente manual (8.2.2).",
+      "contradiccion": "C-710",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "BRSch06",
+          "pagina": 49
+        },
+        {
+          "doc": "MT150",
+          "ref": "8.2.2",
+          "pagina": 44
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiRecepLoteDE_v141.xsd rResEnviLoteDe/dTpoProces (xs:integer, 0-1)"
+        }
+      ]
+    }
+  ]
+}

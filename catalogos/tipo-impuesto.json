@@ -1,0 +1,66 @@
+{
+  "id": "tipo-impuesto",
+  "titulo": "Tipo de impuesto afectado",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D013"
+    },
+    {
+      "doc": "MT150",
+      "ref": "D014"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTImp, tdDesTImp"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D013",
+    "D014"
+  ],
+  "descripciones": {
+    "D013": "D014"
+  },
+  "xml": [
+    "iTImp",
+    "dDesTImp"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "IVA"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "ISC"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Renta"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Ninguno"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "IVA – Renta",
+      "descripcion_xsd": "IVA - Renta",
+      "contradiccion": "C-903",
+      "otras_descripciones": [
+        {
+          "descripcion": "IVA - Renta",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "D013",
+              "cita": "5=IVA - Renta"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

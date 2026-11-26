@@ -1,0 +1,495 @@
+{
+  "grupo": "D2",
+  "titulo": "Campos que identifican al emisor del DE (D100-D129), actividad económica (D130-D139) y responsable de la generación (D140-D160)",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "D100",
+      "xml": "gEmis",
+      "nombre": "issuer",
+      "padre": "D001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Grupo de campos que identifican al emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D100"
+        }
+      ]
+    },
+    {
+      "id": "D101",
+      "xml": "dRucEm",
+      "nombre": "ruc",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "1-1",
+      "descripcion": "RUC del contribuyente emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D101"
+        }
+      ]
+    },
+    {
+      "id": "D102",
+      "xml": "dDVEmi",
+      "nombre": "checkDigit",
+      "padre": "D100",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Dígito verificador del RUC del contribuyente emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D102"
+        }
+      ]
+    },
+    {
+      "id": "D103",
+      "xml": "iTipCont",
+      "nombre": "taxpayerTypeCode",
+      "padre": "D100",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de contribuyente",
+      "observaciones": "1= Persona Física 2= Persona Jurídica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D103"
+        }
+      ],
+      "catalogo": "tipo-contribuyente"
+    },
+    {
+      "id": "D104",
+      "xml": "cTipReg",
+      "nombre": "regimeTypeCode",
+      "padre": "D100",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de régimen",
+      "observaciones": "Según Tabla 1 – Tipo de Régimen",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D104"
+        }
+      ],
+      "catalogo": "tipo-regimen"
+    },
+    {
+      "id": "D105",
+      "xml": "dNomEmi",
+      "nombre": "name",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre o razón social del emisor del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D105"
+        }
+      ]
+    },
+    {
+      "id": "D106",
+      "xml": "dNomFanEmi",
+      "nombre": "tradeName",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Nombre de fantasía",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D106"
+        }
+      ]
+    },
+    {
+      "id": "D107",
+      "xml": "dDirEmi",
+      "nombre": "address",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Dirección del local donde se emite el DE",
+      "observaciones": "Nombre de la calle principal.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D107"
+        }
+      ]
+    },
+    {
+      "id": "D108",
+      "xml": "dNumCas",
+      "nombre": "houseNumber",
+      "padre": "D100",
+      "tipo": "numerico",
+      "longitud": "1-6",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de casa",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D108"
+        }
+      ]
+    },
+    {
+      "id": "D109",
+      "xml": "dCompDir1",
+      "nombre": "addressComplement1",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Complemento de dirección 1",
+      "observaciones": "Nombre de la calle secundaria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D109"
+        }
+      ]
+    },
+    {
+      "id": "D110",
+      "xml": "dCompDir2",
+      "nombre": "addressComplement2",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Complemento de dirección 2",
+      "observaciones": "Número de departamento/ piso/ local/ edificio/ depósito",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D110"
+        }
+      ]
+    },
+    {
+      "id": "D111",
+      "xml": "cDepEmi",
+      "nombre": "departmentCode",
+      "padre": "D100",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del departamento de emisión",
+      "observaciones": "Según XSD de Departamentos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D111"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "D112",
+      "xml": "dDesDepEmi",
+      "nombre": "departmentDescription",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del departamento de emisión",
+      "observaciones": "Referente al campo D111",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D112"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "D113",
+      "xml": "cDisEmi",
+      "nombre": "districtCode",
+      "padre": "D100",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito de emisión",
+      "observaciones": "Según Tabla 2.1 – Distritos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D113"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "D114",
+      "xml": "dDesDisEmi",
+      "nombre": "districtDescription",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del distrito de emisión",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D114"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "D115",
+      "xml": "cCiuEmi",
+      "nombre": "cityCode",
+      "padre": "D100",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de la ciudad de emisión",
+      "observaciones": "Según Tabla 2.2 – Ciudades",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D115"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "D116",
+      "xml": "dDesCiuEmi",
+      "nombre": "cityDescription",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la ciudad de emisión",
+      "observaciones": "Referente al campo D115",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D116"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "D117",
+      "xml": "dTelEmi",
+      "nombre": "phone",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "6-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Teléfono local de emisión de DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D117"
+        }
+      ]
+    },
+    {
+      "id": "D118",
+      "xml": "dEmailE",
+      "nombre": "email",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "3-80",
+      "ocurrencia": "1-1",
+      "descripcion": "Correo electrónico del emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D118"
+        }
+      ]
+    },
+    {
+      "id": "D119",
+      "xml": "dDenSuc",
+      "nombre": "branchName",
+      "padre": "D100",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Denominación comercial de la sucursal",
+      "observaciones": "Denominación interna del emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D119"
+        }
+      ]
+    },
+    {
+      "id": "D130",
+      "xml": "gActEco",
+      "nombre": "economicActivities",
+      "padre": "D100",
+      "tipo": "grupo",
+      "ocurrencia": "1-9",
+      "descripcion": "Grupo de campos que describen la actividad económica del emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D130"
+        }
+      ]
+    },
+    {
+      "id": "D131",
+      "xml": "cActEco",
+      "nombre": "code",
+      "padre": "D130",
+      "tipo": "alfanumerico",
+      "longitud": "1-8",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de la actividad económica del emisor",
+      "observaciones": "Según Tabla 3 – Actividades Económicas",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D131"
+        }
+      ]
+    },
+    {
+      "id": "D132",
+      "xml": "dDesActEco",
+      "nombre": "description",
+      "padre": "D130",
+      "tipo": "alfanumerico",
+      "longitud": "1-300",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la actividad económica del emisor",
+      "observaciones": "Referente al campo D120 (sic; el campo de código del grupo es D131). Según Tabla 3 – Actividades Económicas",
+      "contradiccion": "C-108",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D132"
+        }
+      ]
+    },
+    {
+      "id": "D140",
+      "xml": "gRespDE",
+      "nombre": "generationResponsible",
+      "padre": "D100",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Grupo de campos que identifican al responsable de la generación del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D140"
+        }
+      ]
+    },
+    {
+      "id": "D141",
+      "xml": "iTipIDRespDE",
+      "nombre": "idTypeCode",
+      "padre": "D140",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de documento de identidad del responsable de la generación del DE",
+      "observaciones": "1= Cédula paraguaya 2= Pasaporte 3= Cédula extranjera 4= Carnet de residencia 9= Otro",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D141"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad-responsable"
+    },
+    {
+      "id": "D142",
+      "xml": "dDTipIDRespDE",
+      "nombre": "idTypeDescription",
+      "padre": "D140",
+      "tipo": "alfanumerico",
+      "longitud": "9-41",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del tipo de documento de identidad del responsable de la generación del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D142"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad-responsable"
+    },
+    {
+      "id": "D143",
+      "xml": "dNumIDRespDE",
+      "nombre": "idNumber",
+      "padre": "D140",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de documento de identidad del responsable de la generación del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D143"
+        }
+      ]
+    },
+    {
+      "id": "D144",
+      "xml": "dNomRespDE",
+      "nombre": "name",
+      "padre": "D140",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre o razón social del responsable de la generación del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D144"
+        }
+      ]
+    },
+    {
+      "id": "D145",
+      "xml": "dCarRespDE",
+      "nombre": "position",
+      "padre": "D140",
+      "tipo": "alfanumerico",
+      "longitud": "4-100",
+      "ocurrencia": "1-1",
+      "descripcion": "Cargo del responsable de la generación del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D145"
+        }
+      ]
+    }
+  ]
+}

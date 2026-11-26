@@ -1,0 +1,62 @@
+{
+  "id": "indicador-presencia",
+  "titulo": "Indicador de presencia",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E011"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E012"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiIndPres (pattern [1-6]|9), tdDesIndPres"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E011",
+    "E012"
+  ],
+  "descripciones": {
+    "E011": "E012"
+  },
+  "xml": [
+    "iIndPres",
+    "dDesIndPres"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Operación presencial"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Operación electrónica"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Operación telemarketing"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Venta a domicilio"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Operación bancaria"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Operación cíclica"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Otro",
+      "observacion": "Si E011 = 9 informar el indicador de presencia",
+      "descripcion_libre": true
+    }
+  ]
+}

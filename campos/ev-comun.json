@@ -1,0 +1,778 @@
+{
+  "grupo": "GDE",
+  "titulo": "Estructura común de los eventos (y endoso, evento futuro)",
+  "esquemas": [
+    "Evento_v150.xsd",
+    "Evento_Types_v150.xsd",
+    "siRecepEvento_v150.xsd",
+    "siRecepEventoEmisor_v150.xsd",
+    "siRecepEventoReceptor_v150.xsd",
+    "siRecepEventoSet_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GDE000",
+      "xml": "gGroupGesEve",
+      "nombre": "eventManagement",
+      "padre": "GSch03",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz del grupo de eventos",
+      "observaciones": "Contenido de dEvReg (GSch03) del WS siRecepEvento.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE000",
+          "pagina": 120
+        },
+        {
+          "doc": "XSD",
+          "ref": "siRecepEvento_v150.xsd elemento gGroupGesEve; Evento_v150.xsd tgGroupGesEve"
+        }
+      ]
+    },
+    {
+      "id": "GDE001",
+      "xml": "rGesEve",
+      "nombre": "event",
+      "padre": "GDE000",
+      "tipo": "grupo",
+      "ocurrencia": "1-15",
+      "descripcion": "Raíz de Gestión de Eventos",
+      "observaciones": "Elemento raíz. Cada rGesEve lleva un evento (rEve) y su firma. Los esquemas siRecepEventoEmisor/Receptor/Set_v150.xsd declaran otro elemento rGesEve (tipos trGesEveEmi, trGesEveRecep, trGesEveSet) sin firma ni atributo Id, que el Manual no describe.",
+      "contradiccion": "C-603",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE001",
+          "pagina": 120
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupGesEve/rGesEve maxOccurs=15"
+        }
+      ]
+    },
+    {
+      "id": "GDE002",
+      "xml": "rEve",
+      "nombre": "generalData",
+      "padre": "GDE001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Grupos de campos generales del evento",
+      "observaciones": "Grupo de campos incluidos en la firma digital.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE002",
+          "pagina": 120
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trEve"
+        }
+      ]
+    },
+    {
+      "id": "GDE003",
+      "xml": "Id",
+      "nombre": "id",
+      "padre": "GDE002",
+      "tipo": "numerico",
+      "longitud": "1-10",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador del evento",
+      "observaciones": "Atributo del campo GDE002 (rEve), no elemento.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE003",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trEve atributo Id (tdIdEve, 1 a 9999999999, use=required)"
+        }
+      ]
+    },
+    {
+      "id": "GDE004",
+      "xml": "dFecFirma",
+      "nombre": "signatureDateTime",
+      "padre": "GDE002",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y Hora del firmado",
+      "observaciones": "Fecha y hora en el formato AAAA-MM-DDThh:mm:ss",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE004",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trEve/dFecFirma (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GDE005",
+      "xml": "dVerFor",
+      "nombre": "formatVersion",
+      "padre": "GDE002",
+      "tipo": "numerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Versión del formato",
+      "observaciones": "Control de versiones",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE005",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trEve/dVerFor (tVerFor: 141 o 150)"
+        }
+      ]
+    },
+    {
+      "id": "GDE006",
+      "xml": "dTiGDE",
+      "nombre": "eventTypeCode",
+      "padre": "GDE002",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Evento",
+      "observaciones": "Eventos del Emisor: 1 = Cancelación, 2 = Inutilización, 3 = Endoso (futuro). Eventos del Comprador: 10 = Acuse del DE (futuro), 11 = Conformidad del DE (futuro), 12 = Disconformidad del DE (futuro), 13 = Desconocimiento del DE (futuro). El XSD vivo no tiene el elemento: el tipo de evento lo da el hijo de gGroupTiEvt.",
+      "contradiccion": "C-601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE006",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_Types_v150.xsd tipo simple tdTiGDE (definido, sin elemento que lo use)"
+        }
+      ],
+      "catalogo": "tipo-evento"
+    },
+    {
+      "id": "GDE007",
+      "xml": "gGroupTiEvt",
+      "nombre": "eventDetail",
+      "padre": "GDE002",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Grupo de campos del tipo de evento",
+      "observaciones": "Grupo correspondiente al evento según dTiGDE. En el XSD es un xs:choice: lleva exactamente uno de rGeVeCan, rGeVeInu, rGeVeNotRec, rGeVeConf, rGeVeDisconf, rGeVeDescon, rGeVeEnd, rGeVeTr o rGEveNom.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE007",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trEve/gGroupTiEvt (tgGroupEvt, xs:choice)"
+        }
+      ]
+    },
+    {
+      "id": "GDE008",
+      "xml": "ds:Signature",
+      "nombre": "signature",
+      "padre": "GDE001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Grupo de la Firma Digital",
+      "observaciones": "Firma Digital del campo rEve (GDE001).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE008",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGesEve/ds:Signature"
+        }
+      ]
+    },
+    {
+      "id": "X-END-rGeVeEnd",
+      "xml": "rGeVeEnd",
+      "nombre": "endorsement",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Grupo de Datos que identifican al Evento de Endoso",
+      "observaciones": "Endoso de FE (evento futuro). El Manual no publica su formato; la estructura sale solo del XSD (tgGroupEvt/rGeVeEnd). Ids no oficiales (prefijo X-END-).",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114,
+          "cita": "Este evento se va detallar en versión futura del MT"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd"
+        }
+      ]
+    },
+    {
+      "id": "X-END-Id",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Codigo de Control del Documento Electronico",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/Id (tId)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-iTipRec",
+      "xml": "iTipRec",
+      "nombre": "receiverTypeCode",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Receptor",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/iTipRec (tiTipEve: 1 Contribuyente, 2 No Contribuyente)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dNomRec",
+      "xml": "dNomRec",
+      "nombre": "receiverName",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre del Receptor",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dNomRec (tdNom)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dRucRec",
+      "xml": "dRucRec",
+      "nombre": "receiverRuc",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dRucRec (tRuc)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dDVRec",
+      "xml": "dDVRec",
+      "nombre": "receiverCheckDigit",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dDVRec (tDVer)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dTipIDRec",
+      "xml": "dTipIDRec",
+      "nombre": "receiverIdDocumentTypeCode",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento de identidad del vendedor",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dTipIDRec (tiTipDoc)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dNumIDRec",
+      "xml": "dNumIDRec",
+      "nombre": "receiverIdDocumentNumber",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Numero de documento de identidad",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dNumIDRec (tdNumDocId)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dRucEmi",
+      "xml": "dRucEmi",
+      "nombre": "issuerRuc",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dRucEmi (tRuc)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dDVEmi",
+      "xml": "dDVEmi",
+      "nombre": "issuerCheckDigit",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dDVEmi (tDVer)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dNomEmi",
+      "xml": "dNomEmi",
+      "nombre": "issuerName",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre del Receptor",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dNomEmi (tdNom)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dTipEnd",
+      "xml": "dTipEnd",
+      "nombre": "endorsementTypeCode",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Endoso",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dTipEnd (tdTipEnd: 1 En Venta, 2 En Administracion)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-iTipFac",
+      "xml": "iTipFac",
+      "nombre": "factorTypeCode",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Factor",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/iTipFac (tiTipFac: 1 Contribuyente)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dNomFac",
+      "xml": "dNomFac",
+      "nombre": "factorName",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre del Receptor",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dNomFac (tdNom)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dRucFac",
+      "xml": "dRucFac",
+      "nombre": "factorRuc",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dRucFac (tRuc)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dDVFac",
+      "xml": "dDVFac",
+      "nombre": "factorCheckDigit",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dDVFac (tDVer)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dNumCon",
+      "xml": "dNumCon",
+      "nombre": "contractNumber",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "1-50",
+      "ocurrencia": "0-1",
+      "descripcion": "Numero de Contrato",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dNumCon (tdContr)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dNumRegPubCon",
+      "xml": "dNumRegPubCon",
+      "nombre": "contractPublicRegistryNumber",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "alfanumerico",
+      "longitud": "1-50",
+      "ocurrencia": "0-1",
+      "descripcion": "Numero de Contrato",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dNumRegPubCon (tdContr)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dTotalGs",
+      "xml": "dTotalGs",
+      "nombre": "operationTotalPyg",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dTotalGs (tMontoBase)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dPorDes",
+      "xml": "dPorDes",
+      "nombre": "discountRate",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo base para los atributos de porcentaje",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dPorDes (tMontoBasePorc)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dMonDesMonExt",
+      "xml": "dMonDesMonExt",
+      "nombre": "discountForeignCurrencyAmount",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dMonDesMonExt (tMontoBase)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dTipCamDesMonExt",
+      "xml": "dTipCamDesMonExt",
+      "nombre": "discountExchangeRate",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dTipCamDesMonExt (tMontoBase)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dMonDesGs",
+      "xml": "dMonDesGs",
+      "nombre": "discountAmountPyg",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dMonDesGs (tMontoBase)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "X-END-dTotOpeEndGs",
+      "xml": "dTotOpeEndGs",
+      "nombre": "endorsedOperationTotalPyg",
+      "padre": "X-END-rGeVeEnd",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "Elemento del XSD sin tabla en el Manual (endoso: evento futuro). Id no oficial.",
+      "estado": "futuro",
+      "contradiccion": "C-614",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeEnd/dTotOpeEndGs (tMontoBase)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.4",
+          "pagina": 114
+        }
+      ]
+    }
+  ]
+}

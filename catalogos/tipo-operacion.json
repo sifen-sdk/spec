@@ -1,0 +1,46 @@
+{
+  "id": "tipo-operacion",
+  "titulo": "Tipo de operación",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D202"
+    },
+    {
+      "doc": "NT014",
+      "ref": "GENFE027"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTiOpe (pattern [1-4]); Evento_Types_v150.xsd tiTiOpeEv (pattern [1-2]|[4])"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D202",
+    "GENFE027"
+  ],
+  "xml": [
+    "iTiOpe"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "B2B"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "B2C"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "B2G",
+      "observacion": "No admitido en el evento de nominación (GENFE027: 1, 2 y 4)."
+    },
+    {
+      "codigo": "4",
+      "descripcion": "B2F",
+      "observacion": "Esta última opción debe utilizarse solo en caso de servicios para empresas o personas físicas del exterior"
+    }
+  ]
+}

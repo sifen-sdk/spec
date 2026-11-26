@@ -1,0 +1,35 @@
+{
+  "id": "forma-procesamiento-pago",
+  "titulo": "Forma de procesamiento de pago con tarjeta",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E626"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiForProPa"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E626"
+  ],
+  "xml": [
+    "iForProPa"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "POS"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Pago Electrónico (Ejemplo: compras por Internet)"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Otro"
+    }
+  ]
+}

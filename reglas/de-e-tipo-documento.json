@@ -1,0 +1,18 @@
+{
+  "grupo": "E",
+  "reglas": [
+    {
+      "id": "R-E001-OB",
+      "campo": "E001",
+      "tipo": "obligatorio",
+      "texto": "Campos específicos por tipo de Documento Electrónico: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E001",
+          "pagina": 74
+        }
+      ]
+    }
+  ]
+}

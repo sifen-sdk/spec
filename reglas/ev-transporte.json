@@ -1,0 +1,1236 @@
+{
+  "grupo": "GET",
+  "reglas": [
+    {
+      "id": "R-GET002-O1",
+      "campo": "GET002",
+      "tipo": "obligatorio",
+      "texto": "El CDC del DTE es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET002",
+          "pagina": 130
+        }
+      ]
+    },
+    {
+      "id": "R-GET002-D1",
+      "campo": "GET002",
+      "tipo": "dependencia",
+      "texto": "El identificador del CDC (GET002) debe encontrarse aprobado como DTE en el SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4336",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "5. GET002 (validación nueva 4336)"
+        }
+      ]
+    },
+    {
+      "id": "R-GET003-O1",
+      "campo": "GET003",
+      "tipo": "obligatorio",
+      "texto": "El motivo del evento es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET003",
+          "pagina": 130
+        }
+      ]
+    },
+    {
+      "id": "R-GET004-D1",
+      "campo": "GET004",
+      "tipo": "dependencia",
+      "texto": "Debe haber relación entre el departamento (GET004), el distrito (GET006) y la ciudad (GET008) del local de entrega",
+      "no_declarativa": true,
+      "codigo_sifen": "4300",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4300",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "id": "R-GET004-C1",
+      "campo": "GET004",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar el código del departamento del local de la entrega (GET004)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4301",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4301",
+          "pagina": 141
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET004",
+          "pagina": 130
+        }
+      ]
+    },
+    {
+      "id": "R-GET005-C1",
+      "campo": "GET005",
+      "tipo": "condicional",
+      "texto": "Cuando se informa el código del departamento del local de la entrega (GET004), es obligatorio informar su descripción (GET005)",
+      "condicion": {
+        "campo": "GET004",
+        "op": "presente"
+      },
+      "codigo_sifen": "4302",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4302",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "id": "R-GET005-D1",
+      "campo": "GET005",
+      "tipo": "dependencia",
+      "texto": "La descripción del departamento del local de la entrega debe coincidir con lo informado en el campo GET004",
+      "no_declarativa": true,
+      "codigo_sifen": "4303",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4303",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "id": "R-GET007-C1",
+      "campo": "GET007",
+      "tipo": "condicional",
+      "texto": "Cuando se informa el código del distrito del local de la entrega (GET006), es obligatorio informar su descripción (GET007)",
+      "condicion": {
+        "campo": "GET006",
+        "op": "presente"
+      },
+      "codigo_sifen": "4304",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4304",
+          "pagina": 141
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET007",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET007-D1",
+      "campo": "GET007",
+      "tipo": "dependencia",
+      "texto": "La descripción del distrito del local de entrega debe coincidir con lo informado en el campo GET006",
+      "no_declarativa": true,
+      "codigo_sifen": "4305",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4305",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "id": "R-GET008-C1",
+      "campo": "GET008",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar el código de la ciudad del local de la entrega",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4306",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4306",
+          "pagina": 141
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET008",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET009-C1",
+      "campo": "GET009",
+      "tipo": "condicional",
+      "texto": "Cuando se informa el código de la ciudad del local de la entrega (GET008), es obligatorio informar su descripción (GET009)",
+      "condicion": {
+        "campo": "GET008",
+        "op": "presente"
+      },
+      "codigo_sifen": "4307",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4307",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "id": "R-GET009-D1",
+      "campo": "GET009",
+      "tipo": "dependencia",
+      "texto": "La descripción de la ciudad del local de la entrega debe coincidir con lo informado en el campo GET008",
+      "no_declarativa": true,
+      "codigo_sifen": "4308",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4308",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "id": "R-GET010-C1",
+      "campo": "GET010",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar la dirección del local de la entrega (GET010)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4309",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4309",
+          "pagina": 141
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET010",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET011-C1",
+      "campo": "GET011",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar el número de casa del local de la entrega (GET011)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4310",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4310",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET011",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET012-OP1",
+      "campo": "GET012",
+      "tipo": "opcional",
+      "texto": "El complemento de dirección es opcional (Opcional si GET003=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET012",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET013-C1",
+      "campo": "GET013",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es Cambio del chofer (GET003=2), es obligatorio informar el nombre y apellido del chofer (GET013)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4311",
+      "contradiccion": "C-605",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4311",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET013",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET014-C1",
+      "campo": "GET014",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es Cambio del chofer (GET003=2), es obligatorio informar el número de documento de identidad del chofer (GET014)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4312",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4312",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET014",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET015-C1",
+      "campo": "GET015",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es Cambio del transportista (GET003=3), es obligatorio informar la naturaleza del transportista (GET015)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "3"
+      },
+      "codigo_sifen": "4313",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4313",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET015",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET016-C1",
+      "campo": "GET016",
+      "tipo": "condicional",
+      "texto": "Se requiere informar el número de RUC si la naturaleza del transportista es igual a contribuyente (GET015 = 1)",
+      "condicion": {
+        "campo": "GET015",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4314",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4314",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET016",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET016-P1",
+      "campo": "GET016",
+      "tipo": "prohibido",
+      "texto": "Si la naturaleza del transportista es distinta a contribuyente (GET015 ≠ 1) el RUC del transportista (GET016) no debe ser informado",
+      "condicion": {
+        "campo": "GET015",
+        "op": "distinto",
+        "valor": "1"
+      },
+      "codigo_sifen": "4317",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4317",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET016",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET016-D1",
+      "campo": "GET016",
+      "tipo": "dependencia",
+      "texto": "El RUC del transportista informado debe existir en la base de datos de Marangatu",
+      "no_declarativa": true,
+      "codigo_sifen": "4315",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4315",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "id": "R-GET016-D2",
+      "campo": "GET016",
+      "tipo": "dependencia",
+      "texto": "El RUC del transportista debe contar con un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL en Marangatu al momento de la emisión del DE",
+      "no_declarativa": true,
+      "codigo_sifen": "4316",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4316",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "id": "R-GET017-C1",
+      "campo": "GET017",
+      "tipo": "condicional",
+      "texto": "Obligatorio si GET015 = 1",
+      "condicion": {
+        "campo": "GET015",
+        "op": "igual",
+        "valor": "1"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET017",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET017-P1",
+      "campo": "GET017",
+      "tipo": "prohibido",
+      "texto": "No informar si GET015 ≠ 1",
+      "condicion": {
+        "campo": "GET015",
+        "op": "distinto",
+        "valor": "1"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET017",
+          "pagina": 131
+        }
+      ]
+    },
+    {
+      "id": "R-GET017-F1",
+      "campo": "GET017",
+      "tipo": "formato",
+      "texto": "El Dígito Verificador ingresado (GET017) debe corresponder al módulo 11 del RUC (GET016)",
+      "codigo_sifen": "4318",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4318",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "id": "R-GET018-C1",
+      "campo": "GET018",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio del transportista (GET003=3), es obligatorio informar el nombre o razón social del transportista (GET018)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "3"
+      },
+      "codigo_sifen": "4319",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4319",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET018",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET019-C1",
+      "campo": "GET019",
+      "tipo": "condicional",
+      "texto": "Se requiere informar el tipo de documento de identidad si la naturaleza del transportista es igual a NO contribuyente (GET015 =2)",
+      "condicion": {
+        "campo": "GET015",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4320",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4320",
+          "pagina": 142
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET019",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET019-P1",
+      "campo": "GET019",
+      "tipo": "prohibido",
+      "texto": "Si la naturaleza del transportista es igual a contribuyente (GET015 =1) el tipo de documento de identidad del transportista (GET019) no debe ser informado",
+      "condicion": {
+        "campo": "GET015",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4321",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4321",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET019",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET020-C1",
+      "campo": "GET020",
+      "tipo": "condicional",
+      "texto": "Si se informa el código de tipo de documento de identidad del transportista (GET019), es obligatorio indicar la descripción del mismo (GET020)",
+      "condicion": {
+        "campo": "GET019",
+        "op": "presente"
+      },
+      "codigo_sifen": "4322",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4322",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET020",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET020-D1",
+      "campo": "GET020",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de documento de identidad del transportista (GET020) debe coincidir con lo informado en el campo GET019",
+      "no_declarativa": true,
+      "codigo_sifen": "4323",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4323",
+          "pagina": 143
+        }
+      ]
+    },
+    {
+      "id": "R-GET021-C1",
+      "campo": "GET021",
+      "tipo": "condicional",
+      "texto": "Si se informa el código de tipo de documento de identidad del transportista (GET019), el número de dicho documento es requerido",
+      "condicion": {
+        "campo": "GET019",
+        "op": "presente"
+      },
+      "codigo_sifen": "4324",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4324",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET021",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET022-C1",
+      "campo": "GET022",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de transporte (GET022)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4313",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4313",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET022",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET022-C1-NT18",
+      "campo": "GET022",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de transporte (GET022)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4325",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET022 (código 4325)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET022",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET023-C1",
+      "campo": "GET023",
+      "tipo": "condicional",
+      "texto": "Cuando se informa el código de tipo de transporte (GET022), es obligatorio informar la descripción del tipo de transporte (GET023)",
+      "condicion": {
+        "campo": "GET022",
+        "op": "presente"
+      },
+      "codigo_sifen": "4314",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4314",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET023",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET023-C1-NT18",
+      "campo": "GET023",
+      "tipo": "condicional",
+      "texto": "Cuando se informa el código de tipo de transporte (GET022), es obligatorio informar la descripción del tipo de transporte (GET023)",
+      "condicion": {
+        "campo": "GET022",
+        "op": "presente"
+      },
+      "codigo_sifen": "4326",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET023 (código 4326)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET023",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET023-D1",
+      "campo": "GET023",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de transporte debe coincidir con lo informado en el campo GET022",
+      "no_declarativa": true,
+      "codigo_sifen": "4315",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4315",
+          "pagina": 143
+        }
+      ]
+    },
+    {
+      "id": "R-GET023-D1-NT18",
+      "campo": "GET023",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de transporte debe coincidir con lo informado en el campo GET022",
+      "no_declarativa": true,
+      "codigo_sifen": "4327",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET023 (código 4327)"
+        }
+      ]
+    },
+    {
+      "id": "R-GET024-C1",
+      "campo": "GET024",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la modalidad del transporte (GET024)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4316",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4316",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET024",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET024-C1-NT18",
+      "campo": "GET024",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la modalidad del transporte (GET024)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4328",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET024 (código 4328)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET024",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET025-C1",
+      "campo": "GET025",
+      "tipo": "condicional",
+      "texto": "Cuando se informa el código de la modalidad del transporte (GET024), es obligatorio informar la descripción de la modalidad del transporte (GET025)",
+      "condicion": {
+        "campo": "GET024",
+        "op": "presente"
+      },
+      "codigo_sifen": "4317",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4317",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET025",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET025-C1-NT18",
+      "campo": "GET025",
+      "tipo": "condicional",
+      "texto": "Cuando se informa el código de la modalidad del transporte (GET024), es obligatorio informar la descripción de la modalidad del transporte (GET025)",
+      "condicion": {
+        "campo": "GET024",
+        "op": "presente"
+      },
+      "codigo_sifen": "4329",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET025 (código 4329)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET025",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET025-D1",
+      "campo": "GET025",
+      "tipo": "dependencia",
+      "texto": "La descripción de la modalidad del transporte debe coincidir con lo informado en el campo GET024",
+      "no_declarativa": true,
+      "codigo_sifen": "4318",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4318",
+          "pagina": 143
+        }
+      ]
+    },
+    {
+      "id": "R-GET025-D1-NT18",
+      "campo": "GET025",
+      "tipo": "dependencia",
+      "texto": "La descripción de la modalidad del transporte debe coincidir con lo informado en el campo GET024",
+      "no_declarativa": true,
+      "codigo_sifen": "4330",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET025 (código 4330)"
+        }
+      ]
+    },
+    {
+      "id": "R-GET026-C1",
+      "campo": "GET026",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de vehículo (GET026)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4319",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4319",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET026",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET026-C1-NT18",
+      "campo": "GET026",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de vehículo (GET026)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4331",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET026 (código 4331)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET026",
+          "pagina": 132
+        }
+      ]
+    },
+    {
+      "id": "R-GET027-C1",
+      "campo": "GET027",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la marca del vehículo (GET027)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4320",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4320",
+          "pagina": 143
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET027",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET027-C1-NT18",
+      "campo": "GET027",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la marca del vehículo (GET027)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4332",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET027 (código 4332)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET027",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET028-C1",
+      "campo": "GET028",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de identificación del vehículo (GET028)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4321",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4321",
+          "pagina": 144
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET028",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET028-C1-NT18",
+      "campo": "GET028",
+      "tipo": "condicional",
+      "texto": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de identificación del vehículo (GET028)",
+      "condicion": {
+        "campo": "GET003",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "4333",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET028 (código 4333)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET028",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET029-C1",
+      "campo": "GET029",
+      "tipo": "condicional",
+      "texto": "Se requiere el número de identificación del vehículo cuando el tipo de identificación del vehículo es 1 (GET028=1)",
+      "condicion": {
+        "campo": "GET028",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4322",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4322",
+          "pagina": 144
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET029",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET029-C1-NT18",
+      "campo": "GET029",
+      "tipo": "condicional",
+      "texto": "Se requiere el número de identificación del vehículo cuando el tipo de identificación del vehículo es 1 (GET028=1)",
+      "condicion": {
+        "campo": "GET028",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4334",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET029 (código 4334)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET029",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET030-C1",
+      "campo": "GET030",
+      "tipo": "condicional",
+      "texto": "Se requiere número de matrícula del vehículo cuando el tipo de identificación del vehículo es 2 (GET028=2)",
+      "condicion": {
+        "campo": "GET028",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4323",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4323",
+          "pagina": 144
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET030",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET030-C1-NT18",
+      "campo": "GET030",
+      "tipo": "condicional",
+      "texto": "Se requiere número de matrícula del vehículo cuando el tipo de identificación del vehículo es 2 (GET028=2)",
+      "condicion": {
+        "campo": "GET028",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4335",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4. GET030 (código 4335)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GET030",
+          "pagina": 133
+        }
+      ]
+    },
+    {
+      "id": "R-GET026-D1",
+      "campo": "GET026",
+      "tipo": "dependencia",
+      "texto": "Descripción debe ser acorde con el campo GET024",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET026",
+          "pagina": 132
+        }
+      ]
+    }
+  ]
+}

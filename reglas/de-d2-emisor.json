@@ -1,0 +1,821 @@
+{
+  "grupo": "D2",
+  "reglas": [
+    {
+      "id": "R-D100-O1",
+      "campo": "D100",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D100"
+        }
+      ]
+    },
+    {
+      "id": "R-D101-O1",
+      "campo": "D101",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D101"
+        }
+      ]
+    },
+    {
+      "id": "R-D101-F1",
+      "campo": "D101",
+      "tipo": "formato",
+      "texto": "Debe corresponder al RUC del certificado digital utilizado para firmar el DE",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D101",
+          "cita": "Debe corresponder al RUC del certificado digital utilizado para firmar el DE"
+        }
+      ]
+    },
+    {
+      "id": "R-D101-F2",
+      "campo": "D101",
+      "tipo": "formato",
+      "texto": "El RUC informado debe existir en la base de datos",
+      "no_declarativa": true,
+      "codigo_sifen": "1250",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1250"
+        }
+      ]
+    },
+    {
+      "id": "R-D101-F3",
+      "campo": "D101",
+      "tipo": "formato",
+      "texto": "El RUC debe estar habilitado para facturación electrónica en Marangatu",
+      "no_declarativa": true,
+      "codigo_sifen": "1251",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1251"
+        },
+        {
+          "doc": "NT004",
+          "ref": "1.1 D101a 1251 (se elimina la validación)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-D101-F4",
+      "campo": "D101",
+      "tipo": "formato",
+      "texto": "El RUC del contribuyente debe contar con un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL en Marangatu al momento de la emisión del DE",
+      "no_declarativa": true,
+      "codigo_sifen": "1252",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1252"
+        }
+      ]
+    },
+    {
+      "id": "R-D101-F5",
+      "campo": "D101",
+      "tipo": "formato",
+      "texto": "El RUC del emisor debe estar habilitado para utilizar el servicio síncrono",
+      "no_declarativa": true,
+      "codigo_sifen": "1264",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1264"
+        }
+      ]
+    },
+    {
+      "id": "R-D102-O1",
+      "campo": "D102",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D102"
+        }
+      ]
+    },
+    {
+      "id": "R-D102-F1",
+      "campo": "D102",
+      "tipo": "formato",
+      "texto": "El dígito verificador debe corresponder al módulo 11 del RUC (D101)",
+      "no_declarativa": true,
+      "codigo_sifen": "1253",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D102",
+          "cita": "Según algoritmo módulo 11"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1253"
+        }
+      ]
+    },
+    {
+      "id": "R-D103-O1",
+      "campo": "D103",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D103"
+        }
+      ]
+    },
+    {
+      "id": "R-D104-OP",
+      "campo": "D104",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D104"
+        }
+      ]
+    },
+    {
+      "id": "R-D105-O1",
+      "campo": "D105",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D105"
+        }
+      ]
+    },
+    {
+      "id": "R-D105-F1",
+      "campo": "D105",
+      "tipo": "formato",
+      "texto": "En el ambiente de prueba debe contener el literal \"DE generado en ambiente de prueba - sin valor comercial ni fiscal\"; ese texto no se debe utilizar en el ambiente de producción",
+      "no_declarativa": true,
+      "codigo_sifen": "1263",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D105",
+          "cita": "debe contener obligatoriamente el literal \"DE generado en ambiente de prueba - sin valor comercial ni fiscal\""
+        },
+        {
+          "doc": "MT150",
+          "ref": "1263"
+        }
+      ]
+    },
+    {
+      "id": "R-D106-OP",
+      "campo": "D106",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D106"
+        }
+      ]
+    },
+    {
+      "id": "R-D106-F9",
+      "campo": "D106",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D106",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D107-O1",
+      "campo": "D107",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D107"
+        }
+      ]
+    },
+    {
+      "id": "R-D107-F9",
+      "campo": "D107",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D107",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D108-O1",
+      "campo": "D108",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D108"
+        }
+      ]
+    },
+    {
+      "id": "R-D108-F1",
+      "campo": "D108",
+      "tipo": "formato",
+      "texto": "Si no tiene numeración, colocar 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D108",
+          "cita": "Si no tiene numeración, colocar 0 (cero)"
+        }
+      ]
+    },
+    {
+      "id": "R-D108-F9",
+      "campo": "D108",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D108",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D109-OP",
+      "campo": "D109",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D109"
+        }
+      ]
+    },
+    {
+      "id": "R-D110-OP",
+      "campo": "D110",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D110"
+        }
+      ]
+    },
+    {
+      "id": "R-D111-O1",
+      "campo": "D111",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D111"
+        }
+      ]
+    },
+    {
+      "id": "R-D111-F9",
+      "campo": "D111",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D111",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D111-F1",
+      "campo": "D111",
+      "tipo": "formato",
+      "texto": "Debe haber relación entre el departamento (D111), el distrito (D113) y la ciudad (D115)",
+      "no_declarativa": true,
+      "codigo_sifen": "1255",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1255"
+        }
+      ]
+    },
+    {
+      "id": "R-D112-O1",
+      "campo": "D112",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D112"
+        }
+      ]
+    },
+    {
+      "id": "R-D112-D1",
+      "campo": "D112",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con lo informado en el campo D111",
+      "codigo_sifen": "1254",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D112"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1254"
+        }
+      ]
+    },
+    {
+      "id": "R-D112-F9",
+      "campo": "D112",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D112",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D113-OP",
+      "campo": "D113",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D113"
+        }
+      ]
+    },
+    {
+      "id": "R-D113-F9",
+      "campo": "D113",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D113",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D114-C1",
+      "campo": "D114",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el campo D113",
+      "condicion": {
+        "campo": "D113",
+        "op": "presente"
+      },
+      "codigo_sifen": "1256",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D114",
+          "cita": "Obligatorio si existe el campo D113"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1256"
+        }
+      ]
+    },
+    {
+      "id": "R-D114-D1",
+      "campo": "D114",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con lo informado en el campo D113",
+      "codigo_sifen": "1257",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1257"
+        }
+      ]
+    },
+    {
+      "id": "R-D114-F9",
+      "campo": "D114",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D114",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D115-O1",
+      "campo": "D115",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D115"
+        }
+      ]
+    },
+    {
+      "id": "R-D115-F9",
+      "campo": "D115",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D115",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D115-F1",
+      "campo": "D115",
+      "tipo": "formato",
+      "texto": "El código de la ciudad de emisión debe corresponder al departamento seleccionado (D111)",
+      "no_declarativa": true,
+      "codigo_sifen": "1258",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1258"
+        }
+      ]
+    },
+    {
+      "id": "R-D115-F2",
+      "campo": "D115",
+      "tipo": "formato",
+      "texto": "El código de la ciudad de emisión debe corresponder al distrito seleccionado (D113); no se aplica si no se informó el distrito",
+      "no_declarativa": true,
+      "codigo_sifen": "1259",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1259"
+        }
+      ]
+    },
+    {
+      "id": "R-D116-O1",
+      "campo": "D116",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D116"
+        }
+      ]
+    },
+    {
+      "id": "R-D116-D1",
+      "campo": "D116",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con lo informado en el campo D115",
+      "codigo_sifen": "1260",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D116"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1260"
+        }
+      ]
+    },
+    {
+      "id": "R-D116-F9",
+      "campo": "D116",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D116",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D117-O1",
+      "campo": "D117",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D117"
+        }
+      ]
+    },
+    {
+      "id": "R-D117-F1",
+      "campo": "D117",
+      "tipo": "formato",
+      "texto": "Debe incluir el prefijo de la ciudad",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D117",
+          "cita": "Debe incluir el prefijo de la ciudad"
+        }
+      ]
+    },
+    {
+      "id": "R-D117-F9",
+      "campo": "D117",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D117",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D118-O1",
+      "campo": "D118",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D118"
+        }
+      ]
+    },
+    {
+      "id": "R-D118-F9",
+      "campo": "D118",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D118",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D119-OP",
+      "campo": "D119",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D119"
+        }
+      ]
+    },
+    {
+      "id": "R-D130-O1",
+      "campo": "D130",
+      "tipo": "obligatorio",
+      "texto": "Se informa al menos una vez y hasta 9 veces (ocurrencia 1-9)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D130"
+        }
+      ]
+    },
+    {
+      "id": "R-D131-O1",
+      "campo": "D131",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D131"
+        }
+      ]
+    },
+    {
+      "id": "R-D131-F1",
+      "campo": "D131",
+      "tipo": "formato",
+      "texto": "La actividad económica debe corresponder a lo declarado en el RUC",
+      "no_declarativa": true,
+      "codigo_sifen": "1261",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D131",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1261"
+        }
+      ]
+    },
+    {
+      "id": "R-D132-O1",
+      "campo": "D132",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D132"
+        }
+      ]
+    },
+    {
+      "id": "R-D132-D1",
+      "campo": "D132",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con el código de actividad económica informado (el Manual cita el campo D120, inexistente; el código del grupo es D131)",
+      "codigo_sifen": "1262",
+      "contradiccion": "C-108",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D132",
+          "cita": "Referente al campo D120"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1262",
+          "cita": "no coincidente con lo informado en el campo D120"
+        }
+      ]
+    },
+    {
+      "id": "R-D132-F9",
+      "campo": "D132",
+      "tipo": "formato",
+      "texto": "Debe corresponder a lo declarado en el RUC del emisor (verificación de SIFEN contra su base de datos)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D132",
+          "cita": "Debe corresponder a lo declarado en el RUC"
+        }
+      ]
+    },
+    {
+      "id": "R-D140-OP",
+      "campo": "D140",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (ocurrencia 0-1, sin condición documentada)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D140"
+        }
+      ]
+    },
+    {
+      "id": "R-D141-O1",
+      "campo": "D141",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D141"
+        }
+      ]
+    },
+    {
+      "id": "R-D142-O1",
+      "campo": "D142",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D142"
+        }
+      ]
+    },
+    {
+      "id": "R-D142-D1",
+      "campo": "D142",
+      "tipo": "dependencia",
+      "texto": "La descripción debe coincidir con lo informado en el campo D141 (1= \"Cédula paraguaya\", 2= \"Pasaporte\", 3= \"Cédula extranjera\", 4= \"Carnet de residencia\"); si D141 = 9 se informa el tipo de documento de identidad del responsable",
+      "codigo_sifen": "1265",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D142"
+        },
+        {
+          "doc": "NT010",
+          "ref": "2.2 D142 1265"
+        }
+      ]
+    },
+    {
+      "id": "R-D143-O1",
+      "campo": "D143",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D143"
+        }
+      ]
+    },
+    {
+      "id": "R-D144-O1",
+      "campo": "D144",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D144"
+        }
+      ]
+    },
+    {
+      "id": "R-D145-O1",
+      "campo": "D145",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D145"
+        }
+      ]
+    }
+  ]
+}

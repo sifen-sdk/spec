@@ -1,0 +1,40 @@
+{
+  "id": "tipo-constancia",
+  "titulo": "Tipo de constancia",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "H014"
+    },
+    {
+      "doc": "MT150",
+      "ref": "H015"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tdTipCons, tdDesTipCons"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "H014",
+    "H015"
+  ],
+  "descripciones": {
+    "H014": "H015"
+  },
+  "xml": [
+    "iTipCons",
+    "dDesTipCons"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Constancia de no ser contribuyente"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Constancia de microproductores"
+    }
+  ]
+}

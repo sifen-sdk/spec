@@ -3,7 +3,8 @@
 **Propósito.** Lo que SIFEN exige de cada campo, expresado como datos. Los SDK aplican estas reglas antes de
 enviar; no tienen reglas propias.
 
-**Estado.** Sin datos. Se carga en la fase 1.
+**Estado.** Cargadas: obligatoriedad, condiciones, dependencias, formato y fórmulas del documento electrónico, los
+eventos y los web services, con su vigencia por Nota Técnica.
 
 ## Principio
 

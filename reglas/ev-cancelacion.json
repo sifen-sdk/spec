@@ -1,0 +1,245 @@
+{
+  "grupo": "GEC",
+  "reglas": [
+    {
+      "id": "R-GEC001-C1",
+      "campo": "GEC001",
+      "tipo": "condicional",
+      "texto": "El grupo de cancelación es obligatorio si dTiGDE=1 (Cancelación)",
+      "condicion": {
+        "campo": "GDE006",
+        "op": "igual",
+        "valor": "1"
+      },
+      "contradiccion": "C-601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEC001",
+          "pagina": 121
+        }
+      ]
+    },
+    {
+      "id": "R-GEC001-D1",
+      "campo": "GEC001",
+      "tipo": "dependencia",
+      "texto": "El evento de cancelación lo solicita el emisor: el RUC del certificado utilizado para firmar los eventos sobre DE y DTE debe corresponder al emisor electrónico",
+      "no_declarativa": true,
+      "codigo_sifen": "4006",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4006",
+          "pagina": 134
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.1.2",
+          "pagina": 113
+        }
+      ]
+    },
+    {
+      "id": "R-GEC001-D2",
+      "campo": "GEC001",
+      "tipo": "dependencia",
+      "texto": "La cancelación procede sobre un DTE en SIFEN en situación Aprobado o Aprobado con observación (por extemporaneidad); para un DTE que tenga otros DTEs asociados se debe realizar la cancelación del último DTE hasta llegar al inicial",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GEC002-O1",
+      "campo": "GEC002",
+      "tipo": "obligatorio",
+      "texto": "El CDC del DTE a cancelar es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEC002",
+          "pagina": 121
+        }
+      ]
+    },
+    {
+      "id": "R-GEC002-F1",
+      "campo": "GEC002",
+      "tipo": "formato",
+      "texto": "El CDC debe contar con los 44 caracteres según las reglas de estructuración del CDC (longitud, orden de los campos del CDC, formato de la fecha y dígito verificador)",
+      "codigo_sifen": "4001",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4001",
+          "pagina": 134
+        }
+      ]
+    },
+    {
+      "id": "R-GEC002-D1",
+      "campo": "GEC002",
+      "tipo": "dependencia",
+      "texto": "El CDC debe encontrarse aprobado como DTE en SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4002",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4002",
+          "pagina": 134
+        }
+      ]
+    },
+    {
+      "id": "R-GEC002-D2",
+      "campo": "GEC002",
+      "tipo": "dependencia",
+      "texto": "El DTE no debe tener ya el mismo evento que se está requiriendo nuevamente (duplicidad)",
+      "no_declarativa": true,
+      "codigo_sifen": "4003",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4003",
+          "pagina": 134
+        }
+      ]
+    },
+    {
+      "id": "R-GEC002-D3",
+      "campo": "GEC002",
+      "tipo": "dependencia",
+      "texto": "Cuando el último evento del receptor sobre el CDC es una confirmación parcial o total, no se permite la cancelación por parte del emisor",
+      "no_declarativa": true,
+      "codigo_sifen": "4004",
+      "vigencia": {
+        "hasta": {
+          "test": "2025-04-28",
+          "produccion": "2025-04-28"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4004",
+          "pagina": 134
+        },
+        {
+          "doc": "NT025",
+          "ref": "GEC002c (se excluye la validación 4004)"
+        }
+      ]
+    },
+    {
+      "id": "R-GEC003-O1",
+      "campo": "GEC003",
+      "tipo": "obligatorio",
+      "texto": "Se requiere informar la justificativa de la cancelación (campo texto libre)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEC003",
+          "pagina": 121
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GDE005-CAN-F1",
+      "campo": "GDE005",
+      "tipo": "formato",
+      "texto": "La versión del formato del evento (GDE005) debe corresponder a la versión vigente",
+      "codigo_sifen": "4000",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4000",
+          "pagina": 134
+        }
+      ]
+    },
+    {
+      "id": "R-GDE008-CAN-D1",
+      "campo": "GDE008",
+      "tipo": "dependencia",
+      "texto": "En la cancelación, el certificado que se utilizó para firmar el evento no debe estar revocado en la fecha de firma digital (GDE004)",
+      "no_declarativa": true,
+      "codigo_sifen": "4007",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4007",
+          "pagina": 134
+        }
+      ]
+    },
+    {
+      "id": "R-GDE004-CAN-D1",
+      "campo": "GDE004",
+      "tipo": "dependencia",
+      "texto": "En la cancelación, la fecha y hora de firma digital del evento no puede ser posterior a la Fecha y hora de aprobación en el SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4008",
+      "contradiccion": "C-619",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4008",
+          "pagina": 134
+        }
+      ]
+    },
+    {
+      "id": "R-GDE004-CAN-P1",
+      "campo": "GDE004",
+      "tipo": "dependencia",
+      "texto": "Plazo de cancelación de una Factura electrónica: cuando el tipo de documento es Factura electrónica (GEC002 inicia en 01), la fecha y hora de firma digital del evento (GDE004) de cancelación no puede superar el plazo límite de 48 hs contadas desde la fecha y hora de aprobación en el SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4009",
+      "contradiccion": "C-618",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4009",
+          "pagina": 134
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GDE004-CAN-P2",
+      "campo": "GDE004",
+      "tipo": "dependencia",
+      "texto": "Plazo de cancelación distinto a una FE: cuando el tipo de documento es Autofactura electrónica, Nota de crédito, Nota de débito o Nota de remisión (GEC002 inicia en 04, 05, 06 o 07), la fecha y hora de firma digital del evento (GDE004) de cancelación no puede superar el plazo límite de 168 hs contadas desde la fecha y hora de aprobación en el SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "4010",
+      "contradiccion": "C-618",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4010",
+          "pagina": 134
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    }
+  ]
+}

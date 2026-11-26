@@ -1,0 +1,546 @@
+{
+  "respuestas": [
+    {
+      "codigo": "0200",
+      "servicio": "recepcion",
+      "mensaje": "Mensaje de datos de entrada del WS siRecepDE superior a 1000 KB",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BA01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0200",
+          "pagina": 155
+        }
+      ]
+    },
+    {
+      "codigo": "0260",
+      "servicio": "recepcion",
+      "mensaje": "Autorización del DE satisfactoria",
+      "clase": "aprobacion",
+      "accion": "ninguna",
+      "efecto": "N",
+      "id_validacion": "BC01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0260",
+          "pagina": 155
+        }
+      ]
+    },
+    {
+      "codigo": "0270",
+      "servicio": "lote",
+      "mensaje": "Mensaje de datos de entrada del WS siRecepLoteDE superior a 10.000 KB.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BD01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0270",
+          "pagina": 156
+        }
+      ]
+    },
+    {
+      "codigo": "0300",
+      "servicio": "lote",
+      "mensaje": "Lote recibido con éxito",
+      "clase": "aprobacion",
+      "accion": "consultar-mas-tarde",
+      "efecto": "A",
+      "id_validacion": "BF01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0300",
+          "pagina": 156
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Recomendaciones 2.a; recibe-lote, Response",
+          "cita": "Lote recibido con éxito (0300), el lote será procesado, se debe consultar el estado"
+        }
+      ]
+    },
+    {
+      "codigo": "0301",
+      "servicio": "lote",
+      "mensaje": "Lote no encolado para procesamiento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BF02",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0301",
+          "pagina": 156
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Lote no encolado para procesamiento",
+          "cita": "Lote no encolado para procesamiento (0301), el lote NO será procesado"
+        }
+      ],
+      "contradiccion": "C-816"
+    },
+    {
+      "codigo": "0320",
+      "servicio": "consulta-lote",
+      "mensaje": "Mensaje de datos de entrada del WS siResultLoteDE superior a 1000 KB.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BG01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0320",
+          "pagina": 157
+        }
+      ]
+    },
+    {
+      "codigo": "0340",
+      "servicio": "consulta-lote",
+      "mensaje": "RUC del certificado de conexión no autorizado a consultar el lote",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BH01",
+      "validacion": "El resultado del procesamiento del lote solo puede ser consultado por el RUC que realizó la transmisión del mismo.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0340",
+          "pagina": 157
+        }
+      ]
+    },
+    {
+      "codigo": "0360",
+      "servicio": "consulta-lote",
+      "mensaje": "Número del Lote inexistente",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BI01",
+      "validacion": "No existe número de lote consultado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0360",
+          "pagina": 157,
+          "cita": "Lote inexistente"
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla F",
+          "pagina": 50,
+          "cita": "0360 (Número del Lote inexistente)"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta-lote, Response",
+          "cita": "No existe número de lote consultado. 0360 Número del Lote inexistente"
+        }
+      ],
+      "contradiccion": "C-803"
+    },
+    {
+      "codigo": "0361",
+      "servicio": "consulta-lote",
+      "mensaje": "Lote en procesamiento",
+      "clase": "en_proceso",
+      "accion": "consultar-mas-tarde",
+      "efecto": "R",
+      "id_validacion": "BI02",
+      "validacion": "No se ha culminado el procesamiento de los DE del lote consultado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0361",
+          "pagina": 157
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla F",
+          "pagina": 50
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta-lote, Response",
+          "cita": "Debe consultar nuevamente el lote, se sugiere consultar a intervalos mínimos de 10 minutos."
+        }
+      ],
+      "contradiccion": "C-806"
+    },
+    {
+      "codigo": "0362",
+      "servicio": "consulta-lote",
+      "mensaje": "Procesamiento de lote concluido",
+      "clase": "aprobacion",
+      "efecto": "A",
+      "id_validacion": "BI03",
+      "validacion": "Éxito en la consulta",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0362",
+          "pagina": 157
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla F",
+          "pagina": 50
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta-lote, Response",
+          "cita": "4. Éxito en la consulta. 0362 Procesamiento de lote concluido."
+        }
+      ],
+      "contradiccion": "C-815"
+    },
+    {
+      "codigo": "0363",
+      "servicio": "consulta-lote",
+      "mensaje": "Lotes con tipos distintos de DE",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BI04",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0363",
+          "pagina": 157,
+          "cita": "B104 Lotes con tipos distintos de DE 0363"
+        }
+      ]
+    },
+    {
+      "codigo": "0364",
+      "servicio": "consulta-lote",
+      "mensaje": "Consulta extemporánea de Lote",
+      "clase": "informativo",
+      "validacion": "La consulta del lote contempla un plazo de hasta 48 horas posteriores al envío del mismo. Una vez superado el tiempo, deberá consultar cada CDC del lote mediante la WS Consulta DE",
+      "fuentes": [
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta-lote, Response",
+          "cita": "3. Consulta extemporánea de Lote. 0364"
+        }
+      ],
+      "contradiccion": "C-807"
+    },
+    {
+      "codigo": "0380",
+      "servicio": "consulta-de",
+      "mensaje": "Mensaje de datos de entrada del WS siConsDE superior a 1000 KB.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BJ01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0380",
+          "pagina": 157
+        }
+      ]
+    },
+    {
+      "codigo": "0420",
+      "servicio": "consulta-de",
+      "mensaje": "CDC inexistente",
+      "clase": "informativo",
+      "id_validacion": "BL01",
+      "validacion": "No existe DE consultado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0420",
+          "pagina": 158
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla G",
+          "pagina": 52,
+          "cita": "0420=CDC inexistente"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta, Response",
+          "cita": "0420 El DE no existe o no está aprobado, se debe volver a enviar el DE para su procesamiento"
+        }
+      ],
+      "contradiccion": "C-804"
+    },
+    {
+      "codigo": "0421",
+      "servicio": "consulta-de",
+      "mensaje": "RUC Certificado sin permiso",
+      "clase": "informativo",
+      "id_validacion": "BL02",
+      "validacion": "RUC del certificado utilizado en la conexión no tiene permiso para consultar el DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla G",
+          "pagina": 52,
+          "cita": "0421=RUC Certificado sin permiso"
+        },
+        {
+          "doc": "MT150",
+          "ref": "0421",
+          "pagina": 158,
+          "cita": "BL02 CDC Encontrado 0421"
+        }
+      ],
+      "contradiccion": "C-802"
+    },
+    {
+      "codigo": "0422",
+      "servicio": "consulta-de",
+      "mensaje": "CDC encontrado",
+      "clase": "aprobacion",
+      "accion": "ninguna",
+      "validacion": "Éxito en la consulta",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla G",
+          "pagina": 52,
+          "cita": "0422=CDC encontrado"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta, Response",
+          "cita": "0422 Existe como DTE, está aprobado, se responde el contenido XML del DE en “xContenDE”"
+        }
+      ],
+      "contradiccion": "C-802"
+    },
+    {
+      "codigo": "0460",
+      "servicio": "consulta-ruc",
+      "mensaje": "Mensaje de datos de entrada del WS siConsRUC superior a 1000 KB.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BM01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0460",
+          "pagina": 158
+        }
+      ]
+    },
+    {
+      "codigo": "0500",
+      "servicio": "consulta-ruc",
+      "mensaje": "RUC no existe",
+      "clase": "informativo",
+      "id_validacion": "BO01",
+      "validacion": "El RUC consultado no existe en el Sistema",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla H",
+          "pagina": 55,
+          "cita": "0500=RUC no existe"
+        },
+        {
+          "doc": "MT150",
+          "ref": "0500",
+          "pagina": 158,
+          "cita": "BO01 RUC inexistente 0500"
+        }
+      ],
+      "contradiccion": "C-805"
+    },
+    {
+      "codigo": "0501",
+      "servicio": "consulta-ruc",
+      "mensaje": "RUC sin permiso consulta WS",
+      "clase": "informativo",
+      "id_validacion": "BO02",
+      "validacion": "RUC no tiene permiso para utilizar el WS",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla H",
+          "pagina": 55,
+          "cita": "0501=RUC sin permiso consulta WS"
+        },
+        {
+          "doc": "MT150",
+          "ref": "0501",
+          "pagina": 158
+        }
+      ],
+      "contradiccion": "C-805"
+    },
+    {
+      "codigo": "0502",
+      "servicio": "consulta-ruc",
+      "mensaje": "RUC encontrado",
+      "clase": "informativo",
+      "id_validacion": "BO03",
+      "validacion": "Éxito en la consulta",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla H",
+          "pagina": 55,
+          "cita": "0502=RUC encontrado"
+        },
+        {
+          "doc": "MT150",
+          "ref": "0502",
+          "pagina": 159
+        }
+      ],
+      "contradiccion": "C-805"
+    },
+    {
+      "codigo": "0520",
+      "servicio": "consulta-masiva-ruc",
+      "mensaje": "Archivo encontrado",
+      "clase": "informativo",
+      "id_validacion": "BO04",
+      "validacion": "Devuelve el archivo",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.2 Tabla L",
+          "cita": "0520=Archivo encontrado"
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7.1 BO04",
+          "cita": "Devuelve el archivo"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "contradiccion": "C-814"
+    },
+    {
+      "codigo": "0521",
+      "servicio": "consulta-masiva-ruc",
+      "mensaje": "Archivo no encontrado",
+      "clase": "informativo",
+      "id_validacion": "BO05",
+      "validacion": "No se encontró el archivo generado en el día",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.2 Tabla L",
+          "cita": "0521=Archivo no encontrado"
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7.1 BO05",
+          "cita": "No se encontró el archivo generado en el día"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "contradiccion": "C-814"
+    },
+    {
+      "codigo": "0522",
+      "servicio": "consulta-masiva-ruc",
+      "mensaje": "Ha sobrepasado el límite de descargas para el archivo solicitado",
+      "clase": "informativo",
+      "id_validacion": "BO06",
+      "validacion": "Se ha superado el límite de descargas del día",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.2 Tabla L",
+          "cita": "0522=Ha sobrepasado el límite de descargas para el archivo solicitado"
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7.1 BO06",
+          "cita": "Se ha superado el límite de descargas del día"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "contradiccion": "C-814"
+    },
+    {
+      "codigo": "0523",
+      "servicio": "consulta-masiva-ruc",
+      "mensaje": "RUC del certificado utilizado para firmar no coincide con el RUC de consulta",
+      "clase": "informativo",
+      "id_validacion": "BO07",
+      "validacion": "El RUC del certificado utilizado para firmar no coincide con el RUC de consulta",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.2 Tabla L",
+          "cita": "0523=RUC del certificado utilizado para firmar no coincide con el RUC de consulta"
+        },
+        {
+          "doc": "NT011",
+          "ref": "12.3.7.1 BO07",
+          "cita": "El RUC del certificado utilizado para firmar no coincide con el RUC de consulta"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "contradiccion": "C-814"
+    },
+    {
+      "codigo": "0560",
+      "servicio": "evento",
+      "mensaje": "Mensaje de datos de entrada del WS siRecepEvento superior a 1000 KB.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "BS01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0560",
+          "pagina": 159
+        }
+      ]
+    },
+    {
+      "codigo": "0600",
+      "servicio": "evento",
+      "mensaje": "Evento registrado correctamente",
+      "clase": "aprobacion",
+      "accion": "ninguna",
+      "efecto": "A",
+      "id_validacion": "BU01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0600",
+          "pagina": 159
+        }
+      ]
+    }
+  ]
+}

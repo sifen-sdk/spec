@@ -3,7 +3,7 @@
 **Propósito.** Una copia fiel de los esquemas XSD oficiales de SIFEN, para que los SDK puedan validar la
 estructura de un documento sin conexión a la red y de forma reproducible.
 
-**Estado.** Sin archivos. Se cargan en la fase 1.
+**Estado.** 47 esquemas en [`oficial/`](oficial), descargados el 26/11/2026 de `https://ekuatia.set.gov.py/sifen/xsd/` y verificados contra el origen. El índice está en [`indice.json`](indice.json).
 
 ## Titularidad
 
@@ -14,7 +14,7 @@ cubiertos por la licencia Apache-2.0** de este proyecto. Ver [`NOTICE`](../NOTIC
 
 ## Qué se registra de cada archivo
 
-En un índice dentro de esta carpeta, por cada esquema:
+En [`indice.json`](indice.json), por cada esquema:
 
 | Dato | Descripción |
 |---|---|
@@ -31,3 +31,12 @@ En un índice dentro de esta carpeta, por cada esquema:
 - La DNIT modifica los esquemas sin cambiarles el nombre ni la versión. Por eso el hash es lo que identifica una
   copia: cuando el esquema publicado cambia, se agrega la copia nueva con su fecha y se revisan campos y reglas.
 - Si un esquema y el Manual Técnico no coinciden, se registra en [`contradicciones.md`](../contradicciones.md).
+
+## Archivos generados
+
+- [`arbol.json`](arbol.json): volcado neutral de los esquemas (tipos, elementos, ocurrencias y restricciones), generado
+  por `tools/xsd_arbol.py`. No se edita a mano; la integración continua verifica que esté al día.
+- [`cobertura.json`](cobertura.json): qué esquemas deben tener todos sus elementos en [`campos/`](../campos/README.md)
+  y qué elementos están exceptuados por una contradicción registrada.
+
+El formato completo está en [`FORMATO.md`](../FORMATO.md).

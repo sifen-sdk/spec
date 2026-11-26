@@ -1,0 +1,40 @@
+{
+  "id": "condicion-operacion",
+  "titulo": "Condición de la operación",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E601"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E602"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiCondOpe, tdDCondOpe"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E601",
+    "E602"
+  ],
+  "descripciones": {
+    "E601": "E602"
+  },
+  "xml": [
+    "iCondOpe",
+    "dDCondOpe"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Contado"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Crédito"
+    }
+  ]
+}

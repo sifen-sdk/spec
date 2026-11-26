@@ -1,0 +1,728 @@
+{
+  "id": "unidad-medida",
+  "titulo": "Unidades de medida (Tabla 5)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "15. Codificaciones – TABLA 5 – CODIFICACION DE UNIDADES DE MEDIDA",
+      "pagina": 212
+    },
+    {
+      "doc": "NT023",
+      "ref": "3.1 (Tabla 5)"
+    },
+    {
+      "doc": "XSD",
+      "ref": "Unidades_Medida_v141.xsd tcUniMed, tdDesUniMed"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E709",
+    "E710",
+    "G051",
+    "G052",
+    "G054",
+    "G055"
+  ],
+  "descripciones": {
+    "E709": "E710",
+    "G051": "G052",
+    "G054": "G055"
+  },
+  "xml": [
+    "cUniMed",
+    "dDesUniMed",
+    "cUniMedTotVol",
+    "dDesUniMedTotVol",
+    "cUniMedTotPes",
+    "dDesUniMedTotPes"
+  ],
+  "nota": "\"descripcion\" es la Representación de la Tabla 5, que es lo que se informa en el campo de descripción (E710: \"Utilizar el atributo Código. Ejemplo: UNI\"); \"significado\" es la columna Descripción. Si D202 = 3, el Manual indica usar los datos del WS de la DNCP.",
+  "entradas": [
+    {
+      "codigo": "87",
+      "descripcion": "m",
+      "significado": "Metros"
+    },
+    {
+      "codigo": "2366",
+      "descripcion": "CPM",
+      "significado": "Costo por Mil",
+      "significado_xsd": "Costo Por Mil",
+      "contradiccion": "C-914"
+    },
+    {
+      "codigo": "2329",
+      "descripcion": "UI",
+      "significado": "Unidad Internacional"
+    },
+    {
+      "codigo": "110",
+      "descripcion": "M3",
+      "significado": "Metros cúbicos"
+    },
+    {
+      "codigo": "77",
+      "descripcion": "UNI",
+      "significado": "Unidad"
+    },
+    {
+      "codigo": "86",
+      "descripcion": "g",
+      "significado": "Gramos"
+    },
+    {
+      "codigo": "89",
+      "descripcion": "LT",
+      "significado": "Litros"
+    },
+    {
+      "codigo": "90",
+      "descripcion": "MG",
+      "significado": "Miligramos"
+    },
+    {
+      "codigo": "91",
+      "descripcion": "CM",
+      "significado": "Centimetros"
+    },
+    {
+      "codigo": "92",
+      "descripcion": "CM2",
+      "significado": "Centimetros cuadrados"
+    },
+    {
+      "codigo": "93",
+      "descripcion": "CM3",
+      "significado": "Centimetros cubicos"
+    },
+    {
+      "codigo": "94",
+      "descripcion": "PUL",
+      "significado": "Pulgadas"
+    },
+    {
+      "codigo": "96",
+      "descripcion": "MM2",
+      "significado": "Milímetros cuadrados"
+    },
+    {
+      "codigo": "79",
+      "descripcion": "kg/m²",
+      "significado": "Kilogramos s/ metro cuadrado",
+      "descripcion_xsd": "kg/m2",
+      "contradiccion": "C-914"
+    },
+    {
+      "codigo": "97",
+      "descripcion": "AA",
+      "significado": "Año"
+    },
+    {
+      "codigo": "98",
+      "descripcion": "ME",
+      "significado": "Mes"
+    },
+    {
+      "codigo": "99",
+      "descripcion": "TN",
+      "significado": "Tonelada"
+    },
+    {
+      "codigo": "100",
+      "descripcion": "Hs",
+      "significado": "Hora"
+    },
+    {
+      "codigo": "101",
+      "descripcion": "Mi",
+      "significado": "Minuto"
+    },
+    {
+      "codigo": "104",
+      "descripcion": "DET",
+      "significado": "Determinación"
+    },
+    {
+      "codigo": "103",
+      "descripcion": "Ya",
+      "significado": "Yardas"
+    },
+    {
+      "codigo": "108",
+      "descripcion": "MT",
+      "significado": "Metros"
+    },
+    {
+      "codigo": "109",
+      "descripcion": "M2",
+      "significado": "Metros cuadrados"
+    },
+    {
+      "codigo": "95",
+      "descripcion": "MM",
+      "significado": "Milímetros"
+    },
+    {
+      "codigo": "666",
+      "descripcion": "Se",
+      "significado": "Segundo"
+    },
+    {
+      "codigo": "102",
+      "descripcion": "Di",
+      "significado": "Día"
+    },
+    {
+      "codigo": "83",
+      "descripcion": "kg",
+      "significado": "Kilogramos"
+    },
+    {
+      "codigo": "88",
+      "descripcion": "ML",
+      "significado": "Mililitros"
+    },
+    {
+      "codigo": "625",
+      "descripcion": "Km",
+      "significado": "Kilómetros"
+    },
+    {
+      "codigo": "660",
+      "descripcion": "ml",
+      "significado": "Metro lineal"
+    },
+    {
+      "codigo": "885",
+      "descripcion": "GL",
+      "significado": "Unidad Medida Global"
+    },
+    {
+      "codigo": "891",
+      "descripcion": "pm",
+      "significado": "Por Milaje"
+    },
+    {
+      "codigo": "869",
+      "descripcion": "ha",
+      "significado": "Hectáreas"
+    },
+    {
+      "codigo": "569",
+      "descripcion": "ración",
+      "significado": "Ración"
+    },
+    {
+      "codigo": "111",
+      "descripcion": "4A",
+      "significado": "Bovinas",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "112",
+      "descripcion": "Ci",
+      "significado": "Curie",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "113",
+      "descripcion": "DOC",
+      "significado": "Docena",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "114",
+      "descripcion": "GLL",
+      "significado": "Galones (US) (3,7843 LT)",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "115",
+      "descripcion": "GRO",
+      "significado": "Gruesas",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "116",
+      "descripcion": "E4",
+      "significado": "Kilogramo Bruto",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "117",
+      "descripcion": "KT",
+      "significado": "Kits",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "118",
+      "descripcion": "M5",
+      "significado": "Microcurie",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "119",
+      "descripcion": "MCU",
+      "significado": "Milicurie",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "120",
+      "descripcion": "MIL",
+      "significado": "Millar",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "121",
+      "descripcion": "PAR",
+      "significado": "Par",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "122",
+      "descripcion": "FOT",
+      "significado": "Pies",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "123",
+      "descripcion": "FTK",
+      "significado": "Pies Cuadradas",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "124",
+      "descripcion": "PCE",
+      "significado": "Piezas",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "125",
+      "descripcion": "KLT",
+      "significado": "Quilate",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "126",
+      "descripcion": "RM",
+      "significado": "Resmas",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "127",
+      "descripcion": "RO",
+      "significado": "Rollos",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "128",
+      "descripcion": "kWh",
+      "significado": "1000 Kilowatt Hora",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "129",
+      "descripcion": "U(JGO)",
+      "significado": "Mazos",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "130",
+      "descripcion": "DR",
+      "significado": "Tambores",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "131",
+      "descripcion": "BX",
+      "significado": "Caja",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "132",
+      "descripcion": "SET",
+      "significado": "Juego",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "133",
+      "descripcion": "PK",
+      "significado": "Paquete",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "134",
+      "descripcion": "BG",
+      "significado": "Bolsa",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "135",
+      "descripcion": "DPC",
+      "significado": "Docena Par",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "136",
+      "descripcion": "JR",
+      "significado": "Pote",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "137",
+      "descripcion": "BL",
+      "significado": "Fardos",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "138",
+      "descripcion": "AB",
+      "significado": "Bulto",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "139",
+      "descripcion": "BK",
+      "significado": "Cesta",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "140",
+      "descripcion": "BW",
+      "significado": "Peso Base",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "3.1 (Tabla 5)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    }
+  ]
+}

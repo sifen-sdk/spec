@@ -3,7 +3,8 @@
 **Propósito.** La batería de casos que todo SDK de la organización debe pasar. Es lo que garantiza que el SDK de
 Java y los de otros lenguajes se comporten igual.
 
-**Estado.** Sin casos. Se cargan desde la fase 1.
+**Estado.** Primeros casos: los ejemplos oficiales del CDC y del código QR del Manual Técnico, verificados con
+`tools/conformidad.py`. El resto de los tipos de caso llega con el núcleo de los SDK (fase 2).
 
 ## Tipos de caso previstos
 

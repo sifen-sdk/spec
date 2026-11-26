@@ -1,0 +1,676 @@
+{
+  "grupo": "GET",
+  "titulo": "Evento por actualización de datos del transporte",
+  "esquemas": [
+    "Evento_v150.xsd",
+    "Evento_Types_v150.xsd",
+    "siRecepEvento_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GET001",
+      "xml": "rGeVeTr",
+      "nombre": "transportUpdate",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos por actualización de datos del transporte",
+      "observaciones": "Elemento raíz. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt. El XSD define además un tipo trGeDeVTr, no usado por ningún elemento, con los mismos nombres y tipos erróneos: la estructura válida es trGeVeTr.",
+      "contradiccion": "C-602",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET001",
+          "pagina": 130
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGeVeTr (trGeVeTr)"
+        }
+      ]
+    },
+    {
+      "id": "GET002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET002",
+          "pagina": 130
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GET003",
+      "xml": "dMotEv",
+      "nombre": "reasonCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Motivo del evento",
+      "observaciones": "1= Cambio del local de la entrega, 2= Cambio del chofer, 3= Cambio del transportista, 4= Cambio de vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET003",
+          "pagina": 130
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dMotEv (tdMotEv)"
+        }
+      ],
+      "catalogo": "motivo-evento-transporte"
+    },
+    {
+      "id": "GET004",
+      "xml": "cDepEnt",
+      "nombre": "deliveryDepartmentCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del departamento del local de la entrega",
+      "observaciones": "Según XSD de Departamentos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET004",
+          "pagina": 130
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/cDepEnt (tcDepEnt)"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "GET005",
+      "xml": "dDesDepEnt",
+      "nombre": "deliveryDepartmentDescription",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del departamento del local de la entrega",
+      "observaciones": "Referente al campo GET004",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET005",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDesDepEnt (tdDesDepEnt)"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "GET006",
+      "xml": "cDisEnt",
+      "nombre": "deliveryDistrictCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito del local de la entrega",
+      "observaciones": "Según Tabla 2.1 - Distritos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET006",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/cDisEnt (tcDisEnt)"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "GET007",
+      "xml": "dDesDisEnt",
+      "nombre": "deliveryDistrictDescription",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de distrito del local de la entrega",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET007",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDesDisEnt (tdDesDisEnt)"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "GET008",
+      "xml": "cCiuEnt",
+      "nombre": "deliveryCityCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "0-1",
+      "descripcion": "Código de la ciudad del local de la entrega",
+      "observaciones": "Según Tabla 2.2 – Ciudades",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET008",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/cCiuEnt (tcCiuEnt)"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "GET009",
+      "xml": "dDesCiuEnt",
+      "nombre": "deliveryCityDescription",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de ciudad del local de la entrega",
+      "observaciones": "Referente al campo GET008",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET009",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDesCiuEnt (tdDesCiuEnt)"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "GET010",
+      "xml": "dDirEnt",
+      "nombre": "deliveryAddress",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Dirección del local de la entrega",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET010",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDirEnt (tdDirEnt)"
+        }
+      ]
+    },
+    {
+      "id": "GET011",
+      "xml": "dNumCas",
+      "nombre": "deliveryHouseNumber",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1-6",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de casa del local de la entrega",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET011",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dNumCas (tdNumCasTr)"
+        }
+      ]
+    },
+    {
+      "id": "GET012",
+      "xml": "dCompDir1",
+      "nombre": "deliveryAddressComplement",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Complemento de dirección del local de la entrega",
+      "observaciones": "Opcional si GET003=1",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET012",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dCompDir1 (tdDirEnt)"
+        }
+      ]
+    },
+    {
+      "id": "GET013",
+      "xml": "dNomChof",
+      "nombre": "driverName",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre y apellido del chofer",
+      "observaciones": "El Manual indica ocurrencia 1-1 pero también 'Obligatorio si GET003=2'; en el XSD es minOccurs=0.",
+      "contradiccion": "C-605",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET013",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dNomChof (tdNomRec 4-255, minOccurs=0)"
+        }
+      ]
+    },
+    {
+      "id": "GET014",
+      "xml": "dNumIDChof",
+      "nombre": "driverIdDocumentNumber",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de documento de identidad del chofer",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET014",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dNumIDChof (tdNumDocId)"
+        }
+      ]
+    },
+    {
+      "id": "GET015",
+      "xml": "iNatTrans",
+      "nombre": "carrierNatureCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Naturaleza del transportista",
+      "observaciones": "1= Contribuyente 2= No contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET015",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/iNatTrans (tiTipEve)"
+        }
+      ],
+      "catalogo": "naturaleza-transportista"
+    },
+    {
+      "id": "GET016",
+      "xml": "dRucTrans",
+      "nombre": "carrierRuc",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "RUC del transportista",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET016",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dRucTrans (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "GET017",
+      "xml": "dDVTrans",
+      "nombre": "carrierCheckDigit",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Dígito verificador del RUC del transportista",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET017",
+          "pagina": 131
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDVTrans (tDVer)"
+        }
+      ]
+    },
+    {
+      "id": "GET018",
+      "xml": "dNomTrans",
+      "nombre": "carrierName",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "0-1",
+      "descripcion": "Nombre o razón social del transportista",
+      "contradiccion": "C-604",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET018",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dNomTrans (tdNomRec 4-255)"
+        }
+      ]
+    },
+    {
+      "id": "GET019",
+      "xml": "iTipIDTrans",
+      "nombre": "carrierIdDocumentTypeCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento de identidad del transportista",
+      "observaciones": "1= Cédula paraguaya 2= Pasaporte 3= Cédula extranjera 4= Carnet de residencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET019",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/iTipIDTrans (tiTipDoc)"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "GET020",
+      "xml": "dDTipIDTrans",
+      "nombre": "carrierIdDocumentTypeDescription",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "9-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de documento de identidad del transportista",
+      "observaciones": "1= “Cédula paraguaya” 2= “Pasaporte” 3= “Cédula extranjera” 4= “Carnet de residencia”",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET020",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDTipIDTrans (tdDtipDoc)"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "GET021",
+      "xml": "dNumIDTrans",
+      "nombre": "carrierIdDocumentNumber",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de documento de identidad del transportista",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET021",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dNumIDTrans (tdNumDocId)"
+        }
+      ]
+    },
+    {
+      "id": "GET022",
+      "xml": "iTipTrans",
+      "nombre": "transportTypeCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de transporte",
+      "observaciones": "1= Propio 2= Tercero",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET022",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/iTipTrans (tiTipTrans)"
+        }
+      ],
+      "catalogo": "tipo-transporte"
+    },
+    {
+      "id": "GET023",
+      "xml": "dDesTipTrans",
+      "nombre": "transportTypeDescription",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "6-7",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de transporte",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET023",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDesTipTrans (tdDesTipTrans)"
+        }
+      ],
+      "catalogo": "tipo-transporte"
+    },
+    {
+      "id": "GET024",
+      "xml": "iModTrans",
+      "nombre": "transportModeCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Modalidad del transporte",
+      "observaciones": "1=Terrestre 2= Fluvial 3= Aéreo 4= Multimodal. En el XSD usa el tipo tdMotEv (motivo del evento), que también admite 1 a 4.",
+      "contradiccion": "C-607",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET024",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/iModTrans (tdMotEv)"
+        }
+      ],
+      "catalogo": "modalidad-transporte"
+    },
+    {
+      "id": "GET025",
+      "xml": "dDesModTrans",
+      "nombre": "transportModeDescription",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "5-10",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la modalidad del transporte",
+      "observaciones": "Referente al campo GET024: 1= “Terrestre” 2= “Fluvial” 3= “Aéreo” 4= “Multimodal”. El Manual indica 1-1; en el XSD es minOccurs=0.",
+      "contradiccion": "C-606",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET025",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dDesModTrans (tdDesModTrans, minOccurs=0)"
+        }
+      ],
+      "catalogo": "modalidad-transporte"
+    },
+    {
+      "id": "GET026",
+      "xml": "dTiVehTras",
+      "nombre": "vehicleType",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "4-10",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET026",
+          "pagina": 132
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dTiVehTras (tdTiVehTras)"
+        }
+      ]
+    },
+    {
+      "id": "GET027",
+      "xml": "dMarVeh",
+      "nombre": "vehicleBrand",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-10",
+      "ocurrencia": "0-1",
+      "descripcion": "Marca del vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET027",
+          "pagina": 133
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dMarVeh (tdMarVeh)"
+        }
+      ]
+    },
+    {
+      "id": "GET028",
+      "xml": "dTipIdenVeh",
+      "nombre": "vehicleIdentificationTypeCode",
+      "padre": "GET001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de identificación del vehículo",
+      "observaciones": "1=Número de identificación del vehículo 2=Número de matrícula del vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET028",
+          "pagina": 133
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dTipIdenVeh (tdTipIdenVeh)"
+        }
+      ],
+      "catalogo": "tipo-identificacion-vehiculo"
+    },
+    {
+      "id": "GET029",
+      "xml": "dNroIDVeh",
+      "nombre": "vehicleIdentificationNumber",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de identificación del vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET029",
+          "pagina": 133
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dNroIDVeh (tdNroIDVeh)"
+        }
+      ]
+    },
+    {
+      "id": "GET030",
+      "xml": "dNroMatVeh",
+      "nombre": "vehicleRegistrationNumber",
+      "padre": "GET001",
+      "tipo": "alfanumerico",
+      "longitud": "6",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de matrícula del vehículo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GET030",
+          "pagina": 133
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeTr/dNroMatVeh (tdNroMatVeh)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "grupo": "WS-siResultLoteDE",
+  "titulo": "WS consulta resultado de lote DE – siResultLoteDE (Schemas XML 7 y 8)",
+  "esquemas": [
+    "WS_SiConsLote_v141.xsd",
+    "SIFEN_Types_v141.xsd"
+  ],
+  "campos": [
+    {
+      "id": "CSch01",
+      "xml": "rEnviConsLoteDe",
+      "nombre": "batchQuery",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la petición del WS siResultLoteDE (Schema XML 7: SiResultLoteDE_v150.xsd). Solo está publicado WS_SiConsLote_v141.xsd. El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CSch01",
+          "pagina": 49
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rEnviConsLoteDe"
+        }
+      ]
+    },
+    {
+      "id": "CSch02",
+      "xml": "dId",
+      "nombre": "controlId",
+      "padre": "CSch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de control de envío",
+      "observaciones": "Número secuencial autoincremental, para identificación del mensaje enviado. La responsabilidad de generar y controlar este número es exclusiva del contribuyente.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CSch02",
+          "pagina": 50
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rEnviConsLoteDe/dId (dIdType)"
+        }
+      ]
+    },
+    {
+      "id": "CSch03",
+      "xml": "dProtConsLote",
+      "nombre": "batchNumber",
+      "padre": "CSch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Número del lote",
+      "observaciones": "Obtenido a partir del mensaje de respuesta al WS soRecepLoteDE (Schema XML 5) [sic: siRecepLoteDE].",
+      "contradiccion": "C-712",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CSch03",
+          "pagina": 50
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rEnviConsLoteDe/dProtConsLote (xs:decimal, totalDigits 28, 0-1)"
+        }
+      ]
+    },
+    {
+      "id": "X-CONSLOTE-dCDC",
+      "xml": "dCDC",
+      "nombre": "cdc",
+      "padre": "CSch01",
+      "tipo": "alfanumerico",
+      "longitud": "1-50",
+      "ocurrencia": "0-1",
+      "descripcion": "CDC contenido en un lote",
+      "observaciones": "Elemento solo en el XSD (maxLength 50); el Manual no lo documenta. La descripción es la anotación del XSD. Id asignado por este proyecto (no hay id en el Manual).",
+      "contradiccion": "C-712",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rEnviConsLoteDe/dCDC",
+          "cita": "CDC contenido en un lote"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "Recomendaciones, 3",
+          "pagina": 6,
+          "cita": "se puede consultar el lote con un CDC que fue enviado en el lote"
+        }
+      ]
+    },
+    {
+      "id": "CRSch01",
+      "xml": "rResEnviConsLoteDe",
+      "nombre": "batchQueryResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la respuesta (Schema XML 8: resResultLoteDE_v150.xsd). El Manual no indica ocurrencia para la raíz.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch01",
+          "pagina": 50
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rResEnviConsLoteDe"
+        }
+      ]
+    },
+    {
+      "id": "CRSch02",
+      "xml": "dFecProc",
+      "nombre": "processingDateTime",
+      "padre": "CRSch01",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y hora del procesamiento del lote",
+      "observaciones": "Formato: “AAAA-MM-DDhh:mm:ss”. Si el lote no fue procesado, el valor será vacío.",
+      "contradiccion": "C-714",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch02",
+          "pagina": 50
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rResEnviConsLoteDe/dFecProc (fecUTC)"
+        }
+      ]
+    },
+    {
+      "id": "CRSch03",
+      "xml": "dCodResLot",
+      "nombre": "batchResultCode",
+      "padre": "CRSch01",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de resultado de procesamiento del lote",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12 referente al lote.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch03",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rResEnviConsLoteDe/dCodResLot"
+        }
+      ]
+    },
+    {
+      "id": "CRSch04",
+      "xml": "dMsgResLot",
+      "nombre": "batchResultMessage",
+      "padre": "CRSch01",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje de resultado de procesamiento del lote",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12 referente al lote.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch04",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rResEnviConsLoteDe/dMsgResLot"
+        }
+      ]
+    },
+    {
+      "id": "CRSch05",
+      "xml": "gResProcLote",
+      "nombre": "documentResults",
+      "padre": "CRSch01",
+      "tipo": "grupo",
+      "ocurrencia": "0-50",
+      "descripcion": "Grupo Resultado de Procesamiento del Lote",
+      "observaciones": "La Tabla F indica que, con éxito en la consulta (0362), la respuesta contiene el contenedor del DE definido en el Schema XML 11; el Schema XML 8 y el XSD definen en su lugar este grupo.",
+      "contradiccion": "C-715",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch05",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd rResEnviConsLoteDe/gResProcLote (tgResProcLote, 0-50)"
+        }
+      ]
+    },
+    {
+      "id": "CRSch050",
+      "xml": "id",
+      "nombre": "cdc",
+      "padre": "CRSch05",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE procesado",
+      "contradiccion": "C-713",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch050",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd tgResProcLote/id (maxLength 47)"
+        }
+      ]
+    },
+    {
+      "id": "CRSch051",
+      "xml": "dEstRes",
+      "nombre": "resultStatus",
+      "padre": "CRSch05",
+      "tipo": "alfanumerico",
+      "longitud": "8-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Estado del resultado",
+      "observaciones": "Aprobado / Aprobado con observación / Rechazado.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch051",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd tgResProcLote/dEstRes"
+        }
+      ],
+      "catalogo": "estado-resultado"
+    },
+    {
+      "id": "CRSch052",
+      "xml": "dProtAut",
+      "nombre": "transactionNumber",
+      "padre": "CRSch05",
+      "tipo": "numerico",
+      "longitud": "10",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de transacción",
+      "observaciones": "Generado para el DE del lote consultado si dCodResLot=0362.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch052",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd tgResProcLote/dProtAut"
+        }
+      ]
+    },
+    {
+      "id": "CRSch053",
+      "xml": "gResProc",
+      "nombre": "processingResults",
+      "padre": "CRSch05",
+      "tipo": "grupo",
+      "ocurrencia": "1-100",
+      "descripcion": "Grupo Mensaje de Resultado",
+      "observaciones": "Si es error solo se presentará el primero. Se pueden tener hasta 100 mensajes en caso de aprobación con observaciones.",
+      "contradiccion": "C-713",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch053",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd tgResProcLote/gResProc (tgResProc, 1-5)"
+        }
+      ]
+    },
+    {
+      "id": "CRSch054",
+      "xml": "dCodRes",
+      "nombre": "resultCode",
+      "padre": "CRSch053",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12 referente a cada DE.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch054",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd tgResProc/dCodRes (pattern [0-9]{4})"
+        }
+      ]
+    },
+    {
+      "id": "CRSch055",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "CRSch053",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje de resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12 referente a cada DE.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "CRSch055",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsLote_v141.xsd tgResProc/dMsgRes"
+        }
+      ]
+    }
+  ]
+}

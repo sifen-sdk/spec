@@ -1,0 +1,2239 @@
+{
+  "respuestas": [
+    {
+      "codigo": "2350",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen los subtotales y totales de la transacción documentada es obligatorio para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F001",
+      "id_validacion": "F001",
+      "validacion": "Si el tipo de documento electrónico seleccionado es distinto a Nota de Remisión Electrónica (C002≠7), es obligatorio informar el grupo de campos que describen los subtotales y totales de la transacción documentada",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2350",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2351",
+      "servicio": "formato-de",
+      "mensaje": "Grupo de los campos que describen los subtotales y totales de la transacción documentada no es permitido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F001",
+      "id_validacion": "F001a",
+      "validacion": "El grupo de los campos que describen los subtotales y totales de la transacción documentada no es permitido para el tipo de documento electrónico Nota de Remisión Electrónica (C002=7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2351",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2352",
+      "servicio": "formato-de",
+      "mensaje": "Subtotal de operaciones exentas de IVA no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F002",
+      "id_validacion": "F002",
+      "validacion": "Si se informan operaciones exentas, es obligatorio reportar el subtotal de dichas operaciones Si el campo E731=3 debe existir F002",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2352",
+          "pagina": 184
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2353",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del subtotal de la operación exenta incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F002",
+      "id_validacion": "F002a",
+      "validacion": "Error en el cálculo del subtotal de la operación exenta El cálculo debe corresponder a la suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea exenta (Si E731 = 3), más Todas las ocurrencias de la Base Exenta (E737) cuando la operación sea Gravado Parcial (Si E731 = 4).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2353",
+          "pagina": 184
+        },
+        {
+          "doc": "NT013",
+          "ref": "2353"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Cálculo del subtotal de la operación exenta incorrecto",
+          "validacion": "Error en el cálculo del subtotal de la operación exenta. Calculo debe ser igual a la suma de todas las ocurrencias de EA008 cuando E731=3",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2353",
+              "pagina": 184
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-04-21",
+              "produccion": "2023-06-17"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "codigo": "2354",
+      "servicio": "formato-de",
+      "mensaje": "Subtotal de operaciones exoneradas de IVA no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F003",
+      "id_validacion": "F003",
+      "validacion": "Si se informan operaciones exoneradas, es obligatorio reportar el subtotal de dichas operaciones Si el campo E731=2 debe existir F003",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2354",
+          "pagina": 185
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2355",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del subtotal de la operación exonerada incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F003",
+      "id_validacion": "F003a",
+      "validacion": "Error en el cálculo del subtotal de la operación exonerada. Calculo debe ser igual a la suma de todas las ocurrencias de EA008 cuando E731=2",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2355",
+          "pagina": 185
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2356",
+      "servicio": "formato-de",
+      "mensaje": "Subtotal de operaciones gravadas al 5% de IVA no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F004",
+      "id_validacion": "F004",
+      "validacion": "Si se informan operaciones gravadas al 5%, es obligatorio reportar el subtotal de dichas operaciones. Si el campo E731=1 o 4 y E734=5 debe existir F004 Corresponde al porcentaje (%) de la tasa expresado en números enteros",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2356",
+          "pagina": 185
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2357",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del subtotal de la operación gravada al 5% incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F004",
+      "id_validacion": "F004a",
+      "validacion": "Error en el cálculo del subtotal de la operación gravada al 5% El cálculo debe corresponder a la suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea a la tasa del 5% (E734=5) y (Si E731 = 1), más todas las ocurrencias de (E735 + E736) cuando la operación sea a la tasa del 5% (E734=5) y (Si E731 = 4). No debe existir el campo si D013 ≠ 1 o D013 ≠ 5",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2357",
+          "pagina": 185
+        },
+        {
+          "doc": "NT013",
+          "ref": "2357"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Cálculo del subtotal de la operación gravada al 5% incorrecto",
+          "validacion": "Error en el cálculo del subtotal de la operación gravada al 5%. Calculo debe ser igual a la suma de todas las ocurrencias de EA008 cuando E734=5",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2357",
+              "pagina": 185
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-04-21",
+              "produccion": "2023-06-17"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "codigo": "2358",
+      "servicio": "formato-de",
+      "mensaje": "Subtotal de operaciones gravadas al 10% de IVA no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F005",
+      "id_validacion": "F005",
+      "validacion": "Si se informan operaciones gravadas al 10%, es obligatorio reportar el subtotal de dichas operaciones. Si el campo E731=1 o 4 y E734=10 debe existir F005 Corresponde al porcentaje (%) de la tasa expresado en números enteros",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2358",
+          "pagina": 185
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2359",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del subtotal de la operación gravada al 10% incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F005",
+      "id_validacion": "F005a",
+      "validacion": "Error en el cálculo del subtotal de la operación gravada al 10% El cálculo debe corresponder a la suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem) cuando la operación sea a la tasa del 10% (E734=10) y (Si E731 = 1), más todas las ocurrencias de (E735 + E736) cuando la operación sea a la tasa del 10% (E734=10) y (Si E731 = 4). No debe existir el campo si D013 ≠ 1 o D013 ≠ 5",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2359",
+          "pagina": 185
+        },
+        {
+          "doc": "NT013",
+          "ref": "2359"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Cálculo del subtotal de la operación gravada al 10% incorrecto",
+          "validacion": "Error en el cálculo del subtotal de la operación gravada al 10%. Calculo debe ser igual a la suma de todas las ocurrencias de EA008 cuando E734=10",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2359",
+              "pagina": 185
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-04-21",
+              "produccion": "2023-06-17"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    },
+    {
+      "codigo": "2362",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total de la operación incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F008",
+      "id_validacion": "F008",
+      "validacion": "Error en el cálculo del total de la operación. Si la operación es grabada con IVA, Renta o Ninguno (D013=1, 3, 4 o 5) el cálculo debe ser igual a la suma F002+F003+F004+F005 Cuando C002=4 corresponde a la suma de todas las ocurrencias de EA008 (Valor total de la operación por ítem)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2362",
+          "pagina": 185
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2363",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total descuento por ítem incorrecto.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F009",
+      "id_validacion": "F009",
+      "validacion": "Error en el cálculo del total de descuento por ítem Calculo debe ser igual la suma de todas las ocurrencias de EA002 multiplicado por la cantidad EA002*E711",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2363",
+          "pagina": 185
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2364",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del descuento sobre el total de la operación incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F011",
+      "id_validacion": "F011",
+      "validacion": "Error en el cálculo del descuento sobre el total de la operación Es la sumatoria de F009 y F033",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2364",
+          "pagina": 185
+        },
+        {
+          "doc": "NT001",
+          "ref": "2364"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Cálculo del descuento sobre el total de la operación incorrecto",
+          "validacion": "Error en el cálculo del descuento sobre el total de la operación Es la sumatoria de EA002 y EA004 de cada ítem",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2364",
+              "pagina": 185
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": null,
+              "produccion": null
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2365",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total general de la operación incorrecto.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F014",
+      "id_validacion": "F014",
+      "validacion": "Error en el cálculo del total general de la operación Cuando C002=1, 5 o 6 el cálculo debe ser igual a F008-F013+F025",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2365",
+          "pagina": 185
+        },
+        {
+          "doc": "NT001",
+          "ref": "2365"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Cálculo del total general de la operación incorrecto.",
+          "validacion": "Error en el cálculo del total general de la operación Cuando C002=1, 5 o 6 el cálculo debe ser igual a F008–F011–F012- F013",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2365",
+              "pagina": 185
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": null,
+              "produccion": null
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2366",
+      "servicio": "formato-de",
+      "mensaje": "Si se informan operaciones gravadas al 5%, es obligatorio reportar la liquidación del IVA de dichas operaciones",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F015",
+      "id_validacion": "F015",
+      "validacion": "Liquidación del IVA a la tasa del 5% no informada. Si se informa la liquidación del IVA por ítem (E736) y E734=5, el campo F015 debe existir",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2366",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2367",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo de la liquidación del IVA a la tasa del 5% incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F015",
+      "id_validacion": "F015a",
+      "validacion": "Error en el cálculo de la liquidación del IVA a la tasa del 5%. Calculo debe ser igual a la suma de todas las ocurrencias de E736 cuando E734=5",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2367",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2368",
+      "servicio": "formato-de",
+      "mensaje": "Si se informan operaciones gravadas al 10%, es obligatorio reportar la liquidación del IVA de dichas operaciones",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F016",
+      "id_validacion": "F016",
+      "validacion": "Liquidación del IVA a la tasa del 10% no informada. Si se informa la liquidación del IVA por ítem (E736) y E734=10, el campo F016 debe existir",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2368",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2369",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo de la liquidación del IVA a la tasa del 10% incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F016",
+      "id_validacion": "F016a",
+      "validacion": "Error en el cálculo de la liquidación del IVA a la tasa del 10%. Calculo debe ser igual a la suma de todas las ocurrencias de E736 cuando E734=10",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2369",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2370",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar la liquidación total del IVA",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F017",
+      "id_validacion": "F017",
+      "validacion": "Liquidación total del IVA no informada. Si existe campo F015 y/o F016 es obligatorio informar F017",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2370",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2371",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo de la liquidación total del IVA incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F017",
+      "id_validacion": "F017a",
+      "validacion": "Error en el cálculo de la liquidación total del IVA Calculo debe ser igual a la suma F015+F016",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2371",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2372",
+      "servicio": "formato-de",
+      "mensaje": "Si se informan operaciones gravadas al 5%, es obligatorio reportar el total de la base gravada de dichas operaciones",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F018",
+      "id_validacion": "F018",
+      "validacion": "Total base gravada al 5% no informado Si se informa la base gravada del IVA por ítem (E735) y E734=5, el campo F018 debe existir",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2372",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2373",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo total base gravada al 5% incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F018",
+      "id_validacion": "F018a",
+      "validacion": "Error en el cálculo del total base gravada al 5% Calculo debe ser igual a la suma de todas las ocurrencias de E735 cuando E734=5",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2373",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2374",
+      "servicio": "formato-de",
+      "mensaje": "Si se informan operaciones gravadas al 10%, es obligatorio reportar el total de la base gravada de dichas operaciones",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F019",
+      "id_validacion": "F019",
+      "validacion": "Total base gravada al 10% no informado Si se informa la base gravada del IVA por ítem (E735) y E734=10, el campo F019 debe existir",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2374",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2375",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo total base gravada al 10% incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F019",
+      "id_validacion": "F019a",
+      "validacion": "Error en el cálculo del total base gravada al 10% Calculo debe ser igual a la suma de todas las ocurrencias de E735 cuando E734=10",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2375",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2376",
+      "servicio": "formato-de",
+      "mensaje": "Es obligatorio informar el total de la base gravada de IVA",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F020",
+      "id_validacion": "F020",
+      "validacion": "Total de la base gravada del IVA no informada. Si existe campo F018 y/o F019 es obligatorio informar F020",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2376",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2377",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total de la base gravada del IVA incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F020",
+      "id_validacion": "F020a",
+      "validacion": "Error en el cálculo del total de la base gravada del IVA Calculo debe ser igual a la suma F018+F019",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2377",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2382",
+      "servicio": "formato-de",
+      "mensaje": "Si se informan operaciones con moneda extranjera, es obligatorio reportar el total general de la operación en guaraníes",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F023",
+      "id_validacion": "F023",
+      "validacion": "Si moneda de la operación es diferente de guaraníes (D015≠PYG) es obligatorio informar total general de la operación en guaraníes (F023)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2382",
+          "pagina": 186
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2383",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total descuento global por ítem incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F033",
+      "id_validacion": "F033",
+      "validacion": "Error en el cálculo del total descuento global por ítem Cálculo debe ser igual la suma de todas las ocurrencias de EA004 multiplicado por la cantidad EA004*E711",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "2383"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2384",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total anticipo por ítem incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F034",
+      "id_validacion": "F034",
+      "validacion": "Error en el cálculo del total anticipo por ítem Cálculo debe ser igual la suma de todas las ocurrencias de EA006 multiplicado por la cantidad EA006*E711",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "2384"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2385",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total general de la operación en guaraníes incorrecto para la condición del tipo de cambio global",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F023",
+      "id_validacion": "F023a",
+      "validacion": "Error en el cálculo del total general de la operación en guaraníes Si moneda de la operación es diferente de guaraníes (D015≠PYG) y la condición del tipo de cambio es global (D017=1) el cálculo debe ser F014*D018",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2385",
+          "pagina": 187
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2386",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total general de la operación en guaraníes incorrecto para la condición del tipo de cambio por ítem",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F023",
+      "id_validacion": "F023b",
+      "validacion": "Error en el cálculo del total general de la operación en guaraníes Si moneda de la operación es diferente de guaraníes (D015≠PYG) y la condición del tipo de cambio es por ítem (D017=2) el cálculo debe ser igual a la suma de los totales en guaraníes por ítem (EA009)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2386",
+          "pagina": 187
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2387",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total anticipo global por ítem incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F035",
+      "id_validacion": "F035",
+      "validacion": "Error en el cálculo del total anticipo por ítem Cálculo debe ser igual la suma de todas las ocurrencias de EA007 multiplicado por la cantidad EA007*E711",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "2387"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2388",
+      "servicio": "formato-de",
+      "mensaje": "Cálculo del total anticipos de la operación incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "F012",
+      "id_validacion": "F012",
+      "validacion": "Error en el cálculo del total anticipos de la operación Es la sumatoria de F034 y F035",
+      "fuentes": [
+        {
+          "doc": "NT001",
+          "ref": "2388"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2390",
+      "servicio": "formato-de",
+      "mensaje": "Grupo generales de la carga no es permitido para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "G050",
+      "id_validacion": "G050",
+      "validacion": "El grupo de los campos generales de la carga no es permitido para tipos de documento distintos a factura electrónica o Nota de Remisión Electrónica (C002≠1 y C002≠7)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2390",
+          "pagina": 187
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2400",
+      "servicio": "formato-de",
+      "mensaje": "Documento asociado es obligatorio para el tipo de documento electrónico seleccionado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H001",
+      "id_validacion": "H001",
+      "validacion": "Si el tipo de documento electrónico seleccionado es igual a Autofactura, Nota de Crédito Electrónica, Nota de Débito Electrónica o Comprobante de Retención (C002=4, 5, 6 o 8), es obligatorio informar el grupo de campos que identifican al documento asociado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2400",
+          "pagina": 187
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        },
+        {
+          "doc": "NT023",
+          "ref": "2400",
+          "cita": "reproducida sin cambios de texto"
+        }
+      ]
+    },
+    {
+      "codigo": "2401",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento asociado no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H003",
+      "id_validacion": "H003",
+      "validacion": "Descripción del tipo de documento asociado no coincidente con lo informado en el campo H002",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2401",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2402",
+      "servicio": "formato-de",
+      "mensaje": "Número de CDC del DTE referenciado no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Electrónico (H002=1), es obligatorio informar el número de CDC del DTE referenciado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2402",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2403",
+      "servicio": "formato-de",
+      "mensaje": "Número de CDC del DTE referenciado inexistente",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004a",
+      "validacion": "El CDC del documento asociado informado es inexistente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2403",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2404",
+      "servicio": "formato-de",
+      "mensaje": "El CDC informado corresponde a un DTE cancelado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004b",
+      "validacion": "El DTE referenciado se encuentra cancelado en SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2404",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2405",
+      "servicio": "formato-de",
+      "mensaje": "Número de timbrado del documento impreso de referencia no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H005",
+      "id_validacion": "H005",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Impreso (H002=2), es obligatorio informar el número de timbrado del documento impreso de referencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2405",
+          "pagina": 190
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2406",
+      "servicio": "formato-de",
+      "mensaje": "Código de establecimiento del documento impreso de referencia no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H006",
+      "id_validacion": "H006",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Impreso (H002=2), es obligatorio informar el código de establecimiento del documento impreso de referencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2406",
+          "pagina": 190
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2407",
+      "servicio": "formato-de",
+      "mensaje": "Código de punto de expedición del documento impreso de referencia no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H007",
+      "id_validacion": "H007",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Impreso (H002=2), es obligatorio informar el código de punto de expedición del documento impreso de referencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2407",
+          "pagina": 190
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2408",
+      "servicio": "formato-de",
+      "mensaje": "Número del documento impreso no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H008",
+      "id_validacion": "H008",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Impreso (H002=2), es obligatorio informar el número del documento impreso de referencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2408",
+          "pagina": 190
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2409",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento impreso no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H009",
+      "id_validacion": "H009",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Impreso (H002=2), es obligatorio informar el tipo de documento impreso",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2409",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2410",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento impreso no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H010",
+      "id_validacion": "H010",
+      "validacion": "Descripción del tipo de documento impreso no coincidente con lo informado en el campo H009",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2410",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2411",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de emisión del documento impreso de referencia no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H011",
+      "id_validacion": "H011",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Impreso (H002=2), es obligatorio informar la fecha de emisión del documento impreso de referencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2411",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2412",
+      "servicio": "formato-de",
+      "mensaje": "Número de comprobante de retención no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H012",
+      "id_validacion": "H012",
+      "validacion": "Si el tipo de pago informado es igual a Retenciones (E606=10), es obligatorio reportar número de comprobante de retención",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2412",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2413",
+      "servicio": "formato-de",
+      "mensaje": "Número de resolución de crédito fiscal no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H013",
+      "id_validacion": "H013",
+      "validacion": "Si el tipo de transacción informado es igual a Venta de crédito fiscal (D011=12), es obligatorio reportar número de resolución de crédito fiscal",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2413",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2414",
+      "servicio": "formato-de",
+      "mensaje": "No informar el grupo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H001",
+      "id_validacion": "H001a",
+      "validacion": "Cuando el tipo de DE es Factura electrónica (C002=1), SIFEN permite su asociación con los siguientes documentos: Con Nota de remisión: Si este tipo de documento asociado es electrónico H002=1, el CDC del DTE referenciado debe pertenecer a una Nota de remisión. Si este tipo de documento asociado es impreso H002=2, el tipo de documento impreso debe ser Nota de remisión H009=4 Con Factura: cuando el tipo de transacción del documento asociado es Anticipo (D011 del documento asociado = 9). Si este tipo de documento asociado es electrónico H002=1, el CDC del DTE referenciado debe pertenecer a una FE. Si este tipo de documento asociado es impreso H002=2, el tipo de documento impreso debe ser Factura H009=1 Cuando el tipo de DE es Nota de crédito o Nota de débito (C002=5 o 6), no se debe informar un grupo de documento asociado distinto a Factura electrónica (Si el tipo de documento asociado es electrónico H002=1, el CDC del DTE referenciado debe pertenecer a una Factura electrónica. Si el tipo de documento asociado es impreso H002=2, el tipo de documento impreso debe ser Factura H009=1) Cuando el tipo de DE es Nota de remisión (C002=7) y se informa uno o más documentos asociados distintos a Factura electrónica (Si el tipo de documento asociado es electrónico H002=1, el CDC del DTE referenciado debe pertenecer a una Factura electrónica. Si el tipo de documento asociado es impreso H002=2, el tipo de documento impreso debe ser Factura H009=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2414",
+          "pagina": 188
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2415",
+      "servicio": "formato-de",
+      "mensaje": "Cantidad incorrecta de documento(s) asociado(s)",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H001",
+      "id_validacion": "H001b",
+      "validacion": "Cuando el tipo de documento electrónico es Autofactura, Nota de crédito o nota de débito (C002=4, C002=5 o C002=6), el grupo de documento asociado informado puede aparecer una sola vez.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2415",
+          "pagina": 188
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2416",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento asociado obligatorio para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H002",
+      "id_validacion": "H002",
+      "validacion": "Si el tipo de documento electrónico recibido es Autofactura (C002=4), el tipo de documento asociado debe ser constancia electrónica (H002=3)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2416",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "CDC no informado",
+          "efecto": "R",
+          "campo": "H002",
+          "id_validacion": "H002",
+          "validacion": "Cuando el tipo de documento asociado es electrónico es obligatorio informar el CDC del DTE",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2416",
+              "pagina": 189
+            }
+          ]
+        }
+      ],
+      "contradiccion": "C-809"
+    },
+    {
+      "codigo": "2417",
+      "servicio": "formato-de",
+      "mensaje": "Sumatoria de los documentos asociados supera el monto total del documento electrónico referenciado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004d",
+      "validacion": "La sumatoria de cada Total general de la operación (F014) de la (s) Nota(s) de Crédito(s) (actual o pre-existentes) no puede(n) superar al Total general de la operación de la Factura electrónica asociada",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2417",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2418",
+      "servicio": "formato-de",
+      "mensaje": "Número de CDC no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004c",
+      "validacion": "Si el tipo de documento asociado es impreso o Constancia electrónica (H002=2 o H002=3), no se debe informar el CDC (H004)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2418",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2419",
+      "servicio": "formato-de",
+      "mensaje": "CDC no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H002",
+      "id_validacion": "H002c",
+      "validacion": "Cuando el tipo de documento asociado es impreso no se debe informar el CDC del DTE (H004)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2419",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Número de timbrado no requerido para el tipo de documento asociado",
+          "efecto": "R",
+          "campo": "H005",
+          "id_validacion": "H005a",
+          "validacion": "Si el tipo de documento asociado es electrónico o es constancia electrónica (H002=1 o H002=3), no se debe informar el número de timbrado",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2419",
+              "pagina": 190
+            }
+          ]
+        }
+      ],
+      "contradiccion": "C-810"
+    },
+    {
+      "codigo": "2420",
+      "servicio": "formato-de",
+      "mensaje": "Código de establecimiento no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H006",
+      "id_validacion": "H006a",
+      "validacion": "Si el tipo de documento asociado es electrónico o es constancia electrónica (H002=1 o H002=3), no se debe informar el código de establecimiento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2420",
+          "pagina": 190
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2421",
+      "servicio": "formato-de",
+      "mensaje": "Código de punto de expedición no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H007",
+      "id_validacion": "H007a",
+      "validacion": "Si el tipo de documento asociado es electrónico o es constancia electrónica (H002=1 o H002=3), no se debe informar el código de punto de expedición",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2421",
+          "pagina": 190
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2422",
+      "servicio": "formato-de",
+      "mensaje": "Número del documento no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H008",
+      "id_validacion": "H008a",
+      "validacion": "Si el tipo de documento asociado es electrónico o es constancia electrónica (H002=1 o H002=3), no se debe informar el número de documento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2422",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2423",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento impreso no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H009",
+      "id_validacion": "H009a",
+      "validacion": "Si el tipo de documento asociado es electrónico o es constancia electrónica (H002=1 o H002=3), no se debe informar el tipo de documento impreso",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2423",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2424",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento impreso no informada",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H010",
+      "id_validacion": "H010a",
+      "validacion": "Si se informa el tipo de documento impreso (H009), es obligatorio indicar la descripción del mismo (H010)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2424",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2425",
+      "servicio": "formato-de",
+      "mensaje": "Fecha de emisión del documento impreso de referencia no requerida para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H011",
+      "id_validacion": "H011a",
+      "validacion": "Si el tipo de documento asociado es electrónico o es constancia electrónica (H002=1 o H002=3), no se debe informar la fecha de emisión del documento impreso",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2425",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2426",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de constancia no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H014",
+      "id_validacion": "H014",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Constancia electrónica (H002=3), es obligatorio informar el tipo de constancia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2426",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2427",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de constancia no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H014",
+      "id_validacion": "H014a",
+      "validacion": "Si el tipo de documento asociado es Electrónico o Impreso (H002=1 o H002=2), no se debe informar el tipo de constancia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2427",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2429",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de constancia no corresponde al código",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H015",
+      "id_validacion": "H015a",
+      "validacion": "Descripción del tipo de constancia no coincidente con lo informado en el campo H014",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2429",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2430",
+      "servicio": "formato-de",
+      "mensaje": "Número de constancia no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H016",
+      "id_validacion": "H016",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Constancia electrónica (H002=3) y el tipo de constancia es Constancia de no ser contribuyente (H014=2), es obligatorio informar el número de constancia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2430",
+          "pagina": 192
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2431",
+      "servicio": "formato-de",
+      "mensaje": "Número de constancia no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H016",
+      "id_validacion": "H016a",
+      "validacion": "Si el tipo de documento asociado es electrónico o impreso (H002=1 o H002=2), no se debe informar el número de constancia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2431",
+          "pagina": 192
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2432",
+      "servicio": "formato-de",
+      "mensaje": "Número de control de la constancia no informado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H017",
+      "id_validacion": "H017",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a Constancia electrónica (H002=3) y el tipo de constancia es Constancia de no ser contribuyente (H014=2), es obligatorio informar el número de control de la constancia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2432",
+          "pagina": 192
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2433",
+      "servicio": "formato-de",
+      "mensaje": "Número de control de la constancia no requerido para el tipo de documento asociado",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H017",
+      "id_validacion": "H017a",
+      "validacion": "Si el tipo de documento asociado es electrónico o impreso (H002=1 o H002=2), no se debe informar el número de control de la constancia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2433",
+          "pagina": 192
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2434",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de documento asociado no requerido para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H002",
+      "id_validacion": "H002a",
+      "validacion": "Si el tipo de documento electrónico recibido es Factura electrónica, Nota de crédito, Nota de débito o Nota de remisión (C002=1,5,6 o 7), el tipo de documento asociado no puede ser constancia electrónica (H002 ≠ 3)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2434",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2435",
+      "servicio": "formato-de",
+      "mensaje": "Descripción del tipo de documento impreso no requerida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H010",
+      "id_validacion": "H010b",
+      "validacion": "Si no se informa el tipo de documento impreso (H009), no se debe informar la descripción del mismo (H010)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2435",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2436",
+      "servicio": "formato-de",
+      "mensaje": "Forma de pago incorrecto para el Número de comprobante de retención",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H012",
+      "id_validacion": "H012a",
+      "validacion": "Si se informa el Número de comprobante de retención (H012), es necesario que la forma de pago sea igual a Retención (E606=10)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2436",
+          "pagina": 191
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2437",
+      "servicio": "formato-de",
+      "mensaje": "Tipo de transacción de la FE asociada, es incorrecto",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004e",
+      "validacion": "Cuando el tipo de documento electrónico es Factura electrónica (C002=1) y el documento asociado es otra Factura electrónica (H004 inicia con 01) necesariamente el tipo de transacción de la FE asociada debe ser Anticipo (D011=9)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2437",
+          "pagina": 189
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2438",
+      "servicio": "formato-de",
+      "mensaje": "Moneda de la operación informada no coincidente con la moneda del para el documento asociado.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004f",
+      "validacion": "Cuando el documento asociado es una FE (CDC inicia con 01), en donde el tipo de transacción en este documento asociado es Anticipo (D011=9) y el tipo de documento recibido es otra FE (C002=1), el DTE y el DE deben tener la misma moneda de la operación (D015 del documento asociado igual al D015 del documento recibido) Cuando el tipo de documento es Nota de crédito o Nota de débito Electrónica (C002=5 o C002=6) y el documento asociado es Factura electrónica (CDC inicia con 01), el DTE y el DE deben tener la misma moneda de la operación (D015 del documento asociado igual al D015 del documento recibido)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2438",
+          "pagina": 190
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2439",
+      "servicio": "formato-de",
+      "mensaje": "El CDC asociado no corresponde al emisor del documento electrónico.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004g",
+      "validacion": "Si el tipo de documento asociado es electrónico (H002=1) el CDC debe corresponder al emisor y/o RUC Fusionado del documento al cual se asocia.",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "2439"
+        },
+        {
+          "doc": "NT023",
+          "ref": "2439"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      },
+      "historial": [
+        {
+          "mensaje": "El CDC asociado no corresponde al emisor del documento electrónico.",
+          "validacion": "Si el tipo de documento asociado es electrónico (H002=1) el CDC debe corresponder al emisor del documento al cual se asocia.",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "NT010",
+              "ref": "2439"
+            }
+          ],
+          "vigencia": {
+            "desde": {
+              "test": null,
+              "produccion": null
+            },
+            "hasta": {
+              "test": "2024-08-30",
+              "produccion": "2024-09-27"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "codigo": "2440",
+      "servicio": "formato-de",
+      "mensaje": "El número de timbrado informado corresponde a un timbrado electrónico existente en la base de datos del SIFEN",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H005",
+      "id_validacion": "H005b",
+      "validacion": "Si el tipo de documento asociado seleccionado es igual a impreso (H002=2), no se debe informar un timbrado electrónico.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2440",
+          "pagina": 190
+        },
+        {
+          "doc": "NT010",
+          "ref": "2440"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Número de timbrado no corresponde al tipo de documento asociado",
+          "validacion": "Si el tipo de documento asociado seleccionado es igual a impreso (H002=2), no se debe informar un timbrado electrónico",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2440",
+              "pagina": 190
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": null,
+              "produccion": null
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2441",
+      "servicio": "formato-de",
+      "mensaje": "El CDC asociado no corresponde al receptor del documento electrónico.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004h",
+      "validacion": "Si el tipo de documento asociado es electrónico (H002=1) el CDC debe coincidir al receptor del documento al cual se asocia.",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "2441"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "2442",
+      "servicio": "formato-de",
+      "mensaje": "El receptor informado en el CDC asociado no corresponde al informado en el evento de Nominación de Factura Electrónica",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H004",
+      "id_validacion": "H004i",
+      "validacion": "Si el tipo de documento asociado es electrónico (H002=1) el CDC debe coincidir al receptor informado en el evento de Nominación de Factura Electrónica",
+      "fuentes": [
+        {
+          "doc": "NT015",
+          "ref": "2442"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-21",
+          "produccion": "2023-09-21"
+        }
+      }
+    },
+    {
+      "codigo": "2443",
+      "servicio": "formato-de",
+      "mensaje": "El RUC Fusionado no corresponde al emisor del CDC asociado.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H018",
+      "id_validacion": "H018",
+      "validacion": "Si se informa el campo H018 (dRucFus), este debe corresponder al RUC del emisor del CDC asociado informado en el campo H004 (dCdCDERef)",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2443"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "2444",
+      "servicio": "formato-de",
+      "mensaje": "El RUC Fusionado no requerido.",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "H018",
+      "id_validacion": "H018a",
+      "validacion": "Si el tipo de documento electrónico seleccionado es distinto a Nota de Crédito, Nota de Débito o Nota de Remisión (C002 ≠ 5, 6 o 7) el campo RUC Fusionado no debe ser informado.",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2444"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "codigo": "2450",
+      "servicio": "formato-de",
+      "mensaje": "Certificado digital no vigente al momento de firma del DE [Detalle del error]",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "I002",
+      "id_validacion": "I002",
+      "validacion": "El certificado digital (I002) debe estar vigente(no revocado) al momento de la firma digital (A004). Causas: Certificado del PCSC no habilitado por el MIC; Certificado del PCSC revocado; Certificado no está firmado por el PCSC; Dirección de la LCR no informada (CRLDistributionPoint); Error en el acceso a la LCR; LCR inexistente; Certificado de firma revocado; Certificado raíz no corresponde al MIC; Certificado expirado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2450",
+          "pagina": 192
+        },
+        {
+          "doc": "NT016",
+          "ref": "2450"
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Certificado digital no vigente al momento de firma del DE",
+          "validacion": "El certificado digital (I002) debe estar vigente (no revocado) al momento de la firma digital (A004)",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "2450",
+              "pagina": 192
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-08-25",
+              "produccion": "2023-09-22"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "codigo": "2500",
+      "servicio": "formato-de",
+      "mensaje": "Cadena de caracteres correspondiente al código QR no es coincidente con el archivo XML",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "J002",
+      "id_validacion": "J002",
+      "validacion": "Las informaciones de la cadena de caracteres correspondiente al código QR (J002) no son coincidentes con las informaciones de los respectivos campos del archivo XML",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2500",
+          "pagina": 192
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2501",
+      "servicio": "formato-de",
+      "mensaje": "El hash del código QR incluido el de la cadena de caracteres es inválido",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "J002",
+      "id_validacion": "J002a",
+      "validacion": "El hash del código QR incluido en la cadena de caracteres correspondiente al código QR impreso no corresponde al cálculo obtenido del hash con la cadena informada y el CSC existente en la base de datos de SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2501",
+          "pagina": 192
+        },
+        {
+          "doc": "NT010",
+          "ref": "4. Conformación del Código QR",
+          "cita": "Si el Código de Seguridad del Contribuyente no está vigente en la fecha de emisión del documento electrónico se retornará el error 2501."
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2502",
+      "servicio": "formato-de",
+      "mensaje": "URL de consulta de código QR es inválida",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "J002",
+      "id_validacion": "J002b",
+      "validacion": "La URL de consulta del código QR informada en la cadena de caracteres (J002) no es correcta",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2502",
+          "pagina": 193
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    },
+    {
+      "codigo": "2503",
+      "servicio": "formato-de",
+      "mensaje": "Información adicional de interés para el emisor fue incluida en el DE",
+      "clase": "rechazo",
+      "accion": "corregir-y-reenviar",
+      "efecto": "R",
+      "campo": "J003",
+      "id_validacion": "J003",
+      "validacion": "La información adicional de interés para el emisor no debe ser enviada a SIFEN. El campo J003 fue incluido en el XML del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2503",
+          "pagina": 193
+        },
+        {
+          "doc": "MT150",
+          "ref": "6.5",
+          "cita": "se podrá reutilizar el mismo CDC [...] y someter nuevamente a validación"
+        }
+      ]
+    }
+  ]
+}

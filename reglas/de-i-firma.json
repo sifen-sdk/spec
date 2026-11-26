@@ -1,0 +1,409 @@
+{
+  "grupo": "I",
+  "reglas": [
+    {
+      "id": "R-I001-O",
+      "campo": "I001",
+      "tipo": "obligatorio",
+      "texto": "Todo DE lleva la firma digital",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "I001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd rDE/ds:Signature"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-F1",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "La firma sigue el estándar XML Signature en formato Enveloped y abarca el grupo A (A001, elemento DE) con los grupos A a H, identificado por el atributo Id cuyo valor es el CDC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "I001",
+          "cita": "Debe ser firmado el grupo A (campo A001) que contiene los grupos de información del A hasta H"
+        },
+        {
+          "doc": "MT150",
+          "ref": "7.6 Estándar de firma digital",
+          "cita": "abarcando el grupo de información A001, con sus respectivos subgrupos, identificado por el Atributo “Id” cuyo valor será el CDC"
+        },
+        {
+          "doc": "MT150",
+          "ref": "7.7 Especificaciones técnicas",
+          "cita": "XML Digital Signature, se utiliza el formato Enveloped"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-F2",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "Signature va dentro de rDE, después de DE y antes de gCamFuFD, con el namespace declarado en la propia etiqueta: <Signature xmlns=\"http://www.w3.org/2000/09/xmldsig#\">",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd rDE (secuencia dVerFor, DE, ds:Signature, gCamFuFD)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "7.2.2.1 Particularidad de la firma digital",
+          "cita": "La declaración namespace de la firma digital debe realizarse en la etiqueta <Signature>"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-F3",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "El atributo URI de Reference es el CDC precedido por \"#\" y debe coincidir con el atributo Id del DE",
+      "codigo_sifen": "0140",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "7.6 Estándar de firma digital",
+          "cita": "El mismo literal único (CDC) precedido por el caracter “#” deberá ser informado en el atributo URI del tag Reference"
+        },
+        {
+          "doc": "NT016",
+          "ref": "0140",
+          "cita": "Reference URI no coincide con el atributo Id del documento"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-F4",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "CanonicalizationMethod (XS04): http://www.w3.org/TR/2001/REC-xml-c14n-20010315 (el ejemplo del Manual usa el mismo valor)",
+      "contradiccion": "C-514",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "XS04",
+          "cita": "https://www.w3.org/TR/2001/REC-xml-c14n-20010315"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F5",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "CanonicalizationMethod (XS04), valores válidos: http://www.w3.org/TR/2001/REC-xml-c14n-20010315 (inclusiva), http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments (inclusiva con comentarios), http://www.w3.org/2001/10/xml-exc-c14n (exclusiva, así escrita en la NT), http://www.w3.org/2001/10/xml-exc-c14n#WithComments (exclusiva con comentarios)",
+      "contradiccion": "C-514",
+      "fuentes": [
+        {
+          "doc": "NT016",
+          "ref": "XS04"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F6",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "SignatureMethod (XS06): RSA-SHA256, http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "XS06",
+          "cita": "Sha256RSA http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F7",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "SignatureMethod (XS06), valores válidos: http://www.w3.org/2001/04/xmldsig-more#rsa-sha256, http://www.w3.org/2001/04/xmldsig-more#rsa-sha384, http://www.w3.org/2001/04/xmldsig-more#rsa-sha512",
+      "fuentes": [
+        {
+          "doc": "NT016",
+          "ref": "XS06"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F8",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "Transforms (XS12, ocurrencia 2-2): enveloped-signature y canonicalización exclusiva (http://www.w3.org/2001/10/xml-exc-c14n#); el ejemplo del Manual usa http://www.w3.org/2000/09/xmldsig#enveloped-signature y http://www.w3.org/2001/10/xml-exc-c14n#. Se admite XPath (XS14, 0-n)",
+      "codigo_sifen": "0140",
+      "contradiccion": "C-513",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "XS12"
+        },
+        {
+          "doc": "MT150",
+          "ref": "XS13",
+          "cita": "https://www.w3.org/TR/xmldsig-core1/#sec-EnvelopedSignature http://www.w3.org/2001/10/xml-exc-c14n#"
+        },
+        {
+          "doc": "MT150",
+          "ref": "XS14"
+        },
+        {
+          "doc": "MT150",
+          "ref": "7.7 Especificaciones técnicas",
+          "cita": "Transformaciones exigidas: ... Enveloped ... C14N, http://www.w3.org/2001/10/xml-exc-c14n#"
+        },
+        {
+          "doc": "MT150",
+          "ref": "AD01",
+          "cita": "Transform Algorithm previsto en la firma (“C14N” y Enveloped) no informado"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F9",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "Transform (XS12, ocurrencia 1-1), único valor válido: http://www.w3.org/2000/09/xmldsig#enveloped-signature. La NT 16 elimina XPath (XS14)",
+      "codigo_sifen": "0140",
+      "contradiccion": "C-513",
+      "fuentes": [
+        {
+          "doc": "NT016",
+          "ref": "XS12"
+        },
+        {
+          "doc": "NT016",
+          "ref": "XS13"
+        },
+        {
+          "doc": "NT016",
+          "ref": "XS14 (se elimina)"
+        },
+        {
+          "doc": "NT016",
+          "ref": "0140",
+          "cita": "Transform Algorithm previsto en la firma (Enveloped Signature) no informado o no válido"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F10",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "DigestMethod (XS16): SHA-256 (el Manual escribe https://www.w3.org/TR/2002/REC-xmlenc-core-20021210/Overview.html#sha256; su ejemplo, http://www.w3.org/2001/04/xmlenc#sha256)",
+      "contradiccion": "C-514",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "XS16"
+        },
+        {
+          "doc": "MT150",
+          "ref": "7.7 Especificaciones técnicas",
+          "cita": "Función de “message digest”: SHA-2"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F11",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "DigestMethod (XS16), valores válidos: http://www.w3.org/2001/04/xmlenc#sha256, http://www.w3.org/2001/04/xmldsig-more#sha384, http://www.w3.org/2001/04/xmlenc#sha512",
+      "fuentes": [
+        {
+          "doc": "NT016",
+          "ref": "XS16"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-F12",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "KeyInfo/X509Data/X509Certificate (certificado X509 v3) es obligatorio. No se deben incluir X509SubjectName, X509IssuerSerial, X509IssuerName ni X509SKI, y se debe evitar KeyValue, RSAKeyValue, Modulus y Exponent",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "7.6 Estándar de firma digital",
+          "cita": "los DE firmados digitalmente no deben contener los siguientes elementos"
+        },
+        {
+          "doc": "MT150",
+          "ref": "XS19"
+        },
+        {
+          "doc": "MT150",
+          "ref": "XS20"
+        },
+        {
+          "doc": "MT150",
+          "ref": "XS21"
+        },
+        {
+          "doc": "NT016",
+          "ref": "XS21",
+          "cita": "Certificado Cualificado de Firma Electrónica X509.v3"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-F13",
+      "campo": "I001",
+      "tipo": "formato",
+      "texto": "Clave RSA de 2048 bits para certificados por software; 2048 o 4096 para hardware. Codificación Base64",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "7.7 Especificaciones técnicas",
+          "cita": "RSA 2048, para cifrado por software, para cifrado por hardware pueden ser de RSA 2048 o RSA 4096"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-D1",
+      "campo": "I001",
+      "tipo": "dependencia",
+      "texto": "Firma difiere del estándar: no firmado el documento completo (falta Reference URI) o Transform Algorithm (C14N y Enveloped) no informado",
+      "no_declarativa": true,
+      "codigo_sifen": "0140",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AD01"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-D2",
+      "campo": "I001",
+      "tipo": "dependencia",
+      "texto": "Firma difiere del estándar: falta Reference URI; Transform (Enveloped Signature), Canonicalization Method, Signature Method o Digest Method no informado o no válido; o Reference URI no coincide con el atributo Id del documento",
+      "no_declarativa": true,
+      "codigo_sifen": "0140",
+      "fuentes": [
+        {
+          "doc": "NT016",
+          "ref": "AD01"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      }
+    },
+    {
+      "id": "R-I001-D3",
+      "campo": "I001",
+      "tipo": "dependencia",
+      "texto": "El valor de la firma (SignatureValue) debe coincidir con el calculado (XML modificado luego de la firma o mal firmado, problemas de la cadena de certificación o de la LCR)",
+      "no_declarativa": true,
+      "codigo_sifen": "0141",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AD02"
+        },
+        {
+          "doc": "NT016",
+          "ref": "AD02"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-D4",
+      "campo": "I001",
+      "tipo": "dependencia",
+      "texto": "El RUC del certificado utilizado para firmar debe pertenecer al contribuyente emisor",
+      "no_declarativa": true,
+      "codigo_sifen": "0142",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AD03"
+        },
+        {
+          "doc": "MT150",
+          "ref": "7.5",
+          "cita": "RUCXXXXXXXXX-X"
+        }
+      ]
+    },
+    {
+      "id": "R-I001-D5",
+      "campo": "I001",
+      "tipo": "dependencia",
+      "texto": "El certificado digital (que la validación llama I002, campo que no figura en la tabla del grupo I) debe estar vigente, no revocado, al momento de la firma digital (A004)",
+      "no_declarativa": true,
+      "codigo_sifen": "2450",
+      "contradiccion": "C-516",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2450"
+        },
+        {
+          "doc": "NT016",
+          "ref": "2450"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "sistema-facturacion",
+  "titulo": "Sistema de facturación",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "A005"
+    },
+    {
+      "doc": "NT010",
+      "ref": "1.1 (A005 dSisFact)"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_v150.xsd tDE/dSisFact (maxInclusive 1); DE_Ekuatiai_v150.xsd dSisFact (maxInclusive 2)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "A005"
+  ],
+  "xml": [
+    "dSisFact"
+  ],
+  "nota": "La NT 10 (1.1) muestra el campo A005 bajo \"se elimina el siguiente campo\", pero el XSD vigente lo conserva (1-1).",
+  "contradiccion": "C-915",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Sistema de facturación del contribuyente"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "SIFEN solución gratuita",
+      "observacion": "DE_v150.xsd solo admite el valor 1 (maxInclusive 1); DE_Ekuatiai_v150.xsd admite hasta 2."
+    }
+  ]
+}

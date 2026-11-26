@@ -1,0 +1,27 @@
+{
+  "id": "facturador-electronico",
+  "titulo": "RUC consultado es facturador electrónico",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "ContRUC06"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "ContRUC06"
+  ],
+  "xml": [
+    "dRUCFactElec"
+  ],
+  "entradas": [
+    {
+      "codigo": "S",
+      "descripcion": "Es facturador electrónico"
+    },
+    {
+      "codigo": "N",
+      "descripcion": "No es facturador electrónico"
+    }
+  ]
+}

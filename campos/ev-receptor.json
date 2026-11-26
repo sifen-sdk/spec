@@ -1,0 +1,667 @@
+{
+  "grupo": "GER",
+  "titulo": "Eventos del receptor: notificación de recepción, conformidad, disconformidad y desconocimiento",
+  "esquemas": [
+    "Evento_v150.xsd",
+    "Evento_Types_v150.xsd",
+    "siRecepEvento_v150.xsd",
+    "siRecepEventoReceptor_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GEN001",
+      "xml": "rGeVeNotRec",
+      "nombre": "receiptNotification",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos Notificación – Recepción DE o DTE",
+      "observaciones": "Elemento raíz. Evento del receptor, informativo y opcional (11.2.4). El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN001",
+          "pagina": 123
+        },
+        {
+          "doc": "NT019",
+          "ref": "1.1 GEN001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGeVeNotRec (trGeVeNotRec)"
+        }
+      ]
+    },
+    {
+      "id": "GEN002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GEN001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador del DE/DTE",
+      "observaciones": "Se informa el código de control (CDC) de un DE/DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN002",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GEN003",
+      "xml": "dFecEmi",
+      "nombre": "issueDateTime",
+      "padre": "GEN001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión del DE/DTE",
+      "observaciones": "MT: Requerido para conteo de plazo de registro del evento del receptor (hasta 45 días desde la fecha de emisión). NT 19 (desde test 2023-12-15, producción 2024-01-31): Requerido para conteo de plazo de registro del evento del receptor en Notificación – Recepción DE (hasta 45 días desde la fecha de emisión). Fecha y hora en el formato AAAA-MM-DDThh:mm:ss",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN003",
+          "pagina": 123
+        },
+        {
+          "doc": "NT019",
+          "ref": "1.1 GEN003"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dFecEmi (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEN004",
+      "xml": "dFecRecep",
+      "nombre": "receptionDateTime",
+      "padre": "GEN001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha Recepción DE",
+      "observaciones": "Fecha en que el receptor recibió física o electrónicamente el documento electrónico. Fecha y hora en el formato AAAA-MM-DDThh:mm:ss",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN004",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dFecRecep (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEN005",
+      "xml": "iTipRec",
+      "nombre": "receiverTypeCode",
+      "padre": "GEN001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Receptor",
+      "observaciones": "1=Contribuyente 2=No Contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN005",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/iTipRec (tiTipEve)"
+        }
+      ],
+      "catalogo": "tipo-receptor-evento"
+    },
+    {
+      "id": "GEN006",
+      "xml": "dNomRec",
+      "nombre": "receiverName",
+      "padre": "GEN001",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre o Razón Social del Receptor del DE/DTE",
+      "contradiccion": "C-604",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN006",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dNomRec (tdNomRec 4-255)"
+        }
+      ]
+    },
+    {
+      "id": "GEN007",
+      "xml": "dRucRec",
+      "nombre": "receiverRuc",
+      "padre": "GEN001",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "Ruc del Receptor",
+      "observaciones": "Requerido solo cuando el tipo de receptor es contribuyente (GEN005=1). No Informar si GEN005=2",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN007",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dRucRec (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "GEN008",
+      "xml": "dDVRec",
+      "nombre": "receiverCheckDigit",
+      "padre": "GEN001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Dígito verificador del RUC del contribuyente receptor",
+      "observaciones": "Requerido solo cuando el tipo de receptor es contribuyente (GEN005=1). No Informar si GEN005=2",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN008",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dDVRec (tDVer)"
+        }
+      ]
+    },
+    {
+      "id": "GEN009",
+      "xml": "dTipIDRec",
+      "nombre": "receiverIdDocumentTypeCode",
+      "padre": "GEN001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento de identidad del receptor",
+      "observaciones": "No Informar si GEN005=1. Requerido solo cuando el tipo de receptor es No Contribuyente (GEN005=2). 1= Cédula paraguaya 2= Pasaporte 3= Cédula extranjera 4= Carnet de residencia",
+      "contradiccion": "C-616",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN009",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dTipIDRec (tiTipDocRec: [1-6]|9)"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "GEN010",
+      "xml": "dNumID",
+      "nombre": "receiverIdDocumentNumber",
+      "padre": "GEN001",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de documento de identidad",
+      "observaciones": "No Informar si GEN005=1. Requerido solo cuando el tipo de receptor es No Contribuyente (GEN005=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN010",
+          "pagina": 123
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dNumID (tdNumDocId)"
+        }
+      ]
+    },
+    {
+      "id": "GEN011",
+      "xml": "dTotalGs",
+      "nombre": "operationTotalPyg",
+      "padre": "GEN001",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Total general de la operación en Guaraníes",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN011",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeNotRec/dTotalGs (tMontoBase)"
+        }
+      ]
+    },
+    {
+      "id": "GCO001",
+      "xml": "rGeVeConf",
+      "nombre": "conformity",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raiz Gestión de Eventos Conformidad",
+      "observaciones": "Elemento raíz. Evento conclusivo del receptor, solo sobre DTE (11.2.5). El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GCO001",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGeVeConf (trGeVeConf)"
+        }
+      ]
+    },
+    {
+      "id": "GCO002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GCO001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DTE",
+      "observaciones": "Corresponde al CDC de un DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GCO002",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeConf/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GCO003",
+      "xml": "iTipConf",
+      "nombre": "typeCode",
+      "padre": "GCO001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Conformidad",
+      "observaciones": "1= Conformidad Total del DTE, 2= Conformidad Parcial del DTE, cuando la mercadería será entregada o servicio será prestado en una fecha posterior a la recepción del DE/DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GCO003",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeConf/iTipConf (tiTipEve)"
+        }
+      ],
+      "catalogo": "tipo-conformidad"
+    },
+    {
+      "id": "GCO004",
+      "xml": "dFecRecep",
+      "nombre": "estimatedReceptionDateTime",
+      "padre": "GCO001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "0-1",
+      "descripcion": "Fecha Estimada de Recepción",
+      "observaciones": "Obligatorio si el tipo de Conformidad es Conformidad Parcial del DTE (GCO003= 2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GCO004",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeConf/dFecRecep (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GDI001",
+      "xml": "rGeVeDisconf",
+      "nombre": "disconformity",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raiz Gestión de Eventos Disconformidad",
+      "observaciones": "Elemento raíz. Evento conclusivo del receptor, solo sobre DTE (11.2.5). El Manual no tiene GDI003: el motivo es GDI004. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDI001",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGeVeDisconf (trGeVeDisconf)"
+        }
+      ]
+    },
+    {
+      "id": "GDI002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GDI001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DTE",
+      "observaciones": "Corresponde al CDC de un DTE. El Manual indica tipo N; el XSD (tId) es una cadena.",
+      "contradiccion": "C-608",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDI002",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDisconf/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GDI004",
+      "xml": "mOtEve",
+      "nombre": "reason",
+      "padre": "GDI001",
+      "tipo": "alfanumerico",
+      "longitud": "5-500",
+      "ocurrencia": "1-1",
+      "descripcion": "Motivo del Evento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDI004",
+          "pagina": 124
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDisconf/mOtEve (tmotEve)"
+        }
+      ]
+    },
+    {
+      "id": "GED001",
+      "xml": "rGeVeDescon",
+      "nombre": "nonRecognition",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raiz Gestión de Eventos Desconocimiento",
+      "observaciones": "Elemento raíz. Evento informativo del receptor, sobre DE o DTE (11.2.5). El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED001",
+          "pagina": 125
+        },
+        {
+          "doc": "NT019",
+          "ref": "1.2 GED001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGeVeDescon (trGeVeDescon)"
+        }
+      ]
+    },
+    {
+      "id": "GED002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GED001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE/DTE",
+      "observaciones": "Corresponde al CDC de un Kude o CDC de un DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED002",
+          "pagina": 125
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GED003",
+      "xml": "dFecEmi",
+      "nombre": "issueDateTime",
+      "padre": "GED001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión del DE/DTE",
+      "observaciones": "MT: Requerido para conteo de plazo de registro del evento del receptor (hasta 45 días desde la fecha de emisión). NT 19 (desde test 2023-12-15, producción 2024-01-31): Requerido para conteo de plazo de registro del evento del receptor en Desconocimiento DE (hasta 45 días desde la fecha de emisión). Fecha y hora en el formato AAAA-MM-DDThh:mm:ss.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED003",
+          "pagina": 125
+        },
+        {
+          "doc": "NT019",
+          "ref": "1.2 GED003"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/dFecEmi (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GED004",
+      "xml": "dFecRecep",
+      "nombre": "receptionDateTime",
+      "padre": "GED001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha Recepción DE",
+      "observaciones": "Fecha y hora en el formato AAAA-MM-DDThh:mm:ss.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED004",
+          "pagina": 125
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/dFecRecep (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GED005",
+      "xml": "iTipRec",
+      "nombre": "receiverTypeCode",
+      "padre": "GED001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Receptor",
+      "observaciones": "1=Contribuyente 2=No Contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED005",
+          "pagina": 125
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/iTipRec (tiTipEve)"
+        }
+      ],
+      "catalogo": "tipo-receptor-evento"
+    },
+    {
+      "id": "GED006",
+      "xml": "dNomRec",
+      "nombre": "receiverName",
+      "padre": "GED001",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre o Razón Social del Receptor del DE/DTE",
+      "contradiccion": "C-604",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED006",
+          "pagina": 125
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/dNomRec (tdNomRec 4-255)"
+        }
+      ]
+    },
+    {
+      "id": "GED007",
+      "xml": "dRucRec",
+      "nombre": "receiverRuc",
+      "padre": "GED001",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "Ruc del Receptor",
+      "observaciones": "Requerido solo cuando el tipo de receptor es Contribuyente (GED005=1). No Informar si GED005=2",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED007",
+          "pagina": 125
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/dRucRec (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "GED008",
+      "xml": "dDVRec",
+      "nombre": "receiverCheckDigit",
+      "padre": "GED001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Dígito verificador del RUC del contribuyente receptor",
+      "observaciones": "Requerido solo cuando el tipo de receptor es Contribuyente (GED005=1). No Informar si GED005=2",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED008",
+          "pagina": 125
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/dDVRec (tDVer)"
+        }
+      ]
+    },
+    {
+      "id": "GED009",
+      "xml": "dTipIDRec",
+      "nombre": "receiverIdDocumentTypeCode",
+      "padre": "GED001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento de identidad del receptor",
+      "observaciones": "No Informar si GED005=1. Requerido solo cuando el tipo de receptor es No Contribuyente (GED005=2). 1= Cédula paraguaya 2= Pasaporte 3= Cédula extranjera 4= Carnet de residencia",
+      "contradiccion": "C-616",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED009",
+          "pagina": 125
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/dTipIDRec (tiTipDoc: [1-4])"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "GED010",
+      "xml": "dNumID",
+      "nombre": "receiverIdDocumentNumber",
+      "padre": "GED001",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de documento de identidad",
+      "observaciones": "No Informar si GED005=1. Requerido solo cuando el tipo de receptor es No Contribuyente (GED005=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED010",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/dNumID (tdNumDocId)"
+        }
+      ]
+    },
+    {
+      "id": "GED011",
+      "xml": "mOtEve",
+      "nombre": "reason",
+      "padre": "GED001",
+      "tipo": "alfanumerico",
+      "longitud": "5-500",
+      "ocurrencia": "1-1",
+      "descripcion": "Motivo del Evento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED011",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDescon/mOtEve (tmotEve)"
+        }
+      ]
+    }
+  ]
+}

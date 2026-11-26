@@ -4,7 +4,8 @@
 transacción, afectación tributaria, condiciones y medios de pago, monedas, países, departamentos, distritos y
 ciudades, unidades de medida, y el resto de las tablas del Manual Técnico y de las Notas Técnicas.
 
-**Estado.** Sin datos. Se carga en la fase 1.
+**Estado.** Cargados 62 catálogos, incluida la geografía oficial (departamentos, distritos y ciudades) de la
+planilla de la DNIT actualizada al 03/11/2025.
 
 ## Formato previsto
 

@@ -1,0 +1,32 @@
+{
+  "id": "tipo-conformidad",
+  "titulo": "Tipo de conformidad",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "GCO003"
+    },
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tiTipEve (1, 2)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "GCO003"
+  ],
+  "xml": [
+    "iTipConf"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Conformidad Total del DTE"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Conformidad Parcial del DTE",
+      "detalle": "Conformidad Parcial del DTE, cuando la mercadería será entregada o servicio será prestado en una fecha posterior a la recepción del DE/DTE"
+    }
+  ]
+}

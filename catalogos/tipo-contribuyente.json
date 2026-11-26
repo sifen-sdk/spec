@@ -1,0 +1,42 @@
+{
+  "id": "tipo-contribuyente",
+  "titulo": "Tipo de contribuyente",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D103"
+    },
+    {
+      "doc": "MT150",
+      "ref": "D205"
+    },
+    {
+      "doc": "NT014",
+      "ref": "GENFE007"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipCont (pattern [1-2])"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D103",
+    "D205",
+    "GENFE007"
+  ],
+  "xml": [
+    "iTipCont",
+    "iTiContRec"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Persona Física"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Persona Jurídica"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tipo": "cdc",
+  "descripcion": "Ejemplo de conformación del CDC y su dígito verificador publicado en el Manual Técnico",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "10.1 Estructura del código de control (CDC)",
+      "pagina": 57
+    },
+    {
+      "doc": "MT150",
+      "ref": "10.2 Dígito verificador del CDC",
+      "pagina": 58
+    }
+  ],
+  "entrada": {
+    "tipoDocumento": "01",
+    "rucEmisor": "44444401",
+    "digitoVerificadorRuc": "7",
+    "establecimiento": "001",
+    "puntoExpedicion": "001",
+    "numeroDocumento": "0014528",
+    "tipoContribuyente": "2",
+    "fechaEmision": "20170125",
+    "tipoEmision": "1",
+    "codigoSeguridad": "587326098"
+  },
+  "esperado": {
+    "cdc": "01444444017001001001452822017012515873260988",
+    "digitoVerificador": "8",
+    "representacionKude": "0144 4444 0170 0100 1001 4528 2201 7012 5158 7326 0988"
+  },
+  "notas": "Los datos son los del ejemplo oficial; no corresponden a un contribuyente real. El orden de los componentes sale de la validación 1000 y del ejemplo; la tabla gráfica del Manual es una imagen."
+}

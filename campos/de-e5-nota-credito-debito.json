@@ -1,0 +1,61 @@
+{
+  "grupo": "E5",
+  "titulo": "Campos que componen la Nota de Crédito/Débito Electrónica NCE-NDE",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "E400",
+      "xml": "gCamNCDE",
+      "nombre": "creditDebitNote",
+      "padre": "E001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos de la Nota de Crédito/Débito Electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E400",
+          "pagina": 78
+        }
+      ]
+    },
+    {
+      "id": "E401",
+      "xml": "iMotEmi",
+      "nombre": "reasonCode",
+      "padre": "E400",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Motivo de emisión",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E401",
+          "pagina": 78
+        }
+      ],
+      "catalogo": "motivo-emision-nc"
+    },
+    {
+      "id": "E402",
+      "xml": "dDesMotEmi",
+      "nombre": "reasonDescription",
+      "padre": "E400",
+      "tipo": "alfanumerico",
+      "longitud": "6-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del motivo de emisión",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E402",
+          "pagina": 78
+        }
+      ],
+      "catalogo": "motivo-emision-nc"
+    }
+  ]
+}

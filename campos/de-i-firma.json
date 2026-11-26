@@ -1,0 +1,39 @@
+{
+  "grupo": "I",
+  "titulo": "Información de la Firma Digital del DTE",
+  "esquemas": [
+    "DE_v150.xsd",
+    "siRecepDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "I001",
+      "xml": "ds:Signature",
+      "nombre": "signature",
+      "padre": "AA001",
+      "tipo": "xml",
+      "ocurrencia": "1-1",
+      "descripcion": "Firma Digital del DTE",
+      "observaciones": "Elemento Signature del estándar XML Signature (namespace http://www.w3.org/2000/09/xmldsig#); sus hijos no se cargan como campos. El Manual lo tipifica como grupo (G)",
+      "contradiccion": "C-516",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "I001"
+        },
+        {
+          "doc": "MT150",
+          "ref": "7.6 Estándar de firma digital"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd rDE/ds:Signature"
+        },
+        {
+          "doc": "XSD",
+          "ref": "xmldsig-core-schema.xsd Signature"
+        }
+      ]
+    }
+  ]
+}
