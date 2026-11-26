@@ -1,0 +1,22 @@
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Nunca material real: certificados, claves ni secretos
+*.p12
+*.pfx
+*.pem
+*.key
+*.jks
+.env
+.env.*
+!.env.example
+
+# Salidas temporales de herramientas
+/build/
+/out/
+/tmp/

@@ -1,0 +1,21 @@
+SIFEN SDK - spec
+Copyright 2026 Los autores de SIFEN SDK
+
+El contenido propio de este repositorio (tablas de campos, reglas, casos de
+conformidad, documentación y herramientas) se distribuye bajo la Licencia
+Apache, Versión 2.0. Ver el archivo LICENSE.
+
+Material de terceros
+--------------------
+
+Los esquemas XSD de la carpeta xsd/ y las tablas de códigos de referencia que
+se reproducen en catalogos/ fueron publicados por la Dirección Nacional de
+Ingresos Tributarios (DNIT) de la República del Paraguay y le pertenecen.
+
+Se incluyen sin modificaciones, con su procedencia, fecha de descarga y hash,
+con el único fin de permitir la interoperabilidad con el Sistema Integrado de
+Facturación Electrónica Nacional (SIFEN). Ese material NO queda cubierto por
+la licencia Apache-2.0 de este proyecto.
+
+Este es un proyecto comunitario. No está afiliado a la DNIT ni cuenta con su
+respaldo. "SIFEN" y "e-Kuatia" se mencionan solo de forma descriptiva.
