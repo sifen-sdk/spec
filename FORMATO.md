@@ -146,7 +146,9 @@ La obligatoriedad real **no** se deduce de `ocurrencia`: está en `reglas/`.
 - Combinadores: `todas` y `alguna` (lista de dos o más), `no` (una condición).
 
 Los valores se escriben como texto, igual que viajan en el XML. `mayor`, `mayor_igual`, `menor` y `menor_igual`
-comparan como números decimales; el resto compara texto. No hay funciones ni aritmética.
+comparan como números decimales. `igual`, `distinto`, `en` y `no_en` consideran iguales dos valores con el mismo
+texto **o** que son el mismo número decimal (`10.00` y `10`): el emisor transporta sus importes y tasas con su
+propia escala, y comparar solo texto haría que una regla se saltee sin aviso. No hay funciones ni aritmética.
 
 **Campos que se repiten** (por ejemplo, los de cada ítem):
 
