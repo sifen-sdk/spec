@@ -1,0 +1,44 @@
+{
+  "id": "tipo-documento-asociado",
+  "titulo": "Tipo de documento asociado",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "H002"
+    },
+    {
+      "doc": "MT150",
+      "ref": "H003"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipDocAso, tdDesTipDocAso"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "H002",
+    "H003"
+  ],
+  "descripciones": {
+    "H002": "H003"
+  },
+  "xml": [
+    "iTipDocAso",
+    "dDesTipDocAso"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Electrónico"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Impreso"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Constancia Electrónica"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "tipo-documento-identidad-receptor",
+  "titulo": "Tipo de documento de identidad del receptor",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D208"
+    },
+    {
+      "doc": "MT150",
+      "ref": "D209"
+    },
+    {
+      "doc": "NT002",
+      "ref": "1.1 (D208)"
+    },
+    {
+      "doc": "NT023",
+      "ref": "1.1 (D208)"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipDocRec (pattern [1-6]|9), tdDtipDocRec"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D208",
+    "D209"
+  ],
+  "descripciones": {
+    "D208": "D209"
+  },
+  "xml": [
+    "iTipIDRec",
+    "dDTipIDRec"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Cédula paraguaya"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Pasaporte"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Cédula extranjera"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Carnet de residencia"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Innominado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D208"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 (D208)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Tarjeta Diplomática de exoneración fiscal",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D208"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 (D208)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Otro",
+      "observacion": "Si D208 = 9 informar el tipo de documento de identidad del receptor",
+      "descripcion_libre": true
+    }
+  ]
+}

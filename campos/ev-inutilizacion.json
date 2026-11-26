@@ -1,0 +1,218 @@
+{
+  "grupo": "GEI",
+  "titulo": "Evento de inutilización de número de DE",
+  "esquemas": [
+    "Evento_v150.xsd",
+    "Evento_Types_v150.xsd",
+    "siRecepEvento_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GEI001",
+      "xml": "rGeVeInu",
+      "nombre": "numberInvalidation",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raiz Gestión de Eventos Inutilización",
+      "observaciones": "Elemento raíz. Obligatorio si campo dTiGDE=2 (Inutilización). El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt. Único evento que no se basa en el CDC (11.5).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI001",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGeVeInu (trGeVeInu)"
+        }
+      ]
+    },
+    {
+      "id": "GEI002",
+      "xml": "dNumTim",
+      "nombre": "stampNumber",
+      "padre": "GEI001",
+      "tipo": "numerico",
+      "longitud": "8",
+      "ocurrencia": "1-1",
+      "descripcion": "Número del Timbrado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI002",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeInu/dNumTim (tdNumTim)"
+        }
+      ]
+    },
+    {
+      "id": "GEI003",
+      "xml": "dEst",
+      "nombre": "establishment",
+      "padre": "GEI001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Establecimiento",
+      "observaciones": "Completar con ceros a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI003",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeInu/dEst (tdEst)"
+        }
+      ]
+    },
+    {
+      "id": "GEI004",
+      "xml": "dPunExp",
+      "nombre": "dispatchPoint",
+      "padre": "GEI001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Punto de expedición",
+      "observaciones": "Completar con ceros a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI004",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeInu/dPunExp (tdPunExp)"
+        }
+      ]
+    },
+    {
+      "id": "GEI005",
+      "xml": "dNumIn",
+      "nombre": "rangeStartNumber",
+      "padre": "GEI001",
+      "tipo": "alfanumerico",
+      "longitud": "7",
+      "ocurrencia": "1-1",
+      "descripcion": "Número Inicio del rango del documento",
+      "observaciones": "La cantidad máxima para inutilización es un rango de hasta 1000 números del DE. Completar con ceros a la izquierda",
+      "contradiccion": "C-611",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI005",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeInu/dNumIn (tdNumDE: minLength 7, sin maxLength)"
+        }
+      ]
+    },
+    {
+      "id": "GEI006",
+      "xml": "dNumFin",
+      "nombre": "rangeEndNumber",
+      "padre": "GEI001",
+      "tipo": "alfanumerico",
+      "longitud": "7",
+      "ocurrencia": "1-1",
+      "descripcion": "Número Final del rango del documento",
+      "observaciones": "Completar con ceros a la izquierda",
+      "contradiccion": "C-611",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI006",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeInu/dNumFin (tdNumDE: minLength 7, sin maxLength)"
+        }
+      ]
+    },
+    {
+      "id": "GEI007",
+      "xml": "iTiDE",
+      "nombre": "documentTypeCode",
+      "padre": "GEI001",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Documento Electrónico",
+      "observaciones": "1= Factura electrónica, 2= Factura electrónica de exportación, 3= Factura electrónica de importación, 4= Autofactura electrónica, 5= Nota de crédito electrónica, 6= Nota de débito electrónica, 7= Nota de remisión electrónica, 8= Comprobante de retención electrónico. El XSD agrega 9 (comentario: Boleta de Venta Electrónica).",
+      "contradiccion": "C-610",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI007",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_Types_v150.xsd tiTiDEEv (enumeración 1 a 9)"
+        }
+      ],
+      "catalogo": "tipo-documento"
+    },
+    {
+      "id": "GEI008",
+      "xml": "mOtEve",
+      "nombre": "reason",
+      "padre": "GEI001",
+      "tipo": "alfanumerico",
+      "longitud": "5-500",
+      "ocurrencia": "1-1",
+      "descripcion": "Motivo del Evento",
+      "observaciones": "Campo libre",
+      "contradiccion": "C-609",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEI008",
+          "pagina": 122
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeInu/mOtEve (tmotEve 5-500)"
+        }
+      ]
+    },
+    {
+      "id": "GEI009",
+      "xml": "dSerieNum",
+      "nombre": "documentSeries",
+      "padre": "GEI001",
+      "tipo": "alfanumerico",
+      "longitud": "2",
+      "ocurrencia": "0-1",
+      "descripcion": "Serie del número del documento",
+      "observaciones": "Agregado por la NT 10, que no publica fechas de vigencia por ambiente.",
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1.7 GEI009",
+          "cita": "Se agrega número de serie al evento de Inutilización"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeInu/dSerieNum (tserieNum: [A-Z][A-Z], minOccurs=0)"
+        }
+      ]
+    }
+  ]
+}

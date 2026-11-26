@@ -1,0 +1,192 @@
+{
+  "grupo": "E1",
+  "titulo": "Campos que componen la Factura Electrónica FE",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "E010",
+      "xml": "gCamFE",
+      "nombre": "invoice",
+      "padre": "E001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que componen la FE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E010",
+          "pagina": 74
+        }
+      ]
+    },
+    {
+      "id": "E011",
+      "xml": "iIndPres",
+      "nombre": "presenceIndicatorCode",
+      "padre": "E010",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Indicador de presencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E011",
+          "pagina": 75
+        }
+      ],
+      "catalogo": "indicador-presencia"
+    },
+    {
+      "id": "E012",
+      "xml": "dDesIndPres",
+      "nombre": "presenceIndicatorDescription",
+      "padre": "E010",
+      "tipo": "alfanumerico",
+      "longitud": "10-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del indicador de presencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E012",
+          "pagina": 75
+        }
+      ],
+      "catalogo": "indicador-presencia"
+    },
+    {
+      "id": "E013",
+      "xml": "dFecEmNR",
+      "nombre": "futureShipmentDate",
+      "padre": "E010",
+      "tipo": "fecha",
+      "longitud": "10",
+      "ocurrencia": "0-1",
+      "descripcion": "Fecha futura del traslado de mercadería",
+      "observaciones": "Fecha en el formato: AAAA-MM-DD. Fecha estimada para el traslado de la mercadería y emisión de la nota de remisión electrónica cuando corresponda. RG 41/14",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E013",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "E020",
+      "xml": "gCompPub",
+      "nombre": "publicProcurement",
+      "padre": "E010",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que describen las informaciones de compras públicas",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E020",
+          "pagina": 75
+        },
+        {
+          "doc": "NT026",
+          "ref": "1.2 E020",
+          "pagina": 1,
+          "cita": "Opcional si D202 = 3 (Tipo de operación B2G)"
+        }
+      ]
+    },
+    {
+      "id": "E021",
+      "xml": "dModCont",
+      "nombre": "modalityCode",
+      "padre": "E020",
+      "tipo": "alfanumerico",
+      "longitud": "2",
+      "ocurrencia": "1-1",
+      "descripcion": "Modalidad - Código emitido por la DNCP",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E021",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "E022",
+      "xml": "dEntCont",
+      "nombre": "entityCode",
+      "padre": "E020",
+      "tipo": "numerico",
+      "longitud": "5",
+      "ocurrencia": "1-1",
+      "descripcion": "Entidad - Código emitido por la DNCP",
+      "contradiccion": "C-201",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E022",
+          "pagina": 75
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCompPub, elemento 'dEntCont ' (con espacio final)"
+        }
+      ]
+    },
+    {
+      "id": "E023",
+      "xml": "dAnoCont",
+      "nombre": "yearCode",
+      "padre": "E020",
+      "tipo": "numerico",
+      "longitud": "2",
+      "ocurrencia": "1-1",
+      "descripcion": "Año - Código emitido por la DNCP",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E023",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "E024",
+      "xml": "dSecCont",
+      "nombre": "sequence",
+      "padre": "E020",
+      "tipo": "numerico",
+      "longitud": "7",
+      "ocurrencia": "1-1",
+      "descripcion": "Secuencia - emitido por la DNCP",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E024",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "E025",
+      "xml": "dFeCodCont",
+      "nombre": "contractingCodeIssueDate",
+      "padre": "E020",
+      "tipo": "fecha",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión del código de contratación por la DNCP",
+      "observaciones": "Fecha en el formato: AAAA-MM-DD.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E025",
+          "pagina": 76
+        }
+      ]
+    }
+  ]
+}

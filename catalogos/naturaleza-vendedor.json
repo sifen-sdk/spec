@@ -1,0 +1,40 @@
+{
+  "id": "naturaleza-vendedor",
+  "titulo": "Naturaleza del vendedor (autofactura)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E301"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E302"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiNatVen (pattern [1-2]), tdDesNatVen"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E301",
+    "E302"
+  ],
+  "descripciones": {
+    "E301": "E302"
+  },
+  "xml": [
+    "iNatVen",
+    "dDesNatVen"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "No contribuyente"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Extranjero"
+    }
+  ]
+}

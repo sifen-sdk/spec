@@ -1,0 +1,96 @@
+{
+  "id": "tipo-documento",
+  "titulo": "Tipo de documento electrónico",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "C002"
+    },
+    {
+      "doc": "MT150",
+      "ref": "C003"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GEI007"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTiDE (pattern 1|[4-7]|9|10), tdDesTiDE; Evento_Types_v150.xsd tiTiDEEv (1-9)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "C002",
+    "C003",
+    "GEI007"
+  ],
+  "descripciones": {
+    "C002": "C003"
+  },
+  "xml": [
+    "iTiDE",
+    "dDesTiDE"
+  ],
+  "nota": "En el evento de inutilización (GEI007) el Manual lista 1 a 8 sin marcar \"Futuro\"; Evento_Types_v150.xsd admite 1 a 9.",
+  "contradiccion": "C-901",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Factura electrónica"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Factura electrónica de exportación",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Factura electrónica de importación",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Autofactura electrónica"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Nota de crédito electrónica"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Nota de débito electrónica"
+    },
+    {
+      "codigo": "7",
+      "descripcion": "Nota de remisión electrónica"
+    },
+    {
+      "codigo": "8",
+      "descripcion": "Comprobante de retención electrónico",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Boleta de venta electrónica",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tiTiDE, tdDesTiDE"
+        }
+      ],
+      "observacion": "Solo en el XSD. La correspondencia código-descripción se infiere del orden de tdDesTiDE."
+    },
+    {
+      "codigo": "10",
+      "descripcion": "Boleta resimple electrónica",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tiTiDE, tdDesTiDE"
+        }
+      ],
+      "observacion": "Solo en el XSD. La correspondencia código-descripción se infiere del orden de tdDesTiDE."
+    }
+  ]
+}

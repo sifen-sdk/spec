@@ -1,0 +1,36 @@
+{
+  "id": "naturaleza-transportista",
+  "titulo": "Naturaleza del transportista",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E981"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET015"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiNatRec; Evento_Types_v150.xsd tiTipEve"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E981",
+    "GET015"
+  ],
+  "xml": [
+    "iNatTrans"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Contribuyente"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "No contribuyente"
+    }
+  ]
+}

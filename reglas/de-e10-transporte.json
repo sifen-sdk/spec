@@ -1,0 +1,1866 @@
+{
+  "grupo": "E10",
+  "reglas": [
+    {
+      "id": "R-E900-C1",
+      "campo": "E900",
+      "tipo": "condicional",
+      "texto": "El grupo de transporte es obligatorio en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2100",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E900",
+          "pagina": 96,
+          "cita": "Obligatorio si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2100",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E900-P1",
+      "campo": "E900",
+      "tipo": "prohibido",
+      "texto": "El grupo de transporte no se informa en la Autofactura, la Nota de Crédito, la Nota de Débito ni el Comprobante de Retención",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "codigo_sifen": "2101",
+      "contradiccion": "C-405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E900",
+          "pagina": 96,
+          "cita": "No informar si C002= 4, 5, 6"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2101",
+          "pagina": 179,
+          "cita": "no es permitido para Autofactura Electrónica, Nota de Crédito Electrónica, Nota de Débito Electrónica o Comprobante de Retención Electrónico (C002=4, 5, 6 o 8)"
+        }
+      ]
+    },
+    {
+      "id": "R-E901-C1",
+      "campo": "E901",
+      "tipo": "condicional",
+      "texto": "El tipo de transporte es obligatorio en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2102",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E901",
+          "pagina": 96,
+          "cita": "Obligatorio si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2102",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E902-C1",
+      "campo": "E902",
+      "tipo": "condicional",
+      "texto": "La descripción del tipo de transporte es obligatoria si se informa el código",
+      "condicion": {
+        "campo": "E901",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E902",
+          "pagina": 96,
+          "cita": "Obligatorio si existe el campo E901"
+        }
+      ]
+    },
+    {
+      "id": "R-E902-D1",
+      "campo": "E902",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de transporte corresponde al código informado en E901",
+      "codigo_sifen": "2103",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2103",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E903-OB",
+      "campo": "E903",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E903",
+          "pagina": 96,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E904-OB",
+      "campo": "E904",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E904",
+          "pagina": 96,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E904-D1",
+      "campo": "E904",
+      "tipo": "dependencia",
+      "texto": "La descripción de la modalidad corresponde al código informado en E903",
+      "codigo_sifen": "2104",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E904",
+          "pagina": 96,
+          "cita": "Referente al campo E903"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2104",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E905-OB",
+      "campo": "E905",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E905",
+          "pagina": 96,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E906-OP",
+      "campo": "E906",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E906",
+          "pagina": 96,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E907-OP",
+      "campo": "E907",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E907",
+          "pagina": 97,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E908-C1",
+      "campo": "E908",
+      "tipo": "condicional",
+      "texto": "El número de despacho de importación es obligatorio si el motivo de emisión de la Nota de Remisión es Importación",
+      "condicion": {
+        "campo": "E501",
+        "op": "igual",
+        "valor": "5"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E908",
+          "pagina": 97,
+          "cita": "Obligatorio si E501 = 5"
+        }
+      ]
+    },
+    {
+      "id": "R-E909-C1",
+      "campo": "E909",
+      "tipo": "condicional",
+      "texto": "La fecha estimada de inicio de traslado es obligatoria en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2107",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E909",
+          "pagina": 97,
+          "cita": "Obligatorio si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2107",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E909-F1",
+      "campo": "E909",
+      "tipo": "formato",
+      "texto": "La fecha estimada de inicio de traslado debe ser posterior a la fecha de entrada en producción de SIFEN",
+      "codigo_sifen": "2108",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2108",
+          "pagina": 179,
+          "cita": "ésta debe ser posterior a fecha en producción de SIFEN"
+        }
+      ]
+    },
+    {
+      "id": "R-E910-C1",
+      "campo": "E910",
+      "tipo": "condicional",
+      "texto": "La fecha estimada de fin de traslado es obligatoria si se informa la fecha estimada de inicio",
+      "condicion": {
+        "campo": "E909",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E910",
+          "pagina": 97,
+          "cita": "Obligatorio si existe el campo E909"
+        }
+      ]
+    },
+    {
+      "id": "R-E910-C2",
+      "campo": "E910",
+      "tipo": "condicional",
+      "texto": "La fecha estimada de fin de traslado es obligatoria en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2109",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2109",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E910-D1",
+      "campo": "E910",
+      "tipo": "dependencia",
+      "texto": "La fecha estimada de fin de traslado debe ser igual o mayor a la fecha estimada de inicio de traslado",
+      "codigo_sifen": "2110",
+      "contradiccion": "C-402",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2110",
+          "pagina": 179,
+          "cita": "debe ser igual o mayor a la fecha estimada de inicio de traslado (E908)"
+        }
+      ]
+    },
+    {
+      "id": "R-E911-OP",
+      "campo": "E911",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E911",
+          "pagina": 97,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E912-C1",
+      "campo": "E912",
+      "tipo": "condicional",
+      "texto": "La descripción del país de destino es obligatoria si se informa su código",
+      "condicion": {
+        "campo": "E911",
+        "op": "presente"
+      },
+      "codigo_sifen": "2112",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E912",
+          "pagina": 97,
+          "cita": "Obligatorio si existe el campo E911"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2112",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E912-D1",
+      "campo": "E912",
+      "tipo": "dependencia",
+      "texto": "La descripción del país de destino corresponde al código informado en E911",
+      "codigo_sifen": "2113",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2113",
+          "pagina": 179
+        }
+      ]
+    },
+    {
+      "id": "R-E920-C1",
+      "campo": "E920",
+      "tipo": "condicional",
+      "texto": "El grupo del local de salida es obligatorio en la Factura Electrónica de Exportación y en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "2",
+          "7"
+        ]
+      },
+      "codigo_sifen": "2150",
+      "contradiccion": "C-404",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E920",
+          "pagina": 97,
+          "cita": "Obligatorio si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2150",
+          "pagina": 180,
+          "cita": "Factura Electrónica de Exportación o Nota de Remisión Electrónica (C002=2 o 7)"
+        }
+      ]
+    },
+    {
+      "id": "R-E920-P1",
+      "campo": "E920",
+      "tipo": "prohibido",
+      "texto": "El grupo del local de salida no se informa en la Factura Electrónica de Importación, la Autofactura, la Nota de Crédito, la Nota de Débito ni el Comprobante de Retención",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "codigo_sifen": "2151",
+      "contradiccion": "C-404",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E920",
+          "pagina": 97,
+          "cita": "No informar si C002 = 4, 5, 6"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2151",
+          "pagina": 180,
+          "cita": "(C002=3, 4, 5, 6 o 8)"
+        }
+      ]
+    },
+    {
+      "id": "R-E940-C1",
+      "campo": "E940",
+      "tipo": "condicional",
+      "texto": "El grupo del local de entrega es obligatorio en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2200",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E940",
+          "pagina": 98,
+          "cita": "Obligatorio si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2200",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E940-P1",
+      "campo": "E940",
+      "tipo": "prohibido",
+      "texto": "El grupo del local de entrega no se informa en la Autofactura, la Nota de Crédito, la Nota de Débito ni el Comprobante de Retención",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "codigo_sifen": "2201",
+      "contradiccion": "C-405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E940",
+          "pagina": 98,
+          "cita": "No informar si C002 = 4, 5, 6"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2201",
+          "pagina": 181,
+          "cita": "(C002=4, 5, 6 o 8)"
+        }
+      ]
+    },
+    {
+      "id": "R-E921-OB",
+      "campo": "E921",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E921",
+          "pagina": 97,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E922-OB",
+      "campo": "E922",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E922",
+          "pagina": 97,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E923-OP",
+      "campo": "E923",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E923",
+          "pagina": 97,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E924-OP",
+      "campo": "E924",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E924",
+          "pagina": 98,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E925-OB",
+      "campo": "E925",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E925",
+          "pagina": 98,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E926-OB",
+      "campo": "E926",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E926",
+          "pagina": 98,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E927-OP",
+      "campo": "E927",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E927",
+          "pagina": 98,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E929-OB",
+      "campo": "E929",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E929",
+          "pagina": 98,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E930-OB",
+      "campo": "E930",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E930",
+          "pagina": 98,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E931-OP",
+      "campo": "E931",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E931",
+          "pagina": 98,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E925-D1",
+      "campo": "E925",
+      "tipo": "dependencia",
+      "texto": "Debe haber relación entre el departamento (E925), el distrito (E927) y la ciudad (E929)",
+      "codigo_sifen": "2153",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2153",
+          "pagina": 180
+        }
+      ]
+    },
+    {
+      "id": "R-E926-D1",
+      "campo": "E926",
+      "tipo": "dependencia",
+      "texto": "La descripción del departamento corresponde al código informado en E925",
+      "codigo_sifen": "2152",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E926",
+          "pagina": 98,
+          "cita": "Referente al campo E925"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2152",
+          "pagina": 180
+        }
+      ]
+    },
+    {
+      "id": "R-E928-C1",
+      "campo": "E928",
+      "tipo": "condicional",
+      "texto": "La descripción del distrito es obligatoria si se informa su código",
+      "condicion": {
+        "campo": "E927",
+        "op": "presente"
+      },
+      "codigo_sifen": "2154",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E928",
+          "pagina": 98,
+          "cita": "Obligatorio si existe el campo E927"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2154",
+          "pagina": 180
+        }
+      ]
+    },
+    {
+      "id": "R-E928-D1",
+      "campo": "E928",
+      "tipo": "dependencia",
+      "texto": "La descripción del distrito corresponde al código informado en E927",
+      "codigo_sifen": "2155",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2155",
+          "pagina": 180
+        }
+      ]
+    },
+    {
+      "id": "R-E929-D1",
+      "campo": "E929",
+      "tipo": "dependencia",
+      "texto": "El código de la ciudad debe corresponder al departamento informado en E925",
+      "codigo_sifen": "2156",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2156",
+          "pagina": 180
+        }
+      ]
+    },
+    {
+      "id": "R-E929-D2",
+      "campo": "E929",
+      "tipo": "dependencia",
+      "texto": "El código de la ciudad debe corresponder al distrito informado en E927; no se aplica si no se informó el distrito",
+      "condicion": {
+        "campo": "E927",
+        "op": "presente"
+      },
+      "codigo_sifen": "2157",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2157",
+          "pagina": 180
+        }
+      ]
+    },
+    {
+      "id": "R-E930-D1",
+      "campo": "E930",
+      "tipo": "dependencia",
+      "texto": "La descripción de la ciudad corresponde al código informado en E929",
+      "codigo_sifen": "2158",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E930",
+          "pagina": 98,
+          "cita": "Referente al campo E929"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2158",
+          "pagina": 180
+        }
+      ]
+    },
+    {
+      "id": "R-E941-OB",
+      "campo": "E941",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E941",
+          "pagina": 98,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E942-OB",
+      "campo": "E942",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E942",
+          "pagina": 98,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E943-OP",
+      "campo": "E943",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E943",
+          "pagina": 99,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E944-OP",
+      "campo": "E944",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E944",
+          "pagina": 99,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E945-OB",
+      "campo": "E945",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E945",
+          "pagina": 99,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E946-OB",
+      "campo": "E946",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E946",
+          "pagina": 99,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E947-OP",
+      "campo": "E947",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E947",
+          "pagina": 99,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E949-OB",
+      "campo": "E949",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E949",
+          "pagina": 99,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E950-OB",
+      "campo": "E950",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E950",
+          "pagina": 99,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E951-OP",
+      "campo": "E951",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E951",
+          "pagina": 99,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E945-D1",
+      "campo": "E945",
+      "tipo": "dependencia",
+      "texto": "Debe haber relación entre el departamento (E945), el distrito (E947) y la ciudad (E949)",
+      "codigo_sifen": "2203",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2203",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E946-D1",
+      "campo": "E946",
+      "tipo": "dependencia",
+      "texto": "La descripción del departamento corresponde al código informado en E945",
+      "codigo_sifen": "2202",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E946",
+          "pagina": 99,
+          "cita": "Referente al campo E945"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2202",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E948-C1",
+      "campo": "E948",
+      "tipo": "condicional",
+      "texto": "La descripción del distrito es obligatoria si se informa su código",
+      "condicion": {
+        "campo": "E947",
+        "op": "presente"
+      },
+      "codigo_sifen": "2204",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E948",
+          "pagina": 99,
+          "cita": "Obligatorio si existe el campo E947"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2204",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E948-D1",
+      "campo": "E948",
+      "tipo": "dependencia",
+      "texto": "La descripción del distrito corresponde al código informado en E947",
+      "codigo_sifen": "2205",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2205",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E949-D1",
+      "campo": "E949",
+      "tipo": "dependencia",
+      "texto": "El código de la ciudad debe corresponder al departamento informado en E945",
+      "codigo_sifen": "2206",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2206",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E949-D2",
+      "campo": "E949",
+      "tipo": "dependencia",
+      "texto": "El código de la ciudad debe corresponder al distrito informado en E947; no se aplica si no se informó el distrito",
+      "condicion": {
+        "campo": "E947",
+        "op": "presente"
+      },
+      "codigo_sifen": "2207",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2207",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E950-D1",
+      "campo": "E950",
+      "tipo": "dependencia",
+      "texto": "La descripción de la ciudad corresponde al código informado en E949",
+      "codigo_sifen": "2208",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E950",
+          "pagina": 99,
+          "cita": "Referente al campo E949"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2208",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E960-C1",
+      "campo": "E960",
+      "tipo": "condicional",
+      "texto": "El grupo del vehículo es obligatorio en la Nota de Remisión Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2250",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E960",
+          "pagina": 99,
+          "cita": "Obligatorio si C002 = 7"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2250",
+          "pagina": 181
+        }
+      ]
+    },
+    {
+      "id": "R-E960-P1",
+      "campo": "E960",
+      "tipo": "prohibido",
+      "texto": "El grupo del vehículo no se informa en la Autofactura, la Nota de Crédito, la Nota de Débito ni el Comprobante de Retención",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "codigo_sifen": "2251",
+      "contradiccion": "C-405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E960",
+          "pagina": 99,
+          "cita": "No informar si C002 = 4, 5, 6"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2251",
+          "pagina": 182,
+          "cita": "(C002=4, 5, 6 o 8)"
+        }
+      ]
+    },
+    {
+      "id": "R-E961-OB",
+      "campo": "E961",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E961",
+          "pagina": 100,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E961-D1",
+      "campo": "E961",
+      "tipo": "dependencia",
+      "texto": "El tipo de vehículo debe ser acorde a la modalidad del transporte (E903)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E961",
+          "pagina": 100,
+          "cita": "Debe ser acorde al campo E903"
+        }
+      ]
+    },
+    {
+      "id": "R-E962-OB",
+      "campo": "E962",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E962",
+          "pagina": 100,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E967-OB",
+      "campo": "E967",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E967",
+          "pagina": 100,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E963-C1",
+      "campo": "E963",
+      "tipo": "condicional",
+      "texto": "El número de identificación del vehículo es obligatorio si el tipo de identificación es 1",
+      "condicion": {
+        "campo": "E967",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "2255",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E963",
+          "pagina": 100,
+          "cita": "Debe informarse cuando el E967=1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2255",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E964-OP",
+      "campo": "E964",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E964",
+          "pagina": 100,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E965-C1",
+      "campo": "E965",
+      "tipo": "condicional",
+      "texto": "El número de matrícula es obligatorio si el tipo de identificación es 2",
+      "condicion": {
+        "campo": "E967",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2254",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E965",
+          "pagina": 100,
+          "cita": "Debe informarse cuando el E967=2"
+        },
+        {
+          "doc": "NT005",
+          "ref": "1.1 E965",
+          "cita": "Debe informarse cuando el E967=2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2254",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E965-F0",
+      "campo": "E965",
+      "tipo": "formato",
+      "texto": "El número de matrícula tiene exactamente 6 caracteres",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E965",
+          "pagina": 100,
+          "cita": "A 6"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E965-F1",
+      "campo": "E965",
+      "tipo": "formato",
+      "texto": "El número de matrícula tiene entre 6 y 7 caracteres (el XSD solo limita el máximo a 7)",
+      "fuentes": [
+        {
+          "doc": "NT005",
+          "ref": "1.1 E965",
+          "cita": "A 6-7"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E966-C1",
+      "campo": "E966",
+      "tipo": "condicional",
+      "texto": "El número de vuelo es obligatorio si la modalidad del transporte es aérea",
+      "condicion": {
+        "campo": "E903",
+        "op": "igual",
+        "valor": "3"
+      },
+      "codigo_sifen": "2252",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E966",
+          "pagina": 100,
+          "cita": "Obligatorio si E903 = 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2252",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E966-P1",
+      "campo": "E966",
+      "tipo": "prohibido",
+      "texto": "El número de vuelo no se informa si la modalidad del transporte no es aérea",
+      "condicion": {
+        "campo": "E903",
+        "op": "distinto",
+        "valor": "3"
+      },
+      "codigo_sifen": "2253",
+      "contradiccion": "C-403",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E966",
+          "pagina": 100,
+          "cita": "No informar si E903 ≠ 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2253",
+          "pagina": 182,
+          "cita": "el número de vuelo (E965) no debe ser informado"
+        }
+      ]
+    },
+    {
+      "id": "R-E980-C1",
+      "campo": "E980",
+      "tipo": "condicional",
+      "texto": "El grupo del transportista es obligatorio en la Nota de Remisión Electrónica, salvo que la modalidad sea terrestre (E903=1) y el vehículo se identifique por su número de identificación (E967=1), caso en que es opcional",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "C002",
+            "op": "igual",
+            "valor": "7"
+          },
+          {
+            "no": {
+              "todas": [
+                {
+                  "campo": "E903",
+                  "op": "igual",
+                  "valor": "1"
+                },
+                {
+                  "campo": "E967",
+                  "op": "igual",
+                  "valor": "1"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "codigo_sifen": "2300",
+      "contradiccion": "C-407",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E980",
+          "pagina": 100,
+          "cita": "Opcional cuando E903=1 y E967=1"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.5 E980",
+          "cita": "Opcional cuando E903=1 y E967=1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2300",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E980-P1",
+      "campo": "E980",
+      "tipo": "prohibido",
+      "texto": "El grupo del transportista no se informa en la Autofactura, la Nota de Crédito, la Nota de Débito ni el Comprobante de Retención",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "codigo_sifen": "2301",
+      "contradiccion": "C-405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E980",
+          "pagina": 100,
+          "cita": "No informar si C002 = 4, 5, 6"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.5 E980",
+          "cita": "No informar si C002 = 4, 5, 6"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2301",
+          "pagina": 182,
+          "cita": "(C002=4, 5, 6 o 8)"
+        }
+      ]
+    },
+    {
+      "id": "R-E981-OB",
+      "campo": "E981",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E981",
+          "pagina": 100,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E982-OB",
+      "campo": "E982",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E982",
+          "pagina": 100,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E983-C1",
+      "campo": "E983",
+      "tipo": "condicional",
+      "texto": "El RUC del transportista es obligatorio si es contribuyente",
+      "condicion": {
+        "campo": "E981",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "2302",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E983",
+          "pagina": 100,
+          "cita": "Obligatorio si E981 = 1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2302",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E983-P1",
+      "campo": "E983",
+      "tipo": "prohibido",
+      "texto": "El RUC del transportista no se informa si no es contribuyente",
+      "condicion": {
+        "campo": "E981",
+        "op": "distinto",
+        "valor": "1"
+      },
+      "codigo_sifen": "2305",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E983",
+          "pagina": 100,
+          "cita": "No informar si E981 ≠ 1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2305",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E983-F1",
+      "campo": "E983",
+      "tipo": "formato",
+      "texto": "El RUC del transportista debe existir en la base de datos de Marangatu",
+      "codigo_sifen": "2303",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2303",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E983-F2",
+      "campo": "E983",
+      "tipo": "formato",
+      "texto": "El RUC del transportista debe tener un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL en Marangatu al momento de la emisión del DE",
+      "codigo_sifen": "2304",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2304",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E984-C1",
+      "campo": "E984",
+      "tipo": "condicional",
+      "texto": "El dígito verificador es obligatorio si se informa el RUC del transportista",
+      "condicion": {
+        "campo": "E983",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E984",
+          "pagina": 101,
+          "cita": "Obligatorio si existe el campo E983"
+        }
+      ]
+    },
+    {
+      "id": "R-E984-F1",
+      "campo": "E984",
+      "tipo": "formato",
+      "texto": "El dígito verificador corresponde al módulo 11 del RUC del transportista (E983)",
+      "codigo_sifen": "2306",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E984",
+          "pagina": 101,
+          "cita": "Según algoritmo módulo 11"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2306",
+          "pagina": 182
+        }
+      ]
+    },
+    {
+      "id": "R-E985-C1",
+      "campo": "E985",
+      "tipo": "condicional",
+      "texto": "El tipo de documento de identidad es obligatorio si el transportista no es contribuyente",
+      "condicion": {
+        "campo": "E981",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2307",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E985",
+          "pagina": 101,
+          "cita": "Obligatorio si E981 = 2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2307",
+          "pagina": 183
+        }
+      ]
+    },
+    {
+      "id": "R-E985-P1",
+      "campo": "E985",
+      "tipo": "prohibido",
+      "texto": "El tipo de documento de identidad no se informa si el transportista es contribuyente",
+      "condicion": {
+        "campo": "E981",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "2308",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E985",
+          "pagina": 101,
+          "cita": "No informar si E981 = 1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2308",
+          "pagina": 183
+        }
+      ]
+    },
+    {
+      "id": "R-E986-C1",
+      "campo": "E986",
+      "tipo": "condicional",
+      "texto": "La descripción del tipo de documento es obligatoria si se informa su código",
+      "condicion": {
+        "campo": "E985",
+        "op": "presente"
+      },
+      "codigo_sifen": "2309",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E986",
+          "pagina": 101,
+          "cita": "Obligatorio si existe el campo E985"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2309",
+          "pagina": 183
+        }
+      ]
+    },
+    {
+      "id": "R-E986-D1",
+      "campo": "E986",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de documento corresponde al código informado en E985",
+      "codigo_sifen": "2310",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2310",
+          "pagina": 183
+        }
+      ]
+    },
+    {
+      "id": "R-E987-C1",
+      "campo": "E987",
+      "tipo": "condicional",
+      "texto": "El número de documento de identidad es obligatorio si se informa el tipo de documento",
+      "condicion": {
+        "campo": "E985",
+        "op": "presente"
+      },
+      "codigo_sifen": "2311",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E987",
+          "pagina": 101,
+          "cita": "Obligatorio si existe el campo E985"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2311",
+          "pagina": 183
+        }
+      ]
+    },
+    {
+      "id": "R-E988-OP",
+      "campo": "E988",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E988",
+          "pagina": 101,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E989-C1",
+      "campo": "E989",
+      "tipo": "condicional",
+      "texto": "La descripción de la nacionalidad es obligatoria si se informa su código",
+      "condicion": {
+        "campo": "E988",
+        "op": "presente"
+      },
+      "codigo_sifen": "2312",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E989",
+          "pagina": 101,
+          "cita": "Obligatorio si existe el campo E988"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2312",
+          "pagina": 183
+        }
+      ]
+    },
+    {
+      "id": "R-E989-D1",
+      "campo": "E989",
+      "tipo": "dependencia",
+      "texto": "La descripción de la nacionalidad corresponde al código informado en E988",
+      "codigo_sifen": "2313",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2313",
+          "pagina": 183
+        }
+      ]
+    },
+    {
+      "id": "R-E990-OB",
+      "campo": "E990",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E990",
+          "pagina": 101,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E991-OB",
+      "campo": "E991",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E991",
+          "pagina": 101,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E992-OP",
+      "campo": "E992",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (texto original del MT150)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E992",
+          "pagina": 101,
+          "cita": "0-1"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E992-OB",
+      "campo": "E992",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo del transportista",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1.5 E992",
+          "cita": "Obligatorio por RG N° 41/2014"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E993-OP",
+      "campo": "E993",
+      "tipo": "opcional",
+      "texto": "Puede omitirse (texto original del MT150)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E993",
+          "pagina": 101,
+          "cita": "0-1"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E993-OB",
+      "campo": "E993",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo del transportista",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1.5 E993",
+          "cita": "Obligatorio por por RG N° 41/2014"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-E994-OP",
+      "campo": "E994",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E994",
+          "pagina": 101,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E995-OP",
+      "campo": "E995",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E995",
+          "pagina": 101,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E996-OP",
+      "campo": "E996",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E996",
+          "pagina": 102,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E997-OP",
+      "campo": "E997",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E997",
+          "pagina": 102,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E996-F1",
+      "campo": "E996",
+      "tipo": "formato",
+      "texto": "El dígito verificador corresponde al algoritmo módulo 11 aplicado al RUC del agente (E995)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E996",
+          "pagina": 102,
+          "cita": "Según algoritmo módulo 11"
+        }
+      ]
+    }
+  ]
+}

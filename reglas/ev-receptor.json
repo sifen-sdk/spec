@@ -1,0 +1,1504 @@
+{
+  "grupo": "GER",
+  "reglas": [
+    {
+      "id": "R-GEN001-D1",
+      "campo": "GEN001",
+      "tipo": "dependencia",
+      "texto": "Evento del receptor: la firma digital del evento debe corresponder al receptor del DE/DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "0143",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "3. AD04 (0143)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.2",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "R-GEN001-D2",
+      "campo": "GEN001",
+      "tipo": "dependencia",
+      "texto": "No se puede realizar una notificación – recepción de DE luego de un evento de desconocimiento. No se puede realizar una notificación – recepción de DTE luego de un evento de Conformidad parcial o total, Disconformidad o Desconocimiento",
+      "no_declarativa": true,
+      "codigo_sifen": "4113",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4113",
+          "pagina": 136
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.2.4",
+          "pagina": 115
+        }
+      ]
+    },
+    {
+      "id": "R-GEN002-O1",
+      "campo": "GEN002",
+      "tipo": "obligatorio",
+      "texto": "El CDC del DE/DTE es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN002",
+          "pagina": 123
+        }
+      ]
+    },
+    {
+      "id": "R-GEN002-F1",
+      "campo": "GEN002",
+      "tipo": "formato",
+      "texto": "La estructura del CDC informado debe corresponder (Longitud y/o dígito verificador)",
+      "codigo_sifen": "4102",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4102",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "id": "R-GEN002-D1",
+      "campo": "GEN002",
+      "tipo": "dependencia",
+      "texto": "Sobre el CDC de un DE/DTE se puede realizar hasta un evento de notificación - recepción",
+      "no_declarativa": true,
+      "codigo_sifen": "4101",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4101",
+          "pagina": 136
+        },
+        {
+          "doc": "NT019",
+          "ref": "2.1 GEN002b"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN002-D2",
+      "campo": "GEN002",
+      "tipo": "dependencia",
+      "texto": "No se puede registrar la Notificación – Recepción por CDC de un DTE cancelado",
+      "no_declarativa": true,
+      "codigo_sifen": "4115",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.1 GEN013"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN002-D3",
+      "campo": "GEN002",
+      "tipo": "dependencia",
+      "texto": "El CDC del DTE no debe haber superado la cantidad de eventos establecidos sobre el Tipo de Evento de Notificación – Recepción DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "4116",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.1 GEN013a"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN003-O1",
+      "campo": "GEN003",
+      "tipo": "obligatorio",
+      "texto": "La fecha de emisión del DE/DTE es obligatoria (requerida para el conteo del plazo)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN003",
+          "pagina": 123
+        }
+      ]
+    },
+    {
+      "id": "R-GEN003-P1",
+      "campo": "GEN003",
+      "tipo": "dependencia",
+      "texto": "Plazo de la notificación – recepción: el plazo del registro del evento no debe superar los 45 días contados a partir de la fecha de emisión (si lo supera: Aprobado con observación)",
+      "no_declarativa": true,
+      "codigo_sifen": "4103",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4103",
+          "pagina": 136
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN003",
+          "pagina": 123
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GEN003-P2",
+      "campo": "GEN003",
+      "tipo": "dependencia",
+      "texto": "Plazo de la notificación – recepción de un DE: el plazo del registro del evento Notificación – Recepción DE no debe superar los 45 días contados a partir de la fecha de emisión (si lo supera: Aprobado con observación)",
+      "no_declarativa": true,
+      "codigo_sifen": "4103",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.1 GEN003"
+        },
+        {
+          "doc": "NT019",
+          "ref": "5."
+        }
+      ]
+    },
+    {
+      "id": "R-GEN003-P3",
+      "campo": "GEN003",
+      "tipo": "dependencia",
+      "texto": "Plazo de la notificación – recepción de un DTE: el plazo del registro del evento Notificación – Recepción DTE no debe superar los 45 días contados a partir de la fecha de aprobación del DTE (si lo supera: Aprobado con observación)",
+      "no_declarativa": true,
+      "codigo_sifen": "4114",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.1 GEN012"
+        },
+        {
+          "doc": "NT019",
+          "ref": "5."
+        }
+      ]
+    },
+    {
+      "id": "R-GEN004-O1",
+      "campo": "GEN004",
+      "tipo": "obligatorio",
+      "texto": "La fecha de recepción del DE es obligatoria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN004",
+          "pagina": 123
+        }
+      ]
+    },
+    {
+      "id": "R-GEN004-A1",
+      "campo": "GEN004",
+      "tipo": "aritmetica",
+      "texto": "Fecha de Recepción debe ser mayor o igual a la fecha de emisión del DE/DTE",
+      "formula": "La fecha de emisión no puede ser mayor que la fecha de recepción del DE/DTE",
+      "operandos": [
+        "GEN004",
+        "GEN003"
+      ],
+      "codigo_sifen": "4104",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4104",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "id": "R-GEN005-O1",
+      "campo": "GEN005",
+      "tipo": "obligatorio",
+      "texto": "El tipo de receptor es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN005"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN006-O1",
+      "campo": "GEN006",
+      "tipo": "obligatorio",
+      "texto": "El nombre o razón social del receptor es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN006"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN007-C1",
+      "campo": "GEN007",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar Ruc del receptor cuando el tipo de receptor es Contribuyente (GEN005=1)",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4105",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4105",
+          "pagina": 136
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN007"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN007-P1",
+      "campo": "GEN007",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es No Contribuyente (GEN005=2) no se debe informar el campo Ruc del Receptor",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4106",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4106",
+          "pagina": 136
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN007"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN008-C1",
+      "campo": "GEN008",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar DV del receptor cuando el tipo de receptor es Contribuyente (GEN005=1)",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4107",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4107",
+          "pagina": 136
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN008"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN008-P1",
+      "campo": "GEN008",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es No Contribuyente (GEN005=2) no se debe informar el Dígito verificador del RUC del contribuyente receptor",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4108",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4108",
+          "pagina": 136
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN008"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN009-C1",
+      "campo": "GEN009",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar el tipo de documento de identidad del receptor cuando el tipo de receptor es No contribuyente (GEN005=2)",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4109",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4109",
+          "pagina": 136
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN009"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN009-P1",
+      "campo": "GEN009",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es Contribuyente (GEN005=1) no se debe informar el tipo de documento de identidad del receptor",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4110",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4110",
+          "pagina": 137
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN009"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN010-C1",
+      "campo": "GEN010",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar el número de documento de identidad del receptor cuando el tipo de receptor es No contribuyente (GEN005=2)",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4111",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4111",
+          "pagina": 137
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN010"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN010-P1",
+      "campo": "GEN010",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es Contribuyente (GEN005=1) no se debe informar el número de documento de identidad del receptor",
+      "condicion": {
+        "campo": "GEN005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4112",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4112",
+          "pagina": 137
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEN010"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN009-F1",
+      "campo": "GEN009",
+      "tipo": "formato",
+      "texto": "Valores del Manual: 1= Cédula paraguaya 2= Pasaporte 3= Cédula extranjera 4= Carnet de residencia",
+      "contradiccion": "C-616",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN009"
+        }
+      ]
+    },
+    {
+      "id": "R-GEN011-O1",
+      "campo": "GEN011",
+      "tipo": "obligatorio",
+      "texto": "El total general de la operación en Guaraníes es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEN011",
+          "pagina": 124
+        }
+      ]
+    },
+    {
+      "id": "R-GCO001-D1",
+      "campo": "GCO001",
+      "tipo": "dependencia",
+      "texto": "Evento del receptor: la firma digital del evento debe corresponder al receptor del DE/DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "0143",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "3. AD04 (0143)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.2",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "R-GCO001-D2",
+      "campo": "GCO001",
+      "tipo": "dependencia",
+      "texto": "No se puede realizar una conformidad de DE/DTE luego de un evento de desconocimiento",
+      "no_declarativa": true,
+      "codigo_sifen": "4156",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4156",
+          "pagina": 137
+        },
+        {
+          "doc": "NT019",
+          "ref": "2.2 GCO001"
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-O1",
+      "campo": "GCO002",
+      "tipo": "obligatorio",
+      "texto": "El CDC del DTE es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GCO002",
+          "pagina": 124
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-F1",
+      "campo": "GCO002",
+      "tipo": "formato",
+      "texto": "La estructura del CDC informado debe corresponder (longitud y/o dígito verificador)",
+      "codigo_sifen": "4151",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4151",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-D1",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "Sobre el CDC de un DE/DTE se puede realizar hasta dos eventos de conformidad (conformidad parcial luego una conformidad total, en ese orden)",
+      "no_declarativa": true,
+      "codigo_sifen": "4150",
+      "contradiccion": "C-617",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4150",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-D1-NT19",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "Sobre el CDC de un DE/DTE se puede realizar hasta un eventos de conformidad (conformidad parcial luego una conformidad total, en ese orden)",
+      "no_declarativa": true,
+      "codigo_sifen": "4150",
+      "contradiccion": "C-617",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.2 GCO002"
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-D2",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "No se puede registrar la confirmación por CDC del DTE cancelado o ajustado en su totalidad por nota de crédito",
+      "no_declarativa": true,
+      "codigo_sifen": "4155",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4155",
+          "pagina": 138
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-D2-NT19",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "No se puede registrar la conformidad por CDC de un DTE cancelado",
+      "no_declarativa": true,
+      "codigo_sifen": "4155",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.2 GCO002e"
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-D3",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "El CDC del DTE no debe haber superado la cantidad de eventos establecidos sobre el Tipo de Evento de Conformidad Parcial/Total",
+      "no_declarativa": true,
+      "codigo_sifen": "4158",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.2 GCO002f"
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-P1",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "Plazo de la conformidad: el CDC debe existir en SIFEN y el plazo es válido si: (a) cuando el primer evento del receptor que se pretende registrar es conformidad, no se realiza después de 45 días contados a partir de la fecha de emisión del DTE; (b) si no es el primer evento del receptor y el último evento realizado por el receptor no es una disconformidad, la conformidad no supera los 45 días contados a partir de la fecha de emisión del DTE; (c) si no es el primer evento del receptor y el último evento realizado por el receptor es una disconformidad, la conformidad (evento correctivo) no supera los 15 días contados a partir de la fecha de realización del evento de disconformidad",
+      "no_declarativa": true,
+      "codigo_sifen": "4152",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4152",
+          "pagina": 138
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-P1-NT19",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "Plazo de la conformidad: el CDC debe existir en SIFEN y el plazo es válido si: (a) cuando el primer evento del receptor que se pretende registrar es conformidad, no se realiza después de 45 días contados a partir de la fecha de aprobación del DTE; (b) si no es el primer evento del receptor y el último evento realizado por el receptor no es una disconformidad, la conformidad no supera los 45 días contados a partir de la fecha de aprobación del DTE; (c) si no es el primer evento del receptor y el último evento realizado por el receptor es una disconformidad, la conformidad (evento correctivo) no supera los 15 días contados a partir de la fecha de realización del evento de disconformidad",
+      "no_declarativa": true,
+      "codigo_sifen": "4152",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.2 GCO002c"
+        }
+      ]
+    },
+    {
+      "id": "R-GCO002-P2",
+      "campo": "GCO002",
+      "tipo": "dependencia",
+      "texto": "Sea o no el primer evento del receptor que se pretende registrar, la conformidad no se puede realizar después de 45 días corridos contados a partir de la fecha de aprobación del DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "4157",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.2 GCO005"
+        }
+      ]
+    },
+    {
+      "id": "R-GCO003-O1",
+      "campo": "GCO003",
+      "tipo": "obligatorio",
+      "texto": "El tipo de conformidad es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GCO003",
+          "pagina": 124
+        }
+      ]
+    },
+    {
+      "id": "R-GCO004-C1",
+      "campo": "GCO004",
+      "tipo": "condicional",
+      "texto": "Cuando el Tipo de Conformidad es parcial (GCO003=2) es obligatorio informar el campo fecha estimada de recepción de la mercadería (GCO004)",
+      "condicion": {
+        "campo": "GCO003",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4154",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4154",
+          "pagina": 138
+        },
+        {
+          "doc": "MT150",
+          "ref": "GCO004",
+          "pagina": 124
+        }
+      ]
+    },
+    {
+      "id": "R-GDI001-D1",
+      "campo": "GDI001",
+      "tipo": "dependencia",
+      "texto": "Evento del receptor: la firma digital del evento debe corresponder al receptor del DE/DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "0143",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "3. AD04 (0143)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.2",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "R-GDI001-D2",
+      "campo": "GDI001",
+      "tipo": "dependencia",
+      "texto": "No se puede realizar una conformidad de DE/DTE luego de un evento de desconocimiento (validación de la disconformidad, texto literal)",
+      "no_declarativa": true,
+      "codigo_sifen": "4205",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4205",
+          "pagina": 138
+        },
+        {
+          "doc": "NT019",
+          "ref": "2.3 GDI001"
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-O1",
+      "campo": "GDI002",
+      "tipo": "obligatorio",
+      "texto": "El CDC del DTE es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDI002",
+          "pagina": 124
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-F1",
+      "campo": "GDI002",
+      "tipo": "formato",
+      "texto": "La estructura del CDC informado debe corresponder (longitud y/o dígito verificador)",
+      "codigo_sifen": "4201",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4201",
+          "pagina": 139
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-D1",
+      "campo": "GDI002",
+      "tipo": "dependencia",
+      "texto": "Sobre el CDC de un DTE se puede realizar hasta un evento de disconformidad",
+      "no_declarativa": true,
+      "codigo_sifen": "4200",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4200",
+          "pagina": 138
+        },
+        {
+          "doc": "NT019",
+          "ref": "2.3 GDI002"
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-D2",
+      "campo": "GDI002",
+      "tipo": "dependencia",
+      "texto": "No se puede registrar la disconformidad por CDC del DTE cancelado",
+      "no_declarativa": true,
+      "codigo_sifen": "4204",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4204",
+          "pagina": 139
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-D3",
+      "campo": "GDI002",
+      "tipo": "dependencia",
+      "texto": "El CDC del DTE no debe haber superado la cantidad de eventos establecidos sobre el Tipo de Evento de Disconformidad",
+      "no_declarativa": true,
+      "codigo_sifen": "4207",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.3 GDI003a"
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-P1",
+      "campo": "GDI002",
+      "tipo": "dependencia",
+      "texto": "Plazo de la disconformidad: el CDC debe existir en SIFEN y el plazo es válido si: (a) cuando el primer evento del receptor que se pretende registrar es disconformidad, no se realiza después de 45 días contados a partir de la fecha de emisión del DTE; (b) si no es el primer evento del receptor y el último evento realizado por el receptor no es una conformidad, la disconformidad no supera los 45 días contados a partir de la fecha de emisión del DTE; (c) si no es el primer evento del receptor y el último evento realizado por el receptor es una conformidad, la disconformidad (evento correctivo) no supera los 15 días contados a partir de la fecha de realización del evento de conformidad",
+      "no_declarativa": true,
+      "codigo_sifen": "4202",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4202",
+          "pagina": 139
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-P1-NT19",
+      "campo": "GDI002",
+      "tipo": "dependencia",
+      "texto": "Plazo de la disconformidad: el CDC debe existir en SIFEN y el plazo es válido si: (a) cuando el primer evento del receptor que se pretende registrar es disconformidad, no se realiza después de 45 días contados a partir de la fecha de aprobación del DTE; (b) si no es el primer evento del receptor y el último evento realizado por el receptor no es una conformidad, la disconformidad no supera los 45 días contados a partir de la fecha de aprobación del DTE; (c) si no es el primer evento del receptor y el último evento realizado por el receptor es una conformidad, la disconformidad (evento correctivo) no supera los 15 días contados a partir de la fecha de realización del evento de conformidad",
+      "no_declarativa": true,
+      "codigo_sifen": "4202",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.3 GDI002c"
+        }
+      ]
+    },
+    {
+      "id": "R-GDI002-P2",
+      "campo": "GDI002",
+      "tipo": "dependencia",
+      "texto": "Sea o no el primer evento del receptor que se pretende registrar, la disconformidad no se puede realizar después de 45 días corridos contados a partir de la fecha de aprobación del DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "4206",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.3 GDI003"
+        }
+      ]
+    },
+    {
+      "id": "R-GDI004-O1",
+      "campo": "GDI004",
+      "tipo": "obligatorio",
+      "texto": "El motivo del evento es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDI004",
+          "pagina": 124
+        }
+      ]
+    },
+    {
+      "id": "R-GED001-D1",
+      "campo": "GED001",
+      "tipo": "dependencia",
+      "texto": "Evento del receptor: la firma digital del evento debe corresponder al receptor del DE/DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "0143",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "3. AD04 (0143)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.2",
+          "pagina": 114
+        }
+      ]
+    },
+    {
+      "id": "R-GED002-O1",
+      "campo": "GED002",
+      "tipo": "obligatorio",
+      "texto": "El CDC del DE/DTE es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED002",
+          "pagina": 125
+        }
+      ]
+    },
+    {
+      "id": "R-GED002-F1",
+      "campo": "GED002",
+      "tipo": "formato",
+      "texto": "La estructura del CDC informado debe corresponder (longitud y/o dígito verificador)",
+      "codigo_sifen": "4252",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4252",
+          "pagina": 139
+        }
+      ]
+    },
+    {
+      "id": "R-GED002-D1",
+      "campo": "GED002",
+      "tipo": "dependencia",
+      "texto": "Sobre el CDC de un DTE se puede realizar hasta un evento de desconocimiento",
+      "no_declarativa": true,
+      "codigo_sifen": "4251",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4251",
+          "pagina": 139
+        },
+        {
+          "doc": "NT019",
+          "ref": "2.4 GED002b"
+        }
+      ]
+    },
+    {
+      "id": "R-GED002-D2",
+      "campo": "GED002",
+      "tipo": "dependencia",
+      "texto": "No se puede registrar el desconocimiento por CDC de un DTE cancelado",
+      "no_declarativa": true,
+      "codigo_sifen": "4264",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.4 GED013"
+        }
+      ]
+    },
+    {
+      "id": "R-GED002-D3",
+      "campo": "GED002",
+      "tipo": "dependencia",
+      "texto": "El CDC del DTE no debe haber superado la cantidad de eventos establecidos sobre el Tipo de Evento de Desconocimiento DTE",
+      "no_declarativa": true,
+      "codigo_sifen": "4265",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.4 GED013a"
+        }
+      ]
+    },
+    {
+      "id": "R-GED003-O1",
+      "campo": "GED003",
+      "tipo": "obligatorio",
+      "texto": "La fecha de emisión del DE/DTE es obligatoria (requerida para el conteo del plazo)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED003",
+          "pagina": 125
+        }
+      ]
+    },
+    {
+      "id": "R-GED003-P1",
+      "campo": "GED003",
+      "tipo": "dependencia",
+      "texto": "Plazo del desconocimiento: el plazo del registro del evento no debe superar los 45 días contados a partir de la fecha de emisión (si lo supera: Aprobado con observación)",
+      "no_declarativa": true,
+      "codigo_sifen": "4253",
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4253",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED003",
+          "pagina": 125
+        },
+        {
+          "doc": "MT150",
+          "ref": "Tabla J",
+          "pagina": 117
+        }
+      ]
+    },
+    {
+      "id": "R-GED003-P2",
+      "campo": "GED003",
+      "tipo": "dependencia",
+      "texto": "Plazo del desconocimiento de un DE: el plazo del registro del evento Desconocimiento DE no debe superar los 45 días contados a partir de la fecha de emisión (si lo supera: Rechazado)",
+      "no_declarativa": true,
+      "codigo_sifen": "4253",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.4 GED003"
+        },
+        {
+          "doc": "NT019",
+          "ref": "5."
+        }
+      ]
+    },
+    {
+      "id": "R-GED003-P3",
+      "campo": "GED003",
+      "tipo": "dependencia",
+      "texto": "Plazo del desconocimiento de un DTE: el plazo del registro del evento Desconocimiento DTE no debe superar los 45 días contados a partir de la fecha de aprobación del DTE (si lo supera: Rechazado)",
+      "no_declarativa": true,
+      "codigo_sifen": "4263",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "2.4 GED012"
+        },
+        {
+          "doc": "NT019",
+          "ref": "5."
+        }
+      ]
+    },
+    {
+      "id": "R-GED004-O1",
+      "campo": "GED004",
+      "tipo": "obligatorio",
+      "texto": "La fecha de recepción del DE es obligatoria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED004",
+          "pagina": 125
+        }
+      ]
+    },
+    {
+      "id": "R-GED004-A1",
+      "campo": "GED004",
+      "tipo": "aritmetica",
+      "texto": "Fecha de Recepción debe ser mayor a la fecha de emisión del DE/DTE (mensaje); la observación admite igualdad",
+      "formula": "La fecha de emisión no puede ser mayor que la fecha de recepción del DE/DTE",
+      "operandos": [
+        "GED004",
+        "GED003"
+      ],
+      "codigo_sifen": "4254",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4254",
+          "pagina": 140
+        }
+      ]
+    },
+    {
+      "id": "R-GED005-O1",
+      "campo": "GED005",
+      "tipo": "obligatorio",
+      "texto": "El tipo de receptor es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED005"
+        }
+      ]
+    },
+    {
+      "id": "R-GED006-O1",
+      "campo": "GED006",
+      "tipo": "obligatorio",
+      "texto": "El nombre o razón social del receptor es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED006"
+        }
+      ]
+    },
+    {
+      "id": "R-GED007-C1",
+      "campo": "GED007",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar Ruc del receptor cuando el tipo de receptor es Contribuyente (GED005=1)",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4255",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4255",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED007"
+        }
+      ]
+    },
+    {
+      "id": "R-GED007-P1",
+      "campo": "GED007",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es No Contribuyente (GED005=2) no se debe informar el campo Ruc del Receptor",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4256",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4256",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED007"
+        }
+      ]
+    },
+    {
+      "id": "R-GED008-C1",
+      "campo": "GED008",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar DV del receptor cuando el tipo de receptor es Contribuyente (GED005=1)",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4257",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4257",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED008"
+        }
+      ]
+    },
+    {
+      "id": "R-GED008-P1",
+      "campo": "GED008",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es No Contribuyente (GED005=2) no se debe informar el Dígito verificador del RUC del contribuyente receptor",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4258",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4258",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED008"
+        }
+      ]
+    },
+    {
+      "id": "R-GED009-C1",
+      "campo": "GED009",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar el tipo de documento de identidad del receptor cuando el tipo de receptor es No contribuyente (GED005=2)",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4259",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4259",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED009"
+        }
+      ]
+    },
+    {
+      "id": "R-GED009-P1",
+      "campo": "GED009",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es Contribuyente (GED005=1) no se debe informar el tipo de documento de identidad del receptor",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4260",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4260",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED009"
+        }
+      ]
+    },
+    {
+      "id": "R-GED010-C1",
+      "campo": "GED010",
+      "tipo": "condicional",
+      "texto": "Es obligatorio informar el número de documento de identidad del receptor cuando el tipo de receptor es No contribuyente (GED005=2)",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "4261",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4261",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED010"
+        }
+      ]
+    },
+    {
+      "id": "R-GED010-P1",
+      "campo": "GED010",
+      "tipo": "prohibido",
+      "texto": "Cuando el tipo de receptor es Contribuyente (GED005=1) no se debe informar el número de documento de identidad del receptor",
+      "condicion": {
+        "campo": "GED005",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "4262",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4262",
+          "pagina": 140
+        },
+        {
+          "doc": "MT150",
+          "ref": "GED010"
+        }
+      ]
+    },
+    {
+      "id": "R-GED009-F1",
+      "campo": "GED009",
+      "tipo": "formato",
+      "texto": "Valores del Manual: 1= Cédula paraguaya 2= Pasaporte 3= Cédula extranjera 4= Carnet de residencia",
+      "contradiccion": "C-616",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED009"
+        }
+      ]
+    },
+    {
+      "id": "R-GED011-O1",
+      "campo": "GED011",
+      "tipo": "obligatorio",
+      "texto": "El motivo del evento es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GED011",
+          "pagina": 126
+        }
+      ]
+    },
+    {
+      "id": "R-GDE007-REC-P1",
+      "campo": "GDE007",
+      "tipo": "dependencia",
+      "texto": "Correcciones de los eventos del receptor (Conformidad – Disconformidad – Desconocimiento DE o DTE): hasta 15 (quince) días del registro del primer evento; DTE en SIFEN en situación Aprobado o Aprobado Extemporáneo; se requiere informar la justificativa del evento de corrección (campo texto libre); solo se puede registrar un evento de corrección sobre cada evento mencionado",
+      "no_declarativa": true,
+      "contradiccion": "C-617",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "Tabla K",
+          "pagina": 119
+        }
+      ]
+    },
+    {
+      "id": "R-GDE007-REC-P2",
+      "campo": "GDE007",
+      "tipo": "dependencia",
+      "texto": "Se podrá realizar el registro de cualquier evento del receptor siempre y cuando se encuentre dentro del plazo establecido para cada evento, quedando como válido e inalterable el último evento registrado. Para los DE el conteo del plazo de registro del evento comienza a partir de la fecha de emisión; para los DTE, a partir de la fecha de aprobación",
+      "no_declarativa": true,
+      "contradiccion": "C-617",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "5."
+        }
+      ]
+    },
+    {
+      "id": "R-GDE007-REC-D1",
+      "campo": "GDE007",
+      "tipo": "dependencia",
+      "texto": "Relaciones entre eventos del receptor según el cuadro del Manual (qué evento puede realizarse luego de otro); el cuadro fue eliminado por la NT 19",
+      "no_declarativa": true,
+      "vigencia": {
+        "hasta": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.2.5 cuadro de relaciones",
+          "pagina": 120
+        },
+        {
+          "doc": "NT019",
+          "ref": "4."
+        }
+      ]
+    }
+  ]
+}

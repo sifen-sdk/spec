@@ -1,0 +1,50 @@
+{
+  "id": "tipo-operacion-vehiculo",
+  "titulo": "Tipo de operación de venta de vehículos",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E771"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E772"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipOpVN, tdDesTipOpVN"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E771",
+    "E772"
+  ],
+  "descripciones": {
+    "E771": "E772"
+  },
+  "xml": [
+    "iTipOpVN",
+    "dDesTipOpVN"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Venta a representante"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Venta al consumidor final",
+      "descripcion_xsd": "Venta al Consumidor final",
+      "contradiccion": "C-910"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Venta a gobierno"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Venta a flota de vehículos"
+    }
+  ]
+}

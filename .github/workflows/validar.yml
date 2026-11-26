@@ -19,5 +19,7 @@ jobs:
           persist-credentials: false
       - name: El volcado de los esquemas está al día
         run: python3 tools/xsd_arbol.py --check
-      - name: Formato, fuentes y referencias
-        run: python3 tools/validar.py
+      - name: Formato, fuentes, referencias y cobertura de los esquemas
+        run: python3 tools/validar.py --cobertura
+      - name: Casos de conformidad calculables
+        run: python3 tools/conformidad.py

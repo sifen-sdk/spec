@@ -1,0 +1,40 @@
+{
+  "id": "motivo-objeto-analisis",
+  "titulo": "Motivo del evento Objeto de Análisis",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tcMotOA, tdMotDesOA"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "cMotOA",
+    "dMotDesOA"
+  ],
+  "nota": "Solo en el XSD (no figura en el Manual ni en las Notas Técnicas). La correspondencia código-descripción se infiere del orden de las enumeraciones de ambos tipos.",
+  "contradiccion": "C-918",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Operaciones no reconocidas por el contribuyente"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Simulación de operaciones"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Omisión de ingresos"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Proveedores inconsistentes"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Otros"
+    }
+  ]
+}

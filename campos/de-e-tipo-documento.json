@@ -1,0 +1,25 @@
+{
+  "grupo": "E",
+  "titulo": "Campos específicos por tipo de Documento Electrónico",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "E001",
+      "xml": "gDtipDE",
+      "nombre": "documentTypeData",
+      "padre": "A001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Campos específicos por tipo de Documento Electrónico",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E001",
+          "pagina": 74
+        }
+      ]
+    }
+  ]
+}

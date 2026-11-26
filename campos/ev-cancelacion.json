@@ -1,0 +1,76 @@
+{
+  "grupo": "GEC",
+  "titulo": "Evento de cancelación",
+  "esquemas": [
+    "Evento_v150.xsd",
+    "Evento_Types_v150.xsd",
+    "siRecepEvento_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GEC001",
+      "xml": "rGeVeCan",
+      "nombre": "cancellation",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos Cancelación",
+      "observaciones": "Elemento raíz. Obligatorio si campo dTiGDE=1 (Cancelación). El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEC001",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGeVeCan (trGeVeCan)"
+        }
+      ]
+    },
+    {
+      "id": "GEC002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GEC001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador del DTE",
+      "observaciones": "Se informa el código de control (CDC)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEC002",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeCan/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GEC003",
+      "xml": "mOtEve",
+      "nombre": "reason",
+      "padre": "GEC001",
+      "tipo": "alfanumerico",
+      "longitud": "5 - 500",
+      "ocurrencia": "1-1",
+      "descripcion": "Motivo del Evento",
+      "observaciones": "Campo abierto",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEC003",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeCan/mOtEve (tmotEve 5-500)"
+        }
+      ]
+    }
+  ]
+}

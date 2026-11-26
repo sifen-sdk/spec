@@ -1,0 +1,77 @@
+{
+  "id": "condicion-negociacion",
+  "titulo": "Condiciones de negociación – Incoterms (Tabla 10)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "15. Codificaciones – TABLA 10 – CONDICIONES DE NEGOCIACION - INCOTERMS",
+      "pagina": 214
+    },
+    {
+      "doc": "MT150",
+      "ref": "E906"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tcCondNeg"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E906"
+  ],
+  "xml": [
+    "cCondNeg"
+  ],
+  "nota": "El DE no lleva campo de descripción de la condición de negociación.",
+  "entradas": [
+    {
+      "codigo": "CFR",
+      "descripcion": "Costo y flete"
+    },
+    {
+      "codigo": "CIF",
+      "descripcion": "Costo, seguro y flete"
+    },
+    {
+      "codigo": "CIP",
+      "descripcion": "Transporte y seguro pagados hasta",
+      "descripcion_xsd": "Transporte y seguros pagados hasta",
+      "contradiccion": "C-908"
+    },
+    {
+      "codigo": "CPT",
+      "descripcion": "Transporte pagado hasta"
+    },
+    {
+      "codigo": "DAP",
+      "descripcion": "Entregada en lugar convenido",
+      "descripcion_xsd": "Entregada en el lugar convenido",
+      "contradiccion": "C-908"
+    },
+    {
+      "codigo": "DAT",
+      "descripcion": "Entregada en terminal"
+    },
+    {
+      "codigo": "DDP",
+      "descripcion": "Entregada derechos pagados"
+    },
+    {
+      "codigo": "EXW",
+      "descripcion": "En fabrica"
+    },
+    {
+      "codigo": "FAS",
+      "descripcion": "Franco al costado del buque"
+    },
+    {
+      "codigo": "FCA",
+      "descripcion": "Franco transportista"
+    },
+    {
+      "codigo": "FOB",
+      "descripcion": "Franco a bordo"
+    }
+  ]
+}

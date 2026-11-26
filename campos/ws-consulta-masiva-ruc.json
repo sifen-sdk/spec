@@ -1,0 +1,348 @@
+{
+  "grupo": "WS-ConsultaArchivoRUC",
+  "titulo": "WS consulta masiva de RUC – rEnviConsArchivoRUCRequest (NT 11, Schemas XML 20, 21 y 22)",
+  "esquemas": [
+    "WS_ConsultaArchivoRuc.xsd",
+    "siConsultaArchivoRuc.xsd",
+    "xmldsig-core-schema.xsd",
+    "SIFEN_Types_v141.xsd"
+  ],
+  "campos": [
+    {
+      "id": "ESch01",
+      "xml": "rEnviConsArchivoRUCRequest",
+      "nombre": "rucFileQuery",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la petición del WS consulta masiva de RUC (Schema XML 20). La NT 11 no indica ocurrencia para la raíz ni publica fechas de vigencia.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch01",
+          "pagina": 1
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCRequest"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "ESch02",
+      "xml": "rConsultaArchivo",
+      "nombre": "queryParameters",
+      "padre": "ESch01",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Contenedor de parámetros requeridos para la consulta.",
+      "observaciones": "Definido en el schema xml: siConsultaArchivoRuc.xsd.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch02",
+          "pagina": 1
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCRequest/rConsultaArchivo"
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaArchivoRuc.xsd rConsultaArchivo"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "ESch03",
+      "xml": "ConsultaDTE",
+      "nombre": "query",
+      "padre": "ESch02",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz del Schema XML 21: siConsultaArchivoRuc.xsd.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch03",
+          "pagina": 1
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaArchivoRuc.xsd rConsultaArchivo/ConsultaDTE"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "ESch04",
+      "xml": "Id",
+      "nombre": "controlId",
+      "padre": "ESch02",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de control de envío.",
+      "observaciones": "Atributo. Número secuencial autoincremental, para identificación del mensaje enviado. La responsabilidad de generar y controlar este número es exclusiva del contribuyente. La NT 11 lo ubica en ConsultaDTE (ESch03); el XSD lo define como atributo de rConsultaArchivo (tipo xs:string).",
+      "contradiccion": "C-721",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch04",
+          "pagina": 1
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaArchivoRuc.xsd rConsultaArchivo/@Id (xs:string, required)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "ESch05",
+      "xml": "dRucFactElec",
+      "nombre": "ruc",
+      "padre": "ESch03",
+      "tipo": "alfanumerico",
+      "longitud": "5-8",
+      "ocurrencia": "1-1",
+      "descripcion": "RUC del facturador electrónico.",
+      "observaciones": "RUC no incluye el dígito verificador (DV).",
+      "contradiccion": "C-721",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch05",
+          "pagina": 1
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaArchivoRuc.xsd ConsultaDTE/dRucFactElec (tRuc de DE_Types_v150.xsd)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "ESch06",
+      "xml": "Signature",
+      "nombre": "signature",
+      "padre": "ESch02",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Grupo de campos de firma",
+      "observaciones": "Firma digital (namespace http://www.w3.org/2000/09/xmldsig#) del contenedor de parámetros.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.1 ESch06",
+          "pagina": 1
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaArchivoRuc.xsd rConsultaArchivo/ds:Signature"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "FSch01",
+      "xml": "rEnviConsArchivoRUCResponse",
+      "nombre": "rucFileQueryResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la respuesta (Schema XML 22: WS_ConsultaArchivoRuc.xsd).",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch01",
+          "pagina": 2
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCResponse"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "FSch02",
+      "xml": "dFecProc",
+      "nombre": "processingDateTime",
+      "padre": "FSch01",
+      "tipo": "fecha_hora",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y hora del procesamiento de la petición",
+      "observaciones": "Fecha de proceso de la petición. Formato AAAA-MM-DDTHH:MI:SS.",
+      "contradiccion": "C-703",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch02",
+          "pagina": 2
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCResponse/dFecProc (fecUTC)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "FSch03",
+      "xml": "dFecArchivo",
+      "nombre": "fileDate",
+      "padre": "FSch01",
+      "tipo": "fecha",
+      "ocurrencia": "0-1",
+      "descripcion": "Fecha del archivo",
+      "observaciones": "Fecha de generación del archivo. Formato AAAA-MM-DD.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch03",
+          "pagina": 2
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCResponse/dFecArchivo (xs:date)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "FSch04",
+      "xml": "dCodRes",
+      "nombre": "resultCode",
+      "padre": "FSch01",
+      "tipo": "alfanumerico",
+      "longitud": "1-4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de resultado de la consulta",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12 MT.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch04",
+          "pagina": 2
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCResponse/dCodRes"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "FSch05",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "FSch01",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje de resultado de la consulta",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12 MT.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch05",
+          "pagina": 2
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCResponse/dMsgRes"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "FSch06",
+      "xml": "rConsDte",
+      "nombre": "compressedFile",
+      "padre": "FSch01",
+      "tipo": "binario",
+      "ocurrencia": "0-1",
+      "descripcion": "Archivo de RUC comprimido",
+      "observaciones": "Campo comprimido en formato Base64.",
+      "fuentes": [
+        {
+          "doc": "NT011",
+          "ref": "9.8.4 FSch06",
+          "pagina": 2
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_ConsultaArchivoRuc.xsd rEnviConsArchivoRUCResponse/rConsDte (xs:base64Binary, expectedContentTypes application/zip)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    }
+  ]
+}

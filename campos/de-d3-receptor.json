@@ -1,0 +1,460 @@
+{
+  "grupo": "D3",
+  "titulo": "Campos que identifican al receptor del Documento Electrónico DE (D200-D299)",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "D200",
+      "xml": "gDatRec",
+      "nombre": "receiver",
+      "padre": "D001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Grupo de campos que identifican al receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D200"
+        }
+      ]
+    },
+    {
+      "id": "D201",
+      "xml": "iNatRec",
+      "nombre": "natureCode",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Naturaleza del receptor",
+      "observaciones": "1= contribuyente 2= no contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D201"
+        }
+      ],
+      "catalogo": "naturaleza-receptor"
+    },
+    {
+      "id": "D202",
+      "xml": "iTiOpe",
+      "nombre": "operationTypeCode",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de operación",
+      "observaciones": "1= B2B 2= B2C 3= B2G 4= B2F (esta última opción debe utilizarse solo en caso de servicios para empresas o personas físicas del exterior)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D202"
+        }
+      ],
+      "catalogo": "tipo-operacion"
+    },
+    {
+      "id": "D203",
+      "xml": "cPaisRec",
+      "nombre": "countryCode",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de país del receptor",
+      "observaciones": "Según XSD de Codificación de Países",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D203"
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "D204",
+      "xml": "dDesPaisRe",
+      "nombre": "countryDescription",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "4-50",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del país receptor",
+      "observaciones": "Referente al campo D203. Longitud 4-30 en el Manual; la NT 5 la modifica a 4-50.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D204"
+        },
+        {
+          "doc": "NT005",
+          "ref": "1.1 D204 dDesPaisRe"
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "D205",
+      "xml": "iTiContRec",
+      "nombre": "taxpayerTypeCode",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de contribuyente receptor",
+      "observaciones": "1= Persona Física 2= Persona Jurídica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D205"
+        }
+      ],
+      "catalogo": "tipo-contribuyente"
+    },
+    {
+      "id": "D206",
+      "xml": "dRucRec",
+      "nombre": "ruc",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "RUC del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D206"
+        }
+      ]
+    },
+    {
+      "id": "D207",
+      "xml": "dDVRec",
+      "nombre": "checkDigit",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Dígito verificador del RUC del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D207"
+        }
+      ]
+    },
+    {
+      "id": "D208",
+      "xml": "iTipIDRec",
+      "nombre": "idTypeCode",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento de identidad del receptor",
+      "observaciones": "1= Cédula paraguaya 2= Pasaporte 3= Cédula extranjera 4= Carnet de residencia 5= Innominado 6= Tarjeta Diplomática de exoneración fiscal 9= Otro",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D208"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 D208 iTipIDRec"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D208 iTipIDRec"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad-receptor"
+    },
+    {
+      "id": "D209",
+      "xml": "dDTipIDRec",
+      "nombre": "idTypeDescription",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "9-41",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de documento de identidad",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D209"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad-receptor"
+    },
+    {
+      "id": "D210",
+      "xml": "dNumIDRec",
+      "nombre": "idNumber",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de documento de identidad",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D210"
+        },
+        {
+          "doc": "NT002",
+          "ref": "1.1 D210 dNumIDRec"
+        },
+        {
+          "doc": "NT023",
+          "ref": "1.1 D210 dNumIDRec"
+        }
+      ]
+    },
+    {
+      "id": "D211",
+      "xml": "dNomRec",
+      "nombre": "name",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre o razón social del receptor del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D211"
+        }
+      ]
+    },
+    {
+      "id": "D212",
+      "xml": "dNomFanRec",
+      "nombre": "tradeName",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Nombre de fantasía",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D212"
+        }
+      ]
+    },
+    {
+      "id": "D213",
+      "xml": "dDirRec",
+      "nombre": "address",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Dirección del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D213"
+        }
+      ]
+    },
+    {
+      "id": "D218",
+      "xml": "dNumCasRec",
+      "nombre": "houseNumber",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1-6",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de casa del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D218"
+        }
+      ]
+    },
+    {
+      "id": "D219",
+      "xml": "cDepRec",
+      "nombre": "departmentCode",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del departamento del receptor",
+      "observaciones": "Según XSD de Departamentos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D219"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1.1 D219 cDepRec"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "D220",
+      "xml": "dDesDepRec",
+      "nombre": "departmentDescription",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del departamento del receptor",
+      "observaciones": "Referente al campo D219",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D220"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "D221",
+      "xml": "cDisRec",
+      "nombre": "districtCode",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito del receptor",
+      "observaciones": "Según Tabla 2.1 – Distritos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D221"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "D222",
+      "xml": "dDesDisRec",
+      "nombre": "districtDescription",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del distrito del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D222"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "D223",
+      "xml": "cCiuRec",
+      "nombre": "cityCode",
+      "padre": "D200",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "0-1",
+      "descripcion": "Código de la ciudad del receptor",
+      "observaciones": "Según Tabla 2.2 – Ciudades",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D223"
+        },
+        {
+          "doc": "NT003",
+          "ref": "1.1 D223 cCiuRec"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "D224",
+      "xml": "dDesCiuRec",
+      "nombre": "cityDescription",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de la ciudad del receptor",
+      "observaciones": "Referente al campo D223",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D224"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "D214",
+      "xml": "dTelRec",
+      "nombre": "phone",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "6-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de teléfono del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D214"
+        }
+      ]
+    },
+    {
+      "id": "D215",
+      "xml": "dCelRec",
+      "nombre": "mobilePhone",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "10-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de celular del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D215"
+        }
+      ]
+    },
+    {
+      "id": "D216",
+      "xml": "dEmailRec",
+      "nombre": "email",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "3-80",
+      "ocurrencia": "0-1",
+      "descripcion": "Correo electrónico del receptor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D216"
+        }
+      ]
+    },
+    {
+      "id": "D217",
+      "xml": "dCodCliente",
+      "nombre": "customerCode",
+      "padre": "D200",
+      "tipo": "alfanumerico",
+      "longitud": "3-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del cliente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D217"
+        }
+      ]
+    }
+  ]
+}

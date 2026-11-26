@@ -10,8 +10,26 @@ neutral al lenguaje de programación. Es la fuente única que consumen todos los
 
 ## Estado
 
-**Fase 0: estructura y decisiones.** Todavía no hay datos. Los campos, reglas, catálogos, esquemas y casos de
-conformidad se cargan en la fase 1.
+**Fase 1: primera carga completa, en revisión.** Manual Técnico v150, Notas Técnicas 1 a 27 y los esquemas
+publicados el 19/09/2025.
+
+| Contenido | Cantidad |
+|---|---|
+| Campos (documento electrónico, eventos, web services) | 715 |
+| Reglas (obligatoriedad, condiciones, formato, fórmulas) | 1.248 |
+| Catálogos | 62 |
+| Códigos de respuesta | 510 |
+| Contradicciones registradas | 135 |
+| Esquemas oficiales | 47 |
+
+Nada está verificado todavía contra el ambiente de test de SIFEN: eso llega con el cliente de los SDK (fase 3).
+
+```bash
+python3 tools/validar.py --cobertura   # formato, fuentes, referencias y cobertura de los esquemas
+python3 tools/conformidad.py           # casos de conformidad calculables (CDC y QR)
+```
+
+El formato de los datos está en [`FORMATO.md`](FORMATO.md).
 
 ## Por qué existe
 

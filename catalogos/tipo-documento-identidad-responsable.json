@@ -1,0 +1,54 @@
+{
+  "id": "tipo-documento-identidad-responsable",
+  "titulo": "Tipo de documento de identidad del responsable de la generación del DE",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D141"
+    },
+    {
+      "doc": "MT150",
+      "ref": "D142"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipIDRespDE (pattern [1-4]|9), tdDTipIDRespDE"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D141",
+    "D142"
+  ],
+  "descripciones": {
+    "D141": "D142"
+  },
+  "xml": [
+    "iTipIDRespDE",
+    "dDTipIDRespDE"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Cédula paraguaya"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Pasaporte"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Cédula extranjera"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Carnet de residencia"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Otro",
+      "observacion": "Si D141 = 9 informar el tipo de documento de identidad del responsable de la generación del DE",
+      "descripcion_libre": true
+    }
+  ]
+}

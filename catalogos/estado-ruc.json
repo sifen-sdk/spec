@@ -1,0 +1,52 @@
+{
+  "id": "estado-ruc",
+  "titulo": "Estado del RUC consultado",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "ContRUC04"
+    },
+    {
+      "doc": "MT150",
+      "ref": "ContRUC05"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "ContRUC04",
+    "ContRUC05"
+  ],
+  "descripciones": {
+    "ContRUC04": "ContRUC05"
+  },
+  "xml": [
+    "dCodEstCons",
+    "dDesEstCons"
+  ],
+  "entradas": [
+    {
+      "codigo": "ACT",
+      "descripcion": "Activo"
+    },
+    {
+      "codigo": "SUS",
+      "descripcion": "Suspensión Temporal"
+    },
+    {
+      "codigo": "SAD",
+      "descripcion": "Suspensión Administrativa"
+    },
+    {
+      "codigo": "BLQ",
+      "descripcion": "Bloqueado"
+    },
+    {
+      "codigo": "CAN",
+      "descripcion": "Cancelado"
+    },
+    {
+      "codigo": "CDE",
+      "descripcion": "Cancelado Definitivo"
+    }
+  ]
+}

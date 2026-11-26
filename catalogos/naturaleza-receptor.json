@@ -1,0 +1,36 @@
+{
+  "id": "naturaleza-receptor",
+  "titulo": "Naturaleza del receptor",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D201"
+    },
+    {
+      "doc": "NT014",
+      "ref": "GENFE004"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiNatRec (pattern [1-2]); Evento_Types_v150.xsd tiTipEve"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D201",
+    "GENFE004"
+  ],
+  "xml": [
+    "iNatRec"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "contribuyente"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "no contribuyente"
+    }
+  ]
+}

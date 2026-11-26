@@ -1,0 +1,41 @@
+{
+  "grupo": "D",
+  "titulo": "Campos Generales del Documento Electrónico DE (D001-D299)",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "D001",
+      "xml": "gDatGralOpe",
+      "nombre": "generalData",
+      "padre": "A001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Campos generales del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D001"
+        }
+      ]
+    },
+    {
+      "id": "D002",
+      "xml": "dFeEmiDE",
+      "nombre": "issueDateTime",
+      "padre": "D001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y hora de emisión del DE",
+      "observaciones": "Para el KuDE el formato de la fecha de emisión debe contener los guiones separadores. Ejemplo: 2018-05-31T12:00:00",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D002"
+        }
+      ]
+    }
+  ]
+}

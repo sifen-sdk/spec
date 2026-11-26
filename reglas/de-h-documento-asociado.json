@@ -1,0 +1,1289 @@
+{
+  "grupo": "H",
+  "reglas": [
+    {
+      "id": "R-H001-C1",
+      "campo": "H001",
+      "tipo": "condicional",
+      "texto": "El documento asociado es obligatorio en Autofactura, Nota de Crédito y Nota de Débito Electrónica",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H001",
+          "cita": "Obligatorio si C002 = 4, 5, 6 Opcional si C002=1 o 7"
+        }
+      ]
+    },
+    {
+      "id": "R-H001-C2",
+      "campo": "H001",
+      "tipo": "condicional",
+      "texto": "Validación original: obligatorio en Autofactura, NCE, NDE o Comprobante de Retención (C002 = 4, 5, 6 u 8)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "codigo_sifen": "2400",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2400",
+          "cita": "Si el tipo de documento electrónico seleccionado es igual a Autofactura, Nota de Crédito Electrónica, Nota de Débito Electrónica o Comprobante de Retención (C002=4, 5, 6 o 8)"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-H001-C3",
+      "campo": "H001",
+      "tipo": "condicional",
+      "texto": "Obligatorio en Autofactura, Nota de Crédito y Nota de Débito Electrónica (la NT 23 quita el Comprobante de Retención)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "codigo_sifen": "2400",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2400"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-H001-D1",
+      "campo": "H001",
+      "tipo": "dependencia",
+      "texto": "Documentos que admite SIFEN como asociados según el tipo de DE. FE (C002=1): Nota de remisión (si H002=1 el CDC debe pertenecer a una Nota de remisión; si H002=2, H009=4) o Factura cuando el tipo de transacción del documento asociado es Anticipo (D011 del asociado = 9; si H002=1 el CDC debe pertenecer a una FE; si H002=2, H009=1). NCE/NDE (C002=5 o 6): solo Factura electrónica (si H002=1 el CDC debe pertenecer a una FE; si H002=2, H009=1). NRE (C002=7): no se informan documentos asociados distintos a Factura (si H002=1, FE; si H002=2, H009=1)",
+      "no_declarativa": true,
+      "codigo_sifen": "2414",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2414"
+        }
+      ]
+    },
+    {
+      "id": "R-H001-F1",
+      "campo": "H001",
+      "tipo": "formato",
+      "texto": "En Autofactura, Nota de Crédito o Nota de Débito el grupo de documento asociado puede aparecer una sola vez",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "codigo_sifen": "2415",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2415",
+          "cita": "el grupo de documento asociado informado puede aparecer una sola vez"
+        }
+      ]
+    },
+    {
+      "id": "R-H002-O",
+      "campo": "H002",
+      "tipo": "obligatorio",
+      "texto": "El tipo de documento asociado es obligatorio en el grupo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H002"
+        }
+      ]
+    },
+    {
+      "id": "R-H002-D1",
+      "campo": "H002",
+      "tipo": "dependencia",
+      "texto": "En la Autofactura, el tipo de documento asociado debe ser constancia electrónica (H002 = 3)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "2416",
+      "contradiccion": "C-511",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2416",
+          "cita": "Si el tipo de documento electrónico recibido es Autofactura (C002=4), el tipo de documento asociado debe ser constancia electrónica (H002=3)"
+        }
+      ]
+    },
+    {
+      "id": "R-H002-D2",
+      "campo": "H002",
+      "tipo": "dependencia",
+      "texto": "En FE, NCE, NDE y NRE el tipo de documento asociado no puede ser constancia electrónica (H002 ≠ 3)",
+      "condicion": {
+        "campo": "C002",
+        "op": "en",
+        "valores": [
+          "1",
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      "codigo_sifen": "2434",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2434"
+        }
+      ]
+    },
+    {
+      "id": "R-H003-O",
+      "campo": "H003",
+      "tipo": "obligatorio",
+      "texto": "La descripción del tipo de documento asociado es obligatoria en el grupo",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H003"
+        }
+      ]
+    },
+    {
+      "id": "R-H003-D1",
+      "campo": "H003",
+      "tipo": "dependencia",
+      "texto": "Descripción que corresponde a H002: 1 = “Electrónico”, 2 = “Impreso”, 3 = “Constancia Electrónica”",
+      "codigo_sifen": "2401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H003"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2401"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-C1",
+      "campo": "H004",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento asociado es electrónico (H002 = 1), es obligatorio informar el CDC del DTE referenciado",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "2402",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H004",
+          "cita": "Obligatorio si H002=1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2402"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-C2",
+      "campo": "H004",
+      "tipo": "condicional",
+      "texto": "Validación numerada 250 (H002): cuando el tipo de documento asociado es electrónico es obligatorio informar el CDC; el Manual le asigna el código 2416, ya usado por otra validación",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "2416",
+      "contradiccion": "C-511",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2416",
+          "cita": "Cuando el tipo de documento asociado es electrónico es obligatorio informar el CDC del DTE"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-P1",
+      "campo": "H004",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de documento asociado es impreso o constancia electrónica (H002 = 2 o 3), no se informa el CDC",
+      "condicion": {
+        "campo": "H002",
+        "op": "en",
+        "valores": [
+          "2",
+          "3"
+        ]
+      },
+      "codigo_sifen": "2418",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H004",
+          "cita": "No informar si H002 = 2 o 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2418"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-P2",
+      "campo": "H004",
+      "tipo": "prohibido",
+      "texto": "Validación numerada 247 (H002c): cuando el tipo de documento asociado es impreso no se informa el CDC; el Manual le asigna el código 2419, ya usado por H005a",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2419",
+      "contradiccion": "C-511",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2419",
+          "cita": "Cuando el tipo de documento asociado es impreso no se debe informar el CDC del DTE (H004)"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-D1",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "El CDC del documento asociado debe existir en SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "2403",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2403"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-D2",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "El DTE referenciado no debe estar cancelado en SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "2404",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2404"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-A1",
+      "campo": "H004",
+      "tipo": "aritmetica",
+      "texto": "La suma de los totales generales (F014) de las Notas de Crédito actuales y preexistentes no puede superar el total general de la Factura electrónica asociada (se verifica en SIFEN contra otros documentos)",
+      "formula": "Σ F014 de las NC (actual o pre-existentes) ≤ F014 de la FE asociada",
+      "operandos": [
+        "F014"
+      ],
+      "codigo_sifen": "2417",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2417",
+          "cita": "La sumatoria de cada Total general de la operación (F014) de la (s) Nota(s) de Crédito(s) (actual o pre-existentes) no puede(n) superar al Total general de la operación de la Factura electrónica asociada"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-D3",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "Si el DE es una FE (C002 = 1) y el documento asociado es otra FE (H004 inicia con 01), el tipo de transacción de la FE asociada debe ser Anticipo (D011 = 9)",
+      "no_declarativa": true,
+      "codigo_sifen": "2437",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2437"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-D4",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "Misma moneda (D015) que el documento asociado: cuando el asociado es una FE de Anticipo (D011=9) y el DE es otra FE (C002=1), y cuando el DE es NCE o NDE (C002=5 o 6) y el asociado es una FE (CDC inicia con 01)",
+      "no_declarativa": true,
+      "codigo_sifen": "2438",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2438"
+        }
+      ]
+    },
+    {
+      "id": "R-H004-D5",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de documento asociado es electrónico (H002 = 1), el CDC debe corresponder al emisor del documento al cual se asocia",
+      "no_declarativa": true,
+      "codigo_sifen": "2439",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "2439"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        },
+        "hasta": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-H004-D6",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de documento asociado es electrónico (H002 = 1), el CDC debe corresponder al emisor y/o RUC Fusionado del documento al cual se asocia",
+      "no_declarativa": true,
+      "codigo_sifen": "2439",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2439",
+          "cita": "el CDC debe corresponder al emisor y/o RUC Fusionado del documento al cual se asocia"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-H004-D7",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de documento asociado es electrónico (H002 = 1), el CDC debe coincidir con el receptor del documento al cual se asocia",
+      "no_declarativa": true,
+      "codigo_sifen": "2441",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "2441"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-H004-D8",
+      "campo": "H004",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de documento asociado es electrónico (H002 = 1), el CDC debe coincidir con el receptor informado en el evento de Nominación de Factura Electrónica",
+      "no_declarativa": true,
+      "codigo_sifen": "2442",
+      "fuentes": [
+        {
+          "doc": "NT015",
+          "ref": "2442"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-21",
+          "produccion": "2023-09-21"
+        }
+      }
+    },
+    {
+      "id": "R-H005-C1",
+      "campo": "H005",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento asociado es impreso (H002 = 2), es obligatorio informar el timbrado del documento impreso",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2405",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H005",
+          "cita": "Obligatorio si H002=2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2405"
+        }
+      ]
+    },
+    {
+      "id": "R-H005-P1",
+      "campo": "H005",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de documento asociado es electrónico o constancia electrónica (H002 = 1 o 3), no se informa el timbrado",
+      "condicion": {
+        "campo": "H002",
+        "op": "en",
+        "valores": [
+          "1",
+          "3"
+        ]
+      },
+      "codigo_sifen": "2419",
+      "contradiccion": "C-511",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H005",
+          "cita": "No informar si H002 = 1 o 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2419"
+        }
+      ]
+    },
+    {
+      "id": "R-H005-D1",
+      "campo": "H005",
+      "tipo": "dependencia",
+      "texto": "Si el tipo de documento asociado es impreso (H002 = 2), no se debe informar un timbrado electrónico existente en SIFEN",
+      "no_declarativa": true,
+      "codigo_sifen": "2440",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2440"
+        },
+        {
+          "doc": "NT010",
+          "ref": "2440",
+          "cita": "El número de timbrado informado corresponde a un timbrado electrónico existente en la base de datos del SIFEN"
+        }
+      ]
+    },
+    {
+      "id": "R-H006-C1",
+      "campo": "H006",
+      "tipo": "condicional",
+      "texto": "Establecimiento del documento impreso: obligatorio si el tipo de documento asociado es impreso (H002 = 2)",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2406",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H006",
+          "cita": "Obligatorio si H002=2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2406"
+        }
+      ]
+    },
+    {
+      "id": "R-H006-P1",
+      "campo": "H006",
+      "tipo": "prohibido",
+      "texto": "Establecimiento: no se informa si el tipo de documento asociado es electrónico o constancia electrónica (H002 = 1 o 3)",
+      "condicion": {
+        "campo": "H002",
+        "op": "en",
+        "valores": [
+          "1",
+          "3"
+        ]
+      },
+      "codigo_sifen": "2420",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H006",
+          "cita": "No informar si H002 = 1 o 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2420"
+        }
+      ]
+    },
+    {
+      "id": "R-H006-F1",
+      "campo": "H006",
+      "tipo": "formato",
+      "texto": "Completar con 0 (cero) a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H006",
+          "cita": "Completar con 0 (cero) a la izquierda"
+        }
+      ]
+    },
+    {
+      "id": "R-H007-C1",
+      "campo": "H007",
+      "tipo": "condicional",
+      "texto": "Punto de expedición del documento impreso: obligatorio si el tipo de documento asociado es impreso (H002 = 2)",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2407",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H007",
+          "cita": "Obligatorio si H002=2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2407"
+        }
+      ]
+    },
+    {
+      "id": "R-H007-P1",
+      "campo": "H007",
+      "tipo": "prohibido",
+      "texto": "Punto de expedición: no se informa si el tipo de documento asociado es electrónico o constancia electrónica (H002 = 1 o 3)",
+      "condicion": {
+        "campo": "H002",
+        "op": "en",
+        "valores": [
+          "1",
+          "3"
+        ]
+      },
+      "codigo_sifen": "2421",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H007",
+          "cita": "No informar si H002 = 1 o 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2421"
+        }
+      ]
+    },
+    {
+      "id": "R-H007-F1",
+      "campo": "H007",
+      "tipo": "formato",
+      "texto": "Completar con 0 (cero) a la izquierda",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H007",
+          "cita": "Completar con 0 (cero) a la izquierda"
+        }
+      ]
+    },
+    {
+      "id": "R-H008-C1",
+      "campo": "H008",
+      "tipo": "condicional",
+      "texto": "Número del documento del documento impreso: obligatorio si el tipo de documento asociado es impreso (H002 = 2)",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2408",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H008",
+          "cita": "Obligatorio si H002=2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2408"
+        }
+      ]
+    },
+    {
+      "id": "R-H008-P1",
+      "campo": "H008",
+      "tipo": "prohibido",
+      "texto": "Número del documento: no se informa si el tipo de documento asociado es electrónico o constancia electrónica (H002 = 1 o 3)",
+      "condicion": {
+        "campo": "H002",
+        "op": "en",
+        "valores": [
+          "1",
+          "3"
+        ]
+      },
+      "codigo_sifen": "2422",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H008",
+          "cita": "No informar si H002 = 1 o 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2422"
+        }
+      ]
+    },
+    {
+      "id": "R-H008-F1",
+      "campo": "H008",
+      "tipo": "formato",
+      "texto": "Completar con 0 (cero) a la izquierda hasta alcanzar 7 (siete) cifras",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H008",
+          "cita": "Completar con 0 (cero) a la izquierda hasta alcanzar 7 (siete) cifras"
+        }
+      ]
+    },
+    {
+      "id": "R-H009-C1",
+      "campo": "H009",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento asociado es impreso (H002 = 2), es obligatorio informar el tipo de documento impreso",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2409",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H009",
+          "cita": "Obligatorio si H002=2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2409"
+        }
+      ]
+    },
+    {
+      "id": "R-H009-P1",
+      "campo": "H009",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de documento asociado es electrónico o constancia electrónica (H002 = 1 o 3), no se informa el tipo de documento impreso",
+      "condicion": {
+        "campo": "H002",
+        "op": "en",
+        "valores": [
+          "1",
+          "3"
+        ]
+      },
+      "codigo_sifen": "2423",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H009",
+          "cita": "No informar si H002 = 1 o 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2423"
+        }
+      ]
+    },
+    {
+      "id": "R-H010-C1",
+      "campo": "H010",
+      "tipo": "condicional",
+      "texto": "Si se informa el tipo de documento impreso (H009), es obligatorio informar su descripción",
+      "condicion": {
+        "campo": "H009",
+        "op": "presente"
+      },
+      "codigo_sifen": "2424",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H010",
+          "cita": "Obligatorio si existe el campo H009"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2424"
+        }
+      ]
+    },
+    {
+      "id": "R-H010-P1",
+      "campo": "H010",
+      "tipo": "prohibido",
+      "texto": "Si no se informa el tipo de documento impreso (H009), no se informa su descripción",
+      "condicion": {
+        "campo": "H009",
+        "op": "ausente"
+      },
+      "codigo_sifen": "2435",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2435"
+        }
+      ]
+    },
+    {
+      "id": "R-H010-D1",
+      "campo": "H010",
+      "tipo": "dependencia",
+      "texto": "Descripción que corresponde a H009: 1 = “Factura”, 2 = “Nota de crédito”, 3 = “Nota de débito”, 4 = “Nota de remisión” (la NT 10 elimina 5 = “Comprobante de retención”)",
+      "codigo_sifen": "2410",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H010"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2410"
+        },
+        {
+          "doc": "NT010",
+          "ref": "H010"
+        }
+      ]
+    },
+    {
+      "id": "R-H011-C1",
+      "campo": "H011",
+      "tipo": "condicional",
+      "texto": "Obligatorio si existe el timbrado del documento impreso (H005)",
+      "condicion": {
+        "campo": "H005",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H011",
+          "cita": "Obligatorio si existe el campo H005"
+        }
+      ]
+    },
+    {
+      "id": "R-H011-C2",
+      "campo": "H011",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento asociado es impreso (H002 = 2), es obligatorio informar la fecha de emisión del documento impreso",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "2"
+      },
+      "codigo_sifen": "2411",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2411"
+        }
+      ]
+    },
+    {
+      "id": "R-H011-P1",
+      "campo": "H011",
+      "tipo": "prohibido",
+      "texto": "No se informa si no existe el timbrado del documento impreso (H005)",
+      "condicion": {
+        "campo": "H005",
+        "op": "ausente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H011",
+          "cita": "No Informar si campo H005 no existe"
+        }
+      ]
+    },
+    {
+      "id": "R-H011-P2",
+      "campo": "H011",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de documento asociado es electrónico o constancia electrónica (H002 = 1 o 3), no se informa la fecha de emisión del documento impreso",
+      "condicion": {
+        "campo": "H002",
+        "op": "en",
+        "valores": [
+          "1",
+          "3"
+        ]
+      },
+      "codigo_sifen": "2425",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2425"
+        }
+      ]
+    },
+    {
+      "id": "R-H011-F1",
+      "campo": "H011",
+      "tipo": "formato",
+      "texto": "Formato AAAA-MM-DD",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H011",
+          "cita": "Formato AAAA-MM-DD"
+        }
+      ]
+    },
+    {
+      "id": "R-H012-OP",
+      "campo": "H012",
+      "tipo": "opcional",
+      "texto": "Según la tabla de campos, si el tipo de pago es Retención (E606 = 10) es opcional informar el número de comprobante de retención (cambio temporal)",
+      "contradiccion": "C-510",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H012",
+          "cita": "Si E606 = 10, es opcional informar número de comprobante de retención (Cambio temporal)."
+        }
+      ]
+    },
+    {
+      "id": "R-H012-C1",
+      "campo": "H012",
+      "tipo": "condicional",
+      "texto": "Según la validación 2412, si el tipo de pago es Retenciones (E606 = 10) es obligatorio reportar el número de comprobante de retención",
+      "condicion": {
+        "campo": "E606",
+        "op": "igual",
+        "valor": "10"
+      },
+      "codigo_sifen": "2412",
+      "contradiccion": "C-510",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2412"
+        }
+      ]
+    },
+    {
+      "id": "R-H012-P1",
+      "campo": "H012",
+      "tipo": "prohibido",
+      "texto": "Si se informa el número de comprobante de retención, la forma de pago debe ser Retención (E606 = 10); no se informa en otro caso",
+      "condicion": {
+        "no": {
+          "campo": "E606",
+          "op": "igual",
+          "valor": "10"
+        }
+      },
+      "codigo_sifen": "2436",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H012",
+          "cita": "No informar si E606 ≠ 10"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2436"
+        }
+      ]
+    },
+    {
+      "id": "R-H013-C1",
+      "campo": "H013",
+      "tipo": "condicional",
+      "texto": "Si el tipo de transacción es Venta de crédito fiscal (D011 = 12), es obligatorio informar el número de resolución de crédito fiscal",
+      "condicion": {
+        "campo": "D011",
+        "op": "igual",
+        "valor": "12"
+      },
+      "codigo_sifen": "2413",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H013",
+          "cita": "Si D011 = 12 obligatorio informar número de resolución de crédito fiscal"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2413"
+        }
+      ]
+    },
+    {
+      "id": "R-H013-P1",
+      "campo": "H013",
+      "tipo": "prohibido",
+      "texto": "No se informa si el tipo de transacción no es Venta de crédito fiscal (D011 ≠ 12)",
+      "condicion": {
+        "campo": "D011",
+        "op": "distinto",
+        "valor": "12"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H013",
+          "cita": "No informar si D011 ≠ 12"
+        }
+      ]
+    },
+    {
+      "id": "R-H014-C1",
+      "campo": "H014",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento asociado es constancia electrónica (H002 = 3), es obligatorio informar el tipo de constancia",
+      "condicion": {
+        "campo": "H002",
+        "op": "igual",
+        "valor": "3"
+      },
+      "codigo_sifen": "2426",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H014",
+          "cita": "Obligatorio cuando H002 = 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2426"
+        }
+      ]
+    },
+    {
+      "id": "R-H014-P1",
+      "campo": "H014",
+      "tipo": "prohibido",
+      "texto": "No se informa el tipo de constancia cuando el tipo de documento asociado no es constancia electrónica",
+      "condicion": {
+        "campo": "H002",
+        "op": "distinto",
+        "valor": "3"
+      },
+      "codigo_sifen": "2427",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H014",
+          "cita": "No informar cuando H002 ≠ 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2427"
+        }
+      ]
+    },
+    {
+      "id": "R-H015-C1",
+      "campo": "H015",
+      "tipo": "condicional",
+      "texto": "Obligatorio si se informa el tipo de constancia (H014)",
+      "condicion": {
+        "campo": "H014",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H015",
+          "cita": "Obligatorio si se informa H014"
+        }
+      ]
+    },
+    {
+      "id": "R-H015-D1",
+      "campo": "H015",
+      "tipo": "dependencia",
+      "texto": "Descripción que corresponde a H014: 1 = “Constancia de no ser contribuyente”, 2 = “Constancia de microproductores”",
+      "codigo_sifen": "2429",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H015"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2429"
+        }
+      ]
+    },
+    {
+      "id": "R-H016-C1",
+      "campo": "H016",
+      "tipo": "condicional",
+      "texto": "Número de constancia: obligatorio cuando el tipo de documento asociado es constancia electrónica (H002 = 3) y el tipo de constancia es 2 (la tabla lo describe como constancia de microproductores; la validación 2430, como constancia de no ser contribuyente)",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "H002",
+            "op": "igual",
+            "valor": "3"
+          },
+          {
+            "campo": "H014",
+            "op": "igual",
+            "valor": "2"
+          }
+        ]
+      },
+      "codigo_sifen": "2430",
+      "contradiccion": "C-509",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H016",
+          "cita": "Obligatorio cuando H002 = 3 y H014 = 2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2430"
+        }
+      ]
+    },
+    {
+      "id": "R-H016-P1",
+      "campo": "H016",
+      "tipo": "prohibido",
+      "texto": "Número de constancia: no se informa cuando el tipo de documento asociado no es constancia electrónica (H002 ≠ 3)",
+      "condicion": {
+        "campo": "H002",
+        "op": "distinto",
+        "valor": "3"
+      },
+      "codigo_sifen": "2431",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H016",
+          "cita": "No informar cuando H002 ≠ 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2431"
+        }
+      ]
+    },
+    {
+      "id": "R-H017-C1",
+      "campo": "H017",
+      "tipo": "condicional",
+      "texto": "Número de control de la constancia: obligatorio cuando el tipo de documento asociado es constancia electrónica (H002 = 3) y el tipo de constancia es 2 (la tabla lo describe como constancia de microproductores; la validación 2432, como constancia de no ser contribuyente)",
+      "condicion": {
+        "todas": [
+          {
+            "campo": "H002",
+            "op": "igual",
+            "valor": "3"
+          },
+          {
+            "campo": "H014",
+            "op": "igual",
+            "valor": "2"
+          }
+        ]
+      },
+      "codigo_sifen": "2432",
+      "contradiccion": "C-509",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H017",
+          "cita": "Obligatorio cuando H002 = 3 y H014 = 2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2432"
+        }
+      ]
+    },
+    {
+      "id": "R-H017-P1",
+      "campo": "H017",
+      "tipo": "prohibido",
+      "texto": "Número de control de la constancia: no se informa cuando el tipo de documento asociado no es constancia electrónica (H002 ≠ 3)",
+      "condicion": {
+        "campo": "H002",
+        "op": "distinto",
+        "valor": "3"
+      },
+      "codigo_sifen": "2433",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H017",
+          "cita": "No informar cuando H002 ≠ 3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2433"
+        }
+      ]
+    },
+    {
+      "id": "R-H018-C1",
+      "campo": "H018",
+      "tipo": "condicional",
+      "texto": "Obligatorio cuando el CDC del DTE referenciado corresponda a un RUC fusionado (condición que se verifica en SIFEN, no expresable)",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "H018",
+          "cita": "Obligatorio cuando el CDC del DTE referenciado corresponda a un RUC fusionado"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-H018-D1",
+      "campo": "H018",
+      "tipo": "dependencia",
+      "texto": "Si se informa el RUC fusionado, debe corresponder al RUC del emisor del CDC asociado informado en H004",
+      "no_declarativa": true,
+      "codigo_sifen": "2443",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2443"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-H018-P1",
+      "campo": "H018",
+      "tipo": "prohibido",
+      "texto": "El RUC fusionado no se informa si el tipo de documento no es Nota de Crédito, Nota de Débito o Nota de Remisión (C002 ≠ 5, 6 o 7)",
+      "condicion": {
+        "campo": "C002",
+        "op": "no_en",
+        "valores": [
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      "codigo_sifen": "2444",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "2444"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-X-H-dNumCuoDocAso-OP",
+      "campo": "X-H-dNumCuoDocAso",
+      "tipo": "opcional",
+      "texto": "Elemento opcional en el XSD (minOccurs=0), sin regla documentada",
+      "contradiccion": "C-507",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamDEAsoc/dNumCuoDocAso"
+        }
+      ]
+    },
+    {
+      "id": "R-X-H-dImpCuoDocAso-OP",
+      "campo": "X-H-dImpCuoDocAso",
+      "tipo": "opcional",
+      "texto": "Elemento opcional en el XSD (minOccurs=0), sin regla documentada",
+      "contradiccion": "C-507",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamDEAsoc/dImpCuoDocAso"
+        }
+      ]
+    }
+  ]
+}

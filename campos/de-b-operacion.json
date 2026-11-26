@@ -1,0 +1,114 @@
+{
+  "grupo": "B",
+  "titulo": "Campos inherentes a la operación de Documentos Electrónicos (B001-B099)",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "B001",
+      "xml": "gOpeDE",
+      "nombre": "operation",
+      "padre": "A001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Campos inherentes a la operación de DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B001"
+        }
+      ]
+    },
+    {
+      "id": "B002",
+      "xml": "iTipEmi",
+      "nombre": "emissionTypeCode",
+      "padre": "B001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de emisión",
+      "observaciones": "1= Normal 2= Contingencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B002"
+        }
+      ],
+      "catalogo": "tipo-emision"
+    },
+    {
+      "id": "B003",
+      "xml": "dDesTipEmi",
+      "nombre": "emissionTypeDescription",
+      "padre": "B001",
+      "tipo": "alfanumerico",
+      "longitud": "6-12",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del tipo de emisión",
+      "observaciones": "Referente al campo B002: 1= \"Normal\" 2= \"Contingencia\"",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B003"
+        }
+      ],
+      "catalogo": "tipo-emision"
+    },
+    {
+      "id": "B004",
+      "xml": "dCodSeg",
+      "nombre": "securityCode",
+      "padre": "B001",
+      "tipo": "numerico",
+      "longitud": "9",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de seguridad",
+      "observaciones": "Código generado por el emisor de manera aleatoria para asegurar la confidencialidad de la consulta pública del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B004"
+        }
+      ]
+    },
+    {
+      "id": "B005",
+      "xml": "dInfoEmi",
+      "nombre": "issuerInformation",
+      "padre": "B001",
+      "tipo": "alfanumerico",
+      "longitud": "1-3000",
+      "ocurrencia": "0-1",
+      "descripcion": "Información de interés del emisor respecto al DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B005"
+        }
+      ]
+    },
+    {
+      "id": "B006",
+      "xml": "dInfoFisc",
+      "nombre": "taxAuthorityInformation",
+      "padre": "B001",
+      "tipo": "alfanumerico",
+      "longitud": "1-3000",
+      "ocurrencia": "0-1",
+      "descripcion": "Información de interés del Fisco respecto al DE",
+      "observaciones": "Esta información debe ser impresa en el KuDE.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "B006"
+        },
+        {
+          "doc": "NT007",
+          "ref": "B006 dInfoFisc"
+        }
+      ]
+    }
+  ]
+}

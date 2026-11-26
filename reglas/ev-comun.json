@@ -1,0 +1,203 @@
+{
+  "grupo": "GDE",
+  "reglas": [
+    {
+      "id": "R-GDE000-O1",
+      "campo": "GDE000",
+      "tipo": "obligatorio",
+      "texto": "El grupo de eventos (gGroupGesEve) es obligatorio en el WS de recepción de eventos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE000",
+          "pagina": 120
+        }
+      ]
+    },
+    {
+      "id": "R-GDE001-O1",
+      "campo": "GDE001",
+      "tipo": "obligatorio",
+      "texto": "Debe informarse al menos un rGesEve",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE001",
+          "pagina": 120
+        }
+      ]
+    },
+    {
+      "id": "R-GDE001-F1",
+      "campo": "GDE001",
+      "tipo": "formato",
+      "texto": "Los eventos deberán ser enviados en lotes de hasta 15 eventos de cualquier tipo (emisor y/o receptor)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.5",
+          "pagina": 119,
+          "cita": "Los eventos deberán ser enviados en lotes de hasta 15 eventos de cualquier tipo"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GDE001",
+          "pagina": 120
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupGesEve/rGesEve maxOccurs=15"
+        }
+      ]
+    },
+    {
+      "id": "R-GDE002-O1",
+      "campo": "GDE002",
+      "tipo": "obligatorio",
+      "texto": "El grupo de campos generales del evento (rEve) es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE002",
+          "pagina": 120
+        }
+      ]
+    },
+    {
+      "id": "R-GDE003-O1",
+      "campo": "GDE003",
+      "tipo": "obligatorio",
+      "texto": "El identificador del evento (atributo Id de rEve) es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE003",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trEve atributo Id use=required"
+        }
+      ]
+    },
+    {
+      "id": "R-GDE004-O1",
+      "campo": "GDE004",
+      "tipo": "obligatorio",
+      "texto": "La fecha y hora del firmado es obligatoria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE004",
+          "pagina": 121
+        }
+      ]
+    },
+    {
+      "id": "R-GDE004-F1",
+      "campo": "GDE004",
+      "tipo": "formato",
+      "texto": "Fecha y hora en el formato AAAA-MM-DDThh:mm:ss",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE004",
+          "pagina": 121
+        }
+      ]
+    },
+    {
+      "id": "R-GDE005-O1",
+      "campo": "GDE005",
+      "tipo": "obligatorio",
+      "texto": "La versión del formato es obligatoria",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE005",
+          "pagina": 121
+        }
+      ]
+    },
+    {
+      "id": "R-GDE006-O1",
+      "campo": "GDE006",
+      "tipo": "obligatorio",
+      "texto": "El Manual exige informar el tipo de evento (dTiGDE); el XSD vivo no tiene ese elemento",
+      "contradiccion": "C-601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE006",
+          "pagina": 121
+        }
+      ]
+    },
+    {
+      "id": "R-GDE007-O1",
+      "campo": "GDE007",
+      "tipo": "obligatorio",
+      "texto": "El grupo de campos del tipo de evento es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE007",
+          "pagina": 121
+        }
+      ]
+    },
+    {
+      "id": "R-GDE007-D1",
+      "campo": "GDE007",
+      "tipo": "dependencia",
+      "texto": "El grupo informado en gGroupTiEvt corresponde al evento según dTiGDE (exactamente un grupo de evento, xs:choice en el XSD)",
+      "no_declarativa": true,
+      "contradiccion": "C-601",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE007",
+          "pagina": 121
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt xs:choice"
+        }
+      ]
+    },
+    {
+      "id": "R-GDE008-O1",
+      "campo": "GDE008",
+      "tipo": "obligatorio",
+      "texto": "Cada evento deberá estar firmado digitalmente (firma del campo rEve)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GDE008",
+          "pagina": 121
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.5",
+          "pagina": 119,
+          "cita": "Cada evento deberá estar firmado digitalmente"
+        }
+      ]
+    },
+    {
+      "id": "R-GDE008-D1",
+      "campo": "GDE008",
+      "tipo": "dependencia",
+      "texto": "RUC del certificado utilizado para firmar no pertenece al Contribuyente emisor (validación genérica de la firma digital, 12.2.5)",
+      "no_declarativa": true,
+      "codigo_sifen": "0142",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0142",
+          "pagina": 153
+        }
+      ]
+    }
+  ]
+}

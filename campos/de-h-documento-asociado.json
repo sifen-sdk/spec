@@ -1,0 +1,362 @@
+{
+  "grupo": "H",
+  "titulo": "Campos que identifican al documento asociado",
+  "esquemas": [
+    "DE_v150.xsd",
+    "siRecepDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "H001",
+      "xml": "gCamDEAsoc",
+      "nombre": "associatedDocument",
+      "padre": "A001",
+      "tipo": "grupo",
+      "ocurrencia": "0-99",
+      "descripcion": "Campos que identifican al DE asociado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tDE/gCamDEAsoc"
+        }
+      ]
+    },
+    {
+      "id": "H002",
+      "xml": "iTipDocAso",
+      "nombre": "typeCode",
+      "padre": "H001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de documento asociado",
+      "observaciones": "1= Electrónico 2= Impreso 3= Constancia Electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H002"
+        }
+      ],
+      "catalogo": "tipo-documento-asociado"
+    },
+    {
+      "id": "H003",
+      "xml": "dDesTipDocAso",
+      "nombre": "typeDescription",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "7-11",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del tipo de documento asociado",
+      "contradiccion": "C-508",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H003"
+        }
+      ],
+      "catalogo": "tipo-documento-asociado"
+    },
+    {
+      "id": "H004",
+      "xml": "dCdCDERef",
+      "nombre": "cdc",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "0-1",
+      "descripcion": "CDC del DTE referenciado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H004"
+        }
+      ]
+    },
+    {
+      "id": "H005",
+      "xml": "dNTimDI",
+      "nombre": "printedStamp",
+      "padre": "H001",
+      "tipo": "numerico",
+      "longitud": "8",
+      "ocurrencia": "0-1",
+      "descripcion": "Nro. timbrado documento impreso de referencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H005"
+        }
+      ]
+    },
+    {
+      "id": "H006",
+      "xml": "dEstDocAso",
+      "nombre": "establishment",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "0-1",
+      "descripcion": "Establecimiento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H006"
+        }
+      ]
+    },
+    {
+      "id": "H007",
+      "xml": "dPExpDocAso",
+      "nombre": "dispatchPoint",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "0-1",
+      "descripcion": "Punto de expedición",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H007"
+        }
+      ]
+    },
+    {
+      "id": "H008",
+      "xml": "dNumDocAso",
+      "nombre": "documentNumber",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "7",
+      "ocurrencia": "0-1",
+      "descripcion": "Número del documento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H008"
+        }
+      ]
+    },
+    {
+      "id": "H009",
+      "xml": "iTipoDocAso",
+      "nombre": "printedDocumentTypeCode",
+      "padre": "H001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento impreso",
+      "observaciones": "1= Factura 2= Nota de crédito 3= Nota de débito 4= Nota de remisión. El código 5= Comprobante de retención del Manual fue eliminado por la NT 10",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H009"
+        },
+        {
+          "doc": "NT010",
+          "ref": "H009"
+        }
+      ],
+      "catalogo": "tipo-documento-impreso"
+    },
+    {
+      "id": "H010",
+      "xml": "dDTipoDocAso",
+      "nombre": "printedDocumentTypeDescription",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "7-16",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de documento impreso",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H010"
+        },
+        {
+          "doc": "NT010",
+          "ref": "H010"
+        }
+      ],
+      "catalogo": "tipo-documento-impreso"
+    },
+    {
+      "id": "H011",
+      "xml": "dFecEmiDI",
+      "nombre": "printedIssueDate",
+      "padre": "H001",
+      "tipo": "fecha",
+      "longitud": "10",
+      "ocurrencia": "0-1",
+      "descripcion": "Fecha de emisión del documento impreso de referencia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H011"
+        }
+      ]
+    },
+    {
+      "id": "H012",
+      "xml": "dNumComRet",
+      "nombre": "withholdingReceiptNumber",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de comprobante de retención",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H012"
+        }
+      ]
+    },
+    {
+      "id": "H013",
+      "xml": "dNumResCF",
+      "nombre": "fiscalCreditResolutionNumber",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de resolución de crédito fiscal",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H013"
+        }
+      ]
+    },
+    {
+      "id": "H014",
+      "xml": "iTipCons",
+      "nombre": "certificateTypeCode",
+      "padre": "H001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de constancia",
+      "observaciones": "1= Constancia de no ser contribuyente 2= Constancia de microproductores",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H014"
+        }
+      ],
+      "catalogo": "tipo-constancia"
+    },
+    {
+      "id": "H015",
+      "xml": "dDesTipCons",
+      "nombre": "certificateTypeDescription",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "30-34",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de constancia",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H015"
+        }
+      ],
+      "catalogo": "tipo-constancia"
+    },
+    {
+      "id": "H016",
+      "xml": "dNumCons",
+      "nombre": "certificateNumber",
+      "padre": "H001",
+      "tipo": "numerico",
+      "longitud": "11",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de constancia",
+      "contradiccion": "C-509",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H016"
+        }
+      ]
+    },
+    {
+      "id": "H017",
+      "xml": "dNumControl",
+      "nombre": "certificateControlNumber",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "8",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de control de la constancia",
+      "contradiccion": "C-509",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "H017"
+        }
+      ]
+    },
+    {
+      "id": "H018",
+      "xml": "dRucFus",
+      "nombre": "mergedRuc",
+      "padre": "H001",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "RUC fusionado",
+      "observaciones": "Inclusión opcional de acuerdo a las necesidades de los facturadores electrónicos",
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "H018"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "X-H-dNumCuoDocAso",
+      "xml": "dNumCuoDocAso",
+      "nombre": "installmentNumber",
+      "padre": "H001",
+      "tipo": "xml",
+      "ocurrencia": "0-1",
+      "descripcion": "Elemento definido en el XSD sin tipo ni documentación; no figura en el Manual Técnico v150 ni en las Notas Técnicas",
+      "observaciones": "El id no es del Manual (no tiene). El nombre se deriva de la abreviatura del elemento (Cuo = cuota, Imp = importe) y es una interpretación sin respaldo documental",
+      "contradiccion": "C-507",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamDEAsoc/dNumCuoDocAso"
+        }
+      ]
+    },
+    {
+      "id": "X-H-dImpCuoDocAso",
+      "xml": "dImpCuoDocAso",
+      "nombre": "installmentAmount",
+      "padre": "H001",
+      "tipo": "xml",
+      "ocurrencia": "0-1",
+      "descripcion": "Elemento definido en el XSD sin tipo ni documentación; no figura en el Manual Técnico v150 ni en las Notas Técnicas",
+      "observaciones": "El id no es del Manual (no tiene). El nombre se deriva de la abreviatura del elemento (Cuo = cuota, Imp = importe) y es una interpretación sin respaldo documental",
+      "contradiccion": "C-507",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamDEAsoc/dImpCuoDocAso"
+        }
+      ]
+    }
+  ]
+}

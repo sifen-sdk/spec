@@ -1,0 +1,259 @@
+{
+  "grupo": "J",
+  "reglas": [
+    {
+      "id": "R-J001-O",
+      "campo": "J001",
+      "tipo": "obligatorio",
+      "texto": "El grupo de campos fuera de la firma es obligatorio",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "J001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd rDE/gCamFuFD"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-O",
+      "campo": "J002",
+      "tipo": "obligatorio",
+      "texto": "Los caracteres del código QR son obligatorios",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "J002"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-D1",
+      "campo": "J002",
+      "tipo": "dependencia",
+      "texto": "La cadena del QR debe coincidir con la información de los respectivos campos del XML del DE",
+      "no_declarativa": true,
+      "codigo_sifen": "2500",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "J002",
+          "cita": "Debe ser validado contra la información incluida en el XML del DE, de acuerdo con lo especificado en el capítulo del QR del MT"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2500"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F1",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "Parámetros del QR, en este orden y separados por \"&\" (nombre=valor): nVersion, Id, dFeEmiDE, dRucRec|dNumIDRec, dTotGralOpe, dTotIVA, cItems, DigestValue, IdCSC; luego cHashQR. Origen de cada valor: nVersion = AA002 (versión del formato, 150); Id = A002 (CDC, 44); dFeEmiDE = D002 (19, en hexadecimal); dRucRec o dNumIDRec = D206 o D210 (identificación del receptor, 20); dTotGralOpe = F014 (23); dTotIVA = F017 (23); cItems = cantidad de ocurrencias de E701 (3); DigestValue = XS17 (en hexadecimal); IdCSC = identificador del CSC entregado por SIFEN (4). (*) Si dRucRec/dNumIDRec, dTotGralOpe, dTotIVA o cItems no contienen valor, se completa con \"0\"",
+      "no_declarativa": true,
+      "contradiccion": "C-512",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.2 Conformación del Código QR",
+          "cita": "cuadro de parámetros"
+        },
+        {
+          "doc": "MT150",
+          "ref": "13.8.4.1 Paso 1 - Concatenar los datos"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F2",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "La fecha de emisión (dFeEmiDE) y el DigestValue de la firma se convierten a su equivalente hexadecimal antes de concatenarlos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.3 Metodología para la generación del Código QR",
+          "cita": "Los siguientes campos deben ser convertidos a su equivalente hexadecimal"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F3",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "cHashQR = SHA-256, en hexadecimal, de la concatenación de los datos del paso 1 (nVersion=…&…&IdCSC=nnnn) seguida, sin separador, del CSC (Código de Seguridad del Contribuyente, 32 caracteres alfanuméricos) correspondiente al IdCSC. El CSC no se incluye en la URL",
+      "no_declarativa": true,
+      "codigo_sifen": "2501",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.3"
+        },
+        {
+          "doc": "MT150",
+          "ref": "13.8.4.2 Paso 2"
+        },
+        {
+          "doc": "MT150",
+          "ref": "13.8.4.3 Paso 3",
+          "cita": "se le aplica el algoritmo SHA-256, el cual debe devolver un valor en codificación hexadecimal"
+        },
+        {
+          "doc": "MT150",
+          "ref": "13.8.1",
+          "cita": "Este código estará compuesto de 32 dígitos alfanuméricos"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2501",
+          "cita": "no corresponde al cálculo obtenido del hash con la cadena informada y el CSC existente en la base de datos de SIFEN"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F4",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "URL del QR = URL de consulta + datos del paso 1 + \"&cHashQR=\" + hash del paso 3",
+      "no_declarativa": true,
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.4.4 Paso 4",
+          "cita": "URL QR = URL Consulta QR + Datos del Paso 1 + Hash generado en el paso 3"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F5",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "URL de consulta según el paso 4 del Manual: producción https://www.ekuatia.set.gov.py/consultas/qr? ; test https://www.ekuatia.set.gov.py/consultas-test/qr? (el apartado 13.8.2 y el ejemplo de URL final usan el dominio sin www)",
+      "no_declarativa": true,
+      "codigo_sifen": "2502",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.4.4 Paso 4",
+          "cita": "Ambiente de Producción: https://www.ekuatia.set.gov.py/consultas/qr?"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-J002-F6",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "URL de consulta del QR: producción https://ekuatia.set.gov.py/consultas/qr? ; test https://ekuatia.set.gov.py/consultas-test/qr?",
+      "no_declarativa": true,
+      "codigo_sifen": "2502",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.2 Conformación del Código QR"
+        },
+        {
+          "doc": "NT010",
+          "ref": "3.1 URL de Consulta QR"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2502"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F7",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "Al insertar la URL en el XML, cada \"&\" se reemplaza por \"&amp;\"",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.4.5 Paso 5",
+          "cita": "se deberá reemplazar los símbolos “&” por su equivalente en código html, el cual es “&amp;”"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F8",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "Si no se informan dTotGralOpe o dTotIVA, en el QR se completan con 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "13.8.4.1 Paso 1",
+          "cita": "Si no se informan cualquiera de los siguientes campos: dTotGralOpe, dTotIVA se debe completar con 0 (cero)"
+        }
+      ]
+    },
+    {
+      "id": "R-J002-F9",
+      "campo": "J002",
+      "tipo": "formato",
+      "texto": "Cuando el documento electrónico no tiene IVA, se especifica el valor 0 para dTotIVA en el QR",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "4 Conformación del Código QR",
+          "cita": "Cuando el documento electrónico no tiene IVA se debe especificar el valor 0 para el campo dTotIVA"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-J002-D2",
+      "campo": "J002",
+      "tipo": "dependencia",
+      "texto": "Si el Código de Seguridad del Contribuyente no está vigente en la fecha de emisión del DE, SIFEN retorna el error 2501",
+      "no_declarativa": true,
+      "codigo_sifen": "2501",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "4 Conformación del Código QR",
+          "cita": "Si el Código de Seguridad del Contribuyente no está vigente en la fecha de emisión del documento electrónico se retornará el error 2501"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    },
+    {
+      "id": "R-J003-P1",
+      "campo": "J003",
+      "tipo": "prohibido",
+      "texto": "La información adicional de interés para el emisor no se envía a SIFEN (solo puede ir en el DE o KuDE entregado al receptor)",
+      "no_declarativa": true,
+      "codigo_sifen": "2503",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "J003",
+          "cita": "Este campo NO debe ser enviado para al SIFEN"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2503"
+        }
+      ]
+    }
+  ]
+}

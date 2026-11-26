@@ -1,0 +1,127 @@
+{
+  "id": "tipo-transaccion",
+  "titulo": "Tipo de transacción",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "D011"
+    },
+    {
+      "doc": "MT150",
+      "ref": "D012"
+    },
+    {
+      "doc": "NT010",
+      "ref": "1.2 (D012 dDesTipTra)"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipTra (1-13), tdDesTiTran"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D011",
+    "D012"
+  ],
+  "descripciones": {
+    "D011": "D012"
+  },
+  "xml": [
+    "iTipTra",
+    "dDesTipTra"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Venta de mercadería"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Prestación de servicios"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Mixto (Venta de mercadería y servicios)",
+      "fuentes": [
+        {
+          "doc": "NT010",
+          "ref": "1.2 (D012)"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdDesTiTran"
+        }
+      ],
+      "otras_descripciones": [
+        {
+          "descripcion": "Mixto",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "D012",
+              "cita": "3= “Mixto” (Venta de mercadería y servicios)"
+            }
+          ]
+        }
+      ],
+      "contradiccion": "C-902"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Venta de activo fijo"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Venta de divisas"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Compra de divisas"
+    },
+    {
+      "codigo": "7",
+      "descripcion": "Promoción o entrega de muestras"
+    },
+    {
+      "codigo": "8",
+      "descripcion": "Donación"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Anticipo"
+    },
+    {
+      "codigo": "10",
+      "descripcion": "Compra de productos"
+    },
+    {
+      "codigo": "11",
+      "descripcion": "Compra de servicios"
+    },
+    {
+      "codigo": "12",
+      "descripcion": "Venta de crédito fiscal"
+    },
+    {
+      "codigo": "13",
+      "descripcion": "Muestras médicas (Art. 3 RG 24/2014)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D011"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.2 (D012)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": null,
+          "produccion": null
+        }
+      }
+    }
+  ]
+}

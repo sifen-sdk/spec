@@ -3,7 +3,8 @@
 **Propósito.** La tabla de todos los campos de los documentos electrónicos y de los eventos de SIFEN. Es la base
 del modelo de cada SDK: un SDK cubre un campo si y solo si figura acá.
 
-**Estado.** Sin datos. Se carga en la fase 1.
+**Estado.** Cargados: documento electrónico (grupos A a J), eventos y mensajes de los web services. El
+validador comprueba que todo elemento de los esquemas cubiertos tenga su campo (`--cobertura`).
 
 ## Formato previsto
 

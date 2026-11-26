@@ -1,0 +1,441 @@
+{
+  "grupo": "WS-ConsultaDTE",
+  "titulo": "Consultas de DTE presentes solo en el XSD (WS_SiConsDTE.xsd y WS_SiConsDTEAsync.xsd)",
+  "esquemas": [
+    "WS_SiConsDTE.xsd",
+    "siConsultaDTE.xsd",
+    "WS_SiConsDTEAsync.xsd",
+    "siConsultaDTEAsync.xsd",
+    "xmldsig-core-schema.xsd",
+    "DE_Types_v150.xsd",
+    "FE_Types_v141.xsd"
+  ],
+  "campos": [
+    {
+      "id": "X-DTE-rConsDteRequest",
+      "xml": "rConsDteRequest",
+      "nombre": "dteQueryRequest",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteRequest"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-rConsultaDTE",
+      "xml": "rConsultaDTE",
+      "nombre": "query",
+      "padre": "X-DTE-rConsDteRequest",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteRequest/rConsultaDTE"
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd rConsultaDTE"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-ConsultaDTE",
+      "xml": "ConsultaDTE",
+      "nombre": "parameters",
+      "padre": "X-DTE-rConsultaDTE",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd rConsultaDTE/ConsultaDTE"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-Id",
+      "xml": "Id",
+      "nombre": "id",
+      "padre": "X-DTE-ConsultaDTE",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Atributo. Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd ConsultaDTE/@Id (xs:string, required)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-dRuc",
+      "xml": "dRuc",
+      "nombre": "ruc",
+      "padre": "X-DTE-ConsultaDTE",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd ConsultaDTE/dRuc (tRuc de DE_Types_v150.xsd)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-dProtConsDTEA",
+      "xml": "dProtConsDTEA",
+      "nombre": "queryNumber",
+      "padre": "X-DTE-ConsultaDTE",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. Por el nombre parece referirse al número devuelto por la consulta asíncrona (dProtConsDTEAsync), pero ninguna fuente lo afirma.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd ConsultaDTE/dProtConsDTEA (xs:string)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-Signature",
+      "xml": "Signature",
+      "nombre": "signature",
+      "padre": "X-DTE-rConsultaDTE",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Firma Digital de la ConsultaDTE",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. La descripción es la anotación del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTE.xsd rConsultaDTE/ds:Signature",
+          "cita": "Firma Digital de la ConsultaDTE"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-rConsDteResponse",
+      "xml": "rConsDteResponse",
+      "nombre": "dteQueryResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteResponse"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-dFecProc",
+      "xml": "dFecProc",
+      "nombre": "processingDateTime",
+      "padre": "X-DTE-rConsDteResponse",
+      "tipo": "fecha_hora",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. Tipo fecHhmmss: AAAA-MM-DDThh:mm:ss sin zona horaria.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteResponse/dFecProc (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-dMsgRes",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "X-DTE-rConsDteResponse",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje del resultado de la consulta",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. La descripción es la anotación del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteResponse/dMsgRes",
+          "cita": "Mensaje del resultado de la consulta"
+        }
+      ]
+    },
+    {
+      "id": "X-DTE-rConsDte",
+      "xml": "rConsDte",
+      "nombre": "compressedFile",
+      "padre": "X-DTE-rConsDteResponse",
+      "tipo": "binario",
+      "ocurrencia": "0-1",
+      "descripcion": "Archivo zip generado en la consulta de mis DTEs",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. La descripción es la anotación del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTE.xsd rConsDteResponse/rConsDte (xs:base64Binary, application/zip)",
+          "cita": "Archivo zip generado en la consulta de mis DTEs"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-rEnviConsDteAsyncRequest",
+      "xml": "rEnviConsDteAsyncRequest",
+      "nombre": "dteAsyncQueryRequest",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncRequest"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-rConsultaDTE",
+      "xml": "rConsultaDTE",
+      "nombre": "query",
+      "padre": "X-DTEA-rEnviConsDteAsyncRequest",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. Tiene el mismo nombre que el rConsultaDTE de siConsultaDTE.xsd pero otro contenido.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncRequest/rConsultaDTE"
+        },
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd rConsultaDTE"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-ConsultaDTE",
+      "xml": "ConsultaDTE",
+      "nombre": "parameters",
+      "padre": "X-DTEA-rConsultaDTE",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd rConsultaDTE/ConsultaDTE"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-Id",
+      "xml": "Id",
+      "nombre": "id",
+      "padre": "X-DTEA-ConsultaDTE",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Atributo. Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/@Id (xs:string, required)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-dRuc",
+      "xml": "dRuc",
+      "nombre": "ruc",
+      "padre": "X-DTEA-ConsultaDTE",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dRuc (tRuc de DE_Types_v150.xsd)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-dTiDE",
+      "xml": "dTiDE",
+      "nombre": "documentTypeCode",
+      "padre": "X-DTEA-ConsultaDTE",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dTiDE (tiTiDE de DE_Types_v150.xsd: 1|[4-7]|9|10)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-dFecIni",
+      "xml": "dFecIni",
+      "nombre": "startDate",
+      "padre": "X-DTEA-ConsultaDTE",
+      "tipo": "fecha",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. Formato DD-MM-AAAA según el patrón del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dFecIni (tFecDDMMAAAAguion)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-dFecFin",
+      "xml": "dFecFin",
+      "nombre": "endDate",
+      "padre": "X-DTEA-ConsultaDTE",
+      "tipo": "fecha",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. Formato DD-MM-AAAA según el patrón del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd ConsultaDTE/dFecFin (tFecDDMMAAAAguion)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-Signature",
+      "xml": "Signature",
+      "nombre": "signature",
+      "padre": "X-DTEA-rConsultaDTE",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Firma Digital de la ConsultaDTE",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. La descripción es la anotación del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "siConsultaDTEAsync.xsd rConsultaDTE/ds:Signature",
+          "cita": "Firma Digital de la ConsultaDTE"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-rEnviConsDteAsyncResponse",
+      "xml": "rEnviConsDteAsyncResponse",
+      "nombre": "dteAsyncQueryResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncResponse"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-dFecProc",
+      "xml": "dFecProc",
+      "nombre": "processingDateTime",
+      "padre": "X-DTEA-rEnviConsDteAsyncResponse",
+      "tipo": "fecha_hora",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes oficiales: elemento definido solo en el XSD",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. Tipo fecHhmmss: AAAA-MM-DDThh:mm:ss sin zona horaria.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncResponse/dFecProc (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-dProtConsDTEAsync",
+      "xml": "dProtConsDTEAsync",
+      "nombre": "queryNumber",
+      "padre": "X-DTEA-rEnviConsDteAsyncResponse",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de consulta",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. La descripción es la anotación del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncResponse/dProtConsDTEAsync",
+          "cita": "Número de consulta"
+        }
+      ]
+    },
+    {
+      "id": "X-DTEA-dMsgRes",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "X-DTEA-rEnviConsDteAsyncResponse",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje del resultado de la consulta",
+      "observaciones": "Elemento solo en el XSD; el Manual y las NT no lo documentan. Id asignado por este proyecto. La descripción es la anotación del XSD.",
+      "contradiccion": "C-722",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDTEAsync.xsd rEnviConsDteAsyncResponse/dMsgRes",
+          "cita": "Mensaje del resultado de la consulta"
+        }
+      ]
+    }
+  ]
+}

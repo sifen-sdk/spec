@@ -1,0 +1,40 @@
+{
+  "id": "relevancia-mercaderia",
+  "titulo": "Código de datos de relevancia de las mercaderías",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E715"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E716"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tcRelMerc (pattern [1-2]), tdDesRelMerc"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E715",
+    "E716"
+  ],
+  "descripciones": {
+    "E715": "E716"
+  },
+  "xml": [
+    "cRelMerc",
+    "dDesRelMerc"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Tolerancia de quiebra"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Tolerancia de merma"
+    }
+  ]
+}

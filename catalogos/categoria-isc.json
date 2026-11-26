@@ -1,0 +1,55 @@
+{
+  "id": "categoria-isc",
+  "titulo": "Categorías del ISC (Tabla 7)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "15. Codificaciones – TABLA 7 – CATEGORIAS DEL ISC",
+      "pagina": 213
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tcCatISC, tdDesCatISC"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "cCatISC",
+    "dDesCatISC"
+  ],
+  "nota": "El grupo E8.3 (ISC por ítem) figura como \"(futuro)\" en el índice del Manual y sus campos no están en las tablas del capítulo 10; el XSD sí define gCamISC.",
+  "contradiccion": "C-909",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Sección I - (Cigarrillos, Tabacos, Esencias y Otros derivados del Tabaco)",
+      "estado": "futuro",
+      "descripcion_xsd": "SECCION I-(Cigarrillos,Tabacos,Esencias y Otros derivados del Tabaco)"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Sección II - (Bebidas con y sin alcohol)",
+      "estado": "futuro",
+      "descripcion_xsd": "SECCION II - (Bebidas con y sin alcohol)"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Sección III - (Alcoholes y Derivados del alcohol)",
+      "estado": "futuro",
+      "descripcion_xsd": "SECCION III - (Alcoholes y Derivados del alcohol)"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Sección IV- (Combustibles)",
+      "estado": "futuro",
+      "descripcion_xsd": "SECCION IV - (Combustibles)"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Sección V- (Artículos considerados de lujo)",
+      "estado": "futuro",
+      "descripcion_xsd": "SECCION V - (Artículos considerados de lujo)"
+    }
+  ]
+}

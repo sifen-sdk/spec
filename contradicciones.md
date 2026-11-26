@@ -24,7 +24,7 @@ Detalle y fundamento en la [ADR 0005](docs/adr/0005-precedencia-entre-fuentes.md
 ## Plantilla de entrada
 
 ```markdown
-### C-NNN · <título corto>
+## C-NNN — <título corto>
 
 - **Fuentes en conflicto:** <Manual Técnico v150, campo o validación · Nota Técnica N · XSD, archivo y elemento · guía>
 - **Qué dice cada una:**
@@ -37,4 +37,21 @@ Detalle y fundamento en la [ADR 0005](docs/adr/0005-precedencia-entre-fuentes.md
 
 ## Entradas
 
-Todavía no hay entradas. Se cargan en la fase 1, a medida que se releva cada grupo de campos y cada Nota Técnica.
+Las entradas viven en [`contradicciones.d/`](contradicciones.d), un archivo por área, para que varias personas
+puedan cargar a la vez sin pisarse. Los ids son únicos en todo el repositorio y el validador lo comprueba.
+
+| Archivo | Área | Entradas |
+|---|---|---|
+| [00.md](contradicciones.d/00.md) | Transversales | 1 |
+| [01.md](contradicciones.d/01.md) | Documento: grupos A a D | 11 |
+| [02.md](contradicciones.d/02.md) | Documento: grupos E a E7 | 8 |
+| [03.md](contradicciones.d/03.md) | Documento: ítems (E8) | 12 |
+| [04.md](contradicciones.d/04.md) | Documento: sectores y transporte (E9, E10) | 9 |
+| [05.md](contradicciones.d/05.md) | Documento: totales, generales, asociado, firma y QR (F a J) | 16 |
+| [06.md](contradicciones.d/06.md) | Eventos | 19 |
+| [07.md](contradicciones.d/07.md) | Web services | 23 |
+| [08.md](contradicciones.d/08.md) | Códigos de respuesta | 17 |
+| [09.md](contradicciones.d/09.md) | Catálogos | 19 |
+
+Todas están **abiertas**: se resolvieron leyendo los documentos, pero ninguna se verificó todavía contra el
+ambiente de test de SIFEN. Esa verificación es parte de la fase 3.

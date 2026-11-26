@@ -1,0 +1,537 @@
+{
+  "grupo": "E4",
+  "reglas": [
+    {
+      "id": "R-E300-C1",
+      "campo": "E300",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento electrónico informado es AFE (C002 = 4), el grupo de campos que componen la AFE (E300) es obligatorio",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "4"
+      },
+      "codigo_sifen": "2550",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E300",
+          "pagina": 76
+        },
+        {
+          "doc": "MT150",
+          "ref": "2550",
+          "pagina": 169
+        }
+      ]
+    },
+    {
+      "id": "R-E300-P1",
+      "campo": "E300",
+      "tipo": "prohibido",
+      "texto": "Para el tipo de documento electrónico informado (C002 ≠ 4), el grupo de campos que componen la AFE (E300) no debe informarse",
+      "condicion": {
+        "campo": "C002",
+        "op": "distinto",
+        "valor": "4"
+      },
+      "codigo_sifen": "2551",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E300",
+          "pagina": 76
+        },
+        {
+          "doc": "MT150",
+          "ref": "2551",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E301-OB",
+      "campo": "E301",
+      "tipo": "obligatorio",
+      "texto": "Naturaleza del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E301",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E302-OB",
+      "campo": "E302",
+      "tipo": "obligatorio",
+      "texto": "Descripción de la naturaleza del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E302",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E304-OB",
+      "campo": "E304",
+      "tipo": "obligatorio",
+      "texto": "Tipo de documento de identidad del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E304",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E305-OB",
+      "campo": "E305",
+      "tipo": "obligatorio",
+      "texto": "Descripción del tipo de documento de identidad del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E305",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E306-OB",
+      "campo": "E306",
+      "tipo": "obligatorio",
+      "texto": "Número de documento de identidad del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E306",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E307-OB",
+      "campo": "E307",
+      "tipo": "obligatorio",
+      "texto": "Nombre y apellido del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E307",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E308-OB",
+      "campo": "E308",
+      "tipo": "obligatorio",
+      "texto": "Dirección del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E308",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E309-OB",
+      "campo": "E309",
+      "tipo": "obligatorio",
+      "texto": "Número de casa del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E309",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E310-OB",
+      "campo": "E310",
+      "tipo": "obligatorio",
+      "texto": "Código del departamento del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E310",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E311-OB",
+      "campo": "E311",
+      "tipo": "obligatorio",
+      "texto": "Descripción del departamento del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E311",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E314-OB",
+      "campo": "E314",
+      "tipo": "obligatorio",
+      "texto": "Código de la ciudad del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E314",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E315-OB",
+      "campo": "E315",
+      "tipo": "obligatorio",
+      "texto": "Descripción de la ciudad del vendedor: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E315",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E316-OB",
+      "campo": "E316",
+      "tipo": "obligatorio",
+      "texto": "Lugar de la transacción: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E316",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E317-OB",
+      "campo": "E317",
+      "tipo": "obligatorio",
+      "texto": "Código del departamento donde se realiza la transacción: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E317",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E318-OB",
+      "campo": "E318",
+      "tipo": "obligatorio",
+      "texto": "Descripción del departamento donde se realiza la transacción: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E318",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E321-OB",
+      "campo": "E321",
+      "tipo": "obligatorio",
+      "texto": "Código de la ciudad donde se realiza la transacción: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E321",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E322-OB",
+      "campo": "E322",
+      "tipo": "obligatorio",
+      "texto": "Descripción de la ciudad donde se realiza la transacción: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E322",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E302-D1",
+      "campo": "E302",
+      "tipo": "dependencia",
+      "texto": "La descripción de la naturaleza del vendedor corresponde al campo E301",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E302",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E304-D1",
+      "campo": "E304",
+      "tipo": "dependencia",
+      "texto": "Cuando el tipo de documento de identidad del vendedor es Cédula de identidad o Pasaporte (E304=1 o E304=2), el vendedor no debe ser contribuyente (E306 no debe tener RUC o el estado del RUC debe ser CANCELADO o CANCELADO DEFINITIVO)",
+      "condicion": {
+        "campo": "E304",
+        "op": "en",
+        "valores": [
+          "1",
+          "2"
+        ]
+      },
+      "codigo_sifen": "2562",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2562",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E305-D1",
+      "campo": "E305",
+      "tipo": "dependencia",
+      "texto": "La descripción del tipo de documento de identidad del vendedor corresponde al campo E304",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E305",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E309-F1",
+      "campo": "E309",
+      "tipo": "formato",
+      "texto": "Si el vendedor no tiene numeración de casa se coloca 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E309",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E310-D1",
+      "campo": "E310",
+      "tipo": "dependencia",
+      "texto": "Debe haber relación entre el departamento (E310), el distrito (E312) y la ciudad (E314) del vendedor",
+      "codigo_sifen": "2553",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2553",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E311-D1",
+      "campo": "E311",
+      "tipo": "dependencia",
+      "texto": "La descripción del departamento del vendedor debe coincidir con lo informado en el campo E310",
+      "codigo_sifen": "2552",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E311",
+          "pagina": 77
+        },
+        {
+          "doc": "MT150",
+          "ref": "2552",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E312-OP",
+      "campo": "E312",
+      "tipo": "opcional",
+      "texto": "El código del distrito del vendedor es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E312",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E313-C1",
+      "campo": "E313",
+      "tipo": "condicional",
+      "texto": "La descripción del distrito del vendedor es obligatoria si existe el campo E312",
+      "condicion": {
+        "campo": "E312",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E313",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E313-D1",
+      "campo": "E313",
+      "tipo": "dependencia",
+      "texto": "La descripción del distrito del vendedor debe coincidir con lo informado en el campo E312",
+      "codigo_sifen": "2561",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E313",
+          "pagina": 77
+        },
+        {
+          "doc": "MT150",
+          "ref": "2561",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E315-D1",
+      "campo": "E315",
+      "tipo": "dependencia",
+      "texto": "La descripción de la ciudad del vendedor debe coincidir con lo informado en el campo E314",
+      "codigo_sifen": "2555",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E315",
+          "pagina": 77
+        },
+        {
+          "doc": "MT150",
+          "ref": "2555",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E317-D1",
+      "campo": "E317",
+      "tipo": "dependencia",
+      "texto": "Debe haber relación entre el departamento (E317), el distrito (E319) y la ciudad (E321) donde se realiza la transacción",
+      "codigo_sifen": "2557",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2557",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E318-D1",
+      "campo": "E318",
+      "tipo": "dependencia",
+      "texto": "La descripción del departamento donde se realiza la transacción debe coincidir con lo informado en el campo E317",
+      "codigo_sifen": "2556",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E318",
+          "pagina": 77
+        },
+        {
+          "doc": "MT150",
+          "ref": "2556",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E319-OP",
+      "campo": "E319",
+      "tipo": "opcional",
+      "texto": "El código del distrito donde se realiza la transacción es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E319",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E320-C1",
+      "campo": "E320",
+      "tipo": "condicional",
+      "texto": "La descripción del distrito donde se realiza la transacción es obligatoria si existe el campo E319",
+      "condicion": {
+        "campo": "E319",
+        "op": "presente"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E320",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "R-E320-D1",
+      "campo": "E320",
+      "tipo": "dependencia",
+      "texto": "La descripción del distrito donde se realiza la transacción debe coincidir con lo informado en el campo E319",
+      "codigo_sifen": "2558",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E320",
+          "pagina": 77
+        },
+        {
+          "doc": "MT150",
+          "ref": "2558",
+          "pagina": 170
+        }
+      ]
+    },
+    {
+      "id": "R-E322-D1",
+      "campo": "E322",
+      "tipo": "dependencia",
+      "texto": "La descripción de la ciudad donde se realiza la transacción debe coincidir con lo informado en el campo E321",
+      "codigo_sifen": "2559",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E322",
+          "pagina": 77
+        },
+        {
+          "doc": "MT150",
+          "ref": "2559",
+          "pagina": 170
+        }
+      ]
+    }
+  ]
+}

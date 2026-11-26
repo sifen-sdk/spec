@@ -1,0 +1,69 @@
+{
+  "id": "tipo-evento",
+  "titulo": "Tipo de evento",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "GDE006"
+    },
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tdTiGDE (1, 2, 3, 10, 11, 12, 13)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "GDE006"
+  ],
+  "xml": [
+    "dTiGDE"
+  ],
+  "nota": "tdTiGDE está definido en Evento_Types_v150.xsd pero ningún elemento de los esquemas v150 lo usa; en v150 el tipo de evento lo determina el grupo informado en gGroupTiEvt.",
+  "contradiccion": "C-916",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Cancelación",
+      "grupo": "Eventos del Emisor"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Inutilización",
+      "grupo": "Eventos del Emisor"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Endoso",
+      "grupo": "Eventos del Emisor",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "10",
+      "descripcion": "Acuse del DE",
+      "grupo": "Eventos del Comprador",
+      "estado": "futuro",
+      "contradiccion": "C-916"
+    },
+    {
+      "codigo": "11",
+      "descripcion": "Conformidad del DE",
+      "grupo": "Eventos del Comprador",
+      "estado": "futuro",
+      "contradiccion": "C-916"
+    },
+    {
+      "codigo": "12",
+      "descripcion": "Disconformidad del DE",
+      "grupo": "Eventos del Comprador",
+      "estado": "futuro",
+      "contradiccion": "C-916"
+    },
+    {
+      "codigo": "13",
+      "descripcion": "Desconocimiento del DE",
+      "grupo": "Eventos del Comprador",
+      "estado": "futuro",
+      "contradiccion": "C-916"
+    }
+  ]
+}

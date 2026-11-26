@@ -1,0 +1,1407 @@
+{
+  "grupo": "GEA",
+  "titulo": "Eventos registrados por SIFEN o por la SET (solo consulta, no se envían)",
+  "esquemas": [
+    "Evento_v150.xsd",
+    "Evento_Types_v150.xsd",
+    "siRecepEventoEmisor_v150.xsd",
+    "siRecepEventoSet_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GER001",
+      "xml": "rGeVeRetAce",
+      "nombre": "withholding",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos de retención",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento automático por interoperabilidad: asociación Retención); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtEmi (siRecepEventoEmisor_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER001",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtEmi/rGeVeRetAce (trGeVeRetAce)"
+        }
+      ]
+    },
+    {
+      "id": "GER002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GER001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE/DTE",
+      "observaciones": "No se envía (evento de solo consulta). Corresponde al CDC del DTE asociado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER002",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "X-GER-dRuc",
+      "xml": "dRuc",
+      "nombre": "ruc",
+      "padre": "GER001",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-613",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dRuc (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "GER003",
+      "xml": "dNumTimRet",
+      "nombre": "stampNumber",
+      "padre": "GER001",
+      "tipo": "numerico",
+      "longitud": "8",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de timbrado del documento de retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER003",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dNumTimRet (tdNumTim)"
+        }
+      ]
+    },
+    {
+      "id": "GER004",
+      "xml": "dEstRet",
+      "nombre": "establishment",
+      "padre": "GER001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Establecimiento",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER004",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dEstRet (tdEst)"
+        }
+      ]
+    },
+    {
+      "id": "GER005",
+      "xml": "dPunExpRet",
+      "nombre": "dispatchPoint",
+      "padre": "GER001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Punto de expedición",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER005",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dPunExpRet (tdPunExp)"
+        }
+      ]
+    },
+    {
+      "id": "GER006",
+      "xml": "dNumDocRet",
+      "nombre": "documentNumber",
+      "padre": "GER001",
+      "tipo": "alfanumerico",
+      "longitud": "7",
+      "ocurrencia": "1-1",
+      "descripcion": "Número del documento",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER006",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dNumDocRet (tdNumDoc)"
+        }
+      ]
+    },
+    {
+      "id": "GER007",
+      "xml": "dCodConRet",
+      "nombre": "withholdingId",
+      "padre": "GER001",
+      "tipo": "alfanumerico",
+      "longitud": "40",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de la retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER007",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dCodConRet (tdCodConRet)"
+        }
+      ]
+    },
+    {
+      "id": "GER008",
+      "xml": "dFeEmiRet",
+      "nombre": "issueDateTime",
+      "padre": "GER001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión de la retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GER008",
+          "pagina": 126
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dFeEmiRet (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "X-GER-dMonRet",
+      "xml": "dMonRet",
+      "nombre": "withholdingAmount",
+      "padre": "GER001",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-613",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAce/dMonRet (tMontoBase)"
+        }
+      ]
+    },
+    {
+      "id": "GERA001",
+      "xml": "rGeVeRetAnu",
+      "nombre": "withholdingCancellation",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos de retención anulación",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento automático por interoperabilidad: asociación de anulación de la Retención); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtEmi (siRecepEventoEmisor_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA001",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtEmi/rGeVeRetAnu (trGeVeRetAnu)"
+        }
+      ]
+    },
+    {
+      "id": "GERA002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GERA001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE/DTE",
+      "observaciones": "No se envía (evento de solo consulta). Corresponde al CDC del DTE asociado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA002",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "X-GERA-dRuc",
+      "xml": "dRuc",
+      "nombre": "ruc",
+      "padre": "GERA001",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-613",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dRuc (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "GERA003",
+      "xml": "dNumTimRet",
+      "nombre": "stampNumber",
+      "padre": "GERA001",
+      "tipo": "numerico",
+      "longitud": "8",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de timbrado del documento de retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA003",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dNumTimRet (tdNumTim)"
+        }
+      ]
+    },
+    {
+      "id": "GERA004",
+      "xml": "dEstRet",
+      "nombre": "establishment",
+      "padre": "GERA001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Establecimiento del documento de retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA004",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dEstRet (tdEst)"
+        }
+      ]
+    },
+    {
+      "id": "GERA005",
+      "xml": "dPunExpRet",
+      "nombre": "dispatchPoint",
+      "padre": "GERA001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Punto de expedición del documento de retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA005",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dPunExpRet (tdPunExp)"
+        }
+      ]
+    },
+    {
+      "id": "GERA006",
+      "xml": "dNumDocRet",
+      "nombre": "documentNumber",
+      "padre": "GERA001",
+      "tipo": "alfanumerico",
+      "longitud": "7",
+      "ocurrencia": "1-1",
+      "descripcion": "Número del documento de la retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA006",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dNumDocRet (tdNumDoc)"
+        }
+      ]
+    },
+    {
+      "id": "GERA007",
+      "xml": "dCodConRet",
+      "nombre": "withholdingId",
+      "padre": "GERA001",
+      "tipo": "alfanumerico",
+      "longitud": "40",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de la retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA007",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dCodConRet (tdCodConRet)"
+        }
+      ]
+    },
+    {
+      "id": "GERA008",
+      "xml": "dFeEmiRet",
+      "nombre": "issueDateTime",
+      "padre": "GERA001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión de la retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA008",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dFeEmiRet (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GERA009",
+      "xml": "dFecAnRet",
+      "nombre": "cancellationDateTime",
+      "padre": "GERA001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de anulación de la retención",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERA009",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dFecAnRet (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "X-GERA-dMonRet",
+      "xml": "dMonRet",
+      "nombre": "withholdingAmount",
+      "padre": "GERA001",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-613",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeRetAnu/dMonRet (tMontoBase)"
+        }
+      ]
+    },
+    {
+      "id": "GECF001",
+      "xml": "rGeVeCCFF",
+      "nombre": "taxCreditTransfer",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos de créditos fiscales",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento automático por interoperabilidad: transferencia de créditos fiscales); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtEmi (siRecepEventoEmisor_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GECF001",
+          "pagina": 127
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtEmi/rGeVeCCFF (trGeVeCCFF)"
+        }
+      ]
+    },
+    {
+      "id": "GECF002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GECF001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE/DTE",
+      "observaciones": "No se envía (evento de solo consulta). Corresponde al CDC del DTE asociado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GECF002",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeCCFF/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GECF003",
+      "xml": "dNumTraCCFF",
+      "nombre": "transferNumber",
+      "padre": "GECF001",
+      "tipo": "alfanumerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de transferencia de créditos fiscales",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GECF003",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeCCFF/dNumTraCCFF (tdNumTra)"
+        }
+      ]
+    },
+    {
+      "id": "GECF004",
+      "xml": "dFeAceTraCCFF",
+      "nombre": "acceptanceDateTime",
+      "padre": "GECF001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de aceptación del crédito fiscal",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GECF004",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeCCFF/dFeAceTraCCFF (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF001",
+      "xml": "rGeDevCCFFCue",
+      "nombre": "taxCreditRefundQuestioned",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos de devolución de créditos fiscales - Cuestionado",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento automático por interoperabilidad: devolución de créditos fiscales - Cuestionado); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtEmi (siRecepEventoEmisor_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF001",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtEmi/rGeDevCCFFCue (trGeDevCCFF)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GEDF001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE/DTE",
+      "observaciones": "No se envía (evento de solo consulta). Corresponde al CDC del DTE asociado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF002",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF003",
+      "xml": "dNumDevSol",
+      "nombre": "requestNumber",
+      "padre": "GEDF001",
+      "tipo": "alfanumerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Número DIR",
+      "observaciones": "No se envía (evento de solo consulta). Corresponde al número de solicitud de la DIR",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF003",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dNumDevSol (tdNumTra)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF004",
+      "xml": "dNumDevInf",
+      "nombre": "reportNumber",
+      "padre": "GEDF001",
+      "tipo": "alfanumerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de informe",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF004",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dNumDevInf (tdNumTra)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF005",
+      "xml": "dNumDevRes",
+      "nombre": "resolutionNumber",
+      "padre": "GEDF001",
+      "tipo": "alfanumerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de resolución de la devolución",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF005",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dNumDevRes (tdNumTra)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF006",
+      "xml": "dFeEmiSol",
+      "nombre": "requestDateTime",
+      "padre": "GEDF001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión de DIR",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF006",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dFeEmiSol (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF007",
+      "xml": "dFeEmiInf",
+      "nombre": "reportDateTime",
+      "padre": "GEDF001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión del informe",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF007",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dFeEmiInf (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEDF008",
+      "xml": "dFeEmiRes",
+      "nombre": "resolutionDateTime",
+      "padre": "GEDF001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión de la resolución",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDF008",
+          "pagina": 128
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dFeEmiRes (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD001",
+      "xml": "rGeDevCCFFDev",
+      "nombre": "taxCreditRefundReturned",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos de devolución de créditos fiscales - Devuelto",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento automático por interoperabilidad: devolución de créditos fiscales - Devuelto); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtEmi (siRecepEventoEmisor_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD001",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtEmi/rGeDevCCFFDev (trGeDevCCFF)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GEDD001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE/DTE",
+      "observaciones": "No se envía (evento de solo consulta). Corresponde al CDC del DTE asociado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD002",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD003",
+      "xml": "dNumDevSol",
+      "nombre": "requestNumber",
+      "padre": "GEDD001",
+      "tipo": "alfanumerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Número DIR",
+      "observaciones": "No se envía (evento de solo consulta). Corresponde al número de solicitud de la DIR",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD003",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dNumDevSol (tdNumTra)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD004",
+      "xml": "dNumDevInf",
+      "nombre": "reportNumber",
+      "padre": "GEDD001",
+      "tipo": "alfanumerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de informe",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD004",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dNumDevInf (tdNumTra)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD005",
+      "xml": "dNumDevRes",
+      "nombre": "resolutionNumber",
+      "padre": "GEDD001",
+      "tipo": "alfanumerico",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de resolución de la devolución",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD005",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dNumDevRes (tdNumTra)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD006",
+      "xml": "dFeEmiSol",
+      "nombre": "requestDateTime",
+      "padre": "GEDD001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión de DIR",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD006",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dFeEmiSol (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD007",
+      "xml": "dFeEmiInf",
+      "nombre": "reportDateTime",
+      "padre": "GEDD001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión del informe",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD007",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dFeEmiInf (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEDD008",
+      "xml": "dFeEmiRes",
+      "nombre": "resolutionDateTime",
+      "padre": "GEDD001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de emisión de la resolución",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEDD008",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeDevCCFF/dFeEmiRes (fecHhmmss)"
+        }
+      ]
+    },
+    {
+      "id": "GEA001",
+      "xml": "rGeVeAnt",
+      "nombre": "advance",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos anticipo",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento automático por SIFEN: anticipo); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtEmi (siRecepEventoEmisor_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEA001",
+          "pagina": 129
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtEmi/rGeVeAnt (rGeEvenAntRem)"
+        }
+      ]
+    },
+    {
+      "id": "GEA002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GEA001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DTE asociado",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GEA002",
+          "pagina": 130
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd rGeEvenAntRem/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GERE001",
+      "xml": "rGeVeRem",
+      "nombre": "deliveryNote",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos remisión",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento automático por SIFEN: remisión); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtEmi (siRecepEventoEmisor_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERE001",
+          "pagina": 130
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtEmi/rGeVeRem (rGeEvenAntRem)"
+        }
+      ]
+    },
+    {
+      "id": "GERE002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GERE001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DTE asociado",
+      "observaciones": "No se envía (evento de solo consulta).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "GERE002",
+          "pagina": 130
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd rGeEvenAntRem/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "X-OA-rGeVeOA",
+      "xml": "rGeVeOA",
+      "nombre": "analysisObject",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Grupo de Datos que identifican al Evento Origen Set Objeto de Analisis",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento de origen SET); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtSet (siRecepEventoSet_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual (11.4) solo menciona la impugnación como evento futuro registrado por la SET; no publica su formato. Ids no oficiales (prefijo X-).",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtSet/rGeVeOA (trGeVeOA)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    },
+    {
+      "id": "X-OA-Id",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "X-OA-rGeVeOA",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Codigo de Control del Documento Electronico",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeOA/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "X-OA-dFechaOA",
+      "xml": "dFechaOA",
+      "nombre": "date",
+      "padre": "X-OA-rGeVeOA",
+      "tipo": "fecha",
+      "ocurrencia": "1-1",
+      "descripcion": "Normalizador de Fecha AAAA-MM-DD",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeOA/dFechaOA (formatFecha)"
+        }
+      ]
+    },
+    {
+      "id": "X-OA-cMotOA",
+      "xml": "cMotOA",
+      "nombre": "reasonCode",
+      "padre": "X-OA-rGeVeOA",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del motivo del evento Objeto de Análisis",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeOA/cMotOA (tcMotOA)"
+        }
+      ]
+    },
+    {
+      "id": "X-OA-dMotDesOA",
+      "xml": "dMotDesOA",
+      "nombre": "reasonDescription",
+      "padre": "X-OA-rGeVeOA",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del motivo del evento Objeto de Análisis",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeOA/dMotDesOA (tdMotDesOA)"
+        }
+      ]
+    },
+    {
+      "id": "X-OA-dObsOA",
+      "xml": "dObsOA",
+      "nombre": "notes",
+      "padre": "X-OA-rGeVeOA",
+      "tipo": "alfanumerico",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeOA/dObsOA (tdObs)"
+        }
+      ]
+    },
+    {
+      "id": "X-PC-rGeVePC",
+      "xml": "rGeVePC",
+      "nombre": "controlProcess",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Grupo de Datos que identifican al Evento Origen Set Proceso de Control",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento de origen SET); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtSet (siRecepEventoSet_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual (11.4) solo menciona la impugnación como evento futuro registrado por la SET; no publica su formato. Ids no oficiales (prefijo X-).",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtSet/rGeVePC (trGeVePC)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    },
+    {
+      "id": "X-PC-Id",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "X-PC-rGeVePC",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Codigo de Control del Documento Electronico",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVePC/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "X-PC-dFechaPC",
+      "xml": "dFechaPC",
+      "nombre": "date",
+      "padre": "X-PC-rGeVePC",
+      "tipo": "fecha",
+      "ocurrencia": "1-1",
+      "descripcion": "Normalizador de Fecha AAAA-MM-DD",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVePC/dFechaPC (formatFecha)"
+        }
+      ]
+    },
+    {
+      "id": "X-PC-cMotPC",
+      "xml": "cMotPC",
+      "nombre": "reasonCode",
+      "padre": "X-PC-rGeVePC",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del motivo del evento Proceso de Control",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVePC/cMotPC (tcMotPC)"
+        }
+      ]
+    },
+    {
+      "id": "X-PC-dMotDesPC",
+      "xml": "dMotDesPC",
+      "nombre": "reasonDescription",
+      "padre": "X-PC-rGeVePC",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del motivo del evento Proceso de Control",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVePC/dMotDesPC (tdMotDesPC)"
+        }
+      ]
+    },
+    {
+      "id": "X-PC-dObsEvePC",
+      "xml": "dObsEvePC",
+      "nombre": "notes",
+      "padre": "X-PC-rGeVePC",
+      "tipo": "alfanumerico",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVePC/dObsEvePC (tdObs)"
+        }
+      ]
+    },
+    {
+      "id": "X-IMP-rGeVeImp",
+      "xml": "rGeVeImp",
+      "nombre": "challenge",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Grupo de Datos que identifican al Evento Origen Set Impugnacion del DTE",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento de origen SET); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtSet (siRecepEventoSet_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual (11.4) solo menciona la impugnación como evento futuro registrado por la SET; no publica su formato. Ids no oficiales (prefijo X-).",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtSet/rGeVeImp (trGeVeImp)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    },
+    {
+      "id": "X-IMP-Id",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "X-IMP-rGeVeImp",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Codigo de Control del Documento Electronico",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeImp/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "X-IMP-dFechaImp",
+      "xml": "dFechaImp",
+      "nombre": "date",
+      "padre": "X-IMP-rGeVeImp",
+      "tipo": "fecha",
+      "ocurrencia": "1-1",
+      "descripcion": "Normalizador de Fecha AAAA-MM-DD",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeImp/dFechaImp (formatFecha)"
+        }
+      ]
+    },
+    {
+      "id": "X-IMP-cMotImp",
+      "xml": "cMotImp",
+      "nombre": "reasonCode",
+      "padre": "X-IMP-rGeVeImp",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del motivo del evento Impugnacion del DTE",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeImp/cMotImp (tcMotImp)"
+        }
+      ]
+    },
+    {
+      "id": "X-IMP-dMotDesImp",
+      "xml": "dMotDesImp",
+      "nombre": "reasonDescription",
+      "padre": "X-IMP-rGeVeImp",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del motivo del evento Impugnacion del DTE",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeImp/dMotDesImp (tdMotDesImp)"
+        }
+      ]
+    },
+    {
+      "id": "X-IMP-dObsEveImp",
+      "xml": "dObsEveImp",
+      "nombre": "notes",
+      "padre": "X-IMP-rGeVeImp",
+      "tipo": "alfanumerico",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeImp/dObsEveImp (tdObs)"
+        }
+      ]
+    },
+    {
+      "id": "X-DET-rGeVeDet",
+      "xml": "rGeVeDet",
+      "nombre": "determination",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Grupo de Datos que identifican al Evento Origen Set Determinacion del DTE",
+      "observaciones": "No se envía: evento registrado por SIFEN (evento de origen SET); solo se recibe en la consulta del DTE. En el XSD está en tgGroupEvtSet (siRecepEventoSet_v150.xsd), no en tgGroupEvt de siRecepEvento_v150.xsd. El Manual (11.4) solo menciona la impugnación como evento futuro registrado por la SET; no publica su formato. Ids no oficiales (prefijo X-).",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvtSet/rGeVeDet (trGeVeDet)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "11.4",
+          "pagina": 116
+        }
+      ]
+    },
+    {
+      "id": "X-DET-Id",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "X-DET-rGeVeDet",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Codigo de Control del Documento Electronico",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDet/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "X-DET-dFechaDet",
+      "xml": "dFechaDet",
+      "nombre": "date",
+      "padre": "X-DET-rGeVeDet",
+      "tipo": "fecha",
+      "ocurrencia": "1-1",
+      "descripcion": "Normalizador de Fecha AAAA-MM-DD",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDet/dFechaDet (formatFecha)"
+        }
+      ]
+    },
+    {
+      "id": "X-DET-cMotDet",
+      "xml": "cMotDet",
+      "nombre": "reasonCode",
+      "padre": "X-DET-rGeVeDet",
+      "tipo": "numerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del motivo del evento Determinacion del DTE",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDet/cMotDet (tcMotDet)"
+        }
+      ]
+    },
+    {
+      "id": "X-DET-dMotDesDet",
+      "xml": "dMotDesDet",
+      "nombre": "reasonDescription",
+      "padre": "X-DET-rGeVeDet",
+      "tipo": "alfanumerico",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del motivo del evento Determinacion del DTE",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDet/dMotDesDet (tdMotDesDet)"
+        }
+      ]
+    },
+    {
+      "id": "X-DET-dObsEveDet",
+      "xml": "dObsEveDet",
+      "nombre": "notes",
+      "padre": "X-DET-rGeVeDet",
+      "tipo": "alfanumerico",
+      "ocurrencia": "0-1",
+      "descripcion": "Sin descripción en las fuentes",
+      "observaciones": "No se envía (evento de solo consulta). Elemento del XSD que no figura en la tabla del Manual; id no oficial.",
+      "contradiccion": "C-615",
+      "fuentes": [
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGeVeDet/dObsEveDet (tdObs)"
+        }
+      ]
+    }
+  ]
+}

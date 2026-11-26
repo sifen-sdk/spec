@@ -1,0 +1,3112 @@
+{
+  "respuestas": [
+    {
+      "codigo": "4000",
+      "servicio": "formato-evento",
+      "mensaje": "La versión no corresponde",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE005",
+      "id_validacion": "GDE005",
+      "validacion": "Versión del formato del evento (GDE005) no corresponde a la versión vigente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4000",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4001",
+      "servicio": "formato-evento",
+      "mensaje": "CDC inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEC002",
+      "id_validacion": "GEC002",
+      "validacion": "Debe validar que el CDC (GEC002) cuente con los 44 caracteres según las reglas de estructuración del CDC (longitud, orden de los campos del CDC, formato de la fecha invalida y/o dígito verificador)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4001",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4002",
+      "servicio": "formato-evento",
+      "mensaje": "CDC no existente en el SIFEN",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEC002",
+      "id_validacion": "GEC002a",
+      "validacion": "El identificador del CDC (GEC002) no se encuentra aprobado como DTE SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4002",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4003",
+      "servicio": "formato-evento",
+      "mensaje": "CDC ya se encuentra con el mismo evento solicitado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEC002",
+      "id_validacion": "GEC002b",
+      "validacion": "El DTE (GEC002) ya se encuentra con un evento que se está requiriendo nuevamente (Duplicidad)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4003",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4004",
+      "servicio": "formato-evento",
+      "mensaje": "CDC ya se ha confirmado por el receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEC002",
+      "id_validacion": "GEC002c",
+      "validacion": "Cuando el último evento del receptor sobre un CDC (GEC002) es una confirmación parcial o total, no se permite realizar la cancelación por parte del emisor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4004",
+          "pagina": 135
+        },
+        {
+          "doc": "NT025",
+          "ref": "4004"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2025-04-28",
+          "produccion": "2025-04-28"
+        }
+      },
+      "estado": "eliminado",
+      "contradiccion": "C-817"
+    },
+    {
+      "codigo": "4006",
+      "servicio": "formato-evento",
+      "mensaje": "Firmador no autorizado para realizar evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE008",
+      "id_validacion": "GDE008",
+      "validacion": "El RUC del certificado utilizado para firmar los eventos sobre DE y DTE, no corresponde al emisor/electrónico",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4006",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4007",
+      "servicio": "formato-evento",
+      "mensaje": "Firma Digital inválida por certificado digital revocado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE008",
+      "id_validacion": "GDE008a",
+      "validacion": "El certificado digital que se utilizó para firmar el evento está revocado en la fecha de firma digital (GDE004)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4007",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4008",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de firma digital del evento inválida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE004",
+      "id_validacion": "GDE004",
+      "validacion": "La fecha y hora de firma digital del evento no puede ser posterior a la Fecha y hora de aprobación en el SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4008",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4009",
+      "servicio": "formato-evento",
+      "mensaje": "Plazo de solicitud de cancelación de una FE extemporáneo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE004",
+      "id_validacion": "GDE004a",
+      "validacion": "Cuando el tipo de documento es Factura electrónica (GEC002 inicia en 01), la fecha y hora de firma digital del evento (GDE004) de cancelación no puede superar al plazo límite de 48 hs contadas desde la fecha y hora de aprobación en el SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4009",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4010",
+      "servicio": "formato-evento",
+      "mensaje": "Plazo de solicitud de cancelación distinto a una FE es extemporáneo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE004",
+      "id_validacion": "GDE004b",
+      "validacion": "Cuando el tipo de documento es Autofactura electrónica o Nota de crédito o Nota de débito o Nota de remisión (GEC002 inicia en 04 o 05 o 06 o 07), la fecha y hora de firma digital del evento (GDE004) de cancelación no puede superar al plazo límite de 168 hs contadas desde la fecha y hora de aprobación en el SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4010",
+          "pagina": 135
+        }
+      ]
+    },
+    {
+      "codigo": "4051",
+      "servicio": "formato-evento",
+      "mensaje": "Número de timbrado inválido para el ambiente de pruebas.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI002",
+      "id_validacion": "GEI002",
+      "validacion": "Cuando en ambiente de prueba es obligatorio el uso del timbrado de pruebas.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4051",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4052",
+      "servicio": "formato-evento",
+      "mensaje": "Número de timbrado no corresponde al contribuyente",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI002",
+      "id_validacion": "GEI002a",
+      "validacion": "El número de timbrado no corresponde al RUC del contribuyente facturador electrónico",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4052",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4053",
+      "servicio": "formato-evento",
+      "mensaje": "Número de timbrado no corresponde al medio de generación",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI002",
+      "id_validacion": "GEI002b",
+      "validacion": "El número del timbrado no corresponde al medio de generación para factura electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4053",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4054",
+      "servicio": "formato-evento",
+      "mensaje": "Código de establecimiento inválido para el timbrado informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI003",
+      "id_validacion": "GEI003",
+      "validacion": "El código del establecimiento no corresponde a un timbrado del medio de generación para facturación electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4054",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4055",
+      "servicio": "formato-evento",
+      "mensaje": "El código del punto de expedición es inválido para el timbrado informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI004",
+      "id_validacion": "GEI004",
+      "validacion": "El código del punto de expedición no corresponde a un timbrado autorizado para el contribuyente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4055",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4060",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de Documento no corresponde al Número de Timbrado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI007",
+      "id_validacion": "GEI007",
+      "validacion": "El tipo de Documento no corresponde a un número de timbrado autorizado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4060",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4065",
+      "servicio": "formato-evento",
+      "mensaje": "Existe DTE en el rango informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI005",
+      "id_validacion": "GEI005",
+      "validacion": "Para el rango solicitado existe DTE en SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4065",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4066",
+      "servicio": "formato-evento",
+      "mensaje": "Existe número inutilizado en el rango solicitado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI005",
+      "id_validacion": "GEI005a",
+      "validacion": "Dentro del rango solicitado para inutilización existen número de DE ya inutilizados en SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4066",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4067",
+      "servicio": "formato-evento",
+      "mensaje": "Cantidad de números en el rango es inválida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI006",
+      "id_validacion": "GEI006",
+      "validacion": "La cantidad máxima de números en el rango debe ser menor o igual a 1000 (GEI006 – GEI005 menor o igual a 1000)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4067",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4068",
+      "servicio": "formato-evento",
+      "mensaje": "Número final de rango es inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEI006",
+      "id_validacion": "GEI006a",
+      "validacion": "El número del final de rango (GEI006) debe ser mayor que el número de inicio del rango (GEI005)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4068",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4069",
+      "servicio": "formato-evento",
+      "mensaje": "Firmador no autorizado para realizar evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE008",
+      "id_validacion": "GDE008",
+      "validacion": "El RUC del certificado utilizado para firmar los eventos no corresponde al emisor/electrónico",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4069",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4070",
+      "servicio": "formato-evento",
+      "mensaje": "Firma Digital inválida por certificado digital revocado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE008",
+      "id_validacion": "GDE008a",
+      "validacion": "El certificado digital que se utilizó para firmar el evento está revocado en la fecha de firma digital (GDE004)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4070",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4071",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de firma digital del evento inválida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDE004",
+      "id_validacion": "GDE004",
+      "validacion": "La fecha de firma digital del evento no puede ser posterior a la Fecha de SIFEN",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4071",
+          "pagina": 136
+        }
+      ]
+    },
+    {
+      "codigo": "4101",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con un evento previo de esta naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN002",
+      "id_validacion": "GEN002b",
+      "validacion": "Sobre el CDC de un DE/DTE se puede realizar hasta un evento de notificación - recepción",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4101",
+          "pagina": 137
+        },
+        {
+          "doc": "NT019",
+          "ref": "4101"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "CDC del DTE ya cuenta con un evento de esta naturaleza",
+          "validacion": "Sobre el CDC de un DE/DTE se puede realizar hasta un evento de notificación - recepción",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4101",
+              "pagina": 137
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4102",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN002",
+      "id_validacion": "GEN002c",
+      "validacion": "La estructura del CDC informado no corresponde (Longitud y/o dígito verificador)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4102",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4103",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de emisión del DE/DTE ha superado el plazo para registro del evento",
+      "clase": "aprobacion_con_observacion",
+      "accion": "ninguna",
+      "efecto": "AO",
+      "campo": "GEN003",
+      "id_validacion": "GEN003",
+      "validacion": "El plazo del registro del evento Notificación – Recepción DE ha superado los 45 días contados a partir de la fecha de emisión",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4103",
+          "pagina": 137
+        },
+        {
+          "doc": "NT019",
+          "ref": "4103"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Fecha de emisión del DE/DTE ha superado el plazo para registro del evento",
+          "validacion": "El plazo del registro del evento ha superado los 45 días contados a partir de la fecha de emisión",
+          "efecto": "AO",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4103",
+              "pagina": 137
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4104",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de Recepción debe ser mayor o igual a la fecha de emisión del DE/DTE",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN004",
+      "id_validacion": "GEN004",
+      "validacion": "La fecha de emisión no puede ser mayor que la fecha de recepción del DE/DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4104",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4105",
+      "servicio": "formato-evento",
+      "mensaje": "Ruc del Receptor requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN007",
+      "id_validacion": "GEN007",
+      "validacion": "Es obligatorio informar Ruc del receptor cuando el tipo de receptor es Contribuyente (GEN005=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4105",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4106",
+      "servicio": "formato-evento",
+      "mensaje": "Ruc del Receptor no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN007",
+      "id_validacion": "GEN007a",
+      "validacion": "Cuando el tipo de receptor es No Contribuyente (GEN005=2) no se debe informar el campo Ruc del Receptor (GEN007)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4106",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4107",
+      "servicio": "formato-evento",
+      "mensaje": "Dígito verificador del RUC del contribuyente receptor requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN008",
+      "id_validacion": "GEN008",
+      "validacion": "Es obligatorio informar DV del receptor cuando el tipo de receptor es Contribuyente (GEN005=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4107",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4108",
+      "servicio": "formato-evento",
+      "mensaje": "Dígito verificador del RUC del contribuyente receptor no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN008",
+      "id_validacion": "GEN008a",
+      "validacion": "Cuando el tipo de receptor es No Contribuyente (GEN005=2) no se debe informar el campo Dígito verificador del RUC del contribuyente receptor (GEN008)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4108",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4109",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de documento de identidad del receptor requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN009",
+      "id_validacion": "GEN009",
+      "validacion": "Es obligatorio informar Tipo de documento de identidad del receptor cuando el tipo de receptor es No contribuyente (GEN005=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4109",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4110",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de documento de identidad del receptor no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN009",
+      "id_validacion": "GEN009a",
+      "validacion": "Cuando el Tipo de documento de identidad del receptor Contribuyente (GEN005=1) no se debe informar el tipo de documento de identidad del receptor (GEN009a)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4110",
+          "pagina": 138
+        }
+      ]
+    },
+    {
+      "codigo": "4111",
+      "servicio": "formato-evento",
+      "mensaje": "Número de documento de identidad requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN010",
+      "id_validacion": "GEN010",
+      "validacion": "Es obligatorio informar Número de documento de identidad cuando el tipo de receptor es No contribuyente (GEN005=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4111",
+          "pagina": 138
+        }
+      ]
+    },
+    {
+      "codigo": "4112",
+      "servicio": "formato-evento",
+      "mensaje": "Número de documento de identidad no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN010",
+      "id_validacion": "GEN010a",
+      "validacion": "Cuando el Tipo de documento de identidad del receptor Contribuyente (GEN005=1) no se debe informar el documento de identidad del receptor (GEN010)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4112",
+          "pagina": 138
+        }
+      ]
+    },
+    {
+      "codigo": "4113",
+      "servicio": "formato-evento",
+      "mensaje": "Incongruencia en el registro de eventos del receptor (hay un evento previo de conformidad o disconformidad o desconocimiento)",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN001",
+      "id_validacion": "GEN001",
+      "validacion": "No se puede realizar una notificación – recepción de DE luego de un evento de desconocimiento. No se puede realizar una notificación – recepción de DTE luego de un evento de Conformidad parcial o total, Disconformidad o Desconocimiento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4113",
+          "pagina": 137
+        }
+      ]
+    },
+    {
+      "codigo": "4114",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de aprobación del DTE ha superado el plazo para registro del evento",
+      "clase": "aprobacion_con_observacion",
+      "accion": "ninguna",
+      "efecto": "AO",
+      "campo": "GEN012",
+      "id_validacion": "GEN012",
+      "validacion": "El plazo del registro del evento Notificación – Recepción DTE ha superado los 45 días contados a partir de la fecha de aprobación del DTE",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4114"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4115",
+      "servicio": "formato-evento",
+      "mensaje": "El CDE del DTE se encuentra cancelado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN013",
+      "id_validacion": "GEN013",
+      "validacion": "No se puede registrar la Notificación – Recepción por CDC de un DTE cancelado",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4115"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4116",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con el máximo de eventos permitidos de la misma naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN013",
+      "id_validacion": "GEN013a",
+      "validacion": "CDC del DTE ya ha superado la cantidad de eventos establecidos sobre el Tipo de Evento de Notificación – Recepción DTE",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4116"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4150",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con un eventos previo de esta naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO002",
+      "id_validacion": "GCO002",
+      "validacion": "Sobre el CDC de un DE/DTE se puede realizar hasta un eventos de conformidad (conformidad parcial luego una conformidad total, en ese orden)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4150",
+          "pagina": 138
+        },
+        {
+          "doc": "NT019",
+          "ref": "4150"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "CDC del DTE ya cuenta con dos eventos de la misma naturaleza",
+          "validacion": "Sobre el CDC de un DE/DTE se puede realizar hasta dos eventos de conformidad (conformidad parcial luego una conformidad total, en ese orden)",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4150",
+              "pagina": 138
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4151",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO002",
+      "id_validacion": "GCO002b",
+      "validacion": "La estructura del CDC informado no corresponde (longitud y/o dígito verificador)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4151",
+          "pagina": 138
+        }
+      ]
+    },
+    {
+      "codigo": "4152",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE es inexistente o ha superado el plazo para registro del evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO002",
+      "id_validacion": "GCO002c",
+      "validacion": "Cuando el CDC no se encuentra en la base de datos del SIFEN o el plazo del registro del evento es inválido: Regla para plazo inválido: *Si el primer evento del receptor que se pretende registrar es conformidad, este no se puede realizar después de 45 días contados a partir de la fecha de aprobación del DTE *Si no es el primer evento del receptor y el último evento realizado por el receptor no es una disconformidad, la conformidad no puede superar los 45 días contados a partir de la fecha de aprobación del DTE. *Si no es el primer evento del receptor y el último evento realizado por el receptor es una disconformidad, entonces la conformidad (evento correctivo) no puede superar los 15 días contados a partir de la fecha de realización del evento de disconformidad",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4152",
+          "pagina": 139
+        },
+        {
+          "doc": "NT019",
+          "ref": "4152"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "CDC del DTE es inexistente o ha superado el plazo para registro del evento",
+          "validacion": "Cuando el CDC no se encuentra en la base de datos del SIFEN o el plazo del registro del evento es inválido: Regla para plazo inválido: *Si el primer evento del receptor que se pretende registrar es conformidad, este no se puede realizar después de 45 días contados a partir de la fecha de emisión del DTE *Si no es el primer evento del receptor y el último evento realizado por el receptor no es una disconformidad, la conformidad no puede superar los 45 días contados a partir de la fecha de emisión del DTE. *Si no es el primer evento del receptor y el último evento realizado por el receptor es una disconformidad, entonces la conformidad (evento correctivo) no puede superar los 15 días contados a partir de la fecha de realización del evento de disconformidad",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4152",
+              "pagina": 139
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4154",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha estimada de Recepción requerida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO004",
+      "id_validacion": "GCO004",
+      "validacion": "Cuando el Tipo de Conformidad es parcial (GCO003=2) es obligatorio informar el campo fecha estimada de recepción de la mercadería (GCO004)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4154",
+          "pagina": 139
+        }
+      ]
+    },
+    {
+      "codigo": "4155",
+      "servicio": "formato-evento",
+      "mensaje": "El CDC del DTE se encuentra cancelado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO002",
+      "id_validacion": "GCO002e",
+      "validacion": "No se puede registrar la conformidad por CDC de un DTE cancelado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4155",
+          "pagina": 139
+        },
+        {
+          "doc": "NT019",
+          "ref": "4155"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "No se puede registrar la confirmación por CDC del DTE cancelado o ajustado en su totalidad por nota de crédito",
+          "validacion": "El CDC del DTE ya ha sido cancelado con anterioridad",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4155",
+              "pagina": 139
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4156",
+      "servicio": "formato-evento",
+      "mensaje": "Incongruencia en el registro de eventos del receptor (hay un evento previo de desconocimiento)",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO001",
+      "id_validacion": "GCO001",
+      "validacion": "No se puede realizar una conformidad de DE/DTE luego de un evento de desconocimiento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4156",
+          "pagina": 138
+        },
+        {
+          "doc": "NT019",
+          "ref": "4156",
+          "cita": "reproducida sin cambios de texto"
+        }
+      ]
+    },
+    {
+      "codigo": "4157",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de aprobación del DTE ha superado el plazo para registro del evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO005",
+      "id_validacion": "GCO005",
+      "validacion": "Sea o no el primer evento del receptor que se pretende registrar, este no se puede realizar después de 45 días corridos contados a partir de la fecha de aprobación del DTE",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4157"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4158",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con el máximo de eventos permitidos de la misma naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GCO002",
+      "id_validacion": "GCO002f",
+      "validacion": "CDC del DTE ya ha superado la cantidad de eventos establecidos sobre el Tipo de Evento de Conformidad Parcial/Total",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4158"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4200",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con un evento previo de esta naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDI002",
+      "id_validacion": "GDI002",
+      "validacion": "Sobre el CDC de un DTE se puede realizar hasta un evento de disconformidad",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4200",
+          "pagina": 139
+        },
+        {
+          "doc": "NT019",
+          "ref": "4200"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "CDC del DTE ya cuenta con un evento de esta naturaleza",
+          "validacion": "Sobre el CDC de un DTE se puede realizar hasta un evento de disconformidad",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4200",
+              "pagina": 139
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4201",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDI002",
+      "id_validacion": "GDI002b",
+      "validacion": "La estructura del CDC informado no corresponde (longitud y/o dígito verificador)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4201",
+          "pagina": 140
+        }
+      ]
+    },
+    {
+      "codigo": "4202",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE es inexistente o ha superado el plazo para registro del evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDI002",
+      "id_validacion": "GDI002c",
+      "validacion": "Cuando el CDC no se encuentra en la base de datos del SIFEN o el plazo del registro del evento es inválido: Regla para plazo inválido: *Si el primer evento del receptor que se pretende registrar es disconformidad, este no se puede realizar después de 45 días contados a partir de la fecha de aprobación del DTE *Si no es el primer evento del receptor y el último evento realizado por el receptor no es una conformidad, la disconformidad no puede superar los 45 días contados a partir de la fecha de aprobación del DTE. *Si no es el primer evento del receptor y el último evento realizado por el receptor es una conformidad, entonces la disconformidad (evento correctivo) no puede superar los 15 días contados a partir de la fecha de realización del evento de conformidad",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4202",
+          "pagina": 140
+        },
+        {
+          "doc": "NT019",
+          "ref": "4202"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "CDC inexistente o ha superado el plazo para registro del evento",
+          "validacion": "Cuando el CDC no se encuentra en la base de datos del SIFEN o el plazo del registro del evento es inválido: Regla para plazo inválido: *Si el primer evento del receptor que se pretende registrar es disconformidad, este no se puede realizar después de 45 días contados a partir de la fecha de emisión del DTE *Si no es el primer evento del receptor y el último evento realizado por el receptor no es una conformidad, la disconformidad no puede superar los 45 días contados a partir de la fecha de emisión del DTE. *Si no es el primer evento del receptor y el último evento realizado por el receptor es una conformidad, entonces la disconformidad (evento correctivo) no puede superar los 15 días contados a partir de la fecha de realización del evento de conformidad",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4202",
+              "pagina": 140
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4204",
+      "servicio": "formato-evento",
+      "mensaje": "No se puede registrar la disconformidad por CDC del DTE cancelado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDI002",
+      "id_validacion": "GDI002e",
+      "validacion": "El CDC del DTE ya ha sido cancelado con anterioridad",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4204",
+          "pagina": 140
+        }
+      ]
+    },
+    {
+      "codigo": "4205",
+      "servicio": "formato-evento",
+      "mensaje": "Incongruencia en el registro de eventos del receptor (hay un evento previo de desconocimiento)",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDI001",
+      "id_validacion": "GDI001",
+      "validacion": "No se puede realizar una conformidad de DE/DTE luego de un evento de desconocimiento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4205",
+          "pagina": 139
+        },
+        {
+          "doc": "NT019",
+          "ref": "4205",
+          "cita": "reproducida sin cambios de texto"
+        }
+      ]
+    },
+    {
+      "codigo": "4206",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de aprobación del DTE ha superado el plazo para registro del evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDI003",
+      "id_validacion": "GDI003",
+      "validacion": "Sea o no el primer evento del receptor que se pretende registrar, este no se puede realizar después de 45 días corridos contados a partir de la fecha de aprobación del DTE.",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4206"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4207",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con el máximo de eventos permitidos de la misma naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GDI003",
+      "id_validacion": "GDI003a",
+      "validacion": "CDC del DTE ya ha superado la cantidad de eventos establecidos sobre el Tipo de Evento de Disconformidad",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4207"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4251",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con un evento previo de esta naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED002",
+      "id_validacion": "GED002b",
+      "validacion": "Sobre el CDC de un DTE se puede realizar hasta un evento de desconocimiento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4251",
+          "pagina": 140
+        },
+        {
+          "doc": "NT019",
+          "ref": "4251"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "CDC del DTE ya cuenta con un evento de esta naturaleza",
+          "validacion": "Sobre el CDC de un DTE se puede realizar hasta un evento de desconocimiento",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4251",
+              "pagina": 140
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4252",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED002",
+      "id_validacion": "GED002c",
+      "validacion": "La estructura del CDC informado no corresponde (longitud y/o dígito verificador)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4252",
+          "pagina": 140
+        }
+      ]
+    },
+    {
+      "codigo": "4253",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de emisión del DE/DTE ha superado el plazo para registro del evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED003",
+      "id_validacion": "GED003",
+      "validacion": "El plazo del registro del evento Desconocimiento DE ha superado los 45 días contados a partir de la fecha de emisión",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4253",
+          "pagina": 141
+        },
+        {
+          "doc": "NT019",
+          "ref": "4253"
+        }
+      ],
+      "historial": [
+        {
+          "mensaje": "Fecha de emisión del DE/DTE ha superado el plazo para registro del evento",
+          "validacion": "El plazo del registro del evento ha superado los 45 días contados a partir de la fecha de emisión",
+          "efecto": "AO",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4253",
+              "pagina": 141
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-15",
+              "produccion": "2024-01-31"
+            }
+          }
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4254",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de Recepción debe ser mayor a la fecha de emisión del DE/DTE",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED004",
+      "id_validacion": "GED004",
+      "validacion": "La fecha de emisión no puede ser mayor que la fecha de recepción del DE/DTE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4254",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4255",
+      "servicio": "formato-evento",
+      "mensaje": "Ruc del Receptor requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED007",
+      "id_validacion": "GED007",
+      "validacion": "Es obligatorio informar Ruc del receptor cuando el receptor es contribuyente (GED005=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4255",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4256",
+      "servicio": "formato-evento",
+      "mensaje": "Ruc del Receptor no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN007",
+      "id_validacion": "GEN007a",
+      "validacion": "Cuando el tipo de receptor es No Contribuyente (GED005=2) no se debe informar el campo Ruc del Receptor (GED007)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4256",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4257",
+      "servicio": "formato-evento",
+      "mensaje": "Dígito verificador del RUC del contribuyente receptor requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED008",
+      "id_validacion": "GED008",
+      "validacion": "Es obligatorio informar DV del receptor cuando el receptor es contribuyente (GED005=1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4257",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4258",
+      "servicio": "formato-evento",
+      "mensaje": "Dígito verificador del RUC del contribuyente receptor no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GEN008",
+      "id_validacion": "GEN008a",
+      "validacion": "Cuando el tipo de receptor es No Contribuyente (GED005=2) no se debe informar el campo Dígito verificador del RUC del contribuyente receptor (GED008)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4258",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4259",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de documento de identidad del receptor requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED009",
+      "id_validacion": "GED009",
+      "validacion": "Es obligatorio informar el tipo de documento de identidad del receptor cuando el tipo de receptor es No contribuyente (GED005=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4259",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4260",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de documento de identidad del receptor no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED009",
+      "id_validacion": "GED009a",
+      "validacion": "Cuando el Tipo de Receptor es Contribuyente (GED005=1) no es necesario informar el tipo de documento de identidad del receptor (GED009)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4260",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4261",
+      "servicio": "formato-evento",
+      "mensaje": "Número de documento de identidad requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED010",
+      "id_validacion": "GED010",
+      "validacion": "Es obligatorio informar el número de documento de identidad del receptor cuando el tipo de receptor es No contribuyente (GED005=2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4261",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4262",
+      "servicio": "formato-evento",
+      "mensaje": "Número de documento de identidad no se debe informar",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED010",
+      "id_validacion": "GED10a",
+      "validacion": "Cuando el Tipo de Receptor es Contribuyente (GED005=1) no es necesario informar el número de documento de identidad del receptor (GED010a)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4262",
+          "pagina": 141
+        }
+      ]
+    },
+    {
+      "codigo": "4263",
+      "servicio": "formato-evento",
+      "mensaje": "Fecha de aprobación del DTE ha superado el plazo para registro del evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED012",
+      "id_validacion": "GED012",
+      "validacion": "El plazo del registro del evento Desconocimiento DTE ha superado los 45 días contados a partir de la fecha de aprobación del DTE",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4263"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4264",
+      "servicio": "formato-evento",
+      "mensaje": "El CDE del DTE se encuentra cancelado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED013",
+      "id_validacion": "GED013",
+      "validacion": "No se puede registrar el desconocimiento por CDC de un DTE cancelado",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4264"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4265",
+      "servicio": "formato-evento",
+      "mensaje": "CDC del DTE ya cuenta con el máximo de eventos permitidos de la misma naturaleza",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GED013",
+      "id_validacion": "GED013a",
+      "validacion": "CDC del DTE ya ha superado la cantidad de eventos establecidos sobre el Tipo de Evento de Desconocimiento DTE",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "4265"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "4300",
+      "servicio": "formato-evento",
+      "mensaje": "El Departamento, el Distrito y la Ciudad del local de entrega no están relacionados",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET004",
+      "id_validacion": "GET004",
+      "validacion": "Debe haber relación entre el departamento (GET004), el distrito (GET006) y la ciudad (GET008)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4300",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4301",
+      "servicio": "formato-evento",
+      "mensaje": "Código del departamento del local de la entrega requerido para el motivo Cambio del local de la entrega",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET004",
+      "id_validacion": "GET004a",
+      "validacion": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar el código del departamento del local de la entrega (GET004)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4301",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4302",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del departamento del local de la entrega es requerida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET005",
+      "id_validacion": "GET005",
+      "validacion": "Cuando se informa el código del departamento del local de la entrega (GET004), es obligatorio informar la descripción del departamento del local de la entrega (GET005)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4302",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4303",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del departamento del local de la entrega no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET005",
+      "id_validacion": "GET005a",
+      "validacion": "Descripción del departamento del local de la entrega no coincidente con lo informado en el campo GET004",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4303",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4304",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del distrito del local de la entrega es requerida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET007",
+      "id_validacion": "GET007",
+      "validacion": "Cuando se informa el código del distrito del local de la entrega (GET006), es obligatorio informar la descripción del distrito del local de la entrega (GET007)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4304",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4305",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del distrito del local de la entrega no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET007",
+      "id_validacion": "GET007a",
+      "validacion": "Descripción del distrito del local de entrega no coincidente con lo informado en el campo GET006",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4305",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4306",
+      "servicio": "formato-evento",
+      "mensaje": "Código de la ciudad del local de la entrega requerido para el motivo Cambio del local de la entrega",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET008",
+      "id_validacion": "GET008",
+      "validacion": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar el código de la ciudad del local de la entrega (GET004)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4306",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4307",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción de la ciudad del local de la entrega es requerida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET009",
+      "id_validacion": "GET009",
+      "validacion": "Cuando se informa el código de la ciudad del local de la entrega (GET008), es obligatorio informar la descripción de la ciudad del local de la entrega (GET009)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4307",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4308",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción de la ciudad del local de la entrega no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET009",
+      "id_validacion": "GET009a",
+      "validacion": "Descripción de la ciudad del local de la entrega no coincidente con lo informado en el campo GET008",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4308",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4309",
+      "servicio": "formato-evento",
+      "mensaje": "Dirección del local de la entrega requerida para el motivo Cambio del local de la entrega",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET010",
+      "id_validacion": "GET010",
+      "validacion": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar la dirección del local de la entrega (GET010)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4309",
+          "pagina": 142
+        }
+      ]
+    },
+    {
+      "codigo": "4310",
+      "servicio": "formato-evento",
+      "mensaje": "Número de casa del local de la entrega requerido para el motivo Cambio del local de la entrega",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET011",
+      "id_validacion": "GET011",
+      "validacion": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar el número de casa del local de la entrega (GET011)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4310",
+          "pagina": 143
+        }
+      ]
+    },
+    {
+      "codigo": "4311",
+      "servicio": "formato-evento",
+      "mensaje": "Nombre y apellido del chofer requerido para el motivo Cambio del chofer",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET013",
+      "id_validacion": "GET013",
+      "validacion": "Cuando el motivo del evento es Cambio del chofer (GET003=2), es obligatorio informar el nombre y apellido del chofer (GET013)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4311",
+          "pagina": 143
+        }
+      ]
+    },
+    {
+      "codigo": "4312",
+      "servicio": "formato-evento",
+      "mensaje": "Número de documento de identidad del chofer requerido para el motivo Cambio del chofer",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET014",
+      "id_validacion": "GET014",
+      "validacion": "Cuando el motivo del evento es Cambio del chofer (GET003=2), es obligatorio informar el número de documento de identidad del chofer (GET014)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4312",
+          "pagina": 143
+        }
+      ]
+    },
+    {
+      "codigo": "4313",
+      "servicio": "formato-evento",
+      "mensaje": "Naturaleza del transportista requerida para el motivo Cambio del transportista",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET015",
+      "id_validacion": "GET015",
+      "validacion": "Cuando el motivo del evento es Cambio del transportista (GET003=3), es obligatorio informar la naturaleza del transportista (GET015)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4313",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Tipo de transporte requerido para el motivo Cambio de vehículo",
+          "efecto": "R",
+          "campo": "GET022",
+          "id_validacion": "GET022",
+          "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de transporte (GET022)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4313",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4314",
+      "servicio": "formato-evento",
+      "mensaje": "RUC del transportista no informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET016",
+      "id_validacion": "GET016",
+      "validacion": "Se requiere informar el número de RUC si la naturaleza del transportista es igual a contribuyente (GET015 = 1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4314",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Descripción del tipo de transporte es requerida",
+          "efecto": "R",
+          "campo": "GET023",
+          "id_validacion": "GET023",
+          "validacion": "Cuando se informa el código de tipo de transporte (GET022), es obligatorio informar la descripción del tipo de transporte (GET023)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4314",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4315",
+      "servicio": "formato-evento",
+      "mensaje": "RUC del transportista inexistente",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET016",
+      "id_validacion": "GET016a",
+      "validacion": "El RUC del transportista informado no existe en la base de datos de Marangatu",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4315",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Descripción del tipo de transporte no corresponde al código",
+          "efecto": "R",
+          "campo": "GET023",
+          "id_validacion": "GET023a",
+          "validacion": "Descripción del tipo de transporte no coincidente con lo informado en el campo GET022",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4315",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4316",
+      "servicio": "formato-evento",
+      "mensaje": "El RUC del transportista se encuentra inactivo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET016",
+      "id_validacion": "GET016b",
+      "validacion": "El RUC del transportista debe contar con un estado distinto a CANCELADO, CANCELADO DEFINITIVO o SUSPENSIÓN TEMPORAL en Marangatu al momento de la emisión del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4316",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Modalidad del transporte requerido para el motivo Cambio de vehículo",
+          "efecto": "R",
+          "campo": "GET024",
+          "id_validacion": "GET024",
+          "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la modalidad del transporte (GET024)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4316",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4317",
+      "servicio": "formato-evento",
+      "mensaje": "RUC del transportista no requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET016",
+      "id_validacion": "GET016c",
+      "validacion": "Si la naturaleza del transportista es distinta a contribuyente (GET015 ≠ 1) el RUC del transportista (GET016) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4317",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Descripción de la modalidad del transporte es requerida",
+          "efecto": "R",
+          "campo": "GET025",
+          "id_validacion": "GET025",
+          "validacion": "Cuando se informa el código de la modalidad del transporte (GET024), es obligatorio informar la descripción de la modalidad del transporte (GET025)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4317",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4318",
+      "servicio": "formato-evento",
+      "mensaje": "Dígito Verificador del RUC del transportista incorrecto",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET017",
+      "id_validacion": "GET017",
+      "validacion": "El Dígito Verificador ingresado (GET017) no corresponde al módulo 11 del RUC (GET016)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4318",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Descripción de la modalidad del transporte no corresponde al código",
+          "efecto": "R",
+          "campo": "GET025",
+          "id_validacion": "GET025a",
+          "validacion": "Descripción de la modalidad del transporte no coincidente con lo informado en el campo GET024",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4318",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4319",
+      "servicio": "formato-evento",
+      "mensaje": "Nombre o razón social del transportista es requerido para el motivo del evento",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET018",
+      "id_validacion": "GET018",
+      "validacion": "Cuando el motivo del evento es cambio del transportista (GET003=3), es obligatorio informar el nombre o razón social del transportista (GET018)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4319",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Tipo de vehículo requerido para el motivo Cambio de vehículo",
+          "efecto": "R",
+          "campo": "GET026",
+          "id_validacion": "GET026",
+          "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de vehículo (GET026)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4319",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4320",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de documento de identidad del transportista no informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET019",
+      "id_validacion": "GET019",
+      "validacion": "Se requiere informar el tipo de documento de identidad si la naturaleza del transportista es igual a NO contribuyente (GET015 =2)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4320",
+          "pagina": 143
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Marca del vehículo requerida para el motivo Cambio de vehículo",
+          "efecto": "R",
+          "campo": "GET027",
+          "id_validacion": "GET027",
+          "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la marca del vehículo (GET027)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4320",
+              "pagina": 144
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4321",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de documento de identidad del transportista no requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET019",
+      "id_validacion": "GET019a",
+      "validacion": "Si la naturaleza del transportista es igual a contribuyente (GET015 =1) el tipo de documento de identidad del transportista (GET019) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4321",
+          "pagina": 144
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Tipo de identificación del vehículo requerido para el motivo Cambio de vehículo",
+          "efecto": "R",
+          "campo": "GET028",
+          "id_validacion": "GET028",
+          "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de identificación del vehículo (GET028)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4321",
+              "pagina": 145
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4322",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del tipo de documento de identidad del transportista no informada",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET020",
+      "id_validacion": "GET020",
+      "validacion": "Si se informa el código de tipo de documento de identidad del transportista (GET019), es obligatorio indicar la descripción del mismo (GET020)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4322",
+          "pagina": 144
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Tipo de identificación del vehículo no informado",
+          "efecto": "R",
+          "campo": "GET029",
+          "id_validacion": "GET029",
+          "validacion": "Se requiere el número de identificación del vehículo cuando el tipo de identificación del vehículo es 1 (GET028=1)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4322",
+              "pagina": 145
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4323",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del tipo de documento de identidad del transportista no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET020",
+      "id_validacion": "GET020a",
+      "validacion": "Descripción del tipo de documento de identidad del transportista (GET020) no coincidente con lo informado en el campo GET019",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4323",
+          "pagina": 144
+        }
+      ],
+      "duplicados": [
+        {
+          "mensaje": "Número de matrícula del vehículo no informado",
+          "efecto": "R",
+          "campo": "GET030",
+          "id_validacion": "GET030",
+          "validacion": "Se requiere número de matrícula del vehículo cuando el tipo de identificación del vehículo es 2 (GET028=2)",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "4323",
+              "pagina": 145
+            },
+            {
+              "doc": "NT018",
+              "ref": "4. Validaciones actualizadas",
+              "cita": "Correcciones en el MT versión 150 referente a los códigos de mensajes que corresponden a la regla de validación para el evento de transporte"
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-12-01",
+              "produccion": "2024-01-08"
+            }
+          }
+        }
+      ],
+      "contradiccion": "C-811"
+    },
+    {
+      "codigo": "4324",
+      "servicio": "formato-evento",
+      "mensaje": "Número de documento de identidad del transportista no informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET021",
+      "id_validacion": "GET021",
+      "validacion": "Si se informa el código de tipo de documento de identidad del transportista (GET019), el número de dicho documento es requerido (GET020)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "4324",
+          "pagina": 144
+        }
+      ]
+    },
+    {
+      "codigo": "4325",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de transporte requerido para el motivo Cambio de vehículo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET022",
+      "id_validacion": "GET022",
+      "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de transporte (GET022)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4325"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4326",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del tipo de transporte es requerida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET023",
+      "id_validacion": "GET023",
+      "validacion": "Cuando se informa el código de tipo de transporte (GET022), es obligatorio informar la descripción del tipo de transporte (GET023)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4326"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4327",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del tipo de transporte no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET023",
+      "id_validacion": "GET023a",
+      "validacion": "Descripción del tipo de transporte no coincidente con lo informado en el campo GET022",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4327"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4328",
+      "servicio": "formato-evento",
+      "mensaje": "Modalidad del transporte requerido para el motivo Cambio de vehículo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET024",
+      "id_validacion": "GET024",
+      "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la modalidad del transporte (GET024)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4328"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4329",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción de la modalidad del transporte es requerida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET025",
+      "id_validacion": "GET025",
+      "validacion": "Cuando se informa el código de la modalidad del transporte (GET024), es obligatorio informar la descripción de la modalidad del transporte (GET025)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4329"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4330",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción de la modalidad del transporte no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET025",
+      "id_validacion": "GET025a",
+      "validacion": "Descripción de la modalidad del transporte no coincidente con lo informado en el campo GET024",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4330"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4331",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de vehículo requerido para el motivo Cambio de vehículo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET026",
+      "id_validacion": "GET026",
+      "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de vehículo (GET026)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4331"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4332",
+      "servicio": "formato-evento",
+      "mensaje": "Marca del vehículo requerida para el motivo Cambio de vehículo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET027",
+      "id_validacion": "GET027",
+      "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar la marca del vehículo (GET027)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4332"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4333",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de identificación del vehículo requerido para el motivo Cambio de vehículo",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET028",
+      "id_validacion": "GET028",
+      "validacion": "Cuando el motivo del evento es cambio de vehículo (GET003=4), es obligatorio informar el tipo de identificación del vehículo (GET028)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4333"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4334",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de identificación del vehículo no informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET029",
+      "id_validacion": "GET029",
+      "validacion": "Se requiere el número de identificación del vehículo cuando el tipo de identificación del vehículo es 1 (GET028=1)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4334"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4335",
+      "servicio": "formato-evento",
+      "mensaje": "Número de matrícula del vehículo no informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET030",
+      "id_validacion": "GET030",
+      "validacion": "Se requiere número de matrícula del vehículo cuando el tipo de identificación del vehículo es 2 (GET028=2)",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4335"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4336",
+      "servicio": "formato-evento",
+      "mensaje": "CDC no existente en el SIFEN",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GET002",
+      "id_validacion": "GET002",
+      "validacion": "El identificador del CDC (GET002) no se encuentra aprobado como DTE en el SIFEN",
+      "fuentes": [
+        {
+          "doc": "NT018",
+          "ref": "4336"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "4451",
+      "servicio": "formato-evento",
+      "mensaje": "CDC inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE002",
+      "id_validacion": "GENFE002",
+      "validacion": "Debe validar que el CDC (GENFE002) cuente con los 44 caracteres según las reglas de estructuración del CDC (longitud, y/o dígito verificador)",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4451"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4452",
+      "servicio": "formato-evento",
+      "mensaje": "El CDC informado no existe en la base de datos del SIFEN o ha sido cancelado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE002",
+      "id_validacion": "GENFE002a",
+      "validacion": "El identificador del CDC (GENFE002) no se encuentra en la base de datos del SIFEN o se encuentra cancelado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4452"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4453",
+      "servicio": "formato-evento",
+      "mensaje": "El CDC del DTE informado ya cuenta con un evento previo de nominación de factura electrónica",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE002",
+      "id_validacion": "GENFE002b",
+      "validacion": "El DTE (GENFE002) ya cuenta con un evento previo de nominación de factura electrónica",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4453"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4454",
+      "servicio": "formato-evento",
+      "mensaje": "El tipo de documento del CDC informado no corresponde a Factura electrónica",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE002",
+      "id_validacion": "GENFE002c",
+      "validacion": "El CDC informado no corresponde Factura Electrónica (GENFE002)",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4454"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4456",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del país receptor no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE006",
+      "id_validacion": "GENFE006",
+      "validacion": "La descripción del país del receptor no coincidente con lo informado en el campo GENFE005",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4456"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4457",
+      "servicio": "formato-evento",
+      "mensaje": "Es obligatorio informar el tipo de contribuyente receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE007",
+      "id_validacion": "GENFE007",
+      "validacion": "Si la naturaleza del receptor es contribuyente (GENFE004=1) el tipo de contribuyente receptor debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4457"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4458",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de contribuyente receptor inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE007",
+      "id_validacion": "GENFE007a",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el tipo de contribuyente receptor (GENFE007) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4458"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4459",
+      "servicio": "formato-evento",
+      "mensaje": "Es obligatorio informar el RUC del receptor contribuyente",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE008",
+      "id_validacion": "GENFE008",
+      "validacion": "Si la naturaleza del receptor es contribuyente (GENFE004=1), el RUC del receptor debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4459"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4460",
+      "servicio": "formato-evento",
+      "mensaje": "RUC del receptor no requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE008",
+      "id_validacion": "GENFE008a",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el RUC del receptor (GENFE008) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4460"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4461",
+      "servicio": "formato-evento",
+      "mensaje": "RUC del receptor inexistente en la base de datos de Marangatu",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE008",
+      "id_validacion": "GENFE008b",
+      "validacion": "El RUC informado no existe en la base de datos de Marangatu",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4461"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4462",
+      "servicio": "formato-evento",
+      "mensaje": "El RUC se encuentra inactivo para el tipo de contribuyente receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE008",
+      "id_validacion": "GENFE008c",
+      "validacion": "Si la naturaleza del receptor es contribuyente (GENFE004=1), el RUC del receptor en Marangatu debe contar con un estado distinto a CANCELADO o CANCELADO DEFINITIVO",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4462"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4463",
+      "servicio": "formato-evento",
+      "mensaje": "Dígito Verificador del RUC del receptor incorrecto",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE009",
+      "id_validacion": "GENFE009",
+      "validacion": "El Dígito Verificador ingresado no corresponde al módulo 11 del RUC",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4463"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4464",
+      "servicio": "formato-evento",
+      "mensaje": "Es obligatorio informar el tipo de documento de identidad del receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE010",
+      "id_validacion": "GENFE010",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el tipo de documento de identidad debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4464"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4465",
+      "servicio": "formato-evento",
+      "mensaje": "Tipo de documento de identidad del receptor no requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE010",
+      "id_validacion": "GENFE010a",
+      "validacion": "Si la naturaleza del receptor es contribuyente (GENFE004=1), el tipo de documento de identidad del receptor (GENFE010) no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4465"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4466",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del tipo de documento de identidad del receptor no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE011",
+      "id_validacion": "GENFE011",
+      "validacion": "La descripción del tipo de documento de identidad del receptor no coincidente con lo informado en el campo GENFE010",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4466"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4467",
+      "servicio": "formato-evento",
+      "mensaje": "Es obligatorio informar el número de documento de identidad del receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE012",
+      "id_validacion": "GENFE012",
+      "validacion": "Si la naturaleza del receptor es NO contribuyente (GENFE004=2), el número de documento de identidad debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4467"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4468",
+      "servicio": "formato-evento",
+      "mensaje": "El RUC del Emisor del evento no corresponde al emisor de la factura electrónica",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE002",
+      "id_validacion": "GENFE002d",
+      "validacion": "El RUC del Emisor de la Factura Electrónica debe ser el mismo que el RUC del Emisor del evento.",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4468"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4469",
+      "servicio": "formato-evento",
+      "mensaje": "El receptor de la Factura electrónica debe ser innominado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE002",
+      "id_validacion": "GENFE002e",
+      "validacion": "El tipo de documento de identidad del receptor informada en la factura electrónica debe ser igual a innominado (D208=5)",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4469"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4470",
+      "servicio": "formato-evento",
+      "mensaje": "Es obligatorio informar el número de casa del receptor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE016",
+      "id_validacion": "GENFE016",
+      "validacion": "Si se informa la dirección del receptor (GENFE015) es obligatorio informar el número de casa (GENFE016)",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4470"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4471",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del departamento del receptor no corresponde al código.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE018",
+      "id_validacion": "GENFE018",
+      "validacion": "Descripción del departamento del receptor no coincidente con lo informado en el campo GENFE017.",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4471"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4472",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción del distrito de receptor no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE020",
+      "id_validacion": "GENFE020",
+      "validacion": "Descripción del distrito del receptor no coincidente con lo informado en el campo GENFE019",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4472"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4473",
+      "servicio": "formato-evento",
+      "mensaje": "Descripción de la ciudad del receptor no corresponde al código",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE022",
+      "id_validacion": "GENFE022",
+      "validacion": "Descripción de la ciudad del receptor no coincidente con lo informado en el campo GENFE021",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4473"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4474",
+      "servicio": "formato-evento",
+      "mensaje": "El Departamento, el Distrito y la Ciudad del receptor no están relacionados",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE021",
+      "id_validacion": "GENFE021",
+      "validacion": "Debe haber relación entre el departamento (GENFE017), el distrito (GENFE019) y la ciudad (GENFE021) Según Tabla 2.1 – Departamentos, Distritos y Ciudades",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4474"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4475",
+      "servicio": "formato-evento",
+      "mensaje": "Naturaleza del receptor incorrecto para el tipo de operación informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE004",
+      "id_validacion": "GENFE004",
+      "validacion": "Si el tipo de operación es B2B (GENFE027=1), la naturaleza del receptor debe ser contribuyente (GENFE004=1) Si el tipo de operación es B2C o B2F (GENFE027=2 o 4), la naturaleza del receptor debe ser no contribuyente (GENFE004=2)",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4475"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4476",
+      "servicio": "formato-evento",
+      "mensaje": "Código de país del receptor inválido para el tipo de operación informado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE005",
+      "id_validacion": "GENFE005",
+      "validacion": "Si el tipo de operación es B2F (GENFE027=4), el país informado debe ser diferente a PRY (GENFE005≠PRY). Si el tipo de operación es diferente de B2F (GENFE027≠4) el país informado debe ser igual a PRY (GENFE005=PRY)",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4476"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4477",
+      "servicio": "formato-evento",
+      "mensaje": "El número de documento de identidad del receptor no es requerido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE012",
+      "id_validacion": "GENFE012",
+      "validacion": "Si la naturaleza del receptor es contribuyente, el número de documento de identidad no debe ser informado",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4477"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4478",
+      "servicio": "formato-evento",
+      "mensaje": "Dirección del receptor no informado para el tipo de documento electrónico",
+      "clase": "rechazo",
+      "efecto": "R",
+      "campo": "GENFE015",
+      "id_validacion": "GENFE015",
+      "validacion": "Si el tipo de operación es B2F, es obligatorio informar la dirección del receptor (GENFE015)",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "4478"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    }
+  ]
+}

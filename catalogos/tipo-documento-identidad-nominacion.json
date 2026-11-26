@@ -1,0 +1,130 @@
+{
+  "id": "tipo-documento-identidad-nominacion",
+  "titulo": "Tipo de documento de identidad del receptor (evento de nominación)",
+  "fuentes": [
+    {
+      "doc": "NT014",
+      "ref": "GENFE010"
+    },
+    {
+      "doc": "NT014",
+      "ref": "GENFE011"
+    },
+    {
+      "doc": "NT027",
+      "ref": "1.1 (GENFE010, GENFE011)"
+    },
+    {
+      "doc": "XSD",
+      "ref": "Evento_v150.xsd iTipIDRec (DE_Types_v150.xsd tiTipDocRec, tdDtipDocRec)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "GENFE010",
+    "GENFE011"
+  ],
+  "descripciones": {
+    "GENFE010": "GENFE011"
+  },
+  "xml": [
+    "iTipIDRec",
+    "dDTipIDRec"
+  ],
+  "contradiccion": "C-917",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Cédula paraguaya",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Pasaporte",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Cédula extranjera",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Carnet de residencia",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      }
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Tarjeta Diplomática de exoneración fiscal",
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE010"
+        },
+        {
+          "doc": "NT027",
+          "ref": "1.1 (GENFE010)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        },
+        "hasta": {
+          "test": "2026-03-09",
+          "produccion": "2026-03-09"
+        }
+      },
+      "contradiccion": "C-917"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "Tarjeta Diplomática de exoneración fiscal",
+      "fuentes": [
+        {
+          "doc": "NT027",
+          "ref": "1.1 (GENFE010, GENFE011)"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2026-03-09",
+          "produccion": "2026-03-09"
+        }
+      }
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Otro",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "observacion": "Si GENFE010=9 Se deberá informar el tipo de documento de identidad del receptor",
+      "descripcion_libre": true
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "tipo-combustible",
+  "titulo": "Tipo de combustible",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E779"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E780"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipCom, tdDesTipCom"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E779",
+    "E780"
+  ],
+  "descripciones": {
+    "E779": "E780"
+  },
+  "xml": [
+    "iTipCom",
+    "dDesTipCom"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Gasolina"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Diésel"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Etanol"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "GNV"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Flex"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "Otro",
+      "observacion": "Si E769= 9 describir el tipo de combustible (texto del Manual; el campo de código es E779)",
+      "descripcion_libre": true
+    }
+  ]
+}

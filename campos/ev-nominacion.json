@@ -1,0 +1,752 @@
+{
+  "grupo": "GENFE",
+  "titulo": "Evento de nominación de factura electrónica",
+  "esquemas": [
+    "Evento_v150.xsd",
+    "Evento_Types_v150.xsd",
+    "siRecepEvento_v150.xsd",
+    "siRecepEventoEmisor_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "GENFE001",
+      "xml": "rGEveNom",
+      "nombre": "nomination",
+      "padre": "GDE007",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Raíz Gestión de Eventos Nominación",
+      "observaciones": "Elemento raíz. Evento de Nominación de Factura Electrónica, agregado por la NT 14. La NT no indica ocurrencia ('-'); 0-1 por ser una opción del xs:choice de gGroupTiEvt.",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "1.1 GENFE001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd tgGroupEvt/rGEveNom y tgGroupEvtEmi/rGEveNom (trGEveNom)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador del DTE",
+      "observaciones": "Se informa el código de control (CDC)",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE002"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/Id (tId)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE003",
+      "xml": "mOtEve",
+      "nombre": "reason",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "5-500",
+      "ocurrencia": "1-1",
+      "descripcion": "Motivo del Evento",
+      "observaciones": "Campo abierto",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE003"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/mOtEve (tmotEve)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE004",
+      "xml": "iNatRec",
+      "nombre": "receiverNatureCode",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Naturaleza del receptor",
+      "observaciones": "1= contribuyente 2= no contribuyente",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE004"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/iNatRec (tiTipEve)"
+        }
+      ],
+      "catalogo": "naturaleza-receptor"
+    },
+    {
+      "id": "GENFE027",
+      "xml": "iTiOpe",
+      "nombre": "operationTypeCode",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de operación",
+      "observaciones": "1= B2B 2= B2C 4= B2F",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE027"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/iTiOpe (tiTiOpeEv)"
+        }
+      ],
+      "catalogo": "tipo-operacion"
+    },
+    {
+      "id": "GENFE005",
+      "xml": "cPaisRec",
+      "nombre": "receiverCountryCode",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de país del receptor",
+      "observaciones": "Según XSD de Codificación de Países",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE005"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/cPaisRec (paisType)"
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "GENFE006",
+      "xml": "dDesPaisRe",
+      "nombre": "receiverCountryDescription",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "4-50",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del país receptor",
+      "observaciones": "Referente al campo GENFE005",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE006"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dDesPaisRe (tDesPais)"
+        }
+      ],
+      "catalogo": "pais"
+    },
+    {
+      "id": "GENFE007",
+      "xml": "iTiContRec",
+      "nombre": "receiverTaxpayerTypeCode",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de contribuyente receptor",
+      "observaciones": "1= Persona Física 2= Persona Jurídica",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE007"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/iTiContRec (tiTipCont)"
+        }
+      ],
+      "catalogo": "tipo-contribuyente"
+    },
+    {
+      "id": "GENFE008",
+      "xml": "dRucRec",
+      "nombre": "receiverRuc",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "3-8",
+      "ocurrencia": "0-1",
+      "descripcion": "RUC del receptor",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE008"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dRucRec (tRuc)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE009",
+      "xml": "dDVRec",
+      "nombre": "receiverCheckDigit",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Dígito verificador del RUC del receptor",
+      "observaciones": "Según algoritmo módulo 11",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE009"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dDVRec (tDVer)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE010",
+      "xml": "iTipIDRec",
+      "nombre": "receiverIdDocumentTypeCode",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "0-1",
+      "descripcion": "Tipo de documento de identidad del receptor",
+      "observaciones": "NT 14: 1=Cédula paraguaya, 2=Pasaporte, 3=Cédula extranjera, 4=Carnet de residencia, 5=Tarjeta Diplomática de exoneración fiscal, 9=Otro. NT 27 (desde 2026-03-09): 1=Cédula paraguaya, 2=Pasaporte, 3=Cédula extranjera, 4=Carnet de residencia, 6=Tarjeta Diplomática de exoneración fiscal, 9=Otro.",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE010"
+        },
+        {
+          "doc": "NT027",
+          "ref": "1.1 GENFE010"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/iTipIDRec (tiTipDocRec: [1-6]|9)"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad-nominacion"
+    },
+    {
+      "id": "GENFE011",
+      "xml": "dDTipIDRec",
+      "nombre": "receiverIdDocumentTypeDescription",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "9-41",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del tipo de documento de identidad",
+      "observaciones": "1= “Cédula paraguaya”, 2= “Pasaporte”, 3= “Cédula extranjera”, 4= “Carnet de residencia”, “Tarjeta Diplomática de exoneración fiscal” (código 5 según NT 14; código 6 según NT 27). Si GENFE010=9 se deberá informar el tipo de documento de identidad del receptor.",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE011"
+        },
+        {
+          "doc": "NT027",
+          "ref": "1.1 GENFE011"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dDTipIDRec (tdDtipDocRec)"
+        }
+      ],
+      "catalogo": "tipo-documento-identidad-nominacion"
+    },
+    {
+      "id": "GENFE012",
+      "xml": "dNumIDRec",
+      "nombre": "receiverIdDocumentNumber",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de documento de identidad",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE012"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dNumIDRec (tdNumDocId)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE013",
+      "xml": "dNomRec",
+      "nombre": "receiverName",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre o razón social del receptor del DTE",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE013"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dNomRec (tdNomRec)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE014",
+      "xml": "dNomFanRec",
+      "nombre": "receiverTradeName",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "4-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Nombre de fantasía",
+      "observaciones": "Campo abierto",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE014"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dNomFanRec (tdNomRec)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE015",
+      "xml": "dDirRec",
+      "nombre": "receiverAddress",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "0-1",
+      "descripcion": "Dirección del receptor",
+      "observaciones": "Campo abierto",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE015"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dDirRec (tdDirEnt)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE016",
+      "xml": "dNumCasRec",
+      "nombre": "receiverHouseNumber",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1-6",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de casa del receptor",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE016"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dNumCasRec (tdNumCas)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE017",
+      "xml": "cDepRec",
+      "nombre": "receiverDepartmentCode",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del departamento del receptor",
+      "observaciones": "Según XSD de Departamentos",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE017"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/cDepRec (tcDepEnt)"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "GENFE018",
+      "xml": "dDesDepRec",
+      "nombre": "receiverDepartmentDescription",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del departamento del receptor",
+      "observaciones": "Referente al campo GENFE017",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE018"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dDesDepRec (tdDesDepEnt)"
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "GENFE019",
+      "xml": "cDisRec",
+      "nombre": "receiverDistrictCode",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito del receptor",
+      "observaciones": "Según Tabla 2.1 – Departamentos, Distritos Y Ciudades",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE019"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/cDisRec (tcDisEnt)"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "GENFE020",
+      "xml": "dDesDisRec",
+      "nombre": "receiverDistrictDescription",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del distrito del receptor",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE020"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dDesDisRec (tdDesDisEnt)"
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "GENFE021",
+      "xml": "cCiuRec",
+      "nombre": "receiverCityCode",
+      "padre": "GENFE001",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "0-1",
+      "descripcion": "Código de la ciudad del receptor",
+      "observaciones": "Según Tabla 2.1 – Departamentos, Distritos Y Ciudades",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE021"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/cCiuRec (tcCiuEnt)"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "GENFE022",
+      "xml": "dDesCiuRec",
+      "nombre": "receiverCityDescription",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción de la ciudad del receptor",
+      "observaciones": "Referente al campo GENFE021",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE022"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dDesCiuRec (tdDesCiuEnt)"
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "GENFE023",
+      "xml": "dTelRec",
+      "nombre": "receiverPhone",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "6-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de teléfono del receptor",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE023"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dTelRec (tdTel)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE024",
+      "xml": "dCelRec",
+      "nombre": "receiverMobilePhone",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "10-20",
+      "ocurrencia": "0-1",
+      "descripcion": "Número de celular del receptor",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE024"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dCelRec (tdCel)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE025",
+      "xml": "dEmailRec",
+      "nombre": "receiverEmail",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "3-80",
+      "ocurrencia": "0-1",
+      "descripcion": "Correo electrónico del receptor",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE025"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dEmailRec (tEmail)"
+        }
+      ]
+    },
+    {
+      "id": "GENFE026",
+      "xml": "dCodCliente",
+      "nombre": "customerCode",
+      "padre": "GENFE001",
+      "tipo": "alfanumerico",
+      "longitud": "3-15",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del cliente",
+      "vigencia": {
+        "desde": {
+          "test": "2023-05-31",
+          "produccion": "2023-08-08"
+        }
+      },
+      "fuentes": [
+        {
+          "doc": "NT014",
+          "ref": "GENFE026"
+        },
+        {
+          "doc": "XSD",
+          "ref": "Evento_v150.xsd trGEveNom/dCodCliente (xs:string 3-15)"
+        }
+      ]
+    }
+  ]
+}

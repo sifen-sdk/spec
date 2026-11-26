@@ -1,0 +1,616 @@
+{
+  "grupo": "E9",
+  "reglas": [
+    {
+      "id": "R-E790-OP",
+      "campo": "E790",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E790",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E791-OP",
+      "campo": "E791",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E791",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E792-OP",
+      "campo": "E792",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E792",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E793-OP",
+      "campo": "E793",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E793",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E794-OP",
+      "campo": "E794",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E794",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E795-OP",
+      "campo": "E795",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E795",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E796-OP",
+      "campo": "E796",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E796",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E797-OP",
+      "campo": "E797",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E797",
+          "pagina": 93,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E797-A0",
+      "campo": "E797",
+      "tipo": "aritmetica",
+      "texto": "El consumo es la diferencia entre E785 y E784 (texto original del MT150, corregido por la NT 23)",
+      "formula": "E797 = E785 - E784",
+      "operandos": [
+        "E785",
+        "E784"
+      ],
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E797",
+          "pagina": 93,
+          "cita": "Corresponde a la diferencia entre E785-E784"
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-E797-A1",
+      "campo": "E797",
+      "tipo": "aritmetica",
+      "texto": "El consumo es la diferencia entre la lectura actual y la lectura anterior",
+      "formula": "E797 = E796 - E795",
+      "operandos": [
+        "E796",
+        "E795"
+      ],
+      "fuentes": [
+        {
+          "doc": "NT023",
+          "ref": "1.3 E797",
+          "pagina": 2,
+          "cita": "Corresponde a la diferencia entre E796-E795"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2024-08-30",
+          "produccion": "2024-09-27"
+        }
+      }
+    },
+    {
+      "id": "R-E800-OP",
+      "campo": "E800",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E800",
+          "pagina": 94,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E801-OP",
+      "campo": "E801",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E801",
+          "pagina": 94,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA790-OB",
+      "campo": "EA790",
+      "tipo": "obligatorio",
+      "texto": "Se informa al menos una póliza siempre que exista el grupo del sector de seguros",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA790",
+          "pagina": 94,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA791-OB",
+      "campo": "EA791",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA791",
+          "pagina": 94,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA792-OB",
+      "campo": "EA792",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA792",
+          "pagina": 94,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA793-OB",
+      "campo": "EA793",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA793",
+          "pagina": 94,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA794-OB",
+      "campo": "EA794",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista su grupo padre",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA794",
+          "pagina": 94,
+          "cita": "1-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA795-OP",
+      "campo": "EA795",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA795",
+          "pagina": 94,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA796-OP",
+      "campo": "EA796",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA796",
+          "pagina": 94,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-EA797-OP",
+      "campo": "EA797",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "EA797",
+          "pagina": 94,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E810-OP",
+      "campo": "E810",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E810",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E811-OP",
+      "campo": "E811",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E811",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E812-OP",
+      "campo": "E812",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E812",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E813-OP",
+      "campo": "E813",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E813",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E814-OP",
+      "campo": "E814",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E814",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E815-OP",
+      "campo": "E815",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E815",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E820-OP",
+      "campo": "E820",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E820",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E821-OP",
+      "campo": "E821",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E821",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E824-OP",
+      "campo": "E824",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E824",
+          "pagina": 95,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E825-OP",
+      "campo": "E825",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E825",
+          "pagina": 96,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E826-OP",
+      "campo": "E826",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E826",
+          "pagina": 96,
+          "cita": "0-1"
+        }
+      ]
+    },
+    {
+      "id": "R-E827-OP",
+      "campo": "E827",
+      "tipo": "opcional",
+      "texto": "Puede omitirse",
+      "fuentes": [
+        {
+          "doc": "NT020",
+          "ref": "1.1 E827",
+          "pagina": 1,
+          "cita": "0-1"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "id": "R-E822-C1",
+      "campo": "E822",
+      "tipo": "condicional",
+      "texto": "La fecha de inicio de ciclo es obligatoria si se informa el ciclo",
+      "condicion": {
+        "campo": "E821",
+        "op": "presente"
+      },
+      "codigo_sifen": "2050",
+      "contradiccion": "C-401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E822",
+          "pagina": 95,
+          "cita": "Obligatorio si se informa el campo E811"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2050",
+          "pagina": 178,
+          "cita": "La fecha de inicio del ciclo (E812) es obligatoria si se informa el campo E811"
+        }
+      ]
+    },
+    {
+      "id": "R-E822-P1",
+      "campo": "E822",
+      "tipo": "prohibido",
+      "texto": "La fecha de inicio de ciclo no se informa si no se informa el ciclo",
+      "condicion": {
+        "campo": "E821",
+        "op": "ausente"
+      },
+      "codigo_sifen": "2051",
+      "contradiccion": "C-401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E822",
+          "pagina": 95,
+          "cita": "No completar si no se informa el campo E811"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2051",
+          "pagina": 178,
+          "cita": "Si NO se informa el campo E811, la fecha de inicio de ciclo no debe ser informada"
+        }
+      ]
+    },
+    {
+      "id": "R-E823-C1",
+      "campo": "E823",
+      "tipo": "condicional",
+      "texto": "La fecha de fin de ciclo es obligatoria si se informa la fecha de inicio de ciclo",
+      "condicion": {
+        "campo": "E822",
+        "op": "presente"
+      },
+      "codigo_sifen": "2052",
+      "contradiccion": "C-401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E823",
+          "pagina": 95,
+          "cita": "Obligatorio si se informa el campo E812"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2052",
+          "pagina": 178,
+          "cita": "La fecha de fin de ciclo (E813) es obligatoria si se informa la fecha de inicio de ciclo (E812)"
+        }
+      ]
+    },
+    {
+      "id": "R-E823-P1",
+      "campo": "E823",
+      "tipo": "prohibido",
+      "texto": "La fecha de fin de ciclo no se informa si no se informa la fecha de inicio de ciclo",
+      "condicion": {
+        "campo": "E822",
+        "op": "ausente"
+      },
+      "codigo_sifen": "2053",
+      "contradiccion": "C-401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E823",
+          "pagina": 95,
+          "cita": "No completar si no se informa el campo E812"
+        },
+        {
+          "doc": "MT150",
+          "ref": "2053",
+          "pagina": 178,
+          "cita": "Si NO se informa el campo E812, la fecha de fin de ciclo no debe ser informada"
+        }
+      ]
+    },
+    {
+      "id": "R-E823-D1",
+      "campo": "E823",
+      "tipo": "dependencia",
+      "texto": "La fecha de fin de ciclo debe ser mayor o igual a la fecha de inicio de ciclo",
+      "codigo_sifen": "2054",
+      "contradiccion": "C-401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2054",
+          "pagina": 178,
+          "cita": "La fecha de fin de ciclo (E813) debe ser mayor o igual a la fecha de inicio de ciclo (E812)"
+        }
+      ]
+    },
+    {
+      "id": "R-E824-D1",
+      "campo": "E824",
+      "tipo": "dependencia",
+      "texto": "La fecha de vencimiento para el pago no debe ser anterior a la fecha de emisión del DE (D002)",
+      "codigo_sifen": "2055",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2055",
+          "pagina": 178,
+          "cita": "La fecha de vencimiento para el pago no debe ser anterior a la fecha de emisión del DE (D002)"
+        }
+      ]
+    }
+  ]
+}

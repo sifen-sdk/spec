@@ -1,0 +1,83 @@
+{
+  "id": "tipo-documento-identidad",
+  "titulo": "Tipo de documento de identidad (vendedor, transportista y receptor en eventos)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E304"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E305"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E985"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E986"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GEN009"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GED009"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET019"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET020"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipDoc (pattern [1-4]), tdDtipDoc"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E304",
+    "E305",
+    "E985",
+    "E986",
+    "GEN009",
+    "GED009",
+    "GET019",
+    "GET020"
+  ],
+  "descripciones": {
+    "E304": "E305",
+    "E985": "E986",
+    "GET019": "GET020"
+  },
+  "xml": [
+    "iTipIDVen",
+    "dDTipIDVen",
+    "iTipIDTrans",
+    "dDTipIDTrans",
+    "dTipIDRec"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Cédula paraguaya"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Pasaporte"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Cédula extranjera"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Carnet de residencia"
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "grupo": "E1",
+  "reglas": [
+    {
+      "id": "R-E010-C1",
+      "campo": "E010",
+      "tipo": "condicional",
+      "texto": "Si el tipo de documento electrónico informado es FE (C002=1), el grupo de campos que componen la FE (E010) es obligatorio",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "1"
+      },
+      "codigo_sifen": "1350",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E010",
+          "pagina": 74
+        },
+        {
+          "doc": "MT150",
+          "ref": "1350",
+          "pagina": 169
+        }
+      ]
+    },
+    {
+      "id": "R-E010-P1",
+      "campo": "E010",
+      "tipo": "prohibido",
+      "texto": "Si el tipo de documento electrónico informado es distinto a FE (C002≠1), el grupo de campos que componen la FE (E010) no debe ser informado",
+      "condicion": {
+        "campo": "C002",
+        "op": "distinto",
+        "valor": "1"
+      },
+      "codigo_sifen": "1351",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E010",
+          "pagina": 74
+        },
+        {
+          "doc": "MT150",
+          "ref": "1351",
+          "pagina": 169
+        }
+      ]
+    },
+    {
+      "id": "R-E011-OB",
+      "campo": "E011",
+      "tipo": "obligatorio",
+      "texto": "Indicador de presencia: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E011",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E012-OB",
+      "campo": "E012",
+      "tipo": "obligatorio",
+      "texto": "Descripción del indicador de presencia: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E012",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E012-D1",
+      "campo": "E012",
+      "tipo": "dependencia",
+      "texto": "La descripción del indicador de presencia debe coincidir con lo informado en el campo E011",
+      "codigo_sifen": "1352",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E012",
+          "pagina": 75
+        },
+        {
+          "doc": "MT150",
+          "ref": "1352",
+          "pagina": 169
+        }
+      ]
+    },
+    {
+      "id": "R-E012-D2",
+      "campo": "E012",
+      "tipo": "dependencia",
+      "texto": "Si E011 = 9 (Otro) se informa en E012 el indicador de presencia",
+      "condicion": {
+        "campo": "E011",
+        "op": "igual",
+        "valor": "9"
+      },
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E012",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E013-OP",
+      "campo": "E013",
+      "tipo": "opcional",
+      "texto": "La fecha futura del traslado de mercadería es opcional",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E013",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E020-C1",
+      "campo": "E020",
+      "tipo": "condicional",
+      "texto": "El grupo de informaciones de Compras Públicas es obligatorio para tipo de operación B2G (D202=3)",
+      "condicion": {
+        "campo": "D202",
+        "op": "igual",
+        "valor": "3"
+      },
+      "codigo_sifen": "1400",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E020",
+          "pagina": 75
+        },
+        {
+          "doc": "MT150",
+          "ref": "1400",
+          "pagina": 169
+        },
+        {
+          "doc": "NT026",
+          "ref": "2.1 E020 (1400 excluida)",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2025-06-09",
+          "produccion": "2025-06-16"
+        }
+      }
+    },
+    {
+      "id": "R-E020-P1",
+      "campo": "E020",
+      "tipo": "prohibido",
+      "texto": "El grupo de informaciones de Compras Públicas solo es permitido para tipo de operación B2G (D202=3)",
+      "condicion": {
+        "campo": "D202",
+        "op": "distinto",
+        "valor": "3"
+      },
+      "codigo_sifen": "1401",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1401",
+          "pagina": 169
+        },
+        {
+          "doc": "NT026",
+          "ref": "2.1 E020a (1401 excluida)",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2025-06-09",
+          "produccion": "2025-06-16"
+        }
+      }
+    },
+    {
+      "id": "R-E020-OP",
+      "campo": "E020",
+      "tipo": "opcional",
+      "texto": "El grupo de informaciones de Compras Públicas es opcional si D202 = 3 (Tipo de operación B2G); se excluyen las validaciones 1400 y 1401",
+      "contradiccion": "C-204",
+      "fuentes": [
+        {
+          "doc": "NT026",
+          "ref": "1.2 E020",
+          "pagina": 1,
+          "cita": "Opcional si D202 = 3 (Tipo de operación B2G)"
+        },
+        {
+          "doc": "NT026",
+          "ref": "2.1 E020, E020a",
+          "pagina": 1
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2025-06-09",
+          "produccion": "2025-06-16"
+        }
+      }
+    },
+    {
+      "id": "R-E021-OB",
+      "campo": "E021",
+      "tipo": "obligatorio",
+      "texto": "Modalidad - Código emitido por la DNCP: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E021",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E022-OB",
+      "campo": "E022",
+      "tipo": "obligatorio",
+      "texto": "Entidad - Código emitido por la DNCP: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E022",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E023-OB",
+      "campo": "E023",
+      "tipo": "obligatorio",
+      "texto": "Año - Código emitido por la DNCP: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E023",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E024-OB",
+      "campo": "E024",
+      "tipo": "obligatorio",
+      "texto": "Secuencia - emitido por la DNCP: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E024",
+          "pagina": 75
+        }
+      ]
+    },
+    {
+      "id": "R-E025-OB",
+      "campo": "E025",
+      "tipo": "obligatorio",
+      "texto": "Fecha de emisión del código de contratación por la DNCP: se informa siempre que exista su grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E025",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "R-E025-D1",
+      "campo": "E025",
+      "tipo": "dependencia",
+      "texto": "La fecha de emisión del código de contratación (E025) no puede ser superior a la fecha de emisión de la Factura Electrónica (el Manual dice 'debe ser anterior' en el campo y cita D202 en la validación)",
+      "contradiccion": "C-203",
+      "codigo_sifen": "1402",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E025",
+          "pagina": 76,
+          "cita": "Esta fecha debe ser anterior a la fecha de emisión de la FE"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1402",
+          "pagina": 169
+        }
+      ]
+    }
+  ]
+}

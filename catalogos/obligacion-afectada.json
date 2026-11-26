@@ -1,0 +1,147 @@
+{
+  "id": "obligacion-afectada",
+  "titulo": "Tipo de obligaciones (Tabla 12)",
+  "fuentes": [
+    {
+      "doc": "NT018",
+      "ref": "3. Tabla nueva – TABLA 12 - TIPO DE OBLIGACIONES"
+    },
+    {
+      "doc": "NT018",
+      "ref": "D031"
+    },
+    {
+      "doc": "NT018",
+      "ref": "D032"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tcOblAfe (pattern [1-9][0-9][0-9])"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "D031",
+    "D032"
+  ],
+  "descripciones": {
+    "D031": "D032"
+  },
+  "xml": [
+    "cOblAfe",
+    "dDesOblAfe"
+  ],
+  "nota": "El orden de las entradas es el de la NT 18 (703 figura antes que 702).",
+  "entradas": [
+    {
+      "codigo": "113",
+      "descripcion": "IMPUESTO A LA RENTA IRACIS - REGÍMENES ESPECIALES",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "143",
+      "descripcion": "TRIBUTO UNICO MAQUILA",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "211",
+      "descripcion": "IMPUESTO AL VALOR AGREGADO - GRAVADAS Y EXONERADAS - EXPORTADORES",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "311",
+      "descripcion": "IMPUESTO SELECTIVO AL CONSUMO - GENERAL",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "321",
+      "descripcion": "IMPUESTO SELECTIVO AL CONSUMO COMBUSTIBLES",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "700",
+      "descripcion": "IMPUESTO A LA RENTA EMPRESARIAL - RÉGIMEN GENERAL",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "701",
+      "descripcion": "IMPUESTO A LA RENTA EMPRESARIAL - SIMPLE",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "703",
+      "descripcion": "IMPUESTO DE ZONA FRANCA",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "702",
+      "descripcion": "IMPUESTO A LA RENTA EMPRESARIAL - RESIMPLE",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "715",
+      "descripcion": "IMPUESTO A LA RENTA PERSONAL - SERVICIOS PERSONALES",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    },
+    {
+      "codigo": "716",
+      "descripcion": "IMPUESTO A LA RENTA PERSONAL - RENTAS Y GANANCIAS DE CAPITAL",
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-01",
+          "produccion": "2024-01-08"
+        }
+      }
+    }
+  ]
+}

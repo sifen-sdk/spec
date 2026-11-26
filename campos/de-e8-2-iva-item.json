@@ -1,0 +1,170 @@
+{
+  "grupo": "E8.2",
+  "titulo": "Campos que describen el IVA de la operación por ítem",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "E730",
+      "xml": "gCamIVA",
+      "nombre": "vat",
+      "padre": "E700",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que describen el IVA de la operación",
+      "contradiccion": "C-304",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E730"
+        }
+      ]
+    },
+    {
+      "id": "E731",
+      "xml": "iAfecIVA",
+      "nombre": "treatmentCode",
+      "padre": "E730",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Forma de afectación tributaria del IVA",
+      "observaciones": "1= Gravado IVA, 2= Exonerado (Art. 83- Ley 125/91), 3= Exento, 4= Gravado parcial (Grav-Exento)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E731"
+        },
+        {
+          "doc": "NT010",
+          "ref": "5.1 Tabla 6"
+        }
+      ],
+      "catalogo": "afectacion-iva"
+    },
+    {
+      "id": "E732",
+      "xml": "dDesAfecIVA",
+      "nombre": "treatmentDescription",
+      "padre": "E730",
+      "tipo": "alfanumerico",
+      "longitud": "6-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la forma de afectación tributaria del IVA",
+      "observaciones": "Referente al campo E731",
+      "contradiccion": "C-307",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E732"
+        },
+        {
+          "doc": "NT010",
+          "ref": "5.1 Tabla 6"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tdDesAfecIVA"
+        }
+      ],
+      "catalogo": "afectacion-iva"
+    },
+    {
+      "id": "E733",
+      "xml": "dPropIVA",
+      "nombre": "taxableProportionRate",
+      "padre": "E730",
+      "tipo": "numerico",
+      "longitud": "1-3p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Proporción gravada de IVA",
+      "observaciones": "Corresponde al porcentaje (%) gravado. Ejemplo: 100, 50, 30, 0",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E733"
+        }
+      ]
+    },
+    {
+      "id": "E734",
+      "xml": "dTasaIVA",
+      "nombre": "rate",
+      "padre": "E730",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Tasa del IVA",
+      "observaciones": "Corresponde al porcentaje (%) de la tasa expresado en números enteros",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E734"
+        }
+      ]
+    },
+    {
+      "id": "E735",
+      "xml": "dBasGravIVA",
+      "nombre": "taxableBase",
+      "padre": "E730",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Base gravada del IVA por ítem",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E735"
+        },
+        {
+          "doc": "NT013",
+          "ref": "1.1 E735"
+        }
+      ]
+    },
+    {
+      "id": "E736",
+      "xml": "dLiqIVAItem",
+      "nombre": "amount",
+      "padre": "E730",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Liquidación del IVA por ítem",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E736"
+        }
+      ]
+    },
+    {
+      "id": "E737",
+      "xml": "dBasExe",
+      "nombre": "exemptBase",
+      "padre": "E730",
+      "tipo": "numerico",
+      "longitud": "1-15p(0-8)",
+      "ocurrencia": "1-1",
+      "descripcion": "Base Exenta por ítem",
+      "fuentes": [
+        {
+          "doc": "NT013",
+          "ref": "1.2 E737"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tgCamIVA/dBasExe"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-04-21",
+          "produccion": "2023-06-17"
+        }
+      }
+    }
+  ]
+}

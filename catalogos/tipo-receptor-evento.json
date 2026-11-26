@@ -1,0 +1,36 @@
+{
+  "id": "tipo-receptor-evento",
+  "titulo": "Tipo de receptor (eventos de notificación y desconocimiento)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "GEN005"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GED005"
+    },
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tiTipEve (1, 2)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "GEN005",
+    "GED005"
+  ],
+  "xml": [
+    "iTipRec"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Contribuyente"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "No Contribuyente"
+    }
+  ]
+}

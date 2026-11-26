@@ -1,0 +1,42 @@
+{
+  "id": "tipo-pintura-vehiculo",
+  "titulo": "Tipo de pintura del vehículo",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTipoPint, tdDesTP"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "iTipoPint",
+    "dDesTP"
+  ],
+  "nota": "Solo en el XSD (no figura en el Manual ni en las Notas Técnicas). La correspondencia código-descripción se infiere del orden de las enumeraciones de ambos tipos.",
+  "contradiccion": "C-918",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Solida"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Metalica"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Perla"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Fosca"
+    },
+    {
+      "codigo": "9",
+      "descripcion": null,
+      "descripcion_libre": true,
+      "observacion": "El XSD admite el código pero no enumera su descripción (el tipo de descripción es una unión con texto libre)."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "grupo": "E8.1",
+  "reglas": [
+    {
+      "id": "R-E720-C1", "campo": "E720", "tipo": "condicional",
+      "texto": "El grupo de precios, descuentos y valor total por ítem es obligatorio para todos los tipos de documentos electrónicos excepto para Nota de Remisión Electrónica (C002=7)",
+      "condicion": { "campo": "C002", "op": "distinto", "valor": "7" },
+      "codigo_sifen": "1850",
+      "fuentes": [{ "doc": "MT150", "ref": "E720", "cita": "Obligatorio si C002 ≠ 7" }, { "doc": "MT150", "ref": "1850" }]
+    },
+    {
+      "id": "R-E720-P1", "campo": "E720", "tipo": "prohibido",
+      "texto": "Si el tipo de documento electrónico es Nota de Remisión Electrónica (C002=7), el grupo de precios, descuentos y valor total por ítem no debe ser informado",
+      "condicion": { "campo": "C002", "op": "igual", "valor": "7" },
+      "codigo_sifen": "1851",
+      "fuentes": [{ "doc": "MT150", "ref": "E720", "cita": "No informar si C002 = 7" }, { "doc": "MT150", "ref": "1851" }]
+    },
+
+    {
+      "id": "R-E721-O1", "campo": "E721", "tipo": "obligatorio",
+      "texto": "El precio unitario del producto y/o servicio (incluidos impuestos) es obligatorio",
+      "fuentes": [{ "doc": "MT150", "ref": "E721" }]
+    },
+
+    {
+      "id": "R-E725-C1", "campo": "E725", "tipo": "condicional",
+      "texto": "Si la condición del tipo de cambio es Por ítem (D017=2) es obligatorio informar el tipo de cambio por ítem",
+      "condicion": { "campo": "D017", "op": "igual", "valor": "2" },
+      "codigo_sifen": "1854",
+      "fuentes": [{ "doc": "MT150", "ref": "E725", "cita": "Obligatorio si D017 = 2" }, { "doc": "MT150", "ref": "1854" }]
+    },
+    {
+      "id": "R-E725-C2", "campo": "E725", "tipo": "condicional",
+      "texto": "El tipo de cambio por ítem es obligatorio si la moneda de la operación es distinta de PYG (según las observaciones del campo)",
+      "condicion": { "campo": "D015", "op": "distinto", "valor": "PYG" },
+      "contradiccion": "C-303",
+      "fuentes": [{ "doc": "MT150", "ref": "E725", "cita": "Obligatorio si D015 ≠ PYG" }]
+    },
+    {
+      "id": "R-E725-P1", "campo": "E725", "tipo": "prohibido",
+      "texto": "Si la condición del tipo de cambio es Global (D017=1), el tipo de cambio por ítem no debe ser informado",
+      "condicion": { "campo": "D017", "op": "igual", "valor": "1" },
+      "codigo_sifen": "1855",
+      "fuentes": [{ "doc": "MT150", "ref": "E725", "cita": "No informar si D017 = 1" }, { "doc": "MT150", "ref": "1855" }]
+    },
+    {
+      "id": "R-E725-P2", "campo": "E725", "tipo": "prohibido",
+      "texto": "Si la moneda de la operación (D015) es igual a PYG, el tipo de cambio por ítem no debe existir",
+      "condicion": { "campo": "D015", "op": "igual", "valor": "PYG" },
+      "codigo_sifen": "1856",
+      "fuentes": [{ "doc": "MT150", "ref": "1856" }]
+    },
+
+    {
+      "id": "R-E727-O1", "campo": "E727", "tipo": "obligatorio",
+      "texto": "El total bruto de la operación por ítem es obligatorio",
+      "fuentes": [{ "doc": "MT150", "ref": "E727" }]
+    },
+    {
+      "id": "R-E727-A1", "campo": "E727", "tipo": "aritmetica",
+      "texto": "El total bruto de la operación por ítem corresponde a la multiplicación del precio por ítem (E721) y la cantidad por ítem (E711)",
+      "formula": "E727 = E721 * E711",
+      "operandos": ["E721", "E711"],
+      "codigo_sifen": "1859",
+      "fuentes": [{ "doc": "MT150", "ref": "E727" }, { "doc": "MT150", "ref": "1859", "cita": "E727 debe corresponder al cálculo aritmético E721 * E711" }]
+    },
+
+    {
+      "id": "R-EA001-O1", "campo": "EA001", "tipo": "obligatorio",
+      "texto": "El grupo de descuentos, anticipos y valor total por ítem es obligatorio dentro de gValorItem",
+      "fuentes": [{ "doc": "MT150", "ref": "EA001", "cita": "G 1-1" }]
+    },
+
+    {
+      "id": "R-EA002-O1", "campo": "EA002", "tipo": "opcional",
+      "texto": "El descuento particular sobre el precio unitario por ítem tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "MT150", "ref": "EA002", "cita": "0-1" }]
+    },
+    {
+      "id": "R-EA002-F1", "campo": "EA002", "tipo": "formato", "no_declarativa": true,
+      "texto": "Si no hay descuento por ítem, completar con 0 (cero)",
+      "fuentes": [{ "doc": "MT150", "ref": "EA002", "cita": "Si no hay descuento por ítem completar con 0 (cero)" }]
+    },
+
+    {
+      "id": "R-EA003-C1", "campo": "EA003", "tipo": "condicional",
+      "texto": "Si se informa el descuento por ítem (EA002) con un monto superior a 0 (cero), es obligatorio indicar el porcentaje respectivo",
+      "condicion": { "campo": "EA002", "op": "mayor", "valor": "0" },
+      "codigo_sifen": "1852",
+      "fuentes": [{ "doc": "MT150", "ref": "EA003", "cita": "Debe existir si EA002 es mayor a 0 (cero)" }, { "doc": "MT150", "ref": "1852" }]
+    },
+    {
+      "id": "R-EA003-A1", "campo": "EA003", "tipo": "aritmetica",
+      "texto": "EA003 representa el porcentaje de descuento de EA002 con respecto al precio unitario del producto y/o servicio (E721)",
+      "formula": "EA003 = [EA002 * 100 / E721]",
+      "operandos": ["EA002", "E721"],
+      "holgura": 0.8,
+      "codigo_sifen": "1861",
+      "fuentes": [{ "doc": "MT150", "ref": "EA003", "cita": "[EA002 * 100 / E721]" }, { "doc": "MT150", "ref": "1861", "cita": "Puede haber una variación de 0.8" }]
+    },
+
+    {
+      "id": "R-EA004-O1", "campo": "EA004", "tipo": "opcional",
+      "texto": "El descuento global sobre el precio unitario por ítem tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "MT150", "ref": "EA004", "cita": "0-1" }]
+    },
+    {
+      "id": "R-EA004-C1", "campo": "EA004", "tipo": "condicional",
+      "texto": "Si el porcentaje de descuento global sobre total de la operación (F010) tiene un valor mayor a 0 (cero), es obligatorio indicar el descuento global sobre el precio unitario por ítem",
+      "condicion": { "campo": "F010", "op": "mayor", "valor": "0" },
+      "codigo_sifen": "1860",
+      "fuentes": [{ "doc": "NT001", "ref": "B-2 EA004a 1860" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-EA004-D1", "campo": "EA004", "tipo": "dependencia", "no_declarativa": true,
+      "texto": "Si se cuenta con un descuento global, debe ser aplicado (no es prorrateo) a cada uno de los ítems, independientemente de que un ítem cuente con un descuento particular",
+      "fuentes": [{ "doc": "MT150", "ref": "EA004" }, { "doc": "NT001", "ref": "A-1 EA004" }]
+    },
+    {
+      "id": "R-EA004-A1", "campo": "EA004", "tipo": "aritmetica",
+      "texto": "El descuento global sobre el precio unitario por ítem debe coincidir con el porcentaje de descuento global sobre total de la operación (F010) según la fórmula [EA004 * 100 / E721]",
+      "formula": "F010 = [EA004 * 100 / E721]",
+      "operandos": ["EA004", "E721", "F010"],
+      "holgura": 0.8,
+      "codigo_sifen": "1862",
+      "fuentes": [{ "doc": "MT150", "ref": "1862", "cita": "Según la siguiente fórmula: [EA004 * 100 / E721] Puede haber una variación de 0.8" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-EA004-A2", "campo": "EA004", "tipo": "aritmetica",
+      "texto": "El descuento global sobre el precio unitario por ítem se obtiene del porcentaje de descuento global sobre total de la operación (F010) aplicado al precio unitario (E721)",
+      "formula": "EA004 = [F010 * E721 / 100]",
+      "operandos": ["F010", "E721"],
+      "holgura": 0.8,
+      "codigo_sifen": "1862",
+      "fuentes": [{ "doc": "NT001", "ref": "A-1 EA004", "cita": "[F010 * E721 / 100]" }, { "doc": "NT001", "ref": "B-1 EA004 1862", "cita": "Según la siguiente fórmula: [F010 * E721 / 100] Puede haber una variación de 0.8" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+
+    {
+      "id": "R-EA006-O1", "campo": "EA006", "tipo": "opcional",
+      "texto": "El anticipo particular sobre el precio unitario por ítem tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "MT150", "ref": "EA006", "cita": "0-1" }]
+    },
+    {
+      "id": "R-EA006-F1", "campo": "EA006", "tipo": "formato", "no_declarativa": true,
+      "texto": "Si no hay anticipo por ítem, completar con 0 (cero)",
+      "fuentes": [{ "doc": "MT150", "ref": "EA006", "cita": "Si no hay anticipo por ítem completar con 0 (cero)" }]
+    },
+    {
+      "id": "R-EA006-D1", "campo": "EA006", "tipo": "dependencia", "no_declarativa": true,
+      "texto": "El anticipo particular se debe informar en la misma denominación monetaria en la que se informó en la FE de anticipo asociada (D015 de la FE asociada)",
+      "fuentes": [{ "doc": "MT150", "ref": "EA006" }]
+    },
+
+    {
+      "id": "R-EA007-O1", "campo": "EA007", "tipo": "opcional",
+      "texto": "El anticipo global sobre el precio unitario por ítem tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "MT150", "ref": "EA007", "cita": "0-1" }]
+    },
+    {
+      "id": "R-EA007-F1", "campo": "EA007", "tipo": "formato", "no_declarativa": true,
+      "texto": "Si no hay anticipo global por ítem, completar con 0 (cero)",
+      "fuentes": [{ "doc": "MT150", "ref": "EA007", "cita": "Si no hay anticipo global por ítem, completar con 0 (cero)" }]
+    },
+    {
+      "id": "R-EA007-D1", "campo": "EA007", "tipo": "dependencia", "no_declarativa": true,
+      "texto": "Si se cuenta con un anticipo global, debe ser aplicado a cada uno de los ítems, independientemente de que un ítem cuente con un anticipo particular",
+      "fuentes": [{ "doc": "MT150", "ref": "EA007" }]
+    },
+
+    {
+      "id": "R-EA008-O1", "campo": "EA008", "tipo": "obligatorio",
+      "texto": "El valor total de la operación por ítem es obligatorio",
+      "fuentes": [{ "doc": "MT150", "ref": "EA008" }]
+    },
+    {
+      "id": "R-EA008-A1", "campo": "EA008", "tipo": "aritmetica",
+      "texto": "Si el tipo de impuesto afectado es IVA, Renta, ninguno o IVA - Renta (D013 = 1, 3, 4 o 5), el valor total de la operación por ítem es el precio unitario menos descuentos y anticipos, por la cantidad",
+      "condicion": { "campo": "D013", "op": "en", "valores": ["1", "3", "4", "5"] },
+      "formula": "EA008 = (E721 – EA002 – EA004 – EA006 – EA007) * E711",
+      "operandos": ["E721", "EA002", "EA004", "EA006", "EA007", "E711"],
+      "codigo_sifen": "1853",
+      "contradiccion": "C-305",
+      "fuentes": [{ "doc": "MT150", "ref": "EA008", "cita": "(E721 (Precio unitario) – EA002 (Descuento particular) – EA004 (Descuento global) – EA006 (Anticipo particular) – EA007 (Anticipo global)) * E711(cantidad)" }, { "doc": "MT150", "ref": "1853", "cita": "IVA: (E721- EA002 – EA004 – EA006 – EA007) * E711" }]
+    },
+    {
+      "id": "R-EA008-A2", "campo": "EA008", "tipo": "aritmetica",
+      "texto": "Para Autofactura (C002=4), el valor total de la operación por ítem es el precio unitario por la cantidad",
+      "condicion": { "campo": "C002", "op": "igual", "valor": "4" },
+      "formula": "EA008 = E721*E711",
+      "operandos": ["E721", "E711"],
+      "contradiccion": "C-305",
+      "fuentes": [{ "doc": "MT150", "ref": "EA008", "cita": "Cálculo para Autofactura (C002=4): E721*E711" }]
+    },
+
+    {
+      "id": "R-EA009-C1", "campo": "EA009", "tipo": "condicional",
+      "texto": "Si se informa el tipo de cambio por ítem (E725), el valor total de la operación por ítem en guaraníes es obligatorio",
+      "condicion": { "campo": "E725", "op": "presente" },
+      "codigo_sifen": "1857",
+      "fuentes": [{ "doc": "MT150", "ref": "EA009", "cita": "Obligatorio si existe el campo E725" }, { "doc": "MT150", "ref": "1857" }]
+    },
+    {
+      "id": "R-EA009-A1", "campo": "EA009", "tipo": "aritmetica",
+      "texto": "El valor total de la operación por ítem en guaraníes es el valor total del ítem por el tipo de cambio del ítem",
+      "formula": "EA009 = EA008 * E725",
+      "operandos": ["EA008", "E725"],
+      "codigo_sifen": "1858",
+      "fuentes": [{ "doc": "MT150", "ref": "EA009", "cita": "EA008* E725" }, { "doc": "MT150", "ref": "1858" }]
+    }
+  ]
+}

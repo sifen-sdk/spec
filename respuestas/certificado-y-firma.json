@@ -1,0 +1,684 @@
+{
+  "respuestas": [
+    {
+      "codigo": "0001",
+      "servicio": "certificado",
+      "mensaje": "Certificado de Transmisor Inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AA01",
+      "validacion": "Certificado de Transmisor inexistente en el mensaje; Versión incorrecta; No se aceptan certificados de la AC; ExtendKeyUsage no define “ClientAuth“",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0001",
+          "pagina": 151
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.1",
+          "cita": "Retorna un html con el mensaje de error de Acceso Denegado por las políticas de acceso."
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-808"
+    },
+    {
+      "codigo": "0002",
+      "servicio": "certificado",
+      "mensaje": "Plazo de validez del Certificado digital",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AA02",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0002",
+          "pagina": 151
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.1",
+          "cita": "Retorna un html con el mensaje de error de Acceso Denegado por las políticas de acceso."
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-808"
+    },
+    {
+      "codigo": "0003",
+      "servicio": "certificado",
+      "mensaje": "Cadena de Certificación",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AA03",
+      "validacion": "Certificado del emisor no corresponde a un PSC habilitado en el país; Certificado del PSC revocado; Certificado no firmado por el PSC emisor del Certificado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0003",
+          "pagina": 152
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.1",
+          "cita": "Retorna un html con el mensaje de error de Acceso Denegado por las políticas de acceso."
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-808"
+    },
+    {
+      "codigo": "0004",
+      "servicio": "certificado",
+      "mensaje": "LCR del Certificado Transmisor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AA04",
+      "validacion": "No existe la dirección de la LCR (CRL DistributionPoint); LCR indisponible; LCR invalida",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0004",
+          "pagina": 152
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.1",
+          "cita": "Retorna un html con el mensaje de error de Acceso Denegado por las políticas de acceso."
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-808"
+    },
+    {
+      "codigo": "0005",
+      "servicio": "certificado",
+      "mensaje": "Certificado del transmisor revocado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AA05",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0005",
+          "pagina": 152
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.1",
+          "cita": "Retorna un html con el mensaje de error de Acceso Denegado por las políticas de acceso."
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-808"
+    },
+    {
+      "codigo": "0006",
+      "servicio": "certificado",
+      "mensaje": "Certificado Raíz no pertenece al MIC",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AA06",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0006",
+          "pagina": 152
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.1",
+          "cita": "Retorna un html con el mensaje de error de Acceso Denegado por las políticas de acceso."
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-808"
+    },
+    {
+      "codigo": "0007",
+      "servicio": "certificado",
+      "mensaje": "No existe la extensión del RUC del emisor en el certificado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AA07",
+      "validacion": "Si el Certificado es de persona jurídica, el RUC debe estar informado en el campo SerialNumber en caso de ser del tipo de Persona Física el RUC, estará informado en el campo: SubjectAlternativeName",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0007",
+          "pagina": 152
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.1",
+          "cita": "Retorna un html con el mensaje de error de Acceso Denegado por las políticas de acceso."
+        }
+      ],
+      "vigencia": {
+        "hasta": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-808"
+    },
+    {
+      "codigo": "0100",
+      "servicio": "generico",
+      "mensaje": "Fallo de schema XML del área de datos",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AB01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0100",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0101",
+      "servicio": "generico",
+      "mensaje": "Fallo de schema: no existe el campo raíz esperado para el mensaje",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AB02",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0101",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0102",
+      "servicio": "generico",
+      "mensaje": "Fallo de schema: no existe el atributo versión para el campo raíz esperado para el mensaje",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AB03",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0102",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0104",
+      "servicio": "generico",
+      "mensaje": "Existe algún namespace diferente del namespace estándar del DE",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AB05",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0104",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0105",
+      "servicio": "generico",
+      "mensaje": "Existe(n) carácter(es) de edición en el inicio o en el final del mensaje, o entre los campos XML",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AB06",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0105",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0106",
+      "servicio": "generico",
+      "mensaje": "Utilizado prefijo en el namespace",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AB07",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0106",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0107",
+      "servicio": "generico",
+      "mensaje": "Utilizada codificación diferente de UTF-8",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AB08",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0107",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0120",
+      "servicio": "certificado",
+      "mensaje": "Certificado inválido",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AC01",
+      "validacion": "No existe el certificado de firma en el mensaje; No se aceptan certificados del PSC; KeyUsage no define firma digital y no Repudio; Cadena de certificación inválida",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0120",
+          "pagina": 153
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.4 AC01"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "historial": [
+        {
+          "mensaje": "Certificado inválido",
+          "validacion": "No existe certificado de firma en el mensaje; No se aceptan certificados del PSC; KeyUsage no define firma digital y no Repudio",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "0120",
+              "pagina": 153
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-08-25",
+              "produccion": "2023-09-22"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "codigo": "0121",
+      "servicio": "certificado",
+      "mensaje": "Alguna o todas las fechas del certificado (inicio o final de validez del certificado) inválidas",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AC02",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0121",
+          "pagina": 153
+        }
+      ]
+    },
+    {
+      "codigo": "0122",
+      "servicio": "certificado",
+      "mensaje": "No existe la extensión del RUC en el certificado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AC03",
+      "validacion": "De Persona Física: en el OID, correspondiente al SubjectAlternativeName; De Persona Jurídica: en el OID correspondiente al SerialNumber",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0122",
+          "pagina": 153
+        }
+      ]
+    },
+    {
+      "codigo": "0123",
+      "servicio": "certificado",
+      "mensaje": "Cadena de certificación inválida",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AC04",
+      "validacion": "Certificado del PSC no habilitado por el MIC; Certificado del PSC revocado; Certificado no está firmado por el PSC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0123",
+          "pagina": 153
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0124",
+      "servicio": "certificado",
+      "mensaje": "Problema en la LCR del certificado de firma",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AC05",
+      "validacion": "Dirección de la LCR no informada (CRLDistributionPoint); Error en el acceso a la LCR; LCR inexistente",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0124",
+          "pagina": 154
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0125",
+      "servicio": "certificado",
+      "mensaje": "Certificado de firma revocado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AC06",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0125",
+          "pagina": 154
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0126",
+      "servicio": "certificado",
+      "mensaje": "Certificado raíz no corresponde al MIC",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AC07",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0126",
+          "pagina": 154
+        }
+      ],
+      "contradiccion": "C-801"
+    },
+    {
+      "codigo": "0140",
+      "servicio": "certificado",
+      "mensaje": "Firma difiere del estándar [Detalle del error]",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AD01",
+      "validacion": "No fue firmado el documento completo (falta Reference URI en la firma); Transform Algorithm previsto en la firma (Enveloped Signature) no informado o no válido; Canonicalization Method previsto en la firma no informádo o no válido; Signature Method previsto en la firma no informádo o no válido; Digest Method previsto en la firma no informádo o no válido; Reference URI no coincide con el atributo Id del documento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0140",
+          "pagina": 154
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.5 AD01"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-815",
+      "historial": [
+        {
+          "mensaje": "Firma difiere del estándar",
+          "validacion": "No fue firmado el documento completo (falta Reference URI en la firma); Transform Algorithm previsto en la firma (“C14N” y Enveloped) no informado",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "0140",
+              "pagina": 154
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-08-25",
+              "produccion": "2023-09-22"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "codigo": "0141",
+      "servicio": "certificado",
+      "mensaje": "Valor de la firma (SignatureValue) diferente del calculado por el PKI [Detalle del error]",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AD02",
+      "validacion": "XML modificado luego de la firma o mal firmado; Certificado del PCSC no habilitado por el MIC; Certificado del PCSC revocado; Certificado no está firmado por el PCSC; Dirección de la LCR no informada (CRLDistributionPoint); Error en el acceso a la LCR; LCR inexistente; Certificado de firma revocado; Certificado raíz no corresponde al MIC",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0141",
+          "pagina": 154
+        },
+        {
+          "doc": "NT016",
+          "ref": "12.2.5 AD02"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-08-25",
+          "produccion": "2023-09-22"
+        }
+      },
+      "contradiccion": "C-815",
+      "historial": [
+        {
+          "mensaje": "Valor de la firma (SignatureValue) diferente del calculado por el PKI",
+          "validacion": "Certificado del PSC no habilitado por el MIC; Certificado del PSC revocado; Certificado no está firmado por el PSC; Dirección de la LCR no informada (CRLDistributionPoint); Error en el acceso a la LCR; LCR inexistente; Certificado de firma revocado; Certificado raíz no corresponde al MIC",
+          "efecto": "R",
+          "fuentes": [
+            {
+              "doc": "MT150",
+              "ref": "0141",
+              "pagina": 154
+            }
+          ],
+          "vigencia": {
+            "hasta": {
+              "test": "2023-08-25",
+              "produccion": "2023-09-22"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "codigo": "0142",
+      "servicio": "certificado",
+      "mensaje": "RUC del certificado utilizado para firmar no pertenece al Contribuyente emisor",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AD03",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0142",
+          "pagina": 154
+        }
+      ]
+    },
+    {
+      "codigo": "0143",
+      "servicio": "certificado",
+      "mensaje": "La firma del Evento del receptor del DE/DTE no corresponde",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AD04",
+      "validacion": "La firma digital del evento debe corresponder al receptor del DE/DTE",
+      "fuentes": [
+        {
+          "doc": "NT019",
+          "ref": "0143"
+        }
+      ],
+      "vigencia": {
+        "desde": {
+          "test": "2023-12-15",
+          "produccion": "2024-01-31"
+        }
+      }
+    },
+    {
+      "codigo": "0160",
+      "servicio": "generico",
+      "mensaje": "XML malformado",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AE01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0160",
+          "pagina": 154
+        },
+        {
+          "doc": "MT150",
+          "ref": "9 (ejemplo de respuesta)",
+          "pagina": 37,
+          "cita": "<ns2:dMsgRes>XML malformado</ns2:dMsgRes>"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta-lote, Procesamiento concluido",
+          "cita": "XML malformado: [El valor del elemento: dDirRec es invalido, ...]"
+        }
+      ],
+      "contradiccion": "C-815"
+    },
+    {
+      "codigo": "0161",
+      "servicio": "generico",
+      "mensaje": "Servidor de procesamiento momentáneamente sin respuesta",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AE02",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0161",
+          "pagina": 154
+        }
+      ]
+    },
+    {
+      "codigo": "0162",
+      "servicio": "generico",
+      "mensaje": "Servidor de procesamiento paralizado, sin tiempo de regreso",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AE03",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0162",
+          "pagina": 154
+        }
+      ]
+    },
+    {
+      "codigo": "0163",
+      "servicio": "generico",
+      "mensaje": "Versión del formato del WS no soportada",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AE04",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0163",
+          "pagina": 154
+        }
+      ]
+    },
+    {
+      "codigo": "0180",
+      "servicio": "generico",
+      "mensaje": "Elemento deHeaderMsg inexistente en el SOAP Header",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AF01",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0180",
+          "pagina": 155
+        }
+      ]
+    },
+    {
+      "codigo": "0183",
+      "servicio": "generico",
+      "mensaje": "RUC del certificado utilizado en la conexión no pertenece a un contribuyente activo en la base de datos de RUC.",
+      "clase": "rechazo",
+      "efecto": "R",
+      "id_validacion": "AF04",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "0183",
+          "pagina": 155
+        }
+      ]
+    }
+  ]
+}

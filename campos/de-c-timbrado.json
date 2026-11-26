@@ -1,0 +1,195 @@
+{
+  "grupo": "C",
+  "titulo": "Campos de datos del Timbrado (C001-C099)",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "C001",
+      "xml": "gTimb",
+      "nombre": "stamp",
+      "padre": "A001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Datos del timbrado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C001"
+        }
+      ]
+    },
+    {
+      "id": "C002",
+      "xml": "iTiDE",
+      "nombre": "documentTypeCode",
+      "padre": "C001",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de Documento Electrónico",
+      "observaciones": "Manual: 1= Factura electrónica; 2= Factura electrónica de exportación (Futuro); 3= Factura electrónica de importación (Futuro); 4= Autofactura electrónica; 5= Nota de crédito electrónica; 6= Nota de débito electrónica; 7= Nota de remisión electrónica; 8= Comprobante de retención electrónico (Futuro). El XSD admite 1, 4-7, 9 y 10.",
+      "contradiccion": "C-104",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C002"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_Types_v150.xsd tiTiDE"
+        }
+      ],
+      "catalogo": "tipo-documento"
+    },
+    {
+      "id": "C003",
+      "xml": "dDesTiDE",
+      "nombre": "documentTypeDescription",
+      "padre": "C001",
+      "tipo": "alfanumerico",
+      "longitud": "15-40",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del tipo de documento electrónico",
+      "observaciones": "Referente al campo C002",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C003"
+        }
+      ],
+      "catalogo": "tipo-documento"
+    },
+    {
+      "id": "C004",
+      "xml": "dNumTim",
+      "nombre": "number",
+      "padre": "C001",
+      "tipo": "numerico",
+      "longitud": "8",
+      "ocurrencia": "1-1",
+      "descripcion": "Número del timbrado",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C004"
+        }
+      ]
+    },
+    {
+      "id": "C005",
+      "xml": "dEst",
+      "nombre": "establishment",
+      "padre": "C001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Establecimiento",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C005"
+        }
+      ]
+    },
+    {
+      "id": "C006",
+      "xml": "dPunExp",
+      "nombre": "dispatchPoint",
+      "padre": "C001",
+      "tipo": "alfanumerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Punto de expedición",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C006"
+        }
+      ]
+    },
+    {
+      "id": "C007",
+      "xml": "dNumDoc",
+      "nombre": "documentNumber",
+      "padre": "C001",
+      "tipo": "alfanumerico",
+      "longitud": "7",
+      "ocurrencia": "1-1",
+      "descripcion": "Número del documento",
+      "observaciones": "Una vez que se haya agotado la numeración permitida por el sistema (9999999), la numeración de los comprobantes electrónicos se reinicia con la utilización de la serie, para evitar rechazos por duplicidad",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C007"
+        }
+      ]
+    },
+    {
+      "id": "C010",
+      "xml": "dSerieNum",
+      "nombre": "series",
+      "padre": "C001",
+      "tipo": "alfanumerico",
+      "longitud": "2",
+      "ocurrencia": "0-1",
+      "descripcion": "Serie del número de timbrado",
+      "observaciones": "Referirse a la sección Manejo del timbrado y Numeración. Series: todas las combinaciones de a dos letras mayúsculas excepto la Ñ, en el orden AA, AB, ..., AZ, BA, ..., ZZ.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C010"
+        },
+        {
+          "doc": "MT150",
+          "ref": "10.5 Manejo del timbrado y Numeración"
+        }
+      ]
+    },
+    {
+      "id": "C008",
+      "xml": "dFeIniT",
+      "nombre": "startDate",
+      "padre": "C001",
+      "tipo": "fecha",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha inicio de vigencia del timbrado",
+      "observaciones": "Formato AAAA-MM-DD. Ejemplo 2018-05-31. Para el KuDE: el Manual pide el formato con guiones (2018-05-31); la NT 10 lo cambia a DD-MM-AAAA con guiones (31-05-2018).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C008"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.11 C008 dFeIniT"
+        }
+      ]
+    },
+    {
+      "id": "C009",
+      "xml": "dFeFinT",
+      "nombre": "endDate",
+      "padre": "C001",
+      "tipo": "fecha",
+      "longitud": "10",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha fin de vigencia del timbrado",
+      "observaciones": "Formato AAAA-MM-DD. No existe en el XSD vigente (tgDTim).",
+      "contradiccion": "C-105",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "C009"
+        },
+        {
+          "doc": "MT150",
+          "ref": "10.5 Manejo del timbrado y Numeración",
+          "cita": "el timbrado no manejará una fecha de fin de vigencia"
+        }
+      ]
+    }
+  ]
+}

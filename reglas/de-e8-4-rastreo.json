@@ -1,0 +1,146 @@
+{
+  "grupo": "E8.4",
+  "reglas": [
+    {
+      "id": "R-E750-O1", "campo": "E750", "tipo": "opcional",
+      "texto": "El grupo de rastreo de la mercadería es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E750", "cita": "G 0-1" }]
+    },
+
+    {
+      "id": "R-E751-O1", "campo": "E751", "tipo": "opcional",
+      "texto": "El número de lote tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "MT150", "ref": "E751", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E751-C1", "campo": "E751", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el número de lote los sujetos alcanzados por la RG N° 24/2019 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E751", "cita": "Obligados por la RG N° 24/2019 – Agroquímicos" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E751-C2", "campo": "E751", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el número de lote los sujetos alcanzados por el Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E751", "cita": "Obligados por Art. 1 de la RG N° 106/2021 – Agroquímicos" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+
+    {
+      "id": "R-E752-O1", "campo": "E752", "tipo": "opcional",
+      "texto": "La fecha de vencimiento de la mercadería es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E752", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E752-F1", "campo": "E752", "tipo": "formato",
+      "texto": "La fecha de vencimiento de la mercadería se informa en formato AAAA-MM-DD",
+      "fuentes": [{ "doc": "MT150", "ref": "E752", "cita": "Formato AAAA-MM-DD" }]
+    },
+    {
+      "id": "R-E753-O1", "campo": "E753", "tipo": "opcional",
+      "texto": "El número de serie es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E753", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E754-O1", "campo": "E754", "tipo": "opcional",
+      "texto": "El número de pedido es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E754", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E755-O1", "campo": "E755", "tipo": "opcional",
+      "texto": "El número de seguimiento del envío es opcional",
+      "fuentes": [{ "doc": "MT150", "ref": "E755", "cita": "0-1" }]
+    },
+
+    {
+      "id": "R-E756-C1", "campo": "E756", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el nombre del importador los sujetos alcanzados por la RG N° 16/2019 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E756" }, { "doc": "NT010", "ref": "1.4 E756", "cita": "se elimina los siguientes campos" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E757-C1", "campo": "E757", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar la dirección del importador los sujetos alcanzados por la RG N° 16/2019 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E757" }, { "doc": "NT010", "ref": "1.4 E757", "cita": "se elimina los siguientes campos" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E758-C1", "campo": "E758", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el número de registro de la firma del importador los sujetos alcanzados por la RG N° 16/2019 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E758" }, { "doc": "NT010", "ref": "1.4 E758", "cita": "se elimina los siguientes campos" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+
+    {
+      "id": "R-E759-O1", "campo": "E759", "tipo": "opcional",
+      "texto": "El número de registro del producto otorgado por el SENAVE tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "MT150", "ref": "E759", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E759-C1", "campo": "E759", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el número de registro del producto otorgado por el SENAVE los sujetos alcanzados por la RG N° 16/2019 y la RG N° 24/2019 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E759" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E759-C2", "campo": "E759", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el número de registro del producto otorgado por el SENAVE los sujetos alcanzados por el Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E759" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E759-F1", "campo": "E759", "tipo": "formato",
+      "texto": "El número de registro del producto otorgado por el SENAVE tiene longitud exacta de 20 caracteres",
+      "fuentes": [{ "doc": "MT150", "ref": "E759", "cita": "A 20" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E759-F2", "campo": "E759", "tipo": "formato",
+      "texto": "El número de registro del producto otorgado por el SENAVE tiene longitud de 1 a 20 caracteres",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E759", "cita": "A 1-20" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+
+    {
+      "id": "R-E760-O1", "campo": "E760", "tipo": "opcional",
+      "texto": "El número de registro de entidad comercial otorgado por el SENAVE tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "MT150", "ref": "E760", "cita": "0-1" }]
+    },
+    {
+      "id": "R-E760-C1", "campo": "E760", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el número de registro de entidad comercial otorgado por el SENAVE los sujetos alcanzados por la RG N° 24/2019 – Agroquímicos",
+      "fuentes": [{ "doc": "MT150", "ref": "E760" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E760-C2", "campo": "E760", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el número de registro de entidad comercial otorgado por el SENAVE los sujetos alcanzados por el Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E760" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E760-F1", "campo": "E760", "tipo": "formato",
+      "texto": "El número de registro de entidad comercial otorgado por el SENAVE tiene longitud exacta de 20 caracteres",
+      "fuentes": [{ "doc": "MT150", "ref": "E760", "cita": "A 20" }],
+      "vigencia": { "hasta": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E760-F2", "campo": "E760", "tipo": "formato",
+      "texto": "El número de registro de entidad comercial otorgado por el SENAVE tiene longitud de 1 a 20 caracteres",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E760", "cita": "A 1-20" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+
+    {
+      "id": "R-E761-O1", "campo": "E761", "tipo": "opcional",
+      "texto": "El nombre del producto tiene ocurrencia 0-1",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E761", "cita": "0-1" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    },
+    {
+      "id": "R-E761-C1", "campo": "E761", "tipo": "condicional", "no_declarativa": true,
+      "texto": "Están obligados a informar el nombre del producto los sujetos alcanzados por el Art. 1 de la RG N° 106/2021 – Agroquímicos",
+      "fuentes": [{ "doc": "NT010", "ref": "1.4 E761" }],
+      "vigencia": { "desde": { "test": null, "produccion": null } }
+    }
+  ]
+}

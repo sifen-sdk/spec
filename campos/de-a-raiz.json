@@ -1,0 +1,148 @@
+{
+  "grupo": "AA-A",
+  "titulo": "Campos que identifican el formato electrónico XML (AA001-AA009) y campos firmados del Documento Electrónico (A001-A099)",
+  "esquemas": [
+    "DE_v150.xsd",
+    "siRecepDE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "AA001",
+      "xml": "rDE",
+      "nombre": "electronicDocument",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Documento Electrónico elemento raíz",
+      "observaciones": "El tipo complejo rDE se define en DE_v150.xsd; el elemento raíz rDE se declara en siRecepDE_v150.xsd. Contiene además ds:Signature (I001) y gCamFuFD (J001), cargados en sus grupos.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AA001"
+        },
+        {
+          "doc": "XSD",
+          "ref": "siRecepDE_v150.xsd elemento rDE (tipo rDE de DE_v150.xsd)"
+        }
+      ]
+    },
+    {
+      "id": "AA002",
+      "xml": "dVerFor",
+      "nombre": "formatVersion",
+      "padre": "AA001",
+      "tipo": "numerico",
+      "longitud": "3",
+      "ocurrencia": "1-1",
+      "descripcion": "Versión del formato",
+      "observaciones": "Control de versiones",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "AA002"
+        }
+      ]
+    },
+    {
+      "id": "A001",
+      "xml": "DE",
+      "nombre": "signedDocument",
+      "padre": "AA001",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Campos firmados del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A001"
+        }
+      ]
+    },
+    {
+      "id": "A002",
+      "xml": "Id",
+      "nombre": "cdc",
+      "padre": "A001",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador del DE",
+      "observaciones": "Atributo del Tag <DE> (no es un elemento). El Manual no indica ocurrencia; la ocurrencia 1-1 sale del XSD (use=required). En el KuDE el CDC se expone en grupos de cuatro caracteres (sección 10.1).",
+      "contradiccion": "C-101",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A002",
+          "cita": "Atributo del Tag <DE>"
+        },
+        {
+          "doc": "MT150",
+          "ref": "10.1 Estructura del código de control (CDC) de los DE"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tDE atributo Id (tCDC, use=required)"
+        }
+      ]
+    },
+    {
+      "id": "A003",
+      "xml": "dDVId",
+      "nombre": "cdcCheckDigit",
+      "padre": "A001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Dígito verificador del identificador del DE",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A003"
+        }
+      ]
+    },
+    {
+      "id": "A004",
+      "xml": "dFecFirma",
+      "nombre": "signatureDateTime",
+      "padre": "A001",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha de la firma",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A004"
+        }
+      ]
+    },
+    {
+      "id": "A005",
+      "xml": "dSisFact",
+      "nombre": "billingSystemCode",
+      "padre": "A001",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Sistema de facturación",
+      "observaciones": "1=Sistema de facturación del contribuyente, 2=SIFEN solución gratuita (Manual). La NT 10 lo elimina; el XSD lo mantiene obligatorio y solo admite el valor 1.",
+      "contradiccion": "C-103",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "A005"
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.1 A005 dSisFact (se elimina el campo)"
+        },
+        {
+          "doc": "XSD",
+          "ref": "DE_v150.xsd tDE/dSisFact (xs:positiveInteger, maxInclusive 1)"
+        }
+      ],
+      "catalogo": "sistema-facturacion"
+    }
+  ]
+}

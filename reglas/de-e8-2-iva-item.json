@@ -1,0 +1,221 @@
+{
+  "grupo": "E8.2",
+  "reglas": [
+    {
+      "id": "R-E730-C1", "campo": "E730", "tipo": "condicional",
+      "texto": "Si el tipo de impuesto al consumo afectado es IVA, Renta, Ninguno o IVA - Renta (D013=1, 3, 4 o 5), el grupo del IVA de la operación es obligatorio para todos los tipos de documentos electrónicos excepto Factura Electrónica de Importación, Autofactura Electrónica o Nota de Remisión Electrónica (C002=3, 4 o 7)",
+      "condicion": { "todas": [
+        { "campo": "D013", "op": "en", "valores": ["1", "3", "4", "5"] },
+        { "campo": "C002", "op": "no_en", "valores": ["3", "4", "7"] }
+      ] },
+      "codigo_sifen": "1900",
+      "contradiccion": "C-304",
+      "fuentes": [{ "doc": "MT150", "ref": "E730", "cita": "Obligatorio si D013=1, 3, 4 o 5 y C002 ≠ 4 o 7" }, { "doc": "MT150", "ref": "1900" }]
+    },
+    {
+      "id": "R-E730-P1", "campo": "E730", "tipo": "prohibido",
+      "texto": "Si el tipo de documento electrónico es Factura Electrónica de Importación, Autofactura Electrónica o Nota de Remisión Electrónica (C002=3, 4 o 7), el grupo del IVA de la operación no debe ser informado",
+      "condicion": { "campo": "C002", "op": "en", "valores": ["3", "4", "7"] },
+      "codigo_sifen": "1901",
+      "contradiccion": "C-304",
+      "fuentes": [{ "doc": "MT150", "ref": "E730", "cita": "No informar si D013=2 y C002= 4 o 7" }, { "doc": "MT150", "ref": "1901" }]
+    },
+    {
+      "id": "R-E730-P2", "campo": "E730", "tipo": "prohibido",
+      "texto": "Si el tipo de impuesto al consumo afectado es ISC (D013=2), el grupo del IVA de la operación no debe ser informado",
+      "condicion": { "campo": "D013", "op": "igual", "valor": "2" },
+      "codigo_sifen": "1902",
+      "contradiccion": "C-304",
+      "fuentes": [{ "doc": "MT150", "ref": "1902" }]
+    },
+
+    {
+      "id": "R-E731-O1", "campo": "E731", "tipo": "obligatorio",
+      "texto": "La forma de afectación tributaria del IVA es obligatoria dentro del grupo del IVA",
+      "fuentes": [{ "doc": "MT150", "ref": "E731" }]
+    },
+    {
+      "id": "R-E731-F1", "campo": "E731", "tipo": "formato",
+      "texto": "Valores admitidos: 1 = Gravado IVA, 2 = Exonerado, 3 = Exento, 4 = Gravado parcial (Grav-Exento)",
+      "fuentes": [{ "doc": "MT150", "ref": "E731" }, { "doc": "NT010", "ref": "5.1 Tabla 6" }]
+    },
+
+    {
+      "id": "R-E732-O1", "campo": "E732", "tipo": "obligatorio",
+      "texto": "La descripción de la forma de afectación tributaria del IVA es obligatoria dentro del grupo del IVA",
+      "fuentes": [{ "doc": "MT150", "ref": "E732" }]
+    },
+    {
+      "id": "R-E732-D1", "campo": "E732", "tipo": "dependencia",
+      "texto": "La descripción de la forma de afectación tributaria del IVA debe coincidir con lo informado en el campo E731",
+      "codigo_sifen": "1903",
+      "contradiccion": "C-307",
+      "fuentes": [{ "doc": "MT150", "ref": "E732" }, { "doc": "MT150", "ref": "1903" }, { "doc": "NT010", "ref": "5.1 Tabla 6" }]
+    },
+
+    {
+      "id": "R-E733-O1", "campo": "E733", "tipo": "obligatorio",
+      "texto": "La proporción gravada de IVA es obligatoria dentro del grupo del IVA",
+      "fuentes": [{ "doc": "MT150", "ref": "E733" }]
+    },
+    {
+      "id": "R-E733-F1", "campo": "E733", "tipo": "formato",
+      "texto": "Si la forma de afectación tributaria del IVA es Gravado IVA (E731=1), la proporción gravada del IVA debe ser igual a 100 (cien)",
+      "condicion": { "campo": "E731", "op": "igual", "valor": "1" },
+      "codigo_sifen": "1904",
+      "fuentes": [{ "doc": "MT150", "ref": "1904" }]
+    },
+    {
+      "id": "R-E733-F2", "campo": "E733", "tipo": "formato",
+      "texto": "Si la forma de afectación tributaria del IVA es Exonerado o Exento (E731=2 o 3), la proporción gravada del IVA debe ser igual a 0 (cero)",
+      "condicion": { "campo": "E731", "op": "en", "valores": ["2", "3"] },
+      "codigo_sifen": "1905",
+      "fuentes": [{ "doc": "MT150", "ref": "1905" }]
+    },
+    {
+      "id": "R-E733-F3", "campo": "E733", "tipo": "formato",
+      "texto": "Si la forma de afectación tributaria del IVA es Gravado parcial (E731=4), la proporción gravada del IVA debe ser inferior a 100 (cien) y superior a 0 (cero)",
+      "condicion": { "campo": "E731", "op": "igual", "valor": "4" },
+      "codigo_sifen": "1906",
+      "fuentes": [{ "doc": "MT150", "ref": "1906" }]
+    },
+
+    {
+      "id": "R-E734-O1", "campo": "E734", "tipo": "obligatorio",
+      "texto": "La tasa del IVA es obligatoria dentro del grupo del IVA",
+      "fuentes": [{ "doc": "MT150", "ref": "E734" }]
+    },
+    {
+      "id": "R-E734-F1", "campo": "E734", "tipo": "formato",
+      "texto": "Para la forma de afectación tributaria Exonerado o Exento (E731=2 o 3), la tasa del IVA debe ser igual a 0 (cero)",
+      "condicion": { "campo": "E731", "op": "en", "valores": ["2", "3"] },
+      "codigo_sifen": "1907",
+      "fuentes": [{ "doc": "MT150", "ref": "E734", "cita": "0 (para E731 = 2 o 3)" }, { "doc": "MT150", "ref": "1907" }]
+    },
+    {
+      "id": "R-E734-F2", "campo": "E734", "tipo": "formato",
+      "texto": "Para la forma de afectación tributaria Gravado IVA o Gravado parcial (E731=1 o 4), la tasa del IVA debe ser igual a 5 (cinco) o 10 (diez)",
+      "condicion": { "campo": "E731", "op": "en", "valores": ["1", "4"] },
+      "codigo_sifen": "1908",
+      "fuentes": [{ "doc": "MT150", "ref": "E734", "cita": "5 (para E731 = 1 o 4) 10 (para E731 = 1 o 4)" }, { "doc": "MT150", "ref": "1908" }]
+    },
+
+    {
+      "id": "R-E735-O1", "campo": "E735", "tipo": "obligatorio",
+      "texto": "La base gravada del IVA por ítem es obligatoria dentro del grupo del IVA",
+      "fuentes": [{ "doc": "MT150", "ref": "E735" }]
+    },
+    {
+      "id": "R-E735-A1", "campo": "E735", "tipo": "aritmetica",
+      "texto": "Si la forma de afectación tributaria del IVA es Exonerado o Exento (E731=2 o 3), la base gravada del IVA por ítem debe ser igual a 0 (cero)",
+      "condicion": { "campo": "E731", "op": "en", "valores": ["2", "3"] },
+      "formula": "E735 = 0",
+      "operandos": [],
+      "codigo_sifen": "1909",
+      "fuentes": [{ "doc": "MT150", "ref": "E735", "cita": "Si E731 = 2 o 3 este campo es igual 0" }, { "doc": "MT150", "ref": "1909" }, { "doc": "NT013", "ref": "1.1 E735", "cita": "Si E731 = 2 o 3 este campo es igual 0" }]
+    },
+    {
+      "id": "R-E735-A2", "campo": "E735", "tipo": "aritmetica",
+      "texto": "Si E731 = 1 o 4 y la tasa es del 5% (E734 = 5), la base gravada es la porción gravada del total del ítem dividida por 1,05",
+      "condicion": { "todas": [
+        { "campo": "E731", "op": "en", "valores": ["1", "4"] },
+        { "campo": "E734", "op": "igual", "valor": "5" }
+      ] },
+      "formula": "E735 = [EA008* (E733/100)] / 1,05",
+      "operandos": ["EA008", "E733"],
+      "codigo_sifen": "1910",
+      "fuentes": [{ "doc": "MT150", "ref": "E735", "cita": "[EA008* (E733/100)] / 1,05 si la tasa es del 5%" }, { "doc": "MT150", "ref": "1910" }],
+      "vigencia": { "hasta": { "test": "2023-04-21", "produccion": "2023-06-17" } }
+    },
+    {
+      "id": "R-E735-A3", "campo": "E735", "tipo": "aritmetica",
+      "texto": "Si E731 = 1 o 4 y la tasa es del 10% (E734 = 10), la base gravada es la porción gravada del total del ítem dividida por 1,1",
+      "condicion": { "todas": [
+        { "campo": "E731", "op": "en", "valores": ["1", "4"] },
+        { "campo": "E734", "op": "igual", "valor": "10" }
+      ] },
+      "formula": "E735 = [EA008* (E733/100)] / 1,1",
+      "operandos": ["EA008", "E733"],
+      "codigo_sifen": "1911",
+      "fuentes": [{ "doc": "MT150", "ref": "E735", "cita": "[EA008* (E733/100)] / 1,1 si la tasa es del 10%" }, { "doc": "MT150", "ref": "1911" }],
+      "vigencia": { "hasta": { "test": "2023-04-21", "produccion": "2023-06-17" } }
+    },
+    {
+      "id": "R-E735-A4", "campo": "E735", "tipo": "aritmetica",
+      "texto": "Si E731 = 1 o 4 y la tasa es del 5% (E734 = 5), la base gravada del IVA por ítem se calcula con la fórmula de la NT 13",
+      "condicion": { "todas": [
+        { "campo": "E731", "op": "en", "valores": ["1", "4"] },
+        { "campo": "E734", "op": "igual", "valor": "5" }
+      ] },
+      "formula": "E735 = [100 * EA008 * E733] / [10000 + (E734 * E733)]",
+      "operandos": ["EA008", "E733", "E734"],
+      "codigo_sifen": "1910",
+      "fuentes": [{ "doc": "NT013", "ref": "1.1 E735" }, { "doc": "NT013", "ref": "2.2 E735a 1910", "cita": "[100 * EA008 * E733] / [10000 + (E734 * E733)]" }],
+      "vigencia": { "desde": { "test": "2023-04-21", "produccion": "2023-06-17" } }
+    },
+    {
+      "id": "R-E735-A5", "campo": "E735", "tipo": "aritmetica",
+      "texto": "Si E731 = 1 o 4 y la tasa es del 10% (E734 = 10), la base gravada del IVA por ítem se calcula con la fórmula de la NT 13",
+      "condicion": { "todas": [
+        { "campo": "E731", "op": "en", "valores": ["1", "4"] },
+        { "campo": "E734", "op": "igual", "valor": "10" }
+      ] },
+      "formula": "E735 = [100 * EA008 * E733] / [10000 + (E734 * E733)]",
+      "operandos": ["EA008", "E733", "E734"],
+      "codigo_sifen": "1911",
+      "fuentes": [{ "doc": "NT013", "ref": "1.1 E735" }, { "doc": "NT013", "ref": "2.2 E735b 1911", "cita": "[100 * EA008 * E733] / [10000 + (E734 * E733)]" }],
+      "vigencia": { "desde": { "test": "2023-04-21", "produccion": "2023-06-17" } }
+    },
+
+    {
+      "id": "R-E736-O1", "campo": "E736", "tipo": "obligatorio",
+      "texto": "La liquidación del IVA por ítem es obligatoria dentro del grupo del IVA",
+      "fuentes": [{ "doc": "MT150", "ref": "E736" }]
+    },
+    {
+      "id": "R-E736-A1", "campo": "E736", "tipo": "aritmetica",
+      "texto": "Si la forma de afectación tributaria del IVA es Exonerado o Exento (E731=2 o 3), la liquidación del IVA por ítem debe ser igual a 0 (cero)",
+      "condicion": { "campo": "E731", "op": "en", "valores": ["2", "3"] },
+      "formula": "E736 = 0",
+      "operandos": [],
+      "codigo_sifen": "1912",
+      "fuentes": [{ "doc": "MT150", "ref": "E736", "cita": "Si E731 = 2 o 3 este campo es igual 0" }, { "doc": "MT150", "ref": "1912" }]
+    },
+    {
+      "id": "R-E736-A2", "campo": "E736", "tipo": "aritmetica",
+      "texto": "Para la forma de afectación Gravado IVA o Gravado parcial (E731=1 o 4), la liquidación del IVA por ítem es la base gravada por la tasa",
+      "condicion": { "campo": "E731", "op": "en", "valores": ["1", "4"] },
+      "formula": "E736 = E735 * (E734/100)",
+      "operandos": ["E735", "E734"],
+      "codigo_sifen": "1913",
+      "fuentes": [{ "doc": "MT150", "ref": "E736", "cita": "E735 * (E734/100)" }, { "doc": "MT150", "ref": "1913" }]
+    },
+
+    {
+      "id": "R-E737-O1", "campo": "E737", "tipo": "obligatorio",
+      "texto": "La base exenta por ítem es obligatoria dentro del grupo del IVA",
+      "fuentes": [{ "doc": "NT013", "ref": "1.2 E737", "cita": "1-1" }],
+      "vigencia": { "desde": { "test": "2023-04-21", "produccion": "2023-06-17" } }
+    },
+    {
+      "id": "R-E737-A1", "campo": "E737", "tipo": "aritmetica",
+      "texto": "Si la forma de afectación es Gravado parcial (E731 = 4), la base exenta por ítem es la porción no gravada del total del ítem según la fórmula de la NT 13",
+      "condicion": { "campo": "E731", "op": "igual", "valor": "4" },
+      "formula": "E737 = [100 * EA008 * (100 – E733)] / [10000 + (E734 * E733)]",
+      "operandos": ["EA008", "E733", "E734"],
+      "codigo_sifen": "1921",
+      "fuentes": [{ "doc": "NT013", "ref": "1.2 E737" }, { "doc": "NT013", "ref": "2.1 E737 1921" }],
+      "vigencia": { "desde": { "test": "2023-04-21", "produccion": "2023-06-17" } }
+    },
+    {
+      "id": "R-E737-A2", "campo": "E737", "tipo": "aritmetica",
+      "texto": "Si la forma de afectación es Gravado IVA, Exonerado o Exento (E731 = 1, 2 o 3), la base exenta por ítem es igual a 0",
+      "condicion": { "campo": "E731", "op": "en", "valores": ["1", "2", "3"] },
+      "formula": "E737 = 0",
+      "operandos": [],
+      "codigo_sifen": "1921",
+      "fuentes": [{ "doc": "NT013", "ref": "1.2 E737", "cita": "Si E731 = 1 , 2 o 3 este campo es igual 0" }, { "doc": "NT013", "ref": "2.1 E737 1921" }],
+      "vigencia": { "desde": { "test": "2023-04-21", "produccion": "2023-06-17" } }
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "grupo": "E4",
+  "titulo": "Campos que componen la Autofactura Electrónica AFE",
+  "esquemas": [
+    "DE_v150.xsd"
+  ],
+  "campos": [
+    {
+      "id": "E300",
+      "xml": "gCamAE",
+      "nombre": "selfInvoice",
+      "padre": "E001",
+      "tipo": "grupo",
+      "ocurrencia": "0-1",
+      "descripcion": "Campos que componen la Autofactura Electrónica",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E300",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "E301",
+      "xml": "iNatVen",
+      "nombre": "sellerNatureCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Naturaleza del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E301",
+          "pagina": 76
+        }
+      ],
+      "catalogo": "naturaleza-vendedor"
+    },
+    {
+      "id": "E302",
+      "xml": "dDesNatVen",
+      "nombre": "sellerNatureDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "10-16",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la naturaleza del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E302",
+          "pagina": 76
+        }
+      ],
+      "catalogo": "naturaleza-vendedor"
+    },
+    {
+      "id": "E304",
+      "xml": "iTipIDVen",
+      "nombre": "sellerIdTypeCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1",
+      "ocurrencia": "1-1",
+      "descripcion": "Tipo de documento de identidad del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E304",
+          "pagina": 76
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "E305",
+      "xml": "dDTipIDVen",
+      "nombre": "sellerIdTypeDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "9-20",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del tipo de documento de identidad del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E305",
+          "pagina": 76
+        }
+      ],
+      "catalogo": "tipo-documento-identidad"
+    },
+    {
+      "id": "E306",
+      "xml": "dNumIDVen",
+      "nombre": "sellerIdNumber",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "1-20",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de documento de identidad del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E306",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "E307",
+      "xml": "dNomVen",
+      "nombre": "sellerName",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "4-60",
+      "ocurrencia": "1-1",
+      "descripcion": "Nombre y apellido del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E307",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "E308",
+      "xml": "dDirVen",
+      "nombre": "sellerAddress",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Dirección del vendedor",
+      "observaciones": "En caso de extranjeros, colocar la dirección en donde se realizó la transacción. Nombre de la calle principal",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E308",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "E309",
+      "xml": "dNumCasVen",
+      "nombre": "sellerHouseNumber",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1-6",
+      "ocurrencia": "1-1",
+      "descripcion": "Número de casa del vendedor",
+      "observaciones": "Si no tiene numeración colocar 0 (cero)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E309",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "id": "E310",
+      "xml": "cDepVen",
+      "nombre": "sellerDepartmentCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del departamento del vendedor",
+      "observaciones": "En caso de extranjeros, colocar el departamento en donde se realizó la transacción. Según XSD de Departamentos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E310",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E311",
+      "xml": "dDesDepVen",
+      "nombre": "sellerDepartmentDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del departamento del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E311",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E312",
+      "xml": "cDisVen",
+      "nombre": "sellerDistrictCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito del vendedor",
+      "observaciones": "En caso de extranjeros, colocar el distrito en donde se realizó la transacción. Según Tabla 2.1 - Distritos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E312",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E313",
+      "xml": "dDesDisVen",
+      "nombre": "sellerDistrictDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del distrito del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E313",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E314",
+      "xml": "cCiuVen",
+      "nombre": "sellerCityCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de la ciudad del vendedor",
+      "observaciones": "En caso de extranjeros, colocar la ciudad en donde se realizó la transacción. Según Tabla 2.2 - Ciudades",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E314",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "E315",
+      "xml": "dDesCiuVen",
+      "nombre": "sellerCityDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la ciudad del vendedor",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E315",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "E316",
+      "xml": "dDirProv",
+      "nombre": "transactionAddress",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Lugar de la transacción",
+      "observaciones": "Nombre de la calle principal (Dirección donde se provee el servicio o producto)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E316",
+          "pagina": 77
+        }
+      ]
+    },
+    {
+      "id": "E317",
+      "xml": "cDepProv",
+      "nombre": "transactionDepartmentCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1-2",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del departamento donde se realiza la transacción",
+      "observaciones": "Según XSD de Departamentos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E317",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E318",
+      "xml": "dDesDepProv",
+      "nombre": "transactionDepartmentDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "6-16",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción del departamento donde se realiza la transacción",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E318",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "departamento"
+    },
+    {
+      "id": "E319",
+      "xml": "cDisProv",
+      "nombre": "transactionDistrictCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1-4",
+      "ocurrencia": "0-1",
+      "descripcion": "Código del distrito donde se realiza la transacción",
+      "observaciones": "Según Tabla 2.1 - Distritos",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E319",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E320",
+      "xml": "dDesDisProv",
+      "nombre": "transactionDistrictDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "0-1",
+      "descripcion": "Descripción del distrito donde se realiza la transacción",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E320",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "distrito"
+    },
+    {
+      "id": "E321",
+      "xml": "cCiuProv",
+      "nombre": "transactionCityCode",
+      "padre": "E300",
+      "tipo": "numerico",
+      "longitud": "1-5",
+      "ocurrencia": "1-1",
+      "descripcion": "Código de la ciudad donde se realiza la transacción",
+      "observaciones": "Según Tabla 2.2 - Ciudades",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E321",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "ciudad"
+    },
+    {
+      "id": "E322",
+      "xml": "dDesCiuProv",
+      "nombre": "transactionCityDescription",
+      "padre": "E300",
+      "tipo": "alfanumerico",
+      "longitud": "1-30",
+      "ocurrencia": "1-1",
+      "descripcion": "Descripción de la ciudad donde se realiza la transacción",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "E322",
+          "pagina": 77
+        }
+      ],
+      "catalogo": "ciudad"
+    }
+  ]
+}

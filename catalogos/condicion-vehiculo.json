@@ -1,0 +1,32 @@
+{
+  "id": "condicion-vehiculo",
+  "titulo": "Condición del vehículo",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiCondVeh, tdDesCondVeh"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "iCondVeh",
+    "dDesCondVeh"
+  ],
+  "nota": "Solo en el XSD (no figura en el Manual ni en las Notas Técnicas). La correspondencia código-descripción se infiere del orden de las enumeraciones de ambos tipos.",
+  "contradiccion": "C-918",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Acabado"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Semi-acabado"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Inacabado"
+    }
+  ]
+}

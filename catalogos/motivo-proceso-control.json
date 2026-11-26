@@ -1,0 +1,36 @@
+{
+  "id": "motivo-proceso-control",
+  "titulo": "Motivo del evento Proceso de Control",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tcMotPC, tdMotDesPC"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "cMotPC",
+    "dMotDesPC"
+  ],
+  "nota": "Solo en el XSD (no figura en el Manual ni en las Notas Técnicas). La correspondencia código-descripción se infiere del orden de las enumeraciones de ambos tipos.",
+  "contradiccion": "C-918",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Proceso de control Interno"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Proceso de Fiscalización"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Proceso de Cobranzas"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Proceso de Devolución de Créditos Fiscales"
+    }
+  ]
+}

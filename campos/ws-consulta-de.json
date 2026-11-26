@@ -1,0 +1,323 @@
+{
+  "grupo": "WS-siConsDE",
+  "titulo": "WS consulta DE – siConsDE (Schemas XML 9, 10, 11 y 12)",
+  "esquemas": [
+    "WS_SiConsDE_v141.xsd",
+    "SIFEN_Types_v141.xsd",
+    "FE_Types_v141.xsd"
+  ],
+  "campos": [
+    {
+      "id": "DSch01",
+      "xml": "rEnviConsDeRequest",
+      "nombre": "documentQuery",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz de la petición del WS siConsDE. El Manual lo nombraba rEnviConsDe; la NT 10 lo corrige a rEnviConsDeRequest, que es el nombre del XSD. La NT 10 no publica fechas de vigencia. Solo está publicado WS_SiConsDE_v141.xsd.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DSch01",
+          "pagina": 51
+        },
+        {
+          "doc": "NT010",
+          "ref": "1.9 DSch01",
+          "pagina": 3,
+          "cita": "rEnviConsDeRequest"
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeRequest"
+        }
+      ]
+    },
+    {
+      "id": "DSch02",
+      "xml": "dId",
+      "nombre": "controlId",
+      "padre": "DSch01",
+      "tipo": "numerico",
+      "longitud": "1-15",
+      "ocurrencia": "1-1",
+      "descripcion": "Identificador de control de envío",
+      "observaciones": "Número secuencial autoincremental, para identificación del mensaje enviado. La responsabilidad de generar y controlar este número es exclusiva del contribuyente.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DSch02",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeRequest/dId (dIdType)"
+        }
+      ]
+    },
+    {
+      "id": "DSch03",
+      "xml": "dCDC",
+      "nombre": "cdc",
+      "padre": "DSch01",
+      "tipo": "alfanumerico",
+      "longitud": "44",
+      "ocurrencia": "1-1",
+      "descripcion": "CDC del DE consultado",
+      "observaciones": "CDC del DE que se requiere la consulta en la base de datos de SIFEN. El Manual indica el tipo de dato 'C', que no figura en la Tabla B; el XSD lo define como texto de 44 caracteres (tCDC).",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DSch03",
+          "pagina": 51
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeRequest/dCDC (tCDC)"
+        }
+      ]
+    },
+    {
+      "id": "DRSch01",
+      "xml": "rEnviConsDeResponse",
+      "nombre": "documentQueryResponse",
+      "padre": null,
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "El Manual nombra la raíz rResEnviConsDe (Schema XML 10: resConsDE_v150.xsd); el XSD y los ejemplos de la Guía de mejores prácticas usan rEnviConsDeResponse. El Manual no indica ocurrencia para la raíz.",
+      "contradiccion": "C-716",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DRSch01",
+          "pagina": 52
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeResponse"
+        },
+        {
+          "doc": "GUIA-MP",
+          "ref": "consulta, Response",
+          "pagina": 12
+        }
+      ]
+    },
+    {
+      "id": "DRSch02",
+      "xml": "dFecProc",
+      "nombre": "processingDateTime",
+      "padre": "DRSch01",
+      "tipo": "fecha_hora",
+      "longitud": "19",
+      "ocurrencia": "1-1",
+      "descripcion": "Fecha y hora del procesamiento",
+      "observaciones": "Formato: “AAAA-MM-DD-hh:mm:ss”.",
+      "contradiccion": "C-703",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DRSch02",
+          "pagina": 52
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeResponse/dFecProc (fecUTC)"
+        }
+      ]
+    },
+    {
+      "id": "DRSch03",
+      "xml": "dCodRes",
+      "nombre": "resultCode",
+      "padre": "DRSch01",
+      "tipo": "numerico",
+      "longitud": "4",
+      "ocurrencia": "1-1",
+      "descripcion": "Código del resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DRSch03",
+          "pagina": 52
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeResponse/dCodRes (length 4)"
+        }
+      ]
+    },
+    {
+      "id": "DRSch04",
+      "xml": "dMsgRes",
+      "nombre": "resultMessage",
+      "padre": "DRSch01",
+      "tipo": "alfanumerico",
+      "longitud": "1-255",
+      "ocurrencia": "1-1",
+      "descripcion": "Mensaje del resultado de procesamiento",
+      "observaciones": "Definido en el tópico correspondiente del capítulo 12. El Manual indica el tipo 'C', que no figura en la Tabla B; el XSD lo define como texto.",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DRSch04",
+          "pagina": 52
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeResponse/dMsgRes"
+        }
+      ]
+    },
+    {
+      "id": "DRSch05",
+      "xml": "xContenDE",
+      "nombre": "documentContainer",
+      "padre": "DRSch01",
+      "tipo": "xml",
+      "ocurrencia": "0-1",
+      "descripcion": "Contenedor del DE",
+      "observaciones": "Existe solamente si dCodRes = 0422. Definido en el Schema XML 11. En el XSD es de tipo xs:string (el contenedor no está tipado).",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "DRSch05",
+          "pagina": 52
+        },
+        {
+          "doc": "XSD",
+          "ref": "WS_SiConsDE_v141.xsd rEnviConsDeResponse/xContenDE (xs:string)"
+        }
+      ]
+    },
+    {
+      "id": "ContDE01",
+      "xml": "rContDe",
+      "nombre": "container",
+      "padre": "DRSch05",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz del contenedor de DE (Schema XML 11: ContenedorDE_v150.xsd). La columna Nodo Padre del Manual indica DRSch01, pero DRSch05 (xContenDE) remite a este esquema; se ubica bajo DRSch05. El Manual no indica ocurrencia. Ningún XSD publicado define rContDe.",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContDE01",
+          "pagina": 52
+        }
+      ]
+    },
+    {
+      "id": "ContDE02",
+      "xml": "rDE",
+      "nombre": "document",
+      "padre": "ContDE01",
+      "tipo": "xml",
+      "ocurrencia": "1-1",
+      "descripcion": "Archivo XML del DE",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContDE02",
+          "pagina": 52
+        }
+      ]
+    },
+    {
+      "id": "ContDE03",
+      "xml": "dProtAut",
+      "nombre": "transactionNumber",
+      "padre": "ContDE01",
+      "tipo": "xml",
+      "ocurrencia": "1-1",
+      "descripcion": "Número De Transacción",
+      "observaciones": "Número de transacción del DE, recibido por el contribuyente en el mensaje de respuesta del WS DeRecepDE o del WS deResultLoteDE, definido en el Schema XML 4. El Manual indica el tipo XML, aunque en el Schema XML 4 (PP051) es numérico de 10.",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContDE03",
+          "pagina": 52
+        }
+      ]
+    },
+    {
+      "id": "ContDE04",
+      "xml": "xContEv",
+      "nombre": "eventContainers",
+      "padre": "ContDE01",
+      "tipo": "xml",
+      "ocurrencia": "0-N",
+      "descripcion": "Contenedor de Evento",
+      "observaciones": "Información de todos los eventos registrados (contenedor montado por la SET) o disponibles (contenedor montado por el emisor) hasta la fecha. Definido en el Schema XML 12. El Manual escribe la ocurrencia como 0-n.",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContDE04",
+          "pagina": 53
+        }
+      ]
+    },
+    {
+      "id": "ContEv01",
+      "xml": "rContEv",
+      "nombre": "eventContainer",
+      "padre": "ContDE04",
+      "tipo": "grupo",
+      "ocurrencia": "1-1",
+      "descripcion": "Raíz",
+      "observaciones": "Elemento raíz del contenedor de evento (Schema XML 12: ContenedorEvento_v150.xsd). El Manual no indica nodo padre ni ocurrencia; se ubica bajo xContEv (ContDE04), que remite a este esquema.",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContEv01",
+          "pagina": 53
+        }
+      ]
+    },
+    {
+      "id": "ContEv02",
+      "xml": "xEvento",
+      "nombre": "event",
+      "padre": "ContEv01",
+      "tipo": "xml",
+      "ocurrencia": "1-1",
+      "descripcion": "XML del Evento",
+      "observaciones": "Definido en el capítulo de Eventos del DE.",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContEv02",
+          "pagina": 53
+        }
+      ]
+    },
+    {
+      "id": "ContEv03",
+      "xml": "rResEnviEventoDe",
+      "nombre": "eventResponse",
+      "padre": "ContEv01",
+      "tipo": "xml",
+      "ocurrencia": "1-1",
+      "descripcion": "Respuesta del WS Recepción Evento",
+      "observaciones": "Definido en el Schema XML 14 (cuya raíz se llama rRetEnviEventoDe en el Manual y en el XSD). El Manual no indica la ocurrencia de este campo; se registra 1-1 a falta de dato.",
+      "contradiccion": "C-717",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "ContEv03",
+          "pagina": 53
+        }
+      ]
+    }
+  ]
+}

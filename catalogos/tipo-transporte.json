@@ -1,0 +1,52 @@
+{
+  "id": "tipo-transporte",
+  "titulo": "Tipo de transporte",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E901"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E902"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET022"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET023"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiTTrans, tdDesTTrans"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E901",
+    "E902",
+    "GET022",
+    "GET023"
+  ],
+  "descripciones": {
+    "E901": "E902",
+    "GET022": "GET023"
+  },
+  "xml": [
+    "iTipTrans",
+    "dDesTipTrans"
+  ],
+  "nota": "El Manual no transcribe las descripciones en E902/GET023 (\"Obligatorio si existe el campo E901\"); se toman de la lista de E901 y de tdDesTTrans.",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Propio"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Tercero"
+    }
+  ]
+}

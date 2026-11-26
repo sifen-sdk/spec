@@ -1,0 +1,94 @@
+{
+  "grupo": "D",
+  "reglas": [
+    {
+      "id": "R-D001-O1",
+      "campo": "D001",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D001"
+        }
+      ]
+    },
+    {
+      "id": "R-D002-O1",
+      "campo": "D002",
+      "tipo": "obligatorio",
+      "texto": "Se informa siempre que exista el grupo padre (ocurrencia 1-1)",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D002"
+        }
+      ]
+    },
+    {
+      "id": "R-D002-F1",
+      "campo": "D002",
+      "tipo": "formato",
+      "texto": "Fecha y hora en el formato AAAA-MM-DDThh:mm:ss",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D002",
+          "cita": "Fecha y hora en el formato AAAA-MM-DDThh:mm:ss"
+        }
+      ]
+    },
+    {
+      "id": "R-D002-F2",
+      "campo": "D002",
+      "tipo": "formato",
+      "texto": "Cuando la fecha y hora de emisión es anterior a la de transmisión al SIFEN, la diferencia no debe ser mayor a 720 horas (30 días)",
+      "no_declarativa": true,
+      "codigo_sifen": "1150",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D002",
+          "cita": "atrasada hasta 720 horas (30 días)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1150"
+        }
+      ]
+    },
+    {
+      "id": "R-D002-F3",
+      "campo": "D002",
+      "tipo": "formato",
+      "texto": "Cuando la fecha y hora de emisión es posterior a la de transmisión al SIFEN, la diferencia no debe ser mayor a 120 horas (5 días)",
+      "no_declarativa": true,
+      "codigo_sifen": "1151",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "D002",
+          "cita": "adelantada hasta 120 horas (5 días)"
+        },
+        {
+          "doc": "MT150",
+          "ref": "1151"
+        }
+      ]
+    },
+    {
+      "id": "R-D002-F4",
+      "campo": "D002",
+      "tipo": "formato",
+      "texto": "La fecha y hora de emisión del DE debe ser posterior al 22 de noviembre del 2018",
+      "no_declarativa": true,
+      "codigo_sifen": "1156",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "1156"
+        }
+      ]
+    }
+  ]
+}

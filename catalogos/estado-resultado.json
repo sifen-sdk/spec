@@ -1,0 +1,42 @@
+{
+  "id": "estado-resultado",
+  "titulo": "Estado del resultado del procesamiento",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "PP050"
+    },
+    {
+      "doc": "MT150",
+      "ref": "CRSch051"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GRSch030"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "PP050",
+    "CRSch051",
+    "GRSch030"
+  ],
+  "xml": [
+    "dEstRes"
+  ],
+  "nota": "El valor que viaja en el XML es el propio texto.",
+  "entradas": [
+    {
+      "codigo": "Aprobado",
+      "descripcion": "Aprobado"
+    },
+    {
+      "codigo": "Aprobado con observación",
+      "descripcion": "Aprobado con observación"
+    },
+    {
+      "codigo": "Rechazado",
+      "descripcion": "Rechazado"
+    }
+  ]
+}

@@ -26,11 +26,18 @@ TIPOS_REGLA = {"obligatorio", "opcional", "condicional", "prohibido", "aritmetic
 OPS_VALOR = {"igual", "distinto", "mayor", "mayor_igual", "menor", "menor_igual"}
 OPS_LISTA = {"en", "no_en"}
 OPS_SIN = {"presente", "ausente"}
+CUANTIFICADORES = {"alguno", "todos"}
 CLASES = {"aprobacion", "aprobacion_con_observacion", "rechazo", "en_proceso", "transitorio", "bloqueo", "informativo"}
 
 
 def err(archivo, msg):
     errores.append(f"{os.path.relpath(archivo, RAIZ)}: {msg}")
+
+
+def lista(v):
+    if v is None:
+        return []
+    return v if isinstance(v, list) else [v]
 
 
 def cargar(ruta):
@@ -91,6 +98,10 @@ def validar_condicion(archivo, donde, c, ids):
         validar_condicion(archivo, donde, c["no"], ids)
         return
     campo, op = c.get("campo"), c.get("op")
+    if "cuantificador" in c:
+        if c["cuantificador"] not in CUANTIFICADORES:
+            err(archivo, f"{donde}: cuantificador desconocido {c['cuantificador']!r}")
+        c = {k: v for k, v in c.items() if k != "cuantificador"}
     if campo not in ids:
         err(archivo, f"{donde}: la condición usa un campo inexistente: {campo!r}")
     if op in OPS_VALOR:
@@ -148,7 +159,12 @@ def main():
 
     # --- contradicciones ---------------------------------------------------------------------------------------
     contra_ruta = os.path.join(RAIZ, "contradicciones.md")
-    contradicciones = set(re.findall(r"^#{2,3} (C-\d{3})\b", open(contra_ruta, encoding="utf-8").read(), re.M))
+    contradicciones = set()
+    for ruta in [contra_ruta] + sorted(glob.glob(os.path.join(RAIZ, "contradicciones.d", "*.md"))):
+        for cid in re.findall(r"^#{2,3} (C-\d{3})\b", open(ruta, encoding="utf-8").read(), re.M):
+            if cid in contradicciones:
+                err(ruta, f"contradicción repetida: {cid}")
+            contradicciones.add(cid)
 
     # --- catálogos ---------------------------------------------------------------------------------------------
     catalogos = set()
@@ -209,8 +225,9 @@ def main():
                 err(ruta, f"{donde}: estado desconocido {c.get('estado')!r}")
             if c.get("catalogo") is not None and c["catalogo"] not in catalogos:
                 err(ruta, f"{donde}: catálogo inexistente {c['catalogo']!r}")
-            if c.get("contradiccion") is not None and c["contradiccion"] not in contradicciones:
-                err(ruta, f"{donde}: contradicción inexistente {c['contradiccion']!r}")
+            for cc in lista(c.get("contradiccion")):
+                if cc not in contradicciones:
+                    err(ruta, f"{donde}: contradicción inexistente {cc!r}")
             validar_fuentes(ruta, donde, c.get("fuentes"))
             validar_vigencia(ruta, donde, c.get("vigencia"))
             en_xsd = any(e in xsd.get(c.get("xml"), set()) for e in d.get("esquemas", []))
@@ -229,6 +246,16 @@ def main():
                 err(ruta, f"campo {c.get('id')}: el nombre '{c.get('nombre')}' se repite bajo el mismo padre "
                           f"(también en {nombres[clave]})")
             nombres[clave] = c.get("id")
+
+    # --- catálogos: los campos que declaran usar existen -------------------------------------------------------
+    for ruta in datos("catalogos"):
+        d = cargar(ruta) or {}
+        for cid in d.get("campos", []):
+            if cid not in campos:
+                err(ruta, f"'campos' cita un campo inexistente: {cid!r}")
+        for cod, des in (d.get("descripciones") or {}).items():
+            if cod not in campos or des not in campos:
+                err(ruta, f"'descripciones' cita un campo inexistente: {cod!r} -> {des!r}")
 
     # --- reglas ------------------------------------------------------------------------------------------------
     reglas = set()
@@ -263,8 +290,9 @@ def main():
                 for op in r.get("operandos", []):
                     if op not in campos:
                         err(ruta, f"{donde}: operando inexistente {op!r}")
-            if r.get("contradiccion") is not None and r["contradiccion"] not in contradicciones:
-                err(ruta, f"{donde}: contradicción inexistente {r['contradiccion']!r}")
+            for cc in lista(r.get("contradiccion")):
+                if cc not in contradicciones:
+                    err(ruta, f"{donde}: contradicción inexistente {cc!r}")
 
     # --- respuestas --------------------------------------------------------------------------------------------
     vistos = set()

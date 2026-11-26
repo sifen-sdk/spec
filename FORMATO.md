@@ -145,7 +145,17 @@ La obligatoriedad real **no** se deduce de `ocurrencia`: está en `reglas/`.
 - Presencia: `presente`, `ausente` → `campo`, `op`.
 - Combinadores: `todas` y `alguna` (lista de dos o más), `no` (una condición).
 
-Los valores se escriben como texto, igual que viajan en el XML. No hay funciones ni aritmética.
+Los valores se escriben como texto, igual que viajan en el XML. `mayor`, `mayor_igual`, `menor` y `menor_igual`
+comparan como números decimales; el resto compara texto. No hay funciones ni aritmética.
+
+**Campos que se repiten** (por ejemplo, los de cada ítem):
+
+- Si la regla y el campo de la condición están dentro del mismo grupo repetido, la condición se evalúa sobre la
+  misma repetición (el mismo ítem).
+- Si no, la condición se cumple cuando **alguna** repetición la cumple. Para exigir que la cumplan **todas**, se
+  agrega `"cuantificador": "todos"` a la condición (`"alguno"` es el valor por defecto y puede escribirse).
+
+Un campo ausente no cumple ninguna comparación de valor; solo cumple `ausente` y `no_en`.
 
 ## `catalogos/<id>.json`
 
@@ -159,8 +169,25 @@ Los valores se escriben como texto, igual que viajan en el XML. No hay funciones
 }
 ```
 
-El `id` coincide con el nombre del archivo. Cada entrada lleva `codigo` y `descripcion` (literal de la fuente) y,
-si corresponde, `padre` (catálogos jerárquicos), `vigencia`, `estado` y datos propios del catálogo.
+El `id` coincide con el nombre del archivo. A nivel de archivo, además:
+
+| Dato | Descripción |
+|---|---|
+| `campos` | Ids de los campos que toman su valor de este catálogo |
+| `descripciones` | Campo del código → campo de su descripción (`{"C002": "C003"}`) |
+| `xml` | Elementos del XML que usan el catálogo |
+| `nota`, `contradiccion` | Aclaraciones y contradicciones que afectan a todo el catálogo |
+
+Cada entrada lleva `codigo` y `descripcion` y, si corresponde:
+
+| Dato | Descripción |
+|---|---|
+| `padre` | Código del nivel superior en catálogos jerárquicos (departamento → distrito → ciudad) |
+| `descripcion_xsd` | La descripción tal como la exige el XSD, cuando difiere de la del Manual. **Al emitir se usa esta** (el XSD manda en estructura y SIFEN rechaza otro texto) |
+| `otras_descripciones` | Variantes que aparecen en otras fuentes, solo informativas |
+| `descripcion_libre` | `true` si el código admite una descripción escrita por el emisor (por ejemplo, "Otro") |
+| `significado`, `detalle`, `observacion` | Aclaraciones de la fuente que no viajan en el XML |
+| `estado`, `vigencia`, `fuentes`, `contradiccion` | Como en el resto de la especificación |
 
 ## `respuestas/*.json`
 
@@ -174,6 +201,16 @@ si corresponde, `padre` (catálogos jerárquicos), `vigencia`, `estado` y datos 
 `clase`: `aprobacion`, `aprobacion_con_observacion`, `rechazo`, `en_proceso`, `transitorio`, `bloqueo` o
 `informativo`. La combinación `codigo` + `servicio` es única.
 
+| Dato | Descripción |
+|---|---|
+| `servicio` | `recepcion`, `lote`, `consulta-lote`, `consulta-de`, `consulta-ruc`, `evento`, `consulta-masiva-ruc`, `generico`, `certificado`, `formato-de` o `formato-evento` |
+| `efecto` | Tal como lo marca el Manual: `R` (rechazo), `A` o `AO` (aprobado con observación), `N` (notificación) |
+| `accion` | `ninguna`, `corregir-y-reenviar`, `consultar-mas-tarde` o `no-reenviar`, solo si se deduce de la fuente |
+| `campo`, `id_validacion` | Campo y validación del Manual a los que se refiere (por ejemplo `D208` y `D208c`) |
+| `validacion` | Qué se comprueba, literal y breve |
+| `historial` | Textos o efectos anteriores, cada uno con su `hasta` y su fuente |
+| `duplicados` | Otras validaciones que el Manual numeró con el mismo código |
+
 ## `xsd/`
 
 - `oficial/`: los esquemas, sin modificar. `indice.json`: origen, fecha y `sha256` de cada uno.
@@ -181,6 +218,14 @@ si corresponde, `padre` (catálogos jerárquicos), `vigencia`, `estado` y datos 
 - `cobertura.json`: `esquemas` cuyos elementos deben tener campo, y `excepciones` (`elemento` → id de
   contradicción) para los que no lo tienen.
 
-## `contradicciones.md`
+## Ids que no da el Manual
 
-Cada entrada es un título `## C-nnn — …`. Los ids se citan desde `contradiccion` en campos y reglas.
+Un elemento que existe solo en el XSD no tiene id oficial. Se le asigna `X-<grupo>-<elemento xml>` (por ejemplo
+`X-H-dNumCuoDocAso`), se lo cita con fuente `XSD` y una contradicción, y se anota en `observaciones` que el id no es
+oficial.
+
+## Contradicciones
+
+El criterio y la plantilla están en [`contradicciones.md`](contradicciones.md). Las entradas viven en
+`contradicciones.d/`, un archivo por área, cada una con un título `## C-nnn — …`; los ids son únicos en todo el
+repositorio. Se citan desde `contradiccion` (un id o una lista) en campos, reglas, catálogos y respuestas.

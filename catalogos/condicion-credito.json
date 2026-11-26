@@ -1,0 +1,40 @@
+{
+  "id": "condicion-credito",
+  "titulo": "Condición de la operación a crédito",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E641"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E642"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_v150.xsd iCondCred (1, 2); DE_Types_v150.xsd tdDCondCred"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E641",
+    "E642"
+  ],
+  "descripciones": {
+    "E641": "E642"
+  },
+  "xml": [
+    "iCondCred",
+    "dDCondCred"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Plazo"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Cuota"
+    }
+  ]
+}

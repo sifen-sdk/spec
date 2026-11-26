@@ -1,0 +1,40 @@
+{
+  "id": "motivo-impugnacion",
+  "titulo": "Motivo del evento Impugnación del DTE",
+  "fuentes": [
+    {
+      "doc": "XSD",
+      "ref": "Evento_Types_v150.xsd tcMotImp, tdMotDesImp"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "cMotImp",
+    "dMotDesImp"
+  ],
+  "nota": "Solo en el XSD (no figura en el Manual ni en las Notas Técnicas). La correspondencia código-descripción se infiere del orden de las enumeraciones de ambos tipos.",
+  "contradiccion": "C-918",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Operaciones no reconocidas por el contribuyente (proveedor o cliente)"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Simulación de operaciones"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Inconsistencias detectadas"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Contenido falso"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "Otros"
+    }
+  ]
+}

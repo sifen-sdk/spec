@@ -1,0 +1,59 @@
+{
+  "id": "modalidad-transporte",
+  "titulo": "Modalidad del transporte",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "E903"
+    },
+    {
+      "doc": "MT150",
+      "ref": "E904"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET024"
+    },
+    {
+      "doc": "MT150",
+      "ref": "GET025"
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tiModTrans, tdDesModTrans"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [
+    "E903",
+    "E904",
+    "GET024",
+    "GET025"
+  ],
+  "descripciones": {
+    "E903": "E904",
+    "GET024": "GET025"
+  },
+  "xml": [
+    "iModTrans",
+    "dDesModTrans"
+  ],
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "Terrestre"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "Fluvial"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "Aéreo"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "Multimodal"
+    }
+  ]
+}

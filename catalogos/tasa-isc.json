@@ -1,0 +1,83 @@
+{
+  "id": "tasa-isc",
+  "titulo": "Tasas del ISC (Tabla 8)",
+  "fuentes": [
+    {
+      "doc": "MT150",
+      "ref": "15. Codificaciones – TABLA 8 – TASAS DEL ISC",
+      "pagina": 213
+    },
+    {
+      "doc": "XSD",
+      "ref": "DE_Types_v150.xsd tcTasaISC (1-12)"
+    }
+  ],
+  "tomado": "2026-11-26",
+  "campos": [],
+  "xml": [
+    "cTasaISC"
+  ],
+  "nota": "Tasas del ISC según Decretos N° 4344/04, N° 5158/10, N° 4693/15, N° 4693/15, N° 4694/15 (texto del Manual). Grupo E8.3 marcado \"(futuro)\".",
+  "entradas": [
+    {
+      "codigo": "1",
+      "descripcion": "1%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "2",
+      "descripcion": "5%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "3",
+      "descripcion": "9%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "4",
+      "descripcion": "10%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "5",
+      "descripcion": "11%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "6",
+      "descripcion": "13%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "7",
+      "descripcion": "16%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "8",
+      "descripcion": "18%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "9",
+      "descripcion": "20%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "10",
+      "descripcion": "24%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "11",
+      "descripcion": "34%",
+      "estado": "futuro"
+    },
+    {
+      "codigo": "12",
+      "descripcion": "38%",
+      "estado": "futuro"
+    }
+  ]
+}
