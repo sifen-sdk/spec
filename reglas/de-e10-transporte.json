@@ -1339,6 +1339,30 @@
           "ref": "2300",
           "pagina": 182
         }
+      ],
+      "descartada": {
+        "contradiccion": "C-407",
+        "evidencia": "E-002"
+      }
+    },
+    {
+      "id": "R-E980-C2",
+      "campo": "E980",
+      "tipo": "condicional",
+      "texto": "El grupo del transportista es obligatorio en la Nota de Remisión Electrónica (validación 2300, sin excepción)",
+      "condicion": {
+        "campo": "C002",
+        "op": "igual",
+        "valor": "7"
+      },
+      "codigo_sifen": "2300",
+      "contradiccion": "C-407",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "2300",
+          "cita": "Si C002=7 es obligatorio informar el grupo de los campos que identifican al transportista"
+        }
       ]
     },
     {
