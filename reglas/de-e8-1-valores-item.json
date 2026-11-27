@@ -34,6 +34,7 @@
       "texto": "El tipo de cambio por ítem es obligatorio si la moneda de la operación es distinta de PYG (según las observaciones del campo)",
       "condicion": { "campo": "D015", "op": "distinto", "valor": "PYG" },
       "contradiccion": "C-303",
+      "descartada": { "contradiccion": "C-303", "evidencia": "E-001" },
       "fuentes": [{ "doc": "MT150", "ref": "E725", "cita": "Obligatorio si D015 ≠ PYG" }]
     },
     {
