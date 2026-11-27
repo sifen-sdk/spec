@@ -329,7 +329,11 @@
           "ref": "Tabla J",
           "pagina": 117
         }
-      ]
+      ],
+      "descartada": {
+        "contradiccion": "C-612",
+        "evidencia": "E-003"
+      }
     },
     {
       "id": "R-GEI006-A2",
@@ -348,6 +352,34 @@
           "doc": "MT150",
           "ref": "4068",
           "pagina": 135
+        }
+      ],
+      "descartada": {
+        "contradiccion": "C-612",
+        "evidencia": "E-003"
+      }
+    },
+    {
+      "id": "R-GEI006-A3",
+      "campo": "GEI006",
+      "tipo": "aritmetica",
+      "texto": "El rango tiene hasta 1000 números: fin − inicio + 1 ≤ 1000. Un rango de un solo número (inicio = fin) es válido",
+      "formula": "GEI006 – GEI005 + 1 menor o igual a 1000",
+      "operandos": [
+        "GEI006",
+        "GEI005"
+      ],
+      "codigo_sifen": "4066",
+      "contradiccion": "C-612",
+      "fuentes": [
+        {
+          "doc": "MT150",
+          "ref": "11.1.1"
+        },
+        {
+          "doc": "MT150",
+          "ref": "GEI005",
+          "pagina": 122
         }
       ]
     },

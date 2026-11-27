@@ -1,0 +1,41 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "El total neto es el total bruto menos el redondeo más la comisión (en FE, NCE y NDE la misma fórmula es R-F014-A3, con código 2365). Falla: se suma una unidad al valor informado (F014)",
+  "base": "autofactura",
+  "xml": "autofactura-r-f014-a1.xml",
+  "regla": "R-F014-A1",
+  "cambio": {
+    "campo": "F014",
+    "ruta": "rDE/DE/gTotSub/dTotGralOpe",
+    "antes": "100000",
+    "despues": "100001"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-F014-A1",
+            "campo": "F014"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-EA004-A2",
+          "R-EA008-A2",
+          "R-F008-A3",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Evento de desconocimiento de un DE, válido: cumple todas las reglas que le aplican",
+  "base": "evento-desconocimiento",
+  "xml": "evento-desconocimiento-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [
+          "R-GED004-A1"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

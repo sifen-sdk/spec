@@ -1,0 +1,98 @@
+{
+  "tipo": "vigencia",
+  "descripcion": "La misma factura en producción el día anterior a la NT 13 (2023-06-16) y el día de entrada en vigor (2023-06-17)",
+  "base": "factura",
+  "notas": "Solo se fijan las reglas aritméticas (fallan y pasan): en 2023 pueden regir otros catálogos y campos, por eso se permiten otras observaciones.",
+  "evaluaciones": [
+    {
+      "ambiente": "produccion",
+      "fecha": "2023-06-16",
+      "xml": "factura-nt13-produccion-antes-y-despues-2023-06-16.xml",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-E735-A3",
+            "campo": "E735"
+          },
+          {
+            "regla": "R-F002-A1",
+            "campo": "F002"
+          },
+          {
+            "regla": "R-F005-A1",
+            "campo": "F005"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-E735-A1",
+          "R-E735-A2",
+          "R-E736-A1",
+          "R-E736-A2",
+          "R-EA003-A1",
+          "R-EA004-A2",
+          "R-EA008-A1",
+          "R-F003-A1",
+          "R-F004-A1",
+          "R-F008-A1",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A3",
+          "R-F015-A1",
+          "R-F016-A1",
+          "R-F017-A1",
+          "R-F018-A1",
+          "R-F019-A1",
+          "R-F020-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "permitidas"
+      }
+    },
+    {
+      "ambiente": "produccion",
+      "fecha": "2023-06-17",
+      "xml": "factura-nt13-produccion-antes-y-despues-2023-06-17.xml",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [
+          "R-E727-A1",
+          "R-E735-A1",
+          "R-E735-A4",
+          "R-E735-A5",
+          "R-E736-A1",
+          "R-E736-A2",
+          "R-E737-A1",
+          "R-E737-A2",
+          "R-EA003-A1",
+          "R-EA004-A2",
+          "R-EA008-A1",
+          "R-F002-A2",
+          "R-F003-A1",
+          "R-F004-A2",
+          "R-F005-A2",
+          "R-F008-A1",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A3",
+          "R-F015-A1",
+          "R-F016-A1",
+          "R-F017-A1",
+          "R-F018-A1",
+          "R-F019-A1",
+          "R-F020-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "permitidas"
+      }
+    }
+  ]
+}

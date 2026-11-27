@@ -1,0 +1,38 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Nota de crédito electrónica (C002 = 5) asociada a la factura base, válido: cumple todas las reglas que le aplican",
+  "base": "nota-credito",
+  "xml": "nota-credito-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [
+          "R-E727-A1",
+          "R-E735-A5",
+          "R-E736-A2",
+          "R-E737-A2",
+          "R-EA004-A2",
+          "R-EA008-A1",
+          "R-F005-A2",
+          "R-F008-A1",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A3",
+          "R-F016-A1",
+          "R-F017-A1",
+          "R-F019-A1",
+          "R-F020-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

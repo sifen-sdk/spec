@@ -1,0 +1,34 @@
+{
+  "tipo": "respuestas",
+  "descripcion": "Recepción de dos eventos: uno aprobado y otro rechazado",
+  "xml": "evento-mixto.xml",
+  "entrada": {
+    "servicio": "evento"
+  },
+  "esperado": {
+    "resultados": [
+      {
+        "id": "1",
+        "estado": "aprobado",
+        "protocolo": "1234567893",
+        "mensajes": [
+          {
+            "codigo": "0600",
+            "clase": "aprobacion"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "estado": "rechazado",
+        "protocolo": null,
+        "mensajes": [
+          {
+            "codigo": "4003",
+            "clase": "rechazo"
+          }
+        ]
+      }
+    ]
+  }
+}

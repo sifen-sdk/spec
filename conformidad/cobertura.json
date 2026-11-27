@@ -1,0 +1,35 @@
+{
+  "descripcion": "Reglas aritméticas vigentes y no descartadas que no tienen caso de conformidad, con el motivo. Toda otra regla aritmética vigente tiene al menos un caso que la cumple y uno que la viola (tools/conformidad.py lo verifica).",
+  "aritmetica_sin_caso": [
+    {
+      "regla": "R-F008-A2",
+      "motivo": "La fórmula remite a un campo F006 que no existe en el Manual ni en el XSD: no hay nada que verificar.",
+      "contradiccion": "C-501"
+    },
+    {
+      "regla": "R-F013-A1",
+      "motivo": "El redondeo es optativo (F013 puede ser 0) y la fuente no da una fórmula exacta ni un código de rechazo; SIFEN no lo verifica.",
+      "evidencia": "E-001"
+    },
+    {
+      "regla": "R-F026-A1",
+      "motivo": "La fuente no escribe la fórmula (solo dice que a la comisión se le aplica el 10 %); SIFEN no la verifica.",
+      "evidencia": "E-001"
+    },
+    {
+      "regla": "R-F036-A1",
+      "motivo": "La descripción pide el impuesto y la fórmula da la base; la decisión es que los SDK no rechacen por esta regla.",
+      "contradiccion": "C-504"
+    },
+    {
+      "regla": "R-F037-A1",
+      "motivo": "La descripción pide el impuesto y la fórmula da la base; la decisión es que los SDK no rechacen por esta regla.",
+      "contradiccion": "C-504"
+    },
+    {
+      "regla": "R-H004-A1",
+      "motivo": "Compara con otras notas de crédito y con la factura asociada, que solo conoce SIFEN: no se puede verificar con un documento solo.",
+      "codigo_sifen": "2417"
+    }
+  ]
+}

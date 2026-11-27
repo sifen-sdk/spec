@@ -245,6 +245,18 @@ oficial.
 archivo dice qué se envió, cuándo, a qué ambiente y qué respondió SIFEN (códigos y mensajes), sin datos del emisor ni
 credenciales. Se citan desde `descartada` en las reglas y desde el estado de las contradicciones.
 
+## `conformidad/`
+
+Los casos de conformidad tienen su propio formato, descrito en [`conformidad/README.md`](conformidad/README.md): un
+JSON por caso y su XML al lado. Los verifica `tools/conformidad.py` (no `tools/validar.py`), y los de validación,
+aritmética, vigencia y respuestas los genera `tools/generar_conformidad.py`.
+
+```bash
+python3 tools/generar_conformidad.py   # regenera los casos a partir de conformidad/bases y de reglas/
+python3 tools/conformidad.py           # formato, coherencia con las reglas, cobertura y que estén al día
+python3 tools/conformidad.py --xsd     # además valida los XML contra el XSD oficial (necesita lxml)
+```
+
 ## Contradicciones
 
 El criterio y la plantilla están en [`contradicciones.md`](contradicciones.md). Las entradas viven en

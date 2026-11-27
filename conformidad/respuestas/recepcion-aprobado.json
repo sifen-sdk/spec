@@ -1,0 +1,24 @@
+{
+  "tipo": "respuestas",
+  "descripcion": "Recepción síncrona de un DE aprobado",
+  "xml": "recepcion-aprobado.xml",
+  "entrada": {
+    "servicio": "recepcion",
+    "cdc": "01444444017001001000000122026112011000000015"
+  },
+  "esperado": {
+    "resultados": [
+      {
+        "id": "01444444017001001000000122026112011000000015",
+        "estado": "aprobado",
+        "protocolo": "1234567890",
+        "mensajes": [
+          {
+            "codigo": "0260",
+            "clase": "aprobacion"
+          }
+        ]
+      }
+    ]
+  }
+}

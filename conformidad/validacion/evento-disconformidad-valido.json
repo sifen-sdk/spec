@@ -1,0 +1,18 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Evento de disconformidad con un DE, válido: cumple todas las reglas que le aplican",
+  "base": "evento-disconformidad",
+  "xml": "evento-disconformidad-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

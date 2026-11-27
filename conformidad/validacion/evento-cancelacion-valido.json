@@ -1,0 +1,18 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Evento de cancelación, válido: cumple todas las reglas que le aplican",
+  "base": "evento-cancelacion",
+  "xml": "evento-cancelacion-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

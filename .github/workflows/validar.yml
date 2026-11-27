@@ -21,5 +21,5 @@ jobs:
         run: python3 tools/xsd_arbol.py --check
       - name: Formato, fuentes, referencias y cobertura de los esquemas
         run: python3 tools/validar.py --cobertura
-      - name: Casos de conformidad calculables
+      - name: Batería de conformidad (formato, coherencia con las reglas, cobertura y casos al día)
         run: python3 tools/conformidad.py

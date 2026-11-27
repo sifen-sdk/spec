@@ -53,7 +53,7 @@ puedan cargar a la vez sin pisarse. Los ids son únicos en todo el repositorio y
 | [08.md](contradicciones.d/08.md) | Códigos de respuesta | 17 |
 | [09.md](contradicciones.d/09.md) | Catálogos | 19 |
 
-De las 137 entradas, 10 están **resueltas**, 6 **resueltas con verificación parcial** y 121 **pendientes de
+De las 137 entradas, 12 están **resueltas**, 6 **resueltas con verificación parcial** y 119 **pendientes de
 verificación** (tienen una decisión tomada leyendo los documentos, pero SIFEN todavía no la confirmó). Las entradas se
 verifican contra el ambiente de test a medida que se acumula evidencia en [`evidencia/`](evidencia/); cada una dice si
 se puede probar desde un contribuyente en test, si solo se observa en producción o si un emisor no la puede provocar.

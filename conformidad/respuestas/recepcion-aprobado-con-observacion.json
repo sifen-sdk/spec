@@ -1,0 +1,24 @@
+{
+  "tipo": "respuestas",
+  "descripcion": "Recepción síncrona de un DE aprobado con observación (transmisión extemporánea)",
+  "xml": "recepcion-aprobado-con-observacion.xml",
+  "entrada": {
+    "servicio": "recepcion",
+    "cdc": "01444444017001001000000122026112011000000015"
+  },
+  "esperado": {
+    "resultados": [
+      {
+        "id": "01444444017001001000000122026112011000000015",
+        "estado": "aprobado_con_observacion",
+        "protocolo": "1234567891",
+        "mensajes": [
+          {
+            "codigo": "1005",
+            "clase": "aprobacion_con_observacion"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Obligatorio si C002 = 1 o 4 (la validación 1202 enumera además 2 y 3, tipos futuros). Falla: faltan el tipo de transacción (D011) y su descripción en una autofactura (C002 = 4)",
+  "base": "autofactura",
+  "xml": "autofactura-sin-d011.xml",
+  "regla": "R-D011-C1",
+  "quitados": [
+    "D011",
+    "D012"
+  ],
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-D011-C1",
+            "campo": "D011"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-EA004-A2",
+          "R-EA008-A2",
+          "R-F008-A3",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

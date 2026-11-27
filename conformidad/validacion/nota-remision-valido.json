@@ -1,0 +1,18 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Nota de remisión electrónica (C002 = 7), válido: cumple todas las reglas que le aplican",
+  "base": "nota-remision",
+  "xml": "nota-remision-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

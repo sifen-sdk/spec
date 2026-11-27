@@ -1,0 +1,57 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Si el tipo de documento electrónico informado es FE (C002=1), el grupo de campos que componen la FE (E010) es obligatorio. Falla: falta el grupo de campos de la factura electrónica (E010) en una factura (C002 = 1)",
+  "base": "factura",
+  "xml": "factura-sin-e010.xml",
+  "regla": "R-E010-C1",
+  "quitados": [
+    "E010"
+  ],
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-E010-C1",
+            "campo": "E010"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-E735-A1",
+          "R-E735-A4",
+          "R-E735-A5",
+          "R-E736-A1",
+          "R-E736-A2",
+          "R-E737-A1",
+          "R-E737-A2",
+          "R-EA003-A1",
+          "R-EA004-A2",
+          "R-EA008-A1",
+          "R-F002-A2",
+          "R-F003-A1",
+          "R-F004-A2",
+          "R-F005-A2",
+          "R-F008-A1",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A3",
+          "R-F015-A1",
+          "R-F016-A1",
+          "R-F017-A1",
+          "R-F018-A1",
+          "R-F019-A1",
+          "R-F020-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

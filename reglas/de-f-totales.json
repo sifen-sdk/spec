@@ -1153,7 +1153,7 @@
       "id": "R-F014-A1",
       "campo": "F014",
       "tipo": "aritmetica",
-      "texto": "El total neto es el total bruto menos el redondeo más la comisión",
+      "texto": "El total neto es el total bruto menos el redondeo más la comisión (en FE, NCE y NDE la misma fórmula es R-F014-A3, con código 2365)",
       "formula": "F008 - F013 + F025",
       "operandos": [
         "F008",
@@ -1171,7 +1171,16 @@
           "ref": "F014",
           "cita": "F008-F013+F025"
         }
-      ]
+      ],
+      "condicion": {
+        "campo": "C002",
+        "op": "no_en",
+        "valores": [
+          "1",
+          "5",
+          "6"
+        ]
+      }
     },
     {
       "id": "R-F014-A2",
