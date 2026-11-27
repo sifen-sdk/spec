@@ -558,13 +558,22 @@
       "tipo": "aritmetica",
       "texto": "Con impuesto IVA, Renta, Ninguno o IVA - Renta, el total bruto es la suma de los subtotales",
       "condicion": {
-        "campo": "D013",
-        "op": "en",
-        "valores": [
-          "1",
-          "3",
-          "4",
-          "5"
+        "todas": [
+          {
+            "campo": "D013",
+            "op": "en",
+            "valores": [
+              "1",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "campo": "C002",
+            "op": "distinto",
+            "valor": "4"
+          }
         ]
       },
       "formula": "F002+F003+F004+F005",
@@ -585,7 +594,8 @@
           "doc": "MT150",
           "ref": "2362"
         }
-      ]
+      ],
+      "contradiccion": "C-517"
     },
     {
       "id": "R-F008-A2",
