@@ -116,9 +116,10 @@ La obligatoriedad real **no** se deduce de `ocurrencia`: está en `reglas/`.
 | `condicion` | según tipo | Cuándo aplica la regla |
 | `no_declarativa` | no | `true` si la condición no se puede expresar con la gramática; entonces `texto` la describe completa |
 | `formula`, `operandos` | en aritméticas | Fórmula tal como figura en la fuente, y los campos que intervienen |
-| `holgura` | no | Tolerancia, solo si la fuente la escribe |
+| `holgura` | no | Tolerancia, solo si la fuente la escribe (ver "Igualdad en las reglas aritméticas") |
 | `codigo_sifen` | no | Código de rechazo asociado |
 | `contradiccion` | no | Id de `contradicciones.md` |
+| `descartada` | no | `{ "contradiccion": "C-nnn", "evidencia": "E-nnn" }`: la regla queda registrada porque la fuente la escribe, pero SIFEN no la aplica (lo demuestra la evidencia). Los SDK no la verifican |
 | `fuentes`, `vigencia` | sí / no | Ver arriba |
 
 | `tipo` | Significado |
@@ -158,6 +159,18 @@ propia escala, y comparar solo texto haría que una regla se saltee sin aviso. N
   agrega `"cuantificador": "todos"` a la condición (`"alguno"` es el valor por defecto y puede escribirse).
 
 Un campo ausente no cumple ninguna comparación de valor; solo cumple `ausente` y `no_en`.
+
+### Igualdad en las reglas aritméticas
+
+Un valor informado cumple una regla aritmética si su diferencia con el resultado **exacto** de la fórmula (sin
+redondear, calculado con los valores informados) es:
+
+- como máximo la `holgura` de la regla, cuando la tiene (por ejemplo, 0,8 en los porcentajes de descuento);
+- como máximo **0,5** en la unidad del campo (guaraníes, dólares, puntos porcentuales…), cuando no la tiene.
+
+Es lo que hace SIFEN, verificado en el ambiente de test ([E-001](evidencia/E-001-ambiente-test-2026-11-27.md)): con
+0,50 aprueba y con 0,51 rechaza, en guaraníes y en dólares; con holgura 0,8 aprueba 0,80 y rechaza 0,81, sin sumar el
+0,5. Las sumatorias usan los valores informados de cada ítem, nunca valores recalculados.
 
 ## `catalogos/<id>.json`
 
@@ -225,6 +238,12 @@ Cada entrada lleva `codigo` y `descripcion` y, si corresponde:
 Un elemento que existe solo en el XSD no tiene id oficial. Se le asigna `X-<grupo>-<elemento xml>` (por ejemplo
 `X-H-dNumCuoDocAso`), se lo cita con fuente `XSD` y una contradicción, y se anota en `observaciones` que el id no es
 oficial.
+
+## Evidencia
+
+`evidencia/E-nnn-<tema>.md`: resultados de pruebas contra SIFEN que deciden cómo se comporta en la práctica. Cada
+archivo dice qué se envió, cuándo, a qué ambiente y qué respondió SIFEN (códigos y mensajes), sin datos del emisor ni
+credenciales. Se citan desde `descartada` en las reglas y desde el estado de las contradicciones.
 
 ## Contradicciones
 

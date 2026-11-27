@@ -257,6 +257,19 @@ def main():
             if cod not in campos or des not in campos:
                 err(ruta, f"'descripciones' cita un campo inexistente: {cod!r} -> {des!r}")
 
+    # --- evidencia ---------------------------------------------------------------------------------------------
+    evidencias = set()
+    dir_evidencia = os.path.join(RAIZ, "evidencia")
+    if os.path.isdir(dir_evidencia):
+        for f in sorted(os.listdir(dir_evidencia)):
+            m = re.match(r"^(E-\d{3})-[a-z0-9-]+\.md$", f)
+            if not m:
+                err(os.path.join(dir_evidencia, f), "el nombre debe ser E-nnn-<tema>.md")
+            elif m.group(1) in evidencias:
+                err(os.path.join(dir_evidencia, f), f"id de evidencia repetido {m.group(1)}")
+            else:
+                evidencias.add(m.group(1))
+
     # --- reglas ------------------------------------------------------------------------------------------------
     reglas = set()
     for ruta in datos("reglas"):
@@ -293,6 +306,15 @@ def main():
             for cc in lista(r.get("contradiccion")):
                 if cc not in contradicciones:
                     err(ruta, f"{donde}: contradicción inexistente {cc!r}")
+            desc = r.get("descartada")
+            if desc is not None:
+                if not isinstance(desc, dict) or set(desc) != {"contradiccion", "evidencia"}:
+                    err(ruta, f"{donde}: 'descartada' lleva exactamente 'contradiccion' y 'evidencia'")
+                else:
+                    if desc["contradiccion"] not in contradicciones:
+                        err(ruta, f"{donde}: contradicción inexistente {desc['contradiccion']!r}")
+                    if desc["evidencia"] not in evidencias:
+                        err(ruta, f"{donde}: evidencia inexistente {desc['evidencia']!r}")
 
     # --- respuestas --------------------------------------------------------------------------------------------
     vistos = set()

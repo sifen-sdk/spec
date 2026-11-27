@@ -35,6 +35,7 @@ added in phase 1.
 | `xsd/` | Copy of the official schemas with provenance, date and hash |
 | `conformidad/` | Conformance cases every SDK must pass |
 | `contradicciones.md` | Conflicts between the Manual, Technical Notes and XSD, and the decision taken |
+| `evidencia/` | Results of tests against SIFEN that settle how it behaves in practice |
 | `docs/adr/` | Decision records |
 
 Folder names and documentation are in Spanish, the language of the official specification.

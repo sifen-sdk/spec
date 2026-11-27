@@ -64,6 +64,7 @@ Las decisiones completas están en [`docs/adr/`](docs/adr/README.md).
 | [`xsd/`](xsd/README.md) | Copia de los esquemas oficiales con procedencia, fecha y hash |
 | [`conformidad/`](conformidad/README.md) | Casos de prueba que todo SDK debe pasar |
 | [`contradicciones.md`](contradicciones.md) | Conflictos entre Manual, Notas Técnicas y XSD, y qué se decidió en cada uno |
+| [`evidencia/`](evidencia/) | Resultados de pruebas contra SIFEN que deciden cómo se comporta en la práctica |
 | [`docs/adr/`](docs/adr/README.md) | Registro de decisiones |
 
 ## Cómo contribuir
