@@ -1,0 +1,32 @@
+{
+  "tipo": "respuestas",
+  "descripcion": "Recepción síncrona de un DE rechazado por cálculos incorrectos, con varios códigos en orden",
+  "xml": "recepcion-rechazado-varios-codigos.xml",
+  "entrada": {
+    "servicio": "recepcion",
+    "cdc": "01444444017001001000000122026112011000000015"
+  },
+  "esperado": {
+    "resultados": [
+      {
+        "id": "01444444017001001000000122026112011000000015",
+        "estado": "rechazado",
+        "protocolo": null,
+        "mensajes": [
+          {
+            "codigo": "1859",
+            "clase": "rechazo"
+          },
+          {
+            "codigo": "2369",
+            "clase": "rechazo"
+          },
+          {
+            "codigo": "2365",
+            "clase": "rechazo"
+          }
+        ]
+      }
+    ]
+  }
+}

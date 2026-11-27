@@ -32,7 +32,7 @@ Detalle y fundamento en la [ADR 0005](docs/adr/0005-precedencia-entre-fuentes.md
   - <fuente 2>: <qué establece>
 - **Decisión:** <qué aplican la especificación y los SDK>
 - **Cómo se verificó:** <lectura de documentos · prueba contra el ambiente de test (fecha) · pendiente>
-- **Estado:** abierta | resuelta | resuelta con verificación parcial
+- **Estado:** pendiente de verificación. | resuelta. | resuelta con verificación parcial.
 ```
 
 ## Entradas
@@ -47,11 +47,13 @@ puedan cargar a la vez sin pisarse. Los ids son únicos en todo el repositorio y
 | [02.md](contradicciones.d/02.md) | Documento: grupos E a E7 | 8 |
 | [03.md](contradicciones.d/03.md) | Documento: ítems (E8) | 12 |
 | [04.md](contradicciones.d/04.md) | Documento: sectores y transporte (E9, E10) | 9 |
-| [05.md](contradicciones.d/05.md) | Documento: totales, generales, asociado, firma y QR (F a J) | 16 |
+| [05.md](contradicciones.d/05.md) | Documento: totales, generales, asociado, firma y QR (F a J) | 17 |
 | [06.md](contradicciones.d/06.md) | Eventos | 19 |
-| [07.md](contradicciones.d/07.md) | Web services | 23 |
+| [07.md](contradicciones.d/07.md) | Web services | 24 |
 | [08.md](contradicciones.d/08.md) | Códigos de respuesta | 17 |
 | [09.md](contradicciones.d/09.md) | Catálogos | 19 |
 
-Todas están **abiertas**: se resolvieron leyendo los documentos, pero ninguna se verificó todavía contra el
-ambiente de test de SIFEN. Esa verificación es parte de la fase 3.
+De las 137 entradas, 12 están **resueltas**, 6 **resueltas con verificación parcial** y 119 **pendientes de
+verificación** (tienen una decisión tomada leyendo los documentos, pero SIFEN todavía no la confirmó). Las entradas se
+verifican contra el ambiente de test a medida que se acumula evidencia en [`evidencia/`](evidencia/); cada una dice si
+se puede probar desde un contribuyente en test, si solo se observa en producción o si un emisor no la puede provocar.

@@ -1,0 +1,30 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "Fecha de Recepción debe ser mayor o igual a la fecha de emisión del DE/DTE. Falla: la fecha de recepción queda un día antes de la de emisión (GEN004)",
+  "base": "evento-notificacion-recepcion",
+  "xml": "evento-notificacion-recepcion-r-gen004-a1.xml",
+  "regla": "R-GEN004-A1",
+  "cambio": {
+    "campo": "GEN004",
+    "ruta": "rGesEve/rEve/gGroupTiEvt/rGeVeNotRec/dFecRecep",
+    "antes": "2026-11-20T10:30:00",
+    "despues": "2026-11-19T10:00:00"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-GEN004-A1",
+            "campo": "GEN004"
+          }
+        ],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

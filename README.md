@@ -10,23 +10,25 @@ neutral al lenguaje de programación. Es la fuente única que consumen todos los
 
 ## Estado
 
-**Fase 1: primera carga completa, en revisión.** Manual Técnico v150, Notas Técnicas 1 a 27 y los esquemas
-publicados el 19/09/2025.
+**Completa y en uso por el SDK de Java.** Manual Técnico v150, Notas Técnicas 1 a 27 y los esquemas publicados
+el 19/09/2025.
 
 | Contenido | Cantidad |
 |---|---|
 | Campos (documento electrónico, eventos, web services) | 715 |
-| Reglas (obligatoriedad, condiciones, formato, fórmulas) | 1.248 |
+| Reglas (obligatoriedad, condiciones, formato, fórmulas) | 1.250 |
 | Catálogos | 62 |
 | Códigos de respuesta | 510 |
-| Contradicciones registradas | 135 |
+| Contradicciones registradas | 137 |
 | Esquemas oficiales | 47 |
 
-Nada está verificado todavía contra el ambiente de test de SIFEN: eso llega con el cliente de los SDK (fase 3).
+Lo verificado contra el ambiente de test de SIFEN está en [`evidencia/`](evidencia): el comportamiento de cada fórmula
+de importes (E-001), cada tipo de documento y evento (E-002), y el IVA del redondeo, el tipo de cambio por ítem, la
+autofactura con descuento, el rango de inutilización y la conexión TLS (E-003). De las 137 contradicciones, 18 ya están verificadas por completo o en parte.
 
 ```bash
 python3 tools/validar.py --cobertura   # formato, fuentes, referencias y cobertura de los esquemas
-python3 tools/conformidad.py           # casos de conformidad calculables (CDC y QR)
+python3 tools/conformidad.py           # batería de conformidad: formato, coherencia con las reglas y cobertura
 ```
 
 El formato de los datos está en [`FORMATO.md`](FORMATO.md).

@@ -1,0 +1,30 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "Fecha de Recepción debe ser mayor a la fecha de emisión del DE/DTE (mensaje); la observación admite igualdad. Falla: la fecha de recepción queda un día antes de la de emisión (GED004)",
+  "base": "evento-desconocimiento",
+  "xml": "evento-desconocimiento-r-ged004-a1.xml",
+  "regla": "R-GED004-A1",
+  "cambio": {
+    "campo": "GED004",
+    "ruta": "rGesEve/rEve/gGroupTiEvt/rGeVeDescon/dFecRecep",
+    "antes": "2026-11-20T10:30:00",
+    "despues": "2026-11-19T10:00:00"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-GED004-A1",
+            "campo": "GED004"
+          }
+        ],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

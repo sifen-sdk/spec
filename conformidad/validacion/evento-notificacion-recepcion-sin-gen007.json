@@ -1,0 +1,29 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Es obligatorio informar Ruc del receptor cuando el tipo de receptor es Contribuyente (GEN005=1). Falla: falta el RUC del receptor contribuyente (GEN005 = 1)",
+  "base": "evento-notificacion-recepcion",
+  "xml": "evento-notificacion-recepcion-sin-gen007.xml",
+  "regla": "R-GEN007-C1",
+  "quitados": [
+    "GEN007"
+  ],
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-GEN007-C1",
+            "campo": "GEN007"
+          }
+        ],
+        "pasan": [
+          "R-GEN004-A1"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

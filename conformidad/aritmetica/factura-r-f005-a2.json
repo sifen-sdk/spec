@@ -1,0 +1,62 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "El subtotal gravado al 10% suma el valor total de los ítems gravados al 10% más base gravada e IVA de los gravados parcialmente a esa tasa. Falla: se suma una unidad al valor informado (F005)",
+  "base": "factura",
+  "xml": "factura-r-f005-a2.xml",
+  "regla": "R-F005-A2",
+  "cambio": {
+    "campo": "F005",
+    "ruta": "rDE/DE/gTotSub/dSub10",
+    "antes": "126019",
+    "despues": "126020"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-F005-A2",
+            "campo": "F005"
+          },
+          {
+            "regla": "R-F008-A1",
+            "campo": "F008"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-E735-A1",
+          "R-E735-A4",
+          "R-E735-A5",
+          "R-E736-A1",
+          "R-E736-A2",
+          "R-E737-A1",
+          "R-E737-A2",
+          "R-EA003-A1",
+          "R-EA004-A2",
+          "R-EA008-A1",
+          "R-F002-A2",
+          "R-F003-A1",
+          "R-F004-A2",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A3",
+          "R-F015-A1",
+          "R-F016-A1",
+          "R-F017-A1",
+          "R-F018-A1",
+          "R-F019-A1",
+          "R-F020-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

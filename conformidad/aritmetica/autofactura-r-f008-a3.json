@@ -1,0 +1,44 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "En la Autofactura, el total bruto es la suma del valor total por ítem. Falla: se suma una unidad al valor informado (F008)",
+  "base": "autofactura",
+  "xml": "autofactura-r-f008-a3.xml",
+  "regla": "R-F008-A3",
+  "cambio": {
+    "campo": "F008",
+    "ruta": "rDE/DE/gTotSub/dTotOpe",
+    "antes": "100000",
+    "despues": "100001"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-F008-A3",
+            "campo": "F008"
+          },
+          {
+            "regla": "R-F014-A1",
+            "campo": "F014"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-EA004-A2",
+          "R-EA008-A2",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Evento de notificación de recepción de un DE, válido: cumple todas las reglas que le aplican",
+  "base": "evento-notificacion-recepcion",
+  "xml": "evento-notificacion-recepcion-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [
+          "R-GEN004-A1"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

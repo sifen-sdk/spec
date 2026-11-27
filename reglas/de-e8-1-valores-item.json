@@ -179,7 +179,10 @@
     {
       "id": "R-EA008-A1", "campo": "EA008", "tipo": "aritmetica",
       "texto": "Si el tipo de impuesto afectado es IVA, Renta, ninguno o IVA - Renta (D013 = 1, 3, 4 o 5), el valor total de la operación por ítem es el precio unitario menos descuentos y anticipos, por la cantidad",
-      "condicion": { "campo": "D013", "op": "en", "valores": ["1", "3", "4", "5"] },
+      "condicion": { "todas": [
+        { "campo": "D013", "op": "en", "valores": ["1", "3", "4", "5"] },
+        { "campo": "C002", "op": "distinto", "valor": "4" }
+      ] },
       "formula": "EA008 = (E721 – EA002 – EA004 – EA006 – EA007) * E711",
       "operandos": ["E721", "EA002", "EA004", "EA006", "EA007", "E711"],
       "codigo_sifen": "1853",

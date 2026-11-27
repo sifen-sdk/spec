@@ -1,0 +1,30 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "El rango tiene hasta 1000 números: fin − inicio + 1 ≤ 1000. Un rango de un solo número (inicio = fin) es válido. Falla: el rango pasa a tener 1001 números (GEI006)",
+  "base": "evento-inutilizacion",
+  "xml": "evento-inutilizacion-r-gei006-a3.xml",
+  "regla": "R-GEI006-A3",
+  "cambio": {
+    "campo": "GEI006",
+    "ruta": "rGesEve/rEve/gGroupTiEvt/rGeVeInu/dNumFin",
+    "antes": "0000110",
+    "despues": "0001101"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-GEI006-A3",
+            "campo": "GEI006"
+          }
+        ],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

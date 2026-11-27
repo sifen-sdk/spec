@@ -1,0 +1,30 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Autofactura electrónica (C002 = 4), válido: cumple todas las reglas que le aplican",
+  "base": "autofactura",
+  "xml": "autofactura-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [
+          "R-E727-A1",
+          "R-EA004-A2",
+          "R-EA008-A2",
+          "R-F008-A3",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

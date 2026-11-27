@@ -1,0 +1,28 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Cuando el motivo del evento es Cambio del local de la entrega (GET003=1), es obligatorio informar el código del departamento del local de la entrega (GET004). Falla: falta el departamento del local de entrega (GET004) con cambio de local de entrega (GET003 = 1)",
+  "base": "evento-actualizacion-transporte",
+  "xml": "evento-actualizacion-transporte-sin-get004.xml",
+  "regla": "R-GET004-C1",
+  "quitados": [
+    "GET004",
+    "GET005"
+  ],
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-GET004-C1",
+            "campo": "GET004"
+          }
+        ],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

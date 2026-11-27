@@ -1,0 +1,18 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Evento de actualización de datos del transporte, válido: cumple todas las reglas que le aplican",
+  "base": "evento-actualizacion-transporte",
+  "xml": "evento-actualizacion-transporte-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

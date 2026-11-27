@@ -1,0 +1,44 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "Para Autofactura (C002=4), el valor total de la operación por ítem es el precio unitario por la cantidad. Falla: se suma una unidad al valor informado (EA008)",
+  "base": "autofactura",
+  "xml": "autofactura-r-ea008-a2.xml",
+  "regla": "R-EA008-A2",
+  "cambio": {
+    "campo": "EA008",
+    "ruta": "rDE/DE/gDtipDE/gCamItem/gValorItem/gValorRestaItem/dTotOpeItem",
+    "antes": "100000",
+    "despues": "100001"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-EA008-A2",
+            "campo": "EA008"
+          },
+          {
+            "regla": "R-F008-A3",
+            "campo": "F008"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-EA004-A2",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

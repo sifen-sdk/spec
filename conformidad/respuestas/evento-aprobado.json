@@ -1,0 +1,23 @@
+{
+  "tipo": "respuestas",
+  "descripcion": "Recepción de un evento aprobado",
+  "xml": "evento-aprobado.xml",
+  "entrada": {
+    "servicio": "evento"
+  },
+  "esperado": {
+    "resultados": [
+      {
+        "id": "1",
+        "estado": "aprobado",
+        "protocolo": "1234567892",
+        "mensajes": [
+          {
+            "codigo": "0600",
+            "clase": "aprobacion"
+          }
+        ]
+      }
+    ]
+  }
+}

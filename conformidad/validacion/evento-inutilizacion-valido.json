@@ -1,0 +1,20 @@
+{
+  "tipo": "validacion",
+  "descripcion": "Evento de inutilización de números, válido: cumple todas las reglas que le aplican",
+  "base": "evento-inutilizacion",
+  "xml": "evento-inutilizacion-valido.xml",
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [],
+        "pasan": [
+          "R-GEI006-A3"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

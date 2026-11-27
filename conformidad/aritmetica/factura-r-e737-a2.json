@@ -1,0 +1,59 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "Si la forma de afectación es Gravado IVA, Exonerado o Exento (E731 = 1, 2 o 3), la base exenta por ítem es igual a 0. Falla: se suma una unidad al valor informado (E737)",
+  "base": "factura",
+  "xml": "factura-r-e737-a2.xml",
+  "regla": "R-E737-A2",
+  "cambio": {
+    "campo": "E737",
+    "ruta": "rDE/DE/gDtipDE/gCamItem[1]/gCamIVA/dBasExe",
+    "antes": "0",
+    "despues": "1"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-E737-A2",
+            "campo": "E737"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-E735-A1",
+          "R-E735-A4",
+          "R-E735-A5",
+          "R-E736-A1",
+          "R-E736-A2",
+          "R-E737-A1",
+          "R-EA003-A1",
+          "R-EA004-A2",
+          "R-EA008-A1",
+          "R-F002-A2",
+          "R-F003-A1",
+          "R-F004-A2",
+          "R-F005-A2",
+          "R-F008-A1",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A3",
+          "R-F015-A1",
+          "R-F016-A1",
+          "R-F017-A1",
+          "R-F018-A1",
+          "R-F019-A1",
+          "R-F020-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "tipo": "aritmetica",
+  "descripcion": "Si E731 = 1 o 4 y la tasa es del 5% (E734 = 5), la base gravada del IVA por ítem se calcula con la fórmula de la NT 13. Falla: se suma una unidad al valor informado (E735)",
+  "base": "factura",
+  "xml": "factura-r-e735-a4.xml",
+  "regla": "R-E735-A4",
+  "cambio": {
+    "campo": "E735",
+    "ruta": "rDE/DE/gDtipDE/gCamItem[2]/gCamIVA/dBasGravIVA",
+    "antes": "20000",
+    "despues": "20001"
+  },
+  "evaluaciones": [
+    {
+      "ambiente": "test",
+      "fecha": "2026-11-20",
+      "esperado": {
+        "xsd": true,
+        "fallan": [
+          {
+            "regla": "R-E735-A4",
+            "campo": "E735"
+          },
+          {
+            "regla": "R-F018-A1",
+            "campo": "F018"
+          }
+        ],
+        "pasan": [
+          "R-E727-A1",
+          "R-E735-A1",
+          "R-E735-A5",
+          "R-E736-A1",
+          "R-E736-A2",
+          "R-E737-A1",
+          "R-E737-A2",
+          "R-EA003-A1",
+          "R-EA004-A2",
+          "R-EA008-A1",
+          "R-F002-A2",
+          "R-F003-A1",
+          "R-F004-A2",
+          "R-F005-A2",
+          "R-F008-A1",
+          "R-F009-A2",
+          "R-F011-A2",
+          "R-F012-A2",
+          "R-F014-A3",
+          "R-F015-A1",
+          "R-F016-A1",
+          "R-F017-A1",
+          "R-F019-A1",
+          "R-F020-A1",
+          "R-F033-A2",
+          "R-F034-A2",
+          "R-F035-A2"
+        ],
+        "otras": "prohibidas"
+      }
+    }
+  ]
+}
