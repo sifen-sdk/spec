@@ -1,6 +1,7 @@
 {
   "id": "tipo-emision",
   "titulo": "Tipo de emisión",
+  "nombre": "emission_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,10 +31,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "normal",
       "descripcion": "Normal"
     },
     {
       "codigo": "2",
+      "nombre": "contingency",
       "descripcion": "Contingencia"
     }
   ]

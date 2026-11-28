@@ -20,6 +20,7 @@ errores = []
 DOCS = re.compile(r"^(MT150|NT0(0[1-9]|1[0-9]|2[0-7])|XSD|GUIA-MP|GUIA-PRUEBAS|DEC872|RG[0-9]+-[0-9]{4})$")
 FECHA = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 NOMBRE = re.compile(r"^[a-z][a-zA-Z0-9]*$")
+NOMBRE_CATALOGO = re.compile(r"^[a-z][a-z0-9]*(_[a-z0-9]+)*$")
 TIPOS_CAMPO = {"grupo", "alfanumerico", "numerico", "fecha", "fecha_hora", "binario", "xml"}
 ESTADOS = {"vigente", "futuro", "eliminado"}
 TIPOS_REGLA = {"obligatorio", "opcional", "condicional", "prohibido", "aritmetica", "formato", "dependencia"}
@@ -180,10 +181,23 @@ def main():
         if not FECHA.match(str(d.get("tomado", ""))):
             err(ruta, "falta 'tomado' (fecha AAAA-MM-DD en que se tomó de la fuente)")
         vistos = set()
+        con_nombre = "nombre" in d
+        if con_nombre and not NOMBRE_CATALOGO.match(str(d["nombre"])):
+            err(ruta, f"'nombre' del catálogo en snake_case: {d['nombre']!r}")
+        nombres_entrada = set()
         for e in d.get("entradas", []):
             clave = (str(e.get("padre", "")), str(e.get("codigo")))
             if e.get("codigo") is None or "descripcion" not in e:
                 err(ruta, f"entrada sin 'codigo' o 'descripcion': {e!r}")
+            if con_nombre:
+                n = e.get("nombre")
+                if not n or not NOMBRE_CATALOGO.match(str(n)):
+                    err(ruta, f"código {e.get('codigo')}: falta 'nombre' en snake_case (el catálogo lo declara)")
+                elif n in nombres_entrada:
+                    err(ruta, f"código {e.get('codigo')}: nombre repetido {n!r}")
+                nombres_entrada.add(n)
+            elif "nombre" in e:
+                err(ruta, f"código {e.get('codigo')}: 'nombre' en la entrada exige 'nombre' en el catálogo")
             if clave in vistos:
                 err(ruta, f"código repetido: {clave}")
             vistos.add(clave)

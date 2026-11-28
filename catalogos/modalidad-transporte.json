@@ -1,6 +1,7 @@
 {
   "id": "modalidad-transporte",
   "titulo": "Modalidad del transporte",
+  "nombre": "transport_mode",
   "fuentes": [
     {
       "doc": "MT150",
@@ -41,18 +42,22 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "land",
       "descripcion": "Terrestre"
     },
     {
       "codigo": "2",
+      "nombre": "river",
       "descripcion": "Fluvial"
     },
     {
       "codigo": "3",
+      "nombre": "air",
       "descripcion": "Aéreo"
     },
     {
       "codigo": "4",
+      "nombre": "multimodal",
       "descripcion": "Multimodal"
     }
   ]

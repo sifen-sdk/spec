@@ -1,6 +1,7 @@
 {
   "id": "denominacion-tarjeta",
   "titulo": "Denominación de la tarjeta",
+  "nombre": "card_brand",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,30 +31,37 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "visa",
       "descripcion": "Visa"
     },
     {
       "codigo": "2",
+      "nombre": "mastercard",
       "descripcion": "Mastercard"
     },
     {
       "codigo": "3",
+      "nombre": "american_express",
       "descripcion": "American Express"
     },
     {
       "codigo": "4",
+      "nombre": "maestro",
       "descripcion": "Maestro"
     },
     {
       "codigo": "5",
+      "nombre": "panal",
       "descripcion": "Panal"
     },
     {
       "codigo": "6",
+      "nombre": "cabal",
       "descripcion": "Cabal"
     },
     {
       "codigo": "99",
+      "nombre": "other",
       "descripcion": "Otro",
       "observacion": "Si E621 = 99 informar la descripción de la denominación de la tarjeta",
       "descripcion_libre": true

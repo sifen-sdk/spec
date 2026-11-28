@@ -1,6 +1,7 @@
 {
   "id": "tipo-documento-impreso",
   "titulo": "Tipo de documento impreso asociado",
+  "nombre": "printed_document_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -34,22 +35,27 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "invoice",
       "descripcion": "Factura"
     },
     {
       "codigo": "2",
+      "nombre": "credit_note",
       "descripcion": "Nota de crédito"
     },
     {
       "codigo": "3",
+      "nombre": "debit_note",
       "descripcion": "Nota de débito"
     },
     {
       "codigo": "4",
+      "nombre": "delivery_note",
       "descripcion": "Nota de remisión"
     },
     {
       "codigo": "5",
+      "nombre": "withholding_receipt",
       "descripcion": "Comprobante de retención",
       "contradiccion": "C-907",
       "observacion": "No figura en tiTIpoDoc ni en tdDesTIpoDoc del XSD."

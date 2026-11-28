@@ -1,6 +1,7 @@
 {
   "id": "tipo-identificacion-vehiculo",
   "titulo": "Tipo de identificación del vehículo",
+  "nombre": "vehicle_identification_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -26,10 +27,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "vehicle_identification_number",
       "descripcion": "Número de identificación del vehículo"
     },
     {
       "codigo": "2",
+      "nombre": "license_plate",
       "descripcion": "Número de matrícula del vehículo"
     }
   ]

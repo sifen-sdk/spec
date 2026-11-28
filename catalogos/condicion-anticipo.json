@@ -1,6 +1,7 @@
 {
   "id": "condicion-anticipo",
   "titulo": "Condición del anticipo",
+  "nombre": "advance_condition",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,11 +31,13 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "global",
       "descripcion": "Anticipo Global",
       "detalle": "Anticipo Global (un solo tipo de anticipo para todo el DE)"
     },
     {
       "codigo": "2",
+      "nombre": "per_item",
       "descripcion": "Anticipo por Ítem",
       "detalle": "Anticipo por ítem (corresponde a la distribución de Anticipos facturados por ítem)"
     }

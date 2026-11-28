@@ -1,6 +1,7 @@
 {
   "id": "tipo-documento-identidad-nominacion",
   "titulo": "Tipo de documento de identidad del receptor (evento de nominación)",
+  "nombre": "nomination_id_document_type",
   "fuentes": [
     {
       "doc": "NT014",
@@ -35,6 +36,7 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "paraguayan_id",
       "descripcion": "Cédula paraguaya",
       "vigencia": {
         "desde": {
@@ -45,6 +47,7 @@
     },
     {
       "codigo": "2",
+      "nombre": "passport",
       "descripcion": "Pasaporte",
       "vigencia": {
         "desde": {
@@ -55,6 +58,7 @@
     },
     {
       "codigo": "3",
+      "nombre": "foreign_id",
       "descripcion": "Cédula extranjera",
       "vigencia": {
         "desde": {
@@ -65,6 +69,7 @@
     },
     {
       "codigo": "4",
+      "nombre": "residence_permit",
       "descripcion": "Carnet de residencia",
       "vigencia": {
         "desde": {
@@ -75,6 +80,7 @@
     },
     {
       "codigo": "5",
+      "nombre": "diplomatic_card_former_code",
       "descripcion": "Tarjeta Diplomática de exoneración fiscal",
       "fuentes": [
         {
@@ -100,6 +106,7 @@
     },
     {
       "codigo": "6",
+      "nombre": "diplomatic_card",
       "descripcion": "Tarjeta Diplomática de exoneración fiscal",
       "fuentes": [
         {
@@ -116,6 +123,7 @@
     },
     {
       "codigo": "9",
+      "nombre": "other",
       "descripcion": "Otro",
       "vigencia": {
         "desde": {

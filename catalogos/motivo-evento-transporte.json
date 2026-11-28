@@ -1,6 +1,7 @@
 {
   "id": "motivo-evento-transporte",
   "titulo": "Motivo del evento de actualización de datos del transporte",
+  "nombre": "transport_update_reason",
   "fuentes": [
     {
       "doc": "MT150",
@@ -21,18 +22,22 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "delivery_place_change",
       "descripcion": "Cambio del local de la entrega"
     },
     {
       "codigo": "2",
+      "nombre": "driver_change",
       "descripcion": "Cambio del chofer"
     },
     {
       "codigo": "3",
+      "nombre": "carrier_change",
       "descripcion": "Cambio del transportista"
     },
     {
       "codigo": "4",
+      "nombre": "vehicle_change",
       "descripcion": "Cambio de vehículo"
     }
   ]

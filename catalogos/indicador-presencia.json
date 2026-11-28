@@ -1,6 +1,7 @@
 {
   "id": "indicador-presencia",
   "titulo": "Indicador de presencia",
+  "nombre": "presence_indicator",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,30 +31,37 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "in_person",
       "descripcion": "Operación presencial"
     },
     {
       "codigo": "2",
+      "nombre": "electronic",
       "descripcion": "Operación electrónica"
     },
     {
       "codigo": "3",
+      "nombre": "telemarketing",
       "descripcion": "Operación telemarketing"
     },
     {
       "codigo": "4",
+      "nombre": "home_delivery",
       "descripcion": "Venta a domicilio"
     },
     {
       "codigo": "5",
+      "nombre": "banking",
       "descripcion": "Operación bancaria"
     },
     {
       "codigo": "6",
+      "nombre": "recurring",
       "descripcion": "Operación cíclica"
     },
     {
       "codigo": "9",
+      "nombre": "other",
       "descripcion": "Otro",
       "observacion": "Si E011 = 9 informar el indicador de presencia",
       "descripcion_libre": true

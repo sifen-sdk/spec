@@ -1,6 +1,7 @@
 {
   "id": "tipo-receptor-evento",
   "titulo": "Tipo de receptor (eventos de notificación y desconocimiento)",
+  "nombre": "event_receiver_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -26,10 +27,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "taxpayer",
       "descripcion": "Contribuyente"
     },
     {
       "codigo": "2",
+      "nombre": "non_taxpayer",
       "descripcion": "No Contribuyente"
     }
   ]

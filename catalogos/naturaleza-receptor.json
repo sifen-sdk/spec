@@ -1,6 +1,7 @@
 {
   "id": "naturaleza-receptor",
   "titulo": "Naturaleza del receptor",
+  "nombre": "receiver_nature",
   "fuentes": [
     {
       "doc": "MT150",
@@ -26,10 +27,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "taxpayer",
       "descripcion": "contribuyente"
     },
     {
       "codigo": "2",
+      "nombre": "non_taxpayer",
       "descripcion": "no contribuyente"
     }
   ]

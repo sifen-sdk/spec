@@ -1,6 +1,7 @@
 {
   "id": "condicion-tipo-cambio",
   "titulo": "Condición del tipo de cambio",
+  "nombre": "exchange_rate_condition",
   "fuentes": [
     {
       "doc": "MT150",
@@ -21,10 +22,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "global",
       "descripcion": "Global (un solo tipo de cambio para todo el DE)"
     },
     {
       "codigo": "2",
+      "nombre": "per_item",
       "descripcion": "Por ítem (tipo de cambio distinto por ítem)"
     }
   ]

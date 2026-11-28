@@ -1,6 +1,7 @@
 {
   "id": "tipo-regimen",
   "titulo": "Tipo de régimen (Tabla 1)",
+  "nombre": "regime_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -27,34 +28,42 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "tourism",
       "descripcion": "Régimen de Turismo"
     },
     {
       "codigo": "2",
+      "nombre": "importer",
       "descripcion": "Importador"
     },
     {
       "codigo": "3",
+      "nombre": "exporter",
       "descripcion": "Exportador"
     },
     {
       "codigo": "4",
+      "nombre": "maquila",
       "descripcion": "Maquila"
     },
     {
       "codigo": "5",
+      "nombre": "law_60_90",
       "descripcion": "Ley N° 60/90"
     },
     {
       "codigo": "6",
+      "nombre": "small_producer",
       "descripcion": "Régimen del Pequeño Productor"
     },
     {
       "codigo": "7",
+      "nombre": "medium_producer",
       "descripcion": "Régimen del Mediano Productor"
     },
     {
       "codigo": "8",
+      "nombre": "accounting",
       "descripcion": "Régimen Contable"
     }
   ]

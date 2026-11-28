@@ -1,6 +1,7 @@
 {
   "id": "condicion-operacion",
   "titulo": "Condición de la operación",
+  "nombre": "payment_condition",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,10 +31,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "cash",
       "descripcion": "Contado"
     },
     {
       "codigo": "2",
+      "nombre": "credit",
       "descripcion": "Crédito"
     }
   ]

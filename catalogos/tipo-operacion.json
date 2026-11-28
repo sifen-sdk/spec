@@ -1,6 +1,7 @@
 {
   "id": "tipo-operacion",
   "titulo": "Tipo de operación",
+  "nombre": "operation_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -26,19 +27,23 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "b2b",
       "descripcion": "B2B"
     },
     {
       "codigo": "2",
+      "nombre": "b2c",
       "descripcion": "B2C"
     },
     {
       "codigo": "3",
+      "nombre": "b2g",
       "descripcion": "B2G",
       "observacion": "No admitido en el evento de nominación (GENFE027: 1, 2 y 4)."
     },
     {
       "codigo": "4",
+      "nombre": "b2f",
       "descripcion": "B2F",
       "observacion": "Esta última opción debe utilizarse solo en caso de servicios para empresas o personas físicas del exterior"
     }

@@ -1,6 +1,7 @@
 {
   "id": "tipo-documento-identidad-responsable",
   "titulo": "Tipo de documento de identidad del responsable de la generación del DE",
+  "nombre": "responsible_id_document_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,22 +31,27 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "paraguayan_id",
       "descripcion": "Cédula paraguaya"
     },
     {
       "codigo": "2",
+      "nombre": "passport",
       "descripcion": "Pasaporte"
     },
     {
       "codigo": "3",
+      "nombre": "foreign_id",
       "descripcion": "Cédula extranjera"
     },
     {
       "codigo": "4",
+      "nombre": "residence_permit",
       "descripcion": "Carnet de residencia"
     },
     {
       "codigo": "9",
+      "nombre": "other",
       "descripcion": "Otro",
       "observacion": "Si D141 = 9 informar el tipo de documento de identidad del responsable de la generación del DE",
       "descripcion_libre": true

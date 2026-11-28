@@ -1,6 +1,7 @@
 {
   "id": "tipo-combustible",
   "titulo": "Tipo de combustible",
+  "nombre": "fuel_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,26 +31,32 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "gasoline",
       "descripcion": "Gasolina"
     },
     {
       "codigo": "2",
+      "nombre": "diesel",
       "descripcion": "Diésel"
     },
     {
       "codigo": "3",
+      "nombre": "ethanol",
       "descripcion": "Etanol"
     },
     {
       "codigo": "4",
+      "nombre": "natural_gas",
       "descripcion": "GNV"
     },
     {
       "codigo": "5",
+      "nombre": "flex",
       "descripcion": "Flex"
     },
     {
       "codigo": "9",
+      "nombre": "other",
       "descripcion": "Otro",
       "observacion": "Si E769= 9 describir el tipo de combustible (texto del Manual; el campo de código es E779)",
       "descripcion_libre": true

@@ -1,6 +1,7 @@
 {
   "id": "caracteristica-carga",
   "titulo": "Características de la carga",
+  "nombre": "cargo_characteristic",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,14 +31,17 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "cold_chain",
       "descripcion": "Mercaderías con cadena de frío"
     },
     {
       "codigo": "2",
+      "nombre": "dangerous_goods",
       "descripcion": "Carga peligrosa"
     },
     {
       "codigo": "3",
+      "nombre": "other",
       "descripcion": "Otro de características similares (especificar)",
       "observacion": "Si G057 = 3, informar la característica de la carga",
       "descripcion_libre": true

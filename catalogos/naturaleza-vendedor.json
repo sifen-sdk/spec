@@ -1,6 +1,7 @@
 {
   "id": "naturaleza-vendedor",
   "titulo": "Naturaleza del vendedor (autofactura)",
+  "nombre": "seller_nature",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,10 +31,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "non_taxpayer",
       "descripcion": "No contribuyente"
     },
     {
       "codigo": "2",
+      "nombre": "foreigner",
       "descripcion": "Extranjero"
     }
   ]

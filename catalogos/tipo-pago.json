@@ -1,6 +1,7 @@
 {
   "id": "tipo-pago",
   "titulo": "Tipo de pago",
+  "nombre": "payment_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,92 +31,114 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "cash",
       "descripcion": "Efectivo"
     },
     {
       "codigo": "2",
+      "nombre": "check",
       "descripcion": "Cheque"
     },
     {
       "codigo": "3",
+      "nombre": "credit_card",
       "descripcion": "Tarjeta de crédito"
     },
     {
       "codigo": "4",
+      "nombre": "debit_card",
       "descripcion": "Tarjeta de débito"
     },
     {
       "codigo": "5",
+      "nombre": "transfer",
       "descripcion": "Transferencia"
     },
     {
       "codigo": "6",
+      "nombre": "money_order",
       "descripcion": "Giro"
     },
     {
       "codigo": "7",
+      "nombre": "e_wallet",
       "descripcion": "Billetera electrónica"
     },
     {
       "codigo": "8",
+      "nombre": "corporate_card",
       "descripcion": "Tarjeta empresarial"
     },
     {
       "codigo": "9",
+      "nombre": "voucher",
       "descripcion": "Vale"
     },
     {
       "codigo": "10",
+      "nombre": "withholding",
       "descripcion": "Retención"
     },
     {
       "codigo": "11",
+      "nombre": "advance_payment",
       "descripcion": "Pago por anticipo"
     },
     {
       "codigo": "12",
+      "nombre": "fiscal_value",
       "descripcion": "Valor fiscal"
     },
     {
       "codigo": "13",
+      "nombre": "commercial_value",
       "descripcion": "Valor comercial"
     },
     {
       "codigo": "14",
+      "nombre": "offset",
       "descripcion": "Compensación"
     },
     {
       "codigo": "15",
+      "nombre": "barter",
       "descripcion": "Permuta"
     },
     {
       "codigo": "16",
+      "nombre": "bank_payment",
       "descripcion": "Pago bancario",
       "observacion": "Informar solo si E011=5"
     },
     {
       "codigo": "17",
+      "nombre": "mobile_payment",
       "descripcion": "Pago Móvil",
       "contradiccion": "C-906"
     },
     {
       "codigo": "18",
+      "nombre": "donation",
       "descripcion": "Donación"
     },
     {
       "codigo": "19",
+      "nombre": "promotion",
       "descripcion": "Promoción"
     },
     {
       "codigo": "20",
+      "nombre": "internal_consumption",
       "descripcion": "Consumo Interno"
     },
     {
       "codigo": "21",
+      "nombre": "electronic_payment",
       "descripcion": "Pago Electrónico"
     },
     {
       "codigo": "99",
+      "nombre": "other",
       "descripcion": "Otro",
       "observacion": "Si E606 = 99, informar el tipo de pago",
       "descripcion_libre": true

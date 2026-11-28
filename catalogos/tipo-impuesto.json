@@ -1,6 +1,7 @@
 {
   "id": "tipo-impuesto",
   "titulo": "Tipo de impuesto afectado",
+  "nombre": "tax_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,22 +31,27 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "vat",
       "descripcion": "IVA"
     },
     {
       "codigo": "2",
+      "nombre": "isc",
       "descripcion": "ISC"
     },
     {
       "codigo": "3",
+      "nombre": "income_tax",
       "descripcion": "Renta"
     },
     {
       "codigo": "4",
+      "nombre": "none",
       "descripcion": "Ninguno"
     },
     {
       "codigo": "5",
+      "nombre": "vat_and_income_tax",
       "descripcion": "IVA – Renta",
       "descripcion_xsd": "IVA - Renta",
       "contradiccion": "C-903",
