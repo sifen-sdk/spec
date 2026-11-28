@@ -1,6 +1,7 @@
 {
   "id": "condicion-negociacion",
   "titulo": "Condiciones de negociación – Incoterms (Tabla 10)",
+  "nombre": "incoterm",
   "fuentes": [
     {
       "doc": "MT150",
@@ -27,50 +28,61 @@
   "entradas": [
     {
       "codigo": "CFR",
+      "nombre": "cfr",
       "descripcion": "Costo y flete"
     },
     {
       "codigo": "CIF",
+      "nombre": "cif",
       "descripcion": "Costo, seguro y flete"
     },
     {
       "codigo": "CIP",
+      "nombre": "cip",
       "descripcion": "Transporte y seguro pagados hasta",
       "descripcion_xsd": "Transporte y seguros pagados hasta",
       "contradiccion": "C-908"
     },
     {
       "codigo": "CPT",
+      "nombre": "cpt",
       "descripcion": "Transporte pagado hasta"
     },
     {
       "codigo": "DAP",
+      "nombre": "dap",
       "descripcion": "Entregada en lugar convenido",
       "descripcion_xsd": "Entregada en el lugar convenido",
       "contradiccion": "C-908"
     },
     {
       "codigo": "DAT",
+      "nombre": "dat",
       "descripcion": "Entregada en terminal"
     },
     {
       "codigo": "DDP",
+      "nombre": "ddp",
       "descripcion": "Entregada derechos pagados"
     },
     {
       "codigo": "EXW",
+      "nombre": "exw",
       "descripcion": "En fabrica"
     },
     {
       "codigo": "FAS",
+      "nombre": "fas",
       "descripcion": "Franco al costado del buque"
     },
     {
       "codigo": "FCA",
+      "nombre": "fca",
       "descripcion": "Franco transportista"
     },
     {
       "codigo": "FOB",
+      "nombre": "fob",
       "descripcion": "Franco a bordo"
     }
   ]

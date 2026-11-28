@@ -1,6 +1,7 @@
 {
   "id": "tipo-documento",
   "titulo": "Tipo de documento electrónico",
+  "nombre": "document_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -37,41 +38,50 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "invoice",
       "descripcion": "Factura electrónica"
     },
     {
       "codigo": "2",
+      "nombre": "export_invoice",
       "descripcion": "Factura electrónica de exportación",
       "estado": "futuro"
     },
     {
       "codigo": "3",
+      "nombre": "import_invoice",
       "descripcion": "Factura electrónica de importación",
       "estado": "futuro"
     },
     {
       "codigo": "4",
+      "nombre": "self_invoice",
       "descripcion": "Autofactura electrónica"
     },
     {
       "codigo": "5",
+      "nombre": "credit_note",
       "descripcion": "Nota de crédito electrónica"
     },
     {
       "codigo": "6",
+      "nombre": "debit_note",
       "descripcion": "Nota de débito electrónica"
     },
     {
       "codigo": "7",
+      "nombre": "delivery_note",
       "descripcion": "Nota de remisión electrónica"
     },
     {
       "codigo": "8",
+      "nombre": "withholding_receipt",
       "descripcion": "Comprobante de retención electrónico",
       "estado": "futuro"
     },
     {
       "codigo": "9",
+      "nombre": "sales_receipt",
       "descripcion": "Boleta de venta electrónica",
       "fuentes": [
         {
@@ -83,6 +93,7 @@
     },
     {
       "codigo": "10",
+      "nombre": "resimple_receipt",
       "descripcion": "Boleta resimple electrónica",
       "fuentes": [
         {

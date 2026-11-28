@@ -1,6 +1,7 @@
 {
   "id": "tipo-documento-asociado",
   "titulo": "Tipo de documento asociado",
+  "nombre": "associated_document_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,14 +31,17 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "electronic",
       "descripcion": "Electrónico"
     },
     {
       "codigo": "2",
+      "nombre": "printed",
       "descripcion": "Impreso"
     },
     {
       "codigo": "3",
+      "nombre": "electronic_certificate",
       "descripcion": "Constancia Electrónica"
     }
   ]

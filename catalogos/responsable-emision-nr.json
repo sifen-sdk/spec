@@ -1,6 +1,7 @@
 {
   "id": "responsable-emision-nr",
   "titulo": "Responsable de la emisión de la nota de remisión",
+  "nombre": "delivery_note_issuer",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,22 +31,27 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "invoice_issuer",
       "descripcion": "Emisor de la factura"
     },
     {
       "codigo": "2",
+      "nombre": "invoice_and_goods_holder",
       "descripcion": "Poseedor de la factura y bienes"
     },
     {
       "codigo": "3",
+      "nombre": "carrier_company",
       "descripcion": "Empresa transportista"
     },
     {
       "codigo": "4",
+      "nombre": "customs_broker",
       "descripcion": "Despachante de Aduanas"
     },
     {
       "codigo": "5",
+      "nombre": "transport_agent",
       "descripcion": "Agente de transporte o intermediario"
     }
   ]

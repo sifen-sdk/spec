@@ -1,6 +1,7 @@
 {
   "id": "obligacion-afectada",
   "titulo": "Tipo de obligaciones (Tabla 12)",
+  "nombre": "tax_obligation",
   "fuentes": [
     {
       "doc": "NT018",
@@ -35,6 +36,7 @@
   "entradas": [
     {
       "codigo": "113",
+      "nombre": "iracis_special_regimes",
       "descripcion": "IMPUESTO A LA RENTA IRACIS - REGÍMENES ESPECIALES",
       "vigencia": {
         "desde": {
@@ -45,6 +47,7 @@
     },
     {
       "codigo": "143",
+      "nombre": "maquila_single_tax",
       "descripcion": "TRIBUTO UNICO MAQUILA",
       "vigencia": {
         "desde": {
@@ -55,6 +58,7 @@
     },
     {
       "codigo": "211",
+      "nombre": "vat_exporters",
       "descripcion": "IMPUESTO AL VALOR AGREGADO - GRAVADAS Y EXONERADAS - EXPORTADORES",
       "vigencia": {
         "desde": {
@@ -65,6 +69,7 @@
     },
     {
       "codigo": "311",
+      "nombre": "isc_general",
       "descripcion": "IMPUESTO SELECTIVO AL CONSUMO - GENERAL",
       "vigencia": {
         "desde": {
@@ -75,6 +80,7 @@
     },
     {
       "codigo": "321",
+      "nombre": "isc_fuels",
       "descripcion": "IMPUESTO SELECTIVO AL CONSUMO COMBUSTIBLES",
       "vigencia": {
         "desde": {
@@ -85,6 +91,7 @@
     },
     {
       "codigo": "700",
+      "nombre": "ire_general",
       "descripcion": "IMPUESTO A LA RENTA EMPRESARIAL - RÉGIMEN GENERAL",
       "vigencia": {
         "desde": {
@@ -95,6 +102,7 @@
     },
     {
       "codigo": "701",
+      "nombre": "ire_simple",
       "descripcion": "IMPUESTO A LA RENTA EMPRESARIAL - SIMPLE",
       "vigencia": {
         "desde": {
@@ -105,6 +113,7 @@
     },
     {
       "codigo": "703",
+      "nombre": "free_zone_tax",
       "descripcion": "IMPUESTO DE ZONA FRANCA",
       "vigencia": {
         "desde": {
@@ -115,6 +124,7 @@
     },
     {
       "codigo": "702",
+      "nombre": "ire_resimple",
       "descripcion": "IMPUESTO A LA RENTA EMPRESARIAL - RESIMPLE",
       "vigencia": {
         "desde": {
@@ -125,6 +135,7 @@
     },
     {
       "codigo": "715",
+      "nombre": "irp_personal_services",
       "descripcion": "IMPUESTO A LA RENTA PERSONAL - SERVICIOS PERSONALES",
       "vigencia": {
         "desde": {
@@ -135,6 +146,7 @@
     },
     {
       "codigo": "716",
+      "nombre": "irp_capital_income_and_gains",
       "descripcion": "IMPUESTO A LA RENTA PERSONAL - RENTAS Y GANANCIAS DE CAPITAL",
       "vigencia": {
         "desde": {

@@ -1,6 +1,7 @@
 {
   "id": "condicion-credito",
   "titulo": "Condición de la operación a crédito",
+  "nombre": "credit_condition",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,10 +31,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "term",
       "descripcion": "Plazo"
     },
     {
       "codigo": "2",
+      "nombre": "installments",
       "descripcion": "Cuota"
     }
   ]

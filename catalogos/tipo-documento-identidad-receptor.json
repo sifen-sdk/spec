@@ -1,6 +1,7 @@
 {
   "id": "tipo-documento-identidad-receptor",
   "titulo": "Tipo de documento de identidad del receptor",
+  "nombre": "receiver_id_document_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -38,22 +39,27 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "paraguayan_id",
       "descripcion": "Cédula paraguaya"
     },
     {
       "codigo": "2",
+      "nombre": "passport",
       "descripcion": "Pasaporte"
     },
     {
       "codigo": "3",
+      "nombre": "foreign_id",
       "descripcion": "Cédula extranjera"
     },
     {
       "codigo": "4",
+      "nombre": "residence_permit",
       "descripcion": "Carnet de residencia"
     },
     {
       "codigo": "5",
+      "nombre": "unnamed",
       "descripcion": "Innominado",
       "fuentes": [
         {
@@ -74,6 +80,7 @@
     },
     {
       "codigo": "6",
+      "nombre": "diplomatic_card",
       "descripcion": "Tarjeta Diplomática de exoneración fiscal",
       "fuentes": [
         {
@@ -94,6 +101,7 @@
     },
     {
       "codigo": "9",
+      "nombre": "other",
       "descripcion": "Otro",
       "observacion": "Si D208 = 9 informar el tipo de documento de identidad del receptor",
       "descripcion_libre": true

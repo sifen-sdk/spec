@@ -1,6 +1,7 @@
 {
   "id": "tipo-conformidad",
   "titulo": "Tipo de conformidad",
+  "nombre": "conformity_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -21,10 +22,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "total",
       "descripcion": "Conformidad Total del DTE"
     },
     {
       "codigo": "2",
+      "nombre": "partial",
       "descripcion": "Conformidad Parcial del DTE",
       "detalle": "Conformidad Parcial del DTE, cuando la mercadería será entregada o servicio será prestado en una fecha posterior a la recepción del DE/DTE"
     }

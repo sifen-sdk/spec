@@ -1,6 +1,7 @@
 {
   "id": "motivo-emision-nc",
   "titulo": "Motivo de emisión de la nota de crédito/débito",
+  "nombre": "credit_debit_note_reason",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,34 +31,42 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "return_and_price_adjustment",
       "descripcion": "Devolución y Ajuste de precios"
     },
     {
       "codigo": "2",
+      "nombre": "return",
       "descripcion": "Devolución"
     },
     {
       "codigo": "3",
+      "nombre": "discount",
       "descripcion": "Descuento"
     },
     {
       "codigo": "4",
+      "nombre": "bonus",
       "descripcion": "Bonificación"
     },
     {
       "codigo": "5",
+      "nombre": "bad_debt",
       "descripcion": "Crédito incobrable"
     },
     {
       "codigo": "6",
+      "nombre": "cost_recovery",
       "descripcion": "Recupero de costo"
     },
     {
       "codigo": "7",
+      "nombre": "expense_recovery",
       "descripcion": "Recupero de gasto"
     },
     {
       "codigo": "8",
+      "nombre": "price_adjustment",
       "descripcion": "Ajuste de precio"
     }
   ]

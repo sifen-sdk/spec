@@ -1,6 +1,7 @@
 {
   "id": "sistema-facturacion",
   "titulo": "Sistema de facturación",
+  "nombre": "billing_system",
   "fuentes": [
     {
       "doc": "MT150",
@@ -27,10 +28,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "taxpayer_system",
       "descripcion": "Sistema de facturación del contribuyente"
     },
     {
       "codigo": "2",
+      "nombre": "sifen_free_solution",
       "descripcion": "SIFEN solución gratuita",
       "observacion": "DE_v150.xsd solo admite el valor 1 (maxInclusive 1); DE_Ekuatiai_v150.xsd admite hasta 2."
     }

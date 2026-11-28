@@ -192,11 +192,13 @@ El `id` coincide con el nombre del archivo. A nivel de archivo, además:
 | `descripciones` | Campo del código → campo de su descripción (`{"C002": "C003"}`) |
 | `xml` | Elementos del XML que usan el catálogo |
 | `nota`, `contradiccion` | Aclaraciones y contradicciones que afectan a todo el catálogo |
+| `nombre` | Nombre en inglés del catálogo, en `snake_case` (`emission_type`). Los SDK lo usan para el tipo con constantes (un `enum` en Java) y lo convierten a su convención. Si está, cada entrada lleva el suyo |
 
 Cada entrada lleva `codigo` y `descripcion` y, si corresponde:
 
 | Dato | Descripción |
 |---|---|
+| `nombre` | Nombre en inglés de la constante, en `snake_case` y único en el catálogo (`contingency`). Obligatorio si el catálogo declara `nombre`. No viaja en el XML. Los catálogos grandes o geográficos (ciudad, distrito, país, moneda) no lo llevan |
 | `padre` | Código del nivel superior en catálogos jerárquicos (departamento → distrito → ciudad) |
 | `descripcion_xsd` | La descripción tal como la exige el XSD, cuando difiere de la del Manual. **Al emitir se usa esta** (el XSD manda en estructura y SIFEN rechaza otro texto) |
 | `otras_descripciones` | Variantes que aparecen en otras fuentes, solo informativas |

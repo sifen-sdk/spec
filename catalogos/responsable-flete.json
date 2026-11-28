@@ -1,6 +1,7 @@
 {
   "id": "responsable-flete",
   "titulo": "Responsable del costo del flete",
+  "nombre": "freight_payer",
   "fuentes": [
     {
       "doc": "MT150",
@@ -21,22 +22,27 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "invoice_issuer",
       "descripcion": "Emisor de la Factura Electrónica"
     },
     {
       "codigo": "2",
+      "nombre": "invoice_receiver",
       "descripcion": "Receptor de la Factura Electrónica"
     },
     {
       "codigo": "3",
+      "nombre": "third_party",
       "descripcion": "Tercero"
     },
     {
       "codigo": "4",
+      "nombre": "transport_agent",
       "descripcion": "Agente intermediario del transporte (cuando intervenga)"
     },
     {
       "codigo": "5",
+      "nombre": "own_transport",
       "descripcion": "Transporte propio"
     }
   ]

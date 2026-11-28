@@ -1,6 +1,7 @@
 {
   "id": "tipo-documento-identidad",
   "titulo": "Tipo de documento de identidad (vendedor, transportista y receptor en eventos)",
+  "nombre": "id_document_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -65,18 +66,22 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "paraguayan_id",
       "descripcion": "Cédula paraguaya"
     },
     {
       "codigo": "2",
+      "nombre": "passport",
       "descripcion": "Pasaporte"
     },
     {
       "codigo": "3",
+      "nombre": "foreign_id",
       "descripcion": "Cédula extranjera"
     },
     {
       "codigo": "4",
+      "nombre": "residence_permit",
       "descripcion": "Carnet de residencia"
     }
   ]

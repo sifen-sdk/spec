@@ -1,6 +1,7 @@
 {
   "id": "unidad-medida",
   "titulo": "Unidades de medida (Tabla 5)",
+  "nombre": "unit_of_measure",
   "fuentes": [
     {
       "doc": "MT150",
@@ -42,11 +43,13 @@
   "entradas": [
     {
       "codigo": "87",
+      "nombre": "meter",
       "descripcion": "m",
       "significado": "Metros"
     },
     {
       "codigo": "2366",
+      "nombre": "cost_per_thousand",
       "descripcion": "CPM",
       "significado": "Costo por Mil",
       "significado_xsd": "Costo Por Mil",
@@ -54,61 +57,73 @@
     },
     {
       "codigo": "2329",
+      "nombre": "international_unit",
       "descripcion": "UI",
       "significado": "Unidad Internacional"
     },
     {
       "codigo": "110",
+      "nombre": "cubic_meter",
       "descripcion": "M3",
       "significado": "Metros cúbicos"
     },
     {
       "codigo": "77",
+      "nombre": "unit",
       "descripcion": "UNI",
       "significado": "Unidad"
     },
     {
       "codigo": "86",
+      "nombre": "gram",
       "descripcion": "g",
       "significado": "Gramos"
     },
     {
       "codigo": "89",
+      "nombre": "liter",
       "descripcion": "LT",
       "significado": "Litros"
     },
     {
       "codigo": "90",
+      "nombre": "milligram",
       "descripcion": "MG",
       "significado": "Miligramos"
     },
     {
       "codigo": "91",
+      "nombre": "centimeter",
       "descripcion": "CM",
       "significado": "Centimetros"
     },
     {
       "codigo": "92",
+      "nombre": "square_centimeter",
       "descripcion": "CM2",
       "significado": "Centimetros cuadrados"
     },
     {
       "codigo": "93",
+      "nombre": "cubic_centimeter",
       "descripcion": "CM3",
       "significado": "Centimetros cubicos"
     },
     {
       "codigo": "94",
+      "nombre": "inch",
       "descripcion": "PUL",
       "significado": "Pulgadas"
     },
     {
       "codigo": "96",
+      "nombre": "square_millimeter",
       "descripcion": "MM2",
       "significado": "Milímetros cuadrados"
     },
     {
       "codigo": "79",
+      "nombre": "kilogram_per_square_meter",
       "descripcion": "kg/m²",
       "significado": "Kilogramos s/ metro cuadrado",
       "descripcion_xsd": "kg/m2",
@@ -116,106 +131,127 @@
     },
     {
       "codigo": "97",
+      "nombre": "year",
       "descripcion": "AA",
       "significado": "Año"
     },
     {
       "codigo": "98",
+      "nombre": "month",
       "descripcion": "ME",
       "significado": "Mes"
     },
     {
       "codigo": "99",
+      "nombre": "ton",
       "descripcion": "TN",
       "significado": "Tonelada"
     },
     {
       "codigo": "100",
+      "nombre": "hour",
       "descripcion": "Hs",
       "significado": "Hora"
     },
     {
       "codigo": "101",
+      "nombre": "minute",
       "descripcion": "Mi",
       "significado": "Minuto"
     },
     {
       "codigo": "104",
+      "nombre": "determination",
       "descripcion": "DET",
       "significado": "Determinación"
     },
     {
       "codigo": "103",
+      "nombre": "yard",
       "descripcion": "Ya",
       "significado": "Yardas"
     },
     {
       "codigo": "108",
+      "nombre": "meter_mt",
       "descripcion": "MT",
       "significado": "Metros"
     },
     {
       "codigo": "109",
+      "nombre": "square_meter",
       "descripcion": "M2",
       "significado": "Metros cuadrados"
     },
     {
       "codigo": "95",
+      "nombre": "millimeter",
       "descripcion": "MM",
       "significado": "Milímetros"
     },
     {
       "codigo": "666",
+      "nombre": "second",
       "descripcion": "Se",
       "significado": "Segundo"
     },
     {
       "codigo": "102",
+      "nombre": "day",
       "descripcion": "Di",
       "significado": "Día"
     },
     {
       "codigo": "83",
+      "nombre": "kilogram",
       "descripcion": "kg",
       "significado": "Kilogramos"
     },
     {
       "codigo": "88",
+      "nombre": "milliliter",
       "descripcion": "ML",
       "significado": "Mililitros"
     },
     {
       "codigo": "625",
+      "nombre": "kilometer",
       "descripcion": "Km",
       "significado": "Kilómetros"
     },
     {
       "codigo": "660",
+      "nombre": "linear_meter",
       "descripcion": "ml",
       "significado": "Metro lineal"
     },
     {
       "codigo": "885",
+      "nombre": "global_unit",
       "descripcion": "GL",
       "significado": "Unidad Medida Global"
     },
     {
       "codigo": "891",
+      "nombre": "per_mille",
       "descripcion": "pm",
       "significado": "Por Milaje"
     },
     {
       "codigo": "869",
+      "nombre": "hectare",
       "descripcion": "ha",
       "significado": "Hectáreas"
     },
     {
       "codigo": "569",
+      "nombre": "ration",
       "descripcion": "ración",
       "significado": "Ración"
     },
     {
       "codigo": "111",
+      "nombre": "bovine_head",
       "descripcion": "4A",
       "significado": "Bovinas",
       "fuentes": [
@@ -233,6 +269,7 @@
     },
     {
       "codigo": "112",
+      "nombre": "curie",
       "descripcion": "Ci",
       "significado": "Curie",
       "fuentes": [
@@ -250,6 +287,7 @@
     },
     {
       "codigo": "113",
+      "nombre": "dozen",
       "descripcion": "DOC",
       "significado": "Docena",
       "fuentes": [
@@ -267,6 +305,7 @@
     },
     {
       "codigo": "114",
+      "nombre": "us_gallon",
       "descripcion": "GLL",
       "significado": "Galones (US) (3,7843 LT)",
       "fuentes": [
@@ -284,6 +323,7 @@
     },
     {
       "codigo": "115",
+      "nombre": "gross",
       "descripcion": "GRO",
       "significado": "Gruesas",
       "fuentes": [
@@ -301,6 +341,7 @@
     },
     {
       "codigo": "116",
+      "nombre": "gross_kilogram",
       "descripcion": "E4",
       "significado": "Kilogramo Bruto",
       "fuentes": [
@@ -318,6 +359,7 @@
     },
     {
       "codigo": "117",
+      "nombre": "kit",
       "descripcion": "KT",
       "significado": "Kits",
       "fuentes": [
@@ -335,6 +377,7 @@
     },
     {
       "codigo": "118",
+      "nombre": "microcurie",
       "descripcion": "M5",
       "significado": "Microcurie",
       "fuentes": [
@@ -352,6 +395,7 @@
     },
     {
       "codigo": "119",
+      "nombre": "millicurie",
       "descripcion": "MCU",
       "significado": "Milicurie",
       "fuentes": [
@@ -369,6 +413,7 @@
     },
     {
       "codigo": "120",
+      "nombre": "thousand",
       "descripcion": "MIL",
       "significado": "Millar",
       "fuentes": [
@@ -386,6 +431,7 @@
     },
     {
       "codigo": "121",
+      "nombre": "pair",
       "descripcion": "PAR",
       "significado": "Par",
       "fuentes": [
@@ -403,6 +449,7 @@
     },
     {
       "codigo": "122",
+      "nombre": "foot",
       "descripcion": "FOT",
       "significado": "Pies",
       "fuentes": [
@@ -420,6 +467,7 @@
     },
     {
       "codigo": "123",
+      "nombre": "square_foot",
       "descripcion": "FTK",
       "significado": "Pies Cuadradas",
       "fuentes": [
@@ -437,6 +485,7 @@
     },
     {
       "codigo": "124",
+      "nombre": "piece",
       "descripcion": "PCE",
       "significado": "Piezas",
       "fuentes": [
@@ -454,6 +503,7 @@
     },
     {
       "codigo": "125",
+      "nombre": "carat",
       "descripcion": "KLT",
       "significado": "Quilate",
       "fuentes": [
@@ -471,6 +521,7 @@
     },
     {
       "codigo": "126",
+      "nombre": "ream",
       "descripcion": "RM",
       "significado": "Resmas",
       "fuentes": [
@@ -488,6 +539,7 @@
     },
     {
       "codigo": "127",
+      "nombre": "roll",
       "descripcion": "RO",
       "significado": "Rollos",
       "fuentes": [
@@ -505,6 +557,7 @@
     },
     {
       "codigo": "128",
+      "nombre": "thousand_kilowatt_hours",
       "descripcion": "kWh",
       "significado": "1000 Kilowatt Hora",
       "fuentes": [
@@ -522,6 +575,7 @@
     },
     {
       "codigo": "129",
+      "nombre": "deck",
       "descripcion": "U(JGO)",
       "significado": "Mazos",
       "fuentes": [
@@ -539,6 +593,7 @@
     },
     {
       "codigo": "130",
+      "nombre": "drum",
       "descripcion": "DR",
       "significado": "Tambores",
       "fuentes": [
@@ -556,6 +611,7 @@
     },
     {
       "codigo": "131",
+      "nombre": "box",
       "descripcion": "BX",
       "significado": "Caja",
       "fuentes": [
@@ -573,6 +629,7 @@
     },
     {
       "codigo": "132",
+      "nombre": "set",
       "descripcion": "SET",
       "significado": "Juego",
       "fuentes": [
@@ -590,6 +647,7 @@
     },
     {
       "codigo": "133",
+      "nombre": "package",
       "descripcion": "PK",
       "significado": "Paquete",
       "fuentes": [
@@ -607,6 +665,7 @@
     },
     {
       "codigo": "134",
+      "nombre": "bag",
       "descripcion": "BG",
       "significado": "Bolsa",
       "fuentes": [
@@ -624,6 +683,7 @@
     },
     {
       "codigo": "135",
+      "nombre": "dozen_pairs",
       "descripcion": "DPC",
       "significado": "Docena Par",
       "fuentes": [
@@ -641,6 +701,7 @@
     },
     {
       "codigo": "136",
+      "nombre": "jar",
       "descripcion": "JR",
       "significado": "Pote",
       "fuentes": [
@@ -658,6 +719,7 @@
     },
     {
       "codigo": "137",
+      "nombre": "bale",
       "descripcion": "BL",
       "significado": "Fardos",
       "fuentes": [
@@ -675,6 +737,7 @@
     },
     {
       "codigo": "138",
+      "nombre": "bundle",
       "descripcion": "AB",
       "significado": "Bulto",
       "fuentes": [
@@ -692,6 +755,7 @@
     },
     {
       "codigo": "139",
+      "nombre": "basket",
       "descripcion": "BK",
       "significado": "Cesta",
       "fuentes": [
@@ -709,6 +773,7 @@
     },
     {
       "codigo": "140",
+      "nombre": "basis_weight",
       "descripcion": "BW",
       "significado": "Peso Base",
       "fuentes": [

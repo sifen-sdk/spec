@@ -1,6 +1,7 @@
 {
   "id": "tipo-constancia",
   "titulo": "Tipo de constancia",
+  "nombre": "certificate_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,10 +31,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "non_taxpayer",
       "descripcion": "Constancia de no ser contribuyente"
     },
     {
       "codigo": "2",
+      "nombre": "micro_producer",
       "descripcion": "Constancia de microproductores"
     }
   ]

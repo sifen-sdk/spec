@@ -1,6 +1,7 @@
 {
   "id": "tipo-transporte",
   "titulo": "Tipo de transporte",
+  "nombre": "transport_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -42,10 +43,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "own",
       "descripcion": "Propio"
     },
     {
       "codigo": "2",
+      "nombre": "third_party",
       "descripcion": "Tercero"
     }
   ]

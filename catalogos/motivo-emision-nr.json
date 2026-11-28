@@ -1,6 +1,7 @@
 {
   "id": "motivo-emision-nr",
   "titulo": "Motivo de emisión de la nota de remisión",
+  "nombre": "delivery_note_reason",
   "fuentes": [
     {
       "doc": "MT150",
@@ -31,6 +32,7 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "sale",
       "descripcion": "Traslado por ventas",
       "otras_descripciones": [
         {
@@ -47,44 +49,54 @@
     },
     {
       "codigo": "2",
+      "nombre": "consignment",
       "descripcion": "Traslado por consignación"
     },
     {
       "codigo": "3",
+      "nombre": "export",
       "descripcion": "Exportación"
     },
     {
       "codigo": "4",
+      "nombre": "purchase",
       "descripcion": "Traslado por compra"
     },
     {
       "codigo": "5",
+      "nombre": "import",
       "descripcion": "Importación"
     },
     {
       "codigo": "6",
+      "nombre": "return",
       "descripcion": "Traslado por devolución"
     },
     {
       "codigo": "7",
+      "nombre": "between_own_premises",
       "descripcion": "Traslado entre locales de la empresa"
     },
     {
       "codigo": "8",
+      "nombre": "transformation",
       "descripcion": "Traslado de bienes por transformación"
     },
     {
       "codigo": "9",
+      "nombre": "repair",
       "descripcion": "Traslado de bienes por reparación",
       "descripcion_xsd": "Traslado de bienes para reparación",
       "contradiccion": "C-905"
     },
     {
       "codigo": "10",
+      "nombre": "mobile_issuer",
       "descripcion": "Traslado por emisor móvil"
     },
     {
       "codigo": "11",
+      "nombre": "exhibition_or_demonstration",
       "descripcion": "Exhibición o Demostración",
       "otras_descripciones": [
         {
@@ -100,18 +112,22 @@
     },
     {
       "codigo": "12",
+      "nombre": "trade_fair",
       "descripcion": "Participación en ferias"
     },
     {
       "codigo": "13",
+      "nombre": "parcel",
       "descripcion": "Traslado de encomienda"
     },
     {
       "codigo": "14",
+      "nombre": "seizure",
       "descripcion": "Decomiso"
     },
     {
       "codigo": "99",
+      "nombre": "other",
       "descripcion": "Otro",
       "detalle": "Otro (deberá consignarse expresamente el o los motivos diferentes a los mencionados anteriormente)",
       "observacion": "Si E501=99 describir el motivo de la emisión",

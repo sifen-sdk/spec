@@ -1,6 +1,7 @@
 {
   "id": "relevancia-mercaderia",
   "titulo": "Código de datos de relevancia de las mercaderías",
+  "nombre": "goods_relevance",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,10 +31,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "breakage_tolerance",
       "descripcion": "Tolerancia de quiebra"
     },
     {
       "codigo": "2",
+      "nombre": "shrinkage_tolerance",
       "descripcion": "Tolerancia de merma"
     }
   ]

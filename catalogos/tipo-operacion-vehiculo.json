@@ -1,6 +1,7 @@
 {
   "id": "tipo-operacion-vehiculo",
   "titulo": "Tipo de operación de venta de vehículos",
+  "nombre": "vehicle_sale_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -30,20 +31,24 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "to_dealer",
       "descripcion": "Venta a representante"
     },
     {
       "codigo": "2",
+      "nombre": "to_final_consumer",
       "descripcion": "Venta al consumidor final",
       "descripcion_xsd": "Venta al Consumidor final",
       "contradiccion": "C-910"
     },
     {
       "codigo": "3",
+      "nombre": "to_government",
       "descripcion": "Venta a gobierno"
     },
     {
       "codigo": "4",
+      "nombre": "to_fleet",
       "descripcion": "Venta a flota de vehículos"
     }
   ]

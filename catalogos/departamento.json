@@ -1,6 +1,7 @@
 {
   "id": "departamento",
   "titulo": "Departamentos",
+  "nombre": "department",
   "fuentes": [
     {
       "doc": "XSD",
@@ -64,78 +65,97 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "capital",
       "descripcion": "CAPITAL"
     },
     {
       "codigo": "2",
+      "nombre": "concepcion",
       "descripcion": "CONCEPCION"
     },
     {
       "codigo": "3",
+      "nombre": "san_pedro",
       "descripcion": "SAN PEDRO"
     },
     {
       "codigo": "4",
+      "nombre": "cordillera",
       "descripcion": "CORDILLERA"
     },
     {
       "codigo": "5",
+      "nombre": "guaira",
       "descripcion": "GUAIRA"
     },
     {
       "codigo": "6",
+      "nombre": "caaguazu",
       "descripcion": "CAAGUAZU"
     },
     {
       "codigo": "7",
+      "nombre": "caazapa",
       "descripcion": "CAAZAPA"
     },
     {
       "codigo": "8",
+      "nombre": "itapua",
       "descripcion": "ITAPUA"
     },
     {
       "codigo": "9",
+      "nombre": "misiones",
       "descripcion": "MISIONES"
     },
     {
       "codigo": "10",
+      "nombre": "paraguari",
       "descripcion": "PARAGUARI"
     },
     {
       "codigo": "11",
+      "nombre": "alto_parana",
       "descripcion": "ALTO PARANA"
     },
     {
       "codigo": "12",
+      "nombre": "central",
       "descripcion": "CENTRAL"
     },
     {
       "codigo": "13",
+      "nombre": "neembucu",
       "descripcion": "NEEMBUCU"
     },
     {
       "codigo": "14",
+      "nombre": "amambay",
       "descripcion": "AMAMBAY"
     },
     {
       "codigo": "15",
+      "nombre": "presidente_hayes",
       "descripcion": "PTE. HAYES"
     },
     {
       "codigo": "16",
+      "nombre": "boqueron",
       "descripcion": "BOQUERON"
     },
     {
       "codigo": "17",
+      "nombre": "alto_paraguay",
       "descripcion": "ALTO PARAGUAY"
     },
     {
       "codigo": "18",
+      "nombre": "canindeyu",
       "descripcion": "CANINDEYU"
     },
     {
       "codigo": "19",
+      "nombre": "chaco",
       "descripcion": "CHACO",
       "fuentes": [
         {
@@ -148,6 +168,7 @@
     },
     {
       "codigo": "20",
+      "nombre": "nueva_asuncion",
       "descripcion": "NUEVA ASUNCION",
       "fuentes": [
         {

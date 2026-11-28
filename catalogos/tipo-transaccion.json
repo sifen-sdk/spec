@@ -1,6 +1,7 @@
 {
   "id": "tipo-transaccion",
   "titulo": "Tipo de transacción",
+  "nombre": "transaction_type",
   "fuentes": [
     {
       "doc": "MT150",
@@ -34,14 +35,17 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "goods_sale",
       "descripcion": "Venta de mercadería"
     },
     {
       "codigo": "2",
+      "nombre": "services",
       "descripcion": "Prestación de servicios"
     },
     {
       "codigo": "3",
+      "nombre": "goods_and_services",
       "descripcion": "Mixto (Venta de mercadería y servicios)",
       "fuentes": [
         {
@@ -69,42 +73,52 @@
     },
     {
       "codigo": "4",
+      "nombre": "fixed_asset_sale",
       "descripcion": "Venta de activo fijo"
     },
     {
       "codigo": "5",
+      "nombre": "currency_sale",
       "descripcion": "Venta de divisas"
     },
     {
       "codigo": "6",
+      "nombre": "currency_purchase",
       "descripcion": "Compra de divisas"
     },
     {
       "codigo": "7",
+      "nombre": "promotion_or_samples",
       "descripcion": "Promoción o entrega de muestras"
     },
     {
       "codigo": "8",
+      "nombre": "donation",
       "descripcion": "Donación"
     },
     {
       "codigo": "9",
+      "nombre": "advance",
       "descripcion": "Anticipo"
     },
     {
       "codigo": "10",
+      "nombre": "goods_purchase",
       "descripcion": "Compra de productos"
     },
     {
       "codigo": "11",
+      "nombre": "services_purchase",
       "descripcion": "Compra de servicios"
     },
     {
       "codigo": "12",
+      "nombre": "tax_credit_sale",
       "descripcion": "Venta de crédito fiscal"
     },
     {
       "codigo": "13",
+      "nombre": "medical_samples",
       "descripcion": "Muestras médicas (Art. 3 RG 24/2014)",
       "fuentes": [
         {

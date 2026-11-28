@@ -1,6 +1,7 @@
 {
   "id": "estado-ruc",
   "titulo": "Estado del RUC consultado",
+  "nombre": "ruc_status",
   "fuentes": [
     {
       "doc": "MT150",
@@ -26,26 +27,32 @@
   "entradas": [
     {
       "codigo": "ACT",
+      "nombre": "active",
       "descripcion": "Activo"
     },
     {
       "codigo": "SUS",
+      "nombre": "temporarily_suspended",
       "descripcion": "Suspensión Temporal"
     },
     {
       "codigo": "SAD",
+      "nombre": "administratively_suspended",
       "descripcion": "Suspensión Administrativa"
     },
     {
       "codigo": "BLQ",
+      "nombre": "blocked",
       "descripcion": "Bloqueado"
     },
     {
       "codigo": "CAN",
+      "nombre": "cancelled",
       "descripcion": "Cancelado"
     },
     {
       "codigo": "CDE",
+      "nombre": "permanently_cancelled",
       "descripcion": "Cancelado Definitivo"
     }
   ]

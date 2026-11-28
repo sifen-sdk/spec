@@ -1,6 +1,7 @@
 {
   "id": "naturaleza-transportista",
   "titulo": "Naturaleza del transportista",
+  "nombre": "carrier_nature",
   "fuentes": [
     {
       "doc": "MT150",
@@ -26,10 +27,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "taxpayer",
       "descripcion": "Contribuyente"
     },
     {
       "codigo": "2",
+      "nombre": "non_taxpayer",
       "descripcion": "No contribuyente"
     }
   ]

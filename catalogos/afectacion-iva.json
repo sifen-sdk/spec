@@ -1,6 +1,7 @@
 {
   "id": "afectacion-iva",
   "titulo": "Forma de afectación tributaria del IVA (Tabla 6)",
+  "nombre": "vat_treatment",
   "fuentes": [
     {
       "doc": "MT150",
@@ -39,10 +40,12 @@
   "entradas": [
     {
       "codigo": "1",
+      "nombre": "taxed",
       "descripcion": "Gravado IVA"
     },
     {
       "codigo": "2",
+      "nombre": "exonerated",
       "descripcion": "Exonerado (Art. 100 - Ley 6380/2019)",
       "fuentes": [
         {
@@ -85,10 +88,12 @@
     },
     {
       "codigo": "3",
+      "nombre": "exempt",
       "descripcion": "Exento"
     },
     {
       "codigo": "4",
+      "nombre": "partially_taxed",
       "descripcion": "Gravado parcial (Grav- Exento)",
       "fuentes": [
         {
